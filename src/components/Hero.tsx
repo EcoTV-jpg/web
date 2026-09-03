@@ -1,0 +1,128 @@
+import { ShieldCheck, Zap, Headphones, ChevronRight } from "lucide-react";
+import Reveal from "./Reveal";
+import { Accent, GhostButton, GreenButton } from "./ui";
+import { hero } from "../data/site";
+
+export default function Hero() {
+  return (
+    <section className="pb-20 pt-16 sm:pb-24 sm:pt-20" aria-labelledby="hero-heading">
+      <div className="container-x text-center">
+        {/* Eyebrow Trust Badge */}
+        <Reveal>
+          <a
+            href="#pricing"
+            className="inline-flex items-center gap-2 rounded-full border border-charcoal bg-ash px-4 py-1.5 text-xs font-normal text-silver-mist transition-colors duration-200 hover:border-graphite hover:text-snow"
+          >
+            <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
+            {hero.kicker}
+            <ChevronRight className="size-3.5 text-smoke" aria-hidden="true" />
+          </a>
+        </Reveal>
+
+        {/* Main H1 Title */}
+        <Reveal delay={0.06}>
+          <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[880px] text-balance">
+            Premium IPTV Subscription for <Accent>Live TV &amp; On-Demand</Accent> Entertainment
+          </h1>
+        </Reveal>
+
+        {/* Subhead & Description */}
+        <Reveal delay={0.12}>
+          <p className="t-body mx-auto mt-6 max-w-[640px] text-silver-mist font-medium">
+            {hero.subhead}
+          </p>
+          <p className="t-body-sm mx-auto mt-3 max-w-[600px] text-smoke">
+            {hero.copy}
+          </p>
+        </Reveal>
+
+        {/* CTA Buttons */}
+        <Reveal delay={0.18}>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <GreenButton href="#pricing">{hero.ctaPrimary}</GreenButton>
+            <GhostButton href="#pricing">{hero.ctaSecondary}</GhostButton>
+          </div>
+        </Reveal>
+
+        {/* 3 Core Trust Badges */}
+        <Reveal delay={0.24}>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
+              14-Day Money-Back Guarantee
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
+              Fast Activation
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Headphones className="size-4 text-phosphor-green" aria-hidden="true" />
+              24/7 Customer Support
+            </span>
+          </div>
+        </Reveal>
+
+        {/* Supported Device Icons */}
+        <Reveal delay={0.28}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Fire TV">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#firetv"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android TV">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#androidtv"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple TV (tvOS)">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#tvos"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple iOS">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#ios"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#android"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Windows">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#windows"></use>
+              </svg>
+            </span>
+            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="macOS">
+              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
+                <use href="/device-icons.svg#macos"></use>
+              </svg>
+            </span>
+          </div>
+        </Reveal>
+
+        {/* Hero Media */}
+        <Reveal delay={0.34} className="mx-auto mt-14 max-w-[880px] sm:mt-16">
+          <div className="card overflow-hidden p-2">
+            <div className="overflow-hidden rounded-lg">
+              <picture>
+                <source srcSet="/images/teleview-fans.webp" type="image/webp" />
+                <img
+                  src="/images/teleview-fans.jpg"
+                  alt="Sports fans celebrating with snacks while watching Teleview"
+                  className="media-mono w-full"
+                  width={900}
+                  height={600}
+                  loading="eager"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

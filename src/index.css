@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+/* ==================================================================
+   Teleview × Supabase style system
+   Precision-crafted monochrome palette with single phosphor accent. reserved for CTAs, emphasis and brand marks.
+------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Manrope", "Circular", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+
+  /* greens — rationed */
+  --color-phosphor-green: #3ecf8e;
+  --color-mint-pulse: #00c573;
+  --color-forest-depth: #1f4b37;
+  --color-midnight-emerald: #006239;
+
+  /* monochrome ramp */
+  --color-snow: #fafafa;
+  --color-silver-mist: #b4b4b4;
+  --color-smoke: #898989;
+  --color-graphite: #4d4d4d;
+  --color-slate: #393939;
+  --color-charcoal: #2e2e2e;
+  --color-ash: #242424;
+  --color-ink-800: #1a1a1a;
+  --color-ink-700: #202020;
+  --color-obsidian: #121212;
+
+  /* radius vocabulary */
+  --radius-cards: 16px;
+  --radius-inputs: 8px;
+  --radius-buttons: 9999px;
+
+  /* the only shadow in the system */
+  --shadow-sm: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+}
+
+/* ------------------------------------------------------------------
+   Base — tight geometric voice, uniform negative tracking
+------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-obsidian);
+  color: var(--color-snow);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.007em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--color-forest-depth);
+  color: var(--color-snow);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--color-phosphor-green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------
+   Type scale — weight never exceeds 500
+------------------------------------------------------------------- */
+.t-display {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400;
+  line-height: 1.04;
+  color: var(--color-snow);
+}
+
+.t-h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-snow);
+}
+
+.t-heading-sm {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: var(--color-snow);
+}
+
+.t-card-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.38;
+  color: var(--color-snow);
+}
+
+.t-body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-silver-mist);
+}
+
+.t-body-sm {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-silver-mist);
+}
+
+.t-caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-smoke);
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-smoke);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ------------------------------------------------------------------
+   Layout + rhythm
+------------------------------------------------------------------- */
+.container-x {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: 20px;
+}
+
+@media (min-width: 640px) {
+  .container-x {
+    padding-inline: 28px;
+  }
+}
+
+/* single vertical rhythm for every content section */
+.section-y {
+  padding-block: 64px;
+}
+
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 96px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Buttons — pill only; green is always a deliberate decision
+------------------------------------------------------------------- */
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-phosphor-green);
+  border-radius: var(--radius-buttons);
+  background: var(--color-phosphor-green);
+  color: var(--color-snow);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  white-space: nowrap;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.btn-green:hover {
+  background: #38bd82;
+  border-color: var(--color-forest-depth);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--color-slate);
+  border-radius: var(--radius-buttons);
+  background: transparent;
+  color: var(--color-snow);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  white-space: nowrap;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-graphite);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ------------------------------------------------------------------
+   Cards / rows / dividers — elevation through hairlines, never shadow
+------------------------------------------------------------------- */
+.card {
+  position: relative;
+  border: 1px solid var(--color-charcoal);
+  border-radius: var(--radius-cards);
+  background: var(--color-obsidian);
+}
+
+.card-hover {
+  transition: border-color 200ms ease;
+}
+
+.card-hover:hover {
+  border-color: var(--color-graphite);
+}
+
+.row-bar {
+  border: 1px solid var(--color-charcoal);
+  border-radius: var(--radius-cards);
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-silver-mist);
+  text-align: center;
+}
+
+/* pricing feature divider used inside pricing cards */
+.hr-card {
+  border: 0;
+  border-top: 1px solid var(--color-charcoal);
+  margin: 20px 0 24px;
+}
+
+/* ------------------------------------------------------------------
+   Inputs — 8px radius; the phosphor border IS the focus indicator
+------------------------------------------------------------------- */
+.input-dark {
+  height: 44px;
+  width: 100%;
+  border: 1px solid var(--color-slate);
+  border-radius: var(--radius-inputs);
+  background: var(--color-obsidian);
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--color-snow);
+}
+
+.input-dark::placeholder {
+  color: var(--color-smoke);
+}
+
+.input-dark:focus {
+  outline: none;
+  border-color: var(--color-phosphor-green);
+}
+
+/* ------------------------------------------------------------------
+   Imagery — fold photography into the monochrome system
+------------------------------------------------------------------- */
+.media-mono {
+  filter: grayscale(1) contrast(1.06) brightness(0.8);
+}
+
+/* softly dissolves graphic edges into the obsidian canvas */
+.edge-fade {
+  -webkit-mask-image: radial-gradient(ellipse 88% 82% at 50% 50%, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 88% 82% at 50% 50%, #000 62%, transparent 100%);
+}
+
+/* decorative graphite line-work used inside feature cards */
+.wire-deco {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  color: var(--color-graphite);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------
+   Motion preferences
+------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
