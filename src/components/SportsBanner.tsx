@@ -1,4 +1,4 @@
-import { Trophy, Tv2, Clock, Flame } from "lucide-react";
+import { Trophy, Tv2, Clock } from "lucide-react";
 import Reveal from "./Reveal";
 import { Accent, GreenButton } from "./ui";
 import { sportsSection } from "../data/site";

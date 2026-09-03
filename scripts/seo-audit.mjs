@@ -79,6 +79,11 @@ async function runSeoAudit() {
   const distSetup = path.resolve(distDir, "setup/index.html");
   const distDevices = path.resolve(distDir, "devices/index.html");
   const distFaq = path.resolve(distDir, "faq/index.html");
+  const distSubscription = path.resolve(distDir, "iptv-subscription/index.html");
+  const dist1Month = path.resolve(distDir, "iptv-subscription/1-month/index.html");
+  const dist3Months = path.resolve(distDir, "iptv-subscription/3-months/index.html");
+  const dist6Months = path.resolve(distDir, "iptv-subscription/6-months/index.html");
+  const dist12Months = path.resolve(distDir, "iptv-subscription/12-months/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -86,6 +91,11 @@ async function runSeoAudit() {
   assert("dist/setup/index.html exists", fs.existsSync(distSetup));
   assert("dist/devices/index.html exists", fs.existsSync(distDevices));
   assert("dist/faq/index.html exists", fs.existsSync(distFaq));
+  assert("dist/iptv-subscription/index.html exists", fs.existsSync(distSubscription));
+  assert("dist/iptv-subscription/1-month/index.html exists", fs.existsSync(dist1Month));
+  assert("dist/iptv-subscription/3-months/index.html exists", fs.existsSync(dist3Months));
+  assert("dist/iptv-subscription/6-months/index.html exists", fs.existsSync(dist6Months));
+  assert("dist/iptv-subscription/12-months/index.html exists", fs.existsSync(dist12Months));
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
 
@@ -96,6 +106,11 @@ async function runSeoAudit() {
     { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://teleview.com/setup" },
     { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://teleview.com/devices" },
     { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://teleview.com/faq" },
+    { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription" },
+    { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/1-month" },
+    { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/3-months" },
+    { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/6-months" },
+    { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/12-months" },
   ];
 
   for (const page of pagesToTest) {
@@ -226,6 +241,9 @@ async function runSeoAudit() {
           assert("BreadcrumbList schema present in /devices", types.includes("BreadcrumbList"));
         } else if (page.path === "/") {
           assert("Product schema present in /", types.includes("Product"));
+        } else if (page.path.startsWith("/iptv-subscription")) {
+          assert(`Product schema present in ${page.path}`, types.includes("Product"));
+          assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
         }
       } catch (e) {
         assert(`JSON-LD parses cleanly in ${page.path}`, false, e.message);

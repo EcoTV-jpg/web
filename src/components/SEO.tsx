@@ -243,6 +243,186 @@ export function generateStructuredData(path: string = "/") {
     return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema, faqSchema].filter(Boolean);
   }
 
+  // Schema for /iptv-subscription (Hub Page)
+  if (cleanPath === "/iptv-subscription") {
+    const hubFaqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          question: "Which IPTV subscription plan is right for me?",
+          answer:
+            "If you are new to IPTV or want to test your home network, the 1-month plan ($16) offers total flexibility. If you want maximum savings and uninterrupted streaming, the 12-month plan ($90 / $7.50/mo) provides the lowest price-per-month.",
+        },
+        {
+          question: "Are all channels and features included in every plan?",
+          answer:
+            "Yes. Every plan includes full access to our entire 25,000+ live channel catalog, 120,000+ movies and series, 4K streams, sports networks, and 24/7 customer support.",
+        },
+        {
+          question: "Can I upgrade or extend my subscription later?",
+          answer:
+            "Yes. You can renew or upgrade to a longer duration at any time without losing your account settings or favorite channel lists.",
+        },
+        {
+          question: "How does the 14-day money-back guarantee work?",
+          answer:
+            "If you encounter technical issues that our support team cannot resolve within 14 days of purchase, you are eligible for a full refund under our guarantee policy.",
+        },
+      ].map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    const hubOffers = [
+      { name: "1 Month IPTV Subscription", price: "16.00", url: `${siteConfig.url}/iptv-subscription/1-month` },
+      { name: "3 Months IPTV Subscription", price: "39.00", url: `${siteConfig.url}/iptv-subscription/3-months` },
+      { name: "6 Months IPTV Subscription", price: "60.00", url: `${siteConfig.url}/iptv-subscription/6-months` },
+      { name: "12 Months IPTV Subscription", price: "90.00", url: `${siteConfig.url}/iptv-subscription/12-months` },
+    ].map((o) => ({
+      "@type": "Offer",
+      name: o.name,
+      price: o.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: o.url,
+      priceValidUntil: "2027-12-31",
+      seller: {
+        "@id": siteConfig.entityIds.organization,
+      },
+    }));
+
+    const hubProductSchema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "@id": `${siteConfig.url}/iptv-subscription#product`,
+      name: `${siteConfig.name} IPTV Subscription Plans`,
+      description:
+        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 120,000+ movies, 4K sports, and 24/7 customer support.",
+      brand: {
+        "@type": "Brand",
+        "@id": siteConfig.entityIds.brand,
+        name: siteConfig.name,
+      },
+      image: `${siteConfig.url}${siteConfig.socialImage}`,
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: "16.00",
+        highPrice: "90.00",
+        offerCount: hubOffers.length,
+        offers: hubOffers,
+      },
+    };
+
+    const hubServiceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${siteConfig.url}/iptv-subscription#service`,
+      name: `${siteConfig.name} IPTV Subscription Service`,
+      serviceType: "IPTV & Video Streaming Service",
+      provider: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      areaServed: "Worldwide",
+    };
+
+    return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema, hubProductSchema, hubServiceSchema, hubFaqSchema].filter(Boolean);
+  }
+
+  // Schema for /iptv-subscription/:slug (Individual Product Pages)
+  if (cleanPath.startsWith("/iptv-subscription/")) {
+    const slug = cleanPath.replace("/iptv-subscription/", "");
+    const planPrices: Record<string, { name: string; price: string; duration: string; desc: string }> = {
+      "1-month": {
+        name: "1 Month IPTV Subscription",
+        price: "16.00",
+        duration: "1 Month",
+        desc: "Short-term streaming flexibility with zero contract and instant access to 25,000+ channels.",
+      },
+      "3-months": {
+        name: "3 Months IPTV Subscription",
+        price: "39.00",
+        duration: "3 Months",
+        desc: "Balanced quarterly entertainment saving you 19% compared to monthly billing.",
+      },
+      "6-months": {
+        name: "6 Months IPTV Subscription",
+        price: "60.00",
+        duration: "6 Months",
+        desc: "Substantial semi-annual savings dropping your monthly cost to just $10.00 with 4K sports.",
+      },
+      "12-months": {
+        name: "12 Months IPTV Subscription",
+        price: "90.00",
+        duration: "12 Months",
+        desc: "Our lowest price-per-month package delivering a full year of 4K streaming for $7.50/mo.",
+      },
+    };
+
+    const planData = planPrices[slug];
+    if (planData) {
+      // 3-tier Breadcrumb for product subpages: Home -> IPTV Subscription -> [Plan]
+      const productBreadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "IPTV Subscription",
+            item: `${siteConfig.url}/iptv-subscription`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: planData.duration,
+            item: `${siteConfig.url}/iptv-subscription/${slug}`,
+          },
+        ],
+      };
+
+      const singleProductSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": `${siteConfig.url}/iptv-subscription/${slug}#product`,
+        name: `${planData.name} - ${siteConfig.name}`,
+        description: planData.desc,
+        brand: {
+          "@type": "Brand",
+          "@id": siteConfig.entityIds.brand,
+          name: siteConfig.name,
+        },
+        image: `${siteConfig.url}${siteConfig.socialImage}`,
+        offers: {
+          "@type": "Offer",
+          name: `${siteConfig.name} - ${planData.name}`,
+          price: planData.price,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteConfig.url}/iptv-subscription/${slug}`,
+          priceValidUntil: "2027-12-31",
+          seller: {
+            "@id": siteConfig.entityIds.organization,
+          },
+        },
+      };
+
+      return [orgSchema, websiteSchema, webpageSchema, productBreadcrumbSchema, singleProductSchema].filter(Boolean);
+    }
+  }
+
   // Convert plans to valid Offer schemas for product page
   const numericPrices = plans.map((p) => parseFloat(p.price.replace(/[^0-9.]/g, "")));
   const minPrice = Math.min(...numericPrices).toFixed(2);

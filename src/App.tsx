@@ -3,6 +3,8 @@ import HomePage from "./pages/HomePage";
 import SetupPage from "./pages/SetupPage";
 import DevicesPage from "./pages/DevicesPage";
 import FaqPage from "./pages/FaqPage";
+import SubscriptionHubPage from "./pages/SubscriptionHubPage";
+import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import { routes } from "./routes";
 import { siteConfig } from "./config/site";
 
@@ -32,6 +34,13 @@ export default function App({ url }: { url?: string }) {
   }
   if (currentPath === "/faq") {
     return <FaqPage />;
+  }
+  if (currentPath === "/iptv-subscription") {
+    return <SubscriptionHubPage />;
+  }
+  if (currentPath.startsWith("/iptv-subscription/")) {
+    const slug = currentPath.replace("/iptv-subscription/", "");
+    return <SubscriptionProductPage slug={slug} />;
   }
 
   return <HomePage />;

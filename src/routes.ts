@@ -54,6 +54,56 @@ export const routes: AppRoute[] = [
       "Find answers to common questions about Teleview IPTV subscriptions, activation times, device rules, internet speed requirements, and refund policies.",
   },
   {
+    path: "/iptv-subscription",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.9,
+    title: "IPTV Subscription – Plans & Pricing | Teleview",
+    description:
+      "Compare Teleview IPTV subscription plans. Get 25,000+ live channels, 4K sports, and 120k+ movies from $7.50/mo. Fast activation and 14-day guarantee.",
+  },
+  {
+    path: "/iptv-subscription/1-month",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.85,
+    title: "1 Month IPTV Subscription – $16 | Teleview",
+    description:
+      "Get a 1 month IPTV subscription for $16. Enjoy 25,000+ live channels, 4K sports, and 120k+ movies with instant activation, 24/7 support, and no contracts.",
+  },
+  {
+    path: "/iptv-subscription/3-months",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.85,
+    title: "3 Months IPTV Subscription – $39 ($13/mo) | Teleview",
+    description:
+      "Save 19% with a 3 month IPTV subscription for $39 ($13.00/mo). Stream 25,000+ live channels, 4K sports leagues, and on-demand movies with 24/7 support.",
+  },
+  {
+    path: "/iptv-subscription/6-months",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.85,
+    title: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
+    description:
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and 99.9% uptime on all devices.",
+  },
+  {
+    path: "/iptv-subscription/12-months",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.85,
+    title: "12 Months IPTV Subscription – $90 ($7.50/mo) | Teleview",
+    description:
+      "Get a 12 month IPTV subscription for $90 ($7.50/mo). Save $102 with 25,000+ live channels, 4K sports, VOD library, dedicated server priority, and no contracts.",
+  },
+  {
     path: "/404",
     indexable: false,
     rendering: "Static",

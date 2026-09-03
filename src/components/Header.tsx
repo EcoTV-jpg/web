@@ -4,11 +4,11 @@ import { GhostButton, GreenButton, Logo } from "./ui";
 import { site } from "../data/site";
 
 const navLinks = [
-  { label: "Stream", href: "#highlights" },
-  { label: "Coverage", href: "#coverage" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Steps", href: "#steps" },
-  { label: "Guarantee", href: "#guarantee" },
+  { label: "Subscription", href: "/iptv-subscription" },
+  { label: "Stream", href: "/#highlights" },
+  { label: "Coverage", href: "/#coverage" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Setup", href: "/setup" },
 ];
 
 export default function Header() {

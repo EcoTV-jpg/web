@@ -171,7 +171,7 @@ export interface Plan {
   price: string;
   originalPrice?: string;
   billingText: string;
-  description: string;
+  description?: string;
   save?: string;
   badge?: string;
   mostValue?: boolean;

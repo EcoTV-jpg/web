@@ -89,11 +89,24 @@ export default function Footer() {
         <div className="lg:justify-self-end">
           <h3 className="text-sm font-semibold text-snow uppercase tracking-wider">Explore &amp; Support</h3>
           <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs text-silver-mist">
+            <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">IPTV Subscription</a></li>
             <li><a href="/setup" className="hover:text-snow transition-colors">Setup Guide</a></li>
             <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
             <li><a href="/faq" className="hover:text-snow transition-colors">FAQ &amp; Support</a></li>
-            <li><a href="/#pricing" className="hover:text-snow transition-colors">IPTV Plans</a></li>
+            <li><a href="/#pricing" className="hover:text-snow transition-colors">Pricing</a></li>
           </ul>
+          <div className="mt-4 pt-3 border-t border-charcoal/50">
+            <span className="text-[11px] font-semibold text-smoke uppercase tracking-wider block mb-2">Subscription Plans</span>
+            <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-silver-mist">
+              <li><a href="/iptv-subscription/1-month" className="hover:text-phosphor-green transition-colors">1 Month ($16)</a></li>
+              <li>&bull;</li>
+              <li><a href="/iptv-subscription/3-months" className="hover:text-phosphor-green transition-colors">3 Months ($39)</a></li>
+              <li>&bull;</li>
+              <li><a href="/iptv-subscription/6-months" className="hover:text-phosphor-green transition-colors">6 Months ($60)</a></li>
+              <li>&bull;</li>
+              <li><a href="/iptv-subscription/12-months" className="hover:text-phosphor-green transition-colors">12 Months ($90)</a></li>
+            </ul>
+          </div>
           <div className="mt-6">
             <h4 className="text-xs font-medium text-snow">Newsletter</h4>
             <NewsletterForm />

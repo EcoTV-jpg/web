@@ -2,8 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import { Accent, GreenButton, GhostButton } from "../components/ui";
-import { ChevronRight, Tv, Smartphone, Monitor, Cpu, ShieldCheck, Wifi } from "lucide-react";
-import { siteConfig } from "../config/site";
+import { ChevronRight, Tv, Smartphone, Monitor, Cpu, Wifi } from "lucide-react";
 
 const deviceList = [
   {

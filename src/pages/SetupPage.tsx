@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import { Accent, GreenButton, GhostButton } from "../components/ui";
-import { ChevronRight, Smartphone, Tv, Laptop, Info, Key, FileCode, Search, Download, CheckCircle2, ShieldAlert } from "lucide-react";
+import { ChevronRight, Smartphone, Tv, Laptop, Info, Key, FileCode, Search, Download, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "../config/site";
 import StepConnector from "../components/setup/StepConnector";
 import SetupStepCard from "../components/setup/SetupStepCard";

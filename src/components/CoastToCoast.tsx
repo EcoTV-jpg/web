@@ -1,4 +1,4 @@
-import { MapPin, Server, Activity } from "lucide-react";
+import { MapPin, Activity } from "lucide-react";
 import Reveal from "./Reveal";
 import { Accent } from "./ui";
 import { coastToCoast } from "../data/site";
