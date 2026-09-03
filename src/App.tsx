@@ -3,6 +3,10 @@ import HomePage from "./pages/HomePage";
 import SetupPage from "./pages/SetupPage";
 import DevicesPage from "./pages/DevicesPage";
 import FaqPage from "./pages/FaqPage";
+import ContactPage from "./pages/ContactPage";
+import HelpCenterPage from "./pages/HelpCenterPage";
+import AccountPage from "./pages/AccountPage";
+import DmcaPage from "./pages/DmcaPage";
 import SubscriptionHubPage from "./pages/SubscriptionHubPage";
 import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import LegalPage from "./pages/LegalPage";
@@ -27,14 +31,26 @@ export default function App({ url }: { url?: string }) {
     }
   }, [currentPath]);
 
-  if (currentPath === "/setup") {
+  if (currentPath === "/setup" || currentPath === "/tutorial" || currentPath === "/installation-guide") {
     return <SetupPage />;
   }
   if (currentPath === "/devices") {
     return <DevicesPage />;
   }
-  if (currentPath === "/faq" || currentPath === "/contact") {
+  if (currentPath === "/faq") {
     return <FaqPage />;
+  }
+  if (currentPath === "/contact" || currentPath === "/contact-us") {
+    return <ContactPage />;
+  }
+  if (currentPath === "/help-center" || currentPath === "/help") {
+    return <HelpCenterPage />;
+  }
+  if (currentPath === "/my-account" || currentPath === "/my-subscription") {
+    return <AccountPage />;
+  }
+  if (currentPath === "/dmca" || currentPath === "/dmca-report" || currentPath === "/dmca-notice") {
+    return <DmcaPage />;
   }
   if (currentPath === "/iptv-subscription" || currentPath === "/pricing") {
     return <SubscriptionHubPage />;

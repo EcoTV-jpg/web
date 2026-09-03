@@ -111,6 +111,9 @@ async function runSeoAudit() {
   const distPrivacy = path.resolve(distDir, "privacy-policy/index.html");
   const distRefund = path.resolve(distDir, "refund-policy/index.html");
   const distDisclaimer = path.resolve(distDir, "disclaimer/index.html");
+  const distHelpCenter = path.resolve(distDir, "help-center/index.html");
+  const distAccount = path.resolve(distDir, "my-account/index.html");
+  const distDmca = path.resolve(distDir, "dmca/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -129,6 +132,9 @@ async function runSeoAudit() {
   assert("dist/privacy-policy/index.html exists", fs.existsSync(distPrivacy));
   assert("dist/refund-policy/index.html exists", fs.existsSync(distRefund));
   assert("dist/disclaimer/index.html exists", fs.existsSync(distDisclaimer));
+  assert("dist/help-center/index.html exists", fs.existsSync(distHelpCenter));
+  assert("dist/my-account/index.html exists", fs.existsSync(distAccount));
+  assert("dist/dmca/index.html exists", fs.existsSync(distDmca));
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
 
@@ -159,11 +165,14 @@ async function runSeoAudit() {
     { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months" },
     { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months" },
     { path: "/pricing", file: distPricing, expectedTitle: "IPTV Subscription Plans & Pricing", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/pricing" },
-    { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/contact" },
+    { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact" },
     { path: "/terms-conditions", file: distTerms, expectedTitle: "Terms & Conditions", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions" },
     { path: "/privacy-policy", file: distPrivacy, expectedTitle: "Privacy Policy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy" },
     { path: "/refund-policy", file: distRefund, expectedTitle: "Refund Policy", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy" },
     { path: "/disclaimer", file: distDisclaimer, expectedTitle: "Legal Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer" },
+    { path: "/help-center", file: distHelpCenter, expectedTitle: "Help Center", expectedH1: "Help Center", expectedCanonical: "https://www.teleview.me/help-center" },
+    { path: "/my-account", file: distAccount, expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account" },
+    { path: "/dmca", file: distDmca, expectedTitle: "DMCA Notice", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca" },
   ];
 
   for (const page of pagesToTest) {

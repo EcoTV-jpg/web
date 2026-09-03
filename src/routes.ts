@@ -164,6 +164,36 @@ export const routes: AppRoute[] = [
       "Important legal information regarding Teleview IPTV streaming technology, intellectual property, third-party content, DMCA concerns, and compliance.",
   },
   {
+    path: "/help-center",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.8,
+    title: "Help Center & Knowledge Base | Teleview IPTV",
+    description:
+      "Explore comprehensive troubleshooting guides, buffer optimization techniques, and setup tutorials for Teleview IPTV service.",
+  },
+  {
+    path: "/my-account",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.7,
+    title: "My Account & Subscription Status | Teleview IPTV",
+    description:
+      "Check your subscription status, retrieve Xtream API / M3U credentials, or renew your Teleview IPTV service online.",
+  },
+  {
+    path: "/dmca",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.6,
+    title: "DMCA Notice & Copyright Policy | Teleview IPTV",
+    description:
+      "Review Teleview's DMCA notice, copyright policies, infringement takedown procedures, and designated copyright agent information.",
+  },
+  {
     path: "/404",
     indexable: false,
     rendering: "Static",

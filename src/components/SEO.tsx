@@ -247,7 +247,11 @@ export function generateStructuredData(path: string = "/") {
     cleanPath === "/terms-conditions" ||
     cleanPath === "/privacy-policy" ||
     cleanPath === "/refund-policy" ||
-    cleanPath === "/disclaimer"
+    cleanPath === "/disclaimer" ||
+    cleanPath === "/contact" ||
+    cleanPath === "/help-center" ||
+    cleanPath === "/my-account" ||
+    cleanPath === "/dmca"
   ) {
     return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema].filter(Boolean);
   }

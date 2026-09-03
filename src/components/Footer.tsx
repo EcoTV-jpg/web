@@ -86,17 +86,42 @@ export default function Footer() {
         </div>
 
         {/* Newsletter & Links */}
+        {/* Newsletter & Links */}
         <div className="lg:justify-self-end">
-          <h3 className="text-sm font-semibold text-snow uppercase tracking-wider">Explore &amp; Support</h3>
-          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs text-silver-mist">
-            <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">IPTV Subscription</a></li>
-            <li><a href="/pricing" className="hover:text-snow transition-colors">Pricing</a></li>
-            <li><a href="/setup" className="hover:text-snow transition-colors">Setup Guide</a></li>
-            <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
-            <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
-            <li><a href="/contact" className="hover:text-snow transition-colors">Contact</a></li>
-          </ul>
-          <div className="mt-4 pt-3 border-t border-charcoal/50">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Explore</h3>
+              <ul className="mt-3 space-y-2 text-xs text-silver-mist">
+                <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">IPTV Subscription</a></li>
+                <li><a href="/pricing" className="hover:text-snow transition-colors">Plans &amp; Pricing</a></li>
+                <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Support</h3>
+              <ul className="mt-3 space-y-2 text-xs text-silver-mist">
+                <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>
+                <li><a href="/help-center" className="hover:text-snow transition-colors">Help Center</a></li>
+                <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
+                <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
+                <li><a href="/my-account" className="hover:text-snow transition-colors">My Account</a></li>
+                <li><a href="/dmca" className="hover:text-snow transition-colors">DMCA Notice</a></li>
+              </ul>
+            </div>
+
+            <div className="col-span-2 sm:col-span-1">
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Legal</h3>
+              <ul className="mt-3 space-y-2 text-xs text-silver-mist">
+                <li><a href="/terms-conditions" className="hover:text-snow transition-colors">Terms &amp; Conditions</a></li>
+                <li><a href="/privacy-policy" className="hover:text-snow transition-colors">Privacy Policy</a></li>
+                <li><a href="/refund-policy" className="hover:text-snow transition-colors">Refund Policy</a></li>
+                <li><a href="/disclaimer" className="hover:text-snow transition-colors">Disclaimer</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-charcoal/50">
             <span className="text-[11px] font-semibold text-smoke uppercase tracking-wider block mb-2">Subscription Plans</span>
             <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-silver-mist">
               <li><a href="/iptv-subscription/1-month" className="hover:text-phosphor-green transition-colors">1 Month ($16)</a></li>
@@ -108,18 +133,7 @@ export default function Footer() {
               <li><a href="/iptv-subscription/12-months" className="hover:text-phosphor-green transition-colors">12 Months ($90)</a></li>
             </ul>
           </div>
-          <div className="mt-4 pt-3 border-t border-charcoal/50">
-            <span className="text-[11px] font-semibold text-smoke uppercase tracking-wider block mb-2">Legal</span>
-            <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-silver-mist">
-              <li><a href="/terms-conditions" className="hover:text-snow transition-colors">Terms &amp; Conditions</a></li>
-              <li>&bull;</li>
-              <li><a href="/privacy-policy" className="hover:text-snow transition-colors">Privacy Policy</a></li>
-              <li>&bull;</li>
-              <li><a href="/refund-policy" className="hover:text-snow transition-colors">Refund Policy</a></li>
-              <li>&bull;</li>
-              <li><a href="/disclaimer" className="hover:text-snow transition-colors">Disclaimer</a></li>
-            </ul>
-          </div>
+
           <div className="mt-6">
             <h4 className="text-xs font-medium text-snow">Newsletter</h4>
             <NewsletterForm />
@@ -131,7 +145,11 @@ export default function Footer() {
         <div className="container-x t-caption flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between text-xs text-smoke">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <p>&copy; {new Date().getFullYear()} Teleview. All rights reserved.</p>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <a href="/contact" className="hover:text-silver-mist transition-colors">Support</a>
+              <span>&bull;</span>
+              <a href="/help-center" className="hover:text-silver-mist transition-colors">Help Center</a>
+              <span>&bull;</span>
               <a href="/terms-conditions" className="hover:text-silver-mist transition-colors">Terms</a>
               <span>&bull;</span>
               <a href="/privacy-policy" className="hover:text-silver-mist transition-colors">Privacy</a>
@@ -139,6 +157,8 @@ export default function Footer() {
               <a href="/refund-policy" className="hover:text-silver-mist transition-colors">Refunds</a>
               <span>&bull;</span>
               <a href="/disclaimer" className="hover:text-silver-mist transition-colors">Disclaimer</a>
+              <span>&bull;</span>
+              <a href="/dmca" className="hover:text-silver-mist transition-colors">DMCA</a>
             </div>
           </div>
           <p className="max-w-[560px] text-left sm:text-right">

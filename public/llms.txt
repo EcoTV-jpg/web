@@ -25,6 +25,9 @@
 - Supported Devices: https://www.teleview.me/devices
 - Frequently Asked Questions: https://www.teleview.me/faq
 - Contact & Support: https://www.teleview.me/contact
+- Help Center: https://www.teleview.me/help-center
+- My Account: https://www.teleview.me/my-account
+- DMCA Notice: https://www.teleview.me/dmca
 - Terms & Conditions: https://www.teleview.me/terms-conditions
 - Privacy Policy: https://www.teleview.me/privacy-policy
 - Refund Policy: https://www.teleview.me/refund-policy
