@@ -135,8 +135,13 @@ async function runSeoAudit() {
   assert("dist/help-center/index.html exists", fs.existsSync(distHelpCenter));
   assert("dist/my-account/index.html exists", fs.existsSync(distAccount));
   assert("dist/dmca/index.html exists", fs.existsSync(distDmca));
+  const distGoogleHtml = path.resolve(distDir, "googlead354e55b11eac48.html");
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
+  assert("dist/googlead354e55b11eac48.html exists", fs.existsSync(distGoogleHtml));
+  if (fs.existsSync(distGoogleHtml)) {
+    assert("Google verification file content valid", fs.readFileSync(distGoogleHtml, "utf-8").includes("googlead354e55b11eac48.html"));
+  }
 
   // 1.1 Vercel Hostname Configuration Verification
   console.log("\n--- 1.1 VERCEL HOSTNAME CONFIGURATION VERIFICATION ---");
@@ -206,6 +211,9 @@ async function runSeoAudit() {
 
     // No legacy helix brand references
     assert(`No legacy Helix references in ${page.path}`, !rawHtml.toLowerCase().includes("helix"));
+
+    // Google Search Console verification meta tag check
+    assert(`Google site verification meta tag in ${page.path}`, rawHtml.includes('name="google-site-verification" content="1rid_WjenjLtgknH6diVVgeyIOB5xT1zamR7YT1eEdc"'));
 
     // Body content check
     const bodyText = rawHtml
@@ -355,6 +363,10 @@ async function runSeoAudit() {
     const sitemapRes = await fetchEndpoint(testPort, "/sitemap.xml", { host: "www.teleview.me" });
     assert("HTTP GET /sitemap.xml returns 200 OK", sitemapRes.status === 200);
     assert("HTTP GET /sitemap.xml Content-Type is XML", sitemapRes.contentType.includes("xml"));
+
+    const googleRes = await fetchEndpoint(testPort, "/googlead354e55b11eac48.html", { host: "www.teleview.me" });
+    assert("HTTP GET /googlead354e55b11eac48.html returns 200 OK", googleRes.status === 200);
+    assert("HTTP GET /googlead354e55b11eac48.html contains verification code", googleRes.body.includes("googlead354e55b11eac48.html"));
 
     const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);

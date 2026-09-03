@@ -164,8 +164,13 @@ async function runTechnicalSeoAudit() {
   assert("SSG", "dist/help-center/index.html exists", fs.existsSync(distHelpCenter));
   assert("SSG", "dist/my-account/index.html exists", fs.existsSync(distAccount));
   assert("SSG", "dist/dmca/index.html exists", fs.existsSync(distDmca));
+  const distGoogleHtml = path.resolve(distDir, "googlead354e55b11eac48.html");
   assert("ROBOTS", "dist/robots.txt exists", fs.existsSync(distRobots));
   assert("SITEMAP", "dist/sitemap.xml exists", fs.existsSync(distSitemap));
+  assert("VERIFICATION", "dist/googlead354e55b11eac48.html exists", fs.existsSync(distGoogleHtml));
+  if (fs.existsSync(distGoogleHtml)) {
+    assert("VERIFICATION", "Google HTML verification content valid", fs.readFileSync(distGoogleHtml, "utf-8").includes("googlead354e55b11eac48.html"));
+  }
 
   // 1.1 Vercel Hostname Configuration Verification
   const vercelJsonPath = path.resolve(rootDir, "vercel.json");
@@ -236,6 +241,9 @@ async function runTechnicalSeoAudit() {
     // No noindex tags check
     const noindexMatch = rawHtml.match(/<meta[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex[^"']*["']/i);
     assert("INDEXABILITY", `Page is indexable in ${page.path}`, !noindexMatch);
+
+    // Google Search Console verification meta tag check
+    assert("VERIFICATION", `Google site verification meta tag in ${page.path}`, rawHtml.includes('name="google-site-verification" content="1rid_WjenjLtgknH6diVVgeyIOB5xT1zamR7YT1eEdc"'));
 
     // Pre-rendered word count check
     const bodyText = rawHtml
@@ -355,6 +363,10 @@ async function runTechnicalSeoAudit() {
     const sitemapRes = await fetchEndpoint(testPort, "/sitemap.xml", { host: "www.teleview.me" });
     assert("HTTP_STATUS", "HTTP GET /sitemap.xml returns 200 OK", sitemapRes.status === 200);
     assert("CRAWLABILITY", "HTTP GET /sitemap.xml Content-Type is XML", sitemapRes.contentType.includes("xml"));
+
+    const googleRes = await fetchEndpoint(testPort, "/googlead354e55b11eac48.html", { host: "www.teleview.me" });
+    assert("HTTP_STATUS", "HTTP GET /googlead354e55b11eac48.html returns 200 OK", googleRes.status === 200);
+    assert("VERIFICATION", "HTTP GET /googlead354e55b11eac48.html contains verification code", googleRes.body.includes("googlead354e55b11eac48.html"));
 
     const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP_404", "HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);
