@@ -90,10 +90,11 @@ export default function Footer() {
           <h3 className="text-sm font-semibold text-snow uppercase tracking-wider">Explore &amp; Support</h3>
           <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs text-silver-mist">
             <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">IPTV Subscription</a></li>
+            <li><a href="/pricing" className="hover:text-snow transition-colors">Pricing</a></li>
             <li><a href="/setup" className="hover:text-snow transition-colors">Setup Guide</a></li>
             <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
-            <li><a href="/faq" className="hover:text-snow transition-colors">FAQ &amp; Support</a></li>
-            <li><a href="/#pricing" className="hover:text-snow transition-colors">Pricing</a></li>
+            <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
+            <li><a href="/contact" className="hover:text-snow transition-colors">Contact</a></li>
           </ul>
           <div className="mt-4 pt-3 border-t border-charcoal/50">
             <span className="text-[11px] font-semibold text-smoke uppercase tracking-wider block mb-2">Subscription Plans</span>

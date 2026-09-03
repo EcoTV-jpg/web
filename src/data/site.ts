@@ -470,7 +470,11 @@ export const faqs = [
   {
     question: "What internet speed do I need for IPTV streaming?",
     answer:
-      "We recommend a minimum stable connection of 15 Mbps for Full HD (1080p) streams and 30+ Mbps for 4K Ultra HD sports and on-demand movies. Using a wired Ethernet cable or 5 GHz Wi-Fi provides the best buffering-free experience.",
+      "We recommend a minimum stable connection of 15 Mbps for Full HD (1080p) streams and 30+ Mbps for 4K Ultra HD sports and on-demand movies. Using a wired Ethernet cable or 5 GHz Wi-Fi provides the best buffering-free experience. You can test your connection speed anytime to verify your bandwidth before streaming.",
+    link: {
+      url: "https://fast.com",
+      text: "Test your connection speed on Fast.com →",
+    },
   },
   {
     question: "Do I need a VPN for IPTV streaming?",

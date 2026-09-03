@@ -29,6 +29,16 @@ export default function FaqSection() {
                   <div>
                     <h3 className="t-card-title text-base sm:text-lg text-snow font-semibold">{faq.question}</h3>
                     <p className="t-body-sm mt-2.5 text-silver-mist leading-relaxed text-xs sm:text-sm">{faq.answer}</p>
+                    {"link" in faq && faq.link && (
+                      <a
+                        href={(faq.link as { url: string; text: string }).url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-phosphor-green hover:underline"
+                      >
+                        {(faq.link as { url: string; text: string }).text}
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
