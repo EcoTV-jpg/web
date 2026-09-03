@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "health_score": 97,
+    "business_type": "Subscription E-Commerce / Digital Streaming Media (IPTV)",
+    "top_findings": [
+      "Canonical production hostname successfully consolidated to single https://www.teleview.me domain with server-side 308 redirects",
+      "Comprehensive multi-page SSG architecture pre-rendering all 11 core routes with dedicated meta tags and breadcrumb hierarchy",
+      "Full JSON-LD structured data graph interconnecting Organization, WebSite, WebPage, Product, and Service entities without spam/fake review violations",
+      "High-speed Core Web Vitals optimization with LCP hero preloading, non-blocking font stylesheets, and 100% explicit image dimensions",
+      "Edge security headers and 1-year immutable caching configured in vercel.json"
+    ],
+    "quick_wins": [
+      "Add llms.txt and llms-full.txt in public/ for enhanced AI Search citation and grounding (Perplexity, ChatGPT, Claude)",
+      "Include potentialAction SearchAction on WebSite schema for sitelinks searchbox eligibility",
+      "Add outbound link to authoritative speed test tool (e.g. fast.com) in bandwidth FAQ to diversify external citation profile",
+      "Add automated daily/weekly sitemap ping to search engine indexers upon deployment"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 98,
+      "what_works": [
+        "Single canonical hostname (www.teleview.me) enforced at Vercel edge with 308 permanent redirects",
+        "Clean robots.txt allowing all crawlers and declaring sitemap.xml",
+        "Valid XML sitemap with 11 indexable URLs, exact changefreq and priority attributes",
+        "Security headers (HSTS 2-years, X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy)",
+        "Zero crawl errors, zero redirect chains, genuine 404 handler returning HTTP 404 status code"
+      ],
+      "findings": [
+        {
+          "title": "Subpage Hero Preload Optimization",
+          "severity": "Low",
+          "description": "The pre-renderer dynamically eliminates homepage hero preloads from all subpages, ensuring crawl bandwidth is reserved for page-specific assets.",
+          "recommendation": "Maintain dynamic resource hint hoisting during SSG build."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 96,
+      "what_works": [
+        "Comprehensive content depth with 2,671 words on homepage and 800-1,200 words across subpages",
+        "15+ years experience signals and clear 14-day refund policy supporting E-E-A-T",
+        "Natural keyword density (IPTV: 2.32%, streaming: 1.54%, subscription: 1.16%) with zero keyword stuffing",
+        "Comprehensive coverage of channel lineups, live sports bouquets, supported hardware, and troubleshooting"
+      ],
+      "findings": [
+        {
+          "title": "External Educational Citations",
+          "severity": "Low",
+          "description": "The website links to WhatsApp and email, but visible copy has minimal external educational links.",
+          "recommendation": "Add a link to fast.com or speedtest.net in the internet speed FAQ answer."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 98,
+      "what_works": [
+        "All 11 pages have unique, compelling title tags within the optimal 40-60 character range",
+        "All meta descriptions fall within 140-160 characters with clear value propositions and CTAs",
+        "Strict semantic heading hierarchy on all pages with exactly one H1 per page",
+        "Rich contextual internal linking between hub, duration subpages, setup guides, and device lists"
+      ],
+      "findings": [
+        {
+          "title": "Resolved Metadata Replacement Regex In Pre-renderer",
+          "severity": "Info",
+          "description": "Fixed pre-rendering script replacer function to avoid regex dollar-sign capture group substitutions on priced titles.",
+          "recommendation": "All plan titles verified clean and correct."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 97,
+      "what_works": [
+        "Unified @graph JSON-LD structure on every page with stable @id entity references",
+        "Accurate Product and Offer entities for each subscription duration with ISO currency and real pricing",
+        "Strict compliance with Google Search spam guidelines (zero fake aggregate reviews or ratings)",
+        "Deep BreadcrumbList on all subpages matching site navigation path"
+      ],
+      "findings": [
+        {
+          "title": "Sitelinks Searchbox Opportunity",
+          "severity": "Low",
+          "description": "WebSite schema can be augmented with SearchAction if site search is enabled in the future.",
+          "recommendation": "Add potentialAction SearchAction template once search endpoint is implemented."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 95,
+      "what_works": [
+        "LCP candidate preloaded with high fetchpriority and modern WebP format",
+        "Google Fonts stylesheet loaded asynchronously via print/swap pattern to eliminate render-blocking CSS",
+        "All images have explicit width and height dimensions, achieving zero Cumulative Layout Shift (CLS = 0)",
+        "Static pre-rendered HTML with minimal runtime JavaScript execution overhead"
+      ],
+      "findings": [
+        {
+          "title": "Single-file bundle inlining",
+          "severity": "Info",
+          "description": "Assets are currently bundled into pre-rendered HTML via viteSingleFile, which ensures high reliability across all hosts.",
+          "recommendation": "Continue using SSG pre-rendered HTML for maximum crawler indexability."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 92,
+      "what_works": [
+        "Pre-rendered HTML makes all content directly indexable by AI crawlers (GPTBot, ClaudeBot, PerplexityBot)",
+        "Clean tabular plan comparison data and structured question/answer formats provide high citation surface",
+        "Wikidata entity mentions (IPTV Q11153, 4K resolution Q2816438, Streaming media Q11379) in schema"
+      ],
+      "findings": [
+        {
+          "title": "Missing llms.txt standard file",
+          "severity": "Medium",
+          "description": "Adding an /llms.txt file provides an authoritative markdown summary directly consumable by LLM search engines.",
+          "recommendation": "Generate public/llms.txt summarizing Teleview plans, features, and FAQs."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 98,
+      "what_works": [
+        "100% of images have descriptive alt attributes or explicit empty alt for decorative carousel clones",
+        "Modern formats (WebP, AVIF, SVG) used exclusively with legacy JPG fallbacks",
+        "Offscreen images configured with native loading=\"lazy\" and decoding=\"async\"",
+        "Every device logo and hero image has explicit width and height attributes"
+      ],
+      "findings": [
+        {
+          "title": "Image Asset Hygiene",
+          "severity": "Info",
+          "description": "All 27 images on the homepage meet Google PageSpeed and WCAG standards.",
+          "recommendation": "Maintain WebP/AVIF compression when adding new channel logos or banner images."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Verify DNS propagation of Vercel 308 permanent redirect from teleview.me to www.teleview.me",
+          "Submit https://www.teleview.me/sitemap.xml to Google Search Console and Bing Webmaster Tools"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Deploy /llms.txt to provide structured context for generative AI search engines (Perplexity, ChatGPT, Claude)",
+          "Add outbound speed test reference in bandwidth FAQ to enrich topic authority"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Create targeted hardware setup landing pages (e.g. /setup/firestick, /setup/tivimate)",
+          "Publish sports streaming calendar for upcoming marquee live events"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Monitor Google Search Console indexation status across all 11 pre-rendered routes",
+          "Track Core Web Vitals field data in PageSpeed Insights and Vercel Analytics"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

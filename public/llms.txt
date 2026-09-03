@@ -1,0 +1,27 @@
+# Teleview IPTV
+
+> Teleview is a global IPTV (Internet Protocol Television) streaming provider offering 25,000+ live HD/4K television channels, 120,000+ movies and TV series on-demand (VOD), and zero-buffer streaming infrastructure with 99.9% uptime.
+
+## Core Subscription Plans (Worldwide)
+- **1 Month Plan**: $16 / 1 month (1 connection, 25k+ channels, 4K sports, VOD)
+- **3 Months Plan**: $39 / 3 months ($13.00/mo, save 19%)
+- **6 Months Plan**: $60 / 6 months ($10.00/mo, save 37.5%)
+- **12 Months Plan**: $90 / 12 months ($7.50/mo, save 53%, dedicated server priority)
+
+## Key Features & Guarantees
+- **Uptime**: 99.9% anti-freeze server guarantee with high-speed CDN edge servers worldwide.
+- **Guarantee**: 14-day money-back guarantee on all subscriptions.
+- **Activation**: Instant delivery of Xtream API and M3U credentials upon checkout.
+- **Channels**: Premier League, NFL, NBA, UFC PPV, Formula 1, UEFA Champions League, and entertainment channels from US, UK, Canada, Australia, Europe, and Latin America.
+
+## Supported Hardware & Apps
+- **Devices**: Amazon Firestick, Smart TVs (Samsung Tizen, LG webOS, Android TV, VIDAA), Apple TV (tvOS), iPhone/iPad (iOS), Android mobile, Windows PC, Mac, MAG boxes, Formuler, BuzzTV.
+- **Recommended Players**: TiviMate, IPTV Smarters Pro, IBO Player, Nanomid, XCIPTV.
+
+## Canonical URLs
+- Homepage: https://www.teleview.me/
+- Subscription Hub: https://www.teleview.me/iptv-subscription
+- Setup Guide: https://www.teleview.me/setup
+- Supported Devices: https://www.teleview.me/devices
+- Frequently Asked Questions: https://www.teleview.me/faq
+- Contact & Support: https://www.teleview.me/contact

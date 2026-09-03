@@ -41,30 +41,30 @@ async function prerender() {
     const pageDesc = route.description || siteConfig.defaultDescription;
 
     // Update <title>
-    pageHtml = pageHtml.replace(/<title>(.*?)<\/title>/i, `<title>${pageTitle}</title>`);
+    pageHtml = pageHtml.replace(/<title>(.*?)<\/title>/i, () => `<title>${pageTitle}</title>`);
 
     // Update <meta name="description">
     pageHtml = pageHtml.replace(
       /<meta[^>]*name=["']description["'][^>]*\/?>/i,
-      `<meta name="description" content="${pageDesc}" />`
+      () => `<meta name="description" content="${pageDesc}" />`
     );
 
     // Update <link rel="canonical">
     pageHtml = pageHtml.replace(
       /<link[^>]*rel=["']canonical["'][^>]*\/?>/i,
-      `<link rel="canonical" href="${canonicalUrl}" />`
+      () => `<link rel="canonical" href="${canonicalUrl}" />`
     );
 
     // Update Open Graph tags
     pageHtml = pageHtml
-      .replace(/<meta[^>]*property=["']og:title["'][^>]*\/?>/i, `<meta property="og:title" content="${pageTitle}" />`)
-      .replace(/<meta[^>]*property=["']og:description["'][^>]*\/?>/i, `<meta property="og:description" content="${pageDesc}" />`)
-      .replace(/<meta[^>]*property=["']og:url["'][^>]*\/?>/i, `<meta property="og:url" content="${canonicalUrl}" />`);
+      .replace(/<meta[^>]*property=["']og:title["'][^>]*\/?>/i, () => `<meta property="og:title" content="${pageTitle}" />`)
+      .replace(/<meta[^>]*property=["']og:description["'][^>]*\/?>/i, () => `<meta property="og:description" content="${pageDesc}" />`)
+      .replace(/<meta[^>]*property=["']og:url["'][^>]*\/?>/i, () => `<meta property="og:url" content="${canonicalUrl}" />`);
 
     // Update Twitter tags
     pageHtml = pageHtml
-      .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, `<meta name="twitter:title" content="${pageTitle}" />`)
-      .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, `<meta name="twitter:description" content="${pageDesc}" />`);
+      .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, () => `<meta name="twitter:title" content="${pageTitle}" />`)
+      .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, () => `<meta name="twitter:description" content="${pageDesc}" />`);
 
     // For non-homepage routes, remove the homepage hero preload
     if (route.path !== "/") {
