@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ShieldCheck, Zap } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import Reveal from "./Reveal";
 import { Accent, GhostButton, GreenButton } from "./ui";
 import { plans, pricingHeader } from "../data/site";
@@ -177,18 +177,12 @@ export default function Pricing() {
                       <GhostButton className="w-full">{plan.ctaText || "Get this plan"}</GhostButton>
                     )}
 
-                    {/* Guarantee & Delivery sub-notes */}
-                    <div className="mt-4 space-y-1.5 text-center text-[11px] text-smoke">
+                    {/* Guarantee sub-notes */}
+                    <div className="mt-4 text-center text-[11px] text-smoke">
                       <p className="flex items-center justify-center gap-1.5">
                         <ShieldCheck className="size-3.5 text-phosphor-green shrink-0" aria-hidden="true" />
                         <span>{plan.guaranteeText || "14-day money-back guarantee"}</span>
                       </p>
-                      {plan.deliveryNote && (
-                        <p className="flex items-center justify-center gap-1.5 text-[10px] text-silver-mist">
-                          <Zap className="size-3 text-phosphor-green shrink-0" aria-hidden="true" />
-                          <span>{plan.deliveryNote}</span>
-                        </p>
-                      )}
                     </div>
                   </div>
                 </article>

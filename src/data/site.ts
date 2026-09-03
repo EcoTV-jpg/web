@@ -207,7 +207,6 @@ export const plans: Plan[] = [
     ],
     ctaText: "Get this plan",
     guaranteeText: "14-day money-back guarantee",
-    deliveryNote: "Login details emailed after successful payment",
   },
   {
     name: "3 Months",
@@ -227,7 +226,6 @@ export const plans: Plan[] = [
     ],
     ctaText: "Get this plan",
     guaranteeText: "14-day money-back guarantee",
-    deliveryNote: "Login details emailed after successful payment",
   },
   {
     name: "6 Months",
@@ -247,7 +245,6 @@ export const plans: Plan[] = [
     ],
     ctaText: "Get this plan",
     guaranteeText: "14-day money-back guarantee",
-    deliveryNote: "Login details emailed after successful payment",
   },
   {
     name: "12 Months",
@@ -270,7 +267,6 @@ export const plans: Plan[] = [
     ],
     ctaText: "Get this plan",
     guaranteeText: "14-day money-back guarantee",
-    deliveryNote: "Login details emailed after successful payment",
   },
 ];
 
