@@ -104,6 +104,26 @@ export const routes: AppRoute[] = [
       "Get a 12 month IPTV subscription for $90 ($7.50/mo). Save $102 with 25,000+ live channels, 4K sports, VOD library, dedicated server priority, and no contracts.",
   },
   {
+    path: "/pricing",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.85,
+    title: "IPTV Subscription Plans & Pricing | Teleview",
+    description:
+      "Compare Teleview IPTV subscription plans. Get 25,000+ live channels, 4K sports, and 120k+ movies from $7.50/mo. Fast activation and 14-day guarantee.",
+  },
+  {
+    path: "/contact",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.8,
+    title: "Contact Teleview Support | 24/7 Customer Assistance",
+    description:
+      "Contact Teleview customer support via WhatsApp or email. 24/7 technical assistance for activation, device setup, and subscription inquiries.",
+  },
+  {
     path: "/404",
     indexable: false,
     rendering: "Static",

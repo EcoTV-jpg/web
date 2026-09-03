@@ -31,7 +31,20 @@ function seoRoutingPlugin(): Plugin {
         }
 
         // Allowed top-level document paths & known app routes
-        const validAppRoutes = ["/", "/index.html", "/setup", "/devices", "/faq"];
+        const validAppRoutes = [
+          "/",
+          "/index.html",
+          "/setup",
+          "/devices",
+          "/faq",
+          "/pricing",
+          "/contact",
+          "/iptv-subscription",
+          "/iptv-subscription/1-month",
+          "/iptv-subscription/3-months",
+          "/iptv-subscription/6-months",
+          "/iptv-subscription/12-months",
+        ];
         if (validAppRoutes.includes(normalizedPath)) {
           return next();
         }
@@ -65,6 +78,16 @@ function seoRoutingPlugin(): Plugin {
     configurePreviewServer(server) {
       server.middlewares.use((req: any, res: any, next: any) => {
         const rawUrl = req.url || "/";
+        const hostHeader = (req.headers.host || "").split(":")[0];
+
+        // Vercel simulation: non-www hostname -> permanent 308 redirect to canonical https://www.teleview.me
+        if (hostHeader === "teleview.me") {
+          res.statusCode = 308;
+          res.setHeader("Location", `https://www.teleview.me${rawUrl}`);
+          res.end();
+          return;
+        }
+
         const pathname = decodeURIComponent(rawUrl.split("?")[0]);
         const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
 

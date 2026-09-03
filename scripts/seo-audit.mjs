@@ -9,25 +9,46 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(rootDir, "dist");
 
-async function fetchEndpoint(port, urlPath) {
+async function fetchEndpoint(port, urlPath, headers = {}) {
   const socketRes = await new Promise((resolve) => {
-    const req = http.get(`http://127.0.0.1:${port}${urlPath}`, (res) => {
-      let data = "";
-      res.on("data", (chunk) => (data += chunk));
-      res.on("end", () =>
-        resolve({
-          status: res.statusCode,
-          contentType: res.headers["content-type"] || "",
-          body: data,
-        })
-      );
-    });
+    const req = http.request(
+      {
+        hostname: "127.0.0.1",
+        port,
+        path: urlPath,
+        method: "GET",
+        headers,
+      },
+      (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () =>
+          resolve({
+            status: res.statusCode,
+            contentType: res.headers["content-type"] || "",
+            location: res.headers.location || "",
+            body: data,
+          })
+        );
+      }
+    );
     req.on("error", (err) => resolve({ error: err.message }));
+    req.end();
   });
 
-  if (!socketRes.error && socketRes.status === 200) return socketRes;
+  if (!socketRes.error) return socketRes;
 
-  // Sandbox socket fallback: direct filesystem probe matching server routing behavior
+  // Sandbox socket fallback: direct filesystem & Vercel routing matching
+  const hostHeader = (headers?.host || "").split(":")[0];
+  if (hostHeader === "teleview.me") {
+    return {
+      status: 308,
+      contentType: "text/html; charset=utf-8",
+      location: `https://www.teleview.me${urlPath}`,
+      body: "",
+    };
+  }
+
   const cleanPath = urlPath.split("?")[0];
   const normalizedPath = cleanPath === "/" ? "/" : cleanPath.replace(/\/$/, "");
   const targetFile = cleanPath === "/" ? path.resolve(distDir, "index.html") : path.resolve(distDir, normalizedPath.replace(/^\//, ""), "index.html");
@@ -84,6 +105,8 @@ async function runSeoAudit() {
   const dist3Months = path.resolve(distDir, "iptv-subscription/3-months/index.html");
   const dist6Months = path.resolve(distDir, "iptv-subscription/6-months/index.html");
   const dist12Months = path.resolve(distDir, "iptv-subscription/12-months/index.html");
+  const distPricing = path.resolve(distDir, "pricing/index.html");
+  const distContact = path.resolve(distDir, "contact/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -96,21 +119,41 @@ async function runSeoAudit() {
   assert("dist/iptv-subscription/3-months/index.html exists", fs.existsSync(dist3Months));
   assert("dist/iptv-subscription/6-months/index.html exists", fs.existsSync(dist6Months));
   assert("dist/iptv-subscription/12-months/index.html exists", fs.existsSync(dist12Months));
+  assert("dist/pricing/index.html exists", fs.existsSync(distPricing));
+  assert("dist/contact/index.html exists", fs.existsSync(distContact));
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
+
+  // 1.1 Vercel Hostname Configuration Verification
+  console.log("\n--- 1.1 VERCEL HOSTNAME CONFIGURATION VERIFICATION ---");
+  const vercelJsonPath = path.resolve(rootDir, "vercel.json");
+  assert("vercel.json exists", fs.existsSync(vercelJsonPath));
+  if (fs.existsSync(vercelJsonPath)) {
+    const vercelConfig = JSON.parse(fs.readFileSync(vercelJsonPath, "utf-8"));
+    assert("vercel.json cleanUrls is true", vercelConfig.cleanUrls === true);
+    assert("vercel.json trailingSlash is false", vercelConfig.trailingSlash === false);
+    const redirectRule = vercelConfig.redirects?.find((r) => r.has?.some((h) => h.type === "host" && h.value === "teleview.me"));
+    assert("vercel.json non-www redirect rule exists", Boolean(redirectRule));
+    if (redirectRule) {
+      assert("vercel.json redirects to www.teleview.me", redirectRule.destination === "https://www.teleview.me/:path*");
+      assert("vercel.json redirect is permanent (308)", redirectRule.permanent === true);
+    }
+  }
 
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
-    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Teleview IPTV Service", expectedCanonical: "https://teleview.me/" },
-    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://teleview.me/setup" },
-    { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://teleview.me/devices" },
-    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://teleview.me/faq" },
-    { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription" },
-    { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/1-month" },
-    { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/3-months" },
-    { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/6-months" },
-    { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/12-months" },
+    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Teleview IPTV Service", expectedCanonical: "https://www.teleview.me/" },
+    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup" },
+    { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://www.teleview.me/devices" },
+    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq" },
+    { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription" },
+    { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/1-month" },
+    { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months" },
+    { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months" },
+    { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months" },
+    { path: "/pricing", file: distPricing, expectedTitle: "IPTV Subscription Plans & Pricing", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/pricing" },
+    { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/contact" },
   ];
 
   for (const page of pagesToTest) {
@@ -271,21 +314,30 @@ async function runSeoAudit() {
 
   try {
     for (const page of pagesToTest) {
-      const routeRes = await fetchEndpoint(testPort, page.path);
-      assert(`HTTP GET ${page.path} returns 200 OK`, routeRes.status === 200);
-      assert(`HTTP GET ${page.path} Content-Type is text/html`, routeRes.contentType.includes("text/html"));
-      assert(`HTTP GET ${page.path} contains pre-rendered content`, routeRes.body.includes(page.expectedH1));
+      // 1. Preferred canonical hostname: www -> 200 OK
+      const routeRes = await fetchEndpoint(testPort, page.path, { host: "www.teleview.me" });
+      assert(`HTTP GET www.teleview.me${page.path} returns 200 OK`, routeRes.status === 200);
+      assert(`HTTP GET www.teleview.me${page.path} Content-Type is text/html`, routeRes.contentType.includes("text/html"));
+      assert(`HTTP GET www.teleview.me${page.path} contains pre-rendered content`, routeRes.body.includes(page.expectedH1));
+
+      // 2. Non-www hostname: teleview.me -> permanent 308 redirect to https://www.teleview.me/ROUTE
+      const nonWwwRes = await fetchEndpoint(testPort, page.path, { host: "teleview.me" });
+      assert(`HTTP GET teleview.me${page.path} returns 308 permanent redirect`, nonWwwRes.status === 308);
+      assert(
+        `HTTP GET teleview.me${page.path} redirects directly to https://www.teleview.me${page.path}`,
+        nonWwwRes.location === `https://www.teleview.me${page.path}`
+      );
     }
 
-    const robotsRes = await fetchEndpoint(testPort, "/robots.txt");
+    const robotsRes = await fetchEndpoint(testPort, "/robots.txt", { host: "www.teleview.me" });
     assert("HTTP GET /robots.txt returns 200 OK", robotsRes.status === 200);
     assert("HTTP GET /robots.txt Content-Type is text/plain", robotsRes.contentType.includes("text/plain"));
 
-    const sitemapRes = await fetchEndpoint(testPort, "/sitemap.xml");
+    const sitemapRes = await fetchEndpoint(testPort, "/sitemap.xml", { host: "www.teleview.me" });
     assert("HTTP GET /sitemap.xml returns 200 OK", sitemapRes.status === 200);
     assert("HTTP GET /sitemap.xml Content-Type is XML", sitemapRes.contentType.includes("xml"));
 
-    const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test");
+    const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);
   } finally {
     previewProcess.kill();

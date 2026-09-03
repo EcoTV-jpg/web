@@ -32,10 +32,10 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/devices") {
     return <DevicesPage />;
   }
-  if (currentPath === "/faq") {
+  if (currentPath === "/faq" || currentPath === "/contact") {
     return <FaqPage />;
   }
-  if (currentPath === "/iptv-subscription") {
+  if (currentPath === "/iptv-subscription" || currentPath === "/pricing") {
     return <SubscriptionHubPage />;
   }
   if (currentPath.startsWith("/iptv-subscription/")) {
