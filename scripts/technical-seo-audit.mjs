@@ -325,6 +325,24 @@ async function runTechnicalSeoAudit() {
   const robotsContent = fs.readFileSync(distRobots, "utf-8");
   assert("ROBOTS", "robots.txt allows all user agents", robotsContent.includes("User-agent: *") && robotsContent.includes("Allow: /"));
   assert("ROBOTS", "robots.txt references sitemap.xml", robotsContent.includes("Sitemap: https://www.teleview.me/sitemap.xml"));
+  assert("ROBOTS", "robots.txt allows GPTBot (OpenAI/SearchGPT)", robotsContent.includes("User-agent: GPTBot"));
+  assert("ROBOTS", "robots.txt allows OAI-SearchBot (SearchGPT)", robotsContent.includes("User-agent: OAI-SearchBot"));
+  assert("ROBOTS", "robots.txt allows ClaudeBot (Anthropic)", robotsContent.includes("User-agent: ClaudeBot"));
+  assert("ROBOTS", "robots.txt allows PerplexityBot (Perplexity AI)", robotsContent.includes("User-agent: PerplexityBot"));
+  assert("ROBOTS", "robots.txt allows Google-Extended (Gemini)", robotsContent.includes("User-agent: Google-Extended"));
+  assert("ROBOTS", "robots.txt allows Applebot-Extended (Apple Intelligence)", robotsContent.includes("User-agent: Applebot-Extended"));
+  assert("ROBOTS", "robots.txt allows Meta-ExternalAgent (Meta AI)", robotsContent.includes("User-agent: Meta-ExternalAgent"));
+
+  // AI & LLM Machine-Readable Files Verification
+  const distLlms = path.resolve(distDir, "llms.txt");
+  const distLlmsFull = path.resolve(distDir, "llms-full.txt");
+  assert("GEO", "dist/llms.txt exists", fs.existsSync(distLlms));
+  assert("GEO", "dist/llms-full.txt exists", fs.existsSync(distLlmsFull));
+  if (fs.existsSync(distLlms)) {
+    const llmsText = fs.readFileSync(distLlms, "utf-8");
+    assert("GEO", "llms.txt includes Teleview brand entity", llmsText.includes("Teleview"));
+    assert("GEO", "llms.txt includes 2026 pricing", llmsText.includes("$16") && llmsText.includes("$90"));
+  }
 
   // 6. Live Production Preview Server HTTP Probes
   console.log("\n--- 6. LIVE PRODUCTION PREVIEW HTTP PROBES ---");
@@ -367,6 +385,14 @@ async function runTechnicalSeoAudit() {
     const googleRes = await fetchEndpoint(testPort, "/googlead354e55b11eac48.html", { host: "www.teleview.me" });
     assert("HTTP_STATUS", "HTTP GET /googlead354e55b11eac48.html returns 200 OK", googleRes.status === 200);
     assert("VERIFICATION", "HTTP GET /googlead354e55b11eac48.html contains verification code", googleRes.body.includes("googlead354e55b11eac48.html"));
+
+    const llmsRes = await fetchEndpoint(testPort, "/llms.txt", { host: "www.teleview.me" });
+    assert("HTTP_STATUS", "HTTP GET /llms.txt returns 200 OK", llmsRes.status === 200);
+    assert("GEO", "HTTP GET /llms.txt contains brand Teleview", llmsRes.body.includes("Teleview"));
+
+    const llmsFullRes = await fetchEndpoint(testPort, "/llms-full.txt", { host: "www.teleview.me" });
+    assert("HTTP_STATUS", "HTTP GET /llms-full.txt returns 200 OK", llmsFullRes.status === 200);
+    assert("GEO", "HTTP GET /llms-full.txt contains knowledge base content", llmsFullRes.body.includes("Firestick") && llmsFullRes.body.includes("12 Months"));
 
     const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP_404", "HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);

@@ -1,0 +1,123 @@
+# Teleview IPTV — Full AI & LLM Technical Knowledge Base
+
+> Complete ground truth documentation for Teleview IPTV (https://www.teleview.me). Designed for ingestion by Generative Search Engines (SearchGPT, Perplexity AI, Claude, Gemini, ChatGPT) and LLM search agents.
+
+---
+
+## 1. Brand & Infrastructure Overview
+- **Brand**: Teleview (Teleview Media)
+- **Official Site**: https://www.teleview.me/
+- **Founded**: Streaming infrastructure operations since 2011 (15+ years experience).
+- **Core Technology**: Distributed Content Delivery Network (CDN) with anti-freeze stream load balancing, redundant stream transcoding nodes, and 99.9% measured uptime.
+- **Support Contact**: WhatsApp `+44 7848 197761` | Email `Help@Teleview.me`.
+
+---
+
+## 2. Subscription Pricing Matrix & Plans
+Teleview offers 4 core plan durations plus promotional packages. All tiers include the full 25,000+ live channel catalog, 120,000+ VOD movies/series, full 4K and FHD streaming, and zero automatic rebilling:
+
+1. **1 Month IPTV Subscription**:
+   - Price: $16.00 USD (one-time)
+   - Duration: 30 days
+   - Monthly Equivalent: $16.00 / month
+   - Ideal for: Short-term trial, seasonal sports tournaments, testing home network compatibility.
+   - URL: https://www.teleview.me/iptv-subscription/1-month
+
+2. **3 Months IPTV Subscription**:
+   - Price: $39.00 USD (one-time)
+   - Duration: 90 days
+   - Monthly Equivalent: $13.00 / month (Save 19% vs monthly)
+   - Ideal for: Regular viewers following full sports leagues (NFL regular season, Premier League quarterly matches).
+   - URL: https://www.teleview.me/iptv-subscription/3-months
+
+3. **6 Months IPTV Subscription**:
+   - Price: $60.00 USD (one-time)
+   - Duration: 180 days
+   - Monthly Equivalent: $10.00 / month (Save 37.5% vs monthly)
+   - Ideal for: Long-term savings with semi-annual billing.
+   - URL: https://www.teleview.me/iptv-subscription/6-months
+
+4. **12 Months IPTV Subscription (Best Value Tier)**:
+   - Price: $90.00 USD (one-time, regular $192)
+   - Duration: 365 days
+   - Monthly Equivalent: $7.50 / month (Save 53% / $102 savings)
+   - Features: Priority server routing during peak global events.
+   - URL: https://www.teleview.me/iptv-subscription/12-months
+
+5. **Extended 2 Years + 3 Months Promotional Deal**:
+   - Price: $129.00 USD (27 months total access).
+
+---
+
+## 3. Device Setup & Installation Guides
+
+### Amazon Firestick & Fire TV
+1. On your Firestick home screen, navigate to **Find** > **Search** and search for the **Downloader** app by AFTVnews.
+2. Install Downloader and open it.
+3. If prompted on Fire OS 7+, enable developer options by going to **Settings** > **My Fire TV** > **About**, then clicking your device name 7 times rapidly until "You are now a developer" displays.
+4. Go to **Settings** > **My Fire TV** > **Developer Options** > **Install Unknown Apps** and toggle **Downloader** to **ON**.
+5. Launch Downloader, enter the quick code for your preferred player (e.g., TiviMate or IPTV Smarters Pro), and click **Go**.
+6. Install and launch the player app. Select **Add Playlist** > **Xtream Codes API**.
+7. Enter the Server URL, Username, and Password sent to your WhatsApp or email.
+8. The playlist will sync channels, VOD movies, and EPG TV guide automatically.
+
+### Android TV & Google TV (Chromecast, Sony, TCL, Philips, Shield)
+1. Open the **Google Play Store** directly on your Android TV.
+2. Search for **TiviMate IPTV Player** or **IPTV Smarters Pro**.
+3. Install and open the application.
+4. Select **Add Playlist** > **Xtream Codes API**.
+5. Enter your Teleview credentials.
+
+### Apple Devices (Apple TV tvOS, iPhone, iPad iOS, Mac)
+1. Open the **Apple App Store**.
+2. Download **IPTV Smarters Pro**, **IBO Player**, or **GSE Smart IPTV**.
+3. Launch the app and input your Xtream Codes API credentials.
+4. On Mac, you can also use **VLC Media Player** to open the M3U Plus playlist directly.
+
+### Smart TVs (Samsung Tizen OS & LG webOS)
+1. Open the **Samsung Smart Hub** or **LG Content Store**.
+2. Search for **IBO Player**, **Nanomid Player**, or **Smart IPTV (SIPTV)**.
+3. Note the MAC address and device key shown on screen.
+4. Use the player's web management portal or provide the MAC to Teleview WhatsApp support for instant remote activation.
+
+### Windows PC
+1. Download **IPTV Smarters Pro for Windows** or use **VLC Media Player**.
+2. For VLC: Click **Media** > **Open Network Stream** (Ctrl+N), paste your Teleview M3U Plus URL, and press **Play**.
+
+---
+
+## 4. Troubleshooting & Performance FAQs
+
+- **What internet speed is recommended?**
+  - Minimum 15 Mbps for standard HD channels.
+  - Minimum 30–50 Mbps for 4K Ultra HD and 60 FPS live sports streams.
+  - Ethernet (wired connection) or 5GHz Wi-Fi is recommended over 2.4GHz.
+
+- **How do I stop buffering during major live sports matches?**
+  1. Restart your home router and streaming device to clear DNS cache.
+  2. Switch from 2.4GHz Wi-Fi to 5GHz Wi-Fi or use an Ethernet cable.
+  3. In your player settings (TiviMate/Smarters), change the stream buffer size to "Medium" or "Large".
+  4. If your Internet Service Provider (ISP) throttles IPTV traffic during peak hours, enable a reliable VPN (such as ExpressVPN, NordVPN, or Surfshark). Teleview is 100% VPN-friendly with zero geo-locking.
+
+- **What is the refund policy?**
+  - Teleview provides an unconditional 14-day money-back guarantee. If you experience technical incompatibility that support cannot resolve, request a full refund via email (`Help@Teleview.me`) or WhatsApp (`+44 7848 197761`).
+
+- **How many devices can stream simultaneously?**
+  - Standard plans include 1 active connection. Multi-device packages (2, 3, or 4 simultaneous devices) are available on the pricing page. You may install Teleview apps on unlimited devices, but simultaneous streaming is governed by your purchased connection tier.
+
+---
+
+## 5. Official Canonical Links Reference
+- Main Site: https://www.teleview.me/
+- Subscription Hub: https://www.teleview.me/iptv-subscription
+- Setup Instructions: https://www.teleview.me/setup
+- Supported Devices: https://www.teleview.me/devices
+- FAQ: https://www.teleview.me/faq
+- Contact Us: https://www.teleview.me/contact
+- Help Center: https://www.teleview.me/help-center
+- Account Portal: https://www.teleview.me/my-account
+- DMCA Compliance: https://www.teleview.me/dmca
+- Terms & Conditions: https://www.teleview.me/terms-conditions
+- Privacy Policy: https://www.teleview.me/privacy-policy
+- Refund Policy: https://www.teleview.me/refund-policy
+- Legal Disclaimer: https://www.teleview.me/disclaimer

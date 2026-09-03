@@ -1,3 +1,86 @@
+# ==============================================================================
+# Teleview IPTV Robots & AI Search Crawler Configuration
+# Canonical Host: https://www.teleview.me
+# Next-Level AI SEO, LLM SEO & Generative Engine Optimization (GEO) Directives
+# ==============================================================================
+
+# 1. Global Crawler Policy (Search Engines & Web Crawlers)
 User-agent: *
 Allow: /
+
+# 2. OpenAI / SearchGPT / ChatGPT Live Search & Citations
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# 3. Anthropic / Claude Web Search & Citations
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# 4. Perplexity AI Engine & Search Citations
+User-agent: PerplexityBot
+Allow: /
+
+# 5. Google Gemini & AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# 6. Apple Intelligence & Siri Search
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# 7. Meta AI & Llama Search Agents
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# 8. Microsoft Bing & Copilot
+User-agent: Bingbot
+Allow: /
+
+# 9. Additional AI Research & Knowledge Graph Crawlers
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ==============================================================================
+# Sitemaps & Machine-Readable Knowledge Bases
+# ==============================================================================
 Sitemap: https://www.teleview.me/sitemap.xml
+
+# LLM & AI Context Resources (llms.txt standard):
+# https://www.teleview.me/llms.txt
+# https://www.teleview.me/llms-full.txt
