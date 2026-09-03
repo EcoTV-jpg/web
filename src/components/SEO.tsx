@@ -254,7 +254,7 @@ export function generateStructuredData(path: string = "/") {
       "@type": "Offer",
       name: `${siteConfig.name} - ${p.name}`,
       price: `${parseFloat(rawPrice).toFixed(2)}`,
-      priceCurrency: "USD",
+      priceCurrency: "CAD",
       availability: "https://schema.org/InStock",
       url: `${siteConfig.url}/#pricing`,
       priceValidUntil: "2027-12-31",
@@ -283,7 +283,7 @@ export function generateStructuredData(path: string = "/") {
     image: `${siteConfig.url}${siteConfig.socialImage}`,
     offers: {
       "@type": "AggregateOffer",
-      priceCurrency: "USD",
+      priceCurrency: "CAD",
       lowPrice: minPrice,
       highPrice: maxPrice,
       offerCount: offerItems.length,
