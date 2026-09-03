@@ -5,6 +5,7 @@ import DevicesPage from "./pages/DevicesPage";
 import FaqPage from "./pages/FaqPage";
 import SubscriptionHubPage from "./pages/SubscriptionHubPage";
 import SubscriptionProductPage from "./pages/SubscriptionProductPage";
+import LegalPage from "./pages/LegalPage";
 import { routes } from "./routes";
 import { siteConfig } from "./config/site";
 
@@ -41,6 +42,18 @@ export default function App({ url }: { url?: string }) {
   if (currentPath.startsWith("/iptv-subscription/")) {
     const slug = currentPath.replace("/iptv-subscription/", "");
     return <SubscriptionProductPage slug={slug} />;
+  }
+  if (currentPath === "/terms-conditions" || currentPath === "/terms" || currentPath === "/legal") {
+    return <LegalPage type="terms" />;
+  }
+  if (currentPath === "/privacy-policy" || currentPath === "/privacy") {
+    return <LegalPage type="privacy" />;
+  }
+  if (currentPath === "/refund-policy" || currentPath === "/refund") {
+    return <LegalPage type="refund" />;
+  }
+  if (currentPath === "/disclaimer") {
+    return <LegalPage type="disclaimer" />;
   }
 
   return <HomePage />;

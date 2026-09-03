@@ -107,6 +107,10 @@ async function runSeoAudit() {
   const dist12Months = path.resolve(distDir, "iptv-subscription/12-months/index.html");
   const distPricing = path.resolve(distDir, "pricing/index.html");
   const distContact = path.resolve(distDir, "contact/index.html");
+  const distTerms = path.resolve(distDir, "terms-conditions/index.html");
+  const distPrivacy = path.resolve(distDir, "privacy-policy/index.html");
+  const distRefund = path.resolve(distDir, "refund-policy/index.html");
+  const distDisclaimer = path.resolve(distDir, "disclaimer/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -121,6 +125,10 @@ async function runSeoAudit() {
   assert("dist/iptv-subscription/12-months/index.html exists", fs.existsSync(dist12Months));
   assert("dist/pricing/index.html exists", fs.existsSync(distPricing));
   assert("dist/contact/index.html exists", fs.existsSync(distContact));
+  assert("dist/terms-conditions/index.html exists", fs.existsSync(distTerms));
+  assert("dist/privacy-policy/index.html exists", fs.existsSync(distPrivacy));
+  assert("dist/refund-policy/index.html exists", fs.existsSync(distRefund));
+  assert("dist/disclaimer/index.html exists", fs.existsSync(distDisclaimer));
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
 
@@ -133,11 +141,9 @@ async function runSeoAudit() {
     assert("vercel.json cleanUrls is true", vercelConfig.cleanUrls === true);
     assert("vercel.json trailingSlash is false", vercelConfig.trailingSlash === false);
     const redirectRule = vercelConfig.redirects?.find((r) => r.has?.some((h) => h.type === "host" && h.value === "teleview.me"));
-    assert("vercel.json non-www redirect rule exists", Boolean(redirectRule));
-    if (redirectRule) {
-      assert("vercel.json redirects to www.teleview.me", redirectRule.destination === "https://www.teleview.me/:path*");
-      assert("vercel.json redirect is permanent (308)", redirectRule.permanent === true);
-    }
+    assert("vercel.json has non-www host redirect rule", Boolean(redirectRule));
+    assert("vercel.json redirect is permanent (308)", redirectRule?.permanent === true);
+    assert("vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
   }
 
   // 2. Pre-rendered HTML validation per route
@@ -154,6 +160,10 @@ async function runSeoAudit() {
     { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months" },
     { path: "/pricing", file: distPricing, expectedTitle: "IPTV Subscription Plans & Pricing", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/pricing" },
     { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/contact" },
+    { path: "/terms-conditions", file: distTerms, expectedTitle: "Terms & Conditions", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions" },
+    { path: "/privacy-policy", file: distPrivacy, expectedTitle: "Privacy Policy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy" },
+    { path: "/refund-policy", file: distRefund, expectedTitle: "Refund Policy", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy" },
+    { path: "/disclaimer", file: distDisclaimer, expectedTitle: "Legal Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer" },
   ];
 
   for (const page of pagesToTest) {

@@ -108,6 +108,18 @@ export default function Footer() {
               <li><a href="/iptv-subscription/12-months" className="hover:text-phosphor-green transition-colors">12 Months ($90)</a></li>
             </ul>
           </div>
+          <div className="mt-4 pt-3 border-t border-charcoal/50">
+            <span className="text-[11px] font-semibold text-smoke uppercase tracking-wider block mb-2">Legal</span>
+            <ul className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-silver-mist">
+              <li><a href="/terms-conditions" className="hover:text-snow transition-colors">Terms &amp; Conditions</a></li>
+              <li>&bull;</li>
+              <li><a href="/privacy-policy" className="hover:text-snow transition-colors">Privacy Policy</a></li>
+              <li>&bull;</li>
+              <li><a href="/refund-policy" className="hover:text-snow transition-colors">Refund Policy</a></li>
+              <li>&bull;</li>
+              <li><a href="/disclaimer" className="hover:text-snow transition-colors">Disclaimer</a></li>
+            </ul>
+          </div>
           <div className="mt-6">
             <h4 className="text-xs font-medium text-snow">Newsletter</h4>
             <NewsletterForm />
@@ -117,7 +129,18 @@ export default function Footer() {
 
       <div className="border-t border-charcoal">
         <div className="container-x t-caption flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between text-xs text-smoke">
-          <p>&copy; {new Date().getFullYear()} Teleview. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p>&copy; {new Date().getFullYear()} Teleview. All rights reserved.</p>
+            <div className="flex items-center gap-2">
+              <a href="/terms-conditions" className="hover:text-silver-mist transition-colors">Terms</a>
+              <span>&bull;</span>
+              <a href="/privacy-policy" className="hover:text-silver-mist transition-colors">Privacy</a>
+              <span>&bull;</span>
+              <a href="/refund-policy" className="hover:text-silver-mist transition-colors">Refunds</a>
+              <span>&bull;</span>
+              <a href="/disclaimer" className="hover:text-silver-mist transition-colors">Disclaimer</a>
+            </div>
+          </div>
           <p className="max-w-[560px] text-left sm:text-right">
             <strong>Important:</strong> Teleview is intended for access to content you are authorized to view. Content and channel availability varies by region and may change over time.
           </p>

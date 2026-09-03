@@ -124,6 +124,46 @@ export const routes: AppRoute[] = [
       "Contact Teleview customer support via WhatsApp or email. 24/7 technical assistance for activation, device setup, and subscription inquiries.",
   },
   {
+    path: "/terms-conditions",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.6,
+    title: "Terms & Conditions | Teleview IPTV",
+    description:
+      "Review the Teleview IPTV Terms and Conditions. Learn about our service usage terms, account rules, streaming performance, and subscriber obligations.",
+  },
+  {
+    path: "/privacy-policy",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.6,
+    title: "Privacy Policy | Teleview IPTV",
+    description:
+      "Understand how Teleview protects your personal data and privacy. Learn what information we collect, how it is used, and your data protection rights.",
+  },
+  {
+    path: "/refund-policy",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.6,
+    title: "Refund Policy & 14-Day Guarantee | Teleview IPTV",
+    description:
+      "Read Teleview's official 14-day refund policy. Clear, transparent guidelines on satisfaction guarantees, eligibility, and how to request a refund.",
+  },
+  {
+    path: "/disclaimer",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.6,
+    title: "Legal Disclaimer & Copyright Notice | Teleview IPTV",
+    description:
+      "Important legal information regarding Teleview IPTV streaming technology, intellectual property, third-party content, DMCA concerns, and compliance.",
+  },
+  {
     path: "/404",
     indexable: false,
     rendering: "Static",

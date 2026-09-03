@@ -243,6 +243,15 @@ export function generateStructuredData(path: string = "/") {
     return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema, faqSchema].filter(Boolean);
   }
 
+  if (
+    cleanPath === "/terms-conditions" ||
+    cleanPath === "/privacy-policy" ||
+    cleanPath === "/refund-policy" ||
+    cleanPath === "/disclaimer"
+  ) {
+    return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema].filter(Boolean);
+  }
+
   // Schema for /iptv-subscription (Hub Page)
   if (cleanPath === "/iptv-subscription") {
     const hubFaqSchema = {
