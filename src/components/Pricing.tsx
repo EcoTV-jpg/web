@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ShieldCheck } from "lucide-react";
+import { Check, ShieldCheck, MessageCircle } from "lucide-react";
 import Reveal from "./Reveal";
 import { Accent, GhostButton, GreenButton } from "./ui";
 import { plans, pricingHeader } from "../data/site";
@@ -164,15 +164,46 @@ export default function Pricing() {
                   </ul>
 
                   {/* Card Footer */}
-                  <div className="mt-auto pt-6">
-                    {plan.mostValue ? (
-                      <GreenButton className="w-full">{plan.ctaText || "Get this plan"}</GreenButton>
-                    ) : (
-                      <GhostButton className="w-full">{plan.ctaText || "Get this plan"}</GhostButton>
+                  <div className="mt-auto pt-6 space-y-2.5">
+                    {(() => {
+                      const deviceNote = selectedDevices > 1 ? ` (${selectedDevices} Devices)` : "";
+                      const msg = `Hello, I would like to order the ${plan.name} plan (${activeData.price}) for all pack${deviceNote}`;
+                      const waUrl = `https://wa.me/447848197761?text=${encodeURIComponent(msg)}`;
+
+                      return plan.mostValue ? (
+                        <GreenButton
+                          href={waUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full flex items-center justify-center gap-2 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-phosphor-green/10"
+                        >
+                          <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                          <span>Order on WhatsApp</span>
+                        </GreenButton>
+                      ) : (
+                        <GhostButton
+                          href={waUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full flex items-center justify-center gap-2 py-3 text-xs sm:text-sm font-bold hover:border-phosphor-green/50"
+                        >
+                          <MessageCircle className="size-4 shrink-0 text-phosphor-green" aria-hidden="true" />
+                          <span>Order on WhatsApp</span>
+                        </GhostButton>
+                      );
+                    })()}
+
+                    {plan.slug && (
+                      <a
+                        href={`/iptv-subscription/${plan.slug}`}
+                        className="block text-center text-[11px] text-silver-mist hover:text-snow hover:underline transition-colors pt-1"
+                      >
+                        View {plan.name} features &amp; details &rarr;
+                      </a>
                     )}
 
                     {/* Guarantee sub-notes */}
-                    <div className="mt-4 text-center text-[11px] text-smoke">
+                    <div className="pt-2 text-center text-[11px] text-smoke">
                       <p className="flex items-center justify-center gap-1.5">
                         <ShieldCheck className="size-3.5 text-phosphor-green shrink-0" aria-hidden="true" />
                         <span>{plan.guaranteeText || "14-day money-back guarantee"}</span>

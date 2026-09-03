@@ -182,34 +182,54 @@ export default function AccountPage() {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <a href="/iptv-subscription/1-month" className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group">
+              <a
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 1 Month plan ($16) for all pack")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
+              >
                 <span className="text-xs text-smoke font-mono block">1 MONTH</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$16</span>
                 <span className="text-[11px] text-silver-mist block mt-1">Monthly Billing</span>
                 <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
-                  Renew Plan
+                  Order via WhatsApp
                 </span>
               </a>
 
-              <a href="/iptv-subscription/3-months" className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group">
+              <a
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 3 Months plan ($39) for all pack")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
+              >
                 <span className="text-xs text-smoke font-mono block">3 MONTHS</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$39</span>
                 <span className="text-[11px] text-phosphor-green block mt-1">Save 19%</span>
                 <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
-                  Renew Plan
+                  Order via WhatsApp
                 </span>
               </a>
 
-              <a href="/iptv-subscription/6-months" className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group">
+              <a
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 6 Months plan ($60) for all pack")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
+              >
                 <span className="text-xs text-smoke font-mono block">6 MONTHS</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$60</span>
                 <span className="text-[11px] text-phosphor-green block mt-1">Save 37.5%</span>
                 <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
-                  Renew Plan
+                  Order via WhatsApp
                 </span>
               </a>
 
-              <a href="/iptv-subscription/12-months" className="card p-4 border border-phosphor-green/40 bg-phosphor-green/5 hover:border-phosphor-green transition-all text-center group relative overflow-hidden">
+              <a
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 12 Months plan ($90) for all pack")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card p-4 border border-phosphor-green/40 bg-phosphor-green/5 hover:border-phosphor-green transition-all text-center group relative overflow-hidden"
+              >
                 <span className="text-[9px] font-bold uppercase bg-phosphor-green text-obsidian absolute top-0 right-0 px-2 py-0.5 rounded-bl">
                   POPULAR
                 </span>
@@ -217,7 +237,7 @@ export default function AccountPage() {
                 <span className="text-xl font-bold text-snow mt-1 block">$90</span>
                 <span className="text-[11px] text-phosphor-green font-semibold block mt-1">Save $102</span>
                 <span className="mt-3 inline-block rounded bg-phosphor-green text-obsidian font-semibold px-2 py-1 text-[10px]">
-                  Best Value
+                  Order via WhatsApp
                 </span>
               </a>
             </div>

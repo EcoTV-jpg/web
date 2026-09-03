@@ -4,7 +4,8 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import PlanComparisonTable from "../components/PlanComparisonTable";
 import { GreenButton, GhostButton } from "../components/ui";
 import { getProductPlan, allSubscriptionPlans } from "../data/products";
-import { ShieldCheck, CheckCircle2, Tv, Smartphone, Laptop, HelpCircle, ArrowRight, Clock, Zap } from "lucide-react";
+import { createWhatsAppOrderUrl } from "../config/site";
+import { ShieldCheck, CheckCircle2, Tv, Smartphone, Laptop, HelpCircle, ArrowRight, Clock, Zap, MessageCircle } from "lucide-react";
 
 interface SubscriptionProductPageProps {
   slug: string;
@@ -108,14 +109,25 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                   )}
                 </div>
 
-                <div className="mt-8 space-y-3">
-                  <GreenButton href="/#pricing" className="w-full text-center py-3 text-sm">
-                    {plan.ctaText}
-                  </GreenButton>
-                  <p className="text-[11px] text-smoke">
-                    One-time payment &bull; Zero auto-billing &bull; Instant activation
-                  </p>
-                </div>
+                {(() => {
+                  const waOrderUrl = createWhatsAppOrderUrl(plan.duration, plan.priceFormatted);
+                  return (
+                    <div className="mt-8 space-y-3">
+                      <GreenButton
+                        href={waOrderUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 py-3 text-sm font-bold shadow-lg shadow-phosphor-green/10"
+                      >
+                        <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                        <span>Order on WhatsApp — {plan.priceFormatted}</span>
+                      </GreenButton>
+                      <p className="text-[11px] text-smoke">
+                        Instant activation &bull; Pre-configured for all devices &bull; 14-day guarantee
+                      </p>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </section>
@@ -263,8 +275,16 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
               Instant activation &bull; Full access to 25,000+ live channels &bull; 14-day money-back guarantee
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <GreenButton href="/#pricing">{plan.ctaText} — {plan.priceFormatted}</GreenButton>
-              <GhostButton href="/setup">Read Setup Guide</GhostButton>
+              <GreenButton
+                href={createWhatsAppOrderUrl(plan.duration, plan.priceFormatted)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 py-3 px-6 text-sm font-bold shadow-lg shadow-phosphor-green/10"
+              >
+                <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                <span>Order on WhatsApp — {plan.priceFormatted}</span>
+              </GreenButton>
+              <GhostButton href="/pricing">Compare All Plans</GhostButton>
             </div>
           </section>
         </div>

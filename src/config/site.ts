@@ -33,3 +33,14 @@ export const siteConfig = {
 } as const;
 
 export type SiteConfig = typeof siteConfig;
+
+export function createWhatsAppOrderUrl(planName: string, price: string | number) {
+  const cleanPrice = String(price).replace(/^\$/, "").trim();
+  const text = `Hello, I would like to order the ${planName} plan ($${cleanPrice}) for all pack`;
+  return `https://wa.me/447848197761?text=${encodeURIComponent(text)}`;
+}
+
+export function createWhatsAppTrialUrl() {
+  const text = "Hello, I would like to request a 24-Hour Free Trial for all pack";
+  return `https://wa.me/447848197761?text=${encodeURIComponent(text)}`;
+}

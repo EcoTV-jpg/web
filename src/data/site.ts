@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Tv, Film, Trophy, Users, ShieldCheck, Zap, Headphones, RefreshCw, Smartphone, Monitor } from "lucide-react";
-import { siteConfig } from "../config/site";
+import { siteConfig, createWhatsAppOrderUrl, createWhatsAppTrialUrl } from "../config/site";
 
 /* ------------------------------------------------------------------
    Site configuration — re-exported from central siteConfig
@@ -165,9 +165,81 @@ export const includedFeatures = {
   note: "The exact content available to you depends on your plan, region, device, and current service availability.",
 };
 
-/* Pricing Plans */
+/* Device section */
+export const deviceSection = {
+  kicker: "MULTI-PLATFORM COMPATIBILITY",
+  heading: "Compatible with All Your Devices",
+  subhead:
+    "Set up Teleview on your favorite streaming player in minutes. No technical expertise required.",
+};
+
+export const deviceCategories = [
+  {
+    icon: Tv,
+    title: "Streaming Devices",
+    description: "Amazon Fire TV Stick, Chromecast with Google TV, Roku (select apps), Apple TV, and Android TV boxes.",
+  },
+  {
+    icon: Monitor,
+    title: "Smart TVs",
+    description: "Samsung (Tizen OS), LG (webOS), Sony, TCL, Hisense, and all Android TV-powered smart televisions.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile & Tablets",
+    description: "iPhone, iPad (iOS), Android smartphones, and Android tablets using your preferred IPTV player app.",
+  },
+  {
+    icon: Monitor,
+    title: "Computers & Other",
+    description: "Windows PC, Mac, MAG devices, Formuler, and Enigma2 receivers with M3U or Xtream API support.",
+  },
+];
+
+/* Channels Preview */
+export const channelPreview = {
+  kicker: "UNLIMITED CONTENT",
+  heading: "Entertainment for Everyone",
+  subhead: "From championship sports to children's programming, discover channels tailored to your taste.",
+};
+
+export const channelCategories = [
+  {
+    name: "Live Sports",
+    count: "500+ Channels",
+    description: "Football, basketball, soccer, baseball, hockey, MMA, motorsport, and pay-per-view events.",
+  },
+  {
+    name: "Movies & Cinema",
+    count: "1,200+ Channels",
+    description: "Dedicated movie channels across all genres: action, comedy, drama, sci-fi, and classics.",
+  },
+  {
+    name: "News & Information",
+    count: "300+ Channels",
+    description: "24/7 global news networks including CNN, BBC, Sky News, Fox News, CNBC, and regional news.",
+  },
+  {
+    name: "International",
+    count: "15,000+ Channels",
+    description: "Channels from the UK, US, Canada, Europe, Latin America, Middle East, Asia, and Africa.",
+  },
+  {
+    name: "Kids & Family",
+    count: "200+ Channels",
+    description: "Cartoons, animated series, educational shows, and family entertainment for all age groups.",
+  },
+  {
+    name: "Documentaries",
+    count: "150+ Channels",
+    description: "Nature, history, science, crime, and culture from Discovery, Nat Geo, History, and more.",
+  },
+];
+
+/* Pricing / Plans */
 export interface Plan {
   name: string;
+  slug?: string;
   price: string;
   originalPrice?: string;
   billingText: string;
@@ -179,6 +251,7 @@ export interface Plan {
   ctaText?: string;
   guaranteeText?: string;
   deliveryNote?: string;
+  whatsappHref?: string;
 }
 
 export const pricingHeader = {
@@ -191,9 +264,11 @@ export const pricingHeader = {
 export const plans: Plan[] = [
   {
     name: "1 Month",
+    slug: "1-month",
     price: "$16",
     billingText: "/ 1 month",
     badge: "High Performance Server",
+    whatsappHref: createWhatsAppOrderUrl("1 Month", "16"),
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -204,14 +279,16 @@ export const plans: Plan[] = [
       "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
-    ctaText: "Get this plan",
+    ctaText: "Order on WhatsApp",
     guaranteeText: "14-day money-back guarantee",
   },
   {
     name: "3 Months",
+    slug: "3-months",
     price: "$39",
     billingText: "/ 3 months",
     badge: "High Performance Server",
+    whatsappHref: createWhatsAppOrderUrl("3 Months", "39"),
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -222,14 +299,16 @@ export const plans: Plan[] = [
       "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
-    ctaText: "Get this plan",
+    ctaText: "Order on WhatsApp",
     guaranteeText: "14-day money-back guarantee",
   },
   {
     name: "6 Months",
+    slug: "6-months",
     price: "$60",
     billingText: "/ 6 months",
     badge: "High Performance Server",
+    whatsappHref: createWhatsAppOrderUrl("6 Months", "60"),
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -240,17 +319,19 @@ export const plans: Plan[] = [
       "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
-    ctaText: "Get this plan",
+    ctaText: "Order on WhatsApp",
     guaranteeText: "14-day money-back guarantee",
   },
   {
     name: "12 Months",
+    slug: "12-months",
     price: "$90",
     originalPrice: "$192",
     billingText: "/ 12 months",
     save: "Best Value — Save $102",
     badge: "High Performance Server",
     mostValue: true,
+    whatsappHref: createWhatsAppOrderUrl("12 Months", "90"),
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -261,7 +342,7 @@ export const plans: Plan[] = [
       "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
-    ctaText: "Get this plan",
+    ctaText: "Order on WhatsApp",
     guaranteeText: "14-day money-back guarantee",
   },
 ];

@@ -1,5 +1,6 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { allSubscriptionPlans } from "../data/products";
+import { createWhatsAppOrderUrl } from "../config/site";
 import { GreenButton } from "./ui";
 
 interface PlanComparisonTableProps {
@@ -72,8 +73,14 @@ export default function PlanComparisonTable({
                   </td>
                   <td className="p-4 sm:p-5 text-right">
                     {isCurrent ? (
-                      <GreenButton href="#pricing" className="text-xs px-3.5 py-1.5">
-                        {plan.ctaText}
+                      <GreenButton
+                        href={createWhatsAppOrderUrl(plan.duration, plan.priceFormatted)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs px-3.5 py-1.5 inline-flex items-center gap-1.5"
+                      >
+                        <MessageCircle className="size-3.5" aria-hidden="true" />
+                        Order on WhatsApp
                       </GreenButton>
                     ) : (
                       <a
@@ -120,8 +127,14 @@ export default function PlanComparisonTable({
               <p className="mt-2 text-xs text-silver-mist">{plan.tagline}</p>
               <div className="mt-4 pt-3 border-t border-charcoal/60">
                 {isCurrent ? (
-                  <GreenButton href="#pricing" className="w-full text-center text-xs py-2">
-                    {plan.ctaText}
+                  <GreenButton
+                    href={createWhatsAppOrderUrl(plan.duration, plan.priceFormatted)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center text-xs py-2 flex items-center justify-center gap-1.5"
+                  >
+                    <MessageCircle className="size-3.5" aria-hidden="true" />
+                    Order on WhatsApp
                   </GreenButton>
                 ) : (
                   <a
