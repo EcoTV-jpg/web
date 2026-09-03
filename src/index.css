@@ -313,3 +313,83 @@ button {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ------------------------------------------------------------------
+   Device Grid — iptvv.ca style hardware tiles & ticker
+------------------------------------------------------------------- */
+.hmdev .dev-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.hmdev .dev {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 96px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hmdev .dev:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(62, 207, 142, 0.35);
+  transform: translateY(-2px);
+}
+
+.hmdev .dev img {
+  max-height: 38px;
+  max-width: 104px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hmdev .dev img.to-white {
+  filter: brightness(0) invert(1);
+}
+
+.hmdev .dev span {
+  font-size: 12px;
+  color: #aeb4c2;
+  font-weight: 500;
+}
+
+.hmdev .dev.dup {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hmdev .dev-grid {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 12px;
+    max-width: none;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-behavior: auto;
+  }
+  .hmdev .dev-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .hmdev .dev.dup {
+    display: flex;
+  }
+  .hmdev .dev {
+    width: 128px;
+    height: 90px;
+  }
+}
+
