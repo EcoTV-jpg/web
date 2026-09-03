@@ -191,8 +191,8 @@ export const pricingHeader = {
 export const plans: Plan[] = [
   {
     name: "1 Month",
-    price: "$19",
-    billingText: "$19.00 / month",
+    price: "$16",
+    billingText: "/ 1 month",
     badge: "High Performance Server",
     features: [
       "4K Ultra HD Streaming Quality",
@@ -209,8 +209,8 @@ export const plans: Plan[] = [
   },
   {
     name: "3 Months",
-    price: "$29",
-    billingText: "$9.67 / month",
+    price: "$39",
+    billingText: "/ 3 months",
     badge: "High Performance Server",
     features: [
       "4K Ultra HD Streaming Quality",
@@ -227,8 +227,8 @@ export const plans: Plan[] = [
   },
   {
     name: "6 Months",
-    price: "$49",
-    billingText: "$8.17 / month",
+    price: "$60",
+    billingText: "/ 6 months",
     badge: "High Performance Server",
     features: [
       "4K Ultra HD Streaming Quality",
@@ -245,10 +245,10 @@ export const plans: Plan[] = [
   },
   {
     name: "12 Months",
-    price: "$79",
-    originalPrice: "$228",
-    billingText: "$6.58 / month",
-    save: "Best Value — Save $149",
+    price: "$90",
+    originalPrice: "$192",
+    billingText: "/ 12 months",
+    save: "Best Value — Save $102",
     badge: "High Performance Server",
     mostValue: true,
     features: [
@@ -376,7 +376,7 @@ export const sportsSection = {
       desc: "Premier League, Champions League, NFL, NBA, NHL, F1, UFC, and more",
     },
   ],
-  priceText: "$19/month",
+  priceText: "$16/month",
   ctaText: "View All Plans",
 };
 
