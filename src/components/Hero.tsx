@@ -122,6 +122,7 @@ export default function Hero() {
                   width={900}
                   height={600}
                   loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                 />
               </picture>

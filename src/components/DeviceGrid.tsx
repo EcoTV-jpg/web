@@ -207,6 +207,7 @@ export default function DeviceGrid() {
                   width={dev.width}
                   height={dev.height}
                   loading="lazy"
+                  decoding="async"
                   className={dev.toWhite ? "to-white" : ""}
                 />
                 <span>{dev.name}</span>
@@ -222,6 +223,7 @@ export default function DeviceGrid() {
                   width={dev.width}
                   height={dev.height}
                   loading="lazy"
+                  decoding="async"
                   className={dev.toWhite ? "to-white" : ""}
                 />
                 <span>{dev.name}</span>
