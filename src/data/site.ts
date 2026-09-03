@@ -361,7 +361,7 @@ export const whyChooseUs = {
 export const sportsSection = {
   kicker: "LIVE 4K SPORTS",
   heading: "Never Miss Your Favorite Game Again",
-  copy: "Experience every thrilling moment with our premium sports streaming. From NHL playoffs to NFL championships, enjoy crystal-clear 4K coverage of all major Canadian and international sports events.",
+  copy: "Experience every thrilling moment with our premium sports streaming. From UEFA Champions League to NFL championships, Premier League to NHL playoffs, enjoy crystal-clear 4K coverage of all major worldwide sports events.",
   highlights: [
     {
       title: "Live HD Streams",
@@ -373,24 +373,24 @@ export const sportsSection = {
     },
     {
       title: "All Major Leagues",
-      desc: "NHL, NFL, NBA, MLB, and more",
+      desc: "Premier League, Champions League, NFL, NBA, NHL, F1, UFC, and more",
     },
   ],
   priceText: "$19/month",
   ctaText: "View All Plans",
 };
 
-/* Coast to Coast Coverage */
+/* Worldwide Coverage */
 export const coastToCoast = {
-  kicker: "We Serve Coast to Coast",
-  heading: "Teleview Nationwide & Global Coverage",
-  copy: "We serve major cities across Canada and worldwide: Toronto, Montreal, Vancouver, Calgary, Edmonton, Ottawa, Winnipeg, Quebec City, Hamilton, Kitchener, London, Victoria, Halifax, Saskatoon, Regina, Windsor, Mississauga, Brampton, Surrey, Laval, Burnaby, Richmond, Markham, Vaughan, Gatineau, Oakville, Burlington, Barrie, Kelowna, and more. No matter where you live, enjoy premium IPTV streaming with fast activation.",
+  kicker: "Worldwide Streaming Network",
+  heading: "Teleview Global Streaming Coverage",
+  copy: "We serve viewers across the globe with high-speed CDN edge servers: United States, United Kingdom, Canada, Australia, Germany, France, Italy, Spain, Portugal, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Ireland, Brazil, Mexico, UAE, Saudi Arabia, Qatar, Japan, South Korea, India, and more. No matter where you live, enjoy premium 4K IPTV streaming with fast activation.",
   cities: [
-    "Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa",
-    "Winnipeg", "Quebec City", "Hamilton", "Kitchener", "London", "Victoria",
-    "Halifax", "Saskatoon", "Regina", "Windsor", "Mississauga", "Brampton",
-    "Surrey", "Laval", "Burnaby", "Richmond", "Markham", "Vaughan",
-    "Gatineau", "Oakville", "Burlington", "Barrie", "Kelowna",
+    "United States", "United Kingdom", "Canada", "Australia", "Germany", "France",
+    "Italy", "Spain", "Portugal", "Netherlands", "Belgium", "Switzerland",
+    "Sweden", "Norway", "Denmark", "Ireland", "Brazil", "Mexico",
+    "Argentina", "Colombia", "UAE", "Saudi Arabia", "Qatar", "Japan",
+    "South Korea", "India", "South Africa", "New Zealand", "Singapore",
   ],
 };
 
@@ -398,7 +398,7 @@ export const coastToCoast = {
 export const faqHeader = {
   kicker: "Frequently Asked Questions",
   heading: "Discover Premium Teleview IPTV Service",
-  subhead: "Find quick answers to common questions about our service, activation, supported devices, and channels.",
+  subhead: "Find quick answers to common questions about our service, activation, supported devices, and channels worldwide.",
 };
 
 export const faqs = [
@@ -428,9 +428,9 @@ export const faqs = [
       "Teleview works on Amazon Firestick, Smart TVs (Samsung, LG, Sony, Android TV, VIDAA), Apple TV, iPhones, iPads, Android smartphones and tablets, Windows PC, Mac, MAG boxes, Formuler, BuzzTV, and Roku.",
   },
   {
-    question: "Is IPTV Legal in Canada?",
+    question: "Is IPTV Legal?",
     answer:
-      "Yes, using IPTV services in Canada is legal. Teleview complies with international streaming protocols and provides access to legitimate global streams so you can enjoy secure, high-quality entertainment without worries.",
+      "Yes, using IPTV services is legal. Teleview complies with international streaming protocols and provides access to legitimate global streams so you can enjoy secure, high-quality entertainment worldwide without worries.",
   },
   {
     question: "What devices can I use with Teleview?",
@@ -438,9 +438,9 @@ export const faqs = [
       "You can stream Teleview across all popular platforms including Amazon Fire TV, Android TV boxes, Apple TV, Smart TVs with TiviMate or IPTV Smarters Pro, mobile devices, and desktop computers.",
   },
   {
-    question: "How do I choose the best IPTV subscription in Canada?",
+    question: "How do I choose the best IPTV subscription?",
     answer:
-      "Look for providers with high-speed CDN servers, 4K/FHD resolution, comprehensive EPG TV guides, responsive 24/7 support, and no long-term contracts. Teleview's 12-month plan is our most popular choice, offering maximum savings and premium server priority.",
+      "Look for providers with high-speed worldwide CDN servers, 4K/FHD resolution, comprehensive EPG TV guides, responsive 24/7 support, and no long-term contracts. Teleview's 12-month plan is our most popular choice, offering maximum savings and premium server priority.",
   },
   {
     question: "Can I get a free trial of Teleview?",
@@ -453,14 +453,14 @@ export const faqs = [
       "We recommend TiviMate and IPTV Smarters Pro for Firestick and Android devices, IBO Player or Nanomid for Smart TVs, and GSE Smart IPTV or UHF for Apple iOS and tvOS devices. Detailed step-by-step setup tutorials are available in our Setup Guide.",
   },
   {
-    question: "How much does IPTV cost compared to cable in Canada?",
+    question: "How much does IPTV cost compared to cable?",
     answer:
-      "Traditional Canadian cable packages cost between $90 and $180 per month with extra fees for HD boxes and sports tiers. Teleview starts at just $19 per month with no contracts, saving you over $1,200 every year while providing more than 25,000 channels.",
+      "Traditional cable and satellite packages cost between $90 and $180 per month with extra fees for HD boxes and sports tiers. Teleview starts at just $19 per month with no contracts, saving you over $1,200 every year while providing more than 25,000 global channels.",
   },
   {
     question: "What sports channels are included with Teleview IPTV?",
     answer:
-      "Teleview includes all major Canadian, US, and international sports networks: NHL Center Ice, NFL Sunday Ticket, NBA League Pass, MLB Extra Innings, Premier League, UEFA Champions League, Formula 1, UFC PPV events, TSN, and Sportsnet in 4K.",
+      "Teleview includes all major worldwide sports networks: Premier League, UEFA Champions League, Formula 1, UFC PPV events, NFL Sunday Ticket, NBA League Pass, NHL Center Ice, MLB Extra Innings, Sky Sports, TNT Sports, beIN Sports, and ESPN in 4K.",
   },
   {
     question: "How do I set up IPTV on my device step-by-step?",
@@ -468,9 +468,9 @@ export const faqs = [
       "Setting up is fast: 1) Select your plan, 2) Download your preferred IPTV player app (like TiviMate or IPTV Smarters Pro), 3) Enter your server URL and login credentials sent to your email, and 4) Start watching instantly. Check our Setup page for visual guides.",
   },
   {
-    question: "Do I need a VPN for IPTV streaming in Canada?",
+    question: "Do I need a VPN for IPTV streaming?",
     answer:
-      "A VPN is not required to stream Teleview because our servers use encrypted streaming protocols. However, you are welcome to use a VPN (such as NordVPN or ExpressVPN) for added privacy or if your ISP throttles high-bandwidth video traffic during major sports matches.",
+      "A VPN is not required to stream Teleview because our servers use encrypted streaming protocols. However, you are welcome to use a VPN (such as NordVPN or ExpressVPN) for added privacy or if your local ISP throttles high-bandwidth video traffic during major live events.",
   },
 ];
 

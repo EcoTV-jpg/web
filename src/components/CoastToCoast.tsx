@@ -13,7 +13,7 @@ export default function CoastToCoast() {
             {coastToCoast.kicker}
           </p>
           <h2 id="coverage-cities-heading" className="t-h2 mt-4 text-balance">
-            Teleview <Accent>Nationwide Coverage</Accent>
+            Teleview <Accent>Global Streaming Coverage</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[680px] text-silver-mist leading-relaxed">
             {coastToCoast.copy}
@@ -25,11 +25,11 @@ export default function CoastToCoast() {
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-charcoal text-xs text-smoke">
               <span className="flex items-center gap-2 text-snow font-semibold">
                 <MapPin className="size-4 text-phosphor-green" aria-hidden="true" />
-                29+ Major Canadian Metro Hubs &amp; Global CDNs
+                50+ Worldwide CDN Edge Server Hubs
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-phosphor-green/10 border border-phosphor-green/30 px-3 py-1 text-phosphor-green font-medium">
                 <Activity className="size-3.5 animate-pulse" aria-hidden="true" />
-                99.9% Network Uptime Active
+                99.9% Global Network Uptime
               </span>
             </div>
 
