@@ -66,6 +66,11 @@ async function prerender() {
       .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, `<meta name="twitter:title" content="${pageTitle}" />`)
       .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, `<meta name="twitter:description" content="${pageDesc}" />`);
 
+    // For non-homepage routes, remove the homepage hero preload
+    if (route.path !== "/") {
+      pageHtml = pageHtml.replace(/<link[^>]*href=["'][^"']*teleview-fans[^"']*["'][^>]*\/?>\s*/i, "");
+    }
+
     // Inject pre-rendered HTML into #root
     if (pageHtml.includes('<div id="root"></div>')) {
       pageHtml = pageHtml.replace('<div id="root"></div>', `<div id="root">${html}</div>`);

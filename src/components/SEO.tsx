@@ -72,9 +72,95 @@ export function generateStructuredData(path: string = "/") {
     },
     primaryImageOfPage: {
       "@type": "ImageObject",
+      "@id": `${pageUrl}#primaryimage`,
       url: `${siteConfig.url}${siteConfig.socialImage}`,
+      contentUrl: `${siteConfig.url}${siteConfig.socialImage}`,
+      width: 1200,
+      height: 630,
     },
+    datePublished: "2026-01-01T00:00:00+00:00",
+    dateModified: "2026-09-03T18:00:00+00:00",
     inLanguage: siteConfig.language,
+    potentialAction: [
+      {
+        "@type": "ReadAction",
+        target: [pageUrl],
+      },
+    ],
+    mentions: [
+      {
+        "@type": "Thing",
+        name: "Internet Protocol television",
+        description: "Delivery of television content over Internet Protocol (IP) networks.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/Internet_Protocol_television",
+          "https://www.wikidata.org/wiki/Q11153",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "Streaming media",
+        description: "Multimedia that is constantly received by and presented to an end-user while being delivered by a provider.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/Streaming_media",
+          "https://www.wikidata.org/wiki/Q11379",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "4K resolution",
+        description: "Display resolution of approximately 4,000 pixels for ultra-high-definition television.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/4K_resolution",
+          "https://www.wikidata.org/wiki/Q2816438",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "High-definition television",
+        description: "Television system providing substantially higher image resolution than previous generations.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/High-definition_television",
+          "https://www.wikidata.org/wiki/Q131346",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "Video on demand",
+        description: "Media distribution system allowing users to access videos without a traditional broadcasting schedule.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/Video_on_demand",
+          "https://www.wikidata.org/wiki/Q192271",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "Android TV",
+        description: "Smart TV operating system based on Android and developed by Google.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/Android_TV",
+          "https://www.wikidata.org/wiki/Q17284414",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "tvOS",
+        description: "Operating system developed by Apple Inc. for the Apple TV digital media player.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/TvOS",
+          "https://www.wikidata.org/wiki/Q20963388",
+        ],
+      },
+      {
+        "@type": "Thing",
+        name: "Fire TV",
+        description: "Line of digital media players and microconsoles developed by Amazon.",
+        sameAs: [
+          "https://en.wikipedia.org/wiki/Amazon_Fire_TV",
+          "https://www.wikidata.org/wiki/Q16156220",
+        ],
+      },
+    ],
   };
 
   // Breadcrumb schema for non-root routes
@@ -232,7 +318,7 @@ export default function SEO({
   title = siteConfig.defaultTitle,
   description = siteConfig.defaultDescription,
   canonical = `${siteConfig.url}/`,
-  robots = "index, follow",
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   image = `${siteConfig.url}${siteConfig.socialImage}`,
   type = "website",
 }: SEOProps) {
@@ -244,13 +330,20 @@ export default function SEO({
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
       <meta name="robots" content={robots} />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-      {/* Open Graph */}
+      {/* Open Graph (Search Engine Land spec) */}
+      <meta property="og:locale" content="en_US" />
       <meta property="og:type" content={type} />
+      <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:url" content={canonical} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="article:modified_time" content="2026-09-03T18:00:00+00:00" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
