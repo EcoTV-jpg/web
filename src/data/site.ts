@@ -179,14 +179,14 @@ export const pricingHeader = {
   kicker: "Teleview Pricing",
   heading: "Teleview IPTV Subscription Plans",
   subhead:
-    "Choose your ideal Teleview plan with 25,000+ live channels, 4K streaming, and fast activation. All plans include Canadian support, no contracts, and prices in CAD (plus applicable taxes at checkout).",
+    "Choose your ideal Teleview plan with 25,000+ live channels, 4K streaming, and fast activation. All plans include 24/7 customer support, no contracts, and prices in USD (plus applicable taxes at checkout).",
 };
 
 export const plans: Plan[] = [
   {
     name: "1 Month",
-    price: "19$CA",
-    billingText: "19.00$ / month",
+    price: "$19",
+    billingText: "$19.00 / month",
     badge: "High Performance Server",
     description: "Instant access to all channels with our ultra-fast server network.",
     features: [
@@ -196,7 +196,7 @@ export const plans: Plan[] = [
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
-      "24/7 Canadian Support",
+      "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
     ctaText: "Get this plan",
@@ -205,8 +205,8 @@ export const plans: Plan[] = [
   },
   {
     name: "3 Months",
-    price: "29$CA",
-    billingText: "9.67$ / month",
+    price: "$29",
+    billingText: "$9.67 / month",
     badge: "High Performance Server",
     description: "Great value quarterly streaming plan with dedicated high-speed server.",
     features: [
@@ -216,7 +216,7 @@ export const plans: Plan[] = [
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
-      "24/7 Canadian Support",
+      "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
     ctaText: "Get this plan",
@@ -225,8 +225,8 @@ export const plans: Plan[] = [
   },
   {
     name: "6 Months",
-    price: "49$CA",
-    billingText: "8.17$ / month",
+    price: "$49",
+    billingText: "$8.17 / month",
     badge: "High Performance Server",
     description: "Convenient semi-annual package with substantial monthly savings.",
     features: [
@@ -236,7 +236,7 @@ export const plans: Plan[] = [
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
-      "24/7 Canadian Support",
+      "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
     ctaText: "Get this plan",
@@ -245,9 +245,9 @@ export const plans: Plan[] = [
   },
   {
     name: "12 Months",
-    price: "79$CA",
-    originalPrice: "228$CA",
-    billingText: "6.58$ / month",
+    price: "$79",
+    originalPrice: "$228",
+    billingText: "$6.58 / month",
     save: "Best Value — Save $149",
     badge: "High Performance Server",
     mostValue: true,
@@ -259,7 +259,7 @@ export const plans: Plan[] = [
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
-      "24/7 Canadian Support",
+      "24/7 Customer Support",
       "Multi-Device Compatibility",
     ],
     ctaText: "Get this plan",

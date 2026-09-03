@@ -14,28 +14,28 @@ const deviceOptions = [
 /* Pricing multipliers for device connections */
 const devicePricing: Record<number, Record<string, { price: string; billing: string; save?: string }>> = {
   1: {
-    "1 Month": { price: "19$CA", billing: "19.00$ / month" },
-    "3 Months": { price: "29$CA", billing: "9.67$ / month" },
-    "6 Months": { price: "49$CA", billing: "8.17$ / month" },
-    "12 Months": { price: "79$CA", billing: "6.58$ / month", save: "Best Value — Save $149" },
+    "1 Month": { price: "$19", billing: "$19.00 / month" },
+    "3 Months": { price: "$29", billing: "$9.67 / month" },
+    "6 Months": { price: "$49", billing: "$8.17 / month" },
+    "12 Months": { price: "$79", billing: "$6.58 / month", save: "Best Value — Save $149" },
   },
   2: {
-    "1 Month": { price: "29$CA", billing: "29.00$ / month" },
-    "3 Months": { price: "49$CA", billing: "16.33$ / month" },
-    "6 Months": { price: "79$CA", billing: "13.17$ / month" },
-    "12 Months": { price: "129$CA", billing: "10.75$ / month", save: "Best Value — Save $219" },
+    "1 Month": { price: "$29", billing: "$29.00 / month" },
+    "3 Months": { price: "$49", billing: "$16.33 / month" },
+    "6 Months": { price: "$79", billing: "$13.17 / month" },
+    "12 Months": { price: "$129", billing: "$10.75 / month", save: "Best Value — Save $219" },
   },
   3: {
-    "1 Month": { price: "39$CA", billing: "39.00$ / month" },
-    "3 Months": { price: "69$CA", billing: "23.00$ / month" },
-    "6 Months": { price: "109$CA", billing: "18.17$ / month" },
-    "12 Months": { price: "169$CA", billing: "14.08$ / month", save: "Best Value — Save $299" },
+    "1 Month": { price: "$39", billing: "$39.00 / month" },
+    "3 Months": { price: "$69", billing: "$23.00 / month" },
+    "6 Months": { price: "$109", billing: "$18.17 / month" },
+    "12 Months": { price: "$169", billing: "$14.08 / month", save: "Best Value — Save $299" },
   },
   4: {
-    "1 Month": { price: "49$CA", billing: "49.00$ / month" },
-    "3 Months": { price: "89$CA", billing: "29.67$ / month" },
-    "6 Months": { price: "139$CA", billing: "23.17$ / month" },
-    "12 Months": { price: "209$CA", billing: "17.42$ / month", save: "Best Value — Save $379" },
+    "1 Month": { price: "$49", billing: "$49.00 / month" },
+    "3 Months": { price: "$89", billing: "$29.67 / month" },
+    "6 Months": { price: "$139", billing: "$23.17 / month" },
+    "12 Months": { price: "$209", billing: "$17.42 / month", save: "Best Value — Save $379" },
   },
 };
 
