@@ -74,7 +74,7 @@ Teleview (`https://www.teleview.me`) operates as a worldwide digital streaming /
 * **E-E-A-T Observations**:
   * **Experience**: 15+ years of operational history.
   * **Expertise**: Specific step-by-step player configurations for TiviMate, Smarters Pro, and hardware devices.
-  * **Trustworthiness**: Clear 14-day money-back guarantee, direct WhatsApp contact channel (+44 7537 105861), and transparent pricing without hidden fees.
+  * **Trustworthiness**: Clear 14-day money-back guarantee, direct WhatsApp contact channel (+44 7848 197761), and transparent pricing without hidden fees.
 
 ---
 

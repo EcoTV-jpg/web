@@ -24,4 +24,4 @@ Teleview features extensive content volume (2,671 words on the homepage, 800-1,2
 1. **Experience**: 15+ years of streaming infrastructure experience highlighted with live trust badges.
 2. **Expertise**: Specific device configuration instructions (TiviMate, IPTV Smarters, Xtream API, M3U playlist syntax).
 3. **Authoritativeness**: Detailed breakdown of global sports coverage (Premier League, NFL, NBA, UFC, F1, Champions League).
-4. **Trustworthiness**: Explicit 14-day money-back guarantee, direct WhatsApp (+44 7537 105861) and email support, zero hidden pricing tiers.
+4. **Trustworthiness**: Explicit 14-day money-back guarantee, direct WhatsApp (+44 7848 197761) and email support, zero hidden pricing tiers.

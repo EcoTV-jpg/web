@@ -17,9 +17,9 @@ export const siteConfig = {
   contact: {
     email: "Help@Teleview.me",
     emailHref: "mailto:Help@Teleview.me",
-    whatsapp: "+447537105861",
-    whatsappDisplay: "WhatsApp: +447537105861",
-    whatsappHref: "https://wa.me/447537105861",
+    whatsapp: "+447848197761",
+    whatsappDisplay: "WhatsApp: +44 7848 197761",
+    whatsappHref: "https://wa.me/447848197761",
   },
   themeColor: "#070b18",
   socialProfiles: [] as string[],
