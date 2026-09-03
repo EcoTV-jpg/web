@@ -55,7 +55,7 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
-              Interac e-Transfer
+              Instant Activation
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap className="size-4 text-phosphor-green" aria-hidden="true" />

@@ -26,7 +26,7 @@ export const hero = {
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "View IPTV Plans",
   trustBadges: [
-    "Interac e-Transfer",
+    "Instant Activation",
     "Premium Service",
     "Reliable Streaming",
   ],

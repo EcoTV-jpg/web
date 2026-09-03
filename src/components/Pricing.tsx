@@ -39,17 +39,13 @@ const devicePricing: Record<number, Record<string, { price: string; billing: str
   },
 };
 
-/* Monochrome payment marks with Interac e-Transfer */
+/* Monochrome payment marks */
 function PaymentMarks() {
   return (
     <div
       className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-smoke"
       aria-label="Accepted payment methods"
     >
-      <span className="inline-flex items-center gap-1.5 rounded-[4px] border border-amber-500/40 bg-amber-500/10 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-amber-300">
-        <span className="size-1.5 rounded-full bg-amber-400" aria-hidden="true" />
-        Interac e-Transfer
-      </span>
       <span className="text-[14px] font-medium italic tracking-wide">VISA</span>
       <svg viewBox="0 0 40 22" className="h-[18px] w-auto" aria-hidden="true">
         <circle cx="15" cy="11" r="9" fill="var(--color-graphite)" />
