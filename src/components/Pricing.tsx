@@ -167,7 +167,7 @@ export default function Pricing() {
                   <div className="mt-auto pt-6 space-y-2.5">
                     {(() => {
                       const deviceNote = selectedDevices > 1 ? ` (${selectedDevices} Devices)` : "";
-                      const msg = `Hello, I would like to order the ${plan.name} plan (${activeData.price}) for all pack${deviceNote}`;
+                      const msg = `Hello, I would like to order the ${plan.name} plan (${activeData.price})${deviceNote}`;
                       const waUrl = `https://wa.me/447848197761?text=${encodeURIComponent(msg)}`;
 
                       return plan.mostValue ? (

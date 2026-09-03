@@ -183,7 +183,7 @@ export default function AccountPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <a
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 1 Month plan ($16) for all pack")}`}
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 1 Month plan ($16)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
@@ -197,7 +197,7 @@ export default function AccountPage() {
               </a>
 
               <a
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 3 Months plan ($39) for all pack")}`}
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 3 Months plan ($39)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
@@ -211,7 +211,7 @@ export default function AccountPage() {
               </a>
 
               <a
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 6 Months plan ($60) for all pack")}`}
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 6 Months plan ($60)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card p-4 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/50 transition-all text-center group"
@@ -225,7 +225,7 @@ export default function AccountPage() {
               </a>
 
               <a
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 12 Months plan ($90) for all pack")}`}
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 12 Months plan ($90)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card p-4 border border-phosphor-green/40 bg-phosphor-green/5 hover:border-phosphor-green transition-all text-center group relative overflow-hidden"

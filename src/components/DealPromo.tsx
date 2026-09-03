@@ -27,7 +27,7 @@ export default function DealPromo() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <GreenButton
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 2 Years + 3 Months Free plan ($129) for all pack")}`}
+                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 2 Years + 3 Months Free plan ($129)")}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
