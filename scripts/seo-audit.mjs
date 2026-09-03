@@ -102,15 +102,15 @@ async function runSeoAudit() {
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
-    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Teleview IPTV Service", expectedCanonical: "https://teleview.com/" },
-    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://teleview.com/setup" },
-    { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://teleview.com/devices" },
-    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://teleview.com/faq" },
-    { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription" },
-    { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/1-month" },
-    { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/3-months" },
-    { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/6-months" },
-    { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://teleview.com/iptv-subscription/12-months" },
+    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Teleview IPTV Service", expectedCanonical: "https://teleview.me/" },
+    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://teleview.me/setup" },
+    { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://teleview.me/devices" },
+    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://teleview.me/faq" },
+    { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription" },
+    { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/1-month" },
+    { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/3-months" },
+    { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/6-months" },
+    { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://teleview.me/iptv-subscription/12-months" },
   ];
 
   for (const page of pagesToTest) {

@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://teleview.com/</loc>
+    <loc>https://teleview.me/</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://teleview.com/setup</loc>
+    <loc>https://teleview.me/setup</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/devices</loc>
+    <loc>https://teleview.me/devices</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/faq</loc>
+    <loc>https://teleview.me/faq</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/iptv-subscription</loc>
+    <loc>https://teleview.me/iptv-subscription</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://teleview.com/iptv-subscription/1-month</loc>
+    <loc>https://teleview.me/iptv-subscription/1-month</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/iptv-subscription/3-months</loc>
+    <loc>https://teleview.me/iptv-subscription/3-months</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/iptv-subscription/6-months</loc>
+    <loc>https://teleview.me/iptv-subscription/6-months</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teleview.com/iptv-subscription/12-months</loc>
+    <loc>https://teleview.me/iptv-subscription/12-months</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
