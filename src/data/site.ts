@@ -19,7 +19,7 @@ export const site = {
 /* Hero */
 export const hero = {
   kicker: "TELEVIEW IPTV",
-  heading: "Best Teleview IPTV Service in 2026",
+  heading: "Best IPTV Service in 2026",
   subhead:
     "Get instant access to over 25,000 live TV channels and a huge library of on-demand content. Watch in HD or 4K with fast, reliable Teleview IPTV subscription.",
   copy: "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 support and no long-term contracts. As a premier IPTV provider, we deliver cutting-edge streaming technology with guaranteed 99.9% uptime.",
