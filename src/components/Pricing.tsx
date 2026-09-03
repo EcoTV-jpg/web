@@ -152,9 +152,7 @@ export default function Pricing() {
                   {/* Billing subtext */}
                   <p className="t-caption mt-1.5 text-xs text-silver-mist">{activeData.billing}</p>
 
-                  {/* Description */}
-                  <p className="t-body-sm mt-3 text-xs text-smoke leading-relaxed">{plan.description}</p>
-
+                  {/* Divider */}
                   <div className="relative my-4 flex items-center justify-center">
                     <div className="h-px w-full bg-charcoal" aria-hidden="true" />
                   </div>

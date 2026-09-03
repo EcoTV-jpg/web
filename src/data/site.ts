@@ -194,7 +194,6 @@ export const plans: Plan[] = [
     price: "$19",
     billingText: "$19.00 / month",
     badge: "High Performance Server",
-    description: "Instant access to all channels with our ultra-fast server network.",
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -213,7 +212,6 @@ export const plans: Plan[] = [
     price: "$29",
     billingText: "$9.67 / month",
     badge: "High Performance Server",
-    description: "Great value quarterly streaming plan with dedicated high-speed server.",
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -232,7 +230,6 @@ export const plans: Plan[] = [
     price: "$49",
     billingText: "$8.17 / month",
     badge: "High Performance Server",
-    description: "Convenient semi-annual package with substantial monthly savings.",
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -254,7 +251,6 @@ export const plans: Plan[] = [
     save: "Best Value — Save $149",
     badge: "High Performance Server",
     mostValue: true,
-    description: "Our #1 best value plan for non-stop sports, movies, and worldwide live TV.",
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
