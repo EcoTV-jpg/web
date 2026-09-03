@@ -332,57 +332,145 @@ export const guarantee = {
   ],
 };
 
-/* Comprehensive 10-Item FAQ List */
+/* Why We're the #1 IPTV Provider */
+export const whyChooseUs = {
+  kicker: "Why We're the #1 IPTV Provider",
+  heading: "Why Choose Teleview?",
+  subhead: "Delivering streaming excellence, verified reliability, and 24/7 support for over 15 years.",
+  items: [
+    {
+      title: "Premium IPTV Experience",
+      copy: "At Teleview, we’re recognized as the best IPTV provider, delivering premium streaming excellence for over 15 years. Our IPTV service combines superior technology with unmatched reliability, featuring 99.9% guaranteed uptime and zero-buffering streaming across all devices.",
+    },
+    {
+      title: "Reliable & Secure Service",
+      copy: "What sets our IPTV service apart is our commitment to service standards and customer satisfaction. We operate with strict adherence to reliable broadcasting standards, ensuring your subscription is completely legitimate and secure. Our advanced streaming infrastructure delivers crystal-clear 4K content without interruptions, backed by our technical support team available 24/7.",
+    },
+    {
+      title: "Advanced Streaming Features",
+      copy: "Our IPTV subscription includes industry-leading features: instant channel switching, comprehensive electronic program guide (EPG), catch-up TV functionality, and multi-device streaming capabilities. Whether you’re watching on Smart TV, Android box, or mobile device, you’ll experience the same premium quality that thousands of families trust daily.",
+    },
+    {
+      title: "Fast & Flexible Activation",
+      copy: "We offer fast activation with credentials delivered immediately upon confirmed payment, no long-term contracts, and transparent pricing. Join the growing community of satisfied customers who’ve discovered why Teleview remains the top-rated IPTV provider for reliability, quality, and customer service excellence.",
+    },
+  ],
+};
+
+/* Live Sports Feature Section */
+export const sportsSection = {
+  kicker: "LIVE 4K SPORTS",
+  heading: "Never Miss Your Favorite Game Again",
+  copy: "Experience every thrilling moment with our premium sports streaming. From NHL playoffs to NFL championships, enjoy crystal-clear 4K coverage of all major Canadian and international sports events.",
+  highlights: [
+    {
+      title: "Live HD Streams",
+      desc: "Crystal clear 4K quality for every game",
+    },
+    {
+      title: "24/7 Coverage",
+      desc: "Around the clock sports entertainment",
+    },
+    {
+      title: "All Major Leagues",
+      desc: "NHL, NFL, NBA, MLB, and more",
+    },
+  ],
+  priceText: "$19/month",
+  ctaText: "View All Plans",
+};
+
+/* Coast to Coast Coverage */
+export const coastToCoast = {
+  kicker: "We Serve Coast to Coast",
+  heading: "Teleview Nationwide & Global Coverage",
+  copy: "We serve major cities across Canada and worldwide: Toronto, Montreal, Vancouver, Calgary, Edmonton, Ottawa, Winnipeg, Quebec City, Hamilton, Kitchener, London, Victoria, Halifax, Saskatoon, Regina, Windsor, Mississauga, Brampton, Surrey, Laval, Burnaby, Richmond, Markham, Vaughan, Gatineau, Oakville, Burlington, Barrie, Kelowna, and more. No matter where you live, enjoy premium IPTV streaming with fast activation.",
+  cities: [
+    "Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa",
+    "Winnipeg", "Quebec City", "Hamilton", "Kitchener", "London", "Victoria",
+    "Halifax", "Saskatoon", "Regina", "Windsor", "Mississauga", "Brampton",
+    "Surrey", "Laval", "Burnaby", "Richmond", "Markham", "Vaughan",
+    "Gatineau", "Oakville", "Burlington", "Barrie", "Kelowna",
+  ],
+};
+
+/* Frequently Asked Questions */
+export const faqHeader = {
+  kicker: "Frequently Asked Questions",
+  heading: "Discover Premium Teleview IPTV Service",
+  subhead: "Find quick answers to common questions about our service, activation, supported devices, and channels.",
+};
+
 export const faqs = [
   {
-    question: "What is an IPTV subscription?",
+    question: "What is IPTV and how does Teleview work?",
     answer:
-      "An IPTV subscription provides access to television and video content delivered over the internet. Depending on the service and plan, this can include live TV, movies, series, sports, and other on-demand programming.",
+      "IPTV (Internet Protocol Television) delivers live television channels and on-demand content through secure internet protocols rather than traditional cable or satellite. With Teleview, simply choose a plan, receive your credentials, and start streaming on any compatible smart device with our high-speed server network.",
   },
   {
-    question: "How does Teleview IPTV work?",
+    question: "Teleview customer support response time?",
     answer:
-      "After purchasing a subscription, you receive the account or activation information needed to use the service on a compatible device or supported IPTV application. Your viewing experience depends on your internet connection, device, application, and content availability.",
+      "Our dedicated technical support team is available 24/7 with an average response time of under 15 minutes via live chat and email. We assist with initial setup, app configuration, and channel troubleshooting.",
   },
   {
-    question: "Which devices support Teleview?",
+    question: "How does Premium IPTV streaming work?",
     answer:
-      "Teleview is designed to work with compatible Smart TVs, Android devices, iPhone and iPad, Fire TV and other supported streaming devices, tablets, Windows, Mac, and compatible IPTV applications.",
+      "Our premium streaming infrastructure converts broadcast signals into optimized digital packets delivered through CDN servers worldwide. This ensures lightning-fast channel zapping, 4K Ultra HD resolution, and 99.9% anti-freeze server uptime.",
   },
   {
-    question: "Can I use my IPTV subscription on multiple devices?",
+    question: "Why choose Teleview as IPTV provider?",
     answer:
-      "Multi-device availability depends on your selected plan and the number of simultaneous connections included with that plan.",
+      "Teleview provides over 15 years of industry excellence, offering 25,000+ live worldwide channels, 120,000+ VOD movies and series, 4K UHD streaming, 99.9% guaranteed uptime, multi-device support, and a risk-free 14-day money-back guarantee.",
   },
   {
-    question: "Does Teleview offer HD and 4K?",
+    question: "Supported devices for Teleview?",
     answer:
-      "HD, Full HD, and 4K quality may be available depending on the content, device, application, and internet connection.",
+      "Teleview works on Amazon Firestick, Smart TVs (Samsung, LG, Sony, Android TV, VIDAA), Apple TV, iPhones, iPads, Android smartphones and tablets, Windows PC, Mac, MAG boxes, Formuler, BuzzTV, and Roku.",
   },
   {
-    question: "How quickly will I receive my IPTV subscription?",
+    question: "Is IPTV Legal in Canada?",
     answer:
-      "After successful payment, your login or activation information is sent to the email address provided during checkout.",
+      "Yes, using IPTV services in Canada is legal. Teleview complies with international streaming protocols and provides access to legitimate global streams so you can enjoy secure, high-quality entertainment without worries.",
   },
   {
-    question: "Do you offer a money-back guarantee?",
+    question: "What devices can I use with Teleview?",
     answer:
-      "Yes. Eligible purchases are covered by a 14-day money-back guarantee according to the applicable refund policy.",
+      "You can stream Teleview across all popular platforms including Amazon Fire TV, Android TV boxes, Apple TV, Smart TVs with TiviMate or IPTV Smarters Pro, mobile devices, and desktop computers.",
   },
   {
-    question: "Does IPTV require an internet connection?",
+    question: "How do I choose the best IPTV subscription in Canada?",
     answer:
-      "Yes. IPTV relies on an internet connection to deliver streaming content. A stable and sufficiently fast connection can help provide a better viewing experience.",
+      "Look for providers with high-speed CDN servers, 4K/FHD resolution, comprehensive EPG TV guides, responsive 24/7 support, and no long-term contracts. Teleview's 12-month plan is our most popular choice, offering maximum savings and premium server priority.",
   },
   {
-    question: "Is IPTV available in every country?",
+    question: "Can I get a free trial of Teleview?",
     answer:
-      "Availability of channels and content varies by region. Teleview provides access to content subject to regional availability and applicable rights.",
+      "Yes! We offer a 24-hour trial as well as a flexible 1-Month plan backed by our full 14-day money-back guarantee, allowing you to test our channel lineup and server performance completely risk-free.",
   },
   {
-    question: "Can you help me install IPTV?",
+    question: "What is the best IPTV player to use with your service?",
     answer:
-      "Yes. Our support team can assist with setup questions for compatible devices and applications.",
+      "We recommend TiviMate and IPTV Smarters Pro for Firestick and Android devices, IBO Player or Nanomid for Smart TVs, and GSE Smart IPTV or UHF for Apple iOS and tvOS devices. Detailed step-by-step setup tutorials are available in our Setup Guide.",
+  },
+  {
+    question: "How much does IPTV cost compared to cable in Canada?",
+    answer:
+      "Traditional Canadian cable packages cost between $90 and $180 per month with extra fees for HD boxes and sports tiers. Teleview starts at just $19 per month with no contracts, saving you over $1,200 every year while providing more than 25,000 channels.",
+  },
+  {
+    question: "What sports channels are included with Teleview IPTV?",
+    answer:
+      "Teleview includes all major Canadian, US, and international sports networks: NHL Center Ice, NFL Sunday Ticket, NBA League Pass, MLB Extra Innings, Premier League, UEFA Champions League, Formula 1, UFC PPV events, TSN, and Sportsnet in 4K.",
+  },
+  {
+    question: "How do I set up IPTV on my device step-by-step?",
+    answer:
+      "Setting up is fast: 1) Select your plan, 2) Download your preferred IPTV player app (like TiviMate or IPTV Smarters Pro), 3) Enter your server URL and login credentials sent to your email, and 4) Start watching instantly. Check our Setup page for visual guides.",
+  },
+  {
+    question: "Do I need a VPN for IPTV streaming in Canada?",
+    answer:
+      "A VPN is not required to stream Teleview because our servers use encrypted streaming protocols. However, you are welcome to use a VPN (such as NordVPN or ExpressVPN) for added privacy or if your ISP throttles high-bandwidth video traffic during major sports matches.",
   },
 ];
 
