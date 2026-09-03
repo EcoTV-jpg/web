@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 ------------------------------------------------------------------- */
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <a href="#top" aria-label="Teleview home" className={`flex select-none items-center gap-2 ${className}`}>
+    <a href="/" aria-label="Teleview home" className={`flex select-none items-center gap-2 ${className}`}>
       <svg viewBox="0 0 20 20" className="size-[18px]" aria-hidden="true">
         <path
           d="M13.4 1.6 5.2 10.4h3.9L6.4 18.4l8.2-8.8h-3.9l2.7-8Z"
