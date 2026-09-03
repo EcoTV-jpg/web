@@ -7,9 +7,9 @@ export const siteConfig = {
   name: "Teleview",
   legalName: "Teleview Media",
   tagline: "High-Speed IPTV Subscription & Streaming Service",
-  defaultTitle: "Teleview | Premium IPTV Subscription — Endless Entertainment",
+  defaultTitle: "Teleview | 2026 Best IPTV Service With 24h Free Trial",
   defaultDescription:
-    "Enjoy Teleview's premium IPTV subscription with 54,000+ live channels, sports, and 4K on-demand streaming. Fast activation with a 14-day money-back guarantee.",
+    "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 customer support and no long-term contracts.",
   logoUrl: "https://teleview.com/favicon.svg",
   socialImage: "/images/teleview-og.jpg",
   language: "en",

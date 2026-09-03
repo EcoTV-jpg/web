@@ -19,9 +19,9 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 1.0,
-    title: "Teleview | Premium IPTV Subscription — Endless Entertainment",
+    title: "Teleview | 2026 Best IPTV Service With 24h Free Trial",
     description:
-      "Enjoy Teleview's premium IPTV subscription with 54,000+ live channels, sports, and 4K on-demand streaming. Fast activation with a 14-day money-back guarantee.",
+      "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 customer support and no long-term contracts.",
   },
   {
     path: "/setup",
