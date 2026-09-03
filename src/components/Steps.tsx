@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { Accent } from "./ui";
 import { steps, stepsSection } from "../data/site";
 
 export default function Steps() {
@@ -6,8 +7,12 @@ export default function Steps() {
     <section id="steps" className="section-y scroll-mt-16" aria-labelledby="steps-heading">
       <div className="container-x">
         <Reveal className="text-center">
-          <h2 id="steps-heading" className="t-h2 text-balance max-w-[700px] mx-auto">
-            {stepsSection.heading}
+          <p className="label-mono flex items-center justify-center gap-2">
+            <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
+            {stepsSection.kicker || "how to get your IPTV?"}
+          </p>
+          <h2 id="steps-heading" className="t-h2 text-balance max-w-[700px] mx-auto mt-4">
+            3 Easy Steps to <Accent>Ultimate Entertainment!</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[500px] text-silver-mist">
             {stepsSection.subhead}

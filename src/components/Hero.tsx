@@ -9,14 +9,20 @@ export default function Hero() {
       <div className="container-x text-center">
         {/* Eyebrow Trust Badge */}
         <Reveal>
-          <a
-            href="#pricing"
-            className="inline-flex items-center gap-2 rounded-full border border-charcoal bg-ash px-4 py-1.5 text-xs font-normal text-silver-mist transition-colors duration-200 hover:border-graphite hover:text-snow"
-          >
-            <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
-            {hero.kicker}
-            <ChevronRight className="size-3.5 text-smoke" aria-hidden="true" />
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-2.5">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green">
+              <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
+              15+ Years of Excellence
+            </span>
+            <a
+              href="#pricing"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal bg-ash px-4 py-1 text-xs font-normal text-silver-mist transition-colors duration-200 hover:border-graphite hover:text-snow"
+            >
+              <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
+              {hero.kicker}
+              <ChevronRight className="size-3.5 text-smoke" aria-hidden="true" />
+            </a>
+          </div>
         </Reveal>
 
         {/* Main H1 Title */}
@@ -119,6 +125,28 @@ export default function Hero() {
                   decoding="async"
                 />
               </picture>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Stats Counter Bar */}
+        <Reveal delay={0.4} className="mx-auto mt-12 max-w-[880px]">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 rounded-2xl border border-charcoal bg-ash/50 p-6 shadow-lg backdrop-blur-sm">
+            <div className="text-center p-2">
+              <div className="text-2xl sm:text-3xl font-extrabold text-snow">25,000+</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">FHD Channels</p>
+            </div>
+            <div className="text-center p-2 border-l border-charcoal/50">
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">5,000+</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Active Users</p>
+            </div>
+            <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
+              <div className="text-2xl sm:text-3xl font-extrabold text-snow">120,000+</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Movies / Series</p>
+            </div>
+            <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">1,000+</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Verified Reviews</p>
             </div>
           </div>
         </Reveal>

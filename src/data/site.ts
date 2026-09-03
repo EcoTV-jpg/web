@@ -23,7 +23,7 @@ export const hero = {
   subhead:
     "Get instant access to over 25,000 live TV channels and a huge library of on-demand content. Watch in HD or 4K with fast, reliable Teleview IPTV subscription.",
   copy: "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 support and no long-term contracts. As a premier IPTV provider, we deliver cutting-edge streaming technology with guaranteed 99.9% uptime.",
-  ctaPrimary: "Get Started",
+  ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "View IPTV Plans",
   trustBadges: [
     "Interac e-Transfer",
@@ -120,19 +120,25 @@ export const whyChoose = {
 
 /* Devices & Coverage */
 export const devicesSection = {
-  heading: "Watch on Your Favorite Devices",
-  subhead: "Your IPTV subscription is designed for use across compatible devices, giving you the flexibility to watch at home or on the go.",
+  kicker: "Stream anywhere anytime",
+  heading: "Watch Teleview on All Devices",
+  subhead:
+    "Don’t worry—your IPTV subscription works seamlessly on all smart devices, from Fire Stick and Smart TVs to Android, Apple, Magbox, and Roku. No matter what you use, you’ll enjoy smooth streaming.",
   devices: [
-    "Smart TVs",
-    "Android devices",
-    "iPhone and iPad",
-    "Fire TV and compatible streaming devices",
-    "Tablets",
-    "Windows computers",
-    "Mac computers",
-    "Other compatible IPTV applications",
+    "Fire TV",
+    "Android TV",
+    "Apple TV",
+    "Samsung",
+    "LG",
+    "Roku",
+    "Chromecast",
+    "Nvidia Shield",
+    "Windows",
+    "VIDAA",
+    "Formuler",
+    "BuzzTV",
   ],
-  note: "Device compatibility can vary depending on the application and operating system. Need help getting started? Contact our support team.",
+  note: "No matter what device you use, you’ll enjoy smooth streaming with complete step-by-step setup guides.",
 };
 
 export const coverage = {
@@ -287,25 +293,26 @@ export interface Step {
 }
 
 export const stepsSection = {
-  heading: "How to Buy an IPTV Subscription From Teleview",
-  subhead: "Getting started takes just a few simple steps.",
+  kicker: "how to get your IPTV?",
+  heading: "3 Easy Steps to Ultimate Entertainment!",
+  subhead: "Getting started takes less than 2 minutes with instant activation.",
 };
 
 export const steps: Step[] = [
   {
     label: "01",
     title: "Choose Your Plan",
-    copy: "Compare the available IPTV subscription plans and select the duration that suits you.",
+    copy: "Select from our 1, 3, 6, or 12-month plans with 25,000+ live channels in crystal-clear 4K streaming. Watch anywhere, anytime!",
   },
   {
     label: "02",
-    title: "Complete Your Payment",
-    copy: "Complete checkout using one of the available payment methods. Your payment information is processed through the payment system used at checkout.",
+    title: "Complete Your Order",
+    copy: "Secure your subscription with a quick payment. Go for our popular 12-month package and save $20 - our subscribers' top choice!",
   },
   {
     label: "03",
-    title: "Check Your Email",
-    copy: "After successful payment, your account information and activation details are sent to your email. You can then follow the setup instructions for your compatible device or application.",
+    title: "Start Watching!",
+    copy: "Check your email for login details, grab your favorite snacks, and dive into endless entertainment on all your devices!",
   },
 ];
 
