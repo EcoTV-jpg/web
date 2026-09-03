@@ -468,6 +468,11 @@ export const faqs = [
       "Setting up is fast: 1) Select your plan, 2) Download your preferred IPTV player app (like TiviMate or IPTV Smarters Pro), 3) Enter your server URL and login credentials sent to your email, and 4) Start watching instantly. Check our Setup page for visual guides.",
   },
   {
+    question: "What internet speed do I need for IPTV streaming?",
+    answer:
+      "We recommend a minimum stable connection of 15 Mbps for Full HD (1080p) streams and 30+ Mbps for 4K Ultra HD sports and on-demand movies. Using a wired Ethernet cable or 5 GHz Wi-Fi provides the best buffering-free experience.",
+  },
+  {
     question: "Do I need a VPN for IPTV streaming?",
     answer:
       "A VPN is not required to stream Teleview because our servers use encrypted streaming protocols. However, you are welcome to use a VPN (such as NordVPN or ExpressVPN) for added privacy or if your local ISP throttles high-bandwidth video traffic during major live events.",
