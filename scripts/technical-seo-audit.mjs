@@ -121,7 +121,7 @@ async function runTechnicalSeoAudit() {
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. RAW HTML & METADATA FORENSICS ---");
   const pagesToTest = [
-    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Premium IPTV Subscription", expectedCanonical: "https://teleview.com/" },
+    { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "Teleview IPTV Service", expectedCanonical: "https://teleview.com/" },
     { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://teleview.com/setup" },
     { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://teleview.com/devices" },
     { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://teleview.com/faq" },

@@ -22,7 +22,7 @@ export default function Hero() {
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
           <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[880px] text-balance">
-            Premium IPTV Subscription for <Accent>Live TV &amp; On-Demand</Accent> Entertainment
+            Best <Accent>Teleview IPTV Service</Accent> in 2026
           </h1>
         </Reveal>
 
@@ -49,15 +49,15 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
-              14-Day Money-Back Guarantee
+              Interac e-Transfer
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
-              Fast Activation
+              Premium Service
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Headphones className="size-4 text-phosphor-green" aria-hidden="true" />
-              24/7 Customer Support
+              Reliable Streaming
             </span>
           </div>
         </Reveal>
