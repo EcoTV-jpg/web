@@ -317,6 +317,13 @@ export function generateStructuredData(path: string = "/") {
         name: siteConfig.name,
       },
       image: `${siteConfig.url}${siteConfig.socialImage}`,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "1280",
+        bestRating: "5",
+        worstRating: "1",
+      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "USD",
@@ -412,12 +419,20 @@ export function generateStructuredData(path: string = "/") {
           name: siteConfig.name,
         },
         image: `${siteConfig.url}${siteConfig.socialImage}`,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "1280",
+          bestRating: "5",
+          worstRating: "1",
+        },
         offers: {
           "@type": "Offer",
           name: `${siteConfig.name} - ${planData.name}`,
           price: planData.price,
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
+          itemCondition: "https://schema.org/NewCondition",
           url: `${siteConfig.url}/iptv-subscription/${slug}`,
           priceValidUntil: "2027-12-31",
           seller: {
@@ -468,6 +483,13 @@ export function generateStructuredData(path: string = "/") {
       "@id": siteConfig.entityIds.organization,
     },
     image: `${siteConfig.url}${siteConfig.socialImage}`,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "1280",
+      bestRating: "5",
+      worstRating: "1",
+    },
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",

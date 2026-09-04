@@ -55,7 +55,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid size-10 place-items-center rounded-full border border-slate text-snow lg:hidden"
+          className="grid size-11 min-h-[44px] min-w-[44px] place-items-center rounded-full border border-slate text-snow lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close navigation" : "Open navigation"}

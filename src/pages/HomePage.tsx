@@ -29,14 +29,30 @@ export default function HomePage() {
         <Steps />
         <WhyChooseUs />
         <Comparison />
-        <TechnologyExplainer />
-        <Highlights />
-        <Coverage />
-        <CoastToCoast />
-        <DealPromo />
-        <Guarantee />
-        <FaqSection />
-        <ReadyBanner />
+        <div className="cv-auto">
+          <TechnologyExplainer />
+        </div>
+        <div className="cv-auto">
+          <Highlights />
+        </div>
+        <div className="cv-auto">
+          <Coverage />
+        </div>
+        <div className="cv-auto">
+          <CoastToCoast />
+        </div>
+        <div className="cv-auto">
+          <DealPromo />
+        </div>
+        <div className="cv-auto">
+          <Guarantee />
+        </div>
+        <div className="cv-auto">
+          <FaqSection />
+        </div>
+        <div className="cv-auto">
+          <ReadyBanner />
+        </div>
       </main>
       <Footer />
       <FloatingChat />

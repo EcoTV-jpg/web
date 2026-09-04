@@ -42,15 +42,19 @@ export default function SubscriptionHubPage() {
           </Reveal>
 
           {/* Quick Product Grid (Direct Commercial Intent) */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {allSubscriptionPlans.map((plan) => (
-              <Reveal key={plan.slug} className="h-full">
-                <article className="card card-hover p-6 h-full flex flex-col justify-between border-charcoal bg-ash/40">
-                  <div>
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-phosphor-green">
-                      {plan.badge || "Standard Plan"}
-                    </span>
-                    <h2 className="mt-2 text-lg font-bold text-snow">{plan.duration}</h2>
+          <section className="mt-12" aria-labelledby="available-plans-heading">
+            <h2 id="available-plans-heading" className="sr-only">
+              Available IPTV Subscription Plans
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {allSubscriptionPlans.map((plan) => (
+                <Reveal key={plan.slug} className="h-full">
+                  <article className="card card-hover p-6 h-full flex flex-col justify-between border-charcoal bg-ash/40">
+                    <div>
+                      <span className="text-[11px] font-semibold uppercase tracking-wider text-phosphor-green">
+                        {plan.badge || "Standard Plan"}
+                      </span>
+                      <h3 className="mt-2 text-lg font-bold text-snow">{plan.duration}</h3>
                     <div className="mt-3 flex items-baseline gap-2">
                       <span className="text-2xl font-extrabold text-snow">{plan.priceFormatted}</span>
                       <span className="text-xs text-smoke font-normal">{plan.billingText}</span>
@@ -74,7 +78,8 @@ export default function SubscriptionHubPage() {
                 </article>
               </Reveal>
             ))}
-          </div>
+            </div>
+          </section>
 
           {/* Plan Comparison Section */}
           <div id="comparison">

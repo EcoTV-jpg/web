@@ -11,6 +11,7 @@ export const site = {
   tagline: "Premium IPTV subscription and streaming service for customers seeking live TV and on-demand entertainment through compatible devices.",
   whatsapp: siteConfig.contact.whatsapp,
   whatsappDisplay: "+44 7848 197761",
+  whatsappHref: siteConfig.contact.whatsappHref,
   email: siteConfig.contact.email,
   emailHref: siteConfig.contact.emailHref,
   url: siteConfig.url,

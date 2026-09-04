@@ -172,7 +172,8 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 16px;
+  min-height: 44px;
+  padding: 10px 18px;
   border: 1px solid var(--color-phosphor-green);
   border-radius: var(--radius-buttons);
   background: var(--color-phosphor-green);
@@ -196,7 +197,8 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 8px 16px;
+  min-height: 44px;
+  padding: 10px 18px;
   border: 1px solid var(--color-slate);
   border-radius: var(--radius-buttons);
   background: transparent;
@@ -391,5 +393,13 @@ button {
     width: 128px;
     height: 90px;
   }
+}
+
+/* ------------------------------------------------------------------
+   Performance & Rendering Deferral (Core Web Vitals)
+------------------------------------------------------------------- */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }
 
