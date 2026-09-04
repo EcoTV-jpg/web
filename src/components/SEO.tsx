@@ -166,14 +166,8 @@ export function generateStructuredData(path: string = "/") {
   // Breadcrumb schema for non-root routes
   let breadcrumbSchema = null;
   if (cleanPath !== "/") {
-    const pageName =
-      cleanPath === "/setup"
-        ? "Setup & Installation"
-        : cleanPath === "/devices"
-        ? "Supported Devices"
-        : cleanPath === "/faq"
-        ? "FAQ & Support"
-        : "Page";
+    const matchedRoute = routes.find((r) => r.path === cleanPath);
+    const pageName = matchedRoute?.breadcrumbName || matchedRoute?.title?.split("|")[0].trim() || "Support";
 
     breadcrumbSchema = {
       "@context": "https://schema.org",

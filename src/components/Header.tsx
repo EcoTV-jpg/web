@@ -47,7 +47,7 @@ export default function Header() {
           <GhostButton href={site.emailHref} className="text-[13px]">
             Need Help
           </GhostButton>
-          <GreenButton href="#pricing" className="text-[13px]">
+          <GreenButton href="/iptv-subscription" className="text-[13px]">
             Get It Now!
           </GreenButton>
         </div>
@@ -81,7 +81,7 @@ export default function Header() {
               <GhostButton href={site.emailHref} className="flex-1">
                 Need Help
               </GhostButton>
-              <GreenButton href="#pricing" className="flex-1">
+              <GreenButton href="/iptv-subscription" className="flex-1">
                 Get It Now!
               </GreenButton>
             </div>

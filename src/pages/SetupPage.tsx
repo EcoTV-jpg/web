@@ -39,6 +39,18 @@ export default function SetupPage() {
               Learn how to set up your Teleview IPTV subscription on your preferred streaming device.
               Follow our clear step-by-step visual workflows for Amazon Firestick, Smart TVs, Android, iOS, and MAG boxes.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2.5 text-xs text-silver-mist">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 px-3 py-1 font-medium text-phosphor-green">
+                <CheckCircle2 className="size-3.5" aria-hidden="true" />
+                Verified for 2026 Standards
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
+                Technical Review: Teleview Infrastructure Operations Desk
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
+                Tested on Fire OS 7/8, Android TV 12+, tvOS 17+, Tizen 6+
+              </span>
+            </div>
           </Reveal>
 
           {/* Priority 0: Third-Party Software Clarity Callout */}

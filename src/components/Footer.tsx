@@ -92,9 +92,9 @@ export default function Footer() {
             <div>
               <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Explore</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
-                <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">IPTV Subscription</a></li>
-                <li><a href="/pricing" className="hover:text-snow transition-colors">Plans &amp; Pricing</a></li>
+                <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">Subscription Plans</a></li>
                 <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
+                <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
               </ul>
             </div>
 

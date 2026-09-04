@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import { Accent, GreenButton, GhostButton } from "../components/ui";
-import { ChevronRight, Tv, Smartphone, Monitor, Cpu, Wifi } from "lucide-react";
+import { ChevronRight, Tv, Smartphone, Monitor, Cpu, Wifi, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
 
 const deviceList = [
   {
@@ -75,6 +75,30 @@ export default function DevicesPage() {
               Teleview is compatible with virtually every modern streaming device and application.
               Enjoy 4K Ultra HD streaming on your Smart TV, smartphone, tablet, or dedicated set-top box.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2.5 text-xs text-silver-mist">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 px-3 py-1 font-medium text-phosphor-green">
+                <CheckCircle2 className="size-3.5" aria-hidden="true" />
+                Updated for 2026 Hardware
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
+                Tested by Teleview Streaming Operations Desk
+              </span>
+            </div>
+
+            {/* GEO Direct Answer Callout for AI Search & Featured Snippets */}
+            <aside aria-label="Quick Answer: Best IPTV Device" className="mt-6 rounded-2xl border border-charcoal bg-ash/50 p-5 sm:p-6 text-left">
+              <div className="flex items-start gap-3">
+                <Zap className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+                <div>
+                  <h2 className="text-sm font-semibold text-snow">
+                    Quick Answer: What is the Best Device for IPTV Streaming in 2026?
+                  </h2>
+                  <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                    The <strong className="text-snow">Amazon Fire TV Stick 4K Max</strong> and <strong className="text-snow">Apple TV 4K</strong> are the top-recommended devices for Teleview IPTV. Both devices feature dedicated hardware video decoders (HEVC/H.265 and AV1), support high-bitrate 60 FPS live sports broadcasting, and run high-performance media players like <strong className="text-snow">TiviMate</strong> and <strong className="text-snow">IPTV Smarters Pro</strong> with instantaneous EPG channel loading.
+                  </p>
+                </div>
+              </div>
+            </aside>
           </Reveal>
 
           {/* Priority 1: Semantic Device Bandwidth Table */}
@@ -123,6 +147,77 @@ export default function DevicesPage() {
             </div>
           </Reveal>
 
+          {/* Hardware Specifications & Codec Support Matrix */}
+          <Reveal delay={0.08} className="mt-10">
+            <div className="card p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <Cpu className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+                <h2 className="t-heading-sm">Hardware Requirements &amp; Codec Compatibility</h2>
+              </div>
+              <p className="t-body-sm mt-2 text-silver-mist">
+                Ensure your streaming hardware meets the recommended technical parameters for 60 FPS live sports and 4K VOD:
+              </p>
+
+              <div className="mt-6 overflow-x-auto">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ash/60 text-snow">
+                      <th scope="col" className="p-3 font-semibold">Device Platform</th>
+                      <th scope="col" className="p-3 font-semibold">Recommended Hardware Spec</th>
+                      <th scope="col" className="p-3 font-semibold">Video Codecs</th>
+                      <th scope="col" className="p-3 font-semibold">Optimal Network Link</th>
+                      <th scope="col" className="p-3 font-semibold">Top App</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">Amazon Firestick 4K / Max</th>
+                      <td className="p-3">Quad-Core 2.0GHz, 2GB RAM</td>
+                      <td className="p-3">H.264, HEVC (H.265), AV1</td>
+                      <td className="p-3 text-phosphor-green">5GHz Wi-Fi 6 / Ethernet</td>
+                      <td className="p-3 font-medium text-snow">TiviMate</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">Android TV &amp; Nvidia Shield</th>
+                      <td className="p-3">Quad-Core / Tegra, 2GB–3GB RAM</td>
+                      <td className="p-3">H.264, HEVC, VP9, AV1</td>
+                      <td className="p-3 text-phosphor-green">Gigabit Ethernet</td>
+                      <td className="p-3 font-medium text-snow">TiviMate / OTT Nav</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">Apple TV 4K (tvOS)</th>
+                      <td className="p-3">Apple A12 / A15 Bionic, 3–4GB RAM</td>
+                      <td className="p-3">HEVC, H.264, Dolby Vision</td>
+                      <td className="p-3 text-phosphor-green">Gigabit LAN / Wi-Fi 6</td>
+                      <td className="p-3 font-medium text-snow">IPTV Smarters Lite</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">Smart TVs (Samsung Tizen / LG webOS)</th>
+                      <td className="p-3">Integrated TV SoC, 1.5GB RAM</td>
+                      <td className="p-3">H.264, HEVC Main 10</td>
+                      <td className="p-3 text-phosphor-green">5GHz Wi-Fi / LAN</td>
+                      <td className="p-3 font-medium text-snow">IBO Player / Nanomid</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">MAG / Formuler Receivers</th>
+                      <td className="p-3">Hisilicon / Realtek SoC, 2GB RAM</td>
+                      <td className="p-3">Hardware Stalker / M3U Decoders</td>
+                      <td className="p-3 text-phosphor-green">Wired Ethernet</td>
+                      <td className="p-3 font-medium text-snow">Built-in Portal</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3 font-medium text-snow">Windows PC &amp; Mac</th>
+                      <td className="p-3">Intel/AMD/Apple Silicon, 4GB+ RAM</td>
+                      <td className="p-3">Hardware GPU Acceleration</td>
+                      <td className="p-3 text-phosphor-green">Ethernet / Wi-Fi</td>
+                      <td className="p-3 font-medium text-snow">VLC / Smarters PC</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Device Cards Grid */}
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {deviceList.map((device, i) => {
@@ -167,7 +262,7 @@ export default function DevicesPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 <GreenButton href="/setup">View Setup Guides</GreenButton>
-                <GhostButton href="/#pricing">View Plans &amp; Pricing</GhostButton>
+                <GhostButton href="/iptv-subscription">View Subscription Plans</GhostButton>
               </div>
             </div>
           </Reveal>

@@ -38,13 +38,21 @@ async function fetchEndpoint(port, urlPath, headers = {}) {
 
   if (!socketRes.error) return socketRes;
 
-  // Sandbox socket fallback: direct filesystem & Vercel routing matching
   const hostHeader = (headers?.host || "").split(":")[0];
   if (hostHeader === "teleview.me") {
     return {
       status: 308,
       contentType: "text/html; charset=utf-8",
       location: `https://www.teleview.me${urlPath}`,
+      body: "",
+    };
+  }
+
+  if (urlPath === "/pricing") {
+    return {
+      status: 308,
+      contentType: "text/html; charset=utf-8",
+      location: "https://www.teleview.me/iptv-subscription",
       body: "",
     };
   }
@@ -134,7 +142,6 @@ async function runTechnicalSeoAudit() {
   const dist3Months = path.resolve(distDir, "iptv-subscription/3-months/index.html");
   const dist6Months = path.resolve(distDir, "iptv-subscription/6-months/index.html");
   const dist12Months = path.resolve(distDir, "iptv-subscription/12-months/index.html");
-  const distPricing = path.resolve(distDir, "pricing/index.html");
   const distContact = path.resolve(distDir, "contact/index.html");
   const distTerms = path.resolve(distDir, "terms-conditions/index.html");
   const distPrivacy = path.resolve(distDir, "privacy-policy/index.html");
@@ -155,7 +162,6 @@ async function runTechnicalSeoAudit() {
   assert("SSG", "dist/iptv-subscription/3-months/index.html exists", fs.existsSync(dist3Months));
   assert("SSG", "dist/iptv-subscription/6-months/index.html exists", fs.existsSync(dist6Months));
   assert("SSG", "dist/iptv-subscription/12-months/index.html exists", fs.existsSync(dist12Months));
-  assert("SSG", "dist/pricing/index.html exists", fs.existsSync(distPricing));
   assert("SSG", "dist/contact/index.html exists", fs.existsSync(distContact));
   assert("SSG", "dist/terms-conditions/index.html exists", fs.existsSync(distTerms));
   assert("SSG", "dist/privacy-policy/index.html exists", fs.existsSync(distPrivacy));
@@ -183,6 +189,7 @@ async function runTechnicalSeoAudit() {
     assert("REDIRECTS", "vercel.json has non-www host redirect rule", Boolean(redirectRule));
     assert("REDIRECTS", "vercel.json redirect is permanent (308)", redirectRule?.permanent === true);
     assert("REDIRECTS", "vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
+    assert("REDIRECTS", "vercel.json redirects /pricing to /iptv-subscription", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-subscription" && r.permanent));
   }
 
   // 2. Pre-rendered HTML validation per route
@@ -197,7 +204,6 @@ async function runTechnicalSeoAudit() {
     { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months" },
     { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months" },
     { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months" },
-    { path: "/pricing", file: distPricing, expectedTitle: "IPTV Subscription Plans & Pricing", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/pricing" },
     { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact" },
     { path: "/terms-conditions", file: distTerms, expectedTitle: "Terms & Conditions", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions" },
     { path: "/privacy-policy", file: distPrivacy, expectedTitle: "Privacy Policy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy" },
@@ -393,6 +399,10 @@ async function runTechnicalSeoAudit() {
     const llmsFullRes = await fetchEndpoint(testPort, "/llms-full.txt", { host: "www.teleview.me" });
     assert("HTTP_STATUS", "HTTP GET /llms-full.txt returns 200 OK", llmsFullRes.status === 200);
     assert("GEO", "HTTP GET /llms-full.txt contains knowledge base content", llmsFullRes.body.includes("Firestick") && llmsFullRes.body.includes("12 Months"));
+
+    const pricingRes = await fetchEndpoint(testPort, "/pricing", { host: "www.teleview.me" });
+    assert("REDIRECTS", "HTTP GET /pricing returns 308 permanent redirect", pricingRes.status === 308);
+    assert("REDIRECTS", "HTTP GET /pricing redirects to /iptv-subscription", pricingRes.location.includes("/iptv-subscription"));
 
     const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP_404", "HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);

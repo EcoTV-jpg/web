@@ -121,6 +121,51 @@ const articles: Article[] = [
       "Our automated system will extend your existing account expiration date without altering your username or password."
     ],
   },
+  {
+    id: "http-401-error",
+    category: "Troubleshooting & Errors",
+    title: "How to resolve 'HTTP 401 Unauthorized' or Invalid Login error",
+    excerpt: "Step-by-step resolution for credentials rejected by player apps.",
+    content: [
+      "1. Check for trailing spaces: When copying and pasting Server URL, Username, or Password on mobile or Firestick remotes, auto-correct often appends a hidden space at the end. Delete and re-enter manually.",
+      "2. Verify URL syntax: Ensure the Server URL includes the protocol (http:// or https://) and port number without an extra trailing slash (e.g. http://teleview-tv.me:8080).",
+      "3. Confirm password case: Credentials are strictly case-sensitive. Verify uppercase and lowercase characters match your welcome email or WhatsApp delivery.",
+      "4. Contact support: If your credentials were renewed recently, message our 24/7 WhatsApp desk (+44 7848 197761) with your order ID for an instant account handshake reset."
+    ],
+  },
+  {
+    id: "http-403-error",
+    category: "Troubleshooting & Errors",
+    title: "How to resolve 'HTTP 403 Forbidden' or Stream Limit Exceeded",
+    excerpt: "Fix stream connection locks across multiple household devices.",
+    content: [
+      "1. Check active background streams: If you stream on a TV and switch to your mobile phone, force-close the player app on the TV. If the player runs in the background, the server registers an active connection.",
+      "2. Multi-screen lines: Standard subscriptions support 1 active stream at a time. If other household members are watching, choose a multi-device plan or contact support to add extra concurrent connections.",
+      "3. Stream timeout: If your device disconnected abruptly, wait 3 minutes for the streaming server connection state to reset automatically."
+    ],
+  },
+  {
+    id: "m3u-parsing-error",
+    category: "Troubleshooting & Errors",
+    title: "How to fix 'Playlist Failed to Load' or M3U parsing timeouts",
+    excerpt: "Techniques to solve large playlist sync timeouts on Firestick and Smart TVs.",
+    content: [
+      "1. Prefer Xtream Codes API over raw M3U: The Xtream API loads channel categories dynamically, using 90% less RAM than downloading our full 25,000+ channel M3U file into device memory.",
+      "2. Switch Output Format: In TiviMate or IPTV Smarters, switch the stream output format between 'HLS' (.m3u8) and 'MPEG-TS' (.ts) under Stream Format settings.",
+      "3. Clear App Cache: On Firestick or Android TV, navigate to Settings > Applications > Manage Installed Applications > [Your App] > Clear Cache."
+    ],
+  },
+  {
+    id: "isp-dns-blocking",
+    category: "Streaming & Buffering",
+    title: "How to bypass ISP DNS blocking during live sports events",
+    excerpt: "Configure secure DNS or VPN to prevent premier sporting event blackouts.",
+    content: [
+      "1. Change your DNS server: Many major ISPs block IPTV server domains during live Premier League or UEFA matches using DNS interception. Change your streaming device DNS to Cloudflare (Primary: 1.1.1.1, Secondary: 1.0.0.1) or Google (8.8.8.8, 8.8.4.4).",
+      "2. Connect a secure VPN: If your ISP uses deep packet inspection (DPI), turn on a reliable VPN (such as ExpressVPN, NordVPN, or Surfshark). Teleview infrastructure is 100% VPN-friendly with zero geo-locking.",
+      "3. Use mobile hotspot to diagnose: If streaming instantly works over 4G/5G mobile hotspot, your home ISP is actively throttling your connection."
+    ],
+  },
 ];
 
 const categories = [
@@ -128,6 +173,7 @@ const categories = [
   "Account & Activation",
   "Setup Guides",
   "Streaming & Buffering",
+  "Troubleshooting & Errors",
   "Player Applications",
 ];
 
@@ -187,6 +233,15 @@ export default function HelpCenterPage() {
             <p className="t-body mt-3 max-w-[700px] text-silver-mist">
               Comprehensive walkthroughs, optimization techniques, and instant solutions for your Teleview IPTV streaming service.
             </p>
+            <div className="mt-4 flex flex-wrap items-center gap-2.5 text-xs text-silver-mist">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 px-3 py-1 font-medium text-phosphor-green">
+                <CheckCircle2 className="size-3.5" aria-hidden="true" />
+                Updated &amp; Fact-Checked for 2026
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
+                Reviewed by Teleview Technical Operations Desk
+              </span>
+            </div>
 
             {/* Live Search Bar */}
             <div className="relative mt-8 max-w-[620px]">

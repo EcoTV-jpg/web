@@ -67,6 +67,66 @@
       ],
       "destination": "https://www.teleview.me/:path*",
       "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/iptv-subscription",
+      "permanent": true
+    },
+    {
+      "source": "/tutorial",
+      "destination": "/setup",
+      "permanent": true
+    },
+    {
+      "source": "/installation-guide",
+      "destination": "/setup",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/help-center",
+      "permanent": true
+    },
+    {
+      "source": "/my-subscription",
+      "destination": "/my-account",
+      "permanent": true
+    },
+    {
+      "source": "/dmca-report",
+      "destination": "/dmca",
+      "permanent": true
+    },
+    {
+      "source": "/dmca-notice",
+      "destination": "/dmca",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/legal",
+      "destination": "/terms-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/refund",
+      "destination": "/refund-policy",
+      "permanent": true
     }
   ]
 }
