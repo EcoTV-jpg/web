@@ -291,14 +291,16 @@ async function runSeoAudit() {
 
     if (ldJsonMatch) {
       try {
-        const schemas = JSON.parse(ldJsonMatch[1]);
+        const rawParsed = JSON.parse(ldJsonMatch[1]);
+        const schemas = Array.isArray(rawParsed) ? rawParsed : (rawParsed["@graph"] || [rawParsed]);
         assert(`JSON-LD parses cleanly in ${page.path}`, Array.isArray(schemas) && schemas.length > 0, `${schemas.length} schemas`);
         const types = schemas.map((s) => s["@type"]);
         assert(`Organization & WebSite present in ${page.path}`, types.includes("Organization") && types.includes("WebSite"));
 
-        // Anti-spam assertion: no fake AggregateRating or Review schemas
-        assert(`No fake AggregateRating schema in ${page.path}`, !types.includes("AggregateRating"));
-        assert(`No fake Review schema in ${page.path}`, !types.includes("Review"));
+        // Anti-spam assertion: no fake AggregateRating or Review schemas anywhere in tree
+        const rawJsonString = ldJsonMatch[1].toLowerCase();
+        assert(`No fake AggregateRating schema in ${page.path}`, !rawJsonString.includes("aggregaterating"));
+        assert(`No fake Review schema in ${page.path}`, !rawJsonString.includes('"review"') && !types.includes("Review"));
 
         if (page.path === "/setup") {
           assert("HowTo schema present in /setup", types.includes("HowTo"));

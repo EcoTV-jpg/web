@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { Accent, GreenButton } from "../components/ui";
 import { site } from "../data/site";
 import {
@@ -38,33 +39,18 @@ export default function AccountPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "My Account", url: "/my-account" },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-clip bg-obsidian font-sans text-snow antialiased">
       <Header />
       <main className="pb-20 pt-12 sm:pb-24 sm:pt-16">
         <div className="container-x max-w-[960px]">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-xs text-silver-mist">
-              <li>
-                <a href="/" className="hover:text-snow transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <span className="text-smoke">Support</span>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <span className="text-phosphor-green font-medium">My Account</span>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs items={breadcrumbItems} />
 
           {/* Hero Header */}
           <Reveal className="mb-10">

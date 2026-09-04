@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { Accent, GreenButton } from "../components/ui";
 import { site } from "../data/site";
 import {
@@ -9,7 +10,6 @@ import {
   Mail,
   Send,
   CheckCircle2,
-  ChevronRight,
   AlertTriangle,
   FileCheck,
   Building,
@@ -42,35 +42,18 @@ export default function DmcaPage() {
     setSubmitted(true);
   };
 
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "DMCA Notice", url: "/dmca" },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-clip bg-obsidian font-sans text-snow antialiased">
       <Header />
       <main className="pb-20 pt-12 sm:pb-24 sm:pt-16">
         <div className="container-x max-w-[940px]">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-xs text-silver-mist">
-              <li>
-                <a href="/" className="hover:text-snow transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <a href="/terms-conditions" className="hover:text-snow transition-colors">
-                  Trust &amp; Legal
-                </a>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <span className="text-phosphor-green font-medium">DMCA Notice</span>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs items={breadcrumbItems} />
 
           {/* Hero Header */}
           <Reveal className="mb-10">

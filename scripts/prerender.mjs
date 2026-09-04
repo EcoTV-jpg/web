@@ -82,10 +82,11 @@ async function prerender() {
 
     // Inject JSON-LD structured data into <head>
     const schemaScript = `\n    <!-- Schema.org JSON-LD Structured Data -->\n    <script type="application/ld+json">${JSON.stringify(schemas)}</script>\n  `;
-    if (!pageHtml.includes("application/ld+json")) {
-      pageHtml = pageHtml.replace("</head>", `${schemaScript}</head>`);
+    const jsonLdTagRegex = /<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i;
+    if (jsonLdTagRegex.test(pageHtml)) {
+      pageHtml = pageHtml.replace(jsonLdTagRegex, schemaScript.trim());
     } else {
-      pageHtml = pageHtml.replace(/<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i, schemaScript.trim());
+      pageHtml = pageHtml.replace("</head>", `${schemaScript}</head>`);
     }
 
     // Hoist React 19 auto-generated <link rel="preload"> from inside #root body → <head>

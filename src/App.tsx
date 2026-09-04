@@ -12,6 +12,7 @@ import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import LegalPage from "./pages/LegalPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
+import { generateStructuredData } from "./components/SEO";
 
 export default function App({ url }: { url?: string }) {
   const rawPath = url || (typeof window !== "undefined" ? window.location.pathname : "/");
@@ -26,6 +27,10 @@ export default function App({ url }: { url?: string }) {
       const canonicalEl = document.querySelector('link[rel="canonical"]');
       if (canonicalEl) {
         canonicalEl.setAttribute("href", getCanonicalUrl(currentPath));
+      }
+      const jsonLdEl = document.querySelector('script[type="application/ld+json"]');
+      if (jsonLdEl) {
+        jsonLdEl.textContent = JSON.stringify(generateStructuredData(currentPath));
       }
     }
   }, [currentPath]);

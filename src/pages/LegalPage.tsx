@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { Accent, GreenButton } from "../components/ui";
 import { site } from "../data/site";
 import {
@@ -32,38 +33,21 @@ const navTabs = [
 ];
 
 export default function LegalPage({ type }: LegalPageProps) {
+  const currentTab = navTabs.find((t) => t.id === type) || navTabs[0];
+  const pageName = type === "disclaimer" ? "Legal Disclaimer" : currentTab.label;
+
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: pageName, url: currentTab.href },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-clip bg-obsidian font-sans text-snow antialiased">
       <Header />
       <main className="pb-20 pt-12 sm:pb-24 sm:pt-16">
         <div className="container-x max-w-[940px]">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-xs text-silver-mist">
-              <li>
-                <a href="/" className="hover:text-snow transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <span className="text-smoke">Legal</span>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
-              </li>
-              <li>
-                <span className="text-phosphor-green font-medium">
-                  {type === "terms" && "Terms & Conditions"}
-                  {type === "privacy" && "Privacy Policy"}
-                  {type === "refund" && "Refund Policy"}
-                  {type === "disclaimer" && "Disclaimer"}
-                </span>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs items={breadcrumbItems} />
 
           {/* Header Title Section */}
           <Reveal className="mb-10">

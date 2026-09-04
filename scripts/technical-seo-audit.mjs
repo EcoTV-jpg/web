@@ -288,13 +288,15 @@ async function runTechnicalSeoAudit() {
 
     if (ldJsonMatch) {
       try {
-        const schemas = JSON.parse(ldJsonMatch[1]);
+        const rawParsed = JSON.parse(ldJsonMatch[1]);
+        const schemas = Array.isArray(rawParsed) ? rawParsed : (rawParsed["@graph"] || [rawParsed]);
         assert("JSON_LD", `JSON-LD parses cleanly in ${page.path}`, Array.isArray(schemas) && schemas.length > 0, `${schemas.length} schemas`);
         const types = schemas.map((s) => s["@type"]);
         assert("ENTITY_GRAPH", `Organization & WebSite present in ${page.path}`, types.includes("Organization") && types.includes("WebSite"));
 
-        assert("JSON_LD", `No fake AggregateRating schema in ${page.path}`, !types.includes("AggregateRating"));
-        assert("JSON_LD", `No fake Review schema in ${page.path}`, !types.includes("Review"));
+        const rawJsonString = ldJsonMatch[1].toLowerCase();
+        assert("JSON_LD", `No fake AggregateRating schema in ${page.path}`, !rawJsonString.includes("aggregaterating"));
+        assert("JSON_LD", `No fake Review schema in ${page.path}`, !rawJsonString.includes('"review"') && !types.includes("Review"));
 
         if (page.path === "/setup") {
           assert("HOWTO", "HowTo schema present in /setup", types.includes("HowTo"));

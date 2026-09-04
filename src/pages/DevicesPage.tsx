@@ -1,9 +1,9 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import Breadcrumbs from "../components/Breadcrumbs";
 import { Accent, GreenButton, GhostButton } from "../components/ui";
 import {
-  ChevronRight,
   Tv,
   Smartphone,
   Monitor,
@@ -22,27 +22,18 @@ import {
 } from "lucide-react";
 
 export default function DevicesPage() {
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Supported Devices", url: "/devices" },
+  ];
+
   return (
     <div className="min-h-screen overflow-x-clip bg-obsidian font-sans text-snow antialiased">
       <Header />
       <main className="pb-20 pt-12 sm:pb-24 sm:pt-16">
         <div className="container-x max-w-[1000px]">
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-xs text-silver-mist">
-              <li>
-                <a href="/" className="hover:text-snow transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <ChevronRight className="size-3 text-smoke" />
-              </li>
-              <li className="text-snow font-medium" aria-current="page">
-                Supported Devices
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumbs items={breadcrumbItems} />
 
           {/* Page Header (Single H1) */}
           <Reveal>

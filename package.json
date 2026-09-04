@@ -10,6 +10,7 @@
     "test:seo": "node scripts/seo-audit.mjs",
     "test:differentiation": "node scripts/check-product-differentiation.mjs",
     "test:links": "node scripts/verify-internal-links.mjs",
+    "test:jsonld": "node scripts/extract-and-validate-jsonld.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
