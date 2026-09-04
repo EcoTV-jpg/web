@@ -1,14 +1,13 @@
-# Teleview IPTV — Full AI & LLM Technical Knowledge Base
+# Teleview IPTV — Full Technical Knowledge Base & Reference Index
 
-> Complete ground truth documentation for Teleview IPTV (https://www.teleview.me). Designed for ingestion by Generative Search Engines (SearchGPT, Perplexity AI, Claude, Gemini, ChatGPT) and LLM search agents.
+> Ground truth documentation for Teleview IPTV (https://www.teleview.me). Structured reference for streaming specifications, subscription tiers, supported devices, and setup procedures.
 
 ---
 
 ## 1. Brand & Infrastructure Overview
 - **Brand**: Teleview (Teleview Media)
 - **Official Site**: https://www.teleview.me/
-- **Founded**: Streaming infrastructure operations since 2011 (15+ years experience).
-- **Core Technology**: Distributed Content Delivery Network (CDN) with anti-freeze stream load balancing, redundant stream transcoding nodes, and 99.9% measured uptime.
+- **Core Technology**: Distributed Content Delivery Network (CDN) with stream load balancing, redundant stream transcoding nodes, and 99.9% measured uptime.
 - **Support Contact**: WhatsApp `+44 7848 197761` | Email `Help@Teleview.me`.
 
 ---

@@ -56,7 +56,7 @@ export default function DevicesPage() {
               </span>
             </div>
 
-            {/* GEO Direct Answer Callout for AI Search & Featured Snippets */}
+            {/* Direct Answer: Best Device for IPTV Streaming */}
             <aside
               aria-label="Quick Answer: Best Device for IPTV Streaming"
               className="mt-6 rounded-2xl border border-charcoal bg-ash/50 p-5 sm:p-6 text-left"
@@ -420,6 +420,27 @@ export default function DevicesPage() {
                 <div className="mt-3 flex items-center gap-2 text-[11px] text-smoke">
                   <span className="font-mono text-phosphor-green">HD 1080p:</span> HDMI 1.4 &bull;{" "}
                   <span className="font-mono text-snow">4K 60 FPS HDR:</span> HDMI 2.0b / HDMI 2.1 (HDCP 2.2)
+                </div>
+              </div>
+            </div>
+
+            {/* Hardware Architecture Definitions */}
+            <div className="mt-6 rounded-xl border border-charcoal/80 bg-ash/30 p-5 text-xs text-silver-mist">
+              <h3 className="text-sm font-semibold text-snow">
+                Key Hardware Definitions for Streaming Performance
+              </h3>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2 text-[11px] leading-relaxed">
+                <div>
+                  <strong className="text-snow">Hardware Video Decoder (HW):</strong> Dedicated on-die silicon ASIC (such as HEVC Main 10 or AV1 decoders) designed specifically to decompress video streams with near-zero CPU utilization and low power draw.
+                </div>
+                <div>
+                  <strong className="text-snow">System RAM vs. Flash Storage:</strong> RAM (typically 2–4 GB) holds live playback buffers, active channel lists, and EPG caches. Flash storage (8–16 GB) stores the player OS and app installation binaries.
+                </div>
+                <div>
+                  <strong className="text-snow">HDCP 2.2 Protocol:</strong> High-bandwidth Digital Content Protection required across HDMI 2.0b/2.1 cables to transmit 4K Ultra HD and HDR video to 4K television panels.
+                </div>
+                <div>
+                  <strong className="text-snow">Dual-Band Wi-Fi 5/6:</strong> 5 GHz and 6 GHz wireless frequencies provide wide 80 MHz channel widths and high throughput, preventing frame drops caused by 2.4 GHz microwave and appliance interference.
                 </div>
               </div>
             </div>

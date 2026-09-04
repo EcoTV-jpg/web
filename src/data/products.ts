@@ -570,22 +570,22 @@ export const subscriptionHubData = {
     {
       question: "Which IPTV subscription plan is right for me?",
       answer:
-        "If you are new to IPTV or want to test your home network, the 1-month plan ($16) offers total flexibility. If you want maximum savings and uninterrupted streaming, the 12-month plan ($90 / $7.50/mo) provides the lowest price-per-month.",
+        "Teleview offers four core durations to match your viewing needs: the 1-month plan ($16) provides complete flexibility for short-term testing, the 3-month ($39) and 6-month ($60) plans suit seasonal sports leagues, and the 12-month plan ($90 / $7.50/mo) delivers the maximum 53% discount with VIP server priority.",
     },
     {
       question: "Are all channels and features included in every plan?",
       answer:
-        "Yes. Every plan includes full access to our entire 25,000+ live channel catalog, 120,000+ movies and series, 4K streams, sports networks, and 24/7 customer support.",
+        "Yes, every Teleview subscription plan includes identical, unrestricted access to the complete 25,000+ live channel catalog, 120,000+ VOD movies and series, 4K UHD streaming, and 24/7 technical customer support.",
     },
     {
       question: "Can I upgrade or extend my subscription later?",
       answer:
-        "Yes. You can renew or upgrade to a longer duration at any time without losing your account settings or favorite channel lists.",
+        "Yes, you can extend or upgrade your Teleview subscription at any time without losing your playlist configuration, favorites, or EPG settings.",
     },
     {
       question: "How does the 14-day money-back guarantee work?",
       answer:
-        "If you encounter technical issues that our support team cannot resolve within 14 days of purchase, you are eligible for a full refund under our guarantee policy.",
+        "Teleview provides an unconditional 14-day money-back satisfaction guarantee on every plan. If you experience technical incompatibilities that our support team cannot resolve within 14 days of purchase, request a 100% full refund via WhatsApp or email.",
     },
   ],
 };

@@ -209,8 +209,8 @@ export default function SetupPage() {
               <p className="t-body-sm mt-2 text-silver-mist">
                 Regardless of your streaming device, setting up Teleview follows three straightforward steps:
               </p>
-              <div className="mt-6 grid gap-6 md:grid-cols-3">
-                <div className="rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
+              <ol className="mt-6 grid gap-6 md:grid-cols-3 list-none p-0">
+                <li className="list-none rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
                   <div>
                     <span className="label-mono text-phosphor-green text-xs">Step 01</span>
                     <h3 className="t-card-title mt-2 text-base">Receive Activation Email</h3>
@@ -222,9 +222,9 @@ export default function SetupPage() {
                   <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
                     Estimated Time: Instant upon order confirmation
                   </div>
-                </div>
+                </li>
 
-                <div className="rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
+                <li className="list-none rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
                   <div>
                     <span className="label-mono text-phosphor-green text-xs">Step 02</span>
                     <h3 className="t-card-title mt-2 text-base">Install Player App</h3>
@@ -236,9 +236,9 @@ export default function SetupPage() {
                   <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
                     Estimated Time: 2 to 3 minutes
                   </div>
-                </div>
+                </li>
 
-                <div className="rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
+                <li className="list-none rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
                   <div>
                     <span className="label-mono text-phosphor-green text-xs">Step 03</span>
                     <h3 className="t-card-title mt-2 text-base">Enter Credentials &amp; Watch</h3>
@@ -250,8 +250,8 @@ export default function SetupPage() {
                   <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
                     Estimated Time: 1 to 2 minutes
                   </div>
-                </div>
-              </div>
+                </li>
+              </ol>
             </div>
           </Reveal>
 
@@ -321,6 +321,67 @@ export default function SetupPage() {
                   </p>
                 </div>
               </div>
+
+              {/* Technical Comparison Table: Xtream Codes API vs. M3U Playlist */}
+              <div className="mt-8 pt-6 border-t border-charcoal/80">
+                <h3 className="text-sm font-semibold text-snow">
+                  Technical Comparison: Xtream Codes API vs. M3U Playlist URL
+                </h3>
+                <p className="mt-1 text-xs text-silver-mist">
+                  Compare authentication speed, memory footprint, and feature capabilities across both streaming protocol formats:
+                </p>
+
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full text-left text-xs border-collapse">
+                    <thead>
+                      <tr className="border-b border-charcoal bg-ash/60 text-snow">
+                        <th scope="col" className="p-3 font-semibold">Technical Parameter</th>
+                        <th scope="col" className="p-3 font-semibold">Xtream Codes API (Recommended)</th>
+                        <th scope="col" className="p-3 font-semibold">M3U / M3U8 Playlist</th>
+                        <th scope="col" className="p-3 font-semibold">Operational Advantage</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Input &amp; Setup Speed</th>
+                        <td className="p-3 text-phosphor-green font-medium">Fast (~15 seconds with remote)</td>
+                        <td className="p-3">Manual long URL entry or portal paste</td>
+                        <td className="p-3">Simpler TV remote typing</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">EPG Guide Integration</th>
+                        <td className="p-3 text-phosphor-green font-medium">Automatic XMLTV sync</td>
+                        <td className="p-3">Requires separate secondary EPG URL</td>
+                        <td className="p-3">Instant TV schedule loading</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Catch-Up TV Support</th>
+                        <td className="p-3 text-phosphor-green font-medium">Full native timeline replay</td>
+                        <td className="p-3">Limited / player dependent</td>
+                        <td className="p-3">7-day broadcast archive access</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Device RAM Footprint</th>
+                        <td className="p-3 text-phosphor-green font-medium">Low (lazy-loads per active category)</td>
+                        <td className="p-3">High (parses entire file into memory)</td>
+                        <td className="p-3">Prevents app crashes on 1–2 GB sticks</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">VOD Series &amp; Movies</th>
+                        <td className="p-3 text-phosphor-green font-medium">Grouped by season, genre &amp; posters</td>
+                        <td className="p-3">Flat or single-folder hierarchy</td>
+                        <td className="p-3">Netflix-style browsing interface</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Optimal Player Apps</th>
+                        <td className="p-3 font-medium text-snow">TiviMate, IPTV Smarters Pro, XCIPTV</td>
+                        <td className="p-3">IBO Player Web Portal, VLC, Smart IPTV</td>
+                        <td className="p-3">Matched to preferred player platform</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </Reveal>
 
@@ -364,56 +425,66 @@ export default function SetupPage() {
                 ]}
               />
 
-              <div className="mt-6 space-y-4">
-                <SetupStepCard
-                  id="firestick-step-1"
-                  stepNumber="01"
-                  title="Search for Downloader App in Amazon Appstore"
-                  description="From your Firestick home screen, navigate to Find > Search and type 'Downloader'. Select the orange Downloader icon from the search results."
-                  action="Highlight Downloader and press the Select button on your Fire TV remote."
-                  tip="If this is your first time sideloading, navigate to Settings > My Fire TV > Developer Options and enable 'Install Unknown Apps' for Downloader."
-                  icon={<Search className="size-4" />}
-                />
+              <ol className="mt-6 space-y-4 list-none p-0">
+                <li className="list-none">
+                  <SetupStepCard
+                    id="firestick-step-1"
+                    stepNumber="01"
+                    title="Search for Downloader App in Amazon Appstore"
+                    description="From your Firestick home screen, navigate to Find > Search and type 'Downloader'. Select the orange Downloader icon from the search results."
+                    action="Highlight Downloader and press the Select button on your Fire TV remote."
+                    tip="If this is your first time sideloading, navigate to Settings > My Fire TV > Developer Options and enable 'Install Unknown Apps' for Downloader."
+                    icon={<Search className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="firestick-step-2"
-                  stepNumber="02"
-                  title="Install &amp; Launch Downloader"
-                  description="Click 'Download' or 'Get' to install Downloader. Once installed, launch the application."
-                  action="Click 'Allow' when Downloader requests permission to access photos, media, and files on your device."
-                  tip="Granting storage permission is required so Downloader can save the player APK file locally."
-                  icon={<Download className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="firestick-step-2"
+                    stepNumber="02"
+                    title="Install &amp; Launch Downloader"
+                    description="Click 'Download' or 'Get' to install Downloader. Once installed, launch the application."
+                    action="Click 'Allow' when Downloader requests permission to access photos, media, and files on your device."
+                    tip="Granting storage permission is required so Downloader can save the player APK file locally."
+                    icon={<Download className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="firestick-step-3"
-                  stepNumber="03"
-                  title="Enter Player App Downloader Code or Direct URL"
-                  description="In the Downloader URL address field, enter the direct numeric code or URL for your preferred player app (e.g., TiviMate or IPTV Smarters Pro)."
-                  action="Press 'Go' on your remote control to start downloading the installation file."
-                  icon={<FileCode className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="firestick-step-3"
+                    stepNumber="03"
+                    title="Enter Player App Downloader Code or Direct URL"
+                    description="In the Downloader URL address field, enter the direct numeric code or URL for your preferred player app (e.g., TiviMate or IPTV Smarters Pro)."
+                    action="Press 'Go' on your remote control to start downloading the installation file."
+                    icon={<FileCode className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="firestick-step-4"
-                  stepNumber="04"
-                  title="Install Compatible Player Application"
-                  description="Once the APK finishes downloading, a system dialog will appear. Click 'Install' at the bottom right corner."
-                  action="After installation completes, click 'Done' and select 'Delete' on the APK file to save device storage space."
-                  tip="Deleting the APK installer frees up ~80 MB of internal storage without affecting the installed app."
-                  icon={<CheckCircle2 className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="firestick-step-4"
+                    stepNumber="04"
+                    title="Install Compatible Player Application"
+                    description="Once the APK finishes downloading, a system dialog will appear. Click 'Install' at the bottom right corner."
+                    action="After installation completes, click 'Done' and select 'Delete' on the APK file to save device storage space."
+                    tip="Deleting the APK installer frees up ~80 MB of internal storage without affecting the installed app."
+                    icon={<CheckCircle2 className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="firestick-step-5"
-                  stepNumber="05"
-                  title="Enter Teleview Xtream Codes Credentials"
-                  description="Launch the player app and select 'Login with Xtream Codes API'. Enter your Server URL, Username, and Password exactly as provided in your Teleview activation email."
-                  action="Click 'Add User' or 'Connect' to initiate channel and EPG synchronization."
-                  tip="Ensure there are no accidental spaces before or after your username and password."
-                  icon={<Key className="size-4" />}
-                />
-              </div>
+                <li className="list-none">
+                  <SetupStepCard
+                    id="firestick-step-5"
+                    stepNumber="05"
+                    title="Enter Teleview Xtream Codes Credentials"
+                    description="Launch the player app and select 'Login with Xtream Codes API'. Enter your Server URL, Username, and Password exactly as provided in your Teleview activation email."
+                    action="Click 'Add User' or 'Connect' to initiate channel and EPG synchronization."
+                    tip="Ensure there are no accidental spaces before or after your username and password."
+                    icon={<Key className="size-4" />}
+                  />
+                </li>
+              </ol>
 
               {/* Firestick Common Mistakes & Troubleshooting */}
               <div className="mt-6 rounded-lg border border-charcoal/80 bg-ash/30 p-4 text-xs text-silver-mist">
@@ -474,54 +545,64 @@ export default function SetupPage() {
                 ]}
               />
 
-              <div className="mt-6 space-y-4">
-                <SetupStepCard
-                  id="smart-tv-step-1"
-                  stepNumber="01"
-                  title="Open Your Smart TV Official App Store"
-                  description="On Samsung TVs, open 'Samsung Apps'. On LG TVs, open the 'LG Content Store' or 'Apps' directly from your home menu."
-                  action="Select the search bar within your TV app store."
-                  icon={<Search className="size-4" />}
-                />
+              <ol className="mt-6 space-y-4 list-none p-0">
+                <li className="list-none">
+                  <SetupStepCard
+                    id="smart-tv-step-1"
+                    stepNumber="01"
+                    title="Open Your Smart TV Official App Store"
+                    description="On Samsung TVs, open 'Samsung Apps'. On LG TVs, open the 'LG Content Store' or 'Apps' directly from your home menu."
+                    action="Select the search bar within your TV app store."
+                    icon={<Search className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="smart-tv-step-2"
-                  stepNumber="02"
-                  title="Search &amp; Install Supported Player Application"
-                  description="Search for 'IBO Player', 'SmartOne IPTV', or 'SS IPTV'. Select the app and click 'Install'."
-                  action="Once downloaded, open the application on your TV."
-                  tip="IBO Player is the top-recommended application for both Samsung and LG TVs due to its fast channel switching engine."
-                  icon={<Download className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="smart-tv-step-2"
+                    stepNumber="02"
+                    title="Search &amp; Install Supported Player Application"
+                    description="Search for 'IBO Player', 'SmartOne IPTV', or 'SS IPTV'. Select the app and click 'Install'."
+                    action="Once downloaded, open the application on your TV."
+                    tip="IBO Player is the top-recommended application for both Samsung and LG TVs due to its fast channel switching engine."
+                    icon={<Download className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="smart-tv-step-3"
-                  stepNumber="03"
-                  title="Note Your On-Screen MAC Address &amp; Device Key"
-                  description="When launched for the first time, the application displays your TV unique Device MAC Address and Device Key on screen."
-                  action="Keep this screen visible or take a photo of the MAC Address (e.g., 00:1A:79:XX:XX:XX)."
-                  tip="Do not confuse the app-generated MAC address with your physical TV network MAC address in TV settings."
-                  icon={<Info className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="smart-tv-step-3"
+                    stepNumber="03"
+                    title="Note Your On-Screen MAC Address &amp; Device Key"
+                    description="When launched for the first time, the application displays your TV unique Device MAC Address and Device Key on screen."
+                    action="Keep this screen visible or take a photo of the MAC Address (e.g., 00:1A:79:XX:XX:XX)."
+                    tip="Do not confuse the app-generated MAC address with your physical TV network MAC address in TV settings."
+                    icon={<Info className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="smart-tv-step-4"
-                  stepNumber="04"
-                  title="Upload Teleview M3U Link via App Web Portal"
-                  description="Open the player activation website (e.g., iboplayer.com/device) on your phone or PC. Enter your MAC address and Device Key, then paste your Teleview M3U playlist link."
-                  action="Click 'Save Playlist' or 'Send'."
-                  icon={<FileCode className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="smart-tv-step-4"
+                    stepNumber="04"
+                    title="Upload Teleview M3U Link via App Web Portal"
+                    description="Open the player activation website (e.g., iboplayer.com/device) on your phone or PC. Enter your MAC address and Device Key, then paste your Teleview M3U playlist link."
+                    action="Click 'Save Playlist' or 'Send'."
+                    icon={<FileCode className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="smart-tv-step-5"
-                  stepNumber="05"
-                  title="Restart App on Your TV &amp; Start Streaming"
-                  description="Return to your Smart TV, exit the app, and re-launch it (or press 'Reload Playlist' on your remote). Your complete channel catalog, categories, and VOD library will appear."
-                  action="Select any channel to begin streaming."
-                  icon={<CheckCircle2 className="size-4" />}
-                />
-              </div>
+                <li className="list-none">
+                  <SetupStepCard
+                    id="smart-tv-step-5"
+                    stepNumber="05"
+                    title="Restart App on Your TV &amp; Start Streaming"
+                    description="Return to your Smart TV, exit the app, and re-launch it (or press 'Reload Playlist' on your remote). Your complete channel catalog, categories, and VOD library will appear."
+                    action="Select any channel to begin streaming."
+                    icon={<CheckCircle2 className="size-4" />}
+                  />
+                </li>
+              </ol>
 
               {/* Smart TV Common Mistakes & Troubleshooting */}
               <div className="mt-6 rounded-lg border border-charcoal/80 bg-ash/30 p-4 text-xs text-silver-mist">
@@ -580,44 +661,52 @@ export default function SetupPage() {
                 ]}
               />
 
-              <div className="mt-6 space-y-4">
-                <SetupStepCard
-                  id="android-step-1"
-                  stepNumber="01"
-                  title="Open Official Google Play Store"
-                  description="Launch the Google Play Store on your Android TV box, smart projector, or mobile device."
-                  action="Navigate to the search field."
-                  icon={<Search className="size-4" />}
-                />
+              <ol className="mt-6 space-y-4 list-none p-0">
+                <li className="list-none">
+                  <SetupStepCard
+                    id="android-step-1"
+                    stepNumber="01"
+                    title="Open Official Google Play Store"
+                    description="Launch the Google Play Store on your Android TV box, smart projector, or mobile device."
+                    action="Navigate to the search field."
+                    icon={<Search className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="android-step-2"
-                  stepNumber="02"
-                  title="Install TiviMate or IPTV Smarters Pro"
-                  description="For television screens, install 'TiviMate IPTV Player'. For smartphones and tablets, install 'IPTV Smarters Pro'."
-                  action="Click 'Install' and launch the application once complete."
-                  tip="TiviMate is engineered specifically for Android TV remote navigation and features seamless channel switching."
-                  icon={<Download className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="android-step-2"
+                    stepNumber="02"
+                    title="Install TiviMate or IPTV Smarters Pro"
+                    description="For television screens, install 'TiviMate IPTV Player'. For smartphones and tablets, install 'IPTV Smarters Pro'."
+                    action="Click 'Install' and launch the application once complete."
+                    tip="TiviMate is engineered specifically for Android TV remote navigation and features seamless channel switching."
+                    icon={<Download className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="android-step-3"
-                  stepNumber="03"
-                  title="Select Xtream Codes API Login"
-                  description="In the welcome setup wizard, select 'Add Playlist' and choose 'Xtream Codes API'."
-                  action="Open the credential input fields."
-                  icon={<FileCode className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="android-step-3"
+                    stepNumber="03"
+                    title="Select Xtream Codes API Login"
+                    description="In the welcome setup wizard, select 'Add Playlist' and choose 'Xtream Codes API'."
+                    action="Open the credential input fields."
+                    icon={<FileCode className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="android-step-4"
-                  stepNumber="04"
-                  title="Enter Teleview Server Details &amp; Synchronize"
-                  description="Enter your Server URL, Username, and Password provided by Teleview. Click 'Next' or 'Add User'."
-                  action="Wait 15–30 seconds for the live channel guide, VOD titles, and EPG schedules to download."
-                  icon={<CheckCircle2 className="size-4" />}
-                />
-              </div>
+                <li className="list-none">
+                  <SetupStepCard
+                    id="android-step-4"
+                    stepNumber="04"
+                    title="Enter Teleview Server Details &amp; Synchronize"
+                    description="Enter your Server URL, Username, and Password provided by Teleview. Click 'Next' or 'Add User'."
+                    action="Wait 15–30 seconds for the live channel guide, VOD titles, and EPG schedules to download."
+                    icon={<CheckCircle2 className="size-4" />}
+                  />
+                </li>
+              </ol>
 
               {/* Android Common Mistakes */}
               <div className="mt-6 rounded-lg border border-charcoal/80 bg-ash/30 p-4 text-xs text-silver-mist">
@@ -672,35 +761,41 @@ export default function SetupPage() {
                 ]}
               />
 
-              <div className="mt-6 space-y-4">
-                <SetupStepCard
-                  id="ios-step-1"
-                  stepNumber="01"
-                  title="Open Official Apple App Store"
-                  description="Open the App Store on your Apple TV, iPhone, or iPad."
-                  action="Search for 'IPTV Smarters Lite' or 'GSE Smart IPTV'."
-                  icon={<Search className="size-4" />}
-                />
+              <ol className="mt-6 space-y-4 list-none p-0">
+                <li className="list-none">
+                  <SetupStepCard
+                    id="ios-step-1"
+                    stepNumber="01"
+                    title="Open Official Apple App Store"
+                    description="Open the App Store on your Apple TV, iPhone, or iPad."
+                    action="Search for 'IPTV Smarters Lite' or 'GSE Smart IPTV'."
+                    icon={<Search className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="ios-step-2"
-                  stepNumber="02"
-                  title="Download &amp; Launch Player Application"
-                  description="Click 'Get' to download the app. Allow local network permissions when requested by iOS."
-                  action="Open the application."
-                  tip="Granting local network access ensures the app can stream media and discover AirPlay destinations."
-                  icon={<Download className="size-4" />}
-                />
+                <li className="list-none">
+                  <SetupStepCard
+                    id="ios-step-2"
+                    stepNumber="02"
+                    title="Download &amp; Launch Player Application"
+                    description="Click 'Get' to download the app. Allow local network permissions when requested by iOS."
+                    action="Open the application."
+                    tip="Granting local network access ensures the app can stream media and discover AirPlay destinations."
+                    icon={<Download className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="ios-step-3"
-                  stepNumber="03"
-                  title="Enter Teleview Xtream Codes Credentials"
-                  description="Select 'Login with Xtream Codes API'. Input your Server URL, Username, and Password, then click 'Add User'."
-                  action="Start streaming your 4K live channels and VOD library."
-                  icon={<CheckCircle2 className="size-4" />}
-                />
-              </div>
+                <li className="list-none">
+                  <SetupStepCard
+                    id="ios-step-3"
+                    stepNumber="03"
+                    title="Enter Teleview Xtream Codes Credentials"
+                    description="Select 'Login with Xtream Codes API'. Input your Server URL, Username, and Password, then click 'Add User'."
+                    action="Start streaming your 4K live channels and VOD library."
+                    icon={<CheckCircle2 className="size-4" />}
+                  />
+                </li>
+              </ol>
 
               {/* Apple iOS/tvOS Common Mistakes */}
               <div className="mt-6 rounded-lg border border-charcoal/80 bg-ash/30 p-4 text-xs text-silver-mist">
@@ -747,26 +842,30 @@ export default function SetupPage() {
                 for provisioning, enter the Teleview Stalker Portal URL into your MAG system settings, and reboot.
               </p>
 
-              <div className="mt-6 space-y-4">
-                <SetupStepCard
-                  id="mag-step-1"
-                  stepNumber="01"
-                  title="Access MAG System Settings &amp; Server Configuration"
-                  description="From the MAG inner portal or main menu, navigate to Settings > System Settings > Servers > Portals."
-                  action="Select the 'Portal 1 Name' field (type 'Teleview') and navigate to the 'Portal 1 URL' field."
-                  tip="Ensure your MAC address has been registered with Teleview support prior to connecting."
-                  icon={<Key className="size-4" />}
-                />
+              <ol className="mt-6 space-y-4 list-none p-0">
+                <li className="list-none">
+                  <SetupStepCard
+                    id="mag-step-1"
+                    stepNumber="01"
+                    title="Access MAG System Settings &amp; Server Configuration"
+                    description="From the MAG inner portal or main menu, navigate to Settings > System Settings > Servers > Portals."
+                    action="Select the 'Portal 1 Name' field (type 'Teleview') and navigate to the 'Portal 1 URL' field."
+                    tip="Ensure your MAC address has been registered with Teleview support prior to connecting."
+                    icon={<Key className="size-4" />}
+                  />
+                </li>
 
-                <SetupStepCard
-                  id="mag-step-2"
-                  stepNumber="02"
-                  title="Enter Portal URL, Save &amp; Reboot Device"
-                  description="Type the exact Teleview Stalker Portal URL provided in your activation email. Click 'OK' or 'Save' on your remote control, return to the main menu, and select 'Reboot device'."
-                  action="Allow the MAG box to reboot; it will load the Teleview Stalker interface automatically."
-                  icon={<CheckCircle2 className="size-4" />}
-                />
-              </div>
+                <li className="list-none">
+                  <SetupStepCard
+                    id="mag-step-2"
+                    stepNumber="02"
+                    title="Enter Portal URL, Save &amp; Reboot Device"
+                    description="Type the exact Teleview Stalker Portal URL provided in your activation email. Click 'OK' or 'Save' on your remote control, return to the main menu, and select 'Reboot device'."
+                    action="Allow the MAG box to reboot; it will load the Teleview Stalker interface automatically."
+                    icon={<CheckCircle2 className="size-4" />}
+                  />
+                </li>
+              </ol>
 
               {/* MAG Common Mistakes */}
               <div className="mt-6 rounded-lg border border-charcoal/80 bg-ash/30 p-4 text-xs text-silver-mist">

@@ -1,7 +1,7 @@
 # ==============================================================================
-# Teleview IPTV Robots & AI Search Crawler Configuration
+# Teleview Robots & Crawler Directives
 # Canonical Host: https://www.teleview.me
-# Next-Level AI SEO, LLM SEO & Generative Engine Optimization (GEO) Directives
+# Indexing and access directives for web crawlers and AI user agents
 # ==============================================================================
 
 # 1. Global Crawler Policy (Search Engines & Web Crawlers)

@@ -38,6 +38,29 @@ export default function SubscriptionHubPage() {
                 <GreenButton href="#comparison">Compare Plans</GreenButton>
                 <GhostButton href="/setup">Setup Guide</GhostButton>
               </div>
+
+              {/* Direct Answer Summary Callout for AI Search & Featured Snippets */}
+              <aside
+                aria-label="Direct Summary: Teleview IPTV Subscription Plans"
+                className="mt-8 rounded-2xl border border-charcoal bg-ash/50 p-5 sm:p-6 text-left"
+              >
+                <div className="flex items-start gap-3">
+                  <ShieldCheck className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+                  <div>
+                    <h2 className="text-sm font-semibold text-snow">
+                      Direct Summary: What IPTV Subscription Plans Does Teleview Offer?
+                    </h2>
+                    <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                      Teleview offers four standard subscription tiers: <strong className="text-snow">1 Month ($16.00)</strong>,{" "}
+                      <strong className="text-snow">3 Months ($39.00 / $13.00/mo)</strong>,{" "}
+                      <strong className="text-snow">6 Months ($60.00 / $10.00/mo)</strong>, and{" "}
+                      <strong className="text-snow">12 Months ($90.00 / $7.50/mo)</strong>. Every plan includes full access to over
+                      25,000 live TV channels, 120,000+ on-demand movies and series, 4K sports streaming, zero automatic rebilling,
+                      and a risk-free 14-day money-back guarantee.
+                    </p>
+                  </div>
+                </div>
+              </aside>
             </div>
           </Reveal>
 

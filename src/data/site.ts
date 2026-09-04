@@ -487,81 +487,81 @@ export const faqs = [
   {
     question: "What is IPTV and how does Teleview work?",
     answer:
-      "IPTV (Internet Protocol Television) delivers live television channels and on-demand content through secure internet protocols rather than traditional cable or satellite. With Teleview, simply choose a plan, receive your credentials, and start streaming on any compatible smart device with our high-speed server network.",
+      "IPTV (Internet Protocol Television) delivers live television channels and on-demand video over an internet connection instead of cable or satellite. Teleview provisions secure subscriber credentials (Xtream Codes API or M3U playlist) that you input into your preferred media player app to stream 25,000+ live channels and 120,000+ VOD titles.",
   },
   {
-    question: "Teleview customer support response time?",
+    question: "What customer support response time does Teleview offer?",
     answer:
-      "Our dedicated technical support team is available 24/7 with an average response time of under 15 minutes via live chat and email. We assist with initial setup, app configuration, and channel troubleshooting.",
+      "Teleview provides 24/7 technical customer support with an average response time under 15 minutes via WhatsApp (+44 7848 197761) and email (Help@Teleview.me). Our technical team assists with initial credential setup, app installation, and playback optimization.",
   },
   {
-    question: "How does Premium IPTV streaming work?",
+    question: "How does Teleview IPTV streaming infrastructure work?",
     answer:
-      "Our premium streaming infrastructure converts broadcast signals into optimized digital packets delivered through CDN servers worldwide. This ensures lightning-fast channel zapping, 4K Ultra HD resolution, and 99.9% anti-freeze server uptime.",
+      "Teleview operates a globally distributed Content Delivery Network (CDN) with automated load balancing and 99.9% server uptime. Live broadcast signals are ingested, transcoded with dedicated hardware encoders, and delivered via low-latency HTTP streams directly to your device.",
   },
   {
-    question: "Why choose Teleview as IPTV provider?",
+    question: "Why choose Teleview as your IPTV provider?",
     answer:
-      "Teleview provides over 15 years of industry excellence, offering 25,000+ live worldwide channels, 120,000+ VOD movies and series, 4K UHD streaming, 99.9% guaranteed uptime, multi-device support, and a risk-free 14-day money-back guarantee.",
+      "Teleview offers a stable global streaming service with 25,000+ live channels, 120,000+ VOD movies and series, true 4K UHD sports at 60 FPS, anti-freeze edge routing, multi-device support, and a risk-free 14-day money-back guarantee.",
   },
   {
-    question: "Supported devices for Teleview?",
+    question: "Which devices and operating systems are supported by Teleview?",
     answer:
-      "Teleview works on Amazon Firestick, Smart TVs (Samsung, LG, Sony, Android TV, VIDAA), Apple TV, iPhones, iPads, Android smartphones and tablets, Windows PC, Mac, MAG boxes, Formuler, BuzzTV, and Roku.",
+      "Teleview supports all major platforms including Amazon Fire TV Stick, Smart TVs (Samsung Tizen, LG webOS, Android TV, Google TV), Apple TV (tvOS), iPhone and iPad (iOS), Android mobile devices, Windows PC, Mac, MAG 322/524 boxes, and Formuler receivers.",
   },
   {
-    question: "Is IPTV Legal?",
+    question: "Can I use multiple devices simultaneously on one Teleview subscription?",
     answer:
-      "Yes, using IPTV services is legal. Teleview complies with international streaming protocols and provides access to legitimate global streams so you can enjoy secure, high-quality entertainment worldwide without worries.",
+      "A standard Teleview subscription includes 1 active simultaneous stream, though you may configure your credentials on unlimited devices. If multiple family members wish to stream at the same time, multi-connection options (2, 3, or 4 simultaneous devices) can be arranged with our support team.",
   },
   {
-    question: "What devices can I use with Teleview?",
+    question: "Is using Teleview IPTV legal?",
     answer:
-      "You can stream Teleview across all popular platforms including Amazon Fire TV, Android TV boxes, Apple TV, Smart TVs with TiviMate or IPTV Smarters Pro, mobile devices, and desktop computers.",
+      "Yes, streaming IPTV services is legal. Teleview complies with international streaming protocols and provides access to public broadcasts and global channels over standard IP networks.",
   },
   {
-    question: "How do I choose the best IPTV subscription?",
+    question: "How do I choose the best Teleview subscription plan?",
     answer:
-      "Look for providers with high-speed worldwide CDN servers, 4K/FHD resolution, comprehensive EPG TV guides, responsive 24/7 support, and no long-term contracts. Teleview's 12-month plan is our most popular choice, offering maximum savings and premium server priority.",
+      "Choose your Teleview plan based on viewing commitment: the 1-Month plan ($16) is ideal for testing, the 3-Month plan ($39) suits seasonal sports, while the 12-Month plan ($90 / $7.50/mo) provides maximum value and priority server allocation during high-traffic global events.",
   },
   {
-    question: "Can I get a free trial of Teleview?",
+    question: "Can I get a free trial of Teleview IPTV?",
     answer:
-      "Yes! We offer a 24-hour trial as well as a flexible 1-Month plan backed by our full 14-day money-back guarantee, allowing you to test our channel lineup and server performance completely risk-free.",
+      "Yes, Teleview offers 24-hour test access upon request via WhatsApp, as well as a 1-Month plan fully backed by a 14-day money-back guarantee so you can test our channel library and streaming stability risk-free.",
   },
   {
-    question: "What is the best IPTV player to use with your service?",
+    question: "What is the best IPTV player application for Teleview?",
     answer:
-      "We recommend TiviMate and IPTV Smarters Pro for Firestick and Android devices, IBO Player or Nanomid for Smart TVs, and GSE Smart IPTV or UHF for Apple iOS and tvOS devices. Detailed step-by-step setup tutorials are available in our Setup Guide.",
+      "Teleview recommends TiviMate and IPTV Smarters Pro for Fire TV and Android devices, IBO Player for Samsung and LG Smart TVs, and IPTV Smarters Lite or GSE Smart IPTV for Apple iOS and tvOS. Comprehensive tutorials are available in our Setup Guide.",
   },
   {
-    question: "How much does IPTV cost compared to cable?",
+    question: "How much does Teleview IPTV cost compared to cable TV?",
     answer:
-      "Traditional cable and satellite packages cost between $90 and $180 per month with extra fees for HD boxes and sports tiers. Teleview starts at just $19 per month with no contracts, saving you over $1,200 every year while providing more than 25,000 global channels.",
+      "Teleview IPTV starts at $16 per month (or down to $7.50 per month on the 12-month plan), compared to traditional cable packages that typically cost between $90 and $180 per month. Subscribers save over $1,000 annually while accessing 25,000+ live channels and 120,000+ on-demand titles.",
   },
   {
-    question: "What sports channels are included with Teleview IPTV?",
+    question: "What live sports coverage is included with Teleview?",
     answer:
-      "Teleview includes all major worldwide sports networks: Premier League, UEFA Champions League, Formula 1, UFC PPV events, NFL Sunday Ticket, NBA League Pass, NHL Center Ice, MLB Extra Innings, Sky Sports, TNT Sports, beIN Sports, and ESPN in 4K.",
+      "Teleview includes comprehensive global sports coverage including Premier League, UEFA Champions League, NFL, NBA, Formula 1, UFC PPV events, NHL, MLB, tennis grand slams, and international cricket in Full HD and 4K 60 FPS.",
   },
   {
-    question: "How do I set up IPTV on my device step-by-step?",
+    question: "How do I set up Teleview IPTV on my device step-by-step?",
     answer:
-      "Setting up is fast: 1) Select your plan, 2) Download your preferred IPTV player app (like TiviMate or IPTV Smarters Pro), 3) Enter your server URL and login credentials sent to your email, and 4) Start watching instantly. Check our Setup page for visual guides.",
+      "Setting up Teleview involves three steps: 1) Select a subscription plan, 2) Install a compatible player app (such as TiviMate or IBO Player) from your device app store, and 3) Enter your Xtream Codes API credentials sent to your email or WhatsApp to immediately start watching.",
   },
   {
-    question: "What internet speed do I need for IPTV streaming?",
+    question: "What internet speed is required for Teleview IPTV streaming?",
     answer:
-      "We recommend a minimum stable connection of 15 Mbps for Full HD (1080p) streams and 30+ Mbps for 4K Ultra HD sports and on-demand movies. Using a wired Ethernet cable or 5 GHz Wi-Fi provides the best buffering-free experience. You can test your connection speed anytime to verify your bandwidth before streaming.",
+      "Teleview requires a minimum stable download speed of 10–15 Mbps for Full HD 1080p channels and 25–30 Mbps for 4K Ultra HD 60 FPS sports broadcasts. Connecting via a 5 GHz Wi-Fi band or wired Ethernet ensures buffer-free playback.",
     link: {
       url: "https://fast.com",
       text: "Test your connection speed on Fast.com →",
     },
   },
   {
-    question: "Do I need a VPN for IPTV streaming?",
+    question: "Do I need a VPN to use Teleview IPTV?",
     answer:
-      "A VPN is not required to stream Teleview because our servers use encrypted streaming protocols. However, you are welcome to use a VPN (such as NordVPN or ExpressVPN) for added privacy or if your local ISP throttles high-bandwidth video traffic during major live events.",
+      "A VPN is not required to stream Teleview as our servers use encrypted streaming endpoints. However, Teleview is 100% VPN-compatible (supporting NordVPN, ExpressVPN, Surfshark) if your ISP throttles streaming bandwidth during live sports matches.",
   },
 ];
 
