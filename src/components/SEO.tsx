@@ -197,26 +197,54 @@ export function generateStructuredData(path: string = "/") {
       "@context": "https://schema.org",
       "@type": "HowTo",
       "@id": `${siteConfig.url}/setup#howto`,
-      name: "How to Set Up Teleview IPTV",
-      description: "Complete visual guide to installing and activating Teleview IPTV on Firestick, Smart TV, Android, and iOS devices.",
+      name: "How to Set Up Teleview IPTV Across Streaming Devices",
+      description:
+        "Complete technical installation guide to configuring Teleview IPTV on Amazon Firestick, Samsung and LG Smart TVs, Android TV, Apple TV, PC/Mac, and MAG receivers.",
+      totalTime: "PT5M",
+      tool: [
+        {
+          "@type": "HowToTool",
+          name: "Compatible Streaming Device (Amazon Fire TV, Samsung/LG Smart TV, Android Box, Apple TV, or MAG)",
+        },
+        {
+          "@type": "HowToTool",
+          name: "IPTV Player Application (TiviMate, IPTV Smarters Pro, IBO Player, or GSE Smart IPTV)",
+        },
+      ],
+      supply: [
+        {
+          "@type": "HowToSupply",
+          name: "Active Teleview IPTV Subscription Credentials (Xtream Codes API Server URL, Username, and Password)",
+        },
+        {
+          "@type": "HowToSupply",
+          name: "High-Speed Internet Connection (15–25+ Mbps recommended on 5GHz Wi-Fi or Ethernet)",
+        },
+      ],
       step: [
         {
           "@type": "HowToStep",
-          name: "Select Your Preferred Device & App",
-          text: "Choose your streaming platform (Amazon Firestick, Samsung/LG Smart TV, Android Box, iOS/Apple TV).",
+          name: "Verify Network & Device Prerequisites",
+          text: "Ensure your streaming device has at least 1.5 GB free storage and connects to 5GHz Wi-Fi or Ethernet with 15+ Mbps bandwidth.",
+          url: `${siteConfig.url}/setup#prerequisites`,
+        },
+        {
+          "@type": "HowToStep",
+          name: "Select Your Preferred Device & Install Player App",
+          text: "Install a supported player application: Downloader + TiviMate on Firestick, IBO Player on Smart TV, or IPTV Smarters Pro on Android and iOS.",
           url: `${siteConfig.url}/setup#firestick`,
         },
         {
           "@type": "HowToStep",
-          name: "Download Player Application",
-          text: "Install a supported IPTV player (TiviMate, IPTV Smarters Pro, IBO Player) from the official app store.",
-          url: `${siteConfig.url}/setup#smart-tv`,
+          name: "Configure Teleview Xtream Codes or M3U Credentials",
+          text: "Input your Teleview Server URL, Username, and Password into the player app's Xtream Codes API login interface, or load your M3U playlist link.",
+          url: `${siteConfig.url}/setup#xtream-codes`,
         },
         {
           "@type": "HowToStep",
-          name: "Configure Teleview Credentials",
-          text: "Enter your server URL, username, and password (Xtream API) or load your M3U playlist link to start streaming.",
-          url: `${siteConfig.url}/setup#xtream-codes`,
+          name: "Synchronize Channel Catalog & Electronic Program Guide",
+          text: "Wait 15–30 seconds for the channel playlist and EPG timeline to synchronize, then start streaming live TV and 4K VOD.",
+          url: `${siteConfig.url}/setup#smart-tv`,
         },
       ],
     };
