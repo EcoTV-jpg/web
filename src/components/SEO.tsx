@@ -239,6 +239,34 @@ export function generateStructuredData(path: string = "/") {
     return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema, faqSchema].filter(Boolean);
   }
 
+  if (cleanPath === "/devices") {
+    const techArticleSchema = {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "@id": `${siteConfig.url}/devices#article`,
+      headline: "Supported IPTV Devices, Hardware Requirements & App Compatibility Guide",
+      description:
+        "Comprehensive technical guide to supported streaming devices, hardware specifications, internet bandwidth requirements, and IPTV player applications for Teleview.",
+      url: `${siteConfig.url}/devices`,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-04T18:00:00+00:00",
+      proficiencyLevel: "Beginner",
+      about: [
+        { "@type": "Thing", name: "Streaming media device" },
+        { "@type": "Thing", name: "Internet Protocol television" },
+        { "@type": "Thing", name: "Hardware specifications" },
+      ],
+    };
+    return [orgSchema, websiteSchema, webpageSchema, breadcrumbSchema, techArticleSchema].filter(Boolean);
+  }
+
   if (
     cleanPath === "/terms-conditions" ||
     cleanPath === "/privacy-policy" ||
