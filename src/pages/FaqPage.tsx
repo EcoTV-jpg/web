@@ -65,9 +65,10 @@ export default function FaqPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <GreenButton href={siteConfig.contact.emailHref}>Contact Support Email</GreenButton>
+                <GhostButton href="/iptv-subscription">Compare All Plans</GhostButton>
                 <GhostButton href="/setup">View Setup Guides</GhostButton>
                 <GhostButton href="/devices">Supported Devices</GhostButton>
-                <GhostButton href="/#pricing">View Subscription Plans</GhostButton>
+                <GhostButton href="/help-center">Help Center</GhostButton>
               </div>
             </div>
           </Reveal>

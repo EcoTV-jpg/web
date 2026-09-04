@@ -101,22 +101,21 @@ export default function Footer() {
             <div>
               <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Support</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
-                <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>
                 <li><a href="/help-center" className="hover:text-snow transition-colors">Help Center</a></li>
-                <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
                 <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
+                <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>
                 <li><a href="/my-account" className="hover:text-snow transition-colors">My Account</a></li>
-                <li><a href="/dmca" className="hover:text-snow transition-colors">DMCA Notice</a></li>
               </ul>
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Legal</h3>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Trust &amp; Legal</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
                 <li><a href="/terms-conditions" className="hover:text-snow transition-colors">Terms &amp; Conditions</a></li>
                 <li><a href="/privacy-policy" className="hover:text-snow transition-colors">Privacy Policy</a></li>
                 <li><a href="/refund-policy" className="hover:text-snow transition-colors">Refund Policy</a></li>
                 <li><a href="/disclaimer" className="hover:text-snow transition-colors">Disclaimer</a></li>
+                <li><a href="/dmca" className="hover:text-snow transition-colors">DMCA Notice</a></li>
               </ul>
             </div>
           </div>

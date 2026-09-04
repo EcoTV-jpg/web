@@ -13,7 +13,18 @@ import {
   AlertTriangle,
   FileCheck,
   Building,
+  FileText,
+  Shield,
+  RefreshCcw,
 } from "lucide-react";
+
+const navTabs = [
+  { id: "terms", label: "Terms & Conditions", href: "/terms-conditions", icon: FileText },
+  { id: "privacy", label: "Privacy Policy", href: "/privacy-policy", icon: Shield },
+  { id: "refund", label: "Refund Policy", href: "/refund-policy", icon: RefreshCcw },
+  { id: "disclaimer", label: "Disclaimer", href: "/disclaimer", icon: AlertTriangle },
+  { id: "dmca", label: "DMCA Notice", href: "/dmca", icon: ShieldAlert },
+];
 
 export default function DmcaPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -48,7 +59,9 @@ export default function DmcaPage() {
                 <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
               </li>
               <li>
-                <span className="text-smoke">Support</span>
+                <a href="/terms-conditions" className="hover:text-snow transition-colors">
+                  Trust &amp; Legal
+                </a>
               </li>
               <li>
                 <ChevronRight className="size-3 text-smoke" aria-hidden="true" />
@@ -75,6 +88,28 @@ export default function DmcaPage() {
             </p>
           </Reveal>
 
+          {/* Legal Navigation Tabs */}
+          <div className="mb-12 flex flex-wrap gap-2 border-b border-charcoal/60 pb-4">
+            {navTabs.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = tab.id === "dmca";
+              return (
+                <a
+                  key={tab.id}
+                  href={tab.href}
+                  className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-medium transition-all ${
+                    isActive
+                      ? "bg-phosphor-green text-obsidian font-bold shadow-[0_0_12px_rgba(62,207,142,0.3)]"
+                      : "border border-charcoal bg-ash/30 text-silver-mist hover:border-slate hover:text-snow"
+                  }`}
+                >
+                  <Icon className="size-3.5" aria-hidden="true" />
+                  <span>{tab.label}</span>
+                </a>
+              );
+            })}
+          </div>
+
           {/* Core Policy Articles */}
           <div className="space-y-8 text-silver-mist text-sm leading-relaxed">
             <section className="card p-6 sm:p-8 space-y-4 border border-charcoal/80 bg-ash/20">
@@ -99,7 +134,15 @@ export default function DmcaPage() {
                 Teleview provides an IPTV account access platform and customer management infrastructure. <strong className="text-snow">Teleview does not host, store, encode, or broadcast video files, media archives, or television signals on our web servers.</strong>
               </p>
               <p>
-                All television broadcasts and on-demand media content are delivered through third-party streaming providers over internet protocols. We do not possess control over external streaming endpoints or media feeds maintained by independent broadcasters.
+                All television broadcasts and on-demand media content are delivered through third-party streaming providers over internet protocols. We do not possess control over external streaming endpoints or media feeds maintained by independent broadcasters. For further details on our technology model and nominative trademark disclosures, review our official{" "}
+                <a href="/disclaimer" className="text-phosphor-green hover:underline">
+                  Legal Disclaimer
+                </a>{" "}
+                and{" "}
+                <a href="/terms-conditions" className="text-phosphor-green hover:underline">
+                  Terms &amp; Conditions
+                </a>
+                .
               </p>
             </section>
 
@@ -263,6 +306,13 @@ export default function DmcaPage() {
               <h3 className="text-sm font-semibold text-snow">Repeat Infringer Termination Policy</h3>
               <p>
                 In compliance with 17 U.S.C. § 512(i), Teleview maintains a strict policy providing for the immediate suspension or permanent termination of subscriber accounts found to repeatedly infringe copyright rights.
+              </p>
+              <p className="pt-2 text-smoke">
+                For customer service, non-copyright inquiries, or billing assistance, please reach our 24/7 team at the{" "}
+                <a href="/contact" className="text-phosphor-green hover:underline">
+                  Teleview Support Center
+                </a>
+                .
               </p>
             </section>
           </div>

@@ -41,6 +41,15 @@ export default function Guarantee() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-5 pt-4 border-t border-charcoal/60">
+              <a
+                href="/refund-policy"
+                className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Read our official 14-Day Refund Policy &rarr;
+              </a>
+            </div>
           </div>
         </Reveal>
 
@@ -66,8 +75,11 @@ export default function Guarantee() {
               <p className="mt-2 text-phosphor-green font-medium">{setupHelp.conclusion}</p>
             </div>
 
-            <div className="mt-6 pt-2">
+            <div className="mt-6 pt-2 flex flex-wrap items-center gap-3">
               <GreenButton href={site.emailHref}>{setupHelp.cta}</GreenButton>
+              <a href="/help-center" className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline">
+                Visit Help Center &rarr;
+              </a>
             </div>
           </article>
         </Reveal>

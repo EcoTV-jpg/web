@@ -14,6 +14,7 @@ import {
   Mail,
   MessageCircle,
   HelpCircle,
+  ShieldAlert,
 } from "lucide-react";
 
 export type LegalType = "terms" | "privacy" | "refund" | "disclaimer";
@@ -27,6 +28,7 @@ const navTabs = [
   { id: "privacy", label: "Privacy Policy", href: "/privacy-policy", icon: Shield },
   { id: "refund", label: "Refund Policy", href: "/refund-policy", icon: RefreshCcw },
   { id: "disclaimer", label: "Disclaimer", href: "/disclaimer", icon: AlertTriangle },
+  { id: "dmca", label: "DMCA Notice", href: "/dmca", icon: ShieldAlert },
 ];
 
 export default function LegalPage({ type }: LegalPageProps) {
@@ -284,6 +286,24 @@ function TermsContent() {
           In no event shall Teleview, its directors, employees, or technical partners be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the streaming platform. Teleview's total liability shall not exceed the amount paid by you for the active subscription term.
         </p>
       </section>
+
+      <section className="card p-6 sm:p-8 space-y-4">
+        <h2 className="t-h2 text-lg sm:text-xl text-snow flex items-center gap-2.5">
+          <span className="text-phosphor-green font-mono text-sm">09.</span>
+          Intellectual Property &amp; Copyright Policy
+        </h2>
+        <p>
+          Teleview respects all intellectual property rights and adheres to the Digital Millennium Copyright Act. If you believe any broadcast stream accessible through our technical gateway infringes upon a valid copyright, please submit a notice through our designated{" "}
+          <a href="/dmca" className="text-phosphor-green hover:underline font-semibold">
+            DMCA Notice Portal
+          </a>{" "}
+          or review our{" "}
+          <a href="/disclaimer" className="text-phosphor-green hover:underline">
+            Legal Disclaimer
+          </a>
+          .
+        </p>
+      </section>
     </article>
   );
 }
@@ -520,7 +540,11 @@ function DisclaimerContent() {
           Teleview respects the intellectual property rights of creators and copyright holders. In accordance with the Digital Millennium Copyright Act (DMCA) and international copyright directives, we promptly investigate all properly formulated notifications of alleged infringement.
         </p>
         <p>
-          If you are a copyright owner or authorized representative and believe that any content accessible via our platform infringes your copyright, please submit a formal notification to our designated copyright agent:
+          If you are a copyright owner or authorized representative and believe that any content accessible via our platform infringes your copyright, please submit a formal notification through our{" "}
+          <a href="/dmca" className="text-phosphor-green hover:underline font-semibold">
+            DMCA Notice &amp; Takedown Portal
+          </a>{" "}
+          or email our designated copyright agent:
         </p>
         <div className="rounded-lg border border-charcoal/80 bg-ash/20 p-4 font-mono text-xs text-silver-mist space-y-1">
           <p className="text-snow font-semibold">Teleview Copyright Compliance Office</p>

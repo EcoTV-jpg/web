@@ -324,23 +324,29 @@ export default function HelpCenterPage() {
           </div>
 
           {/* Quick Hub Navigation Cards */}
-          <div className="mt-14 grid sm:grid-cols-3 gap-4">
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <a href="/setup" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
               <Tv className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
               <h3 className="text-sm font-semibold text-snow">Installation Guide</h3>
               <p className="text-xs text-silver-mist mt-1">Step-by-step setup guides for all streaming platforms.</p>
             </a>
 
+            <a href="/devices" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
+              <Smartphone className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-sm font-semibold text-snow">Supported Devices</h3>
+              <p className="text-xs text-silver-mist mt-1">Hardware requirements and recommended IPTV players.</p>
+            </a>
+
+            <a href="/iptv-subscription" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
+              <LifeBuoy className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-sm font-semibold text-snow">Subscription Plans</h3>
+              <p className="text-xs text-silver-mist mt-1">Compare 1, 3, 6, and 12-month packages and savings.</p>
+            </a>
+
             <a href="/my-account" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
               <Shield className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
               <h3 className="text-sm font-semibold text-snow">My Account</h3>
               <p className="text-xs text-silver-mist mt-1">Check subscription status and playlist credentials.</p>
-            </a>
-
-            <a href="/faq" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
-              <HelpCircle className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-semibold text-snow">General FAQ</h3>
-              <p className="text-xs text-silver-mist mt-1">Quick answers to billing and trial questions.</p>
             </a>
           </div>
 

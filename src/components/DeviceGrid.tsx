@@ -250,10 +250,25 @@ export default function DeviceGrid() {
           </div>
         </div>
 
-        <Reveal delay={0.2} className="mt-10 text-center">
+        <Reveal delay={0.2} className="mt-10 text-center space-y-3">
           <p className="t-caption text-xs text-smoke max-w-[500px] mx-auto">
             {devicesSection.note}
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
+            <a
+              href="/devices"
+              className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+            >
+              Supported Devices &amp; Hardware Specs Guide &rarr;
+            </a>
+            <span className="text-smoke" aria-hidden="true">&bull;</span>
+            <a
+              href="/setup"
+              className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+            >
+              Step-by-Step IPTV Setup Instructions &rarr;
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>

@@ -111,7 +111,11 @@ export default function ContactPage() {
                   App Not Working?
                 </h3>
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Try another supported player app (e.g., TiviMate or IPTV Smarters). Most playback glitches or crash errors stem from the app cache, not your server connection.
+                  Try another player from our{" "}
+                  <a href="/devices" className="text-phosphor-green hover:underline font-medium">
+                    Supported Devices &amp; Apps Guide
+                  </a>
+                  . Most playback glitches stem from local cache or decoder settings, not server downtime.
                 </p>
               </div>
 
@@ -121,7 +125,11 @@ export default function ContactPage() {
                   Didn't Receive Credentials?
                 </h3>
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Login details are sent automatically after checkout. Check your inbox, spam, junk, and promotions folders, and confirm your email was typed correctly.
+                  Credentials are automatically issued after payment. You can instantly look up or resend your dispatch via{" "}
+                  <a href="/my-account" className="text-phosphor-green hover:underline font-medium">
+                    My Account
+                  </a>
+                  , or check your spam folder.
                 </p>
               </div>
 
@@ -131,7 +139,11 @@ export default function ContactPage() {
                   Need Setup Help?
                 </h3>
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Follow our step-by-step <a href="/setup" className="text-phosphor-green hover:underline font-medium">IPTV Installation Guide</a> covering Firestick, Android, Smart TVs, and Apple devices in minutes.
+                  Follow our step-by-step{" "}
+                  <a href="/setup" className="text-phosphor-green hover:underline font-medium">
+                    IPTV Installation Guide
+                  </a>{" "}
+                  covering Firestick, Android TV, Smart TVs, and Apple devices in minutes.
                 </p>
               </div>
 
@@ -144,6 +156,12 @@ export default function ContactPage() {
                   Copy and paste your username, password, and Xtream URL exactly as delivered. Accidental spaces before or after characters are the #1 cause of login errors.
                 </p>
               </div>
+            </div>
+
+            <div className="mt-4 text-right">
+              <a href="/help-center" className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1">
+                Browse searchable troubleshooting in Help Center &rarr;
+              </a>
             </div>
           </Reveal>
 

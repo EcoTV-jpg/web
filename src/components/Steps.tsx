@@ -34,6 +34,15 @@ export default function Steps() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.3} className="mt-10 text-center">
+          <a
+            href="/setup"
+            className="text-xs sm:text-sm font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1.5"
+          >
+            Need device-specific installation help? Read our Complete IPTV Setup Guide &rarr;
+          </a>
+        </Reveal>
       </div>
     </section>
   );

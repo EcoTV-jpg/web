@@ -216,6 +216,21 @@ export default function Pricing() {
           })}
         </div>
 
+        {/* Contextual Bridge to Subscription Pillar Hub */}
+        <Reveal delay={0.12} className="mt-8 text-center">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-charcoal bg-ash/40 px-6 py-3.5 text-xs sm:text-sm">
+            <span className="text-silver-mist">
+              Need a side-by-side comparison of all 4 packages, duration discounts, and specifications?
+            </span>
+            <a
+              href="/iptv-subscription"
+              className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+            >
+              Compare All IPTV Subscription Plans &rarr;
+            </a>
+          </div>
+        </Reveal>
+
         <Reveal delay={0.15}>
           <PaymentMarks />
         </Reveal>

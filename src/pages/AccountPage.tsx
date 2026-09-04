@@ -156,7 +156,7 @@ export default function AccountPage() {
                         Resend Credentials via WhatsApp
                       </a>
                       <a
-                        href="/pricing"
+                        href="/iptv-subscription"
                         className="btn-ghost text-xs flex items-center gap-1.5"
                       >
                         <RefreshCw className="size-3.5" />
@@ -176,8 +176,8 @@ export default function AccountPage() {
                 <h2 className="t-h2 text-lg sm:text-xl text-snow">Extend or Renew Your Subscription</h2>
                 <p className="text-xs text-silver-mist mt-1">Renewals automatically keep your current credentials and favorite playlists.</p>
               </div>
-              <a href="/pricing" className="text-xs text-phosphor-green hover:underline flex items-center gap-1">
-                View All Plans <ChevronRight className="size-3" />
+              <a href="/iptv-subscription" className="text-xs text-phosphor-green hover:underline flex items-center gap-1">
+                View All Subscription Plans <ChevronRight className="size-3" />
               </a>
             </div>
 
@@ -269,7 +269,15 @@ export default function AccountPage() {
             </div>
 
             <p className="mt-4 text-xs text-smoke">
-              Need assistance retrieving your credentials? Contact our WhatsApp desk anytime with your order email.
+              Need assistance retrieving your credentials? Contact our WhatsApp desk anytime with your order email, or consult our{" "}
+              <a href="/setup#xtream-codes" className="text-phosphor-green hover:underline">
+                Xtream Codes Setup Guide
+              </a>{" "}
+              and{" "}
+              <a href="/help-center" className="text-phosphor-green hover:underline">
+                Help Center
+              </a>
+              .
             </p>
           </div>
         </div>
