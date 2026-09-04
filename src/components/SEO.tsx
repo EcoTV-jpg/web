@@ -2,6 +2,7 @@ import { siteConfig, getCanonicalUrl } from "../config/site";
 import { faqs } from "../data/site";
 import { routes } from "../routes";
 import { subscriptionPlans, subscriptionHubData } from "../data/products";
+import { bestIptvAppsList, hubFaqs } from "../data/bestIptvApps";
 
 export interface SEOProps {
   title?: string;
@@ -101,6 +102,34 @@ export function generateStructuredData(path: string = "/") {
             "@type": "ListItem",
             position: 3,
             name: plan ? plan.duration : "Plan",
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (cleanPath.startsWith("/best-iptv/")) {
+      const slug = cleanPath.replace("/best-iptv/", "");
+      const app = bestIptvAppsList.find((a) => a.slug === slug);
+      const appName = app ? app.shortName : (route.breadcrumbName || "Player");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Best IPTV Players",
+            item: `${siteConfig.url}/best-iptv`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: appName,
             item: pageUrl,
           },
         ],
@@ -308,6 +337,98 @@ export function generateStructuredData(path: string = "/") {
       })),
     };
     graphEntities.push(faqSchema);
+  }
+
+  // Route: /best-iptv (Hub Page)
+  if (cleanPath === "/best-iptv") {
+    webpageSchema["@type"] = ["WebPage", "CollectionPage"];
+    webpageSchema.about = { "@id": `${siteConfig.url}/best-iptv#article` };
+
+    const hubArticleSchema = {
+      "@type": "TechArticle",
+      "@id": `${siteConfig.url}/best-iptv#article`,
+      headline: "Best IPTV Players & Apps in 2026: Comprehensive Comparison",
+      description:
+        "Detailed technical comparison of the top IPTV player applications across Firestick, Android TV, Smart TVs, Apple iOS, and desktop computers.",
+      url: `${siteConfig.url}/best-iptv`,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-04T18:00:00+00:00",
+      proficiencyLevel: "Beginner",
+      about: [
+        { "@type": "Thing", name: "IPTV Player" },
+        { "@type": "Thing", name: "Media Streaming Applications" },
+      ],
+    };
+
+    const bestIptvFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/best-iptv#faq`,
+      mainEntity: hubFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(hubArticleSchema, bestIptvFaqSchema);
+  }
+
+  // Route: /best-iptv/:slug (Individual App Guide Pages)
+  if (cleanPath.startsWith("/best-iptv/")) {
+    const slug = cleanPath.replace("/best-iptv/", "");
+    const app = bestIptvAppsList.find((a) => a.slug === slug);
+
+    if (app) {
+      webpageSchema.about = { "@id": `${pageUrl}#article` };
+
+      const appArticleSchema = {
+        "@type": "TechArticle",
+        "@id": `${pageUrl}#article`,
+        headline: route.h1 || `${app.name} Technical Guide`,
+        description: route.description || app.tagline,
+        url: pageUrl,
+        inLanguage: siteConfig.language,
+        author: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        publisher: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        datePublished: "2026-01-01T00:00:00+00:00",
+        dateModified: "2026-09-04T18:00:00+00:00",
+        proficiencyLevel: "Beginner",
+        about: [
+          { "@type": "Thing", name: app.name },
+          { "@type": "Thing", name: "IPTV Player" },
+          { "@type": "Thing", name: "Streaming Setup" },
+        ],
+      };
+
+      const appFaqSchema = {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: app.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      graphEntities.push(appArticleSchema, appFaqSchema);
+    }
   }
 
   // Route: /iptv-subscription (Hub Page)

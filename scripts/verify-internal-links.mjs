@@ -24,6 +24,14 @@ const canonicalPages = [
   "/help-center",
   "/my-account",
   "/dmca",
+  "/best-iptv",
+  "/best-iptv/tivimate",
+  "/best-iptv/iptv-smarters-pro",
+  "/best-iptv/ibo-player",
+  "/best-iptv/smartone",
+  "/best-iptv/gse-smart-iptv",
+  "/best-iptv/vlc",
+  "/best-iptv/ott-navigator",
 ];
 
 const knownRedirects = {
@@ -121,6 +129,16 @@ const clusters = {
   "Setup & Technical": ["/setup", "/devices", "/help-center"],
   "Support": ["/faq", "/contact", "/my-account"],
   "Trust & Policies": ["/refund-policy", "/terms-conditions", "/privacy-policy", "/disclaimer", "/dmca"],
+  "Best IPTV Apps & Players": [
+    "/best-iptv",
+    "/best-iptv/tivimate",
+    "/best-iptv/iptv-smarters-pro",
+    "/best-iptv/ibo-player",
+    "/best-iptv/smartone",
+    "/best-iptv/gse-smart-iptv",
+    "/best-iptv/vlc",
+    "/best-iptv/ott-navigator",
+  ],
 };
 
 for (const [clusterName, routes] of Object.entries(clusters)) {

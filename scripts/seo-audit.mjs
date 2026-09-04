@@ -122,6 +122,14 @@ async function runSeoAudit() {
   const distHelpCenter = path.resolve(distDir, "help-center/index.html");
   const distAccount = path.resolve(distDir, "my-account/index.html");
   const distDmca = path.resolve(distDir, "dmca/index.html");
+  const distBestIptv = path.resolve(distDir, "best-iptv/index.html");
+  const distTivimate = path.resolve(distDir, "best-iptv/tivimate/index.html");
+  const distSmarters = path.resolve(distDir, "best-iptv/iptv-smarters-pro/index.html");
+  const distIbo = path.resolve(distDir, "best-iptv/ibo-player/index.html");
+  const distSmartone = path.resolve(distDir, "best-iptv/smartone/index.html");
+  const distGse = path.resolve(distDir, "best-iptv/gse-smart-iptv/index.html");
+  const distVlc = path.resolve(distDir, "best-iptv/vlc/index.html");
+  const distOtt = path.resolve(distDir, "best-iptv/ott-navigator/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -142,6 +150,14 @@ async function runSeoAudit() {
   assert("dist/help-center/index.html exists", fs.existsSync(distHelpCenter));
   assert("dist/my-account/index.html exists", fs.existsSync(distAccount));
   assert("dist/dmca/index.html exists", fs.existsSync(distDmca));
+  assert("dist/best-iptv/index.html exists", fs.existsSync(distBestIptv));
+  assert("dist/best-iptv/tivimate/index.html exists", fs.existsSync(distTivimate));
+  assert("dist/best-iptv/iptv-smarters-pro/index.html exists", fs.existsSync(distSmarters));
+  assert("dist/best-iptv/ibo-player/index.html exists", fs.existsSync(distIbo));
+  assert("dist/best-iptv/smartone/index.html exists", fs.existsSync(distSmartone));
+  assert("dist/best-iptv/gse-smart-iptv/index.html exists", fs.existsSync(distGse));
+  assert("dist/best-iptv/vlc/index.html exists", fs.existsSync(distVlc));
+  assert("dist/best-iptv/ott-navigator/index.html exists", fs.existsSync(distOtt));
   const distGoogleHtml = path.resolve(distDir, "googlead354e55b11eac48.html");
   assert("dist/robots.txt exists", fs.existsSync(distRobots));
   assert("dist/sitemap.xml exists", fs.existsSync(distSitemap));
@@ -185,6 +201,14 @@ async function runSeoAudit() {
     { path: "/help-center", file: distHelpCenter, expectedTitle: "Help Center", expectedH1: "Help Center", expectedCanonical: "https://www.teleview.me/help-center" },
     { path: "/my-account", file: distAccount, expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account" },
     { path: "/dmca", file: distDmca, expectedTitle: "DMCA Notice", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca" },
+    { path: "/best-iptv", file: distBestIptv, expectedTitle: "Best IPTV Players", expectedH1: "Best IPTV Players", expectedCanonical: "https://www.teleview.me/best-iptv" },
+    { path: "/best-iptv/tivimate", file: distTivimate, expectedTitle: "TiviMate IPTV Player", expectedH1: "TiviMate IPTV Player", expectedCanonical: "https://www.teleview.me/best-iptv/tivimate" },
+    { path: "/best-iptv/iptv-smarters-pro", file: distSmarters, expectedTitle: "IPTV Smarters Pro", expectedH1: "IPTV Smarters Pro", expectedCanonical: "https://www.teleview.me/best-iptv/iptv-smarters-pro" },
+    { path: "/best-iptv/ibo-player", file: distIbo, expectedTitle: "IBO Player", expectedH1: "IBO Player", expectedCanonical: "https://www.teleview.me/best-iptv/ibo-player" },
+    { path: "/best-iptv/smartone", file: distSmartone, expectedTitle: "SmartOne IPTV", expectedH1: "SmartOne IPTV", expectedCanonical: "https://www.teleview.me/best-iptv/smartone" },
+    { path: "/best-iptv/gse-smart-iptv", file: distGse, expectedTitle: "GSE Smart IPTV", expectedH1: "GSE Smart IPTV", expectedCanonical: "https://www.teleview.me/best-iptv/gse-smart-iptv" },
+    { path: "/best-iptv/vlc", file: distVlc, expectedTitle: "VLC Media Player", expectedH1: "VLC Media Player", expectedCanonical: "https://www.teleview.me/best-iptv/vlc" },
+    { path: "/best-iptv/ott-navigator", file: distOtt, expectedTitle: "OTT Navigator IPTV", expectedH1: "OTT Navigator IPTV", expectedCanonical: "https://www.teleview.me/best-iptv/ott-navigator" },
   ];
 
   for (const page of pagesToTest) {
@@ -294,7 +318,7 @@ async function runSeoAudit() {
         const rawParsed = JSON.parse(ldJsonMatch[1]);
         const schemas = Array.isArray(rawParsed) ? rawParsed : (rawParsed["@graph"] || [rawParsed]);
         assert(`JSON-LD parses cleanly in ${page.path}`, Array.isArray(schemas) && schemas.length > 0, `${schemas.length} schemas`);
-        const types = schemas.map((s) => s["@type"]);
+        const types = schemas.flatMap((s) => (Array.isArray(s["@type"]) ? s["@type"] : [s["@type"]]));
         assert(`Organization & WebSite present in ${page.path}`, types.includes("Organization") && types.includes("WebSite"));
 
         // Anti-spam assertion: no fake AggregateRating or Review schemas anywhere in tree
@@ -323,6 +347,16 @@ async function runSeoAudit() {
         } else if (page.path.startsWith("/iptv-subscription")) {
           assert(`Product schema present in ${page.path}`, types.includes("Product"));
           assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
+        } else if (page.path === "/best-iptv") {
+          assert("CollectionPage schema present in /best-iptv", types.includes("CollectionPage"));
+          assert("BreadcrumbList schema present in /best-iptv", types.includes("BreadcrumbList"));
+          assert("FAQPage schema present in /best-iptv", types.includes("FAQPage"));
+          assert("No Product schema in /best-iptv", !types.includes("Product"));
+        } else if (page.path.startsWith("/best-iptv/")) {
+          assert(`TechArticle schema present in ${page.path}`, types.includes("TechArticle"));
+          assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
+          assert(`FAQPage schema present in ${page.path}`, types.includes("FAQPage"));
+          assert(`No Product schema in ${page.path}`, !types.includes("Product"));
         }
       } catch (e) {
         assert(`JSON-LD parses cleanly in ${page.path}`, false, e.message);

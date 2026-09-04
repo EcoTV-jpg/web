@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { Accent, GreenButton } from "../components/ui";
+import { Accent, GreenButton, WhatsAppIcon } from "../components/ui";
 import { site } from "../data/site";
 import {
   User,
@@ -138,7 +138,7 @@ export default function AccountPage() {
                         rel="noopener noreferrer"
                         className="btn-green text-xs flex items-center gap-1.5"
                       >
-                        <MessageCircle className="size-3.5" />
+                        <WhatsAppIcon className="size-3.5" />
                         Resend Credentials via WhatsApp
                       </a>
                       <a
@@ -146,7 +146,7 @@ export default function AccountPage() {
                         className="btn-ghost text-xs flex items-center gap-1.5"
                       >
                         <RefreshCw className="size-3.5" />
-                        Renew / Extend Plan
+                        Renew / Extend Subscription
                       </a>
                     </div>
                   </div>
@@ -155,19 +155,17 @@ export default function AccountPage() {
             </div>
           </Reveal>
 
-          {/* Quick Renewal Pricing Cards */}
-          <Reveal className="mb-14">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="t-h2 text-lg sm:text-xl text-snow">Extend or Renew Your Subscription</h2>
-                <p className="text-xs text-silver-mist mt-1">Renewals automatically keep your current credentials and favorite playlists.</p>
-              </div>
-              <a href="/iptv-subscription" className="text-xs text-phosphor-green hover:underline flex items-center gap-1">
-                View All Subscription Plans <ChevronRight className="size-3" />
-              </a>
-            </div>
+          {/* Quick Extend Options */}
+          <Reveal delay={0.2} className="space-y-4">
+            <h2 className="t-h3 text-base sm:text-lg text-snow flex items-center gap-2">
+              <Clock className="size-4 text-phosphor-green" />
+              Quick Renew &amp; Extend Options
+            </h2>
+            <p className="text-xs sm:text-sm text-silver-mist">
+              Need to extend your subscription? Choose a duration below for instant activation on your existing account credentials:
+            </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <a
                 href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 1 Month plan ($16)")}`}
                 target="_blank"
@@ -177,7 +175,8 @@ export default function AccountPage() {
                 <span className="text-xs text-smoke font-mono block">1 MONTH</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$16</span>
                 <span className="text-[11px] text-silver-mist block mt-1">Monthly Billing</span>
-                <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                <span className="mt-3 inline-flex items-center justify-center gap-1.5 rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                  <WhatsAppIcon className="size-3" />
                   Order via WhatsApp
                 </span>
               </a>
@@ -191,7 +190,8 @@ export default function AccountPage() {
                 <span className="text-xs text-smoke font-mono block">3 MONTHS</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$39</span>
                 <span className="text-[11px] text-phosphor-green block mt-1">Save 19%</span>
-                <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                <span className="mt-3 inline-flex items-center justify-center gap-1.5 rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                  <WhatsAppIcon className="size-3" />
                   Order via WhatsApp
                 </span>
               </a>
@@ -205,7 +205,8 @@ export default function AccountPage() {
                 <span className="text-xs text-smoke font-mono block">6 MONTHS</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$60</span>
                 <span className="text-[11px] text-phosphor-green block mt-1">Save 37.5%</span>
-                <span className="mt-3 inline-block rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                <span className="mt-3 inline-flex items-center justify-center gap-1.5 rounded bg-ash/60 px-2 py-1 text-[10px] text-snow group-hover:bg-phosphor-green group-hover:text-obsidian transition-colors">
+                  <WhatsAppIcon className="size-3" />
                   Order via WhatsApp
                 </span>
               </a>
@@ -222,7 +223,8 @@ export default function AccountPage() {
                 <span className="text-xs text-smoke font-mono block">12 MONTHS</span>
                 <span className="text-xl font-bold text-snow mt-1 block">$90</span>
                 <span className="text-[11px] text-phosphor-green font-semibold block mt-1">Save $102</span>
-                <span className="mt-3 inline-block rounded bg-phosphor-green text-obsidian font-semibold px-2 py-1 text-[10px]">
+                <span className="mt-3 inline-flex items-center justify-center gap-1.5 rounded bg-phosphor-green text-obsidian font-semibold px-2 py-1 text-[10px]">
+                  <WhatsAppIcon className="size-3" />
                   Order via WhatsApp
                 </span>
               </a>

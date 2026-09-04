@@ -172,7 +172,7 @@ function TermsContent() {
           Acceptance of Terms
         </h2>
         <p>
-          Welcome to <strong className="text-snow">Teleview</strong> (<a href="https://www.teleview.me" className="text-phosphor-green hover:underline">teleview.me</a>). We provide an online video streaming subscription service that allows users to access and enjoy a curated catalog of global live television broadcasts and on-demand video entertainment.
+          Welcome to <strong className="text-snow">Teleview</strong> (operating as <strong className="text-snow">Teleview Media</strong>, <a href="https://www.teleview.me" className="text-phosphor-green hover:underline">teleview.me</a>). We provide an online video streaming subscription service that allows users to access and enjoy a curated catalog of global live television broadcasts and on-demand video entertainment.
         </p>
         <p>
           By creating an account, placing an order, or accessing any Teleview streaming endpoint, you confirm that you have read, understood, and agreed to be bound by these <strong className="text-snow">Terms &amp; Conditions</strong> and our associated policies. If you do not agree, you must discontinue using our services immediately.
@@ -301,7 +301,7 @@ function PrivacyContent() {
           Our Privacy Commitment
         </h2>
         <p>
-          At <strong className="text-snow">Teleview</strong>, we respect and safeguard the personal privacy of our subscribers worldwide. This Privacy Policy explains our practices regarding the collection, handling, storage, and protection of information when you browse our website (<a href="https://www.teleview.me" className="text-phosphor-green hover:underline">https://www.teleview.me</a>) or use our streaming services.
+          At <strong className="text-snow">Teleview</strong> (operated by <strong className="text-snow">Teleview Media</strong>), we respect and safeguard the personal privacy of our subscribers worldwide. This Privacy Policy explains our practices regarding the collection, handling, storage, and protection of information when you browse our website (<a href="https://www.teleview.me" className="text-phosphor-green hover:underline">https://www.teleview.me</a>) or use our streaming services.
         </p>
         <p>
           We operate under strict data minimization principles: <strong className="text-snow">we only collect what is strictly necessary to deliver and maintain your streaming service</strong>. We do not sell, rent, or trade your personal information with third-party advertising networks.
@@ -531,7 +531,7 @@ function DisclaimerContent() {
           or email our designated copyright agent:
         </p>
         <div className="rounded-lg border border-charcoal/80 bg-ash/20 p-4 font-mono text-xs text-silver-mist space-y-1">
-          <p className="text-snow font-semibold">Teleview Copyright Compliance Office</p>
+          <p className="text-snow font-semibold">Teleview Media &bull; Copyright Compliance Office</p>
           <p>Email: <a href={site.emailHref} className="text-phosphor-green hover:underline">{site.email}</a></p>
           <p>Subject: DMCA Notice of Infringement</p>
           <p>Response Window: 24 to 48 business hours</p>

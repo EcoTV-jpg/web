@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Breadcrumbs from "../components/Breadcrumbs";
 import PlanComparisonTable from "../components/PlanComparisonTable";
-import { GreenButton, GhostButton } from "../components/ui";
+import { GreenButton, GhostButton, WhatsAppIcon } from "../components/ui";
 import { getProductPlan, allSubscriptionPlans } from "../data/products";
 import { createWhatsAppOrderUrl } from "../config/site";
 import {
@@ -147,7 +147,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                         rel="noopener noreferrer"
                         className="w-full flex items-center justify-center gap-2 py-3 text-sm font-bold shadow-lg shadow-phosphor-green/10"
                       >
-                        <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                        <WhatsAppIcon className="size-5 shrink-0" />
                         <span>Order on WhatsApp — {plan.priceFormatted}</span>
                       </GreenButton>
                       <div className="space-y-1 text-[11px] text-smoke">
@@ -482,7 +482,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 py-3 px-6 text-sm font-bold shadow-lg shadow-phosphor-green/10"
               >
-                <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                <WhatsAppIcon className="size-5 shrink-0" />
                 <span>Order on WhatsApp — {plan.priceFormatted}</span>
               </GreenButton>
               <GhostButton href="/iptv-subscription">Compare All Plans</GhostButton>

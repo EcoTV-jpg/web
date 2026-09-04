@@ -95,6 +95,7 @@ export default function Footer() {
                 <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">Subscription Plans</a></li>
                 <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
                 <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
+                <li><a href="/best-iptv" className="hover:text-snow transition-colors">Best IPTV Players</a></li>
               </ul>
             </div>
 
@@ -143,7 +144,7 @@ export default function Footer() {
       <div className="border-t border-charcoal">
         <div className="container-x t-caption flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between text-xs text-smoke">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <p>&copy; {new Date().getFullYear()} Teleview. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Teleview (operated by Teleview Media). All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-2">
               <a href="/contact" className="hover:text-silver-mist transition-colors">Support</a>
               <span>&bull;</span>

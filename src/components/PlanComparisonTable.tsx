@@ -1,7 +1,7 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Tv } from "lucide-react";
 import { allSubscriptionPlans } from "../data/products";
 import { createWhatsAppOrderUrl } from "../config/site";
-import { GreenButton } from "./ui";
+import { GreenButton, WhatsAppIcon } from "./ui";
 
 interface PlanComparisonTableProps {
   activeSlug?: string;
@@ -79,7 +79,7 @@ export default function PlanComparisonTable({
                         rel="noopener noreferrer"
                         className="text-xs px-3.5 py-1.5 inline-flex items-center gap-1.5"
                       >
-                        <MessageCircle className="size-3.5" aria-hidden="true" />
+                        <WhatsAppIcon className="size-3.5 shrink-0" />
                         Order on WhatsApp
                       </GreenButton>
                     ) : (
@@ -133,7 +133,7 @@ export default function PlanComparisonTable({
                     rel="noopener noreferrer"
                     className="w-full text-center text-xs py-2 flex items-center justify-center gap-1.5"
                   >
-                    <MessageCircle className="size-3.5" aria-hidden="true" />
+                    <WhatsAppIcon className="size-3.5 shrink-0" />
                     Order on WhatsApp
                   </GreenButton>
                 ) : (
@@ -149,6 +149,21 @@ export default function PlanComparisonTable({
           );
         })}
       </div>
+
+      {/* Concurrency & Multi-Screen Clarification */}
+      <aside className="mt-6 rounded-xl border border-charcoal bg-ash/40 p-4 sm:p-5 text-xs text-silver-mist">
+        <div className="flex items-start gap-3">
+          <Tv className="size-4 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+          <div className="space-y-1">
+            <p className="font-semibold text-snow">
+              How Concurrent Streams &amp; Multiple Device Connections Work
+            </p>
+            <p className="text-xs text-silver-mist leading-relaxed">
+              Standard Teleview subscriptions include <strong className="text-snow">1 active concurrent connection</strong> by default, allowing you to configure your playlist credentials on multiple personal devices for non-simultaneous viewing. If your household requires simultaneous streaming across 2 or 3 screens at the same time, additional device lines can be selected directly during your WhatsApp order checkout or added at any time via our 24/7 technical support desk.
+            </p>
+          </div>
+        </div>
+      </aside>
     </section>
   );
 }

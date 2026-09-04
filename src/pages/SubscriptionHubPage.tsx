@@ -226,7 +226,15 @@ export default function SubscriptionHubPage() {
               14-Day Risk-Free Money-Back Guarantee
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[540px] mx-auto">
-              Every Teleview subscription is backed by our full 14-day refund guarantee. If you encounter any unresolvable issues, we refund your payment in full.
+              Every Teleview subscription is backed by our full 14-day money-back guarantee under our{" "}
+              <a href="/refund-policy" className="text-phosphor-green hover:underline">
+                Refund Policy
+              </a>
+              . If you encounter any technical issues, our{" "}
+              <a href="/help-center" className="text-phosphor-green hover:underline">
+                Help Center
+              </a>{" "}
+              and 24/7 team are available to resolve them or issue a complete refund.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-smoke">
               <span>Instant Activation</span>

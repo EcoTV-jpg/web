@@ -40,6 +40,14 @@ const indexableRoutes = [
   { path: "/help-center", breadcrumbName: "Help Center" },
   { path: "/my-account", breadcrumbName: "My Account" },
   { path: "/dmca", breadcrumbName: "DMCA Notice" },
+  { path: "/best-iptv", breadcrumbName: "Best IPTV Players" },
+  { path: "/best-iptv/tivimate", breadcrumbName: "TiviMate" },
+  { path: "/best-iptv/iptv-smarters-pro", breadcrumbName: "IPTV Smarters" },
+  { path: "/best-iptv/ibo-player", breadcrumbName: "IBO Player" },
+  { path: "/best-iptv/smartone", breadcrumbName: "SmartOne" },
+  { path: "/best-iptv/gse-smart-iptv", breadcrumbName: "GSE Smart IPTV" },
+  { path: "/best-iptv/vlc", breadcrumbName: "VLC" },
+  { path: "/best-iptv/ott-navigator", breadcrumbName: "OTT Navigator" },
 ];
 
 function getCanonicalUrl(routePath) {
@@ -115,7 +123,7 @@ for (const route of indexableRoutes) {
   assert("GRAPH_STRUCTURE", `@graph is an array in ${route.path}`, Array.isArray(data["@graph"]) && data["@graph"].length > 0);
 
   const graph = data["@graph"] || [];
-  const entityTypes = graph.map((e) => e["@type"]);
+  const entityTypes = graph.flatMap((e) => (Array.isArray(e["@type"]) ? e["@type"] : [e["@type"]]));
 
   // 4. Anti-spam: Ensure no fake AggregateRating or Review anywhere in the graph
   const hasFakeRating = hasForbiddenKeys(data, ["aggregaterating"]);
@@ -141,7 +149,7 @@ for (const route of indexableRoutes) {
   }
 
   // 6. WebPage entity
-  const webpage = graph.find((e) => e["@type"] === "WebPage");
+  const webpage = graph.find((e) => e["@type"] === "WebPage" || (Array.isArray(e["@type"]) && e["@type"].includes("WebPage")));
   assert("WEBPAGE", `WebPage exists in ${route.path}`, Boolean(webpage));
   if (webpage) {
     assert("WEBPAGE", `WebPage @id is ${canonicalUrl}#webpage in ${route.path}`, webpage["@id"] === `${canonicalUrl}#webpage`);
@@ -164,6 +172,10 @@ for (const route of indexableRoutes) {
         assert("BREADCRUMBS", `3 items in product breadcrumb for ${route.path}`, items.length === 3);
         assert("BREADCRUMBS", `Second item is IPTV Subscription in ${route.path}`, items[1]?.name === "IPTV Subscription");
         assert("BREADCRUMBS", `Third item is ${route.duration} in ${route.path}`, items[2]?.name === route.duration);
+      } else if (route.path.startsWith("/best-iptv/")) {
+        assert("BREADCRUMBS", `3 items in best-iptv child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is Best IPTV Players in ${route.path}`, items[1]?.name === "Best IPTV Players");
+        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
       } else {
         assert("BREADCRUMBS", `2 items in standard breadcrumb for ${route.path}`, items.length === 2);
         assert("BREADCRUMBS", `Second item name matches route breadcrumbName in ${route.path}`, items[1]?.name === route.breadcrumbName);
@@ -231,6 +243,19 @@ for (const route of indexableRoutes) {
     assert("PRODUCT_SCHEMA", `Offer currency is USD on ${route.path}`, product?.offers?.priceCurrency === "USD");
     assert("PRODUCT_SCHEMA", `Offer availability is InStock on ${route.path}`, product?.offers?.availability === "https://schema.org/InStock");
     assert("PRODUCT_SCHEMA", `FAQPage questions count is 5 on ${route.path}`, faqPage?.mainEntity?.length === 5);
+  } else if (route.path === "/best-iptv") {
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("BEST_IPTV_HUB_SCHEMA", "CollectionPage entity on /best-iptv", entityTypes.includes("CollectionPage"));
+    assert("BEST_IPTV_HUB_SCHEMA", "FAQPage entity on /best-iptv", Boolean(faqPage));
+    assert("BEST_IPTV_HUB_SCHEMA", "No Product on /best-iptv", !entityTypes.includes("Product"));
+    assert("BEST_IPTV_HUB_SCHEMA", "No AggregateRating on /best-iptv", !entityTypes.includes("AggregateRating"));
+  } else if (route.path.startsWith("/best-iptv/")) {
+    const techArticle = graph.find((e) => e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("BEST_IPTV_APP_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
+    assert("BEST_IPTV_APP_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("BEST_IPTV_APP_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+    assert("BEST_IPTV_APP_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
   } else {
     // Legal & Support routes: strictly core entities, no extraneous products or FAQs
     assert("LEGAL_SUPPORT", `No Product entity on ${route.path}`, !entityTypes.includes("Product"));

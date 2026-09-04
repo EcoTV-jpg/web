@@ -10,6 +10,8 @@ import DmcaPage from "./pages/DmcaPage";
 import SubscriptionHubPage from "./pages/SubscriptionHubPage";
 import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import LegalPage from "./pages/LegalPage";
+import BestIptvHubPage from "./pages/BestIptvHubPage";
+import BestIptvAppPage from "./pages/BestIptvAppPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
 import { generateStructuredData } from "./components/SEO";
@@ -62,6 +64,13 @@ export default function App({ url }: { url?: string }) {
   if (currentPath.startsWith("/iptv-subscription/")) {
     const slug = currentPath.replace("/iptv-subscription/", "");
     return <SubscriptionProductPage slug={slug} />;
+  }
+  if (currentPath === "/best-iptv") {
+    return <BestIptvHubPage />;
+  }
+  if (currentPath.startsWith("/best-iptv/")) {
+    const slug = currentPath.replace("/best-iptv/", "");
+    return <BestIptvAppPage slug={slug} />;
   }
   if (currentPath === "/terms-conditions" || currentPath === "/terms" || currentPath === "/legal") {
     return <LegalPage type="terms" />;

@@ -458,6 +458,17 @@ export default function DevicesPage() {
                 Review official bandwidth benchmarks for standard HD, 4K Ultra HD, and multi-room household environments:
               </p>
 
+              {/* Direct Answer: Speed Requirements */}
+              <div className="mt-4 rounded-xl border border-charcoal bg-ash/50 p-4 sm:p-5 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                <p className="font-medium text-snow flex items-center gap-2">
+                  <Zap className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  <span>Quick Answer: What internet speed is required for buffer-free IPTV streaming?</span>
+                </p>
+                <p className="mt-2 text-xs sm:text-sm text-silver-mist">
+                  Teleview requires a minimum download speed of <strong className="text-snow">10 Mbps</strong> for High Definition (1080p) streams, and <strong className="text-snow">25 Mbps per active screen</strong> for 4K Ultra HD at 60 FPS. For multi-room households streaming on multiple concurrent screens, a stable connection of <strong className="text-snow">50 Mbps to 100 Mbps</strong> with ping latency under 50ms ensures smooth, buffer-free playback.
+                </p>
+              </div>
+
               <div className="mt-6 overflow-x-auto">
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
@@ -527,6 +538,17 @@ export default function DevicesPage() {
               Streaming 4K Ultra HD requires significantly higher hardware compute power, memory bandwidth, and sustained network
               throughput compared to traditional high-definition video. Review the technical differences below:
             </p>
+
+            {/* Direct Answer: HD vs 4K Requirements */}
+            <div className="mt-4 rounded-xl border border-charcoal bg-ash/50 p-4 sm:p-5 text-xs sm:text-sm text-silver-mist leading-relaxed">
+              <p className="font-medium text-snow flex items-center gap-2">
+                <Zap className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                <span>Quick Answer: What hardware is required for 4K IPTV streaming compared to standard HD?</span>
+              </p>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist">
+                Streaming 4K Ultra HD at 60 FPS requires an on-chip dedicated hardware video decoder supporting <strong className="text-snow">HEVC (H.265 Main 10)</strong> or <strong className="text-snow">AV1</strong>, a minimum of <strong className="text-snow">2 GB of device RAM</strong>, and an <strong className="text-snow">HDMI 2.0b / HDMI 2.1</strong> connection with HDCP 2.2 support. Standard 1080p HD runs smoothly on entry-level dual-core hardware with 1.5 GB RAM and standard H.264 decoders.
+              </p>
+            </div>
 
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <article className="card p-6 border-charcoal">
@@ -606,8 +628,8 @@ export default function DevicesPage() {
                 <h3 className="text-sm font-semibold text-snow">TiviMate IPTV Player</h3>
                 <span className="text-[11px] text-phosphor-green font-mono block mt-0.5">Android TV &amp; Fire TV</span>
                 <p className="mt-2.5 text-xs text-silver-mist leading-relaxed">
-                  The gold standard for television streaming interfaces. Offers quad-screen multi-view, automated EPG guide
-                  sync, channel grouping, catch-up TV navigation, and customizable buffer sizes.
+                  A dedicated television streaming interface designed for Android TV and Fire TV. Offers multi-view viewing, automated EPG guide
+                  sync, channel grouping, catch-up TV navigation, and customizable buffer sizes (varies by app version/platform).
                 </p>
               </article>
 
@@ -655,6 +677,63 @@ export default function DevicesPage() {
                   automatic codec fallback, studio-grade EPG timeline displays, and low memory consumption.
                 </p>
               </article>
+            </div>
+
+            {/* Top Player Application Comparison Table */}
+            <div className="mt-8 rounded-xl border border-charcoal bg-ash/40 p-5">
+              <h3 className="text-sm font-semibold text-snow">
+                Feature Comparison: TiviMate vs. IPTV Smarters Pro vs. IBO Player
+              </h3>
+              <p className="mt-1 text-xs text-silver-mist">
+                Direct capability comparison across the three most widely used IPTV player applications. Feature availability, licensing tiers, and codec support vary by app version and operating system.
+              </p>
+              <div className="mt-4 overflow-x-auto">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ash/60 text-snow">
+                      <th scope="col" className="p-3.5 font-semibold">Capability</th>
+                      <th scope="col" className="p-3.5 font-semibold">TiviMate IPTV Player</th>
+                      <th scope="col" className="p-3.5 font-semibold">IPTV Smarters Pro</th>
+                      <th scope="col" className="p-3.5 font-semibold">IBO Player</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow">Platform Availability</th>
+                      <td className="p-3.5">Android TV, Google TV, Fire TV</td>
+                      <td className="p-3.5">Android, iOS, Fire TV, Windows, macOS</td>
+                      <td className="p-3.5">Samsung Tizen, LG webOS, Android, Apple TV</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow">Multi-View (Split Screen)</th>
+                      <td className="p-3.5">Up to 4 screens (varies by app version/platform)</td>
+                      <td className="p-3.5">Multi-screen layout (varies by app version/platform)</td>
+                      <td className="p-3.5">Limited / varies by app version/platform</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow">EPG Guide Display</th>
+                      <td className="p-3.5">Full TV timeline grid with past/future scroll</td>
+                      <td className="p-3.5">Standard channel EPG &amp; timeline view</td>
+                      <td className="p-3.5">Channel list EPG with program summary</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow">Catch-Up Navigation</th>
+                      <td className="p-3.5">Integrated timeline (varies by app version/platform)</td>
+                      <td className="p-3.5">Dedicated catch-up menu (varies by app version/platform)</td>
+                      <td className="p-3.5">Direct channel catch-up (varies by app version/platform)</td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow">Local Recording</th>
+                      <td className="p-3.5">Scheduled &amp; live recording (varies by app version/platform)</td>
+                      <td className="p-3.5">Live recording option (varies by app version/platform)</td>
+                      <td className="p-3.5">Not standard (varies by app version/platform)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-[11px] text-smoke">
+                * Note: Teleview provides high-bitrate streaming server access and does not develop or sell third-party player applications. Feature sets, premium unlocks, and cloud features depend on each application developer and individual app version.
+              </p>
             </div>
           </Reveal>
 
@@ -729,6 +808,19 @@ export default function DevicesPage() {
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
                   <strong className="text-snow">Solution:</strong> Ensure your device system settings have &ldquo;Automatic Date &amp; Time (Network Time)&rdquo;
                   enabled. In your player app, choose &ldquo;Clear EPG Cache&rdquo; and click &ldquo;Update EPG Data&rdquo;.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/40 p-5 sm:col-span-2">
+                <h3 className="text-sm font-semibold text-snow flex items-center gap-2">
+                  <span className="size-2 rounded-full bg-phosphor-green" aria-hidden="true" />
+                  Audio Out of Sync With Video (AV Synchronization Drift)
+                </h3>
+                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                  <strong className="text-snow">Cause:</strong> Digital bitstream passthrough format mismatch between the player app and TV audio processor, or latency introduced by external soundbars and Bluetooth speakers.
+                </p>
+                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                  <strong className="text-snow">Solution:</strong> In your IPTV player settings &rarr; Audio &rarr; switch audio output engine between <strong className="text-snow">AudioTrack</strong> and <strong className="text-snow">OpenSL ES</strong>. If using an external soundbar or AV receiver, disable surround sound passthrough to decode stereo locally, or adjust the player <strong className="text-snow">Audio Delay Offset</strong> in 50ms increments until lips match speech.
                 </p>
               </div>
             </div>

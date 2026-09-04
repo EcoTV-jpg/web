@@ -19,6 +19,7 @@ import {
   Mail,
   CheckCircle2,
   ExternalLink,
+  AlertTriangle,
 } from "lucide-react";
 
 interface Article {
@@ -124,35 +125,34 @@ const articles: Article[] = [
   {
     id: "http-401-error",
     category: "Troubleshooting & Errors",
-    title: "How to resolve 'HTTP 401 Unauthorized' or Invalid Login error",
-    excerpt: "Step-by-step resolution for credentials rejected by player apps.",
+    title: "How to resolve 'HTTP 401 Unauthorized' (Invalid Credentials Error)",
+    excerpt: "What the 401 error means and practical checks to resolve invalid credentials.",
     content: [
-      "1. Check for trailing spaces: When copying and pasting Server URL, Username, or Password on mobile or Firestick remotes, auto-correct often appends a hidden space at the end. Delete and re-enter manually.",
-      "2. Verify URL syntax: Ensure the Server URL includes the protocol (http:// or https://) and port number without an extra trailing slash (e.g. http://teleview-tv.me:8080).",
-      "3. Confirm password case: Credentials are strictly case-sensitive. Verify uppercase and lowercase characters match your welcome email or WhatsApp delivery.",
-      "4. Contact support: If your credentials were renewed recently, message our 24/7 WhatsApp desk (+44 7848 197761) with your order ID for an instant account handshake reset."
+      "What the error means: An HTTP 401 Unauthorized status commonly indicates that your IPTV player is submitting invalid or incorrect credentials to the streaming server, or an authentication handshake has failed.",
+      "What to check: (1) Verify Username and Password against your Teleview welcome email or WhatsApp delivery (credentials are strictly case-sensitive); (2) Verify the Server URL protocol (http:// vs https://) and port number without an extra trailing slash; (3) Re-enter credentials manually without extra spaces (copying and pasting on mobile or Firestick remotes frequently appends hidden whitespace); (4) If setting up for the first time, follow our step-by-step Setup Guide (/setup) to confirm app configuration.",
+      "If credentials are confirmed correct and the error persists, contact Teleview 24/7 support via WhatsApp (+44 7848 197761) with your order ID for an instant authentication status check."
     ],
   },
   {
     id: "http-403-error",
     category: "Troubleshooting & Errors",
-    title: "How to resolve 'HTTP 403 Forbidden' or Stream Limit Exceeded",
-    excerpt: "Fix stream connection locks across multiple household devices.",
+    title: "How to resolve 'HTTP 403 Forbidden' (Access Denied Error)",
+    excerpt: "What the 403 error means and practical checks to verify account and connection status.",
     content: [
-      "1. Check active background streams: If you stream on a TV and switch to your mobile phone, force-close the player app on the TV. If the player runs in the background, the server registers an active connection.",
-      "2. Multi-screen lines: Standard subscriptions support 1 active stream at a time. If other household members are watching, choose a multi-device plan or contact support to add extra concurrent connections.",
-      "3. Stream timeout: If your device disconnected abruptly, wait 3 minutes for the streaming server connection state to reset automatically."
+      "What the error means: An HTTP 403 Forbidden status indicates that the streaming server recognized the connection request but access is currently denied by the service or server configuration.",
+      "Possible checks: (1) Confirm your subscription and account status to ensure your active period has not expired; (2) Confirm your credentials match your assigned player profile; (3) Restart your player application and streaming device to clear stale background sessions; (4) Test the connection again after restarting.",
+      "If the issue persists, contact Teleview support to review your service provisioning. Note: 403 errors can stem from multiple configuration variables; our technical desk can verify your line state immediately."
     ],
   },
   {
     id: "m3u-parsing-error",
     category: "Troubleshooting & Errors",
-    title: "How to fix 'Playlist Failed to Load' or M3U parsing timeouts",
-    excerpt: "Techniques to solve large playlist sync timeouts on Firestick and Smart TVs.",
+    title: "How to fix 'Playlist Timeout' or M3U Connection Failures",
+    excerpt: "What connection timeouts mean and practical checks to restore stream synchronization.",
     content: [
-      "1. Prefer Xtream Codes API over raw M3U: The Xtream API loads channel categories dynamically, using 90% less RAM than downloading our full 25,000+ channel M3U file into device memory.",
-      "2. Switch Output Format: In TiviMate or IPTV Smarters, switch the stream output format between 'HLS' (.m3u8) and 'MPEG-TS' (.ts) under Stream Format settings.",
-      "3. Clear App Cache: On Firestick or Android TV, navigate to Settings > Applications > Manage Installed Applications > [Your App] > Clear Cache."
+      "What the error means: A playlist timeout means the player could not complete the network connection to the playlist or server endpoint within the allowed time threshold.",
+      "Practical checks: (1) Check your local internet connection speed and stability; (2) Restart your home router and streaming device to clear local routing tables; (3) Try another network if available (such as a temporary mobile hotspot) to isolate local ISP routing issues; (4) Check DNS or network filtering as a possible cause—switch your device DNS to Cloudflare (1.1.1.1) or Google (8.8.8.8) to bypass potential ISP filtering; (5) Re-enter the playlist or server URL information to ensure syntax accuracy; (6) Prefer Xtream Codes API over raw M3U files when possible, as it loads categories dynamically with lower memory overhead.",
+      "Contact Teleview support if the connection consistently times out so our technical team can test regional server routing."
     ],
   },
   {
@@ -240,6 +240,103 @@ export default function HelpCenterPage() {
               />
             </div>
           </Reveal>
+
+          {/* Quick Diagnostic Troubleshooting Cards (P0 Priority) */}
+          <section className="mb-10" aria-labelledby="diagnostic-cards-heading">
+            <div className="flex items-center gap-2 mb-2">
+              <AlertTriangle className="size-4 text-phosphor-green" aria-hidden="true" />
+              <h2 id="diagnostic-cards-heading" className="text-sm sm:text-base font-semibold text-snow">
+                Common Connection Error Diagnostics
+              </h2>
+            </div>
+            <p className="text-xs text-silver-mist mb-5">
+              Quick answer-first diagnostic steps to resolve authentication, access, and playlist timeout errors:
+            </p>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {/* Card A: HTTP 401 Unauthorized */}
+              <article className="card p-5 border-charcoal bg-ash/30 flex flex-col justify-between">
+                <div>
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono font-semibold text-phosphor-green uppercase">
+                    Authentication Error
+                  </span>
+                  <h3 className="mt-2 text-sm font-semibold text-snow">
+                    HTTP 401 Unauthorized
+                  </h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    <strong className="text-snow">What it means:</strong> Commonly indicates invalid or incorrect IPTV credentials or an authentication handshake failure.
+                  </p>
+                  <div className="mt-3 space-y-1.5 text-[11px] text-silver-mist border-t border-charcoal/60 pt-3">
+                    <p className="font-semibold text-snow">What to check:</p>
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Verify username and password (strictly case-sensitive).</li>
+                      <li>Verify server/portal URL protocol and port.</li>
+                      <li>Re-enter credentials without extra spaces.</li>
+                      <li>Follow the <a href="/setup" className="text-phosphor-green hover:underline">Setup Guide</a> for syntax checks.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
+                  If credentials are correct, contact Teleview support.
+                </div>
+              </article>
+
+              {/* Card B: HTTP 403 Forbidden */}
+              <article className="card p-5 border-charcoal bg-ash/30 flex flex-col justify-between">
+                <div>
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono font-semibold text-phosphor-green uppercase">
+                    Access Denied
+                  </span>
+                  <h3 className="mt-2 text-sm font-semibold text-snow">
+                    HTTP 403 Forbidden
+                  </h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    <strong className="text-snow">What it means:</strong> Access is denied by the service or server configuration.
+                  </p>
+                  <div className="mt-3 space-y-1.5 text-[11px] text-silver-mist border-t border-charcoal/60 pt-3">
+                    <p className="font-semibold text-snow">Possible checks:</p>
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Confirm active subscription and account status.</li>
+                      <li>Confirm credentials match your assigned profile.</li>
+                      <li>Restart the player application and device.</li>
+                      <li>Test the connection again after restarting.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
+                  Contact Teleview support if the issue persists.
+                </div>
+              </article>
+
+              {/* Card C: M3U Playlist Timeout */}
+              <article className="card p-5 border-charcoal bg-ash/30 flex flex-col justify-between">
+                <div>
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono font-semibold text-phosphor-green uppercase">
+                    Connection Timeout
+                  </span>
+                  <h3 className="mt-2 text-sm font-semibold text-snow">
+                    M3U Playlist Timeout
+                  </h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    <strong className="text-snow">What it means:</strong> The player could not complete the network connection within the time threshold.
+                  </p>
+                  <div className="mt-3 space-y-1.5 text-[11px] text-silver-mist border-t border-charcoal/60 pt-3">
+                    <p className="font-semibold text-snow">Practical checks:</p>
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Check internet connection stability.</li>
+                      <li>Restart router and streaming device.</li>
+                      <li>Try another network (e.g. mobile hotspot).</li>
+                      <li>Check DNS/network filtering (try 1.1.1.1 or 8.8.8.8).</li>
+                      <li>Re-enter the playlist or server URL information.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
+                  Contact support if connection consistently times out.
+                </div>
+              </article>
+            </div>
+          </section>
 
           {/* Category Filter Pills */}
           <div className="mb-8 flex flex-wrap gap-2 border-b border-charcoal/60 pb-4">

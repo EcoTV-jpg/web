@@ -23,6 +23,7 @@ import {
   Sliders,
   Settings,
   RefreshCw,
+  Zap,
 } from "lucide-react";
 import { siteConfig } from "../config/site";
 import StepConnector from "../components/setup/StepConnector";
@@ -209,6 +210,18 @@ export default function SetupPage() {
               <p className="t-body-sm mt-2 text-silver-mist">
                 Regardless of your streaming device, setting up Teleview follows three straightforward steps:
               </p>
+
+              {/* Direct Answer: Universal Setup Summary */}
+              <div className="mt-4 rounded-xl border border-charcoal bg-ash/50 p-4 sm:p-5 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                <p className="font-medium text-snow flex items-center gap-2">
+                  <Zap className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  <span>Quick Answer: How do I set up Teleview IPTV on my device?</span>
+                </p>
+                <p className="mt-2 text-xs sm:text-sm text-silver-mist">
+                  Setting up Teleview involves three simple steps: <strong className="text-snow">(1)</strong> Order your subscription plan to receive automated Xtream Codes API credentials and an M3U playlist link via email; <strong className="text-snow">(2)</strong> Install a compatible IPTV player application (<strong className="text-snow">TiviMate</strong> for Firestick/Android, <strong className="text-snow">IBO Player</strong> for Smart TVs, or <strong className="text-snow">IPTV Smarters</strong> for Apple iOS) from your device official app store; <strong className="text-snow">(3)</strong> Enter your server URL, username, and password into the player to immediately synchronize 25,000+ live channels and full EPG schedules.
+                </p>
+              </div>
+
               <ol className="mt-6 grid gap-6 md:grid-cols-3 list-none p-0">
                 <li className="list-none rounded-lg border border-charcoal bg-ash/40 p-5 flex flex-col justify-between">
                   <div>
@@ -433,7 +446,7 @@ export default function SetupPage() {
                     title="Search for Downloader App in Amazon Appstore"
                     description="From your Firestick home screen, navigate to Find > Search and type 'Downloader'. Select the orange Downloader icon from the search results."
                     action="Highlight Downloader and press the Select button on your Fire TV remote."
-                    tip="If this is your first time sideloading, navigate to Settings > My Fire TV > Developer Options and enable 'Install Unknown Apps' for Downloader."
+                    tip="If this is your first time sideloading on newer Fire TV devices and Developer Options is not visible: go to Settings → My Fire TV → About, highlight your device name or build entry, and press the Select button 7 times repeatedly to reveal Developer Options. Then enable 'Install Unknown Apps' for Downloader."
                     icon={<Search className="size-4" />}
                   />
                 </li>
@@ -497,7 +510,7 @@ export default function SetupPage() {
                     <strong className="text-snow">Typing &ldquo;http://&rdquo; twice:</strong> Some player apps pre-populate &ldquo;http://&rdquo; in the Server URL field. Do not type it again.
                   </li>
                   <li>
-                    <strong className="text-snow">Developer Options Missing:</strong> On newer Fire OS versions, go to Settings &gt; My Fire TV &gt; About &gt; click your device name 7 times rapidly to unlock Developer Options.
+                    <strong className="text-snow">Developer Options Path on Newer Devices:</strong> If Developer Options does not appear in your My Fire TV menu, follow the standard Amazon flow: Settings &rarr; My Fire TV &rarr; About &rarr; select your device name or build entry repeatedly (7 times) until the on-screen prompt confirms Developer Options are enabled, then return to My Fire TV to turn on &ldquo;Install Unknown Apps&rdquo; for Downloader.
                   </li>
                   <li>
                     <strong className="text-snow">Connected to 2.4 GHz Wi-Fi:</strong> Firesticks frequently auto-connect to crowded 2.4 GHz bands. Go to Network Settings and switch to your 5 GHz Wi-Fi band.

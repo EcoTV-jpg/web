@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Check, ShieldCheck, MessageCircle } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import Reveal from "./Reveal";
-import { Accent, GhostButton, GreenButton } from "./ui";
+import { Accent, GhostButton, GreenButton, WhatsAppIcon } from "./ui";
 import { plans, pricingHeader } from "../data/site";
 
 const deviceOptions = [
@@ -177,7 +177,7 @@ export default function Pricing() {
                           rel="noopener noreferrer"
                           className="w-full flex items-center justify-center gap-2 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-phosphor-green/10"
                         >
-                          <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
+                          <WhatsAppIcon className="size-4.5 shrink-0" />
                           <span>Order on WhatsApp</span>
                         </GreenButton>
                       ) : (
@@ -187,7 +187,7 @@ export default function Pricing() {
                           rel="noopener noreferrer"
                           className="w-full flex items-center justify-center gap-2 py-3 text-xs sm:text-sm font-bold hover:border-phosphor-green/50"
                         >
-                          <MessageCircle className="size-4 shrink-0 text-phosphor-green" aria-hidden="true" />
+                          <WhatsAppIcon className="size-4.5 shrink-0" />
                           <span>Order on WhatsApp</span>
                         </GhostButton>
                       );
