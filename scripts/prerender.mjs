@@ -39,6 +39,8 @@ async function prerender() {
     const canonicalUrl = getCanonicalUrl(route.path);
     const pageTitle = route.title || siteConfig.defaultTitle;
     const pageDesc = route.description || siteConfig.defaultDescription;
+    const ogTitle = route.ogTitle || pageTitle;
+    const ogDesc = route.ogDescription || pageDesc;
 
     // Update <title>
     pageHtml = pageHtml.replace(/<title>(.*?)<\/title>/i, () => `<title>${pageTitle}</title>`);
@@ -57,14 +59,14 @@ async function prerender() {
 
     // Update Open Graph tags
     pageHtml = pageHtml
-      .replace(/<meta[^>]*property=["']og:title["'][^>]*\/?>/i, () => `<meta property="og:title" content="${pageTitle}" />`)
-      .replace(/<meta[^>]*property=["']og:description["'][^>]*\/?>/i, () => `<meta property="og:description" content="${pageDesc}" />`)
+      .replace(/<meta[^>]*property=["']og:title["'][^>]*\/?>/i, () => `<meta property="og:title" content="${ogTitle}" />`)
+      .replace(/<meta[^>]*property=["']og:description["'][^>]*\/?>/i, () => `<meta property="og:description" content="${ogDesc}" />`)
       .replace(/<meta[^>]*property=["']og:url["'][^>]*\/?>/i, () => `<meta property="og:url" content="${canonicalUrl}" />`);
 
     // Update Twitter tags
     pageHtml = pageHtml
-      .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, () => `<meta name="twitter:title" content="${pageTitle}" />`)
-      .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, () => `<meta name="twitter:description" content="${pageDesc}" />`);
+      .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, () => `<meta name="twitter:title" content="${ogTitle}" />`)
+      .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, () => `<meta name="twitter:description" content="${ogDesc}" />`);
 
     // For non-homepage routes, remove the homepage hero preload
     if (route.path !== "/") {

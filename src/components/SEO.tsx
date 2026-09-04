@@ -9,6 +9,8 @@ export interface SEOProps {
   robots?: string;
   image?: string;
   type?: "website" | "article";
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
 /**
@@ -530,9 +532,13 @@ export default function SEO({
   robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   image = `${siteConfig.url}${siteConfig.socialImage}`,
   type = "website",
+  ogTitle,
+  ogDescription,
 }: SEOProps) {
   const canonicalUrl = getCanonicalUrl(canonical);
   const schemas = generateStructuredData(canonicalUrl);
+  const effectiveOgTitle = ogTitle || title;
+  const effectiveOgDesc = ogDescription || description;
 
   return (
     <>
@@ -547,8 +553,8 @@ export default function SEO({
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteConfig.name} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={effectiveOgTitle} />
+      <meta property="og:description" content={effectiveOgDesc} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
@@ -557,8 +563,8 @@ export default function SEO({
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={effectiveOgTitle} />
+      <meta name="twitter:description" content={effectiveOgDesc} />
       <meta name="twitter:image" content={image} />
 
       {/* Structured Data */}
