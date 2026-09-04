@@ -7,14 +7,14 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 async function generateSitemap() {
-  const { siteConfig } = await import("../src/config/site.ts");
+  const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
   const { indexableRoutes } = await import("../src/routes.ts");
 
   const today = new Date().toISOString().split("T")[0];
 
   const xmlUrls = indexableRoutes
     .map((route) => {
-      const loc = `${siteConfig.url}${route.path}`;
+      const loc = getCanonicalUrl(route.path);
       const changefreq = route.changefreq || "weekly";
       const priority = (route.priority !== undefined ? route.priority : 0.8).toFixed(1);
 

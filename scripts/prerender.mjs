@@ -22,7 +22,7 @@ async function prerender() {
   const serverEntryPath = path.resolve(rootDir, "dist-ssr/entry-server.js");
   const { render } = await import(pathToFileURL(serverEntryPath).href);
   const { indexableRoutes } = await import("../src/routes.ts");
-  const { siteConfig } = await import("../src/config/site.ts");
+  const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
 
   const distDir = path.resolve(rootDir, "dist");
   const distIndexPath = path.resolve(distDir, "index.html");
@@ -36,7 +36,7 @@ async function prerender() {
     const { html, schemas } = render(route.path);
     let pageHtml = baseTemplate;
 
-    const canonicalUrl = route.path === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${route.path}`;
+    const canonicalUrl = getCanonicalUrl(route.path);
     const pageTitle = route.title || siteConfig.defaultTitle;
     const pageDesc = route.description || siteConfig.defaultDescription;
 

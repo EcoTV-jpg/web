@@ -1,4 +1,4 @@
-import { siteConfig } from "../config/site";
+import { siteConfig, getCanonicalUrl } from "../config/site";
 import { plans, faqs } from "../data/site";
 import { routes } from "../routes";
 
@@ -18,7 +18,7 @@ export interface SEOProps {
 export function generateStructuredData(path: string = "/") {
   const cleanPath = path === "/" ? "/" : path.replace(/\/$/, "");
   const route = routes.find((r) => r.path === cleanPath) || routes[0];
-  const pageUrl = cleanPath === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${cleanPath}`;
+  const pageUrl = getCanonicalUrl(cleanPath);
   const pageTitle = route.title || siteConfig.defaultTitle;
   const pageDesc = route.description || siteConfig.defaultDescription;
 
@@ -509,13 +509,14 @@ export default function SEO({
   image = `${siteConfig.url}${siteConfig.socialImage}`,
   type = "website",
 }: SEOProps) {
-  const schemas = generateStructuredData(canonical.replace(siteConfig.url, ""));
+  const canonicalUrl = getCanonicalUrl(canonical);
+  const schemas = generateStructuredData(canonicalUrl);
 
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonical} />
+      <link rel="canonical" href={canonicalUrl} />
       <meta name="robots" content={robots} />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
 
@@ -523,7 +524,7 @@ export default function SEO({
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteConfig.name} />
-      <meta property="og:url" content={canonical} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

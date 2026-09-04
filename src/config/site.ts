@@ -34,6 +34,20 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
+export function getCanonicalUrl(path: string = "/"): string {
+  let clean = path || "/";
+  if (clean.startsWith("http://") || clean.startsWith("https://")) {
+    try {
+      clean = new URL(clean).pathname;
+    } catch {
+      clean = clean.replace(/^https?:\/\/[^/]+/, "");
+    }
+  }
+  clean = clean.split("?")[0].split("#")[0];
+  clean = clean.replace(/^\/+|\/+$/g, "");
+  return clean === "" ? `${siteConfig.url}/` : `${siteConfig.url}/${clean}`;
+}
+
 export function createWhatsAppOrderUrl(planName: string, price: string | number) {
   const cleanPrice = String(price).replace(/^\$/, "").trim();
   const text = `Hello, I would like to order the ${planName} plan ($${cleanPrice})`;

@@ -11,7 +11,7 @@ import SubscriptionHubPage from "./pages/SubscriptionHubPage";
 import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import LegalPage from "./pages/LegalPage";
 import { routes } from "./routes";
-import { siteConfig } from "./config/site";
+import { siteConfig, getCanonicalUrl } from "./config/site";
 
 export default function App({ url }: { url?: string }) {
   const rawPath = url || (typeof window !== "undefined" ? window.location.pathname : "/");
@@ -25,8 +25,7 @@ export default function App({ url }: { url?: string }) {
       }
       const canonicalEl = document.querySelector('link[rel="canonical"]');
       if (canonicalEl) {
-        const canonicalUrl = currentPath === "/" ? `${siteConfig.url}/` : `${siteConfig.url}${currentPath}`;
-        canonicalEl.setAttribute("href", canonicalUrl);
+        canonicalEl.setAttribute("href", getCanonicalUrl(currentPath));
       }
     }
   }, [currentPath]);
