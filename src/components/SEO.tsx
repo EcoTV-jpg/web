@@ -1,6 +1,7 @@
 import { siteConfig, getCanonicalUrl } from "../config/site";
 import { plans, faqs } from "../data/site";
 import { routes } from "../routes";
+import { subscriptionPlans } from "../data/products";
 
 export interface SEOProps {
   title?: string;
@@ -375,13 +376,6 @@ export function generateStructuredData(path: string = "/") {
         name: siteConfig.name,
       },
       image: `${siteConfig.url}${siteConfig.socialImage}`,
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "1280",
-        bestRating: "5",
-        worstRating: "1",
-      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "USD",
@@ -410,35 +404,9 @@ export function generateStructuredData(path: string = "/") {
   // Schema for /iptv-subscription/:slug (Individual Product Pages)
   if (cleanPath.startsWith("/iptv-subscription/")) {
     const slug = cleanPath.replace("/iptv-subscription/", "");
-    const planPrices: Record<string, { name: string; price: string; duration: string; desc: string }> = {
-      "1-month": {
-        name: "1 Month IPTV Subscription",
-        price: "16.00",
-        duration: "1 Month",
-        desc: "Short-term streaming flexibility with zero contract and instant access to 25,000+ channels.",
-      },
-      "3-months": {
-        name: "3 Months IPTV Subscription",
-        price: "39.00",
-        duration: "3 Months",
-        desc: "Balanced quarterly entertainment saving you 19% compared to monthly billing.",
-      },
-      "6-months": {
-        name: "6 Months IPTV Subscription",
-        price: "60.00",
-        duration: "6 Months",
-        desc: "Substantial semi-annual savings dropping your monthly cost to just $10.00 with 4K sports.",
-      },
-      "12-months": {
-        name: "12 Months IPTV Subscription",
-        price: "90.00",
-        duration: "12 Months",
-        desc: "Our lowest price-per-month package delivering a full year of 4K streaming for $7.50/mo.",
-      },
-    };
+    const plan = subscriptionPlans[slug];
 
-    const planData = planPrices[slug];
-    if (planData) {
+    if (plan) {
       // 3-tier Breadcrumb for product subpages: Home -> IPTV Subscription -> [Plan]
       const productBreadcrumbSchema = {
         "@context": "https://schema.org",
@@ -459,7 +427,7 @@ export function generateStructuredData(path: string = "/") {
           {
             "@type": "ListItem",
             position: 3,
-            name: planData.duration,
+            name: plan.duration,
             item: `${siteConfig.url}/iptv-subscription/${slug}`,
           },
         ],
@@ -469,25 +437,18 @@ export function generateStructuredData(path: string = "/") {
         "@context": "https://schema.org",
         "@type": "Product",
         "@id": `${siteConfig.url}/iptv-subscription/${slug}#product`,
-        name: `${planData.name} - ${siteConfig.name}`,
-        description: planData.desc,
+        name: `${plan.name} - ${siteConfig.name}`,
+        description: plan.metaDescription,
         brand: {
           "@type": "Brand",
           "@id": siteConfig.entityIds.brand,
           name: siteConfig.name,
         },
         image: `${siteConfig.url}${siteConfig.socialImage}`,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "1280",
-          bestRating: "5",
-          worstRating: "1",
-        },
         offers: {
           "@type": "Offer",
-          name: `${siteConfig.name} - ${planData.name}`,
-          price: planData.price,
+          name: `${siteConfig.name} - ${plan.name}`,
+          price: `${plan.price}.00`,
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
           itemCondition: "https://schema.org/NewCondition",
@@ -499,7 +460,20 @@ export function generateStructuredData(path: string = "/") {
         },
       };
 
-      return [orgSchema, websiteSchema, webpageSchema, productBreadcrumbSchema, singleProductSchema].filter(Boolean);
+      const productFaqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: plan.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      return [orgSchema, websiteSchema, webpageSchema, productBreadcrumbSchema, singleProductSchema, productFaqSchema].filter(Boolean);
     }
   }
 
