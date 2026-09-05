@@ -552,10 +552,10 @@ export default function HelpCenterPage() {
               <p className="text-xs text-silver-mist mt-1">Compare 1, 3, 6, and 12-month packages and savings.</p>
             </a>
 
-            <a href="/my-account" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
-              <Shield className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-semibold text-snow">My Account</h3>
-              <p className="text-xs text-silver-mist mt-1">Check subscription status and playlist credentials.</p>
+            <a href="/faq" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
+              <HelpCircle className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-sm font-semibold text-snow">Frequently Asked Questions</h3>
+              <p className="text-xs text-silver-mist mt-1">Pre-purchase questions about channels, billing, and devices.</p>
             </a>
           </div>
 
