@@ -53,6 +53,17 @@ export default function BestIptvHubPage() {
             </p>
           </header>
 
+          {/* Editorial vs Directory notice */}
+          <div className="mb-2 flex flex-wrap items-center justify-center gap-2 text-xs text-smoke">
+            <span>Looking for technical specs &amp; protocol matrices?</span>
+            <a
+              href="/iptv-players"
+              className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+            >
+              Browse the IPTV Apps Directory →
+            </a>
+          </div>
+
           {/* Immediate Answer-First Summary */}
           <section className="mt-6 rounded-2xl border border-charcoal bg-ash/40 p-5 sm:p-7" aria-labelledby="quick-answer-heading">
             <div className="flex items-start gap-3">

@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green">
               <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
-              15+ Years of Excellence
+              24h Free Trial Available
             </span>
             <a
               href="#pricing"
@@ -24,6 +24,7 @@ export default function Hero() {
             </a>
           </div>
         </Reveal>
+
 
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
@@ -108,7 +109,7 @@ export default function Hero() {
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
               <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">1,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Verified Reviews</p>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Subscribers</p>
             </div>
           </div>
         </Reveal>

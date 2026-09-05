@@ -446,7 +446,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.9,
-    primaryIntent: "Commercial Investigation & IPTV Player Comparison",
+    primaryIntent: "Editorial Comparison — Best IPTV Player for Your Use Case",
     primaryKeyword: "best IPTV players",
     secondaryTopics: [
       "best IPTV apps",
@@ -494,7 +494,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
-    primaryIntent: "Commercial Investigation & Software Directory",
+    primaryIntent: "Technical Directory — IPTV Player Protocol & Platform Index",
     primaryKeyword: "IPTV player apps directory",
     secondaryTopics: [
       "IPTV players for smart TV",
