@@ -44,7 +44,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">How Our IPTV Subscription Works</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology converts television signals into digital data packets, delivered through optimized streaming servers worldwide. This ensures lightning-fast channel switching, crystal-clear 4K quality, and zero buffering—providing an entertainment experience that surpasses traditional broadcasting methods.
+                Our IPTV technology converts television signals into digital data packets, delivered through optimized streaming servers worldwide. This ensures fast channel switching, high-definition and 4K quality, and smooth streaming—providing an entertainment experience that surpasses traditional broadcasting methods.
               </p>
             </div>
           </Reveal>
@@ -57,7 +57,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">Why Choose Our IPTV Package?</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology ensures 99.9% uptime, zero buffering, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on high-performance servers for reliable performance.
+                Our IPTV technology delivers high-availability streaming infrastructure, anti-freeze edge routing, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on dedicated servers for reliable playback.
               </p>
             </div>
           </Reveal>

@@ -93,11 +93,11 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
     faqs: [
       {
         question: "Why does my IPTV only buffer during big live football games?",
-        answer: "This is a classic signature of ISP traffic throttling. ISPs face immense bandwidth loads during marquee live broadcasts and actively target streaming protocols. Enabling a VPN resolves this instantly in over 90% of cases.",
+        answer: "This is often a sign of ISP traffic throttling. ISPs face high bandwidth demands during popular live sports events and may deprioritize streaming traffic. Connecting through a reputable VPN can help bypass ISP bandwidth management.",
       },
       {
         question: "Does increasing buffer size create a delay behind real-time?",
-        answer: "Setting a 2-second buffer adds an imperceptible 2 seconds of latency compared to live broadcast, but completely eliminates stuttering and screen freezing.",
+        answer: "Setting a 2-second buffer adds a minor 2 seconds of latency compared to live broadcast, which helps prevent playback stuttering and momentary frame freezing.",
       },
     ],
   },

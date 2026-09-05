@@ -806,7 +806,7 @@ export const hubFaqs = [
   },
   {
     question: "Do IPTV player applications come with free channels?",
-    answer: "No. Legitimate IPTV players downloaded from official app stores are empty media shells. They do not supply, host, or endorse video content. You must input your own playlist link or Xtream Codes API credentials from an authorized service provider like Teleview.",
+    answer: "No. Legitimate IPTV players downloaded from official app stores are empty media shells. They do not supply, host, or endorse video content. You must input your own playlist link or Xtream Codes API credentials from an IPTV service provider like Teleview.",
   },
   {
     question: "Can I use one IPTV player on multiple devices?",

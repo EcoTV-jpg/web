@@ -127,7 +127,7 @@ export default function AccountPage() {
                       </div>
                       <div className="bg-ash/40 p-3 rounded-lg border border-charcoal/40">
                         <span className="text-smoke block">Edge CDN Status</span>
-                        <span className="font-semibold text-phosphor-green mt-1 block">99.9% Optimal</span>
+                        <span className="font-semibold text-phosphor-green mt-1 block">Online &amp; Optimal</span>
                       </div>
                     </div>
 

@@ -6,6 +6,7 @@ import { bestIptvAppsList, hubFaqs } from "../data/bestIptvApps";
 import { deviceGuidesList } from "../data/deviceGuides";
 import { troubleshootingGuidesList } from "../data/troubleshootingGuides";
 import { whatIsIptvFaqs } from "../data/whatIsIptv";
+import { freeTrialData } from "../data/freeTrial";
 
 export interface SEOProps {
   title?: string;
@@ -763,6 +764,51 @@ export function generateStructuredData(path: string = "/") {
 
       graphEntities.push(singleProductSchema, productFaqSchema);
     }
+  }
+
+  // Route: /iptv-free-trial
+  if (cleanPath === "/iptv-free-trial") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-free-trial#service` };
+
+    const freeTrialServiceSchema = {
+      "@type": "Service",
+      "@id": `${siteConfig.url}/iptv-free-trial#service`,
+      name: "Teleview IPTV Free Trial",
+      serviceType: "IPTV Streaming Test Service",
+      description:
+        "24-hour IPTV free trial providing risk-free access to live channels, 4K sports, VOD library, and EPG for streaming quality evaluation.",
+      provider: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      areaServed: "Worldwide",
+      offers: {
+        "@type": "Offer",
+        "@id": `${siteConfig.url}/iptv-free-trial#offer`,
+        name: "Teleview 24-Hour IPTV Free Trial",
+        price: "0.00",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: `${siteConfig.url}/iptv-free-trial`,
+        seller: {
+          "@id": siteConfig.entityIds.organization,
+        },
+      },
+    };
+
+    const trialFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/iptv-free-trial#faq`,
+      mainEntity: freeTrialData.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(freeTrialServiceSchema, trialFaqSchema);
   }
 
   // Route: / (Homepage)

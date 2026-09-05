@@ -21,6 +21,7 @@ const canonicalPages = [
   "/devices/formuler",
   "/faq",
   "/iptv-subscription",
+  "/iptv-free-trial",
   "/iptv-subscription/1-month",
   "/iptv-subscription/3-months",
   "/iptv-subscription/6-months",
@@ -71,6 +72,7 @@ const knownRedirects = {
   "/legal": "/terms-conditions",
   "/privacy": "/privacy-policy",
   "/refund": "/refund-policy",
+  "/free-trial": "/iptv-free-trial",
 };
 
 console.log("==================================================");
@@ -154,6 +156,7 @@ console.log("\n=== TOPICAL CLUSTER INTEGRATION CHECK ===");
 const clusters = {
   "IPTV Subscription": [
     "/iptv-subscription",
+    "/iptv-free-trial",
     "/iptv-subscription/1-month",
     "/iptv-subscription/3-months",
     "/iptv-subscription/6-months",

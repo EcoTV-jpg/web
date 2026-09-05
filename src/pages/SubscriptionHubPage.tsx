@@ -36,6 +36,7 @@ export default function SubscriptionHubPage() {
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <GreenButton href="#comparison">Compare Plans</GreenButton>
+                <GhostButton href="/iptv-free-trial">Free Trial</GhostButton>
                 <GhostButton href="/setup">Setup Guide</GhostButton>
               </div>
 
@@ -56,7 +57,10 @@ export default function SubscriptionHubPage() {
                       <strong className="text-snow">6 Months ($60.00 / $10.00/mo)</strong>, and{" "}
                       <strong className="text-snow">12 Months ($90.00 / $7.50/mo)</strong>. Every plan includes full access to over
                       25,000 live TV channels, 120,000+ on-demand movies and series, 4K sports streaming, zero automatic rebilling,
-                      and a risk-free 14-day money-back guarantee.
+                      and a risk-free 14-day money-back guarantee. Want to evaluate stream stability and device compatibility first? Request a 24-hour{" "}
+                      <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
+                        IPTV free trial
+                      </a>.
                     </p>
                   </div>
                 </div>

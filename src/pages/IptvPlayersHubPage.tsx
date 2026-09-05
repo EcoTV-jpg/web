@@ -77,7 +77,11 @@ export default function IptvPlayersHubPage() {
                   Directory Notice: Independent Media Player Shells
                 </h2>
                 <p className="mt-1 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  All media players indexed below are standalone software applications that <strong className="text-snow">do not include video content or television channels</strong>. To stream live TV, sports, and VOD through any of these players, you need an active subscription account from a verified IPTV provider such as Teleview.
+                  All media players indexed below are standalone software applications that <strong className="text-snow">do not include video content or television channels</strong>. To stream live TV, sports, and VOD through any of these players, you need an active subscription account from a verified IPTV provider such as Teleview. You can evaluate stream stability and player compatibility with a 24-hour{" "}
+                  <a href="/iptv-free-trial" className="text-phosphor-green font-medium hover:underline">
+                    IPTV Free Trial
+                  </a>{" "}
+                  before subscribing.
                 </p>
               </div>
             </div>
@@ -252,6 +256,9 @@ export default function IptvPlayersHubPage() {
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
                 View Subscription Plans
               </GreenButton>
+              <GhostButton href="/iptv-free-trial" className="text-xs px-5 py-2.5">
+                Test Free Trial
+              </GhostButton>
               <GhostButton href="/setup" className="text-xs px-5 py-2.5">
                 View Setup Tutorials
               </GhostButton>

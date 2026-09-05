@@ -123,7 +123,7 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
               Top Recommended IPTV Players for {device.name}
             </h2>
             <p className="mt-1.5 text-xs sm:text-sm text-silver-mist">
-              These applications provide the fastest channel switching and cleanest TV guide for this hardware:
+              These applications provide fast channel switching and a responsive TV guide for this hardware:
             </p>
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2 text-xs">
@@ -288,10 +288,9 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
               </a>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {deviceGuidesList
                 .filter((d) => d.slug !== device.slug)
-                .slice(0, 4)
                 .map((other) => (
                   <a
                     key={other.slug}
@@ -316,8 +315,8 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
 
             <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
               <div className="space-y-0.5 text-center sm:text-left">
-                <span className="text-snow font-semibold">Encountering playback or buffering issues?</span>
-                <p className="text-silver-mist">Read our diagnostic walkthroughs and resolution workflows.</p>
+                <span className="text-snow font-semibold">Encountering playback or buffering issues on your {device.name}?</span>
+                <p className="text-silver-mist">Read our diagnostic guides on <a href="/help-center/buffering" className="text-phosphor-green hover:underline">stopping IPTV buffering</a> or <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">resolving server connection timeouts</a>.</p>
               </div>
               <a
                 href="/help-center"

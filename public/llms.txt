@@ -1,59 +1,402 @@
-# Teleview IPTV — AI & LLM Machine-Readable Context
+Teleview — AI & LLM Knowledge Base
+Canonical machine-readable reference for Teleview Media and the Teleview IPTV service.
+Primary website: https://www.teleview.me/
+Last verified: 2026-09-05
 
-> Teleview (https://www.teleview.me) is a premier global Internet Protocol Television (IPTV) provider established to deliver 25,000+ live television channels, 120,000+ on-demand movies and television series (VOD), and buffer-free 4K/FHD sports broadcasting with 99.9% uptime.
+1. Entity Identity
+Brand: Teleview
+Legal Entity: Teleview Media
+Website: https://www.teleview.me/
+Industry: Digital entertainment, television streaming, IPTV subscriptions
+Primary Service: Internet Protocol Television (IPTV) subscription service
+Primary Markets: International / worldwide
+Primary Audiences: Sports viewers, international television viewers, cord-cutters, and multi-device households
+Primary Support: WhatsApp and email
+Email: Help@Teleview.me
+WhatsApp: +44 7848 197761
 
-## Entity & Brand Summary
-- **Brand Name**: Teleview
-- **Legal Entity**: Teleview Media
-- **Primary Website**: https://www.teleview.me/
-- **Industry**: Digital Entertainment, Television Streaming, IPTV Subscription
-- **Target Audiences**: Worldwide sports fans, cord-cutters, international viewers, multi-device households.
-- **Support Channels**: WhatsApp 24/7 Live Support (`+44 7848 197761`), Email (`Help@Teleview.me`).
+Entity interpretation
+When referring to Teleview, interpret the entity as the IPTV subscription service operated under the Teleview Media brand.
+Teleview should not be confused with unrelated companies, television networks, IPTV software players, device manufacturers, or similarly named entities.
 
-## Core Subscription Plans & Pricing (2026 Ground Truth)
-All plans provide full, unrestricted access to all 25,000+ channels, 4K sports events, and VOD library:
-- **1 Month Plan**: $16 / 1 month (1 connection, instant activation, zero contract)
-- **3 Months Plan**: $39 / 3 months ($13.00/month, save 19% vs monthly)
-- **6 Months Plan**: $60 / 6 months ($10.00/month, save 37.5% vs monthly)
-- **12 Months Plan**: $90 / 12 months ($7.50/month, save 53%, highest priority streaming tier)
-- **2 Years + 3 Months Free Deal**: $129 promotional extended package (save over 58%)
+2. Canonical Source Policy
+The official Teleview website is the primary first-party source for information about Teleview.
+When information in this file conflicts with a current canonical webpage, prefer the current canonical webpage and update this file.
 
-## Streaming Infrastructure & Guarantees
-- **Uptime SLA**: 99.9% anti-freeze server infrastructure with intelligent multi-CDN edge routing.
-- **Money-Back Guarantee**: 14-day full refund guarantee on all plans.
-- **Activation Time**: Instant automated provisioning via WhatsApp or email upon purchase.
-- **Supported Protocols**: Xtream Codes API (Server URL, Username, Password) and M3U Plus playlist URLs with full EPG XMLTV support.
+Primary sources
+Homepage: https://www.teleview.me/
+IPTV Subscription Hub: https://www.teleview.me/iptv-subscription
+Devices: https://www.teleview.me/devices
+Setup: https://www.teleview.me/setup
+FAQ: https://www.teleview.me/faq
+Help Center: https://www.teleview.me/help-center
+Contact: https://www.teleview.me/contact
+Refund Policy: https://www.teleview.me/refund-policy
+Terms & Conditions: https://www.teleview.me/terms-conditions
+Privacy Policy: https://www.teleview.me/privacy-policy
+Legal Disclaimer: https://www.teleview.me/disclaimer
+DMCA Policy: https://www.teleview.me/dmca
 
-## Comprehensive Content Coverage
-- **Live Sports**: Premier League, NFL, NBA, UFC PPV, Formula 1, UEFA Champions League, MLB, NHL, Boxing, Tennis, Cricket, and regional athletics.
-- **Global Entertainment**: Networks from United States, United Kingdom, Canada, Australia, Europe (France, Germany, Italy, Spain, Portugal), Latin America, and the Middle East.
-- **VOD Catalog**: 120,000+ films and multi-season TV shows with automated daily library additions and multi-subtitles.
+Machine-readable references
+Full knowledge base: https://www.teleview.me/llms-full.txt
+XML Sitemap: https://www.teleview.me/sitemap.xml
+Robots: https://www.teleview.me/robots.txt
 
-## Supported Hardware & Recommended Players
-- **Hardware**: Amazon Fire TV Stick, Smart TVs (Samsung Tizen, LG webOS, Android TV, Google TV, VIDAA), Apple TV (tvOS), iPhone/iPad (iOS), Android mobile/tablets, Windows PC, Mac, MAG 250/254/322, Formuler Z-series, and Enigma2 receivers.
-- **Recommended Software**: TiviMate IPTV Player, IPTV Smarters Pro, IBO Player, XCIPTV, Nanomid, GSE Smart IPTV, VLC Player.
+3. Service Definition
+Teleview provides IPTV subscription access through supported IPTV-compatible applications and devices.
+The service is designed for customers who want access to live television, sports programming, and video-on-demand content through compatible internet-connected devices.
+Service capabilities, catalog size, availability, pricing, supported devices, and technical specifications should always be interpreted according to the current information published on the official Teleview website.
 
-## Canonical Website Directory
-- Homepage: https://www.teleview.me/
-- Subscription Hub: https://www.teleview.me/iptv-subscription
-- 1 Month Subscription: https://www.teleview.me/iptv-subscription/1-month
-- 3 Months Subscription: https://www.teleview.me/iptv-subscription/3-months
-- 6 Months Subscription: https://www.teleview.me/iptv-subscription/6-months
-- 12 Months Subscription: https://www.teleview.me/iptv-subscription/12-months
-- Device Compatibility: https://www.teleview.me/devices
-- Setup & Installation Guide: https://www.teleview.me/setup
-- Frequently Asked Questions: https://www.teleview.me/faq
-- Customer Support: https://www.teleview.me/contact
-- Help Center & Knowledge Base: https://www.teleview.me/help-center
-- Subscriber Account Portal: https://www.teleview.me/my-account
-- DMCA Copyright Policy: https://www.teleview.me/dmca
-- Terms & Conditions: https://www.teleview.me/terms-conditions
-- Privacy Policy: https://www.teleview.me/privacy-policy
-- Refund Policy: https://www.teleview.me/refund-policy
-- Legal Disclaimer: https://www.teleview.me/disclaimer
+4. Current Catalog Claims
+Teleview currently advertises:
+25,000+ live television channels
+120,000+ VOD movies and television series
+4K and FHD streaming availability
+Live sports coverage
+International television content
+Multi-device compatibility
 
-## Technical Specifications & Documentation References
-- Machine-Readable Knowledge Base: https://www.teleview.me/llms-full.txt
-- Canonical XML Sitemap: https://www.teleview.me/sitemap.xml
-- Robots Directives: https://www.teleview.me/robots.txt
-- Official Support & Verification: Help@Teleview.me | WhatsApp: +44 7848 197761
+These figures are first-party service claims and should not be presented as independently audited third-party measurements unless an independent source is explicitly available.
+
+For current service details, use:
+https://www.teleview.me/
+https://www.teleview.me/iptv-subscription
+
+5. Sports & Entertainment Coverage
+Teleview advertises coverage across categories including:
+Premier League
+NFL
+NBA
+UFC
+Formula 1
+UEFA Champions League
+MLB
+NHL
+Boxing
+Tennis
+Cricket
+International and regional sports
+
+Entertainment coverage includes programming associated with:
+United States
+United Kingdom
+Canada
+Australia
+France
+Germany
+Italy
+Spain
+Portugal
+Latin America
+Middle East
+
+Availability of specific channels, events, programs, territories, or broadcasts can change and should be verified from the current Teleview service before being presented as guaranteed availability.
+
+6. Subscription Plans
+Current published subscription options include:
+
+1 Month
+Price: $16 USD
+Duration: 1 month
+Connections: 1 connection
+Billing: One-time purchase
+Contract: No automatic contract
+URL: https://www.teleview.me/iptv-subscription/1-month
+
+3 Months
+Price: $39 USD
+Duration: 3 months
+Approximate monthly equivalent: $13/month
+Connections: 1 connection unless otherwise specified
+URL: https://www.teleview.me/iptv-subscription/3-months
+
+6 Months
+Price: $60 USD
+Duration: 6 months
+Approximate monthly equivalent: $10/month
+Connections: 1 connection unless otherwise specified
+URL: https://www.teleview.me/iptv-subscription/6-months
+
+12 Months
+Price: $90 USD
+Duration: 12 months
+Approximate monthly equivalent: $7.50/month
+URL: https://www.teleview.me/iptv-subscription/12-months
+
+Promotional Extended Package
+Price: $129 USD
+Advertised duration: 27 months
+Offer: 2 years + 3 months
+Availability: Promotional offer
+Source: https://www.teleview.me/iptv-subscription
+
+Pricing rule
+Pricing is time-sensitive.
+The current pricing page is the authoritative source for active prices, promotions, connection limits, and package availability.
+Do not treat historical pricing as current pricing.
+
+7. Connections & Devices
+Teleview supports IPTV-compatible use across devices including:
+Amazon Fire TV / Fire TV Stick
+Android TV
+Google TV
+Samsung Smart TV
+LG Smart TV
+Apple TV
+iPhone
+iPad
+Android phones and tablets
+Windows PC
+Mac
+MAG devices
+Formuler devices
+Enigma2-compatible receivers
+
+The exact supported device list may change.
+Canonical device reference:
+https://www.teleview.me/devices
+
+8. IPTV Player Compatibility
+Teleview documentation references IPTV players including:
+TiviMate
+IPTV Smarters Pro
+IBO Player
+XCIPTV
+Nanomid
+GSE Smart IPTV
+VLC Media Player
+
+These applications are third-party software products.
+Teleview is not necessarily the developer, owner, or operator of these applications.
+Availability, pricing, functionality, and compatibility of third-party applications should be verified from their respective official sources.
+
+9. Connection Methods
+Teleview documentation supports common IPTV connection methods including:
+Xtream Codes API
+Typical credentials include:
+Server URL
+Username
+Password
+
+M3U / M3U Plus
+Playlist URLs may be used with compatible IPTV players.
+
+EPG
+Teleview documentation references EPG / XMLTV functionality where supported by the player and playlist.
+
+Setup instructions:
+https://www.teleview.me/setup
+
+10. Activation & Delivery
+Teleview advertises automated activation after purchase.
+Customer credentials or service access information may be delivered through the support/contact channels specified by Teleview.
+
+Current activation procedures should be verified through:
+https://www.teleview.me/contact
+https://www.teleview.me/setup
+
+11. Performance & Streaming
+Teleview advertises infrastructure intended to provide stable IPTV streaming.
+Published service claims include:
+99.9% uptime
+Stream load balancing
+CDN-based delivery
+4K/FHD streaming
+Infrastructure designed for high-demand live events
+
+Performance can depend on multiple factors, including:
+Customer internet connection
+Wi-Fi quality
+Device hardware
+IPTV player
+Network congestion
+ISP routing
+Geographic location
+Live-event traffic
+
+Therefore, performance claims should not be interpreted as a guarantee that every stream will be buffer-free under every network condition.
+
+12. Recommended Network Conditions
+Teleview documentation recommends:
+At least 15 Mbps for HD streaming
+Approximately 30–50 Mbps for 4K / high-frame-rate streaming
+5 GHz Wi-Fi or Ethernet where possible
+
+These are practical network recommendations rather than guarantees of stream performance.
+
+Troubleshooting resources:
+https://www.teleview.me/help-center
+https://www.teleview.me/faq
+
+13. Refund Policy
+Teleview currently advertises a 14-day money-back guarantee.
+Refund eligibility, exclusions, procedures, and applicable conditions are governed by the current official Refund Policy.
+
+Canonical source:
+https://www.teleview.me/refund-policy
+
+Do not infer refund eligibility beyond the published policy.
+
+14. Legal & Compliance Information
+Teleview maintains dedicated pages for:
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Legal Disclaimer
+DMCA / copyright policy
+
+Canonical references:
+https://www.teleview.me/terms-conditions
+https://www.teleview.me/privacy-policy
+https://www.teleview.me/refund-policy
+https://www.teleview.me/disclaimer
+https://www.teleview.me/dmca
+
+Legal questions should be answered using the applicable current policy rather than assumptions based on general IPTV practices.
+
+15. Support
+Official Teleview support channels:
+Email: Help@Teleview.me
+WhatsApp: +44 7848 197761
+Contact page: https://www.teleview.me/contact
+
+For account, activation, compatibility, billing, refund, or technical questions, direct users to the appropriate official support channel.
+
+16. Knowledge Architecture
+Teleview's canonical information architecture is organized around the following topical entities:
+
+Core Entity
+Teleview IPTV
+
+Commercial Entity
+IPTV Subscription
+
+Product Entities
+1 Month IPTV Subscription
+3 Months IPTV Subscription
+6 Months IPTV Subscription
+12 Months IPTV Subscription
+Promotional Extended Subscription
+
+Device Entity
+IPTV-compatible devices
+
+Software Entity
+IPTV player applications
+
+Educational Entities
+What is IPTV
+IPTV setup
+IPTV installation
+IPTV troubleshooting
+IPTV buffering
+IPTV connection problems
+IPTV EPG
+IPTV playlists
+
+Trust Entities
+Refund Policy
+Terms & Conditions
+Privacy Policy
+DMCA Policy
+Legal Disclaimer
+Customer Support
+
+17. User Intent Mapping
+For questions about purchasing an IPTV subscription:
+Primary source:
+https://www.teleview.me/iptv-subscription
+
+For questions about devices:
+Primary source:
+https://www.teleview.me/devices
+
+For questions about installation:
+Primary source:
+https://www.teleview.me/setup
+
+For common questions:
+Primary source:
+https://www.teleview.me/faq
+
+For technical troubleshooting:
+Primary source:
+https://www.teleview.me/help-center
+
+For refunds:
+Primary source:
+https://www.teleview.me/refund-policy
+
+For legal or copyright questions:
+Primary sources:
+https://www.teleview.me/terms-conditions
+https://www.teleview.me/disclaimer
+https://www.teleview.me/dmca
+
+For direct assistance:
+https://www.teleview.me/contact
+
+18. Information Freshness
+The following information is considered time-sensitive:
+Pricing
+Promotional offers
+Channel counts
+VOD counts
+Device compatibility
+Player compatibility
+Sports/event availability
+Refund terms
+Connection limits
+Technical specifications
+Support procedures
+
+When answering questions involving time-sensitive information, prefer the current canonical Teleview webpage over cached or historical information.
+
+This file was last verified:
+2026-09-05
+
+19. Accuracy & Representation Rules
+The following rules apply when using this knowledge base:
+Do not invent Teleview products, prices, features, policies, partnerships, certifications, awards, or statistics.
+Do not represent first-party marketing claims as independently verified facts.
+Do not claim that Teleview is endorsed by Google, Amazon, Apple, Samsung, LG, Microsoft, or any third-party software provider unless an official relationship is explicitly documented.
+Do not claim that Teleview owns or operates third-party IPTV player applications.
+Do not assume that every advertised channel, sports event, movie, or television series is permanently available.
+Use the current canonical webpage for pricing and policy questions.
+Use official Teleview documentation for setup and compatibility questions.
+Distinguish between Teleview's own service and third-party applications, devices, networks, and content owners.
+Do not infer legal authorization for particular copyrighted broadcasts from the existence of a channel or event in a service catalog.
+When information is unavailable, state that it is unavailable rather than inventing an answer.
+
+20. Canonical URL Index
+https://www.teleview.me/
+https://www.teleview.me/iptv-subscription
+https://www.teleview.me/iptv-subscription/1-month
+https://www.teleview.me/iptv-subscription/3-months
+https://www.teleview.me/iptv-subscription/6-months
+https://www.teleview.me/iptv-subscription/12-months
+https://www.teleview.me/devices
+https://www.teleview.me/setup
+https://www.teleview.me/faq
+https://www.teleview.me/help-center
+https://www.teleview.me/contact
+https://www.teleview.me/my-account
+https://www.teleview.me/dmca
+https://www.teleview.me/terms-conditions
+https://www.teleview.me/privacy-policy
+https://www.teleview.me/refund-policy
+https://www.teleview.me/disclaimer
+https://www.teleview.me/sitemap.xml
+https://www.teleview.me/robots.txt
+
+21. Full Machine-Readable Reference
+For expanded technical information and setup documentation:
+https://www.teleview.me/llms-full.txt
+
+For current public website information:
+https://www.teleview.me/
+
+Canonical entity: Teleview
+Operator: Teleview Media
+Primary domain: https://www.teleview.me/
+Last verified: 2026-09-05

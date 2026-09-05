@@ -1124,6 +1124,7 @@ export default function DevicesPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 <GreenButton href="/iptv-subscription">Browse Subscription Plans</GreenButton>
+                <GhostButton href="/iptv-free-trial">Test Free Trial</GhostButton>
                 <GhostButton href="/setup">View Complete Setup Guide</GhostButton>
               </div>
             </div>

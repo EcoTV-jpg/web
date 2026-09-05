@@ -72,7 +72,7 @@ export default function Comparison() {
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Seamless Streaming:</strong> 99.9% anti-freeze server uptime</span>
+                  <span><strong className="text-phosphor-green">Seamless Streaming:</strong> High-availability anti-freeze CDN streams</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />

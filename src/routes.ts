@@ -8,6 +8,7 @@ export interface AppRoute {
   rendering: "SSG" | "CSR" | "Static";
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: number;
+  lastmod?: string;
   primaryIntent: string;
   primaryKeyword: string;
   secondaryTopics: string[];
@@ -207,7 +208,7 @@ export const routes: AppRoute[] = [
     h1: "6 Months IPTV Subscription",
     title: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     description:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and 99.9% uptime on all your devices.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and anti-freeze reliability on all your devices.",
     ogTitle: "6 Months IPTV Subscription for $60 – $10/mo Semi-Annual Value | Teleview",
     ogDescription:
       "Half a year of uninterrupted 4K sports and worldwide channels at 37.5% off standard monthly rates.",
@@ -236,6 +237,31 @@ export const routes: AppRoute[] = [
     ogDescription:
       "Maximize your savings with a full year of premium television for $90. Includes dedicated server priority and 24/7 customer support.",
     breadcrumbName: "12 Months",
+  },
+  {
+    path: "/iptv-free-trial",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "weekly",
+    priority: 0.9,
+    lastmod: "2026-09-05",
+    primaryIntent: "Commercial Evaluation — Test IPTV Service Before Purchasing",
+    primaryKeyword: "IPTV free trial",
+    secondaryTopics: [
+      "24 hour IPTV trial",
+      "test IPTV before subscribing",
+      "free IPTV test line",
+      "IPTV trial credentials",
+      "risk free streaming trial",
+    ],
+    h1: "IPTV Free Trial",
+    title: "IPTV Free Trial — Test Teleview IPTV Before You Subscribe",
+    description:
+      "Try Teleview IPTV before subscribing. Test live TV, VOD, EPG, device compatibility and streaming performance with an IPTV free trial.",
+    ogTitle: "IPTV Free Trial — 24-Hour Streaming Test Pass | Teleview",
+    ogDescription:
+      "Evaluate 25,000+ live channels, 4K sports, and VOD performance risk-free with a 24-hour Teleview IPTV free trial.",
+    breadcrumbName: "IPTV Free Trial",
   },
   {
     path: "/pricing",

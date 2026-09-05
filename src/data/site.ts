@@ -199,7 +199,7 @@ export const deviceCategories = [
 
 /* Channels Preview */
 export const channelPreview = {
-  kicker: "UNLIMITED CONTENT",
+  kicker: "EXTENSIVE ENTERTAINMENT",
   heading: "Entertainment for Everyone",
   subhead: "From championship sports to children's programming, discover channels tailored to your taste.",
 };
@@ -414,15 +414,15 @@ export const guarantee = {
   ],
 };
 
-/* Why We're the #1 IPTV Provider */
+/* Why Choose Teleview */
 export const whyChooseUs = {
-  kicker: "Why We're the #1 IPTV Provider",
+  kicker: "Why Choose Teleview",
   heading: "Why Choose Teleview?",
-  subhead: "Delivering streaming excellence, verified reliability, and 24/7 support for over 15 years.",
+  subhead: "Delivering streaming excellence, verified reliability, and 24/7 support across all devices.",
   items: [
     {
       title: "Premium IPTV Experience",
-      copy: "At Teleview, we’re recognized as the best IPTV provider, delivering premium streaming excellence for over 15 years. Our IPTV service combines superior technology with unmatched reliability, featuring 99.9% guaranteed uptime and zero-buffering streaming across all devices.",
+      copy: "At Teleview, we focus on delivering premium streaming excellence. Our IPTV service combines high-bitrate video delivery with an anti-freeze server network, high-availability streaming infrastructure, and responsive playback across all devices.",
     },
     {
       title: "Reliable & Secure Service",
@@ -443,11 +443,11 @@ export const whyChooseUs = {
 export const sportsSection = {
   kicker: "LIVE 4K SPORTS",
   heading: "Never Miss Your Favorite Game Again",
-  copy: "Experience every thrilling moment with our premium sports streaming. From UEFA Champions League to NFL championships, Premier League to NHL playoffs, enjoy crystal-clear 4K coverage of all major worldwide sports events.",
+  copy: "Experience live sports action with high-definition and 4K streams where available, covering major international football, basketball, racing, and championships.",
   highlights: [
     {
       title: "Live HD Streams",
-      desc: "Crystal clear 4K quality for every game",
+      desc: "High-definition and 4K sports streams where available",
     },
     {
       title: "24/7 Coverage",
@@ -497,12 +497,12 @@ export const faqs = [
   {
     question: "How does Teleview IPTV streaming infrastructure work?",
     answer:
-      "Teleview operates a globally distributed Content Delivery Network (CDN) with automated load balancing and 99.9% server uptime. Live broadcast signals are ingested, transcoded with dedicated hardware encoders, and delivered via low-latency HTTP streams directly to your device.",
+      "Teleview operates a globally distributed Content Delivery Network (CDN) with automated load balancing and high-availability server continuity. Live broadcast signals are ingested, transcoded with dedicated hardware encoders, and delivered via low-latency HTTP streams directly to your device.",
   },
   {
     question: "Why choose Teleview as your IPTV provider?",
     answer:
-      "Teleview offers a stable global streaming service with 25,000+ live channels, 120,000+ VOD movies and series, true 4K UHD sports at 60 FPS, anti-freeze edge routing, multi-device support, and a risk-free 14-day money-back guarantee.",
+      "Teleview offers a stable global streaming service with 25,000+ live channels, 120,000+ VOD movies and series, high-definition live sports, anti-freeze edge routing, multi-device support, and a risk-free 14-day money-back guarantee.",
   },
   {
     question: "Which devices and operating systems are supported by Teleview?",
@@ -542,7 +542,7 @@ export const faqs = [
   {
     question: "What live sports coverage is included with Teleview?",
     answer:
-      "Teleview includes comprehensive global sports coverage including Premier League, UEFA Champions League, NFL, NBA, Formula 1, UFC PPV events, NHL, MLB, tennis grand slams, and international cricket in Full HD and 4K 60 FPS.",
+      "Teleview includes access to global live sports channels covering major football, basketball, racing, and combat events in Full HD and 4K where available.",
   },
   {
     question: "How do I set up Teleview IPTV on my device step-by-step?",
@@ -552,7 +552,7 @@ export const faqs = [
   {
     question: "What internet speed is required for Teleview IPTV streaming?",
     answer:
-      "Teleview requires a minimum stable download speed of 10–15 Mbps for Full HD 1080p channels and 25–30 Mbps for 4K Ultra HD 60 FPS sports broadcasts. Connecting via a 5 GHz Wi-Fi band or wired Ethernet ensures buffer-free playback.",
+      "Teleview requires a minimum stable download speed of 10–15 Mbps for Full HD 1080p channels and 25–30 Mbps for 4K Ultra HD 60 FPS sports broadcasts. Connecting via a 5 GHz Wi-Fi band or wired Ethernet ensures stable playback.",
     link: {
       url: "https://fast.com",
       text: "Test your connection speed on Fast.com →",

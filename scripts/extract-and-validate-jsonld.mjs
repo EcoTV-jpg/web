@@ -37,6 +37,7 @@ const indexableRoutes = [
   { path: "/devices/formuler", breadcrumbName: "Formuler Z-Series" },
   { path: "/faq", breadcrumbName: "FAQ & Support" },
   { path: "/iptv-subscription", breadcrumbName: "IPTV Subscription" },
+  { path: "/iptv-free-trial", breadcrumbName: "IPTV Free Trial" },
   { path: "/iptv-subscription/1-month", breadcrumbName: "1 Month", price: "16.00", duration: "1 Month" },
   { path: "/iptv-subscription/3-months", breadcrumbName: "3 Months", price: "39.00", duration: "3 Months" },
   { path: "/iptv-subscription/6-months", breadcrumbName: "6 Months", price: "60.00", duration: "6 Months" },
@@ -255,6 +256,14 @@ for (const route of indexableRoutes) {
     assert("HUB_SCHEMA", "FAQPage entity on /iptv-subscription", Boolean(faqPage));
     assert("HUB_SCHEMA", "FAQPage questions count is 4 on /iptv-subscription", faqPage?.mainEntity?.length === 4);
     assert("HUB_SCHEMA", "No AggregateRating in Product on /iptv-subscription", !product?.aggregateRating);
+  } else if (route.path === "/iptv-free-trial") {
+    const service = graph.find((e) => e["@type"] === "Service");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("TRIAL_SCHEMA", "Service entity on /iptv-free-trial", Boolean(service));
+    assert("TRIAL_SCHEMA", "FAQPage entity on /iptv-free-trial", Boolean(faqPage));
+    assert("TRIAL_SCHEMA", "Offer price is 0.00 on /iptv-free-trial", service?.offers?.price === "0.00");
+    assert("TRIAL_SCHEMA", "Offer availability is InStock on /iptv-free-trial", service?.offers?.availability === "https://schema.org/InStock");
+    assert("TRIAL_SCHEMA", "No AggregateRating on /iptv-free-trial", !entityTypes.includes("AggregateRating"));
   } else if (route.path.startsWith("/iptv-subscription/")) {
     const product = graph.find((e) => e["@type"] === "Product");
     const faqPage = graph.find((e) => e["@type"] === "FAQPage");

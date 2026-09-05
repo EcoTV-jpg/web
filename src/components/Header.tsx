@@ -10,6 +10,7 @@ const navGroups = [
     items: [
       { label: "What Is IPTV?", href: "/what-is-iptv", desc: "How IPTV works" },
       { label: "Setup Guide", href: "/setup", desc: "Installation & configuration" },
+      { label: "Free Trial", href: "/iptv-free-trial", desc: "Test service before buying" },
       { label: "FAQ", href: "/faq", desc: "Common questions answered" },
     ],
   },
@@ -53,31 +54,40 @@ const navGroups = [
   },
 ];
 
-/* ── Desktop dropdown ────────────────────────────────────────────── */
+/* ── Desktop dropdown (DOM-persistent for full SSR discovery) ───── */
 function DesktopDropdown({ group }: { group: (typeof navGroups)[number] }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const dropdownId = `dropdown-${group.label.toLowerCase()}`;
 
   useEffect(() => {
     function onClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
     }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && open) setOpen(false);
+    }
     document.addEventListener("mousedown", onClickOutside);
-    return () => document.removeEventListener("mousedown", onClickOutside);
-  }, []);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   return (
     <div
       ref={ref}
-      className="relative"
+      className="relative group"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1 text-sm font-normal text-silver-mist transition-colors duration-200 hover:text-snow"
+        className="flex items-center gap-1 text-sm font-normal text-silver-mist transition-colors duration-200 hover:text-snow focus:text-snow outline-none"
         aria-expanded={open}
+        aria-controls={dropdownId}
         aria-haspopup="true"
       >
         {group.label}
@@ -87,30 +97,36 @@ function DesktopDropdown({ group }: { group: (typeof navGroups)[number] }) {
         />
       </button>
 
-      {open && (
-        <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-xl border border-charcoal bg-obsidian shadow-xl">
-          <ul className="py-2">
-            {group.items.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="flex flex-col px-4 py-2.5 transition-colors hover:bg-ash/60 group"
-                >
-                  <span className="text-sm font-medium text-snow group-hover:text-phosphor-green transition-colors">
-                    {item.label}
-                  </span>
-                  <span className="mt-0.5 text-[11px] text-smoke">{item.desc}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Unconditionally rendered in DOM for SSR crawlers; styled via CSS visibility/opacity */}
+      <div
+        id={dropdownId}
+        className={`absolute left-0 top-full z-50 mt-2 w-56 rounded-xl border border-charcoal bg-obsidian shadow-xl transition-all duration-150 ${
+          open
+            ? "opacity-100 visible pointer-events-auto translate-y-0"
+            : "opacity-0 invisible pointer-events-none -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 focus-within:opacity-100 focus-within:visible focus-within:pointer-events-auto focus-within:translate-y-0"
+        }`}
+      >
+        <ul className="py-2">
+          {group.items.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className="flex flex-col px-4 py-2.5 transition-colors hover:bg-ash/60 group"
+              >
+                <span className="text-sm font-medium text-snow group-hover:text-phosphor-green transition-colors">
+                  {item.label}
+                </span>
+                <span className="mt-0.5 text-[11px] text-smoke">{item.desc}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
 
-/* ── Mobile accordion group ──────────────────────────────────────── */
+/* ── Mobile accordion group (DOM-persistent) ─────────────────────── */
 function MobileGroup({
   group,
   onNavigate,
@@ -119,6 +135,7 @@ function MobileGroup({
   onNavigate: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const groupId = `mobile-group-${group.label.toLowerCase()}`;
 
   return (
     <li>
@@ -127,6 +144,7 @@ function MobileGroup({
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between border-b border-charcoal/60 py-3.5 text-sm text-silver-mist"
         aria-expanded={open}
+        aria-controls={groupId}
       >
         <span>{group.label}</span>
         <ChevronDown
@@ -134,22 +152,20 @@ function MobileGroup({
           aria-hidden="true"
         />
       </button>
-      {open && (
-        <ul className="pb-1">
-          {group.items.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                onClick={onNavigate}
-                className="flex items-center gap-2 py-2.5 pl-4 text-sm text-silver-mist transition-colors hover:text-snow"
-              >
-                <span className="size-1 shrink-0 rounded-full bg-phosphor-green/60" aria-hidden="true" />
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul id={groupId} className={`pb-1 ${open ? "block" : "hidden"}`}>
+        {group.items.map((item) => (
+          <li key={item.href}>
+            <a
+              href={item.href}
+              onClick={onNavigate}
+              className="flex items-center gap-2 py-2.5 pl-4 text-sm text-silver-mist transition-colors hover:text-snow"
+            >
+              <span className="size-1 shrink-0 rounded-full bg-phosphor-green/60" aria-hidden="true" />
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
     </li>
   );
 }
@@ -183,6 +199,12 @@ export default function Header() {
           >
             Plans
           </a>
+          <a
+            href="/iptv-free-trial"
+            className="text-sm font-normal text-silver-mist transition-colors duration-200 hover:text-snow"
+          >
+            Free Trial
+          </a>
           {navGroups.map((group) => (
             <DesktopDropdown key={group.label} group={group} />
           ))}
@@ -210,35 +232,42 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile nav panel */}
-      {open && (
-        <div id="mobile-nav" className="border-t border-charcoal bg-obsidian lg:hidden">
-          <nav className="container-x py-4" aria-label="Mobile">
-            <ul>
-              <li>
-                <a
-                  href="/iptv-subscription"
-                  onClick={() => setOpen(false)}
-                  className="block border-b border-charcoal/60 py-3.5 text-sm text-silver-mist transition-colors hover:text-snow"
-                >
-                  Plans
-                </a>
-              </li>
-              {navGroups.map((group) => (
-                <MobileGroup key={group.label} group={group} onNavigate={() => setOpen(false)} />
-              ))}
-            </ul>
-            <div className="flex gap-3 pt-5">
-              <GhostButton href={site.emailHref} className="flex-1">
-                Need Help
-              </GhostButton>
-              <GreenButton href="/iptv-subscription" className="flex-1">
-                Get It Now!
-              </GreenButton>
-            </div>
-          </nav>
-        </div>
-      )}
+      {/* Mobile nav panel (DOM-persistent for mobile crawlers) */}
+      <div id="mobile-nav" className={`border-t border-charcoal bg-obsidian lg:hidden ${open ? "block" : "hidden"}`}>
+        <nav className="container-x py-4" aria-label="Mobile">
+          <ul>
+            <li>
+              <a
+                href="/iptv-subscription"
+                onClick={() => setOpen(false)}
+                className="block border-b border-charcoal/60 py-3.5 text-sm text-silver-mist transition-colors hover:text-snow"
+              >
+                Plans
+              </a>
+            </li>
+            <li>
+              <a
+                href="/iptv-free-trial"
+                onClick={() => setOpen(false)}
+                className="block border-b border-charcoal/60 py-3.5 text-sm text-silver-mist transition-colors hover:text-snow"
+              >
+                Free Trial
+              </a>
+            </li>
+            {navGroups.map((group) => (
+              <MobileGroup key={group.label} group={group} onNavigate={() => setOpen(false)} />
+            ))}
+          </ul>
+          <div className="flex gap-3 pt-5">
+            <GhostButton href={site.emailHref} className="flex-1">
+              Need Help
+            </GhostButton>
+            <GreenButton href="/iptv-subscription" className="flex-1">
+              Get It Now!
+            </GreenButton>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

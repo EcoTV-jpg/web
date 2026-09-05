@@ -10,10 +10,13 @@ export default function Hero() {
         {/* Eyebrow Trust Badge */}
         <Reveal>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green">
+            <a
+              href="/iptv-free-trial"
+              className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green transition-colors duration-200 hover:border-phosphor-green hover:bg-phosphor-green/20"
+            >
               <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
               24h Free Trial Available
-            </span>
+            </a>
             <a
               href="#pricing"
               className="inline-flex items-center gap-2 rounded-full border border-charcoal bg-ash px-4 py-1 text-xs font-normal text-silver-mist transition-colors duration-200 hover:border-graphite hover:text-snow"

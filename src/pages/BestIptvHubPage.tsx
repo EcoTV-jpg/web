@@ -73,7 +73,10 @@ export default function BestIptvHubPage() {
                   Quick Answer: What Is an IPTV Player and How Should You Choose One?
                 </h2>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  An <strong className="text-snow">IPTV player</strong> is a video-rendering application that organizes channels, displays electronic program schedules (EPG), and plays live broadcast streams on your screen. IPTV players <strong className="text-snow">do not include or provide channels</strong>—they are empty media frameworks that require an active playlist or Xtream Codes API login from a subscription service provider like Teleview.
+                  An <strong className="text-snow">IPTV player</strong> is a video-rendering application that organizes channels, displays electronic program schedules (EPG), and plays live broadcast streams on your screen. IPTV players <strong className="text-snow">do not include or provide channels</strong>—they are empty media frameworks that require an active playlist or Xtream Codes API login from a subscription service provider like Teleview. You can evaluate player compatibility and streaming responsiveness risk-free with an{" "}
+                  <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
+                    IPTV free trial
+                  </a>.
                 </p>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
                   To choose the right player: <strong className="text-snow">TiviMate</strong> is favored for its dedicated television EPG interface on Android TV and Firestick; <strong className="text-snow">IPTV Smarters Pro</strong> provides versatile multi-platform support across mobile, TV, and desktop; <strong className="text-snow">IBO Player</strong> and <strong className="text-snow">SmartOne IPTV</strong> install directly on Samsung and LG Smart TVs without extra hardware; <strong className="text-snow">GSE Smart IPTV</strong> serves Apple iOS and Apple TV users; and <strong className="text-snow">VLC Media Player</strong> serves as an open-source diagnostic player for desktop computers.

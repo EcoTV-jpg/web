@@ -563,7 +563,7 @@ export default function HelpCenterPage() {
           <div className="mt-12 card p-7 border border-phosphor-green/20 bg-phosphor-green/5 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-base font-semibold text-snow">Can't find the answer you need?</h3>
-              <p className="text-xs text-silver-mist mt-1">Our technical support engineers are online 24/7 on WhatsApp.</p>
+              <p className="text-xs text-silver-mist mt-1">Our technical support team is online 24/7 on WhatsApp.</p>
             </div>
             <div className="flex gap-3">
               <a

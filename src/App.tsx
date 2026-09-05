@@ -16,6 +16,7 @@ import BestIptvHubPage from "./pages/BestIptvHubPage";
 import BestIptvAppPage from "./pages/BestIptvAppPage";
 import IptvPlayersHubPage from "./pages/IptvPlayersHubPage";
 import WhatIsIptvPage from "./pages/WhatIsIptvPage";
+import FreeTrialPage from "./pages/FreeTrialPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
@@ -113,6 +114,9 @@ export default function App({ url }: { url?: string }) {
   }
   if (currentPath === "/iptv-subscription" || currentPath === "/pricing") {
     return <SubscriptionHubPage />;
+  }
+  if (currentPath === "/iptv-free-trial" || currentPath === "/free-trial") {
+    return <FreeTrialPage />;
   }
   if (currentPath.startsWith("/iptv-subscription/")) {
     const slug = currentPath.replace("/iptv-subscription/", "").trim().toLowerCase();

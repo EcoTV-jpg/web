@@ -586,7 +586,7 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
       },
     ],
     strengths: [
-      "Proprietary MYTVOnline3 (MOL3) client is considered the fastest IPTV software in existence",
+      "Proprietary MYTVOnline3 (MOL3) client provides low-latency channel switching and hardware-accelerated navigation",
       "Dedicated infrared/Bluetooth remote with numeric keypad and PVR recording buttons",
       "Gigabit LAN port and high-gain Wi-Fi antennas for maximum throughput",
       "Full hardware timeshifting, pause, rewind, and scheduled live TV recording",
@@ -610,7 +610,7 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
     faqs: [
       {
         question: "Why should I buy a Formuler box instead of a Firestick?",
-        answer: "Formuler boxes are dedicated appliances built solely for television viewing. You get an ergonomic full-sized remote with number keys, instant channel tuning under 0.5 seconds, and full PVR USB recording capabilities without needing to configure complex third-party apps.",
+        answer: "Formuler boxes are dedicated appliances built solely for television viewing. You get an ergonomic full-sized remote with number keys, fast channel tuning, and PVR USB recording capabilities without needing to configure complex third-party apps.",
       },
       {
         question: "Can I use Xtream Codes API on Formuler MYTVOnline?",

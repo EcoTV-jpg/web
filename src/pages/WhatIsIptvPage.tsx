@@ -253,8 +253,8 @@ export default function WhatIsIptvPage() {
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
                 View Subscription Plans
               </GreenButton>
-              <GhostButton href="/iptv-players" className="text-xs px-5 py-2.5">
-                IPTV Players Directory
+              <GhostButton href="/iptv-free-trial" className="text-xs px-5 py-2.5">
+                Start Free Trial
               </GhostButton>
               <GhostButton href="/setup" className="text-xs px-5 py-2.5">
                 Setup Guide

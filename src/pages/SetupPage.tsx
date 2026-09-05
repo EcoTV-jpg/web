@@ -104,6 +104,8 @@ export default function SetupPage() {
                     <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">Best IPTV Players guide</a>,{" "}
                     explore the{" "}
                     <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>,{" "}
+                    test them with an{" "}
+                    <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV Free Trial</a>,{" "}
                     or read{" "}
                     <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium">What Is IPTV?</a>{" "}
                     to understand streaming protocols). They provide the onscreen visual interface, remote control mapping, and
@@ -1042,6 +1044,7 @@ export default function SetupPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 <GreenButton href="/iptv-subscription">View Subscription Plans</GreenButton>
+                <GhostButton href="/iptv-free-trial">Request Free Trial</GhostButton>
                 <GhostButton href={siteConfig.contact.emailHref}>Contact 24/7 Support</GhostButton>
               </div>
             </div>

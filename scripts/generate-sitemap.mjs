@@ -10,17 +10,18 @@ async function generateSitemap() {
   const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
   const { indexableRoutes } = await import("../src/routes.ts");
 
-  const today = new Date().toISOString().split("T")[0];
+  const defaultLastmod = "2026-09-05";
 
   const xmlUrls = indexableRoutes
     .map((route) => {
       const loc = getCanonicalUrl(route.path);
       const changefreq = route.changefreq || "weekly";
       const priority = (route.priority !== undefined ? route.priority : 0.8).toFixed(1);
+      const lastmod = route.lastmod || defaultLastmod;
 
       return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;

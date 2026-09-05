@@ -119,6 +119,7 @@ async function runSeoAudit() {
     "/devices",
     "/faq",
     "/iptv-subscription",
+    "/iptv-free-trial",
     "/iptv-subscription/1-month",
     "/iptv-subscription/3-months",
     "/iptv-subscription/6-months",
@@ -208,6 +209,7 @@ async function runSeoAudit() {
     { path: "/devices/formuler", expectedTitle: "Formuler", expectedH1: "Formuler", expectedCanonical: "https://www.teleview.me/devices/formuler", indexable: true },
     { path: "/faq", expectedTitle: "Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", indexable: true },
     { path: "/iptv-subscription", expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription", indexable: true },
+    { path: "/iptv-free-trial", expectedTitle: "IPTV Free Trial", expectedH1: "IPTV Free Trial", expectedCanonical: "https://www.teleview.me/iptv-free-trial", indexable: true },
     { path: "/iptv-subscription/1-month", expectedTitle: "1 Month", expectedH1: "1 Month", expectedCanonical: "https://www.teleview.me/iptv-subscription/1-month", indexable: true },
     { path: "/iptv-subscription/3-months", expectedTitle: "3 Months", expectedH1: "3 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months", indexable: true },
     { path: "/iptv-subscription/6-months", expectedTitle: "6 Months", expectedH1: "6 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months", indexable: true },
@@ -393,6 +395,10 @@ async function runSeoAudit() {
           assert("TechArticle schema present in /devices", types.includes("TechArticle"));
         } else if (page.path === "/") {
           assert("Product schema present in /", types.includes("Product"));
+        } else if (page.path === "/iptv-free-trial") {
+          assert("Service schema present in /iptv-free-trial", types.includes("Service"));
+          assert("BreadcrumbList schema present in /iptv-free-trial", types.includes("BreadcrumbList"));
+          assert("FAQPage schema present in /iptv-free-trial", types.includes("FAQPage"));
         } else if (page.path.startsWith("/iptv-subscription")) {
           assert(`Product schema present in ${page.path}`, types.includes("Product"));
           assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
