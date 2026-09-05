@@ -68,46 +68,7 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Supported Device Icons */}
-        <Reveal delay={0.28}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Fire TV">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#firetv"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android TV">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#androidtv"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple TV (tvOS)">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#tvos"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple iOS">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#ios"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#android"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Windows">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#windows"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="macOS">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#macos"></use>
-              </svg>
-            </span>
-          </div>
-        </Reveal>
+
 
         {/* Hero Media */}
         <Reveal delay={0.34} className="mx-auto mt-14 max-w-[880px] sm:mt-16">
