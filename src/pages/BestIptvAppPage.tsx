@@ -20,15 +20,26 @@ import Breadcrumbs, { BreadcrumbItem } from "../components/Breadcrumbs";
 import { Accent, GreenButton, GhostButton } from "../components/ui";
 import { bestIptvAppsList, IptvAppDetail } from "../data/bestIptvApps";
 import { routes } from "../routes";
+import NotFoundPage from "./NotFoundPage";
 
 export default function BestIptvAppPage({ slug }: { slug: string }) {
-  const app = bestIptvAppsList.find((a) => a.slug === slug) || bestIptvAppsList[0];
-  const route = routes.find((r) => r.path === `/best-iptv/${app.slug}`) || routes[0];
+  const normalizedSlug = String(slug || "").trim().toLowerCase();
+  const app: IptvAppDetail | undefined = bestIptvAppsList.find(
+    (a) => a.slug.toLowerCase() === normalizedSlug
+  );
+
+  if (!app) {
+    return <NotFoundPage />;
+  }
+
+  const route =
+    routes.find((r) => r.path === `/iptv-players/${app.slug}`) ||
+    routes.find((r) => r.path === `/best-iptv/${app.slug}`);
 
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Best IPTV Players", url: "/best-iptv" },
-    { name: app.shortName, url: `/best-iptv/${app.slug}` },
+    { name: "IPTV Players", url: "/iptv-players" },
+    { name: app.shortName, url: `/iptv-players/${app.slug}` },
   ];
 
   return (
@@ -43,11 +54,11 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
           {/* Return to Hub link */}
           <div className="mb-4">
             <a
-              href="/best-iptv"
+              href="/iptv-players"
               className="inline-flex items-center gap-1.5 text-xs text-silver-mist hover:text-phosphor-green transition-colors"
             >
               <ChevronLeft className="size-3.5" aria-hidden="true" />
-              <span>Back to All IPTV Players</span>
+              <span>Back to IPTV Player Directory</span>
             </a>
           </div>
 
@@ -63,7 +74,7 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
             </div>
 
             <h1 className="t-h2 text-snow font-bold tracking-tight max-w-[840px]">
-              {route.h1 || `${app.name}: Technical Setup & Features`}
+              {route?.h1 || `${app.name}: Technical Setup & Features`}
             </h1>
             <p className="t-body mt-3 max-w-[760px] text-silver-mist">
               {app.tagline}
@@ -315,7 +326,7 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
                   </div>
                   <div className="mt-4 pt-3 border-t border-charcoal/60">
                     <a
-                      href={`/best-iptv/${alt.slug}`}
+                      href={`/iptv-players/${alt.slug}`}
                       className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
                     >
                       Explore {alt.name} Guide

@@ -3,6 +3,9 @@ import { faqs } from "../data/site";
 import { routes } from "../routes";
 import { subscriptionPlans, subscriptionHubData } from "../data/products";
 import { bestIptvAppsList, hubFaqs } from "../data/bestIptvApps";
+import { deviceGuidesList } from "../data/deviceGuides";
+import { troubleshootingGuidesList } from "../data/troubleshootingGuides";
+import { whatIsIptvFaqs } from "../data/whatIsIptv";
 
 export interface SEOProps {
   title?: string;
@@ -28,10 +31,7 @@ export interface SEOProps {
  */
 export function generateStructuredData(path: string = "/") {
   const cleanPath = path === "/" ? "/" : path.replace(/\/$/, "");
-  const route = routes.find((r) => r.path === cleanPath) || routes[0];
-  const pageUrl = getCanonicalUrl(cleanPath);
-  const pageTitle = route.title || siteConfig.defaultTitle;
-  const pageDesc = route.description || siteConfig.defaultDescription;
+  const route = routes.find((r) => r.path === cleanPath);
 
   // 1. Organization (Stable entity across the entire website)
   const orgSchema = {
@@ -76,6 +76,18 @@ export function generateStructuredData(path: string = "/") {
     inLanguage: siteConfig.language,
   };
 
+  // For unknown routes or 404, return ONLY foundational site schemas (no entity schemas, no false breadcrumbs)
+  if (!route || cleanPath === "/404") {
+    return {
+      "@context": "https://schema.org",
+      "@graph": [orgSchema, websiteSchema],
+    };
+  }
+
+  const pageUrl = getCanonicalUrl(cleanPath);
+  const pageTitle = route.title || siteConfig.defaultTitle;
+  const pageDesc = route.description || siteConfig.defaultDescription;
+
   // 3. BreadcrumbList (Matches visible DOM breadcrumbs exactly for non-root routes)
   let breadcrumbSchema: any = null;
   if (cleanPath !== "/") {
@@ -106,8 +118,8 @@ export function generateStructuredData(path: string = "/") {
           },
         ],
       };
-    } else if (cleanPath.startsWith("/best-iptv/")) {
-      const slug = cleanPath.replace("/best-iptv/", "");
+    } else if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
+      const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
       const app = bestIptvAppsList.find((a) => a.slug === slug);
       const appName = app ? app.shortName : (route.breadcrumbName || "Player");
       breadcrumbSchema = {
@@ -123,13 +135,69 @@ export function generateStructuredData(path: string = "/") {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Best IPTV Players",
-            item: `${siteConfig.url}/best-iptv`,
+            name: "IPTV Players",
+            item: `${siteConfig.url}/iptv-players`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: appName,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (cleanPath.startsWith("/devices/")) {
+      const slug = cleanPath.replace("/devices/", "");
+      const device = deviceGuidesList.find((d) => d.slug === slug);
+      const deviceName = device ? device.name : (route.breadcrumbName || "Device");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Supported Devices",
+            item: `${siteConfig.url}/devices`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: deviceName,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (cleanPath.startsWith("/help-center/")) {
+      const slug = cleanPath.replace("/help-center/", "");
+      const guide = troubleshootingGuidesList.find((g) => g.slug === slug);
+      const guideName = guide ? guide.name : (route.breadcrumbName || "Troubleshooting");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Help Center",
+            item: `${siteConfig.url}/help-center`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: guideName,
             item: pageUrl,
           },
         ],
@@ -383,9 +451,74 @@ export function generateStructuredData(path: string = "/") {
     graphEntities.push(hubArticleSchema, bestIptvFaqSchema);
   }
 
-  // Route: /best-iptv/:slug (Individual App Guide Pages)
-  if (cleanPath.startsWith("/best-iptv/")) {
-    const slug = cleanPath.replace("/best-iptv/", "");
+  // Route: /what-is-iptv (Pillar Page)
+  if (cleanPath === "/what-is-iptv") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/what-is-iptv#article` };
+    const whatIsArticleSchema = {
+      "@type": "Article",
+      "@id": `${siteConfig.url}/what-is-iptv#article`,
+      headline: route.h1 || "What Is IPTV? The Complete 2026 Technology Guide",
+      description: route.description,
+      url: pageUrl,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-05T00:00:00+00:00",
+      about: [
+        { "@type": "Thing", name: "IPTV" },
+        { "@type": "Thing", name: "Internet Protocol Television" },
+        { "@type": "Thing", name: "Streaming Technology" },
+      ],
+    };
+
+    const whatIsFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/what-is-iptv#faq`,
+      mainEntity: whatIsIptvFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(whatIsArticleSchema, whatIsFaqSchema);
+  }
+
+  // Route: /iptv-players (Directory Hub)
+  if (cleanPath === "/iptv-players") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-players#collection` };
+    const collectionSchema = {
+      "@type": "CollectionPage",
+      "@id": `${siteConfig.url}/iptv-players#collection`,
+      name: route.h1 || "IPTV Players & Streaming Apps Directory",
+      description: route.description,
+      url: pageUrl,
+      inLanguage: siteConfig.language,
+      mainEntity: {
+        "@type": "ItemList",
+        name: "IPTV Player Applications",
+        itemListElement: bestIptvAppsList.map((app, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: app.name,
+          url: `${siteConfig.url}/iptv-players/${app.slug}`,
+        })),
+      },
+    };
+    graphEntities.push(collectionSchema);
+  }
+
+  // Route: /iptv-players/:slug (Individual App Guide Pages)
+  if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
+    const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
     const app = bestIptvAppsList.find((a) => a.slug === slug);
 
     if (app) {
@@ -405,7 +538,7 @@ export function generateStructuredData(path: string = "/") {
           "@id": siteConfig.entityIds.organization,
         },
         datePublished: "2026-01-01T00:00:00+00:00",
-        dateModified: "2026-09-04T18:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
         proficiencyLevel: "Beginner",
         about: [
           { "@type": "Thing", name: app.name },
@@ -428,6 +561,102 @@ export function generateStructuredData(path: string = "/") {
       };
 
       graphEntities.push(appArticleSchema, appFaqSchema);
+    }
+  }
+
+  // Route: /devices/:slug (Individual Device Setup Guides)
+  if (cleanPath.startsWith("/devices/")) {
+    const slug = cleanPath.replace("/devices/", "");
+    const device = deviceGuidesList.find((d) => d.slug === slug);
+
+    if (device) {
+      webpageSchema.about = { "@id": `${pageUrl}#article` };
+
+      const deviceArticleSchema = {
+        "@type": "TechArticle",
+        "@id": `${pageUrl}#article`,
+        headline: route.h1 || `How to Set Up IPTV on ${device.name}`,
+        description: route.description || device.tagline,
+        url: pageUrl,
+        inLanguage: siteConfig.language,
+        author: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        publisher: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        datePublished: "2026-01-01T00:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
+        proficiencyLevel: "Beginner",
+        about: [
+          { "@type": "Thing", name: device.name },
+          { "@type": "Thing", name: "IPTV Device Setup" },
+          { "@type": "Thing", name: device.category },
+        ],
+      };
+
+      const deviceFaqSchema = {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: device.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      graphEntities.push(deviceArticleSchema, deviceFaqSchema);
+    }
+  }
+
+  // Route: /help-center/:slug (Individual Troubleshooting Guides)
+  if (cleanPath.startsWith("/help-center/")) {
+    const slug = cleanPath.replace("/help-center/", "");
+    const guide = troubleshootingGuidesList.find((g) => g.slug === slug);
+
+    if (guide) {
+      webpageSchema.about = { "@id": `${pageUrl}#article` };
+
+      const guideArticleSchema = {
+        "@type": "TechArticle",
+        "@id": `${pageUrl}#article`,
+        headline: route.h1 || guide.name,
+        description: route.description || guide.tagline,
+        url: pageUrl,
+        inLanguage: siteConfig.language,
+        author: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        publisher: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        datePublished: "2026-01-01T00:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
+        proficiencyLevel: "Intermediate",
+        about: [
+          { "@type": "Thing", name: guide.name },
+          { "@type": "Thing", name: "IPTV Troubleshooting" },
+          { "@type": "Thing", name: guide.category },
+        ],
+      };
+
+      const guideFaqSchema = {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: guide.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      graphEntities.push(guideArticleSchema, guideFaqSchema);
     }
   }
 
@@ -608,13 +837,20 @@ export default function SEO({
   const structuredData = generateStructuredData(canonicalUrl);
   const effectiveOgTitle = ogTitle || title;
   const effectiveOgDesc = ogDescription || description;
+  const isNoIndex = canonicalUrl.endsWith("/my-account");
+  const effectiveRobots =
+    robots !== "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ? robots
+      : isNoIndex
+      ? "noindex, follow"
+      : robots;
 
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta name="robots" content={robots} />
+      <meta name="robots" content={effectiveRobots} />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
 
       {/* Open Graph */}

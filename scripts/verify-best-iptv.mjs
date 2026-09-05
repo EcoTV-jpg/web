@@ -7,18 +7,21 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(rootDir, "dist");
 
-const clusterRoutes = [
-  "/best-iptv",
-  "/best-iptv/tivimate",
-  "/best-iptv/iptv-smarters-pro",
-  "/best-iptv/ibo-player",
-  "/best-iptv/smartone",
-  "/best-iptv/gse-smart-iptv",
-  "/best-iptv/vlc",
-  "/best-iptv/ott-navigator",
+const appRoutes = [
+  "/iptv-players/tivimate",
+  "/iptv-players/iptv-smarters-pro",
+  "/iptv-players/ibo-player",
+  "/iptv-players/smartone",
+  "/iptv-players/gse-smart-iptv",
+  "/iptv-players/vlc",
+  "/iptv-players/ott-navigator",
 ];
 
-const appRoutes = clusterRoutes.filter((r) => r !== "/best-iptv");
+const clusterRoutes = [
+  "/best-iptv",
+  "/iptv-players",
+  ...appRoutes,
+];
 
 console.log("==================================================");
 console.log("    BEST IPTV SEO & CONTENT QUALITY GATE         ");
@@ -140,8 +143,10 @@ for (const r of clusterRoutes) {
 
   if (r === "/best-iptv") {
     check("Hub breadcrumb contains Home and Best IPTV", html.includes("Home") && html.includes("Best IPTV Players"));
+  } else if (r === "/iptv-players") {
+    check("IPTV Players hub breadcrumb contains Home and IPTV Players", html.includes("Home") && html.includes("IPTV Players"));
   } else {
-    check(`App page ${r} breadcrumb links back to /best-iptv`, html.includes('href="/best-iptv"') || html.includes('href="https://www.teleview.me/best-iptv"'));
+    check(`App page ${r} breadcrumb links back to /iptv-players`, html.includes('href="/iptv-players"') || html.includes('href="https://www.teleview.me/iptv-players"'));
   }
 }
 
@@ -177,9 +182,12 @@ for (const r of clusterRoutes) {
       check(`Page ${r} has NO fake Review`, !types.includes("Review"));
 
       // App pages must NOT have Product schema (they are 3rd party apps, not Teleview subscriptions)
-      if (r !== "/best-iptv") {
+      if (appRoutes.includes(r)) {
         check(`App page ${r} has NO Product schema`, !types.includes("Product"));
         check(`App page ${r} has TechArticle schema`, types.includes("TechArticle"));
+      } else {
+        check(`Hub page ${r} has NO Product schema`, !types.includes("Product"));
+        check(`Hub page ${r} has CollectionPage schema`, types.includes("CollectionPage"));
       }
     }
   }
@@ -188,13 +196,20 @@ for (const r of clusterRoutes) {
 // 10 & 11 & 12. INTERNAL LINKING, ORPHAN CHECK & BROKEN LINKS
 console.log("\n--- 5. INTERNAL LINK GRAPH & INTEGRITY ---");
 const hubHtml = getHtml("/best-iptv");
+const playersHubHtml = getHtml("/iptv-players");
 for (const appRoute of appRoutes) {
-  // Hub must link to every app
+  // Hub /best-iptv must link to every app
   check(`Hub /best-iptv links to ${appRoute}`, Boolean(hubHtml && (hubHtml.includes(`href="${appRoute}"`) || hubHtml.includes(`href="${appRoute}/"`))));
+
+  // Hub /iptv-players must link to every app
+  check(`Hub /iptv-players links to ${appRoute}`, Boolean(playersHubHtml && (playersHubHtml.includes(`href="${appRoute}"`) || playersHubHtml.includes(`href="${appRoute}/"`))));
 
   // Every app must link back to /best-iptv
   const appHtml = getHtml(appRoute);
   check(`App ${appRoute} links back to Hub /best-iptv`, Boolean(appHtml && (appHtml.includes('href="/best-iptv"') || appHtml.includes('href="/best-iptv/"'))));
+
+  // Every app must link back to /iptv-players
+  check(`App ${appRoute} links back to Hub /iptv-players`, Boolean(appHtml && (appHtml.includes('href="/iptv-players"') || appHtml.includes('href="/iptv-players/"'))));
 
   // Contextual link to setup or devices or subscription
   check(`App ${appRoute} links to /setup`, Boolean(appHtml && appHtml.includes('href="/setup')));
@@ -254,7 +269,8 @@ console.log("\n--- 7. ROBOTS & INDEXABILITY ---");
 for (const r of clusterRoutes) {
   const html = getHtml(r);
   if (!html) continue;
-  check(`Page ${r} does NOT contain noindex`, !html.includes('content="noindex"') && !html.includes("noindex,"));
+  const robotsMeta = html.match(/<meta[^>]*name=["']robots["'][^>]*\/?>/i)?.[0] || "";
+  check(`Page ${r} does NOT contain noindex`, !robotsMeta.includes("noindex"));
 }
 
 // 15 & 16. CONTENT DIFFERENTIATION & THIN CONTENT

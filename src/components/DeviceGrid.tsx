@@ -263,6 +263,13 @@ export default function DeviceGrid() {
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
+              href="/iptv-players"
+              className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+            >
+              Best IPTV Player Apps &rarr;
+            </a>
+            <span className="text-smoke" aria-hidden="true">&bull;</span>
+            <a
               href="/setup"
               className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
             >

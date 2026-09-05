@@ -5,6 +5,7 @@ import PlanComparisonTable from "../components/PlanComparisonTable";
 import { GreenButton, GhostButton, WhatsAppIcon } from "../components/ui";
 import { getProductPlan, allSubscriptionPlans } from "../data/products";
 import { createWhatsAppOrderUrl } from "../config/site";
+import NotFoundPage from "./NotFoundPage";
 import {
   ShieldCheck,
   CheckCircle2,
@@ -31,19 +32,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
 
   // Fallback for invalid slugs
   if (!plan) {
-    return (
-      <div className="min-h-screen bg-obsidian text-snow flex flex-col justify-between">
-        <Header />
-        <main className="container-x py-20 text-center">
-          <h1 className="text-3xl font-bold">Plan Not Found</h1>
-          <p className="mt-4 text-silver-mist">The requested IPTV subscription plan does not exist.</p>
-          <div className="mt-6">
-            <GreenButton href="/iptv-subscription">View Available Plans</GreenButton>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
+    return <NotFoundPage />;
   }
 
   const breadcrumbItems = [

@@ -100,7 +100,11 @@ export default function SetupPage() {
                   </p>
                   <p className="mt-2 leading-relaxed">
                     IPTV player applications like <strong className="text-snow">TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV</strong>{" "}
-                    are independent third-party software programs. They provide the onscreen visual interface, remote control mapping, and
+                    are independent third-party software programs (explore our comprehensive{" "}
+                    <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>{" "}
+                    or read{" "}
+                    <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium">What Is IPTV?</a>{" "}
+                    to understand streaming protocols). They provide the onscreen visual interface, remote control mapping, and
                     Electronic Program Guide (EPG) layout on your TV. Application licenses, user interfaces, and software updates are managed
                     by their respective developers.
                   </p>

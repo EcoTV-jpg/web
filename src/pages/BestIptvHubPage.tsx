@@ -99,7 +99,7 @@ export default function BestIptvHubPage() {
                   {hubComparisonData.map((app) => (
                     <tr key={app.slug} className="hover:bg-ash/50 transition-colors">
                       <th scope="row" className="p-4 font-semibold text-snow">
-                        <a href={`/best-iptv/${app.slug}`} className="hover:text-phosphor-green transition-colors">
+                        <a href={`/iptv-players/${app.slug}`} className="hover:text-phosphor-green transition-colors">
                           {app.name}
                         </a>
                       </th>
@@ -110,7 +110,7 @@ export default function BestIptvHubPage() {
                       <td className="p-4">{app.setupEase}</td>
                       <td className="p-4 text-right">
                         <a
-                          href={`/best-iptv/${app.slug}`}
+                          href={`/iptv-players/${app.slug}`}
                           className="inline-flex items-center gap-1 font-semibold text-phosphor-green hover:underline"
                         >
                           Guide
@@ -147,7 +147,7 @@ export default function BestIptvHubPage() {
                   <div>
                     <div className="flex items-center justify-between gap-2">
                       <h3 className="text-base sm:text-lg font-bold text-snow">
-                        <a href={`/best-iptv/${app.slug}`} className="hover:text-phosphor-green transition-colors">
+                        <a href={`/iptv-players/${app.slug}`} className="hover:text-phosphor-green transition-colors">
                           {app.name}
                         </a>
                       </h3>
@@ -183,7 +183,7 @@ export default function BestIptvHubPage() {
                       Dev: {app.developer}
                     </span>
                     <a
-                      href={`/best-iptv/${app.slug}`}
+                      href={`/iptv-players/${app.slug}`}
                       className="inline-flex items-center gap-1 text-xs font-semibold text-phosphor-green hover:underline"
                     >
                       Full {app.shortName} Technical Guide &rarr;
@@ -314,7 +314,7 @@ export default function BestIptvHubPage() {
                   <span>Amazon Fire TV &amp; Firestick</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Option:</strong> <a href="/best-iptv/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a>. Full DPAD remote control support and cable-style EPG grid layout. <a href="/best-iptv/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> serves as a strong alternative for VOD.
+                  <strong className="text-snow">Recommended Option:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a>. Full DPAD remote control support and cable-style EPG grid layout. <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> serves as a strong alternative for VOD.
                 </p>
               </div>
 
@@ -324,7 +324,7 @@ export default function BestIptvHubPage() {
                   <span>Android TV &amp; Google TV</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Options:</strong> <a href="/best-iptv/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate</a> for general viewing; <a href="/best-iptv/ott-navigator" className="text-phosphor-green hover:underline font-medium">OTT Navigator</a> for technical power users desiring per-channel decoders.
+                  <strong className="text-snow">Recommended Options:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate</a> for general viewing; <a href="/iptv-players/ott-navigator" className="text-phosphor-green hover:underline font-medium">OTT Navigator</a> for technical power users desiring per-channel decoders.
                 </p>
               </div>
 
@@ -334,7 +334,7 @@ export default function BestIptvHubPage() {
                   <span>Samsung Smart TV (Tizen OS)</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Option:</strong> <a href="/best-iptv/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Direct Samsung Apps download without sideloading. <a href="/best-iptv/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> also offers native TV remote support.
+                  <strong className="text-snow">Recommended Option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Direct Samsung Apps download without sideloading. <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> also offers native TV remote support.
                 </p>
               </div>
 
@@ -344,7 +344,7 @@ export default function BestIptvHubPage() {
                   <span>LG Smart TV (webOS)</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Option:</strong> <a href="/best-iptv/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a> or <a href="/best-iptv/smartone" className="text-phosphor-green hover:underline font-medium">SmartOne IPTV</a>. Direct installation from the LG Content Store with simple MAC web portal activation.
+                  <strong className="text-snow">Recommended Option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a> or <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline font-medium">SmartOne IPTV</a>. Direct installation from the LG Content Store with simple MAC web portal activation.
                 </p>
               </div>
 
@@ -354,7 +354,7 @@ export default function BestIptvHubPage() {
                   <span>Apple iOS &amp; Apple TV</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Options:</strong> <a href="/best-iptv/gse-smart-iptv" className="text-phosphor-green hover:underline font-medium">GSE Smart IPTV</a> for AirPlay and local playlist uploads; <a href="/best-iptv/iptv-smarters-pro" className="text-phosphor-green hover:underline">Smarters Player Lite</a> for a modern consumer UI.
+                  <strong className="text-snow">Recommended Options:</strong> <a href="/iptv-players/gse-smart-iptv" className="text-phosphor-green hover:underline font-medium">GSE Smart IPTV</a> for AirPlay and local playlist uploads; <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">Smarters Player Lite</a> for a modern consumer UI.
                 </p>
               </div>
 
@@ -364,7 +364,7 @@ export default function BestIptvHubPage() {
                   <span>Windows PC, Mac &amp; Linux</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">Recommended Options:</strong> <a href="/best-iptv/iptv-smarters-pro" className="text-phosphor-green hover:underline font-medium">IPTV Smarters Pro</a> for organized TV/VOD catalogs; <a href="/best-iptv/vlc" className="text-phosphor-green hover:underline font-medium">VLC Media Player</a> for raw stream debugging and network diagnostics.
+                  <strong className="text-snow">Recommended Options:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline font-medium">IPTV Smarters Pro</a> for organized TV/VOD catalogs; <a href="/iptv-players/vlc" className="text-phosphor-green hover:underline font-medium">VLC Media Player</a> for raw stream debugging and network diagnostics.
                 </p>
               </div>
             </div>

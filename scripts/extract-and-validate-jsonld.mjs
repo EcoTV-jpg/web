@@ -25,7 +25,16 @@ const siteConfig = {
 const indexableRoutes = [
   { path: "/", breadcrumbName: "Home" },
   { path: "/setup", breadcrumbName: "Setup & Installation" },
+  { path: "/what-is-iptv", breadcrumbName: "What Is IPTV?" },
   { path: "/devices", breadcrumbName: "Supported Devices" },
+  { path: "/devices/firestick", breadcrumbName: "Amazon Fire TV Stick" },
+  { path: "/devices/samsung-smart-tv", breadcrumbName: "Samsung Smart TV" },
+  { path: "/devices/lg-smart-tv", breadcrumbName: "LG Smart TV" },
+  { path: "/devices/android-tv", breadcrumbName: "Android TV Box" },
+  { path: "/devices/apple-tv", breadcrumbName: "Apple TV 4K" },
+  { path: "/devices/roku", breadcrumbName: "Roku Streaming Stick & TV" },
+  { path: "/devices/google-tv", breadcrumbName: "Google TV & Chromecast" },
+  { path: "/devices/formuler", breadcrumbName: "Formuler Z-Series" },
   { path: "/faq", breadcrumbName: "FAQ & Support" },
   { path: "/iptv-subscription", breadcrumbName: "IPTV Subscription" },
   { path: "/iptv-subscription/1-month", breadcrumbName: "1 Month", price: "16.00", duration: "1 Month" },
@@ -38,16 +47,22 @@ const indexableRoutes = [
   { path: "/refund-policy", breadcrumbName: "Refund Policy" },
   { path: "/disclaimer", breadcrumbName: "Legal Disclaimer" },
   { path: "/help-center", breadcrumbName: "Help Center" },
-  { path: "/my-account", breadcrumbName: "My Account" },
+  { path: "/help-center/buffering", breadcrumbName: "How to Stop IPTV Buffering & Freezing" },
+  { path: "/help-center/not-working", breadcrumbName: "IPTV Not Working? Master Diagnostic Checklist" },
+  { path: "/help-center/epg-not-working", breadcrumbName: "How to Fix IPTV EPG (Electronic Program Guide) Not Loading" },
+  { path: "/help-center/channels-not-loading", breadcrumbName: "How to Fix IPTV Channels & Playlists Not Loading" },
+  { path: "/help-center/connection-problems", breadcrumbName: "How to Fix IPTV Connection Errors & Server Timeouts" },
+  { path: "/help-center/internet-speed", breadcrumbName: "Internet Speed Requirements for 4K IPTV Streaming" },
   { path: "/dmca", breadcrumbName: "DMCA Notice" },
   { path: "/best-iptv", breadcrumbName: "Best IPTV Players" },
-  { path: "/best-iptv/tivimate", breadcrumbName: "TiviMate" },
-  { path: "/best-iptv/iptv-smarters-pro", breadcrumbName: "IPTV Smarters" },
-  { path: "/best-iptv/ibo-player", breadcrumbName: "IBO Player" },
-  { path: "/best-iptv/smartone", breadcrumbName: "SmartOne" },
-  { path: "/best-iptv/gse-smart-iptv", breadcrumbName: "GSE Smart IPTV" },
-  { path: "/best-iptv/vlc", breadcrumbName: "VLC" },
-  { path: "/best-iptv/ott-navigator", breadcrumbName: "OTT Navigator" },
+  { path: "/iptv-players", breadcrumbName: "IPTV Players" },
+  { path: "/iptv-players/tivimate", breadcrumbName: "TiviMate" },
+  { path: "/iptv-players/iptv-smarters-pro", breadcrumbName: "IPTV Smarters" },
+  { path: "/iptv-players/ibo-player", breadcrumbName: "IBO Player" },
+  { path: "/iptv-players/smartone", breadcrumbName: "SmartOne" },
+  { path: "/iptv-players/gse-smart-iptv", breadcrumbName: "GSE Smart IPTV" },
+  { path: "/iptv-players/vlc", breadcrumbName: "VLC" },
+  { path: "/iptv-players/ott-navigator", breadcrumbName: "OTT Navigator" },
 ];
 
 function getCanonicalUrl(routePath) {
@@ -172,9 +187,17 @@ for (const route of indexableRoutes) {
         assert("BREADCRUMBS", `3 items in product breadcrumb for ${route.path}`, items.length === 3);
         assert("BREADCRUMBS", `Second item is IPTV Subscription in ${route.path}`, items[1]?.name === "IPTV Subscription");
         assert("BREADCRUMBS", `Third item is ${route.duration} in ${route.path}`, items[2]?.name === route.duration);
-      } else if (route.path.startsWith("/best-iptv/")) {
-        assert("BREADCRUMBS", `3 items in best-iptv child breadcrumb for ${route.path}`, items.length === 3);
-        assert("BREADCRUMBS", `Second item is Best IPTV Players in ${route.path}`, items[1]?.name === "Best IPTV Players");
+      } else if (route.path.startsWith("/iptv-players/")) {
+        assert("BREADCRUMBS", `3 items in iptv-players child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is IPTV Players in ${route.path}`, items[1]?.name === "IPTV Players");
+        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
+      } else if (route.path.startsWith("/devices/")) {
+        assert("BREADCRUMBS", `3 items in devices child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is Supported Devices in ${route.path}`, items[1]?.name === "Supported Devices");
+        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
+      } else if (route.path.startsWith("/help-center/")) {
+        assert("BREADCRUMBS", `3 items in help-center child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is Help Center in ${route.path}`, items[1]?.name === "Help Center");
         assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
       } else {
         assert("BREADCRUMBS", `2 items in standard breadcrumb for ${route.path}`, items.length === 2);
@@ -249,13 +272,34 @@ for (const route of indexableRoutes) {
     assert("BEST_IPTV_HUB_SCHEMA", "FAQPage entity on /best-iptv", Boolean(faqPage));
     assert("BEST_IPTV_HUB_SCHEMA", "No Product on /best-iptv", !entityTypes.includes("Product"));
     assert("BEST_IPTV_HUB_SCHEMA", "No AggregateRating on /best-iptv", !entityTypes.includes("AggregateRating"));
-  } else if (route.path.startsWith("/best-iptv/")) {
+  } else if (route.path === "/iptv-players") {
+    assert("IPTV_PLAYERS_HUB_SCHEMA", "CollectionPage entity on /iptv-players", entityTypes.includes("CollectionPage"));
+    assert("IPTV_PLAYERS_HUB_SCHEMA", "No Product on /iptv-players", !entityTypes.includes("Product"));
+  } else if (route.path === "/what-is-iptv") {
+    const article = graph.find((e) => e["@type"] === "Article" || e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("WHAT_IS_IPTV_SCHEMA", "Article or TechArticle entity on /what-is-iptv", Boolean(article));
+    assert("WHAT_IS_IPTV_SCHEMA", "FAQPage entity on /what-is-iptv", Boolean(faqPage));
+    assert("WHAT_IS_IPTV_SCHEMA", "No Product on /what-is-iptv", !entityTypes.includes("Product"));
+  } else if (route.path.startsWith("/iptv-players/")) {
     const techArticle = graph.find((e) => e["@type"] === "TechArticle");
     const faqPage = graph.find((e) => e["@type"] === "FAQPage");
-    assert("BEST_IPTV_APP_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
-    assert("BEST_IPTV_APP_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
-    assert("BEST_IPTV_APP_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
-    assert("BEST_IPTV_APP_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
+    assert("IPTV_PLAYERS_APP_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
+    assert("IPTV_PLAYERS_APP_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("IPTV_PLAYERS_APP_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+    assert("IPTV_PLAYERS_APP_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
+  } else if (route.path.startsWith("/devices/")) {
+    const techArticle = graph.find((e) => e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("DEVICE_GUIDE_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
+    assert("DEVICE_GUIDE_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("DEVICE_GUIDE_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+  } else if (route.path.startsWith("/help-center/")) {
+    const techArticle = graph.find((e) => e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("TROUBLESHOOTING_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
+    assert("TROUBLESHOOTING_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("TROUBLESHOOTING_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
   } else {
     // Legal & Support routes: strictly core entities, no extraneous products or FAQs
     assert("LEGAL_SUPPORT", `No Product entity on ${route.path}`, !entityTypes.includes("Product"));

@@ -244,28 +244,35 @@ export default function DevicesPage() {
                       <td className="p-3.5">Easy (5 mins)</td>
                       <td className="p-3.5">
                         <a
-                          href="/setup#firestick"
+                          href="/devices/firestick"
                           className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
                         >
-                          Firestick Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
+                          Firestick Guide <ArrowRight className="size-3" aria-hidden="true" />
                         </a>
                       </td>
                     </tr>
                     <tr className="hover:bg-ash/30 transition-colors">
                       <th scope="row" className="p-3.5 font-medium text-snow whitespace-nowrap">
-                        Smart TVs (Samsung &amp; LG)
+                        Samsung &amp; LG Smart TVs
                       </th>
                       <td className="p-3.5">Samsung Tizen 4.0+ / LG webOS 4.0+</td>
                       <td className="p-3.5">H.264, HEVC Main 10</td>
                       <td className="p-3.5 text-phosphor-green font-mono">4K @ 60 FPS</td>
                       <td className="p-3.5 font-medium text-snow">IBO Player</td>
                       <td className="p-3.5">Easy (App Store)</td>
-                      <td className="p-3.5">
+                      <td className="p-3.5 space-x-2">
                         <a
-                          href="/setup#smart-tv"
+                          href="/devices/samsung-smart-tv"
                           className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
                         >
-                          Smart TV Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
+                          Samsung <ArrowRight className="size-3" aria-hidden="true" />
+                        </a>
+                        <span className="text-smoke">&bull;</span>
+                        <a
+                          href="/devices/lg-smart-tv"
+                          className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                        >
+                          LG <ArrowRight className="size-3" aria-hidden="true" />
                         </a>
                       </td>
                     </tr>
@@ -280,10 +287,10 @@ export default function DevicesPage() {
                       <td className="p-3.5">Easy (Google Play)</td>
                       <td className="p-3.5">
                         <a
-                          href="/setup#android"
+                          href="/devices/android-tv"
                           className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
                         >
-                          Android Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
+                          Android TV Guide <ArrowRight className="size-3" aria-hidden="true" />
                         </a>
                       </td>
                     </tr>
@@ -298,28 +305,64 @@ export default function DevicesPage() {
                       <td className="p-3.5">Easy (App Store)</td>
                       <td className="p-3.5">
                         <a
-                          href="/setup#ios"
+                          href="/devices/apple-tv"
                           className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
                         >
-                          Apple Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
+                          Apple TV Guide <ArrowRight className="size-3" aria-hidden="true" />
                         </a>
                       </td>
                     </tr>
                     <tr className="hover:bg-ash/30 transition-colors">
                       <th scope="row" className="p-3.5 font-medium text-snow whitespace-nowrap">
-                        MAG Receivers &amp; Enigma2
+                        Google TV &amp; Chromecast
                       </th>
-                      <td className="p-3.5">Linux Embedded / Infomir Stalker</td>
+                      <td className="p-3.5">Google TV (Android 12+)</td>
+                      <td className="p-3.5">H.264, HEVC, AV1, VP9</td>
+                      <td className="p-3.5 text-phosphor-green font-mono">4K @ 60 FPS</td>
+                      <td className="p-3.5 font-medium text-snow">TiviMate</td>
+                      <td className="p-3.5">Easy (Google Play)</td>
+                      <td className="p-3.5">
+                        <a
+                          href="/devices/google-tv"
+                          className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                        >
+                          Google TV Guide <ArrowRight className="size-3" aria-hidden="true" />
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow whitespace-nowrap">
+                        Roku Streaming Sticks &amp; TVs
+                      </th>
+                      <td className="p-3.5">Roku OS 11.5+</td>
+                      <td className="p-3.5">H.264, HEVC (4K models)</td>
+                      <td className="p-3.5 text-phosphor-green font-mono">1080p to 4K</td>
+                      <td className="p-3.5 font-medium text-snow">IPTV Smarters / Cast</td>
+                      <td className="p-3.5">Moderate (Screen Cast)</td>
+                      <td className="p-3.5">
+                        <a
+                          href="/devices/roku"
+                          className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                        >
+                          Roku Guide <ArrowRight className="size-3" aria-hidden="true" />
+                        </a>
+                      </td>
+                    </tr>
+                    <tr className="hover:bg-ash/30 transition-colors">
+                      <th scope="row" className="p-3.5 font-medium text-snow whitespace-nowrap">
+                        Formuler &amp; MAG Receivers
+                      </th>
+                      <td className="p-3.5">MYTVOnline / Linux Stalker</td>
                       <td className="p-3.5">H.264, HEVC (MAG 322/520)</td>
                       <td className="p-3.5 text-phosphor-green font-mono">1080p to 4K</td>
-                      <td className="p-3.5 font-medium text-snow">Stalker Portal</td>
+                      <td className="p-3.5 font-medium text-snow">MYTVOnline3 / Portal</td>
                       <td className="p-3.5">Moderate (MAC Bind)</td>
                       <td className="p-3.5">
                         <a
-                          href="/setup#mag"
+                          href="/devices/formuler"
                           className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
                         >
-                          MAG Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
+                          Formuler Guide <ArrowRight className="size-3" aria-hidden="true" />
                         </a>
                       </td>
                     </tr>
@@ -848,10 +891,10 @@ export default function DevicesPage() {
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/60">
                   <a
-                    href="/setup#firestick"
+                    href="/devices/firestick"
                     className="text-xs text-phosphor-green font-medium hover:underline inline-flex items-center gap-1"
                   >
-                    Follow the Firestick installation guide <ArrowRight className="size-3" aria-hidden="true" />
+                    Read Firestick installation guide <ArrowRight className="size-3" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -865,12 +908,19 @@ export default function DevicesPage() {
                     (Apple A15 Bionic / Nvidia Tegra X1+), Gigabit LAN ports, and premium Dolby Vision / Atmos audio passthrough.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                <div className="mt-4 pt-3 border-t border-charcoal/60 flex items-center gap-3">
                   <a
-                    href="/setup#ios"
+                    href="/devices/apple-tv"
                     className="text-xs text-phosphor-green font-medium hover:underline inline-flex items-center gap-1"
                   >
-                    Follow the Apple TV setup guide <ArrowRight className="size-3" aria-hidden="true" />
+                    Apple TV guide <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                  <span className="text-smoke">&bull;</span>
+                  <a
+                    href="/devices/android-tv"
+                    className="text-xs text-silver-mist font-medium hover:underline inline-flex items-center gap-1"
+                  >
+                    Android TV guide <ArrowRight className="size-3" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -884,12 +934,19 @@ export default function DevicesPage() {
                     IBO Player or SmartOne IPTV from your TV app store and activate with your Teleview subscription credentials.
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                <div className="mt-4 pt-3 border-t border-charcoal/60 flex items-center gap-3">
                   <a
-                    href="/setup#smart-tv"
+                    href="/devices/samsung-smart-tv"
                     className="text-xs text-phosphor-green font-medium hover:underline inline-flex items-center gap-1"
                   >
-                    Follow the Smart TV setup guide <ArrowRight className="size-3" aria-hidden="true" />
+                    Samsung guide <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                  <span className="text-smoke">&bull;</span>
+                  <a
+                    href="/devices/lg-smart-tv"
+                    className="text-xs text-silver-mist font-medium hover:underline inline-flex items-center gap-1"
+                  >
+                    LG webOS guide <ArrowRight className="size-3" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -905,10 +962,10 @@ export default function DevicesPage() {
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/60">
                   <a
-                    href="/setup#mag"
+                    href="/devices/formuler"
                     className="text-xs text-phosphor-green font-medium hover:underline inline-flex items-center gap-1"
                   >
-                    Follow the MAG receiver setup guide <ArrowRight className="size-3" aria-hidden="true" />
+                    Read Formuler setup guide <ArrowRight className="size-3" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -923,87 +980,120 @@ export default function DevicesPage() {
                 <h2 className="t-heading-sm">9. Official Device Setup Guides &amp; Next Steps</h2>
               </div>
               <p className="t-body-sm mt-2 text-silver-mist">
-                Ready to configure your device? Explore our step-by-step setup guides featuring verified configuration
-                walkthroughs, download links, and credential input instructions:
+                Ready to configure your device? Explore our step-by-step hardware setup manuals featuring verified configuration
+                walkthroughs, recommended player apps, and troubleshooting instructions:
               </p>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <a
-                  href="/setup#firestick"
+                  href="/devices/firestick"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    Firestick Installation
+                    Amazon Firestick
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Step-by-step Downloader and TiviMate setup on Amazon Fire TV Stick.
+                    Sideloading Downloader &amp; TiviMate on Fire TV Stick 4K &amp; Cube.
                   </p>
                 </a>
 
                 <a
-                  href="/setup#smart-tv"
+                  href="/devices/samsung-smart-tv"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    Smart TV Configuration
+                    Samsung Smart TV
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Configure IBO Player and SmartOne on Samsung Tizen and LG webOS.
+                    Configure IBO Player &amp; SmartOne on Samsung Tizen OS.
                   </p>
                 </a>
 
                 <a
-                  href="/setup#android"
+                  href="/devices/lg-smart-tv"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    Android &amp; Google TV
+                    LG Smart TV
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Install TiviMate and IPTV Smarters Pro from the Google Play Store.
+                    Install media players directly from the LG webOS Content Store.
                   </p>
                 </a>
 
                 <a
-                  href="/setup#ios"
+                  href="/devices/android-tv"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    Apple iOS &amp; Apple TV
+                    Android TV &amp; Shield
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Configure IPTV Smarters Lite or GSE Smart IPTV via Apple App Store.
+                    Google Play Store setup for Sony, Philips, and Nvidia Shield Pro.
                   </p>
                 </a>
 
                 <a
-                  href="/setup#mag"
+                  href="/devices/apple-tv"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    MAG &amp; Enigma2 Portal
+                    Apple TV &amp; iOS
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Bind your device MAC address to the Teleview Stalker portal server.
+                    Configure IPTV Smarters Lite &amp; GSE Smart IPTV via App Store.
                   </p>
                 </a>
 
                 <a
-                  href="/setup#xtream-codes"
+                  href="/devices/roku"
                   className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
                 >
                   <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
-                    Xtream Codes &amp; M3U
+                    Roku Streaming
                     <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
                   </h3>
                   <p className="mt-1.5 text-xs text-silver-mist">
-                    Understand server URLs, username/password API, and M3U playlist links.
+                    Screen mirroring and IPTV casting setup for Roku OS devices.
                   </p>
+                </a>
+
+                <a
+                  href="/devices/google-tv"
+                  className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
+                >
+                  <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
+                    Google TV
+                    <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
+                  </h3>
+                  <p className="mt-1.5 text-xs text-silver-mist">
+                    Setup walkthrough for Chromecast with Google TV 4K.
+                  </p>
+                </a>
+
+                <a
+                  href="/devices/formuler"
+                  className="rounded-lg border border-charcoal bg-ash/50 p-4 hover:border-phosphor-green/50 transition-colors group block"
+                >
+                  <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors flex items-center justify-between">
+                    Formuler &amp; MAG
+                    <ArrowRight className="size-3.5 text-phosphor-green" aria-hidden="true" />
+                  </h3>
+                  <p className="mt-1.5 text-xs text-silver-mist">
+                    MYTVOnline3 and MAC Stalker portal configuration for IPTV boxes.
+                  </p>
+                </a>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-charcoal/60 pt-5 text-xs text-silver-mist">
+                <span>Looking for general Xtream Codes or M3U playlist documentation?</span>
+                <a href="/setup" className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1">
+                  View Complete Protocol Setup Guide <ArrowRight className="size-3" aria-hidden="true" />
                 </a>
               </div>
 

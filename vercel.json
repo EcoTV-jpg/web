@@ -69,6 +69,41 @@
       "permanent": true
     },
     {
+      "source": "/best-iptv/tivimate",
+      "destination": "/iptv-players/tivimate",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/iptv-smarters-pro",
+      "destination": "/iptv-players/iptv-smarters-pro",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/ibo-player",
+      "destination": "/iptv-players/ibo-player",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/smartone",
+      "destination": "/iptv-players/smartone",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/gse-smart-iptv",
+      "destination": "/iptv-players/gse-smart-iptv",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/vlc",
+      "destination": "/iptv-players/vlc",
+      "permanent": true
+    },
+    {
+      "source": "/best-iptv/ott-navigator",
+      "destination": "/iptv-players/ott-navigator",
+      "permanent": true
+    },
+    {
       "source": "/pricing",
       "destination": "/iptv-subscription",
       "permanent": true
