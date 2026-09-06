@@ -60,27 +60,27 @@ export default function Comparison() {
               </div>
 
               <div className="pb-4 border-b border-phosphor-green/30 pt-2">
-                <span className="text-xs uppercase tracking-wider text-phosphor-green font-semibold">High-Performance IPTV</span>
+                <span className="text-xs uppercase tracking-wider text-phosphor-green font-semibold">IPTV Subscription</span>
                 <h3 className="text-xl font-extrabold text-snow mt-1">Teleview</h3>
-                <p className="text-xs text-silver-mist mt-1">Modern 4K streaming optimized worldwide</p>
+                <p className="text-xs text-silver-mist mt-1">HD &amp; 4K streaming where available across supported devices</p>
               </div>
 
               <ul className="mt-6 space-y-4 text-xs sm:text-[13px] flex-1">
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">24/7 Support:</strong> Instant live assistance &amp; guides</span>
+                  <span><strong className="text-phosphor-green">24/7 Customer Support:</strong> Responsive live assistance and step-by-step setup guides</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Seamless Streaming:</strong> High-availability anti-freeze CDN streams</span>
+                  <span><strong className="text-phosphor-green">Reliable Delivery:</strong> Multi-region streaming infrastructure designed for high stability</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Customizable Packages:</strong> Flexible 1–4 device plans</span>
+                  <span><strong className="text-phosphor-green">Flexible Packages:</strong> 1 to 4 connection plans with 14-day refund guarantee</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Works on Any Device:</strong> Fire TV, Android, Apple TV, TVs</span>
+                  <span><strong className="text-phosphor-green">Broad Compatibility:</strong> Firestick, Android TV, Apple TV, Smart TVs and PC/Mac</span>
                 </li>
               </ul>
 
@@ -96,27 +96,27 @@ export default function Comparison() {
           <Reveal delay={0.18} className="h-full">
             <div className="card h-full p-6 sm:p-8 flex flex-col border-charcoal bg-ash/40">
               <div className="pb-4 border-b border-charcoal">
-                <span className="text-xs uppercase tracking-wider text-smoke font-semibold">Generic Resellers</span>
+                <span className="text-xs uppercase tracking-wider text-smoke font-semibold">Unverified Resellers</span>
                 <h3 className="text-lg font-bold text-snow mt-1">Other IPTV Providers</h3>
-                <p className="text-xs text-silver-mist mt-1">Unreliable overloaded third-party servers</p>
+                <p className="text-xs text-silver-mist mt-1">Unverified providers or low-cost resellers</p>
               </div>
 
               <ul className="mt-6 space-y-4 text-xs sm:text-[13px] flex-1">
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-snow">No Real Support:</strong> Ghosted after taking payment</span>
+                  <span><strong className="text-snow">Variable Support:</strong> Support channels may be inconsistent or unresponsive</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-snow">Buffering &amp; Freezing:</strong> Slow servers during big games</span>
+                  <span><strong className="text-snow">Unclear Infrastructure:</strong> Server capacity and streaming bandwidth may vary during major events</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-snow">Random Packages:</strong> Channels vanish without notice</span>
+                  <span><strong className="text-snow">Uncertain Continuity:</strong> Channel line-ups and streams may experience interruptions</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-snow">Unverified Sellers:</strong> No money-back protection</span>
+                  <span><strong className="text-snow">Inconsistent Policies:</strong> Return and refund terms are often undocumented</span>
                 </li>
               </ul>
             </div>

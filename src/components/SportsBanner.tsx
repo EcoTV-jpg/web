@@ -34,7 +34,7 @@ export default function SportsBanner() {
                       <Tv2 className="size-4" aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wide">Live HD Streams</span>
                     </div>
-                    <p className="text-xs text-silver-mist">Crystal clear 4K quality for every game</p>
+                    <p className="text-xs text-silver-mist">HD and 4K sports streams where available</p>
                   </div>
 
                   <div className="rounded-xl border border-charcoal bg-ash/50 p-4">

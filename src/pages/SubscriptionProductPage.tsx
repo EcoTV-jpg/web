@@ -275,7 +275,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                 How Setup Works in 3 Quick Steps
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[600px] mx-auto">
-                Getting started with your {plan.duration} subscription takes less than 2 minutes.
+                Getting started with your {plan.duration} subscription is simple and guided step by step.
               </p>
             </div>
 

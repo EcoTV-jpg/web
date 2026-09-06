@@ -195,7 +195,7 @@ async function runSeoAudit() {
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
-    { path: "/", expectedTitle: "Teleview", expectedH1: "IPTV Service", expectedCanonical: "https://www.teleview.me/", indexable: true },
+    { path: "/", expectedTitle: "Teleview", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/", indexable: true },
     { path: "/setup", expectedTitle: "IPTV Setup", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", indexable: true, inSitemap: false },
     { path: "/what-is-iptv", expectedTitle: "What Is IPTV", expectedH1: "What Is IPTV", expectedCanonical: "https://www.teleview.me/what-is-iptv", indexable: true },
     { path: "/devices", expectedTitle: "Supported IPTV Devices", expectedH1: "Supported IPTV", expectedCanonical: "https://www.teleview.me/devices", indexable: true },

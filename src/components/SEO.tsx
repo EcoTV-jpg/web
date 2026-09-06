@@ -77,6 +77,17 @@ export function generateStructuredData(path: string = "/") {
     inLanguage: siteConfig.language,
   };
 
+  // Brand (Stable brand entity)
+  const brandSchema = {
+    "@type": "Brand",
+    "@id": siteConfig.entityIds.brand,
+    name: siteConfig.name,
+    url: `${siteConfig.url}/`,
+    logo: {
+      "@id": `${siteConfig.url}/#logo`,
+    },
+  };
+
   // For unknown routes or 404, return ONLY foundational site schemas (no entity schemas, no false breadcrumbs)
   if (!route || cleanPath === "/404") {
     return {
@@ -259,25 +270,25 @@ export function generateStructuredData(path: string = "/") {
       name: "1 Month IPTV Subscription",
       price: "16.00",
       url: `${siteConfig.url}/iptv-subscription/1-month`,
-      description: "1 Month IPTV Subscription with 25,000+ live channels, 4K sports, and VOD library.",
+      description: "1 Month IPTV Subscription with 25,000+ live channels, HD & 4K sports where available, and VOD library.",
     },
     {
       name: "3 Months IPTV Subscription",
       price: "39.00",
       url: `${siteConfig.url}/iptv-subscription/3-months`,
-      description: "3 Months IPTV Subscription (Save 19% at $13/mo) with full 4K sports coverage.",
+      description: "3 Months IPTV Subscription (Save 19% at $13/mo) with full HD and 4K sports coverage where available.",
     },
     {
       name: "6 Months IPTV Subscription",
       price: "60.00",
       url: `${siteConfig.url}/iptv-subscription/6-months`,
-      description: "6 Months IPTV Subscription (Save 37.5% at $10/mo) with anti-freeze CDN streams.",
+      description: "6 Months IPTV Subscription (Save 37.5% at $10/mo) with multi-region streaming infrastructure.",
     },
     {
       name: "12 Months IPTV Subscription",
       price: "90.00",
       url: `${siteConfig.url}/iptv-subscription/12-months`,
-      description: "12 Months IPTV Subscription (Best value at $7.50/mo) with dedicated server priority.",
+      description: "12 Months IPTV Subscription (Save $102 vs 12 individual monthly payments at $7.50/mo) with 24/7 customer support.",
     },
   ].map((o) => ({
     "@type": "Offer",
@@ -807,21 +818,25 @@ export function generateStructuredData(path: string = "/") {
     const homepageServiceSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/#service`,
-      name: `${siteConfig.name} IPTV Streaming Subscription`,
-      serviceType: "IPTV & Video Streaming Service",
+      name: `${siteConfig.name} IPTV Subscription`,
+      serviceType: "IPTV subscription service",
       description: siteConfig.defaultDescription,
+      url: `${siteConfig.url}/iptv-subscription`,
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
-      areaServed: "Worldwide",
+      brand: {
+        "@id": siteConfig.entityIds.brand,
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
+        "@id": `${siteConfig.url}/#plans`,
         name: "IPTV Subscription Plans",
         itemListElement: canonicalOffers,
       },
     };
 
-    graphEntities.push(homepageServiceSchema);
+    graphEntities.push(brandSchema, homepageServiceSchema);
   }
 
   // Return unified Schema.org @graph root structure

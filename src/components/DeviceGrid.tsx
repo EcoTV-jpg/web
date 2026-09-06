@@ -200,7 +200,7 @@ export default function DeviceGrid() {
             {devicesSection.kicker || "Stream anywhere anytime"}
           </p>
           <h2 id="devices-grid-heading" className="t-h2 mt-4 text-balance">
-            Watch Teleview on <Accent>All Devices</Accent>
+            Supported IPTV <Accent>Streaming Devices</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[640px] text-silver-mist leading-relaxed">
             {devicesSection.subhead}

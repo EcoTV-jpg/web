@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
           <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[880px] text-balance">
-            Best <Accent>IPTV Service</Accent> in 2026
+            IPTV Subscription for <Accent>Live TV &amp; On-Demand Streaming</Accent>
           </h1>
         </Reveal>
 
@@ -50,11 +50,11 @@ export default function Hero() {
         <Reveal delay={0.18}>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <GreenButton href="#pricing">{hero.ctaPrimary}</GreenButton>
-            <GhostButton href="#pricing">{hero.ctaSecondary}</GhostButton>
+            <GhostButton href="/iptv-free-trial">{hero.ctaSecondary}</GhostButton>
           </div>
         </Reveal>
 
-        {/* 3 Core Trust Badges */}
+        {/* 4 Core Trust Badges */}
         <Reveal delay={0.24}>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
@@ -63,16 +63,18 @@ export default function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
-              Premium Service
+              HD &amp; 4K Streams Where Available
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Headphones className="size-4 text-phosphor-green" aria-hidden="true" />
-              Reliable Streaming
+              24/7 Customer Support
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
+              14-Day Money-Back Guarantee
             </span>
           </div>
         </Reveal>
-
-
 
         {/* Hero Media */}
         <Reveal delay={0.34} className="mx-auto mt-14 max-w-[880px] sm:mt-16">
@@ -95,24 +97,24 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Stats Counter Bar */}
+        {/* Stats Counter Bar — Verified Service Metrics */}
         <Reveal delay={0.4} className="mx-auto mt-12 max-w-[880px]">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 rounded-2xl border border-charcoal bg-ash/50 p-6 shadow-lg backdrop-blur-sm">
             <div className="text-center p-2">
               <div className="text-2xl sm:text-3xl font-extrabold text-snow">25,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">FHD Channels</p>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Live Channels</p>
             </div>
             <div className="text-center p-2 border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">5,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Active Users</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">120,000+</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Movies &amp; Series</p>
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-snow">120,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Movies / Series</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-snow">HD &amp; 4K</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Where Available</p>
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">1,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Subscribers</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">14-Day</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Refund Guarantee</p>
             </div>
           </div>
         </Reveal>
