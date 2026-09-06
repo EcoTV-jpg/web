@@ -321,12 +321,12 @@ export default function BestIptvHubPage() {
                     </tr>
                     <tr className="hover:bg-ash/40 transition-colors">
                       <th scope="row" className="p-4 font-semibold text-snow">EPG TV Guide</th>
-                      <td className="p-4 text-snow font-medium">Automated XMLTV program guide updated regularly</td>
+                      <td className="p-4 text-snow font-medium">XMLTV EPG program guide support</td>
                       <td className="p-4 text-smoke">Check if guide data is populated for your preferred channels</td>
                     </tr>
                     <tr className="hover:bg-ash/40 transition-colors">
                       <th scope="row" className="p-4 font-semibold text-snow">Video Formats</th>
-                      <td className="p-4 text-snow font-medium">4K Ultra HD, Full HD (1080p), and HD (720p) streams</td>
+                      <td className="p-4 text-snow font-medium">4K Ultra HD, Full HD (1080p), and HD (720p) streams (source-dependent)</td>
                       <td className="p-4 text-smoke">Inspect stream resolution and framerate on sports channels</td>
                     </tr>
                     <tr className="hover:bg-ash/40 transition-colors">
@@ -687,8 +687,8 @@ export default function BestIptvHubPage() {
               <h2 id="players-heading" className="text-xl sm:text-2xl font-bold text-snow">
                 Best IPTV Players for Using an IPTV Service
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[650px] mx-auto">
-                An IPTV player does not provide the channels itself. It is the software application used to connect to an IPTV subscription and decode streams on your screen.
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[680px] mx-auto">
+                An IPTV player is the application used to access a compatible IPTV subscription. The player does not determine which channels or subscription content a provider offers.
               </p>
             </div>
 
@@ -696,12 +696,11 @@ export default function BestIptvHubPage() {
               <table className="w-full text-left text-xs border-collapse min-w-[760px]">
                 <thead>
                   <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
-                    <th scope="col" className="p-4 font-semibold">Application</th>
+                    <th scope="col" className="p-4 font-semibold">Player</th>
                     <th scope="col" className="p-4 font-semibold">Best Suited For</th>
-                    <th scope="col" className="p-4 font-semibold">Platforms</th>
-                    <th scope="col" className="p-4 font-semibold">Playlist Protocols</th>
-                    <th scope="col" className="p-4 font-semibold">EPG Quality</th>
-                    <th scope="col" className="p-4 font-semibold">Setup Ease</th>
+                    <th scope="col" className="p-4 font-semibold">Supported Platforms</th>
+                    <th scope="col" className="p-4 font-semibold">Playlist &amp; EPG Protocols</th>
+                    <th scope="col" className="p-4 font-semibold">Installation Method</th>
                     <th scope="col" className="p-4 font-semibold text-right">Dedicated Guide</th>
                   </tr>
                 </thead>
@@ -715,8 +714,7 @@ export default function BestIptvHubPage() {
                       </th>
                       <td className="p-4 text-snow">{app.bestFor}</td>
                       <td className="p-4">{app.platforms}</td>
-                      <td className="p-4 font-mono text-[11px] text-smoke">{app.playlistSupport}</td>
-                      <td className="p-4">{app.epgQuality}</td>
+                      <td className="p-4 font-mono text-[11px] text-smoke">{app.playlistSupport} &bull; {app.epgQuality}</td>
                       <td className="p-4">{app.setupEase}</td>
                       <td className="p-4 text-right">
                         <a
@@ -738,10 +736,10 @@ export default function BestIptvHubPage() {
               {bestIptvAppsList.map((app) => (
                 <article
                   key={app.slug}
-                  className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between hover:border-charcoal/90 transition-colors text-xs"
+                  className="rounded-xl border border-charcoal bg-ash/30 p-4 flex flex-col justify-between hover:border-charcoal/90 transition-colors text-xs"
                 >
                   <div>
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-2 mb-2">
                       <h3 className="text-sm font-bold text-snow">
                         <a href={`/iptv-players/${app.slug}`} className="hover:text-phosphor-green transition-colors">
                           {app.name}
@@ -751,26 +749,25 @@ export default function BestIptvHubPage() {
                         {app.shortName}
                       </span>
                     </div>
-                    <p className="mt-2 text-xs text-phosphor-green font-medium">
+                    <p className="text-silver-mist leading-relaxed mb-3">
                       {app.bestFor}
                     </p>
-                    <p className="mt-2 text-silver-mist leading-relaxed line-clamp-2">
-                      {app.tagline}
-                    </p>
-                    <div className="mt-3 pt-2 border-t border-charcoal/50 text-[11px] text-smoke">
-                      <strong className="text-snow">Platforms:</strong> {app.primaryPlatforms.slice(0, 3).join(", ")}
-                    </div>
+                    <ul className="space-y-1 text-[11px] text-smoke border-t border-charcoal/50 pt-2.5">
+                      <li><strong className="text-snow">Platforms:</strong> {app.primaryPlatforms.slice(0, 3).join(", ")}</li>
+                      <li><strong className="text-snow">Protocols:</strong> {app.authenticationModels.slice(0, 2).join(", ")}</li>
+                      <li><strong className="text-snow">License:</strong> {app.licenseModel.split("(")[0].trim()}</li>
+                    </ul>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-charcoal/60 flex items-center justify-between">
+                  <div className="mt-3 pt-2.5 border-t border-charcoal/60 flex items-center justify-between">
                     <span className="text-[11px] text-smoke font-mono">
-                      {app.licenseModel.split("(")[0].trim()}
+                      {app.verification.lastReviewed}
                     </span>
                     <a
                       href={`/iptv-players/${app.slug}`}
                       className="inline-flex items-center gap-1 font-semibold text-phosphor-green hover:underline text-[11px]"
                     >
-                      Guide &rarr;
+                      Dedicated Guide &rarr;
                     </a>
                   </div>
                 </article>
@@ -781,10 +778,10 @@ export default function BestIptvHubPage() {
           {/* 13. Player Recommendations by Device (Section 16) */}
           <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="by-device-heading">
             <h2 id="by-device-heading" className="text-xl sm:text-2xl font-bold text-snow text-center">
-              Best IPTV Players by Device
+              Player &amp; Device Compatibility Guide
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist text-center max-w-[600px] mx-auto">
-              Recommendations based on documented operating system capabilities, remote navigation, and store availability.
+              Device-specific player pairings based on documented operating system capabilities, remote navigation, and official store availability.
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 text-xs">
@@ -795,10 +792,10 @@ export default function BestIptvHubPage() {
                     <span>Amazon Fire TV &amp; Firestick</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a>. DPAD remote optimization and traditional cable-box EPG grid.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a>. DPAD remote optimization and traditional cable-box EPG grid.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> for viewers who prefer a dashboard layout with VOD categories.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> for viewers who prefer a dashboard layout with VOD categories.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
@@ -815,10 +812,10 @@ export default function BestIptvHubPage() {
                     <span>Android TV &amp; Google TV</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a> directly downloadable via the Google Play Store.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/tivimate" className="text-phosphor-green hover:underline font-medium">TiviMate IPTV Player</a> directly downloadable via the Google Play Store.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/ott-navigator" className="text-phosphor-green hover:underline">OTT Navigator IPTV</a> for advanced users who require per-channel decoder overrides.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/ott-navigator" className="text-phosphor-green hover:underline">OTT Navigator IPTV</a> for advanced users who require per-channel decoder overrides.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
@@ -835,10 +832,10 @@ export default function BestIptvHubPage() {
                     <span>Samsung Smart TV (Tizen OS)</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Available directly on the official Samsung Apps Store without sideloading.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Available directly on the official Samsung Apps Store without sideloading.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> for uncomplicated remote channel surfing and web playlist upload.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> for uncomplicated remote channel surfing and web playlist upload.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
@@ -855,10 +852,10 @@ export default function BestIptvHubPage() {
                     <span>LG Smart TV (webOS)</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Direct installation from the LG Content Store with quick portal activation.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/ibo-player" className="text-phosphor-green hover:underline font-medium">IBO Player</a>. Direct installation from the LG Content Store with quick portal activation.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> with dual playlist support and simple remote controls.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/smartone" className="text-phosphor-green hover:underline">SmartOne IPTV</a> with dual playlist support and simple remote controls.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
@@ -875,10 +872,10 @@ export default function BestIptvHubPage() {
                     <span>Apple TV &amp; iOS</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/gse-smart-iptv" className="text-phosphor-green hover:underline font-medium">GSE Smart IPTV</a> for AirPlay casting, local playlist files, and multi-format parser support.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/gse-smart-iptv" className="text-phosphor-green hover:underline font-medium">GSE Smart IPTV</a> for AirPlay casting, local playlist files, and multi-format parser support.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> for user-friendly navigation across iPhone, iPad, and Apple TV.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline">IPTV Smarters Pro</a> for user-friendly navigation across iPhone, iPad, and Apple TV.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
@@ -895,10 +892,10 @@ export default function BestIptvHubPage() {
                     <span>Windows PC &amp; Mac</span>
                   </h3>
                   <p className="text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Best option:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline font-medium">IPTV Smarters Pro</a> for organized Live TV and on-demand media management.
+                    <strong className="text-snow">Recommended option:</strong> <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green hover:underline font-medium">IPTV Smarters Pro</a> for organized Live TV and on-demand media management.
                   </p>
                   <p className="mt-2 text-silver-mist leading-relaxed">
-                    <strong className="text-snow">Alternative:</strong> <a href="/iptv-players/vlc" className="text-phosphor-green hover:underline">VLC Media Player</a> for stream inspection, network troubleshooting, and raw playlist playback.
+                    <strong className="text-snow">Alternative option:</strong> <a href="/iptv-players/vlc" className="text-phosphor-green hover:underline">VLC Media Player</a> for stream inspection, network troubleshooting, and raw playlist playback.
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-charcoal/50">
