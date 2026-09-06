@@ -521,15 +521,24 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
 
             <div className="mt-6 pt-4 border-t border-charcoal/60 flex flex-wrap items-center justify-between gap-3 text-xs">
               <span className="text-smoke">
-                Need device-specific hardware setup guidance?
+                Need hardware-specific setup instructions for this player?
               </span>
-              <a
-                href={`/setup${app.relatedSetupHash}`}
-                className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
-              >
-                View Full {app.relatedDeviceName} Guide
-                <ArrowRight className="size-3" aria-hidden="true" />
-              </a>
+              <div className="flex items-center gap-4">
+                <a
+                  href={`/devices/${app.relatedDeviceSlug}`}
+                  className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                >
+                  View {app.relatedDeviceName} Hardware Guide
+                  <ArrowRight className="size-3" aria-hidden="true" />
+                </a>
+                <span className="text-smoke">&bull;</span>
+                <a
+                  href="/devices"
+                  className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+                >
+                  All Supported Devices
+                </a>
+              </div>
             </div>
           </section>
 

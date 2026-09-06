@@ -31,8 +31,8 @@ const navGroups = [
   {
     label: "Players",
     items: [
-      { label: "Compare Players", href: "/best-iptv", desc: "Editorial comparison guide" },
-      { label: "Apps Directory", href: "/iptv-players", desc: "Technical protocol index" },
+      { label: "Best IPTV Services", href: "/best-iptv", desc: "Provider evaluation & buying guide" },
+      { label: "IPTV Players Hub", href: "/iptv-players", desc: "Technical protocol & app directory" },
       { label: "TiviMate", href: "/iptv-players/tivimate", desc: "Android TV & Firestick" },
       { label: "IPTV Smarters Pro", href: "/iptv-players/iptv-smarters-pro", desc: "Multi-platform" },
       { label: "IBO Player", href: "/iptv-players/ibo-player", desc: "Samsung & LG Smart TVs" },

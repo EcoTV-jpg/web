@@ -182,8 +182,8 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
         explanation: "Players store previous program schedules locally. If the file download was interrupted, the database remains locked in a corrupt state.",
       },
       {
-        title: "Time Zone & UTC Offset Mismatch",
-        explanation: "The television schedule is published in UTC/GMT. If your device clock or player time offset is misconfigured, show listings will appear several hours ahead or behind.",
+        title: "Time Zone & Daylight Saving Time (DST) Discrepancies",
+        explanation: "EPG schedule shifts occur when playlist/XMLTV and device timezones differ. Daylight-saving transitions can expose this mismatch if the device clock or XMLTV timezone tags fall out of synchronization.",
       },
       {
         title: "Insufficient Storage Space on Streaming Stick",
@@ -199,15 +199,15 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
       },
       {
         step: 2,
-        title: "Correct Device Clock and Timezone",
-        action: "Navigate to your device settings (Firestick, Android TV, Smart TV) > System > Date & Time, and ensure 'Automatic Network Time' is enabled with the correct local timezone.",
-        technicalRationale: "Synchronizes the client rendering timestamp with the EPG broadcast schedule times.",
+        title: "Check Device Timezone and System Clock",
+        action: "Navigate to your device settings (Firestick, Android TV, Smart TV) > System > Date & Time. Verify your device timezone matches your physical location and ensure automatic network time synchronization is enabled.",
+        technicalRationale: "Ensures the device's local rendering baseline is correct before adjusting application-level guide offsets.",
       },
       {
         step: 3,
-        title: "Adjust EPG Time Offset (Hours)",
-        action: "If program titles are consistently 1 or 2 hours off, go to player settings > EPG and set 'Time Shift' / 'EPG Offset' to +1 or -1 hour.",
-        technicalRationale: "Compensates for Daylight Saving Time discrepancies or regional broadcast differences.",
+        title: "Verify XMLTV Timezone Data & Adjust Player EPG Time Offset",
+        action: "EPG schedule shifts occur when playlist/XMLTV and device timezones differ, and daylight-saving transitions can expose this mismatch. Check your device timezone first, verify whether your provider's XMLTV guide data contains explicit timezone offset information, and configure your player's EPG time-offset setting to match your specific hourly difference rather than relying on a universal offset.",
+        technicalRationale: "Aligns the guide grid with your local broadcast schedule according to your actual calculated offset.",
       },
       {
         step: 4,

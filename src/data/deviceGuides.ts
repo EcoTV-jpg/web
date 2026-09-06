@@ -93,6 +93,11 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
     ],
     troubleshooting: [
       {
+        issue: "Fire TV displays 'Insufficient USB power' warning or restarts unexpectedly",
+        cause: "Connecting the Fire TV Stick directly to a television USB port often supplies insufficient electrical current for continuous video decoding.",
+        solution: "If Fire TV displays an 'Insufficient USB power' warning or behaves unexpectedly, use the supplied 5V/1A power adapter and connect to a wall outlet rather than relying on a low-power TV USB port.",
+      },
+      {
         issue: "App crashes or reloads when parsing large channel playlists",
         cause: "Low available RAM or insufficient flash storage cache on Fire TV stick.",
         solution: "Navigate to Fire TV Settings > Applications > Manage Installed Applications, select your player, and click 'Clear Cache'. Restart the Fire TV stick.",
@@ -173,6 +178,11 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
         issue: "Audio plays but screen is black",
         cause: "Video stream encoded in an audio/video container not supported by older Tizen versions.",
         solution: "In the player settings on your TV, toggle the video decoder engine from 'Auto' to 'Hardware' or 'Native Media Player'.",
+      },
+      {
+        issue: "Video plays smoothly but there is no sound (audio track is silent)",
+        cause: "Some recent Samsung TV models do not support native DTS audio decoding.",
+        solution: "Some recent Samsung TV models do not support DTS audio decoding. If a stream has DTS audio and there is no alternative audio track, video may play without sound. Check the specifications for your exact TV model and, where supported, select an alternative audio track or use a compatible external audio/device path.",
       },
     ],
     faqs: [

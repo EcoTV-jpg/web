@@ -17,6 +17,10 @@ import {
   Activity,
   Server,
   Code,
+  MonitorPlay,
+  Smartphone,
+  Laptop,
+  LifeBuoy,
 } from "lucide-react";
 import {
   iptvArchitectureLayers,
@@ -238,6 +242,382 @@ export default function WhatIsIptvPage() {
                   <ArrowRight className="size-3" aria-hidden="true" />
                 </a>
               </div>
+            </div>
+          </section>
+
+          {/* Section 5: Compatible Streaming Devices & Platforms */}
+          <section className="mt-16" aria-labelledby="compatible-devices-heading">
+            <div className="text-center mb-8">
+              <h2 id="compatible-devices-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                Compatible IPTV Streaming Devices
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[660px] mx-auto">
+                Because IPTV transmits video via standardized internet protocols, subscribers can stream on virtually any internet-connected display hardware:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs">
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Tv className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>Amazon Fire TV &amp; Firestick</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    The most popular streaming hardware worldwide due to straightforward APK sideloading, hardware HEVC decoding, and smooth remote navigation.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/firestick"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    Firestick Installation Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Tv className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>Samsung Smart TVs (Tizen)</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    Stream natively through dedicated Samsung App Store players like IBO Player and SmartOne without connecting external HDMI streaming dongles.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/samsung-smart-tv"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    Samsung Smart TV Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Tv className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>LG Smart TVs (webOS)</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    Install certified webOS IPTV applications directly from the LG Content Store with complete Magic Remote pointer and playlist integration.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/lg-smart-tv"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    LG Smart TV Setup Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Smartphone className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>Android TV &amp; Google TV</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    Native Google Play Store access enables gold-standard television players like TiviMate, OTT Navigator, and IPTV Smarters with automated updates.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/android-tv"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    Android TV Setup Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Laptop className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>Apple TV (tvOS) &amp; iOS</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    Powerful Apple A-Series processors deliver ultra-smooth 4K 60 FPS playback, AirPlay streaming, and refined interfaces via GSE Smart IPTV and Smarters Lite.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/apple-tv"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    Apple TV Setup Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2 text-snow font-bold text-sm">
+                    <Cpu className="size-4 text-phosphor-green" aria-hidden="true" />
+                    <h3>Formuler &amp; Set-Top Boxes</h3>
+                  </div>
+                  <p className="text-silver-mist leading-relaxed">
+                    Dedicated IPTV hardware featuring proprietary MYTVOnline middleware with integrated recording, multi-EPG, and gigabit Ethernet routing.
+                  </p>
+                </div>
+                <div className="mt-4 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/devices/formuler"
+                    className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                  >
+                    Formuler Hardware Guide
+                    <ArrowRight className="size-3" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <a
+                href="/devices"
+                className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Explore All Supported Devices &amp; Minimum Hardware Specs &rarr;
+              </a>
+            </div>
+          </section>
+
+          {/* Section 6: IPTV Players vs. IPTV Services (Crucial Distinction) */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/20 p-6 sm:p-8" aria-labelledby="players-vs-services-heading">
+            <div className="flex items-center gap-3 mb-4">
+              <Layers className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+              <h2 id="players-vs-services-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                IPTV Player Applications vs. IPTV Services
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
+              A frequent point of confusion for new streaming viewers is the difference between an <strong className="text-snow">IPTV player application</strong> and an <strong className="text-snow">IPTV subscription service</strong>:
+            </p>
+
+            <div className="grid gap-5 sm:grid-cols-2 mt-6 text-xs">
+              <div className="rounded-xl border border-charcoal bg-ink-800/80 p-5">
+                <div className="flex items-center gap-2 text-phosphor-green font-bold text-sm mb-2">
+                  <MonitorPlay className="size-4" aria-hidden="true" />
+                  <h3>IPTV Player (Client Software)</h3>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  A media player app installed on your device (such as <a href="/iptv-players/tivimate" className="text-snow underline hover:text-phosphor-green">TiviMate</a>, <a href="/iptv-players/iptv-smarters-pro" className="text-snow underline hover:text-phosphor-green">IPTV Smarters Pro</a>, <a href="/iptv-players/ibo-player" className="text-snow underline hover:text-phosphor-green">IBO Player</a>, or <a href="/iptv-players/vlc" className="text-snow underline hover:text-phosphor-green">VLC Media Player</a>). The player provides the on-screen guide, remote navigation, and video decoding engine. <strong className="text-snow">Players contain zero channels or streams on their own.</strong>
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ink-800/80 p-5">
+                <div className="flex items-center gap-2 text-phosphor-green font-bold text-sm mb-2">
+                  <Server className="size-4" aria-hidden="true" />
+                  <h3>IPTV Service (Stream Provider)</h3>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  A broadcast infrastructure service (such as Teleview) that operates content delivery networks (CDNs), encodes live satellite feeds, updates electronic program guides, and issues authentication credentials (via Xtream Codes API or M3U playlist URLs) that you enter into your player application.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-charcoal/60 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span className="text-smoke">Compare standalone media player applications:</span>
+              <a
+                href="/iptv-players"
+                className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Browse Full IPTV Players Directory &rarr;
+              </a>
+            </div>
+          </section>
+
+          {/* Section 7: How to Evaluate an IPTV Service */}
+          <section className="mt-16" aria-labelledby="evaluation-heading">
+            <div className="text-center mb-8">
+              <h2 id="evaluation-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                How to Evaluate an IPTV Service in 2026
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[640px] mx-auto">
+                With thousands of generic IPTV resellers online, use these objective criteria to evaluate provider quality and protect your subscription investment:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 text-xs">
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="text-sm font-bold text-snow mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  Server Architecture &amp; Anti-Freeze Routing
+                </h3>
+                <p className="text-silver-mist leading-relaxed">
+                  Look for providers that utilize globally distributed Content Delivery Networks (CDNs) with automatic load balancing. Single-server resellers frequently suffer from severe buffering during marquee sporting events when viewer concurrency surges.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="text-sm font-bold text-snow mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  EPG Accuracy &amp; XMLTV Synchronization
+                </h3>
+                <p className="text-silver-mist leading-relaxed">
+                  A high-grade IPTV service provides automated XMLTV electronic program guides with correct timezone offsets and program metadata, enabling seamless channel navigation and scheduled catch-up viewing.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="text-sm font-bold text-snow mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  Trial Availability &amp; Refund Protection
+                </h3>
+                <p className="text-silver-mist leading-relaxed">
+                  Never commit to an annual plan without testing first. Reputable providers offer a 24-hour trial period and publish clear refund policies so you can verify stream stability on your own broadband connection before paying.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="text-sm font-bold text-snow mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                  Responsive Human Support
+                </h3>
+                <p className="text-silver-mist leading-relaxed">
+                  Ensure the provider maintains active customer service through instant channels like WhatsApp or ticketing systems to assist with line provisioning, playlist refreshes, or routing diagnostics.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-charcoal bg-ash/40 px-6 py-3.5 text-xs sm:text-sm">
+                <span className="text-silver-mist">
+                  Want a comprehensive provider comparison framework?
+                </span>
+                <a
+                  href="/best-iptv"
+                  className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                >
+                  Read Our Best IPTV Services Buying Guide &rarr;
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 8: Troubleshooting & Stream Reliability */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="troubleshooting-heading">
+            <div className="flex items-center gap-3 mb-4">
+              <LifeBuoy className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+              <h2 id="troubleshooting-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                IPTV Troubleshooting &amp; Stream Reliability
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
+              When streaming live 4K television over broadband, playback interruptions can arise from home Wi-Fi bottlenecks, ISP bandwidth throttling, or playlist caching errors. Explore our diagnostic manuals to resolve common issues:
+            </p>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mt-6 text-xs">
+              <a
+                href="/help-center/buffering"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Eliminating Buffering
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Diagnostic steps for stream freezing, player buffer sizing, and ISP throttling workarounds.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/internet-speed"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Internet Speed Benchmarks
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Minimum bandwidth, latency thresholds, and jitter requirements for HD and 4K Ultra HD.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/connection-problems"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Connection Problems
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Fixing DNS resolution issues, server handshake errors, and expired login credentials.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/channels-not-loading"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Channels Not Loading
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Troubleshooting playlist sync errors, empty channel categories, and format mismatches.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/epg-not-working"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    EPG Guide Problems
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Resolving missing TV schedule data, incorrect timezone offsets, and XMLTV guide URLs.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/not-working"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    General Diagnostic Checklist
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Step-by-step diagnostic workflow when your IPTV service stops functioning unexpectedly.
+                </p>
+              </a>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-charcoal/60 text-center">
+              <a
+                href="/help-center"
+                className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Visit the Complete Teleview Help Center &amp; Diagnostic Knowledge Base &rarr;
+              </a>
             </div>
           </section>
 

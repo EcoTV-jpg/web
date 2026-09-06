@@ -196,7 +196,7 @@ async function runSeoAudit() {
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
     { path: "/", expectedTitle: "Teleview", expectedH1: "IPTV Service", expectedCanonical: "https://www.teleview.me/", indexable: true },
-    { path: "/setup", expectedTitle: "IPTV Setup", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", indexable: true },
+    { path: "/setup", expectedTitle: "IPTV Setup", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", indexable: true, inSitemap: false },
     { path: "/what-is-iptv", expectedTitle: "What Is IPTV", expectedH1: "What Is IPTV", expectedCanonical: "https://www.teleview.me/what-is-iptv", indexable: true },
     { path: "/devices", expectedTitle: "Supported IPTV Devices", expectedH1: "Supported IPTV", expectedCanonical: "https://www.teleview.me/devices", indexable: true },
     { path: "/devices/firestick", expectedTitle: "Firestick", expectedH1: "Fire TV Stick", expectedCanonical: "https://www.teleview.me/devices/firestick", indexable: true },
@@ -207,18 +207,18 @@ async function runSeoAudit() {
     { path: "/devices/roku", expectedTitle: "Roku", expectedH1: "Roku", expectedCanonical: "https://www.teleview.me/devices/roku", indexable: true },
     { path: "/devices/google-tv", expectedTitle: "Google TV", expectedH1: "Google TV", expectedCanonical: "https://www.teleview.me/devices/google-tv", indexable: true },
     { path: "/devices/formuler", expectedTitle: "Formuler", expectedH1: "Formuler", expectedCanonical: "https://www.teleview.me/devices/formuler", indexable: true },
-    { path: "/faq", expectedTitle: "Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", indexable: true },
+    { path: "/faq", expectedTitle: "Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", indexable: true, inSitemap: false },
     { path: "/iptv-subscription", expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription", indexable: true },
     { path: "/iptv-free-trial", expectedTitle: "IPTV Free Trial", expectedH1: "IPTV Free Trial", expectedCanonical: "https://www.teleview.me/iptv-free-trial", indexable: true },
     { path: "/iptv-subscription/1-month", expectedTitle: "1 Month", expectedH1: "1 Month", expectedCanonical: "https://www.teleview.me/iptv-subscription/1-month", indexable: true },
     { path: "/iptv-subscription/3-months", expectedTitle: "3 Months", expectedH1: "3 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months", indexable: true },
     { path: "/iptv-subscription/6-months", expectedTitle: "6 Months", expectedH1: "6 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months", indexable: true },
     { path: "/iptv-subscription/12-months", expectedTitle: "12 Months", expectedH1: "12 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months", indexable: true },
-    { path: "/contact", expectedTitle: "Contact", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact", indexable: true },
-    { path: "/terms-conditions", expectedTitle: "Terms", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions", indexable: true },
-    { path: "/privacy-policy", expectedTitle: "Privacy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy", indexable: true },
-    { path: "/refund-policy", expectedTitle: "Refund", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy", indexable: true },
-    { path: "/disclaimer", expectedTitle: "Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer", indexable: true },
+    { path: "/contact", expectedTitle: "Contact", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact", indexable: true, inSitemap: false },
+    { path: "/terms-conditions", expectedTitle: "Terms", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions", indexable: true, inSitemap: false },
+    { path: "/privacy-policy", expectedTitle: "Privacy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy", indexable: true, inSitemap: false },
+    { path: "/refund-policy", expectedTitle: "Refund", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy", indexable: true, inSitemap: false },
+    { path: "/disclaimer", expectedTitle: "Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer", indexable: true, inSitemap: false },
     { path: "/help-center", expectedTitle: "Help Center", expectedH1: "Help Center", expectedCanonical: "https://www.teleview.me/help-center", indexable: true },
     { path: "/help-center/buffering", expectedTitle: "Buffering", expectedH1: "Buffering", expectedCanonical: "https://www.teleview.me/help-center/buffering", indexable: true },
     { path: "/help-center/not-working", expectedTitle: "Not Working", expectedH1: "Not Working", expectedCanonical: "https://www.teleview.me/help-center/not-working", indexable: true },
@@ -227,7 +227,7 @@ async function runSeoAudit() {
     { path: "/help-center/connection-problems", expectedTitle: "Connection", expectedH1: "Connection", expectedCanonical: "https://www.teleview.me/help-center/connection-problems", indexable: true },
     { path: "/help-center/internet-speed", expectedTitle: "Internet Speed", expectedH1: "Internet Speed", expectedCanonical: "https://www.teleview.me/help-center/internet-speed", indexable: true },
     { path: "/my-account", expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account", indexable: false },
-    { path: "/dmca", expectedTitle: "DMCA", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", indexable: true },
+    { path: "/dmca", expectedTitle: "DMCA", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", indexable: true, inSitemap: false },
     { path: "/best-iptv", expectedTitle: "Best IPTV Services in 2026", expectedH1: "Best IPTV Services in 2026", expectedCanonical: "https://www.teleview.me/best-iptv", indexable: true },
     { path: "/iptv-players", expectedTitle: "IPTV Players", expectedH1: "IPTV Players", expectedCanonical: "https://www.teleview.me/iptv-players", indexable: true },
     { path: "/iptv-players/tivimate", expectedTitle: "TiviMate", expectedH1: "TiviMate", expectedCanonical: "https://www.teleview.me/iptv-players/tivimate", indexable: true },
@@ -447,8 +447,8 @@ async function runSeoAudit() {
   console.log("\n--- 5. SITEMAP & ROBOTS INTEGRITY ---");
   const sitemapContent = fs.readFileSync(distSitemap, "utf-8");
   for (const page of pagesToTest) {
-    if (!page.indexable) {
-      assert(`Sitemap excludes non-indexable ${page.expectedCanonical}`, !sitemapContent.includes(page.expectedCanonical));
+    if (!page.indexable || page.inSitemap === false) {
+      assert(`Sitemap excludes non-sitemap page ${page.expectedCanonical}`, !sitemapContent.includes(page.expectedCanonical));
     } else {
       assert(`Sitemap contains ${page.expectedCanonical}`, sitemapContent.includes(page.expectedCanonical));
     }

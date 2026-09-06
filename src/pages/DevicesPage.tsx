@@ -52,7 +52,7 @@ export default function DevicesPage() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
                 <ShieldCheck className="size-3.5 text-phosphor-green" aria-hidden="true" />
-                Tested by Teleview Technical Operations
+                Verified Technical Specifications for 2026 Hardware Standards
               </span>
             </div>
 

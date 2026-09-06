@@ -241,10 +241,16 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
                 View Subscription Plans
               </GreenButton>
+              <GhostButton href="/iptv-free-trial" className="text-xs px-5 py-2.5">
+                Start Free Trial
+              </GhostButton>
               <GhostButton href="/setup" className="text-xs px-5 py-2.5">
                 Full Setup Manual
               </GhostButton>
             </div>
+            <p className="mt-4 text-xs text-smoke">
+              Comparing streaming providers for your TV? Consult our <a href="/best-iptv" className="text-phosphor-green hover:underline">best IPTV services</a> evaluation guide.
+            </p>
           </section>
 
           {/* FAQs */}

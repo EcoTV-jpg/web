@@ -206,7 +206,7 @@ export default function FreeTrialPage() {
                   href="/best-iptv"
                   className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
                 >
-                  Compare Players &rarr;
+                  IPTV Buying Guide &rarr;
                 </a>
                 <span className="text-smoke">&bull;</span>
                 <a

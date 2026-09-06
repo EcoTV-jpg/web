@@ -9,6 +9,7 @@ export interface AppRoute {
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: number;
   lastmod?: string;
+  inSitemap?: boolean;
   primaryIntent: string;
   primaryKeyword: string;
   secondaryTopics: string[];
@@ -48,6 +49,7 @@ export const routes: AppRoute[] = [
   {
     path: "/setup",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
@@ -97,6 +99,7 @@ export const routes: AppRoute[] = [
   {
     path: "/faq",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
@@ -282,6 +285,7 @@ export const routes: AppRoute[] = [
   {
     path: "/contact",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
@@ -305,6 +309,7 @@ export const routes: AppRoute[] = [
   {
     path: "/terms-conditions",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
@@ -328,6 +333,7 @@ export const routes: AppRoute[] = [
   {
     path: "/privacy-policy",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
@@ -352,6 +358,7 @@ export const routes: AppRoute[] = [
   {
     path: "/refund-policy",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
@@ -375,6 +382,7 @@ export const routes: AppRoute[] = [
   {
     path: "/disclaimer",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
@@ -445,6 +453,7 @@ export const routes: AppRoute[] = [
   {
     path: "/dmca",
     indexable: true,
+    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
@@ -1060,5 +1069,6 @@ export const routes: AppRoute[] = [
 ];
 
 export const indexableRoutes = routes.filter((r) => r.indexable);
+export const sitemapRoutes = routes.filter((r) => r.indexable && r.inSitemap !== false);
 export const prerenderRoutes = routes.filter((r) => r.rendering === "SSG");
 

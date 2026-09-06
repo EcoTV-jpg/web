@@ -96,8 +96,8 @@ export default function Footer() {
                 <li><a href="/what-is-iptv" className="hover:text-snow transition-colors">What is IPTV?</a></li>
                 <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
                 <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
-                <li><a href="/best-iptv" className="hover:text-snow transition-colors">Best IPTV Players</a></li>
-                <li><a href="/iptv-players" className="hover:text-snow transition-colors">IPTV Apps Directory</a></li>
+                <li><a href="/best-iptv" className="hover:text-snow transition-colors">Best IPTV Services</a></li>
+                <li><a href="/iptv-players" className="hover:text-snow transition-colors">IPTV Players Directory</a></li>
               </ul>
             </div>
 
