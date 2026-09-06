@@ -797,6 +797,10 @@ export const hubFaqs = [
     answer: "An IPTV player (such as TiviMate or IBO Player) is a software media application that renders video streams and displays TV guides on your screen. An IPTV subscription (such as Teleview) provides the actual streaming server access, 25,000+ live broadcast streams, and VOD entertainment credentials that you input into the player app.",
   },
   {
+    question: "What makes Teleview the best IPTV service for live sports and streaming?",
+    answer: "Teleview combines enterprise-grade anti-freeze streaming architecture, over 25,000 live international channels in 4K and FHD, ultra-low-latency sports feeds, 99.9% verified server uptime, and dedicated Xtream Codes API integration compatible with all major player applications.",
+  },
+  {
     question: "Which IPTV player is best for Samsung or LG Smart TVs?",
     answer: "IBO Player and SmartOne IPTV are the two most verified choices for Samsung (Tizen OS) and LG (webOS) televisions because they can be downloaded directly from the official TV app stores without requiring sideloading, developer modes, or external USB drives.",
   },
@@ -812,4 +816,13 @@ export const hubFaqs = [
     question: "Can I use one IPTV player on multiple devices?",
     answer: "Players like IPTV Smarters Pro offer apps across Android, iOS, Windows, Mac, and Fire TV. However, simultaneous streaming across multiple screens depends on whether your subscription plan includes concurrent connections.",
   },
+  {
+    question: "How much internet bandwidth is required to stream 4K IPTV channels?",
+    answer: "For stable 4K Ultra HD live streaming at 60 frames per second, a minimum connection speed of 25 to 50 Mbps is recommended. Full HD 1080p channels require 15 Mbps, while standard HD 720p streams perform smoothly on connections of 8 to 10 Mbps.",
+  },
+  {
+    question: "Can I test the IPTV service before purchasing a subscription?",
+    answer: "Yes. Teleview offers a 24-hour IPTV free trial allowing prospective viewers to test channel stability, zapping speed, and device compatibility, backed by a 14-day money-back guarantee on all standard subscription plans.",
+  },
 ];
+

@@ -12,11 +12,16 @@ import {
   Smartphone,
   Layers,
   MonitorPlay,
+  Server,
+  Activity,
+  Radio,
+  Clock,
+  Sparkles,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Breadcrumbs, { BreadcrumbItem } from "../components/Breadcrumbs";
-import { Accent, GreenButton } from "../components/ui";
+import { Accent, GreenButton, GhostButton } from "../components/ui";
 import Reveal from "../components/Reveal";
 import {
   bestIptvAppsList,
@@ -43,44 +48,228 @@ export default function BestIptvHubPage() {
           <header className="text-center py-6 sm:py-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 text-xs font-mono text-phosphor-green mb-4">
               <MonitorPlay className="size-3.5" aria-hidden="true" />
-              <span>2026 Technical Player Guide</span>
+              <span>2026 Technical &amp; Service Guide</span>
             </div>
             <h1 className="t-display tracking-tight text-snow max-w-[880px] mx-auto">
-              Best <Accent>IPTV Players &amp; Apps</Accent>
+              Best <Accent>IPTV Service</Accent> &amp; Top 7 <Accent>Best IPTV Players</Accent> (2026)
             </h1>
-            <p className="t-body mt-4 max-w-[720px] mx-auto text-silver-mist">
-              An independent, technical evaluation of the top media player applications across Amazon Firestick, Android TV, Smart TVs, Apple devices, and desktop computers.
+            <p className="t-body mt-4 max-w-[760px] mx-auto text-silver-mist">
+              An authoritative technical evaluation comparing the leading IPTV service streaming infrastructure alongside the top 7 media player applications for Amazon Firestick, Android TV, Smart TVs, Apple devices, and desktop computers.
             </p>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <GreenButton href="#teleview-service">Explore IPTV Service</GreenButton>
+              <GhostButton href="#comparison">Compare Player Apps</GhostButton>
+              <GhostButton href="/iptv-free-trial">Start Free Trial</GhostButton>
+            </div>
           </header>
 
           {/* Editorial vs Directory notice */}
-          <div className="mb-2 flex flex-wrap items-center justify-center gap-2 text-xs text-smoke">
-            <span>Looking for technical specs &amp; protocol matrices?</span>
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-2 text-xs text-smoke">
+            <span>Looking for deep technical specs and standalone app guides?</span>
             <a
               href="/iptv-players"
               className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
             >
-              Browse the IPTV Apps Directory →
+              Browse the IPTV Apps Directory &rarr;
             </a>
           </div>
 
-          {/* Immediate Answer-First Summary */}
-          <section className="mt-6 rounded-2xl border border-charcoal bg-ash/40 p-5 sm:p-7" aria-labelledby="quick-answer-heading">
+          {/* Immediate Answer-First Summary for AI Search & Featured Snippets */}
+          <section className="mt-4 rounded-2xl border border-charcoal bg-ash/40 p-5 sm:p-7" aria-labelledby="quick-answer-heading">
             <div className="flex items-start gap-3">
               <Zap className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <h2 id="quick-answer-heading" className="text-base sm:text-lg font-bold text-snow">
-                  Quick Answer: What Is an IPTV Player and How Should You Choose One?
+                  Quick Answer: What Is the Best IPTV Service and How Does It Work with IPTV Players?
                 </h2>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  An <strong className="text-snow">IPTV player</strong> is a video-rendering application that organizes channels, displays electronic program schedules (EPG), and plays live broadcast streams on your screen. IPTV players <strong className="text-snow">do not include or provide channels</strong>—they are empty media frameworks that require an active playlist or Xtream Codes API login from a subscription service provider like Teleview. You can evaluate player compatibility and streaming responsiveness risk-free with an{" "}
-                  <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
-                    IPTV free trial
-                  </a>.
+                  A complete IPTV entertainment setup requires two distinct components: a <strong className="text-snow">premium IPTV service provider</strong> that delivers high-bitrate video streams, 99.9% server uptime, anti-freeze CDN distribution, and global channels; and an <strong className="text-snow">IPTV player application</strong> that decodes those streams and renders an electronic program guide (EPG) on your screen.
                 </p>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  To choose the right player: <strong className="text-snow">TiviMate</strong> is favored for its dedicated television EPG interface on Android TV and Firestick; <strong className="text-snow">IPTV Smarters Pro</strong> provides versatile multi-platform support across mobile, TV, and desktop; <strong className="text-snow">IBO Player</strong> and <strong className="text-snow">SmartOne IPTV</strong> install directly on Samsung and LG Smart TVs without extra hardware; <strong className="text-snow">GSE Smart IPTV</strong> serves Apple iOS and Apple TV users; and <strong className="text-snow">VLC Media Player</strong> serves as an open-source diagnostic player for desktop computers.
+                  For service infrastructure, <strong className="text-snow">Teleview</strong> provides enterprise-grade streaming with 25,000+ live international channels, 4K sports coverage, anti-freeze CDN nodes, and instant Xtream Codes API provisioning. For player applications, <strong className="text-snow">TiviMate</strong> is favored for television remote control on Firestick and Android TV; <strong className="text-snow">IPTV Smarters Pro</strong> delivers multi-platform reach across iOS, Android, and PC; and <strong className="text-snow">IBO Player</strong> installs natively on Samsung and LG Smart TVs without extra hardware. Prospective viewers can evaluate stream performance risk-free with an{" "}
+                  <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
+                    IPTV free trial
+                  </a>{" "}
+                  or review flexible{" "}
+                  <a href="/iptv-subscription" className="text-phosphor-green font-semibold hover:underline">
+                    IPTV subscription plans
+                  </a>.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 1: How to Choose the Best IPTV Service (8 Core Evaluation Criteria) */}
+          <section className="mt-14 scroll-mt-20" id="how-to-choose-service" aria-labelledby="service-criteria-heading">
+            <div className="text-center mb-8">
+              <h2 id="service-criteria-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                How to Choose the Best IPTV Service: 8 Core Criteria
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[680px] mx-auto">
+                Before subscribing to any IPTV provider, evaluate these eight technical benchmarks to ensure uninterrupted streaming, crystal-clear sports broadcasts, and secure account access.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs">
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Server className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>1. Server Stability &amp; Uptime SLA</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Look for dedicated multi-region CDN edge nodes with a verified 99.9% uptime track record to prevent server crashes during high-traffic sports events like the Champions League or Super Bowl.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Activity className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>2. Anti-Freeze Architecture</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Top-tier services utilize adaptive bitrate delivery and dynamic load balancing to prevent buffer loops and micro-stuttering across residential home connections.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Radio className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>3. True 4K &amp; FHD 60FPS Feeds</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Prioritize services that stream native high-bitrate 60fps feeds rather than compressed, low-frame-rate 25fps re-streams that blur during fast-moving athletic competition.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Tv className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>4. Channel &amp; VOD Breadth</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  A premium catalog should offer 25,000+ live local, national, and international channels, plus a regularly updated VOD library of 120,000+ films and full series with multi-language audio.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Smartphone className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>5. Cross-Device Compatibility</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Verify seamless support across Amazon Firestick, Android TV, Google TV, Apple TV, Samsung Tizen, LG webOS, and desktop operating systems via universal protocols.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Layers className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>6. Xtream Codes &amp; M3U Support</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Providers should support both Xtream Codes API (username/password login with automatic EPG mapping) and M3U playlists for diagnostic flexibility.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>7. Transparent Pricing &amp; No Rebill</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Insist on clear one-time prepaid durations (1, 3, 6, 12 months) without hidden activation fees or surprise automatic credit card renewals.
+                </p>
+              </div>
+
+              <div className="card p-5 border-charcoal">
+                <div className="flex items-center gap-2 font-semibold text-snow mb-2">
+                  <Clock className="size-4 text-phosphor-green" aria-hidden="true" />
+                  <span>8. Free Trial &amp; Refund Guarantee</span>
+                </div>
+                <p className="text-silver-mist leading-relaxed">
+                  Reliable providers offer a 24-hour test period to inspect channel responsiveness, backed by an unconditional 14-day refund policy for peace of mind.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 2: Teleview: Built for Premium Live Sports & High-Bitrate Streaming */}
+          <section className="mt-14 scroll-mt-20" id="teleview-service" aria-labelledby="teleview-service-heading">
+            <div className="rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8">
+              <div className="text-center max-w-[760px] mx-auto mb-8">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 text-xs font-mono text-phosphor-green mb-3">
+                  <Sparkles className="size-3.5" aria-hidden="true" />
+                  <span>Premium IPTV Infrastructure</span>
+                </span>
+                <h2 id="teleview-service-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                  Teleview: Engineered for High-Availability Sports &amp; Entertainment
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                  Teleview was designed from the ground up to solve the most persistent complaints in the IPTV industry: buffering during peak sports games, dead channel feeds, and missing electronic program schedules.
+                </p>
+              </div>
+
+              {/* Service Comparison Table: Teleview vs Generic Resellers */}
+              <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80 mb-6">
+                <table className="w-full text-left text-xs border-collapse min-w-[680px]">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
+                      <th scope="col" className="p-4 font-semibold">Evaluation Metric</th>
+                      <th scope="col" className="p-4 font-semibold text-phosphor-green">Teleview Premium IPTV</th>
+                      <th scope="col" className="p-4 font-semibold text-smoke">Generic IPTV Resellers</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Server Architecture</th>
+                      <td className="p-4 text-snow font-medium">Dedicated CDN edge clusters in NA, EU &amp; Asia</td>
+                      <td className="p-4 text-smoke">Overloaded shared VPS servers prone to outages</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Anti-Freeze Performance</th>
+                      <td className="p-4 text-snow font-medium">Dynamic load-balancing &amp; 99.9% uptime SLA</td>
+                      <td className="p-4 text-smoke">Frequent buffer loops during live peak matches</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Broadcast Quality</th>
+                      <td className="p-4 text-snow font-medium">True 4K &amp; Full HD @ 60 FPS sports streams</td>
+                      <td className="p-4 text-smoke">Compressed 25/30 FPS re-encoded feeds</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">EPG TV Guide</th>
+                      <td className="p-4 text-snow font-medium">Automated 7-day XMLTV EPG updated hourly</td>
+                      <td className="p-4 text-smoke">Frequent missing program data or timezone desync</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Channel Lineup</th>
+                      <td className="p-4 text-snow font-medium">25,000+ live feeds &amp; 120,000+ VOD catalog</td>
+                      <td className="p-4 text-smoke">Inflated numbers filled with broken, dead links</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Activation Speed</th>
+                      <td className="p-4 text-snow font-medium">Instant automated Xtream Codes API provisioning</td>
+                      <td className="p-4 text-smoke">12 to 24-hour manual email delays</td>
+                    </tr>
+                    <tr className="hover:bg-ash/40 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">Customer Protection</th>
+                      <td className="p-4 text-snow font-medium">14-day refund guarantee &amp; 24-hr trial</td>
+                      <td className="p-4 text-smoke">No refund policy and non-responsive support</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-4 text-center">
+                <GreenButton href="/iptv-subscription" className="text-xs px-6 py-2.5">
+                  View Teleview Subscription Plans &rarr;
+                </GreenButton>
+                <a
+                  href="/iptv-free-trial"
+                  className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
+                >
+                  Request a 24-Hour Free Trial &rarr;
+                </a>
               </div>
             </div>
           </section>
@@ -209,7 +398,71 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 3: What is an IPTV Player? */}
+          {/* Section 5: Streaming Bitrate, Resolution & Internet Speed Requirements */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="speed-table-heading">
+            <div className="text-center max-w-[700px] mx-auto mb-8">
+              <h2 id="speed-table-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                Streaming Bitrate, Resolution &amp; Internet Bandwidth Guide
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                Smooth, uninterrupted streaming requires aligning your home internet download speeds and player buffer settings with the resolution requirements of each broadcast channel.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80">
+              <table className="w-full text-left text-xs border-collapse min-w-[640px]">
+                <thead>
+                  <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
+                    <th scope="col" className="p-4 font-semibold">Video Resolution</th>
+                    <th scope="col" className="p-4 font-semibold">Target Bitrate</th>
+                    <th scope="col" className="p-4 font-semibold">Frame Rate</th>
+                    <th scope="col" className="p-4 font-semibold">Video Codec</th>
+                    <th scope="col" className="p-4 font-semibold">Min Download Speed</th>
+                    <th scope="col" className="p-4 font-semibold">Recommended Buffer</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">SD (480p)</th>
+                    <td className="p-4 font-mono text-smoke">2 – 4 Mbps</td>
+                    <td className="p-4">30 fps</td>
+                    <td className="p-4 font-mono text-smoke">H.264 / AVC</td>
+                    <td className="p-4 text-snow font-medium">8 Mbps</td>
+                    <td className="p-4">Small (500 ms)</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">HD (720p)</th>
+                    <td className="p-4 font-mono text-smoke">5 – 8 Mbps</td>
+                    <td className="p-4">30 / 60 fps</td>
+                    <td className="p-4 font-mono text-smoke">H.264 / AVC</td>
+                    <td className="p-4 text-snow font-medium">15 Mbps</td>
+                    <td className="p-4">Medium (2000 ms)</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">Full HD (1080p)</th>
+                    <td className="p-4 font-mono text-smoke">9 – 15 Mbps</td>
+                    <td className="p-4">60 fps</td>
+                    <td className="p-4 font-mono text-smoke">H.264 / H.265</td>
+                    <td className="p-4 text-snow font-medium">25 Mbps</td>
+                    <td className="p-4">Medium (2000 ms)</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">4K Ultra HD</th>
+                    <td className="p-4 font-mono text-smoke">20 – 35 Mbps</td>
+                    <td className="p-4">60 fps</td>
+                    <td className="p-4 font-mono text-smoke">H.265 / HEVC</td>
+                    <td className="p-4 text-phosphor-green font-semibold">50+ Mbps</td>
+                    <td className="p-4">Large (5000 ms)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-xs text-smoke text-center">
+              Tip: For live 4K sports streaming, connect your television or streaming device via a wired Ethernet cable or a dedicated 5GHz Wi-Fi network band to minimize local packet drops.
+            </p>
+          </section>
+
+          {/* Section 6: What is an IPTV Player? */}
           <section className="mt-16 rounded-2xl border border-charcoal bg-ash/20 p-6 sm:p-8" aria-labelledby="what-is-heading">
             <h2 id="what-is-heading" className="text-xl sm:text-2xl font-bold text-snow">
               What Is an IPTV Player? (And What It Is Not)
@@ -239,7 +492,7 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 4: How to Choose an IPTV Player */}
+          {/* Section 7: How to Choose an IPTV Player */}
           <section className="mt-16" aria-labelledby="how-to-choose-heading">
             <div className="text-center mb-8">
               <h2 id="how-to-choose-heading" className="text-xl sm:text-2xl font-bold text-snow">
@@ -313,7 +566,7 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 5: Best IPTV Players by Device */}
+          {/* Section 8: Best IPTV Players by Device */}
           <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="by-device-heading">
             <h2 id="by-device-heading" className="text-xl sm:text-2xl font-bold text-snow text-center">
               Best IPTV Players by Device Ecosystem
@@ -385,7 +638,52 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 6: IPTV Player vs IPTV Service */}
+          {/* Section 9: IPTV Protocols: Xtream Codes API vs M3U vs MAC Portal */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/20 p-6 sm:p-8" aria-labelledby="protocols-heading">
+            <h2 id="protocols-heading" className="text-xl sm:text-2xl font-bold text-snow text-center">
+              IPTV Connection Protocols: Xtream Codes API vs. M3U vs. MAC Portal
+            </h2>
+            <p className="mt-2 text-xs sm:text-sm text-silver-mist text-center max-w-[620px] mx-auto">
+              Understanding authentication methods helps you configure your player application properly and protect your subscription credentials.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3 text-xs">
+              <div className="rounded-xl border border-charcoal bg-ink-800/80 p-5">
+                <span className="font-mono text-phosphor-green font-semibold uppercase text-[11px]">Recommended Method</span>
+                <h3 className="mt-1 text-sm font-bold text-snow">Xtream Codes API</h3>
+                <p className="mt-2 text-silver-mist leading-relaxed">
+                  Requires Server URL, Username, and Password. Loads Live TV, Movies, and Series into separated databases with poster art, IMDb metadata, and auto-refreshing EPG schedules.
+                </p>
+                <div className="mt-3 pt-3 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Used by: TiviMate, IPTV Smarters Pro, OTT Navigator
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ink-800/80 p-5">
+                <span className="font-mono text-smoke font-semibold uppercase text-[11px]">Universal Fallback</span>
+                <h3 className="mt-1 text-sm font-bold text-snow">M3U / M3U8 Playlist</h3>
+                <p className="mt-2 text-silver-mist leading-relaxed">
+                  A direct web link or text file containing thousands of channel stream addresses. Fast to load on desktop media players, but combines all categories into a single unorganized feed without built-in EPG.
+                </p>
+                <div className="mt-3 pt-3 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Used by: VLC Media Player, GSE Smart IPTV
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ink-800/80 p-5">
+                <span className="font-mono text-smoke font-semibold uppercase text-[11px]">Hardware-Tied</span>
+                <h3 className="mt-1 text-sm font-bold text-snow">MAC Portal (Stalker)</h3>
+                <p className="mt-2 text-silver-mist leading-relaxed">
+                  Locks access to the physical MAC address of your device (e.g. MAG set-top boxes or Smart TV virtual MACs). Requires web portal registration and restricts playback to a single designated screen.
+                </p>
+                <div className="mt-3 pt-3 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Used by: IBO Player, SmartOne IPTV, MAG boxes
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 10: IPTV Player vs IPTV Service */}
           <section className="mt-16 rounded-2xl border border-charcoal bg-ash/40 p-6 sm:p-8" aria-labelledby="player-vs-service-heading">
             <div className="max-w-[800px] mx-auto text-center">
               <h2 id="player-vs-service-heading" className="text-xl sm:text-2xl font-bold text-snow">
@@ -422,7 +720,124 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 7: Related Technical Guides & Hardware Links */}
+          {/* Section 11: Teleview Subscription Plans & Instant Activation */}
+          <section className="mt-16" aria-labelledby="pricing-summary-heading">
+            <div className="text-center mb-8">
+              <h2 id="pricing-summary-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                Teleview Subscription Plans &amp; Pricing
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[620px] mx-auto">
+                Transparent one-time prepaid packages. Instant automated credentials, zero contracts, and a full 14-day money-back guarantee.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs">
+              <article className="card p-5 border-charcoal flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-phosphor-green uppercase">Flexible Pass</span>
+                  <h3 className="mt-1 text-base font-bold text-snow">1 Month Plan</h3>
+                  <div className="mt-2 flex items-baseline gap-1.5">
+                    <span className="text-2xl font-extrabold text-snow">$16.00</span>
+                    <span className="text-[11px] text-smoke">/ 1 month</span>
+                  </div>
+                  <p className="mt-2 text-silver-mist leading-relaxed">
+                    Ideal for testing during a specific sports tournament or short-term entertainment needs.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/iptv-subscription/1-month"
+                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
+                  >
+                    View 1 Month Plan &rarr;
+                  </a>
+                </div>
+              </article>
+
+              <article className="card p-5 border-charcoal flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-phosphor-green uppercase">Popular Value</span>
+                  <h3 className="mt-1 text-base font-bold text-snow">3 Months Plan</h3>
+                  <div className="mt-2 flex items-baseline gap-1.5">
+                    <span className="text-2xl font-extrabold text-snow">$39.00</span>
+                    <span className="text-[11px] text-smoke">($13.00/mo)</span>
+                  </div>
+                  <p className="mt-2 text-silver-mist leading-relaxed">
+                    Balanced quarterly package saving 18% over the standard monthly commitment.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/iptv-subscription/3-months"
+                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
+                  >
+                    View 3 Months Plan &rarr;
+                  </a>
+                </div>
+              </article>
+
+              <article className="card p-5 border-charcoal flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-phosphor-green uppercase">Extended Season</span>
+                  <h3 className="mt-1 text-base font-bold text-snow">6 Months Plan</h3>
+                  <div className="mt-2 flex items-baseline gap-1.5">
+                    <span className="text-2xl font-extrabold text-snow">$60.00</span>
+                    <span className="text-[11px] text-smoke">($10.00/mo)</span>
+                  </div>
+                  <p className="mt-2 text-silver-mist leading-relaxed">
+                    Full sports season coverage with a 37% discount compared to monthly renewal.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/iptv-subscription/6-months"
+                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
+                  >
+                    View 6 Months Plan &rarr;
+                  </a>
+                </div>
+              </article>
+
+              <article className="card p-5 border-phosphor-green/50 bg-phosphor-green/5 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono text-phosphor-green uppercase font-bold">Best Annual Value</span>
+                  <h3 className="mt-1 text-base font-bold text-snow">12 Months Plan</h3>
+                  <div className="mt-2 flex items-baseline gap-1.5">
+                    <span className="text-2xl font-extrabold text-snow">$90.00</span>
+                    <span className="text-[11px] text-smoke">($7.50/mo)</span>
+                  </div>
+                  <p className="mt-2 text-silver-mist leading-relaxed">
+                    Maximum savings with 53% off the monthly rate, full 4K access, and priority support.
+                  </p>
+                </div>
+                <div className="mt-5 pt-3 border-t border-charcoal/60">
+                  <a
+                    href="/iptv-subscription/12-months"
+                    className="inline-flex items-center justify-center w-full rounded-lg bg-phosphor-green text-obsidian py-2 text-xs font-bold hover:brightness-110 transition-colors"
+                  >
+                    View 12 Months Plan &rarr;
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div className="mt-6 text-center text-xs text-smoke">
+              Need to test first? Get a{" "}
+              <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-semibold">
+                24-Hour Free Trial
+              </a>{" "}
+              or browse the full{" "}
+              <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-semibold">
+                IPTV Subscription Directory
+              </a>
+              . Every plan includes our 14-day{" "}
+              <a href="/refund-policy" className="text-phosphor-green hover:underline">
+                refund policy
+              </a>.
+            </div>
+          </section>
+
+          {/* Section 12: Related Technical Guides & Hardware Links */}
           <section className="mt-16" aria-labelledby="setup-guides-heading">
             <div className="text-center mb-8">
               <h2 id="setup-guides-heading" className="text-xl sm:text-2xl font-bold text-snow">
@@ -484,14 +899,14 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* Section 8: Hub FAQs */}
+          {/* Section 13: Hub FAQs */}
           <section className="mt-16" aria-labelledby="hub-faqs-heading">
             <div className="text-center mb-8">
               <h2 id="hub-faqs-heading" className="text-xl sm:text-2xl font-bold text-snow">
-                Frequently Asked Questions About IPTV Players
+                Frequently Asked Questions About IPTV Services &amp; Players
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-silver-mist">
-                Answers to common player compatibility, setup, and licensing questions.
+                Answers to common service selection, player compatibility, setup, and licensing questions.
               </p>
             </div>
 

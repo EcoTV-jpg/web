@@ -170,9 +170,13 @@ export default function SubscriptionHubPage() {
                 <Laptop className="size-4 text-phosphor-green" aria-hidden="true" /> Apple iOS &amp; tvOS
               </span>
             </div>
-            <div className="mt-5">
-              <a href="/devices" className="text-xs font-semibold text-phosphor-green hover:underline">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
+              <a href="/devices" className="text-phosphor-green hover:underline">
                 View All Supported Hardware &amp; Apps &rarr;
+              </a>
+              <span className="text-smoke">&bull;</span>
+              <a href="/best-iptv" className="text-phosphor-green hover:underline">
+                Compare Best IPTV Players &rarr;
               </a>
             </div>
           </section>
