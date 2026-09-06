@@ -12,7 +12,7 @@ export default function Steps() {
             {stepsSection.kicker || "how to get your IPTV?"}
           </p>
           <h2 id="steps-heading" className="t-h2 text-balance max-w-[700px] mx-auto mt-4">
-            Simple 3-Step <Accent>Setup Process</Accent>
+            3 Easy Steps to <Accent>Ultimate Entertainment!</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[500px] text-silver-mist">
             {stepsSection.subhead}

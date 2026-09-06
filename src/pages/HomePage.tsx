@@ -1,14 +1,14 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Pricing from "../components/Pricing";
-import AnswerFirstBlocks from "../components/AnswerFirstBlocks";
-import Highlights from "../components/Highlights";
+import SportsBanner from "../components/SportsBanner";
 import DeviceGrid from "../components/DeviceGrid";
 import Steps from "../components/Steps";
-import SportsBanner from "../components/SportsBanner";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Comparison from "../components/Comparison";
 import TechnologyExplainer from "../components/TechnologyExplainer";
+import Highlights from "../components/Highlights";
+import Coverage from "../components/Coverage";
 import CoastToCoast from "../components/CoastToCoast";
 import DealPromo from "../components/DealPromo";
 import Guarantee from "../components/Guarantee";
@@ -24,19 +24,19 @@ export default function HomePage() {
       <main>
         <Hero />
         <Pricing />
-        <div className="cv-auto">
-          <AnswerFirstBlocks />
-        </div>
-        <div className="cv-auto">
-          <Highlights />
-        </div>
+        <SportsBanner />
         <DeviceGrid />
         <Steps />
-        <SportsBanner />
         <WhyChooseUs />
         <Comparison />
         <div className="cv-auto">
           <TechnologyExplainer />
+        </div>
+        <div className="cv-auto">
+          <Highlights />
+        </div>
+        <div className="cv-auto">
+          <Coverage />
         </div>
         <div className="cv-auto">
           <CoastToCoast />

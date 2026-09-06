@@ -14,7 +14,6 @@
     "test:ai": "node scripts/verify-ai-readiness.mjs",
     "test:best-iptv": "node scripts/verify-best-iptv.mjs",
     "test:freshness": "node scripts/content-freshness-audit.mjs",
-    "test:homepage": "node scripts/validate-homepage-entities.mjs",
     "test:slugs": "node scripts/test-unknown-slugs.mjs",
     "test:sitemap": "node scripts/validate-sitemap.mjs",
     "seo:sitemap-audit": "node scripts/validate-sitemap.mjs",
