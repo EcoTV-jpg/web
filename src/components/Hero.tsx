@@ -83,9 +83,9 @@ export default function Hero() {
                 <img
                   src="/images/teleview-fans.jpg"
                   alt="Sports fans celebrating with snacks while watching Teleview"
-                  className="media-mono w-full"
-                  width={900}
-                  height={600}
+                  className="media-mono w-full aspect-[1586/992]"
+                  width={1586}
+                  height={992}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"

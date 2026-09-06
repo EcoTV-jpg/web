@@ -57,7 +57,7 @@ export default function DealPromo() {
                 alt="Couple watching TV together with Teleview"
                 className="media-mono relative z-10 h-[380px] w-full rounded-b-[24px] rounded-t-[999px] object-cover object-top sm:h-[440px]"
                 width={400}
-                height={460}
+                height={440}
                 loading="lazy"
                 decoding="async"
               />

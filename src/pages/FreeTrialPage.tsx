@@ -76,6 +76,10 @@ export default function FreeTrialPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="size-3.5 text-phosphor-green" aria-hidden="true" />
+                Zero automatic rebilling (Expires in 24 hours)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="size-3.5 text-phosphor-green" aria-hidden="true" />
                 Instant WhatsApp delivery
               </span>
               <span className="flex items-center gap-1.5">

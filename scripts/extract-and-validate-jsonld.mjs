@@ -217,13 +217,11 @@ for (const route of indexableRoutes) {
 
   // 8. Route-Specific Schemas & Deep Checks
   if (route.path === "/") {
-    const product = graph.find((e) => e["@type"] === "Product");
     const service = graph.find((e) => e["@type"] === "Service");
-    assert("HOMEPAGE_SCHEMA", "Product entity on /", Boolean(product));
     assert("HOMEPAGE_SCHEMA", "Service entity on /", Boolean(service));
+    assert("HOMEPAGE_SCHEMA", "No inappropriate Product entity on /", !entityTypes.includes("Product"));
     assert("HOMEPAGE_SCHEMA", "No FAQPage entity on /", !entityTypes.includes("FAQPage"));
-    assert("HOMEPAGE_SCHEMA", "Product offers count is 4 on /", product?.offers?.offerCount === 4);
-    assert("HOMEPAGE_SCHEMA", "No AggregateRating in Product on /", !product?.aggregateRating);
+    assert("HOMEPAGE_SCHEMA", "Service offers count is 4 on /", service?.hasOfferCatalog?.itemListElement?.length === 4);
   } else if (route.path === "/setup") {
     const howTo = graph.find((e) => e["@type"] === "HowTo");
     assert("SETUP_SCHEMA", "HowTo entity on /setup", Boolean(howTo));
@@ -248,14 +246,13 @@ for (const route of indexableRoutes) {
       }
     }
   } else if (route.path === "/iptv-subscription") {
-    const product = graph.find((e) => e["@type"] === "Product");
     const service = graph.find((e) => e["@type"] === "Service");
     const faqPage = graph.find((e) => e["@type"] === "FAQPage");
-    assert("HUB_SCHEMA", "Product entity on /iptv-subscription", Boolean(product));
     assert("HUB_SCHEMA", "Service entity on /iptv-subscription", Boolean(service));
+    assert("HUB_SCHEMA", "No inappropriate Product entity on /iptv-subscription", !entityTypes.includes("Product"));
     assert("HUB_SCHEMA", "FAQPage entity on /iptv-subscription", Boolean(faqPage));
     assert("HUB_SCHEMA", "FAQPage questions count is 4 on /iptv-subscription", faqPage?.mainEntity?.length === 4);
-    assert("HUB_SCHEMA", "No AggregateRating in Product on /iptv-subscription", !product?.aggregateRating);
+    assert("HUB_SCHEMA", "Service offers count is 4 on /iptv-subscription", service?.hasOfferCatalog?.itemListElement?.length === 4);
   } else if (route.path === "/iptv-free-trial") {
     const service = graph.find((e) => e["@type"] === "Service");
     const faqPage = graph.find((e) => e["@type"] === "FAQPage");

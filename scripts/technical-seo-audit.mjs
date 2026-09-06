@@ -319,8 +319,13 @@ async function runTechnicalSeoAudit() {
         } else if (page.path === "/devices") {
           assert("BREADCRUMBS", "BreadcrumbList schema present in /devices", types.includes("BreadcrumbList"));
         } else if (page.path === "/") {
-          assert("ENTITY_GRAPH", "Product schema present in /", types.includes("Product"));
-        } else if (page.path.startsWith("/iptv-subscription")) {
+          assert("ENTITY_GRAPH", "Service schema present in /", types.includes("Service"));
+          assert("ENTITY_GRAPH", "No Product schema in /", !types.includes("Product"));
+        } else if (page.path === "/iptv-subscription") {
+          assert("ENTITY_GRAPH", "Service schema present in /iptv-subscription", types.includes("Service"));
+          assert("ENTITY_GRAPH", "No Product schema in /iptv-subscription", !types.includes("Product"));
+          assert("BREADCRUMBS", "BreadcrumbList schema present in /iptv-subscription", types.includes("BreadcrumbList"));
+        } else if (page.path.startsWith("/iptv-subscription/")) {
           assert("ENTITY_GRAPH", `Product schema present in ${page.path}`, types.includes("Product"));
           assert("BREADCRUMBS", `BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
         }

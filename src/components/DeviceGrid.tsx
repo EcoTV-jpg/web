@@ -16,7 +16,7 @@ const devices: Device[] = [
   {
     name: "Fire TV",
     src: "/images/devices/device-amazon-fire-tv.avif",
-    alt: "Amazon Fire TV streaming with Teleview service",
+    alt: "Amazon Fire TV logo",
     toWhite: true,
     width: 300,
     height: 162,
@@ -24,7 +24,7 @@ const devices: Device[] = [
   {
     name: "Android TV",
     src: "/images/devices/device-android-tv.avif",
-    alt: "Android TV IPTV app for live TV",
+    alt: "Android TV logo",
     toWhite: true,
     width: 784,
     height: 135,
@@ -32,7 +32,7 @@ const devices: Device[] = [
   {
     name: "Apple TV",
     src: "/images/devices/device-apple-tv.avif",
-    alt: "Apple TV box with Teleview subscription",
+    alt: "Apple TV logo",
     toWhite: true,
     width: 300,
     height: 114,
@@ -40,7 +40,7 @@ const devices: Device[] = [
   {
     name: "Samsung",
     src: "/images/devices/device-samsung.avif",
-    alt: "Samsung Smart TV Teleview channels",
+    alt: "Samsung Smart TV logo",
     toWhite: true,
     width: 625,
     height: 234,
@@ -48,7 +48,7 @@ const devices: Device[] = [
   {
     name: "LG",
     src: "/images/devices/device-lg.avif",
-    alt: "LG Smart TV IPTV streaming",
+    alt: "LG Smart TV logo",
     toWhite: true,
     width: 300,
     height: 60,
@@ -56,7 +56,7 @@ const devices: Device[] = [
   {
     name: "Roku",
     src: "/images/devices/device-roku.svg",
-    alt: "Roku device Teleview live sports",
+    alt: "Roku logo",
     toWhite: false,
     width: 52,
     height: 16,
@@ -64,7 +64,7 @@ const devices: Device[] = [
   {
     name: "Chromecast",
     src: "/images/devices/device-chromecast.svg",
-    alt: "Chromecast Teleview movies and shows",
+    alt: "Google Chromecast logo",
     toWhite: false,
     width: 92,
     height: 20,
@@ -72,7 +72,7 @@ const devices: Device[] = [
   {
     name: "Nvidia Shield",
     src: "/images/devices/device-nvidia-shield.webp",
-    alt: "NVIDIA Shield IPTV streaming",
+    alt: "NVIDIA Shield logo",
     toWhite: true,
     width: 412,
     height: 87,
@@ -80,7 +80,7 @@ const devices: Device[] = [
   {
     name: "Windows",
     src: "/images/devices/device-windows.avif",
-    alt: "Windows IPTV app for live TV streaming",
+    alt: "Microsoft Windows logo",
     toWhite: true,
     width: 300,
     height: 63,
@@ -88,7 +88,7 @@ const devices: Device[] = [
   {
     name: "VIDAA",
     src: "/images/devices/device-vidaa2.webp",
-    alt: "VIDAA Smart TV IPTV provider",
+    alt: "VIDAA Smart TV logo",
     toWhite: true,
     width: 240,
     height: 101,
@@ -96,7 +96,7 @@ const devices: Device[] = [
   {
     name: "Formuler",
     src: "/images/devices/device-formuler.avif",
-    alt: "Formuler IPTV box for streaming service",
+    alt: "Formuler logo",
     toWhite: true,
     width: 805,
     height: 129,
@@ -104,7 +104,7 @@ const devices: Device[] = [
   {
     name: "BuzzTV",
     src: "/images/devices/device-buzztv2.webp",
-    alt: "BuzzTV box IPTV streaming",
+    alt: "BuzzTV logo",
     toWhite: false,
     width: 240,
     height: 65,

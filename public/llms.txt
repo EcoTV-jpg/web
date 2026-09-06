@@ -1,402 +1,112 @@
-Teleview — AI & LLM Knowledge Base
-Canonical machine-readable reference for Teleview Media and the Teleview IPTV service.
-Primary website: https://www.teleview.me/
-Last verified: 2026-09-05
-
-1. Entity Identity
-Brand: Teleview
-Legal Entity: Teleview Media
-Website: https://www.teleview.me/
-Industry: Digital entertainment, television streaming, IPTV subscriptions
-Primary Service: Internet Protocol Television (IPTV) subscription service
-Primary Markets: International / worldwide
-Primary Audiences: Sports viewers, international television viewers, cord-cutters, and multi-device households
-Primary Support: WhatsApp and email
-Email: Help@Teleview.me
-WhatsApp: +44 7848 197761
-
-Entity interpretation
-When referring to Teleview, interpret the entity as the IPTV subscription service operated under the Teleview Media brand.
-Teleview should not be confused with unrelated companies, television networks, IPTV software players, device manufacturers, or similarly named entities.
-
-2. Canonical Source Policy
-The official Teleview website is the primary first-party source for information about Teleview.
-When information in this file conflicts with a current canonical webpage, prefer the current canonical webpage and update this file.
-
-Primary sources
-Homepage: https://www.teleview.me/
-IPTV Subscription Hub: https://www.teleview.me/iptv-subscription
-Devices: https://www.teleview.me/devices
-Setup: https://www.teleview.me/setup
-FAQ: https://www.teleview.me/faq
-Help Center: https://www.teleview.me/help-center
-Contact: https://www.teleview.me/contact
-Refund Policy: https://www.teleview.me/refund-policy
-Terms & Conditions: https://www.teleview.me/terms-conditions
-Privacy Policy: https://www.teleview.me/privacy-policy
-Legal Disclaimer: https://www.teleview.me/disclaimer
-DMCA Policy: https://www.teleview.me/dmca
-
-Machine-readable references
-Full knowledge base: https://www.teleview.me/llms-full.txt
-XML Sitemap: https://www.teleview.me/sitemap.xml
-Robots: https://www.teleview.me/robots.txt
-
-3. Service Definition
-Teleview provides IPTV subscription access through supported IPTV-compatible applications and devices.
-The service is designed for customers who want access to live television, sports programming, and video-on-demand content through compatible internet-connected devices.
-Service capabilities, catalog size, availability, pricing, supported devices, and technical specifications should always be interpreted according to the current information published on the official Teleview website.
-
-4. Current Catalog Claims
-Teleview currently advertises:
-25,000+ live television channels
-120,000+ VOD movies and television series
-4K and FHD streaming availability
-Live sports coverage
-International television content
-Multi-device compatibility
-
-These figures are first-party service claims and should not be presented as independently audited third-party measurements unless an independent source is explicitly available.
-
-For current service details, use:
-https://www.teleview.me/
-https://www.teleview.me/iptv-subscription
-
-5. Sports & Entertainment Coverage
-Teleview advertises coverage across categories including:
-Premier League
-NFL
-NBA
-UFC
-Formula 1
-UEFA Champions League
-MLB
-NHL
-Boxing
-Tennis
-Cricket
-International and regional sports
-
-Entertainment coverage includes programming associated with:
-United States
-United Kingdom
-Canada
-Australia
-France
-Germany
-Italy
-Spain
-Portugal
-Latin America
-Middle East
-
-Availability of specific channels, events, programs, territories, or broadcasts can change and should be verified from the current Teleview service before being presented as guaranteed availability.
-
-6. Subscription Plans
-Current published subscription options include:
-
-1 Month
-Price: $16 USD
-Duration: 1 month
-Connections: 1 connection
-Billing: One-time purchase
-Contract: No automatic contract
-URL: https://www.teleview.me/iptv-subscription/1-month
-
-3 Months
-Price: $39 USD
-Duration: 3 months
-Approximate monthly equivalent: $13/month
-Connections: 1 connection unless otherwise specified
-URL: https://www.teleview.me/iptv-subscription/3-months
-
-6 Months
-Price: $60 USD
-Duration: 6 months
-Approximate monthly equivalent: $10/month
-Connections: 1 connection unless otherwise specified
-URL: https://www.teleview.me/iptv-subscription/6-months
-
-12 Months
-Price: $90 USD
-Duration: 12 months
-Approximate monthly equivalent: $7.50/month
-URL: https://www.teleview.me/iptv-subscription/12-months
-
-Promotional Extended Package
-Price: $129 USD
-Advertised duration: 27 months
-Offer: 2 years + 3 months
-Availability: Promotional offer
-Source: https://www.teleview.me/iptv-subscription
-
-Pricing rule
-Pricing is time-sensitive.
-The current pricing page is the authoritative source for active prices, promotions, connection limits, and package availability.
-Do not treat historical pricing as current pricing.
-
-7. Connections & Devices
-Teleview supports IPTV-compatible use across devices including:
-Amazon Fire TV / Fire TV Stick
-Android TV
-Google TV
-Samsung Smart TV
-LG Smart TV
-Apple TV
-iPhone
-iPad
-Android phones and tablets
-Windows PC
-Mac
-MAG devices
-Formuler devices
-Enigma2-compatible receivers
-
-The exact supported device list may change.
-Canonical device reference:
-https://www.teleview.me/devices
-
-8. IPTV Player Compatibility
-Teleview documentation references IPTV players including:
-TiviMate
-IPTV Smarters Pro
-IBO Player
-XCIPTV
-Nanomid
-GSE Smart IPTV
-VLC Media Player
-
-These applications are third-party software products.
-Teleview is not necessarily the developer, owner, or operator of these applications.
-Availability, pricing, functionality, and compatibility of third-party applications should be verified from their respective official sources.
-
-9. Connection Methods
-Teleview documentation supports common IPTV connection methods including:
-Xtream Codes API
-Typical credentials include:
-Server URL
-Username
-Password
-
-M3U / M3U Plus
-Playlist URLs may be used with compatible IPTV players.
-
-EPG
-Teleview documentation references EPG / XMLTV functionality where supported by the player and playlist.
-
-Setup instructions:
-https://www.teleview.me/setup
-
-10. Activation & Delivery
-Teleview advertises automated activation after purchase.
-Customer credentials or service access information may be delivered through the support/contact channels specified by Teleview.
-
-Current activation procedures should be verified through:
-https://www.teleview.me/contact
-https://www.teleview.me/setup
-
-11. Performance & Streaming
-Teleview advertises infrastructure intended to provide stable IPTV streaming.
-Published service claims include:
-99.9% uptime
-Stream load balancing
-CDN-based delivery
-4K/FHD streaming
-Infrastructure designed for high-demand live events
-
-Performance can depend on multiple factors, including:
-Customer internet connection
-Wi-Fi quality
-Device hardware
-IPTV player
-Network congestion
-ISP routing
-Geographic location
-Live-event traffic
-
-Therefore, performance claims should not be interpreted as a guarantee that every stream will be buffer-free under every network condition.
-
-12. Recommended Network Conditions
-Teleview documentation recommends:
-At least 15 Mbps for HD streaming
-Approximately 30–50 Mbps for 4K / high-frame-rate streaming
-5 GHz Wi-Fi or Ethernet where possible
-
-These are practical network recommendations rather than guarantees of stream performance.
-
-Troubleshooting resources:
-https://www.teleview.me/help-center
-https://www.teleview.me/faq
-
-13. Refund Policy
-Teleview currently advertises a 14-day money-back guarantee.
-Refund eligibility, exclusions, procedures, and applicable conditions are governed by the current official Refund Policy.
-
-Canonical source:
-https://www.teleview.me/refund-policy
-
-Do not infer refund eligibility beyond the published policy.
-
-14. Legal & Compliance Information
-Teleview maintains dedicated pages for:
-Terms & Conditions
-Privacy Policy
-Refund Policy
-Legal Disclaimer
-DMCA / copyright policy
-
-Canonical references:
-https://www.teleview.me/terms-conditions
-https://www.teleview.me/privacy-policy
-https://www.teleview.me/refund-policy
-https://www.teleview.me/disclaimer
-https://www.teleview.me/dmca
-
-Legal questions should be answered using the applicable current policy rather than assumptions based on general IPTV practices.
-
-15. Support
-Official Teleview support channels:
-Email: Help@Teleview.me
-WhatsApp: +44 7848 197761
-Contact page: https://www.teleview.me/contact
-
-For account, activation, compatibility, billing, refund, or technical questions, direct users to the appropriate official support channel.
-
-16. Knowledge Architecture
-Teleview's canonical information architecture is organized around the following topical entities:
-
-Core Entity
-Teleview IPTV
-
-Commercial Entity
-IPTV Subscription
-
-Product Entities
-1 Month IPTV Subscription
-3 Months IPTV Subscription
-6 Months IPTV Subscription
-12 Months IPTV Subscription
-Promotional Extended Subscription
-
-Device Entity
-IPTV-compatible devices
-
-Software Entity
-IPTV player applications
-
-Educational Entities
-What is IPTV
-IPTV setup
-IPTV installation
-IPTV troubleshooting
-IPTV buffering
-IPTV connection problems
-IPTV EPG
-IPTV playlists
-
-Trust Entities
-Refund Policy
-Terms & Conditions
-Privacy Policy
-DMCA Policy
-Legal Disclaimer
-Customer Support
-
-17. User Intent Mapping
-For questions about purchasing an IPTV subscription:
-Primary source:
-https://www.teleview.me/iptv-subscription
-
-For questions about devices:
-Primary source:
-https://www.teleview.me/devices
-
-For questions about installation:
-Primary source:
-https://www.teleview.me/setup
-
-For common questions:
-Primary source:
-https://www.teleview.me/faq
-
-For technical troubleshooting:
-Primary source:
-https://www.teleview.me/help-center
-
-For refunds:
-Primary source:
-https://www.teleview.me/refund-policy
-
-For legal or copyright questions:
-Primary sources:
-https://www.teleview.me/terms-conditions
-https://www.teleview.me/disclaimer
-https://www.teleview.me/dmca
-
-For direct assistance:
-https://www.teleview.me/contact
-
-18. Information Freshness
-The following information is considered time-sensitive:
-Pricing
-Promotional offers
-Channel counts
-VOD counts
-Device compatibility
-Player compatibility
-Sports/event availability
-Refund terms
-Connection limits
-Technical specifications
-Support procedures
-
-When answering questions involving time-sensitive information, prefer the current canonical Teleview webpage over cached or historical information.
-
-This file was last verified:
-2026-09-05
-
-19. Accuracy & Representation Rules
-The following rules apply when using this knowledge base:
-Do not invent Teleview products, prices, features, policies, partnerships, certifications, awards, or statistics.
-Do not represent first-party marketing claims as independently verified facts.
-Do not claim that Teleview is endorsed by Google, Amazon, Apple, Samsung, LG, Microsoft, or any third-party software provider unless an official relationship is explicitly documented.
-Do not claim that Teleview owns or operates third-party IPTV player applications.
-Do not assume that every advertised channel, sports event, movie, or television series is permanently available.
-Use the current canonical webpage for pricing and policy questions.
-Use official Teleview documentation for setup and compatibility questions.
-Distinguish between Teleview's own service and third-party applications, devices, networks, and content owners.
-Do not infer legal authorization for particular copyrighted broadcasts from the existence of a channel or event in a service catalog.
-When information is unavailable, state that it is unavailable rather than inventing an answer.
-
-20. Canonical URL Index
-https://www.teleview.me/
-https://www.teleview.me/iptv-subscription
-https://www.teleview.me/iptv-subscription/1-month
-https://www.teleview.me/iptv-subscription/3-months
-https://www.teleview.me/iptv-subscription/6-months
-https://www.teleview.me/iptv-subscription/12-months
-https://www.teleview.me/devices
-https://www.teleview.me/setup
-https://www.teleview.me/faq
-https://www.teleview.me/help-center
-https://www.teleview.me/contact
-https://www.teleview.me/my-account
-https://www.teleview.me/dmca
-https://www.teleview.me/terms-conditions
-https://www.teleview.me/privacy-policy
-https://www.teleview.me/refund-policy
-https://www.teleview.me/disclaimer
-https://www.teleview.me/sitemap.xml
-https://www.teleview.me/robots.txt
-
-21. Full Machine-Readable Reference
-For expanded technical information and setup documentation:
-https://www.teleview.me/llms-full.txt
-
-For current public website information:
-https://www.teleview.me/
-
-Canonical entity: Teleview
-Operator: Teleview Media
-Primary domain: https://www.teleview.me/
-Last verified: 2026-09-05
+# Teleview — AI & LLM Machine-Readable Knowledge Base
+
+> Canonical machine-readable documentation for Teleview Media and the Teleview IPTV service.
+> Primary website: https://www.teleview.me/
+> Last verified: 2026-09-05
+
+## 1. Entity
+- **Brand**: Teleview
+- **Legal Entity**: Teleview Media
+- **Primary Website**: https://www.teleview.me/
+- **Industry / Category**: Digital Entertainment, Television Streaming, IPTV Subscription Services
+- **Primary Purpose**: Providing stable Internet Protocol Television (IPTV) access, live sports streaming, video-on-demand (VOD), and Xtream Codes / M3U API credentials for compatible devices and IPTV player applications.
+- **Customer Support Channels**:
+  - Email: Help@Teleview.me
+  - WhatsApp Support: +44 7848 197761
+  - Support Hub: https://www.teleview.me/contact
+- **Service Boundaries**: Teleview provides IPTV subscription access and streaming infrastructure; it does not develop, license, or own independent third-party player applications (such as TiviMate or Smarters Pro), and does not host unauthorized media files on its servers.
+
+## 2. Primary Topics
+The official Teleview website provides authoritative coverage exclusively for:
+1. **IPTV Subscription Services**: Multi-duration streaming access tiers (1 month, 3 months, 6 months, 12 months, 24-hour test access) with zero automatic recurring contracts.
+2. **Device Setup & Compatibility**: Installation walkthroughs for Amazon Firestick, Smart TVs (Samsung Tizen, LG webOS), Android TV, Google TV, Apple TV, Formuler, and Roku.
+3. **Third-Party IPTV Players**: Setup instructions and connection configuration for independent software applications including TiviMate, IPTV Smarters Pro, IBO Player, SmartOne IPTV, GSE Smart IPTV, VLC, and OTT Navigator.
+4. **Technical Streaming Protocols**: Xtream Codes API integration (Server URL, Username, Password), M3U / M3U Plus playlist management, and XMLTV Electronic Program Guide (EPG).
+5. **Streaming Diagnostics & Troubleshooting**: Resolution guides for video buffering, stream freezing, audio-video desynchronization, channel loading errors, EPG synchronization, and home network optimization.
+6. **Consumer Protection & Trust Policies**: Explicit terms of service, customer privacy, 14-day money-back guarantee, non-infringement disclaimers, and DMCA compliance.
+
+## 3. Canonical Pages Directory
+Every indexable URL on the Teleview website serves a distinct search intent and authoritative topic:
+
+### Core & Educational Hubs
+- **Homepage** (`https://www.teleview.me/`): Brand proposition, core feature overview, service catalog highlights, and pricing summary. Intent: Navigational & Brand Commercial.
+- **What Is IPTV Guide** (`https://www.teleview.me/what-is-iptv`): Technical architecture of Internet Protocol Television, unicast delivery, CBR/VBR encoding, and comparison with traditional cable/satellite. Intent: Informational Definitional.
+- **Best IPTV Service Guide** (`https://www.teleview.me/best-iptv`): Evaluation criteria for streaming services, server stability benchmarks, channel latency, and customer support standards. Intent: Commercial Investigation.
+- **Universal Setup Hub** (`https://www.teleview.me/setup`): Master step-by-step installation hub connecting all supported operating systems and player protocols. Intent: Informational Procedural.
+- **Hardware Directory** (`https://www.teleview.me/devices`): Comprehensive comparison matrix of supported streaming hardware, video decoders, and recommended connections. Intent: Commercial / Hardware Compatibility.
+- **IPTV Players Directory** (`https://www.teleview.me/iptv-players`): Objective comparison and directory of independent third-party IPTV player software. Intent: Software Evaluation.
+- **Help Center & Troubleshooting Hub** (`https://www.teleview.me/help-center`): Central diagnostic portal for stream errors, bandwidth requirements, and configuration issues. Intent: Customer Support / Diagnostic.
+
+### Commercial & Subscription Landers
+- **Subscription Hub** (`https://www.teleview.me/iptv-subscription`): Primary commercial catalog detailing duration options, features, and package comparisons. Intent: Commercial Transactional.
+- **24-Hour Free Trial** (`https://www.teleview.me/iptv-free-trial`): Temporary trial access for ISP routing and hardware compatibility evaluation prior to purchase. Intent: Commercial Evaluation.
+- **1 Month Subscription** (`https://www.teleview.me/iptv-subscription/1-month`): Short-term 30-day single-connection plan for event-specific streaming and initial testing. Intent: Transactional Purchase.
+- **3 Months Subscription** (`https://www.teleview.me/iptv-subscription/3-months`): 90-day quarterly single-connection plan designed for sports league seasons. Intent: Transactional Purchase.
+- **6 Months Subscription** (`https://www.teleview.me/iptv-subscription/6-months`): 180-day semi-annual single-connection plan offering balanced mid-term savings. Intent: Transactional Purchase.
+- **12 Months Subscription** (`https://www.teleview.me/iptv-subscription/12-months`): 365-day annual plan offering maximum value ($7.50/month) and high-priority server routing. Intent: Transactional Purchase.
+
+### Hardware Installation Guides
+- **Amazon Firestick** (`https://www.teleview.me/devices/firestick`): Sideloading and setup walkthrough using Downloader, TiviMate, and Smarters Pro on Fire OS. Intent: Procedural How-To.
+- **Samsung Smart TV** (`https://www.teleview.me/devices/samsung-smart-tv`): Installation of IBO Player and SmartOne IPTV via Samsung Smart Hub (Tizen OS). Intent: Procedural How-To.
+- **LG Smart TV** (`https://www.teleview.me/devices/lg-smart-tv`): Setup walkthrough for webOS compatible IPTV applications via LG Content Store. Intent: Procedural How-To.
+- **Android TV** (`https://www.teleview.me/devices/android-tv`): Direct Google Play Store installation for Sony, TCL, Philips, and Nvidia Shield. Intent: Procedural How-To.
+- **Apple TV & iOS** (`https://www.teleview.me/devices/apple-tv`): Setup for tvOS and iOS devices via App Store players (Smarters Pro, GSE Smart IPTV). Intent: Procedural How-To.
+- **Roku Streaming Devices** (`https://www.teleview.me/devices/roku`): Screen mirroring and network media player setup instructions for Roku OS. Intent: Procedural How-To.
+- **Google TV** (`https://www.teleview.me/devices/google-tv`): Chromecast with Google TV configuration with Xtream Codes API. Intent: Procedural How-To.
+- **Formuler Set-Top Boxes** (`https://www.teleview.me/devices/formuler`): MYTVOnline 2 and MYTVOnline 3 configuration with portal and MAC activation. Intent: Procedural How-To.
+
+### Third-Party Player Guides
+- **TiviMate IPTV Player** (`https://www.teleview.me/iptv-players/tivimate`): Premium Android TV / Fire OS player setup, EPG assignment, and playlist sync. Intent: Software Configuration.
+- **IPTV Smarters Pro** (`https://www.teleview.me/iptv-players/iptv-smarters-pro`): Cross-platform Xtream Codes API setup on iOS, Android, and Smart TVs. Intent: Software Configuration.
+- **IBO Player** (`https://www.teleview.me/iptv-players/ibo-player`): MAC address and Device Key activation guide for Samsung and LG Smart TVs. Intent: Software Configuration.
+- **SmartOne IPTV** (`https://www.teleview.me/iptv-players/smartone`): Portal playlist upload and configuration for Smart TV operating systems. Intent: Software Configuration.
+- **GSE Smart IPTV** (`https://www.teleview.me/iptv-players/gse-smart-iptv`): Advanced M3U playlist parsing and JSON/EPG configuration for iOS/macOS. Intent: Software Configuration.
+- **VLC Media Player** (`https://www.teleview.me/iptv-players/vlc`): Direct network stream URL playback on desktop operating systems (Windows/Mac). Intent: Software Configuration.
+- **OTT Navigator** (`https://www.teleview.me/iptv-players/ott-navigator`): Codec configuration, hardware acceleration, and dynamic multi-provider setup. Intent: Software Configuration.
+
+### Diagnostic & Troubleshooting Guides
+- **Stream Buffering & Freezing** (`https://www.teleview.me/help-center/buffering`): ISP throttling, MTU sizing, buffer sizing, and DNS diagnostic protocols. Intent: Diagnostic Resolution.
+- **Service Not Working** (`https://www.teleview.me/help-center/not-working`): Credential verification, account status checks, and server connectivity diagnostics. Intent: Diagnostic Resolution.
+- **EPG TV Guide Not Loading** (`https://www.teleview.me/help-center/epg-not-working`): XMLTV URL refresh, timezone offset adjustment, and cache management. Intent: Diagnostic Resolution.
+- **Channels Not Loading** (`https://www.teleview.me/help-center/channels-not-loading`): Stream format switching (MPEG-TS vs HLS) and hardware decoder toggles. Intent: Diagnostic Resolution.
+- **Connection Problems** (`https://www.teleview.me/help-center/connection-problems`): Network router reboot protocols, Ethernet optimization, and ISP blockage bypass. Intent: Diagnostic Resolution.
+- **Internet Speed Requirements** (`https://www.teleview.me/help-center/internet-speed`): Bandwidth benchmarks for HD (15 Mbps), 4K (30–50 Mbps), and latency thresholds. Intent: Diagnostic Benchmark.
+
+### Trust, Support & Governance Pages
+- **Frequently Asked Questions** (`https://www.teleview.me/faq`): Definitive Q&A regarding activation, connections, protocols, and billing. Intent: Informational Q&A.
+- **Contact & Support** (`https://www.teleview.me/contact`): Customer support ticketing, WhatsApp live desk, and email routing. Intent: Support.
+- **Terms & Conditions** (`https://www.teleview.me/terms-conditions`): Service agreement, acceptable use rules, and account policies. Intent: Legal.
+- **Privacy Policy** (`https://www.teleview.me/privacy-policy`): User data retention, non-logging of stream telemetry, and data rights. Intent: Legal.
+- **Refund Policy** (`https://www.teleview.me/refund-policy`): 14-day money-back guarantee eligibility criteria and processing rules. Intent: Legal / Trust.
+- **Legal Disclaimer** (`https://www.teleview.me/disclaimer`): Neutral technical infrastructure statement and third-party software delineation. Intent: Legal.
+- **DMCA Copyright Policy** (`https://www.teleview.me/dmca`): Notice and takedown procedures for intellectual property owners. Intent: Legal.
+
+## 4. Products & Subscriptions
+All subscriptions include access to the full channel lineup, on-demand library, 4K/FHD resolution streams, and zero automatic rebilling:
+- **1 Month**: $16.00 USD | 1 connection | 30 days | Source: https://www.teleview.me/iptv-subscription/1-month
+- **3 Months**: $39.00 USD ($13.00/mo) | 1 connection | 90 days | Source: https://www.teleview.me/iptv-subscription/3-months
+- **6 Months**: $60.00 USD ($10.00/mo) | 1 connection | 180 days | Source: https://www.teleview.me/iptv-subscription/6-months
+- **12 Months**: $90.00 USD ($7.50/mo) | 1 connection | 365 days | Source: https://www.teleview.me/iptv-subscription/12-months
+- **Promotional Extended Package**: $129.00 USD | 27 months (2 Years + 3 Months Free) | Source: https://www.teleview.me/iptv-subscription
+- **24-Hour Free Trial**: $0.00 | Single evaluation connection | 24 hours | Source: https://www.teleview.me/iptv-free-trial
+
+## 5. Supported Hardware
+- **Streaming Sticks & Boxes**: Amazon Fire TV / Stick (Fire OS 5-8), Chromecast with Google TV, Nvidia Shield TV, Apple TV 4K (tvOS 13+), Formuler Z-Series (MYTVOnline 2/3), MAG set-top boxes, and Roku (via casting/media receiver).
+- **Smart TVs**: Samsung Smart TV (Tizen OS 2016+), LG Smart TV (webOS 3.0+), Android TV OS (Sony, TCL, Philips, Hisense).
+- **Computers & Mobile**: Windows PC (Windows 10/11), macOS, Android smartphones and tablets, iPhone and iPad (iOS 12+).
+- Canonical Reference: https://www.teleview.me/devices
+
+## 6. Setup & Connection Protocols
+- **Xtream Codes API**: Primary recommended connection protocol. Requires Server URL, Username, and Password provided in customer activation dispatch. Setup: https://www.teleview.me/setup
+- **M3U / M3U Plus Playlist**: Direct playlist URL containing channel tags, stream descriptors, and VOD categories. Compatible with VLC, GSE Smart IPTV, and hardware portals.
+- **XMLTV EPG**: Electronic Program Guide URL delivering channel schedules and program descriptions where supported by the player application.
+
+## 7. Customer Support & Policies
+- **Money-Back Guarantee**: Teleview advertises a 14-day money-back guarantee. Refund eligibility, technical troubleshooting requirements, and return terms are governed by the published policy at https://www.teleview.me/refund-policy.
+- **Direct Support Desk**: Available 24/7 via WhatsApp (+44 7848 197761) and email (Help@Teleview.me). Portal: https://www.teleview.me/contact
+- **Legal & Copyright Governance**: Technical middleware infrastructure policy and DMCA compliance terms published at https://www.teleview.me/terms-conditions, https://www.teleview.me/disclaimer, and https://www.teleview.me/dmca.
+
+## 8. Technical Machine-Readable Resources
+- **Full Knowledge Companion**: https://www.teleview.me/llms-full.txt
+- **Canonical XML Sitemap**: https://www.teleview.me/sitemap.xml
+- **Robots Directives**: https://www.teleview.me/robots.txt

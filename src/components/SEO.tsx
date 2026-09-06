@@ -663,39 +663,24 @@ export function generateStructuredData(path: string = "/") {
 
   // Route: /iptv-subscription (Hub Page)
   if (cleanPath === "/iptv-subscription") {
-    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-subscription#product` };
-
-    const hubProductSchema = {
-      "@type": "Product",
-      "@id": `${siteConfig.url}/iptv-subscription#product`,
-      name: `${siteConfig.name} IPTV Subscription Plans`,
-      description:
-        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 120,000+ movies, 4K sports, and 24/7 customer support.",
-      brand: {
-        "@type": "Brand",
-        "@id": siteConfig.entityIds.brand,
-        name: siteConfig.name,
-      },
-      image: `${siteConfig.url}${siteConfig.socialImage}`,
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: "16.00",
-        highPrice: "90.00",
-        offerCount: canonicalOffers.length,
-        offers: canonicalOffers,
-      },
-    };
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-subscription#service` };
 
     const hubServiceSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/iptv-subscription#service`,
       name: `${siteConfig.name} IPTV Subscription Service`,
       serviceType: "IPTV & Video Streaming Service",
+      description:
+        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 120,000+ movies, 4K sports, and 24/7 customer support.",
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
       areaServed: "Worldwide",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "IPTV Subscription Plans",
+        itemListElement: canonicalOffers,
+      },
     };
 
     const hubFaqSchema = {
@@ -711,7 +696,7 @@ export function generateStructuredData(path: string = "/") {
       })),
     };
 
-    graphEntities.push(hubProductSchema, hubServiceSchema, hubFaqSchema);
+    graphEntities.push(hubServiceSchema, hubFaqSchema);
   }
 
   // Route: /iptv-subscription/:slug (Individual Product Pages)
@@ -731,6 +716,9 @@ export function generateStructuredData(path: string = "/") {
           "@type": "Brand",
           "@id": siteConfig.entityIds.brand,
           name: siteConfig.name,
+        },
+        manufacturer: {
+          "@id": siteConfig.entityIds.organization,
         },
         image: `${siteConfig.url}${siteConfig.socialImage}`,
         offers: {
@@ -813,38 +801,14 @@ export function generateStructuredData(path: string = "/") {
 
   // Route: / (Homepage)
   if (cleanPath === "/") {
-    webpageSchema.about = { "@id": `${siteConfig.url}/#product` };
-
-    const homepageProductSchema = {
-      "@type": "Product",
-      "@id": `${siteConfig.url}/#product`,
-      name: `${siteConfig.name} IPTV Subscription`,
-      description:
-        "Premium IPTV subscription offering thousands of live channels, extensive on-demand library, 4K UHD streaming, and 24/7 customer support.",
-      brand: {
-        "@type": "Brand",
-        "@id": siteConfig.entityIds.brand,
-        name: siteConfig.name,
-      },
-      manufacturer: {
-        "@id": siteConfig.entityIds.organization,
-      },
-      image: `${siteConfig.url}${siteConfig.socialImage}`,
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: "16.00",
-        highPrice: "90.00",
-        offerCount: canonicalOffers.length,
-        offers: canonicalOffers,
-      },
-    };
+    webpageSchema.about = { "@id": `${siteConfig.url}/#service` };
 
     const homepageServiceSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/#service`,
       name: `${siteConfig.name} IPTV Streaming Subscription`,
       serviceType: "IPTV & Video Streaming Service",
+      description: siteConfig.defaultDescription,
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
@@ -856,7 +820,7 @@ export function generateStructuredData(path: string = "/") {
       },
     };
 
-    graphEntities.push(homepageProductSchema, homepageServiceSchema);
+    graphEntities.push(homepageServiceSchema);
   }
 
   // Return unified Schema.org @graph root structure

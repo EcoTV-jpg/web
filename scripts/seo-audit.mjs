@@ -394,12 +394,17 @@ async function runSeoAudit() {
           assert("BreadcrumbList schema present in /devices", types.includes("BreadcrumbList"));
           assert("TechArticle schema present in /devices", types.includes("TechArticle"));
         } else if (page.path === "/") {
-          assert("Product schema present in /", types.includes("Product"));
+          assert("Service schema present in /", types.includes("Service"));
+          assert("No Product schema in /", !types.includes("Product"));
         } else if (page.path === "/iptv-free-trial") {
           assert("Service schema present in /iptv-free-trial", types.includes("Service"));
           assert("BreadcrumbList schema present in /iptv-free-trial", types.includes("BreadcrumbList"));
           assert("FAQPage schema present in /iptv-free-trial", types.includes("FAQPage"));
-        } else if (page.path.startsWith("/iptv-subscription")) {
+        } else if (page.path === "/iptv-subscription") {
+          assert("Service schema present in /iptv-subscription", types.includes("Service"));
+          assert("BreadcrumbList schema present in /iptv-subscription", types.includes("BreadcrumbList"));
+          assert("No Product schema in /iptv-subscription", !types.includes("Product"));
+        } else if (page.path.startsWith("/iptv-subscription/")) {
           assert(`Product schema present in ${page.path}`, types.includes("Product"));
           assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
         } else if (page.path === "/best-iptv") {

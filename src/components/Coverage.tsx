@@ -58,9 +58,9 @@ export default function Coverage() {
                   <img
                     src="/images/teleview-map.jpg"
                     alt="Dotted world map showing Teleview coverage across countries"
-                    className="media-mono w-full"
-                    width={648}
-                    height={432}
+                    className="media-mono w-full aspect-[1448/1086]"
+                    width={1448}
+                    height={1086}
                     loading="lazy"
                     decoding="async"
                   />

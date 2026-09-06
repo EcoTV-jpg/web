@@ -137,7 +137,8 @@ export default function BestIptvHubPage() {
               </table>
             </div>
             <p className="mt-3 text-[11px] text-smoke text-center">
-              * Note: Independent player applications require subscription credentials to stream video. Teleview is not affiliated with third-party app developers.
+              * Note: Independent player applications require subscription credentials to stream video. Teleview is not affiliated with third-party app developers. You can test any of these players risk-free with a 24-hour{" "}
+              <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV free trial</a>.
             </p>
           </section>
 
