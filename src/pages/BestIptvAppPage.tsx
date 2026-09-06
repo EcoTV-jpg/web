@@ -81,6 +81,40 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
             </p>
           </header>
 
+          {/* TiviMate Hero Feature Banner */}
+          {app.slug === "tivimate" && (
+            <div className="card overflow-hidden p-2 mb-8">
+              <div className="overflow-hidden rounded-lg bg-ink-900">
+                <img
+                  src="/images/players/tivimate-iptv-player-banner.webp"
+                  alt="TiviMate IPTV Player official application logo and branding"
+                  className="w-full aspect-[1024/500] object-cover"
+                  width={1024}
+                  height={500}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* IPTV Smarters Pro Hero Feature Banner */}
+          {app.slug === "iptv-smarters-pro" && (
+            <div className="card overflow-hidden p-2 mb-8">
+              <div className="overflow-hidden rounded-lg bg-ink-900">
+                <img
+                  src="/images/players/iptv-smarters-pro-banner.webp"
+                  alt="IPTV Smarters Pro official application logo and branding on blue background"
+                  className="w-full aspect-[1024/500] object-cover"
+                  width={1024}
+                  height={500}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          )}
+
           {/* Quick Answer Callout */}
           <section className="mt-6 rounded-2xl border border-charcoal bg-ash/40 p-5 sm:p-7" aria-labelledby="app-summary-heading">
             <div className="flex items-start gap-3">
@@ -192,6 +226,273 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
               </div>
             </div>
           </section>
+
+          {/* TiviMate Interface & TV Guide Gallery */}
+          {app.slug === "tivimate" && (
+            <section className="mt-12" aria-labelledby="tivimate-gallery-heading">
+              <div className="flex items-center gap-2.5 mb-2">
+                <Tv className="size-5 text-phosphor-green" aria-hidden="true" />
+                <h2 id="tivimate-gallery-heading" className="text-lg sm:text-xl font-bold text-snow">
+                  TiviMate Interface &amp; TV Guide Overview
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-silver-mist">
+                High-resolution interface previews showcasing the broadcast cable-style EPG, channel navigation, and playback controls:
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/tivimate-epg-grid-timeline.webp"
+                      alt="TiviMate IPTV Player electronic program guide grid interface with multi-channel schedule timeline"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Interactive EPG Grid Timeline</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Multi-channel TV grid guide with timeline scrolling and program descriptions.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/tivimate-tv-guide-overlay.webp"
+                      alt="TiviMate IPTV Player TV guide overlay showing channel information and live playback timeline"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Live Playback Guide Overlay</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Cable-style on-screen display with current broadcast timeline and stream status.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/tivimate-channel-list-menu.webp"
+                      alt="TiviMate IPTV Player channel list sidebar with program schedule and live stream preview"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Channel List &amp; Schedule Sidebar</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Quick channel grouping, category management, and live stream previews.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/tivimate-player-controls-multiview.webp"
+                      alt="TiviMate IPTV Player playback control menu with multi-view, search, and recording options"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Playback Controls &amp; Multi-View</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Quick access to multi-screen viewing, audio/subtitle selection, and search.</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          )}
+
+          {/* IPTV Smarters Pro Interface & Configuration Gallery */}
+          {app.slug === "iptv-smarters-pro" && (
+            <section className="mt-12" aria-labelledby="smarters-gallery-heading">
+              <div className="flex items-center gap-2.5 mb-2">
+                <Tv className="size-5 text-phosphor-green" aria-hidden="true" />
+                <h2 id="smarters-gallery-heading" className="text-lg sm:text-xl font-bold text-snow">
+                  IPTV Smarters Pro Interface &amp; Configuration Overview
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-silver-mist">
+                High-resolution interface previews showing the categorized dashboard, hardware decoding options, and subtitle customizations:
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/iptv-smarters-pro-home-dashboard.webp"
+                      alt="IPTV Smarters Pro home dashboard featuring Live TV, Movies, Series, and Catch Up tiles"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Segmented Content Dashboard</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Dedicated sections for Live TV, Movies, Series boxsets, Catch Up, and Playlists.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/iptv-smarters-pro-player-decoder-settings.webp"
+                      alt="IPTV Smarters Pro built-in player settings menu with hardware decoder and buffer limit configuration"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Built-In Player &amp; Decoder Settings</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Hardware versus software decoding toggles and configurable stream buffer limits.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/iptv-smarters-pro-subtitle-settings.webp"
+                      alt="IPTV Smarters Pro subtitle settings menu showing font size, color, and background options"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Subtitle Display Customization</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">On-screen subtitle styling controls including font size scaling and text background.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/iptv-smarters-pro-loading-splash.webp"
+                      alt="IPTV Smarters Pro startup loading screen displaying device identifier and MAC address info"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">App Initialization &amp; Authentication</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Startup splash screen showing MAC address and device key for playlist activation.</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          )}
+
+          {/* IBO Player Interface & Smart TV Navigation Gallery */}
+          {app.slug === "ibo-player" && (
+            <section className="mt-12" aria-labelledby="ibo-gallery-heading">
+              <div className="flex items-center gap-2.5 mb-2">
+                <Tv className="size-5 text-phosphor-green" aria-hidden="true" />
+                <h2 id="ibo-gallery-heading" className="text-lg sm:text-xl font-bold text-snow">
+                  IBO Player Smart TV Interface &amp; Navigation Overview
+                </h2>
+              </div>
+              <p className="text-xs sm:text-sm text-silver-mist">
+                High-resolution interface previews showcasing the Samsung Tizen and LG webOS TV dashboard, live stream zapping, and category organization:
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/ibo-player-home-dashboard.webp"
+                      alt="IBO Player home dashboard showing Live TV, Movies, Series, and server management options on Smart TV"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Smart TV Home Dashboard</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Dedicated tiles for Live TV, Movies, Series, Account status, and Change Server controls.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/ibo-player-live-channels-preview.webp"
+                      alt="IBO Player live channel guide with split-screen sports broadcast video preview"
+                      className="w-full aspect-[293/183] sm:aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={293}
+                      height={183}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Live Channel Guide &amp; Stream Preview</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Integrated channel list with real-time video playback and quick zapping.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/ibo-player-channel-categories.webp"
+                      alt="IBO Player category navigation menu showing live channels, favorites, and search"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Category Navigation &amp; Favorites</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Streamlined sidebar organizing channels into groups, favorites, and recently viewed.</span>
+                  </figcaption>
+                </figure>
+
+                <figure className="card p-3 overflow-hidden">
+                  <div className="overflow-hidden rounded-lg bg-ink-900 border border-charcoal/60">
+                    <img
+                      src="/images/players/ibo-player-loading-splash.webp"
+                      alt="IBO Player Pro application loading screen with official logo on dark gradient"
+                      className="w-full aspect-[325/182] object-cover transition-transform duration-300 hover:scale-105"
+                      width={325}
+                      height={182}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption className="mt-2.5 px-1 text-xs">
+                    <strong className="text-snow block font-semibold">Application Startup &amp; Initialization</strong>
+                    <span className="text-smoke text-[11px] leading-relaxed">Lightweight initialization screen connecting to remote portal and loading playlists.</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          )}
 
           {/* Step-by-Step Setup Guide */}
           <section className="mt-12 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="setup-heading">
