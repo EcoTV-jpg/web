@@ -142,7 +142,7 @@ for (const r of clusterRoutes) {
   check(`Page ${r} renders visible Breadcrumb nav`, Boolean(navMatch));
 
   if (r === "/best-iptv") {
-    check("Hub breadcrumb contains Home and Best IPTV", html.includes("Home") && html.includes("Best IPTV Players"));
+    check("Hub breadcrumb contains Home and Best IPTV Services", html.includes("Home") && html.includes("Best IPTV Services"));
   } else if (r === "/iptv-players") {
     check("IPTV Players hub breadcrumb contains Home and IPTV Players", html.includes("Home") && html.includes("IPTV Players"));
   } else {

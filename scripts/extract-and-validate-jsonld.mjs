@@ -55,7 +55,7 @@ const indexableRoutes = [
   { path: "/help-center/connection-problems", breadcrumbName: "How to Fix IPTV Connection Errors & Server Timeouts" },
   { path: "/help-center/internet-speed", breadcrumbName: "Internet Speed Requirements for 4K IPTV Streaming" },
   { path: "/dmca", breadcrumbName: "DMCA Notice" },
-  { path: "/best-iptv", breadcrumbName: "Best IPTV Players" },
+  { path: "/best-iptv", breadcrumbName: "Best IPTV Services" },
   { path: "/iptv-players", breadcrumbName: "IPTV Players" },
   { path: "/iptv-players/tivimate", breadcrumbName: "TiviMate" },
   { path: "/iptv-players/iptv-smarters-pro", breadcrumbName: "IPTV Smarters" },

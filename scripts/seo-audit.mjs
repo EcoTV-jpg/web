@@ -228,7 +228,7 @@ async function runSeoAudit() {
     { path: "/help-center/internet-speed", expectedTitle: "Internet Speed", expectedH1: "Internet Speed", expectedCanonical: "https://www.teleview.me/help-center/internet-speed", indexable: true },
     { path: "/my-account", expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account", indexable: false },
     { path: "/dmca", expectedTitle: "DMCA", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", indexable: true },
-    { path: "/best-iptv", expectedTitle: "Best IPTV Players", expectedH1: "Best IPTV Players", expectedCanonical: "https://www.teleview.me/best-iptv", indexable: true },
+    { path: "/best-iptv", expectedTitle: "Best IPTV Services in 2026", expectedH1: "Best IPTV Services in 2026", expectedCanonical: "https://www.teleview.me/best-iptv", indexable: true },
     { path: "/iptv-players", expectedTitle: "IPTV Players", expectedH1: "IPTV Players", expectedCanonical: "https://www.teleview.me/iptv-players", indexable: true },
     { path: "/iptv-players/tivimate", expectedTitle: "TiviMate", expectedH1: "TiviMate", expectedCanonical: "https://www.teleview.me/iptv-players/tivimate", indexable: true },
     { path: "/iptv-players/iptv-smarters-pro", expectedTitle: "IPTV Smarters", expectedH1: "IPTV Smarters", expectedCanonical: "https://www.teleview.me/iptv-players/iptv-smarters-pro", indexable: true },

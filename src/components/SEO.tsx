@@ -416,9 +416,9 @@ export function generateStructuredData(path: string = "/") {
     const hubArticleSchema = {
       "@type": "TechArticle",
       "@id": `${siteConfig.url}/best-iptv#article`,
-      headline: "Best IPTV Players & Apps in 2026: Comprehensive Comparison",
+      headline: "Best IPTV Services in 2026: Comparison & Buying Guide",
       description:
-        "Detailed technical comparison of the top IPTV player applications across Firestick, Android TV, Smart TVs, Apple iOS, and desktop computers.",
+        "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
       url: `${siteConfig.url}/best-iptv`,
       inLanguage: siteConfig.language,
       author: {
@@ -428,9 +428,10 @@ export function generateStructuredData(path: string = "/") {
         "@id": siteConfig.entityIds.organization,
       },
       datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-04T18:00:00+00:00",
+      dateModified: "2026-09-06T18:15:00+00:00",
       proficiencyLevel: "Beginner",
       about: [
+        { "@type": "Thing", name: "IPTV Service" },
         { "@type": "Thing", name: "IPTV Player" },
         { "@type": "Thing", name: "Media Streaming Applications" },
       ],

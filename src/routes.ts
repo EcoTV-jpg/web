@@ -482,14 +482,14 @@ export const routes: AppRoute[] = [
       "Smart TV IPTV players",
       "4K sports streaming",
     ],
-    h1: "Best IPTV Service & Best IPTV Players",
-    title: "Best IPTV Service & Best IPTV Players Guide (2026) | Teleview",
+    h1: "Best IPTV Services in 2026",
+    title: "Best IPTV Services in 2026: Comparison & Buying Guide | Teleview",
     description:
-      "Compare the best IPTV service providers and best IPTV players in 2026. Verified server stability, 4K sports streaming, EPG performance, and setup guides.",
-    ogTitle: "Best IPTV Service & Best IPTV Players Guide (2026)",
+      "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
+    ogTitle: "Best IPTV Services in 2026: Comparison & Buying Guide",
     ogDescription:
-      "Comprehensive 2026 technical guide comparing premium IPTV streaming services and top 7 media player applications across Firestick, Smart TVs, and mobile.",
-    breadcrumbName: "Best IPTV Players",
+      "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
+    breadcrumbName: "Best IPTV Services",
   },
   {
     path: "/what-is-iptv",
