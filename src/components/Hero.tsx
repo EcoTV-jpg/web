@@ -49,8 +49,8 @@ export default function Hero() {
         {/* CTA Buttons */}
         <Reveal delay={0.18}>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <GreenButton href="/iptv-subscription">IPTV Subscription Plans</GreenButton>
-            <GhostButton href="/iptv-free-trial">Start IPTV Free Trial</GhostButton>
+            <GreenButton href="#pricing">CHOOSE A PLAN</GreenButton>
+            <GhostButton href="/iptv-free-trial">Start Free Trial</GhostButton>
           </div>
         </Reveal>
 

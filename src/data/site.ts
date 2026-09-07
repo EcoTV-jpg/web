@@ -23,9 +23,9 @@ export const hero = {
   heading: "Best IPTV Service Worldwide in 2026 — Teleview",
   subhead:
     "Discover Teleview, a premium IPTV service for viewers worldwide. Stream 25,000+ live channels, movies and series in HD and 4K, with IPTV Subscription plans and a free trial.",
-  copy: "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium live TV streaming with 24/7 technical support and no long-term contracts. Start with a 24-hour IPTV Free Trial — no commitment required.",
+  copy: "Get instant access to over 25,000 live TV channels and an extensive library of on-demand content. Watch in HD or 4K with fast, reliable streaming. Enjoy live sports, news, movies, and shows from around the world with 24/7 customer support, anti-freeze infrastructure, and no long-term contracts.",
   ctaPrimary: "CHOOSE A PLAN",
-  ctaSecondary: "View IPTV Plans",
+  ctaSecondary: "Start Free Trial",
   trustBadges: [
     "Instant Activation",
     "Premium Service",
