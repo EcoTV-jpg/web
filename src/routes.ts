@@ -1059,6 +1059,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.9,
+    lastmod: "2026-09-07",
     primaryIntent: "Commercial Investigation & Pricing Comparison",
     primaryKeyword: "IPTV pricing",
     secondaryTopics: [
@@ -1068,13 +1069,13 @@ export const routes: AppRoute[] = [
       "IPTV discounts",
       "hidden streaming fees",
     ],
-    h1: "IPTV Pricing & Subscription Plans Guide (2026)",
-    title: "IPTV Pricing & Subscription Plans (2026) | Teleview",
+    h1: "IPTV Pricing 2026: Subscription Costs & Plans",
+    title: "IPTV Pricing 2026: Subscription Costs & Plans | Teleview",
     description:
-      "Compare honest IPTV subscription pricing, effective monthly rates, multi-month discounts, and streaming server costs. Zero hidden fees or contracts.",
-    ogTitle: "IPTV Pricing & Subscription Plans (2026) | Teleview",
+      "Compare IPTV pricing, subscription plans, and effective monthly costs in 2026. Review 1, 3, 6, and 12-month plans with transparent billing and zero hidden fees.",
+    ogTitle: "IPTV Pricing 2026: Subscription Costs & Plans | Teleview",
     ogDescription:
-      "Transparent IPTV pricing comparison: evaluate monthly vs annual subscription costs and server bandwidth quality.",
+      "Compare IPTV subscription plans, effective monthly rates ($7.50–$16/mo), and volume discounts. Transparent pre-paid streaming with zero hidden fees.",
     breadcrumbName: "IPTV Pricing",
   },
   {

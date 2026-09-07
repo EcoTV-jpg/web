@@ -902,7 +902,7 @@ export function generateStructuredData(path: string = "/") {
     const pricingArticleSchema = {
       "@type": "TechArticle",
       "@id": `${siteConfig.url}/iptv-pricing#article`,
-      headline: "IPTV Pricing & Subscription Plans Guide (2026)",
+      headline: "IPTV Pricing 2026: Subscription Costs & Plans",
       description:
         "Comprehensive IPTV pricing and cost comparison guide. Review effective monthly rates, volume discount tiers, and transparent billing models.",
       url: `${siteConfig.url}/iptv-pricing`,
@@ -914,7 +914,7 @@ export function generateStructuredData(path: string = "/") {
         "@id": siteConfig.entityIds.organization,
       },
       datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-07T12:00:00+00:00",
+      dateModified: "2026-09-07T13:00:00+00:00",
       proficiencyLevel: "Beginner",
       about: [
         { "@type": "Thing", name: "IPTV Pricing" },
