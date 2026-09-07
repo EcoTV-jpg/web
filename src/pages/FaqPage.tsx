@@ -55,7 +55,7 @@ export default function FaqPage() {
                     </p>
                   </div>
                   <div className="mt-3 pt-2.5 border-t border-charcoal/60 text-[11px] text-smoke">
-                    Enables on-demand viewing, multi-device access, and global channel routing.
+                    Enables on-demand viewing, multi-device access, and global channel routing. Read our full <a href="/what-is-iptv" className="text-phosphor-green hover:underline">What Is IPTV guide</a>.
                   </div>
                 </article>
 

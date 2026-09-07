@@ -1,122 +1,373 @@
-# Teleview IPTV — Full Technical Knowledge Base & Reference Index
+# Teleview — Comprehensive Technical Knowledge Layer & AI Documentation Index
 
-> Ground truth documentation for Teleview IPTV (https://www.teleview.me). Structured reference for streaming specifications, subscription tiers, supported devices, and setup procedures.
-
----
-
-## 1. Brand & Infrastructure Overview
-- **Brand**: Teleview (Teleview Media)
-- **Official Site**: https://www.teleview.me/
-- **Core Technology**: Distributed Content Delivery Network (CDN) with stream load balancing, redundant stream transcoding nodes, and 99.9% measured uptime.
-- **Support Contact**: WhatsApp `+44 7848 197761` | Email `Help@Teleview.me`.
+> Canonical structured reference for Teleview Media, subscription plans, device integration, streaming protocols, and diagnostic knowledge.
+> Primary website: https://www.teleview.me/
+> Last verified: 2026-09-05
 
 ---
 
-## 2. Subscription Pricing Matrix & Plans
-Teleview offers 4 core plan durations plus promotional packages. All tiers include the full 25,000+ live channel catalog, 120,000+ VOD movies/series, full 4K and FHD streaming, and zero automatic rebilling:
+## 1. Entity Definition & Identity Model
 
-1. **1 Month IPTV Subscription**:
-   - Price: $16.00 USD (one-time)
-   - Duration: 30 days
-   - Monthly Equivalent: $16.00 / month
-   - Ideal for: Short-term trial, seasonal sports tournaments, testing home network compatibility.
-   - URL: https://www.teleview.me/iptv-subscription/1-month
-
-2. **3 Months IPTV Subscription**:
-   - Price: $39.00 USD (one-time)
-   - Duration: 90 days
-   - Monthly Equivalent: $13.00 / month (Save 19% vs monthly)
-   - Ideal for: Regular viewers following full sports leagues (NFL regular season, Premier League quarterly matches).
-   - URL: https://www.teleview.me/iptv-subscription/3-months
-
-3. **6 Months IPTV Subscription**:
-   - Price: $60.00 USD (one-time)
-   - Duration: 180 days
-   - Monthly Equivalent: $10.00 / month (Save 37.5% vs monthly)
-   - Ideal for: Long-term savings with semi-annual billing.
-   - URL: https://www.teleview.me/iptv-subscription/6-months
-
-4. **12 Months IPTV Subscription (Best Value Tier)**:
-   - Price: $90.00 USD (one-time, regular $192)
-   - Duration: 365 days
-   - Monthly Equivalent: $7.50 / month (Save 53% / $102 savings)
-   - Features: Priority server routing during peak global events.
-   - URL: https://www.teleview.me/iptv-subscription/12-months
-
-5. **Extended 2 Years + 3 Months Promotional Deal**:
-   - Price: $129.00 USD (27 months total access).
+- **Commercial Brand**: Teleview
+- **Operating Legal Entity**: Teleview Media
+- **Primary Domain**: https://www.teleview.me/
+- **Entity Classification**: Digital Entertainment / Internet Protocol Television (IPTV) Service Provider
+- **Service Nature**: Technical infrastructure provider delivering live broadcast transmission access, video-on-demand media indexing, and authentication credentials (Xtream Codes API & M3U Plus) for client devices.
+- **Operational Delineation**:
+  - Teleview is an IPTV service provider; it does NOT develop, own, or license third-party player applications (such as TiviMate, IPTV Smarters Pro, IBO Player, or VLC).
+  - Teleview provides streaming infrastructure and playlist indexing; it does not host or store unauthorized physical media files on its servers.
+- **Direct Support Channels**:
+  - Customer Service Email: Help@Teleview.me
+  - WhatsApp Support Line: +44 7848 197761
+  - Web Support Portal: https://www.teleview.me/contact
 
 ---
 
-## 3. Device Setup & Installation Guides
+## 2. Information Architecture & Canonical Page Relationships
 
-### Amazon Firestick & Fire TV
-1. On your Firestick home screen, navigate to **Find** > **Search** and search for the **Downloader** app by AFTVnews.
-2. Install Downloader and open it.
-3. If prompted on Fire OS 7+, enable developer options by going to **Settings** > **My Fire TV** > **About**, then clicking your device name 7 times rapidly until "You are now a developer" displays.
-4. Go to **Settings** > **My Fire TV** > **Developer Options** > **Install Unknown Apps** and toggle **Downloader** to **ON**.
-5. Launch Downloader, enter the quick code for your preferred player (e.g., TiviMate or IPTV Smarters Pro), and click **Go**.
-6. Install and launch the player app. Select **Add Playlist** > **Xtream Codes API**.
-7. Enter the Server URL, Username, and Password sent to your WhatsApp or email.
-8. The playlist will sync channels, VOD movies, and EPG TV guide automatically.
+Every page on the Teleview website represents a distinct node within the semantic knowledge graph. Below are the explicit entity-relationship mappings:
 
-### Android TV & Google TV (Chromecast, Sony, TCL, Philips, Shield)
-1. Open the **Google Play Store** directly on your Android TV.
-2. Search for **TiviMate IPTV Player** or **IPTV Smarters Pro**.
-3. Install and open the application.
-4. Select **Add Playlist** > **Xtream Codes API**.
-5. Enter your Teleview credentials.
+### Section A: Commercial & Subscription Nodes
 
-### Apple Devices (Apple TV tvOS, iPhone, iPad iOS, Mac)
-1. Open the **Apple App Store**.
-2. Download **IPTV Smarters Pro**, **IBO Player**, or **GSE Smart IPTV**.
-3. Launch the app and input your Xtream Codes API credentials.
-4. On Mac, you can also use **VLC Media Player** to open the M3U Plus playlist directly.
+Page: Subscription Hub
+URL: https://www.teleview.me/iptv-subscription
+Purpose: Master commercial overview of available IPTV subscription duration plans, features, and comparative pricing.
+Answers: What subscription plans does Teleview offer? How much does Teleview cost? What features are included in subscriptions?
+Related pages: https://www.teleview.me/iptv-subscription/1-month, https://www.teleview.me/iptv-subscription/12-months, https://www.teleview.me/iptv-free-trial
+Source of truth: Visible pricing cards and FAQ on https://www.teleview.me/iptv-subscription
 
-### Smart TVs (Samsung Tizen OS & LG webOS)
-1. Open the **Samsung Smart Hub** or **LG Content Store**.
-2. Search for **IBO Player**, **Nanomid Player**, or **Smart IPTV (SIPTV)**.
-3. Note the MAC address and device key shown on screen.
-4. Use the player's web management portal or provide the MAC to Teleview WhatsApp support for instant remote activation.
+Page: 1 Month IPTV Subscription
+URL: https://www.teleview.me/iptv-subscription/1-month
+Purpose: Detailed commercial landing page for the short-term 30-day subscription tier ($16.00 USD).
+Answers: What is the price of a 1-month IPTV plan? Is the 1-month plan a recurring contract? What is the best plan for testing my network?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/iptv-free-trial, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/iptv-subscription/1-month
 
-### Windows PC
-1. Download **IPTV Smarters Pro for Windows** or use **VLC Media Player**.
-2. For VLC: Click **Media** > **Open Network Stream** (Ctrl+N), paste your Teleview M3U Plus URL, and press **Play**.
+Page: 3 Months IPTV Subscription
+URL: https://www.teleview.me/iptv-subscription/3-months
+Purpose: Commercial landing page for the 90-day quarterly subscription tier ($39.00 USD / $13.00 per month).
+Answers: How much is the 3-month plan? What sports season fits a quarterly subscription? How does it compare to monthly pricing?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/iptv-subscription/6-months
+Source of truth: https://www.teleview.me/iptv-subscription/3-months
+
+Page: 6 Months IPTV Subscription
+URL: https://www.teleview.me/iptv-subscription/6-months
+Purpose: Commercial landing page for the 180-day semi-annual subscription tier ($60.00 USD / $10.00 per month).
+Answers: What are the savings on a 6-month IPTV plan? How does semi-annual billing compare to cable TV costs?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/iptv-subscription/12-months
+Source of truth: https://www.teleview.me/iptv-subscription/6-months
+
+Page: 12 Months IPTV Subscription
+URL: https://www.teleview.me/iptv-subscription/12-months
+Purpose: Commercial landing page for the flagship 365-day annual subscription tier ($90.00 USD / $7.50 per month).
+Answers: What is the lowest monthly equivalent price for Teleview? What benefits does the annual plan include?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/devices, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/iptv-subscription/12-months
+
+Page: 24-Hour IPTV Free Trial
+URL: https://www.teleview.me/iptv-free-trial
+Purpose: Dedicated evaluation page offering 24-hour test access to verify channel loading, ISP compatibility, and device performance.
+Answers: Does Teleview offer a free trial? How do I get an IPTV free trial? How long does the trial last? What is required to activate a trial?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/setup, https://www.teleview.me/help-center/connection-problems
+Source of truth: https://www.teleview.me/iptv-free-trial
+
+### Section B: Educational & Definitional Nodes
+
+Page: What Is IPTV?
+URL: https://www.teleview.me/what-is-iptv
+Purpose: Foundational educational guide explaining the mechanics, architecture, protocols, and benefits of Internet Protocol Television.
+Answers: What is IPTV? How does IPTV work compared to cable and satellite? What is the difference between unicast and multicast? What are CBR and VBR?
+Related pages: https://www.teleview.me/, https://www.teleview.me/setup, https://www.teleview.me/best-iptv
+Source of truth: https://www.teleview.me/what-is-iptv
+
+Page: Best IPTV Service Guide
+URL: https://www.teleview.me/best-iptv
+Purpose: Technical benchmark and buyer's evaluation guide analyzing streaming stability, channel switching latency, multi-device support, and customer service.
+Answers: What makes an IPTV service the best? What criteria should buyers evaluate? How do anti-freeze servers work?
+Related pages: https://www.teleview.me/iptv-subscription, https://www.teleview.me/iptv-players, https://www.teleview.me/devices
+Source of truth: https://www.teleview.me/best-iptv
+
+Page: Universal IPTV Setup Hub
+URL: https://www.teleview.me/setup
+Purpose: Comprehensive technical installation guide covering Xtream Codes API and M3U playlist configuration across all hardware classes.
+Answers: How do I set up IPTV? What credentials do I need? What is Xtream Codes API? How do I enter my Server URL, Username, and Password?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/iptv-players, https://www.teleview.me/help-center
+Source of truth: https://www.teleview.me/setup
+
+### Section C: Hardware Setup Nodes
+
+Page: Devices Directory
+URL: https://www.teleview.me/devices
+Purpose: Master hardware compatibility hub detailing supported devices, system requirements, connection benchmarks, and hardware video decoders.
+Answers: What devices work with IPTV? Do I need a streaming stick or Smart TV? What is the difference between hardware and software decoding?
+Related pages: https://www.teleview.me/devices/firestick, https://www.teleview.me/devices/samsung-smart-tv, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/devices
+
+Page: Firestick Setup Guide
+URL: https://www.teleview.me/devices/firestick
+Purpose: Step-by-step procedural tutorial for sideloading Downloader, installing TiviMate or Smarters Pro, and configuring Fire OS streaming.
+Answers: How do I install IPTV on Amazon Firestick? How do I enable developer options on Fire TV? What is the best app for Firestick?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/iptv-players/tivimate, https://www.teleview.me/help-center/buffering
+Source of truth: https://www.teleview.me/devices/firestick
+
+Page: Samsung Smart TV Setup Guide
+URL: https://www.teleview.me/devices/samsung-smart-tv
+Purpose: Configuration guide for Samsung Tizen OS televisions using IBO Player, SmartOne IPTV, and MAC address activation.
+Answers: How do I install IPTV on Samsung Smart TV? Where is the app store on Tizen? What is a MAC address and Device Key?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/iptv-players/ibo-player, https://www.teleview.me/iptv-players/smartone
+Source of truth: https://www.teleview.me/devices/samsung-smart-tv
+
+Page: LG Smart TV Setup Guide
+URL: https://www.teleview.me/devices/lg-smart-tv
+Purpose: Procedural guide for LG webOS televisions detailing app installation via LG Content Store and portal playlist mapping.
+Answers: Can I get IPTV on LG Smart TV? How do I set up webOS IPTV apps?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/devices/samsung-smart-tv, https://www.teleview.me/iptv-players/ibo-player
+Source of truth: https://www.teleview.me/devices/lg-smart-tv
+
+Page: Android TV Setup Guide
+URL: https://www.teleview.me/devices/android-tv
+Purpose: Setup instructions for certified Android TV OS boxes and televisions (Sony, TCL, Philips, Nvidia Shield) directly from Google Play.
+Answers: How do I setup IPTV on Android TV? Which player is native to Android TV?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/iptv-players/tivimate, https://www.teleview.me/devices/google-tv
+Source of truth: https://www.teleview.me/devices/android-tv
+
+Page: Apple TV Setup Guide
+URL: https://www.teleview.me/devices/apple-tv
+Purpose: Configuration walkthrough for Apple TV 4K (tvOS) and iOS devices using App Store IPTV players and Xtream Codes API.
+Answers: Can you watch IPTV on Apple TV? What is the best IPTV app for tvOS?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/iptv-players/iptv-smarters-pro, https://www.teleview.me/iptv-players/gse-smart-iptv
+Source of truth: https://www.teleview.me/devices/apple-tv
+
+Page: Roku Setup Guide
+URL: https://www.teleview.me/devices/roku
+Purpose: Technical walkthrough explaining Roku OS sideloading restrictions, screen mirroring workflows, and cast receiver integration.
+Answers: Can I put IPTV directly on Roku? Why does Roku block IPTV apps? How do I mirror streams to Roku?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/devices/firestick, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/devices/roku
+
+Page: Google TV Setup Guide
+URL: https://www.teleview.me/devices/google-tv
+Purpose: Procedural guide for Chromecast with Google TV, installation via Google Play Store, and storage optimization.
+Answers: How do I install IPTV on Google TV? How do I clear app cache on Chromecast?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/devices/android-tv, https://www.teleview.me/iptv-players/tivimate
+Source of truth: https://www.teleview.me/devices/google-tv
+
+Page: Formuler Setup Guide
+URL: https://www.teleview.me/devices/formuler
+Purpose: Advanced configuration for Formuler Z-Series set-top boxes utilizing MYTVOnline 2/3 and portal server URLs.
+Answers: How do I configure MYTVOnline on Formuler? What is Portal URL setup?
+Related pages: https://www.teleview.me/devices, https://www.teleview.me/setup, https://www.teleview.me/help-center/connection-problems
+Source of truth: https://www.teleview.me/devices/formuler
+
+### Section D: Third-Party IPTV Player Nodes
+
+Page: IPTV Players Directory
+URL: https://www.teleview.me/iptv-players
+Purpose: Overview and directory comparing features, codecs, and platform availability of popular third-party IPTV client apps.
+Answers: What are the best IPTV players? What is the difference between a player and a service? Which players support EPG?
+Related pages: https://www.teleview.me/iptv-players/tivimate, https://www.teleview.me/iptv-players/iptv-smarters-pro, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/iptv-players
+
+Page: TiviMate IPTV Player Guide
+URL: https://www.teleview.me/iptv-players/tivimate
+Purpose: In-depth setup, EPG assignment, multi-screen, and recording guide for the TiviMate application on Android TV and Fire OS.
+Answers: How do I set up TiviMate? How do I add Xtream Codes to TiviMate? How do I assign EPG channels?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/firestick, https://www.teleview.me/help-center/epg-not-working
+Source of truth: https://www.teleview.me/iptv-players/tivimate
+
+Page: IPTV Smarters Pro Guide
+URL: https://www.teleview.me/iptv-players/iptv-smarters-pro
+Purpose: Cross-platform setup tutorial for IPTV Smarters Pro on iOS, Android, Smart TVs, and desktop PCs.
+Answers: How do I log in to IPTV Smarters Pro? What are the Server URL, Username, and Password fields?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/apple-tv, https://www.teleview.me/devices/firestick
+Source of truth: https://www.teleview.me/iptv-players/iptv-smarters-pro
+
+Page: IBO Player Guide
+URL: https://www.teleview.me/iptv-players/ibo-player
+Purpose: Activation and playlist upload instructions for IBO Player on Samsung Tizen OS and LG webOS.
+Answers: How do I upload playlist to IBO Player? What is the IBO Player Device Key?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/samsung-smart-tv, https://www.teleview.me/devices/lg-smart-tv
+Source of truth: https://www.teleview.me/iptv-players/ibo-player
+
+Page: SmartOne IPTV Guide
+URL: https://www.teleview.me/iptv-players/smartone
+Purpose: Step-by-step tutorial for uploading M3U or Xtream credentials via the SmartOne web portal.
+Answers: How do I activate SmartOne IPTV? Where do I paste my playlist URL?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/samsung-smart-tv
+Source of truth: https://www.teleview.me/iptv-players/smartone
+
+Page: GSE Smart IPTV Guide
+URL: https://www.teleview.me/iptv-players/gse-smart-iptv
+Purpose: Advanced parsing, remote playlist download, and JSON configuration guide for GSE Smart IPTV on iOS and Android.
+Answers: How do I add a remote playlist in GSE Smart IPTV?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/apple-tv
+Source of truth: https://www.teleview.me/iptv-players/gse-smart-iptv
+
+Page: VLC Media Player Guide
+URL: https://www.teleview.me/iptv-players/vlc
+Purpose: Configuration tutorial for streaming M3U Plus playlists on Windows, macOS, and Linux desktop environments using VLC.
+Answers: How do I play IPTV on VLC? How do I view the channel playlist in VLC?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/iptv-players/vlc
+
+Page: OTT Navigator Guide
+URL: https://www.teleview.me/iptv-players/ott-navigator
+Purpose: Advanced hardware acceleration, AFR (Auto Frame Rate), and multi-provider configuration guide for OTT Navigator.
+Answers: How do I optimize buffering in OTT Navigator? How do I enable hardware codecs?
+Related pages: https://www.teleview.me/iptv-players, https://www.teleview.me/devices/android-tv, https://www.teleview.me/help-center/buffering
+Source of truth: https://www.teleview.me/iptv-players/ott-navigator
+
+### Section E: Diagnostic & Troubleshooting Nodes
+
+Page: Help Center Hub
+URL: https://www.teleview.me/help-center
+Purpose: Master troubleshooting and customer support portal indexing common playback, network, and configuration diagnostics.
+Answers: Where can I get help with my IPTV? Why is my stream buffering? Why did my channels stop loading?
+Related pages: https://www.teleview.me/help-center/buffering, https://www.teleview.me/help-center/connection-problems, https://www.teleview.me/contact
+Source of truth: https://www.teleview.me/help-center
+
+Page: Buffering & Freezing Diagnostic Guide
+URL: https://www.teleview.me/help-center/buffering
+Purpose: Technical troubleshooting protocol for stream stutter, buffering loops, ISP bandwidth throttling, and player cache saturation.
+Answers: Why does IPTV buffer during live sports? How do I fix buffering? How do I increase stream buffer size? Does a VPN stop ISP throttling?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/help-center/internet-speed, https://www.teleview.me/help-center/connection-problems
+Source of truth: https://www.teleview.me/help-center/buffering
+
+Page: Service Not Working Guide
+URL: https://www.teleview.me/help-center/not-working
+Purpose: Step-by-step recovery process when streams fail to connect, account authorization fails, or server timeouts occur.
+Answers: What do I do if Teleview is not working? Why am I getting an authorization failed error? How do I verify my credentials?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/setup, https://www.teleview.me/contact
+Source of truth: https://www.teleview.me/help-center/not-working
+
+Page: EPG TV Guide Not Working Guide
+URL: https://www.teleview.me/help-center/epg-not-working
+Purpose: Diagnostic walkthrough for missing program listings, 'No Information' guide errors, XMLTV URL syntax, and timezone offsets.
+Answers: Why is my TV guide blank? How do I fix EPG in TiviMate? How do I shift EPG time offset?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/iptv-players/tivimate, https://www.teleview.me/setup
+Source of truth: https://www.teleview.me/help-center/epg-not-working
+
+Page: Channels Not Loading Guide
+URL: https://www.teleview.me/help-center/channels-not-loading
+Purpose: Resolution procedures for black screens, audio-only playback, audio out-of-sync, and hardware vs. software decoder mismatches.
+Answers: Why are channels showing a black screen? Why is audio playing without video? How do I switch hardware decoders?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/devices, https://www.teleview.me/help-center/buffering
+Source of truth: https://www.teleview.me/help-center/channels-not-loading
+
+Page: Connection Problems Guide
+URL: https://www.teleview.me/help-center/connection-problems
+Purpose: Network routing, router firewall, DNS resolution, and Wi-Fi vs. Ethernet troubleshooting protocol.
+Answers: Why can't my device connect to the server? How do I change DNS to Cloudflare (1.1.1.1) or Google (8.8.8.8)? Should I use Ethernet?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/help-center/internet-speed, https://www.teleview.me/devices
+Source of truth: https://www.teleview.me/help-center/connection-problems
+
+Page: Internet Speed Requirements Guide
+URL: https://www.teleview.me/help-center/internet-speed
+Purpose: Authoritative bandwidth, ping latency, and jitter benchmark table required for reliable SD, HD, FHD, and 4K streaming.
+Answers: What internet speed do I need for IPTV? Does 4K IPTV require 50 Mbps? How does latency affect channel switching?
+Related pages: https://www.teleview.me/help-center, https://www.teleview.me/help-center/buffering, https://www.teleview.me/faq
+Source of truth: https://www.teleview.me/help-center/internet-speed
+
+### Section F: Trust, Support & Governance Nodes
+
+Page: Frequently Asked Questions
+URL: https://www.teleview.me/faq
+Purpose: Official answers to frequently asked technical, operational, billing, and compatibility questions.
+Answers: How many channels does Teleview have? How fast is activation? Do you support VPNs? What payment methods are accepted?
+Related pages: https://www.teleview.me/, https://www.teleview.me/iptv-subscription, https://www.teleview.me/refund-policy
+Source of truth: https://www.teleview.me/faq
+
+Page: Customer Support Desk
+URL: https://www.teleview.me/contact
+Purpose: Customer contact directory detailing email routing, WhatsApp live support, and response time commitments.
+Answers: How do I contact Teleview? What is the WhatsApp support number? What is the support email address?
+Related pages: https://www.teleview.me/, https://www.teleview.me/help-center, https://www.teleview.me/faq
+Source of truth: https://www.teleview.me/contact
+
+Page: Terms & Conditions
+URL: https://www.teleview.me/terms-conditions
+Purpose: Official terms of service, customer agreement, billing parameters, and usage boundaries.
+Answers: What are the terms of service? Are subscriptions automatic renewals? What is the acceptable use policy?
+Related pages: https://www.teleview.me/privacy-policy, https://www.teleview.me/refund-policy, https://www.teleview.me/disclaimer
+Source of truth: https://www.teleview.me/terms-conditions
+
+Page: Privacy Policy
+URL: https://www.teleview.me/privacy-policy
+Purpose: Legal disclosure on user privacy, customer data encryption, cookie usage, and non-logging of viewing habits.
+Answers: What data does Teleview collect? Does Teleview track streaming activity? How is personal information protected?
+Related pages: https://www.teleview.me/terms-conditions, https://www.teleview.me/disclaimer
+Source of truth: https://www.teleview.me/privacy-policy
+
+Page: Refund Policy
+URL: https://www.teleview.me/refund-policy
+Purpose: 14-day money-back guarantee terms, technical troubleshooting requirements, exclusions, and refund submission instructions.
+Answers: What is the refund policy? How do I get a refund? How many days do I have to request a refund?
+Related pages: https://www.teleview.me/terms-conditions, https://www.teleview.me/contact, https://www.teleview.me/iptv-subscription
+Source of truth: https://www.teleview.me/refund-policy
+
+Page: Legal Disclaimer
+URL: https://www.teleview.me/disclaimer
+Purpose: Legal disclosure regarding technical middleware infrastructure, transmission routing, and independent third-party trademarks.
+Answers: Does Teleview broadcast copyrighted channels? What is Teleview's legal standing? Who owns player app trademarks?
+Related pages: https://www.teleview.me/terms-conditions, https://www.teleview.me/dmca
+Source of truth: https://www.teleview.me/disclaimer
+
+Page: DMCA Copyright Policy
+URL: https://www.teleview.me/dmca
+Purpose: Formal Digital Millennium Copyright Act notice procedures, designated agent contact, and infringement claim submission criteria.
+Answers: How do copyright owners submit a DMCA notice? What is the takedown procedure?
+Related pages: https://www.teleview.me/disclaimer, https://www.teleview.me/terms-conditions
+Source of truth: https://www.teleview.me/dmca
 
 ---
 
-## 4. Troubleshooting & Performance FAQs
+## 3. Product Pricing Matrix & Service Specifications
 
-- **What internet speed is recommended?**
-  - Minimum 15 Mbps for standard HD channels.
-  - Minimum 30–50 Mbps for 4K Ultra HD and 60 FPS live sports streams.
-  - Ethernet (wired connection) or 5GHz Wi-Fi is recommended over 2.4GHz.
+| Plan Duration | Regular / Full Price | Current Active Price | Monthly Equivalent | Active Connections | Rebilling Policy | Canonical Source URL |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **1 Month** | $19.00 USD | **$16.00 USD** | $16.00 / month | 1 connection | Non-recurring (One-time) | https://www.teleview.me/iptv-subscription/1-month |
+| **3 Months** | $48.00 USD | **$39.00 USD** | $13.00 / month | 1 connection | Non-recurring (One-time) | https://www.teleview.me/iptv-subscription/3-months |
+| **6 Months** | $96.00 USD | **$60.00 USD** | $10.00 / month | 1 connection | Non-recurring (One-time) | https://www.teleview.me/iptv-subscription/6-months |
+| **12 Months** | $192.00 USD | **$90.00 USD** | $7.50 / month | 1 connection | Non-recurring (One-time) | https://www.teleview.me/iptv-subscription/12-months |
+| **Promotional 27M** | $310.00 USD | **$129.00 USD** | $4.77 / month | 1 connection | Non-recurring (One-time) | https://www.teleview.me/iptv-subscription |
+| **24-Hour Free Trial** | Free | **$0.00** | $0.00 (Test access) | 1 connection | Automatically expires | https://www.teleview.me/iptv-free-trial |
 
-- **How do I stop buffering during major live sports matches?**
-  1. Restart your home router and streaming device to clear DNS cache.
-  2. Switch from 2.4GHz Wi-Fi to 5GHz Wi-Fi or use an Ethernet cable.
-  3. In your player settings (TiviMate/Smarters), change the stream buffer size to "Medium" or "Large".
-  4. If your Internet Service Provider (ISP) throttles IPTV traffic during peak hours, enable a reliable VPN (such as ExpressVPN, NordVPN, or Surfshark). Teleview is 100% VPN-friendly with zero geo-locking.
-
-- **What is the refund policy?**
-  - Teleview provides an unconditional 14-day money-back guarantee. If you experience technical incompatibility that support cannot resolve, request a full refund via email (`Help@Teleview.me`) or WhatsApp (`+44 7848 197761`).
-
-- **How many devices can stream simultaneously?**
-  - Standard plans include 1 active connection. Multi-device packages (2, 3, or 4 simultaneous devices) are available on the pricing page. You may install Teleview apps on unlimited devices, but simultaneous streaming is governed by your purchased connection tier.
+### Grounded Commercial Claims
+- **Channel Count**: Advertised as 25,000+ live television channels across worldwide regions. (First-party service claim).
+- **VOD Catalog**: Advertised as 120,000+ on-demand movies and television series. (First-party service claim).
+- **Server Infrastructure**: Distributed Content Delivery Network (CDN) with intelligent load balancing and anti-freeze stream transcoding nodes.
+- **Activation Time**: Automated provisioning via WhatsApp or email upon purchase confirmation.
+- **Contract Commitment**: Zero automatic rebilling or hidden subscriptions. All durations expire unless manually renewed by the customer.
 
 ---
 
-## 5. Official Canonical Links Reference
-- Main Site: https://www.teleview.me/
-- Subscription Hub: https://www.teleview.me/iptv-subscription
-- Setup Instructions: https://www.teleview.me/setup
-- Supported Devices: https://www.teleview.me/devices
-- FAQ: https://www.teleview.me/faq
-- Contact Us: https://www.teleview.me/contact
-- Help Center: https://www.teleview.me/help-center
-- Account Portal: https://www.teleview.me/my-account
-- DMCA Compliance: https://www.teleview.me/dmca
-- Terms & Conditions: https://www.teleview.me/terms-conditions
-- Privacy Policy: https://www.teleview.me/privacy-policy
-- Refund Policy: https://www.teleview.me/refund-policy
-- Legal Disclaimer: https://www.teleview.me/disclaimer
+## 4. Technical Terminology & Industry Glossary
+
+- **IPTV (Internet Protocol Television)**: Delivery of television content over Internet Protocol (IP) networks rather than traditional terrestrial, satellite signal, or cable television formats.
+- **Xtream Codes API**: A standard database querying protocol used by modern IPTV applications. Instead of parsing massive static text playlists, Xtream Codes allows players to query categories, channel metadata, EPG, and VOD on-demand via three credentials: Server URL, Username, and Password.
+- **M3U / M3U8 Playlist**: Plaintext playlist format that lists stream media URIs alongside metadata tags (`#EXTINF`). M3U Plus incorporates extended parameters such as `tvg-id`, `tvg-name`, `tvg-logo`, and `group-title`.
+- **EPG (Electronic Program Guide) / XMLTV**: An XML-based schema used to distribute structured TV guide schedules, program synopses, start/end timestamps, and channel identifiers.
+- **Catch-Up TV**: Server-side recording functionality enabling subscribers to watch past broadcast television programs on supported channels within a defined time window (typically 24 to 72 hours).
+- **CBR vs. VBR Encoding**: Constant Bitrate (CBR) delivers video at an unvarying bandwidth rate, providing predictable buffer behavior for live sports; Variable Bitrate (VBR) adjusts data throughput based on scene complexity, optimizing bandwidth for video-on-demand.
+- **Hardware vs. Software Video Decoder**: Hardware decoding utilizes the device's dedicated GPU/VPU chip (e.g. Broadcom, Amlogic, Apple Silicon) for efficient H.264/HEVC/AV1 playback without CPU overheating. Software decoding relies on the CPU, causing frame drops on low-powered streaming sticks.
+- **Unicast Streaming**: Direct point-to-point network transmission between the media delivery edge server and a single subscriber client device.
+
+---
+
+## 5. Diagnostic Benchmarks & Network Thresholds
+
+| Stream Quality | Minimum Dedicated Bandwidth | Optimal Recommended Bandwidth | Maximum Tolerable Latency (Ping) | Recommended Connection |
+| :--- | :---: | :---: | :---: | :--- |
+| **SD (480p / 576p)** | 5 Mbps | 10 Mbps | < 150 ms | 2.4 GHz Wi-Fi or Cellular |
+| **HD (720p / 1080p Standard)** | 10 Mbps | 15 Mbps | < 100 ms | 5 GHz Wi-Fi |
+| **FHD (1080p 60 FPS Sports)** | 20 Mbps | 25 Mbps | < 60 ms | 5 GHz Wi-Fi or Ethernet |
+| **4K Ultra HD (2160p HDR)** | 35 Mbps | 50+ Mbps | < 40 ms | Direct Cat6 Ethernet Cable |
+
+---
+
+## 6. Machine-Readable Technical Endpoints
+
+- **XML Sitemap**: https://www.teleview.me/sitemap.xml (41 indexable canonical URLs)
+- **Robots Directives**: https://www.teleview.me/robots.txt (Crawler access policies)
+- **Machine-Readable Base Context**: https://www.teleview.me/llms.txt
+- **Machine-Readable Extended Knowledge**: https://www.teleview.me/llms-full.txt

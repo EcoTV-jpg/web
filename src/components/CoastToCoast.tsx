@@ -29,7 +29,7 @@ export default function CoastToCoast() {
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-phosphor-green/10 border border-phosphor-green/30 px-3 py-1 text-phosphor-green font-medium">
                 <Activity className="size-3.5 animate-pulse" aria-hidden="true" />
-                99.9% Global Network Uptime
+                Anti-Freeze Edge Network Routing
               </span>
             </div>
 

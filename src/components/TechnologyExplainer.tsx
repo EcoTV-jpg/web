@@ -28,7 +28,10 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">What is IPTV?</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                IPTV (Internet Protocol Television) represents the future of entertainment delivery. Unlike traditional cable or satellite TV, our advanced IPTV service transmits high-quality video content through secure internet protocols, providing superior streaming performance and flexibility that modern households deserve.
+                IPTV (Internet Protocol Television) represents the future of entertainment delivery. Unlike traditional cable or satellite TV, our advanced IPTV service transmits high-quality video content through secure internet protocols, providing superior streaming performance and flexibility.{" "}
+                <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1">
+                  Read architecture guide &rarr;
+                </a>
               </p>
             </div>
           </Reveal>
@@ -41,7 +44,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">How Our IPTV Subscription Works</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology converts television signals into digital data packets, delivered through optimized streaming servers worldwide. This ensures lightning-fast channel switching, crystal-clear 4K quality, and zero buffering—providing an entertainment experience that surpasses traditional broadcasting methods.
+                Our IPTV technology converts television signals into digital data packets, delivered through optimized streaming servers worldwide. This ensures fast channel switching, high-definition and 4K quality, and smooth streaming—providing an entertainment experience that surpasses traditional broadcasting methods.
               </p>
             </div>
           </Reveal>
@@ -54,18 +57,24 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">Why Choose Our IPTV Package?</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology ensures 99.9% uptime, zero buffering, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on high-performance servers for reliable performance.
+                Our IPTV technology delivers high-availability streaming infrastructure, anti-freeze edge routing, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on dedicated servers for reliable playback.
               </p>
             </div>
           </Reveal>
         </div>
 
         {/* Tutorial / Setup CTA */}
-        <Reveal delay={0.24} className="mt-12 text-center">
+        <Reveal delay={0.24} className="mt-12 text-center flex flex-wrap items-center justify-center gap-4">
           <GreenButton href="/setup" className="inline-flex items-center gap-2">
             <BookOpen className="size-4" aria-hidden="true" />
-            Read Our Complete Setup Guide
+            Read Complete Setup Guide
           </GreenButton>
+          <a
+            href="/what-is-iptv"
+            className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1.5"
+          >
+            Learn More: What Is IPTV? &rarr;
+          </a>
         </Reveal>
       </div>
     </section>

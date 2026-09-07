@@ -20,6 +20,7 @@ import {
   CheckCircle2,
   ExternalLink,
   AlertTriangle,
+  ArrowRight,
 } from "lucide-react";
 
 interface Article {
@@ -273,6 +274,7 @@ export default function HelpCenterPage() {
                       <li>Verify server/portal URL protocol and port.</li>
                       <li>Re-enter credentials without extra spaces.</li>
                       <li>Follow the <a href="/setup" className="text-phosphor-green hover:underline">Setup Guide</a> for syntax checks.</li>
+                      <li>If service stopped unexpectedly, review our <a href="/help-center/not-working" className="text-phosphor-green hover:underline">Diagnostic Checklist</a>.</li>
                     </ul>
                   </div>
                 </div>
@@ -299,7 +301,7 @@ export default function HelpCenterPage() {
                       <li>Confirm active subscription and account status.</li>
                       <li>Confirm credentials match your assigned profile.</li>
                       <li>Restart the player application and device.</li>
-                      <li>Test the connection again after restarting.</li>
+                      <li>Review our <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">Connection Problems Guide</a>.</li>
                     </ul>
                   </div>
                 </div>
@@ -327,7 +329,8 @@ export default function HelpCenterPage() {
                       <li>Restart router and streaming device.</li>
                       <li>Try another network (e.g. mobile hotspot).</li>
                       <li>Check DNS/network filtering (try 1.1.1.1 or 8.8.8.8).</li>
-                      <li>Re-enter the playlist or server URL information.</li>
+                      <li>Read our <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">Connection Problems Guide</a>.</li>
+                      <li>If video fails to open, see <a href="/help-center/channels-not-loading" className="text-phosphor-green hover:underline">Channels Not Loading</a>.</li>
                     </ul>
                   </div>
                 </div>
@@ -335,6 +338,130 @@ export default function HelpCenterPage() {
                   Contact support if connection consistently times out.
                 </div>
               </article>
+            </div>
+          </section>
+
+          {/* Section: Dedicated Troubleshooting & Diagnostic Guides */}
+          <section className="mb-12" aria-labelledby="troubleshooting-guides-heading">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h2 id="troubleshooting-guides-heading" className="text-base sm:text-lg font-bold text-snow">
+                  Dedicated Troubleshooting &amp; Diagnostic Manuals
+                </h2>
+                <p className="text-xs text-silver-mist mt-1">
+                  In-depth technical guides with root cause analyses, bandwidth benchmarks, and step-by-step resolution workflows:
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <a
+                href="/help-center/buffering"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    Performance Fix
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  Fix IPTV Buffering &amp; Freezing
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  Eliminate stream stuttering, packet jitter, ISP throttling, and cache delays during marquee sports events.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/not-working"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    Complete Checklist
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  IPTV Not Working? Diagnostic Guide
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  A structured 7-step triage from router ping and DNS inspection to subscription status verification.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/epg-not-working"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    EPG Schedule
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  Fix EPG Not Loading or Blank Schedules
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  Resolve missing program info, XMLTV parsing timeouts, and timezone synchronization offsets.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/channels-not-loading"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    Video &amp; Audio
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  Channels Not Loading &amp; Black Screen
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  Fix audio-only playback, hardware decoder mismatches, and H.265/AV1 video codec incompatibilities.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/connection-problems"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    Network &amp; DNS
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  Connection Problems &amp; Network Timeouts
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  Diagnose handshake failures, ISP server blocking, firewall filtering, and secure DNS bypass methods.
+                </p>
+              </a>
+
+              <a
+                href="/help-center/internet-speed"
+                className="rounded-xl border border-charcoal bg-ash/30 p-5 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                    Bandwidth Matrix
+                  </span>
+                  <ArrowRight className="size-3.5 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <h3 className="text-sm font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                  Internet Speed Needed for IPTV
+                </h3>
+                <p className="mt-1.5 text-xs text-silver-mist leading-relaxed">
+                  Bandwidth requirements for SD, Full HD, 4K HDR, multi-screen streaming, and Wi-Fi vs Ethernet benchmarks.
+                </p>
+              </a>
             </div>
           </section>
 
@@ -425,10 +552,10 @@ export default function HelpCenterPage() {
               <p className="text-xs text-silver-mist mt-1">Compare 1, 3, 6, and 12-month packages and savings.</p>
             </a>
 
-            <a href="/my-account" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
-              <Shield className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
-              <h3 className="text-sm font-semibold text-snow">My Account</h3>
-              <p className="text-xs text-silver-mist mt-1">Check subscription status and playlist credentials.</p>
+            <a href="/faq" className="card p-5 border border-charcoal/70 bg-ash/20 hover:border-phosphor-green/40 transition-colors group">
+              <HelpCircle className="size-5 text-phosphor-green mb-2 group-hover:scale-110 transition-transform" />
+              <h3 className="text-sm font-semibold text-snow">Frequently Asked Questions</h3>
+              <p className="text-xs text-silver-mist mt-1">Pre-purchase questions about channels, billing, and devices.</p>
             </a>
           </div>
 
@@ -436,7 +563,7 @@ export default function HelpCenterPage() {
           <div className="mt-12 card p-7 border border-phosphor-green/20 bg-phosphor-green/5 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-base font-semibold text-snow">Can't find the answer you need?</h3>
-              <p className="text-xs text-silver-mist mt-1">Our technical support engineers are online 24/7 on WhatsApp.</p>
+              <p className="text-xs text-silver-mist mt-1">Our technical support team is online 24/7 on WhatsApp.</p>
             </div>
             <div className="flex gap-3">
               <a

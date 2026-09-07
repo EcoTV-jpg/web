@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "siteName": "Teleview",
+    "siteUrl": "https://www.teleview.me",
+    "migrationDate": "2026-09-05",
+    "environment": "production",
+    "architecture": "Vite + React SSG + Tailwind CSS"
+  },
+  "summary": {
+    "canonicalIndexableRoutesCount": 40,
+    "nonIndexableRoutesCount": 3,
+    "redirectsCount": 20,
+    "totalSsgRenderedFiles": 41,
+    "sitemapUrl": "https://www.teleview.me/sitemap.xml",
+    "llmsTxtUrl": "https://www.teleview.me/llms.txt",
+    "llmsFullTxtUrl": "https://www.teleview.me/llms-full.txt"
+  },
+  "canonicalRoutes": [
+    {
+      "path": "/",
+      "fullUrl": "https://www.teleview.me",
+      "h1": "Best IPTV Service in 2026",
+      "title": "Teleview | 2026 Best IPTV Service With 24h Free Trial",
+      "primaryKeyword": "best IPTV service 2026",
+      "priority": 1,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/setup",
+      "fullUrl": "https://www.teleview.me/setup",
+      "h1": "IPTV Setup & Installation Guide",
+      "title": "IPTV Setup & Installation Guide | Teleview",
+      "primaryKeyword": "IPTV setup guide",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices",
+      "fullUrl": "https://www.teleview.me/devices",
+      "h1": "Supported IPTV Devices & Apps",
+      "title": "Supported IPTV Devices & Apps | Teleview",
+      "primaryKeyword": "supported IPTV devices and apps",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/faq",
+      "fullUrl": "https://www.teleview.me/faq",
+      "h1": "Frequently Asked Questions & Support",
+      "title": "IPTV Frequently Asked Questions & Support | Teleview",
+      "primaryKeyword": "IPTV frequently asked questions",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-subscription",
+      "fullUrl": "https://www.teleview.me/iptv-subscription",
+      "h1": "IPTV Subscription Plans & Pricing",
+      "title": "IPTV Subscription – Plans & Pricing | Teleview",
+      "primaryKeyword": "IPTV subscription plans",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/iptv-subscription/1-month",
+      "fullUrl": "https://www.teleview.me/iptv-subscription/1-month",
+      "h1": "1 Month IPTV Subscription",
+      "title": "1 Month IPTV Subscription – $16 | Teleview",
+      "primaryKeyword": "1 month IPTV subscription",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/iptv-subscription/3-months",
+      "fullUrl": "https://www.teleview.me/iptv-subscription/3-months",
+      "h1": "3 Months IPTV Subscription",
+      "title": "3 Months IPTV Subscription – $39 ($13/mo) | Teleview",
+      "primaryKeyword": "3 months IPTV subscription",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/iptv-subscription/6-months",
+      "fullUrl": "https://www.teleview.me/iptv-subscription/6-months",
+      "h1": "6 Months IPTV Subscription",
+      "title": "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
+      "primaryKeyword": "6 months IPTV subscription",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/iptv-subscription/12-months",
+      "fullUrl": "https://www.teleview.me/iptv-subscription/12-months",
+      "h1": "12 Months IPTV Subscription",
+      "title": "12 Months IPTV Subscription – $90 ($7.50/mo) | Teleview",
+      "primaryKeyword": "12 months IPTV subscription",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/contact",
+      "fullUrl": "https://www.teleview.me/contact",
+      "h1": "Contact Teleview Support",
+      "title": "Contact Teleview Support | 24/7 Customer Assistance",
+      "primaryKeyword": "contact Teleview support",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/terms-conditions",
+      "fullUrl": "https://www.teleview.me/terms-conditions",
+      "h1": "Terms & Conditions",
+      "title": "Terms & Conditions | Teleview IPTV",
+      "primaryKeyword": "Teleview terms and conditions",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/privacy-policy",
+      "fullUrl": "https://www.teleview.me/privacy-policy",
+      "h1": "Privacy Policy",
+      "title": "Privacy Policy | Teleview IPTV",
+      "primaryKeyword": "Teleview privacy policy",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/refund-policy",
+      "fullUrl": "https://www.teleview.me/refund-policy",
+      "h1": "Refund Policy",
+      "title": "Refund Policy & 14-Day Guarantee | Teleview IPTV",
+      "primaryKeyword": "Teleview refund policy 14 day guarantee",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/disclaimer",
+      "fullUrl": "https://www.teleview.me/disclaimer",
+      "h1": "Legal Disclaimer",
+      "title": "Legal Disclaimer & Copyright Notice | Teleview IPTV",
+      "primaryKeyword": "Teleview legal disclaimer and technology notice",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center",
+      "fullUrl": "https://www.teleview.me/help-center",
+      "h1": "Help Center",
+      "title": "Help Center & Knowledge Base | Teleview IPTV",
+      "primaryKeyword": "IPTV troubleshooting and knowledge base",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/dmca",
+      "fullUrl": "https://www.teleview.me/dmca",
+      "h1": "DMCA Notice",
+      "title": "DMCA Notice & Copyright Policy | Teleview IPTV",
+      "primaryKeyword": "Teleview DMCA notice and copyright policy",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/best-iptv",
+      "fullUrl": "https://www.teleview.me/best-iptv",
+      "h1": "Best IPTV Players & Apps",
+      "title": "Best IPTV Players & Apps in 2026 | Teleview",
+      "primaryKeyword": "best IPTV players",
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/what-is-iptv",
+      "fullUrl": "https://www.teleview.me/what-is-iptv",
+      "h1": "What Is IPTV? The Complete 2026 Technology Guide",
+      "title": "What Is IPTV? The Complete 2026 Streaming Technology Guide | Teleview",
+      "primaryKeyword": "what is IPTV",
+      "priority": 0.85,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players",
+      "fullUrl": "https://www.teleview.me/iptv-players",
+      "h1": "IPTV Players & Streaming Apps Directory",
+      "title": "IPTV Players & Streaming Apps Directory (2026) | Teleview",
+      "primaryKeyword": "IPTV player apps directory",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/iptv-players/tivimate",
+      "fullUrl": "https://www.teleview.me/iptv-players/tivimate",
+      "h1": "TiviMate IPTV Player: Features, Setup & Compatibility",
+      "title": "TiviMate IPTV Player: Setup, Features & Compatible Devices | Teleview",
+      "primaryKeyword": "TiviMate IPTV Player",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/iptv-smarters-pro",
+      "fullUrl": "https://www.teleview.me/iptv-players/iptv-smarters-pro",
+      "h1": "IPTV Smarters Pro: Features, Setup & Supported Devices",
+      "title": "IPTV Smarters Pro: Setup, Features & Supported Devices | Teleview",
+      "primaryKeyword": "IPTV Smarters Pro",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/ibo-player",
+      "fullUrl": "https://www.teleview.me/iptv-players/ibo-player",
+      "h1": "IBO Player: Smart TV Setup, Features & Device Activation",
+      "title": "IBO Player: IPTV Setup & Compatible Smart TVs | Teleview",
+      "primaryKeyword": "IBO Player",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/smartone",
+      "fullUrl": "https://www.teleview.me/iptv-players/smartone",
+      "h1": "SmartOne IPTV: Features, Setup & Smart TV Compatibility",
+      "title": "SmartOne IPTV: Setup, Features & Smart TV Installation | Teleview",
+      "primaryKeyword": "SmartOne IPTV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/gse-smart-iptv",
+      "fullUrl": "https://www.teleview.me/iptv-players/gse-smart-iptv",
+      "h1": "GSE Smart IPTV: Features, Apple TV Setup & iOS Compatibility",
+      "title": "GSE Smart IPTV: Apple iOS, Apple TV Setup & Features | Teleview",
+      "primaryKeyword": "GSE Smart IPTV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/vlc",
+      "fullUrl": "https://www.teleview.me/iptv-players/vlc",
+      "h1": "VLC Media Player for IPTV: M3U Setup & Stream Diagnostics",
+      "title": "VLC Media Player for IPTV: M3U Playback & Codec Setup | Teleview",
+      "primaryKeyword": "VLC IPTV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/iptv-players/ott-navigator",
+      "fullUrl": "https://www.teleview.me/iptv-players/ott-navigator",
+      "h1": "OTT Navigator IPTV: Power-User Features, Decoders & Setup",
+      "title": "OTT Navigator IPTV: Features, Advanced Setup & Decoders | Teleview",
+      "primaryKeyword": "OTT Navigator IPTV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/firestick",
+      "fullUrl": "https://www.teleview.me/devices/firestick",
+      "h1": "How to Set Up & Stream IPTV on Amazon Fire TV Stick",
+      "title": "How to Set Up & Stream IPTV on Amazon Firestick (2026) | Teleview",
+      "primaryKeyword": "IPTV on Firestick",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/samsung-smart-tv",
+      "fullUrl": "https://www.teleview.me/devices/samsung-smart-tv",
+      "h1": "How to Set Up & Stream IPTV on Samsung Smart TV",
+      "title": "How to Set Up & Stream IPTV on Samsung Smart TV | Teleview",
+      "primaryKeyword": "IPTV on Samsung Smart TV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/lg-smart-tv",
+      "fullUrl": "https://www.teleview.me/devices/lg-smart-tv",
+      "h1": "How to Set Up & Stream IPTV on LG Smart TV",
+      "title": "How to Set Up & Stream IPTV on LG Smart TV (webOS) | Teleview",
+      "primaryKeyword": "IPTV on LG Smart TV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/android-tv",
+      "fullUrl": "https://www.teleview.me/devices/android-tv",
+      "h1": "How to Set Up & Stream IPTV on Android TV Box",
+      "title": "How to Set Up & Stream IPTV on Android TV Box | Teleview",
+      "primaryKeyword": "IPTV on Android TV Box",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/apple-tv",
+      "fullUrl": "https://www.teleview.me/devices/apple-tv",
+      "h1": "How to Set Up & Stream IPTV on Apple TV 4K",
+      "title": "How to Set Up & Stream IPTV on Apple TV 4K (tvOS) | Teleview",
+      "primaryKeyword": "IPTV on Apple TV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/roku",
+      "fullUrl": "https://www.teleview.me/devices/roku",
+      "h1": "How to Stream IPTV on Roku Streaming Stick & TV",
+      "title": "How to Stream IPTV on Roku Streaming Stick & Roku TV | Teleview",
+      "primaryKeyword": "IPTV on Roku",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/google-tv",
+      "fullUrl": "https://www.teleview.me/devices/google-tv",
+      "h1": "How to Set Up & Stream IPTV on Google TV & Chromecast",
+      "title": "How to Set Up & Stream IPTV on Google TV & Chromecast | Teleview",
+      "primaryKeyword": "IPTV on Google TV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/devices/formuler",
+      "fullUrl": "https://www.teleview.me/devices/formuler",
+      "h1": "How to Set Up & Stream IPTV on Formuler Z-Series",
+      "title": "How to Set Up IPTV on Formuler (Z11 Pro Max / Z10) | Teleview",
+      "primaryKeyword": "IPTV on Formuler",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/buffering",
+      "fullUrl": "https://www.teleview.me/help-center/buffering",
+      "h1": "How to Stop IPTV Buffering & Freezing: 2026 Diagnostic Guide",
+      "title": "How to Stop IPTV Buffering & Freezing (2026 Guide) | Teleview",
+      "primaryKeyword": "how to stop IPTV buffering",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/not-working",
+      "fullUrl": "https://www.teleview.me/help-center/not-working",
+      "h1": "IPTV Not Working? Master Diagnostic Checklist & Solutions",
+      "title": "IPTV Not Working? Master Diagnostic Checklist & Fixes | Teleview",
+      "primaryKeyword": "IPTV not working",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/epg-not-working",
+      "fullUrl": "https://www.teleview.me/help-center/epg-not-working",
+      "h1": "How to Fix IPTV EPG (Electronic Program Guide) Not Loading",
+      "title": "How to Fix IPTV EPG Not Loading & 'No Information' | Teleview",
+      "primaryKeyword": "IPTV EPG not working",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/channels-not-loading",
+      "fullUrl": "https://www.teleview.me/help-center/channels-not-loading",
+      "h1": "How to Fix IPTV Channels & Playlists Not Loading",
+      "title": "How to Fix IPTV Channels & Playlists Not Loading | Teleview",
+      "primaryKeyword": "IPTV channels not loading",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/connection-problems",
+      "fullUrl": "https://www.teleview.me/help-center/connection-problems",
+      "h1": "How to Fix IPTV Connection Errors & Server Timeouts",
+      "title": "How to Fix IPTV Connection Errors & Server Timeouts | Teleview",
+      "primaryKeyword": "IPTV connection problems",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/help-center/internet-speed",
+      "fullUrl": "https://www.teleview.me/help-center/internet-speed",
+      "h1": "Internet Speed Requirements for 4K IPTV Streaming",
+      "title": "Internet Speed Requirements for 4K IPTV Streaming (2026) | Teleview",
+      "primaryKeyword": "internet speed for IPTV",
+      "priority": 0.8,
+      "changefreq": "monthly"
+    }
+  ],
+  "nonIndexableRoutes": [
+    {
+      "path": "/pricing",
+      "rendering": "Static",
+      "robots": "n/a (un-rendered / static / redirected)",
+      "reason": "Redirected to /iptv-subscription"
+    },
+    {
+      "path": "/my-account",
+      "rendering": "SSG",
+      "robots": "noindex, follow",
+      "reason": "Utility customer portal (private user state)"
+    },
+    {
+      "path": "/404",
+      "rendering": "Static",
+      "robots": "n/a (un-rendered / static / redirected)",
+      "reason": "Error template"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.teleview.me/:path*",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "host-canonicalization"
+    },
+    {
+      "source": "/best-iptv/tivimate",
+      "destination": "/iptv-players/tivimate",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/iptv-smarters-pro",
+      "destination": "/iptv-players/iptv-smarters-pro",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/ibo-player",
+      "destination": "/iptv-players/ibo-player",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/smartone",
+      "destination": "/iptv-players/smartone",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/gse-smart-iptv",
+      "destination": "/iptv-players/gse-smart-iptv",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/vlc",
+      "destination": "/iptv-players/vlc",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/best-iptv/ott-navigator",
+      "destination": "/iptv-players/ott-navigator",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/iptv-subscription",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/tutorial",
+      "destination": "/setup",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/installation-guide",
+      "destination": "/setup",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/help",
+      "destination": "/help-center",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/my-subscription",
+      "destination": "/my-account",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/dmca-report",
+      "destination": "/dmca",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/dmca-notice",
+      "destination": "/dmca",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-conditions",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/legal",
+      "destination": "/terms-conditions",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    },
+    {
+      "source": "/refund",
+      "destination": "/refund-policy",
+      "permanent": true,
+      "statusCode": 301,
+      "type": "path-migration"
+    }
+  ]
+}

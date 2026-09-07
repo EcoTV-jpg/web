@@ -13,6 +13,12 @@
     "test:jsonld": "node scripts/extract-and-validate-jsonld.mjs",
     "test:ai": "node scripts/verify-ai-readiness.mjs",
     "test:best-iptv": "node scripts/verify-best-iptv.mjs",
+    "test:freshness": "node scripts/content-freshness-audit.mjs",
+    "test:slugs": "node scripts/test-unknown-slugs.mjs",
+    "test:sitemap": "node scripts/validate-sitemap.mjs",
+    "seo:sitemap-audit": "node scripts/validate-sitemap.mjs",
+    "test:semantic": "node scripts/semantic-seo-audit.mjs",
+    "seo:semantic-audit": "node scripts/semantic-seo-audit.mjs",
     "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {

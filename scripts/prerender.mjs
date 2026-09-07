@@ -21,7 +21,7 @@ async function prerender() {
 
   const serverEntryPath = path.resolve(rootDir, "dist-ssr/entry-server.js");
   const { render } = await import(pathToFileURL(serverEntryPath).href);
-  const { indexableRoutes } = await import("../src/routes.ts");
+  const { prerenderRoutes } = await import("../src/routes.ts");
   const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
 
   const distDir = path.resolve(rootDir, "dist");
@@ -32,7 +32,7 @@ async function prerender() {
 
   const baseTemplate = fs.readFileSync(distIndexPath, "utf-8");
 
-  for (const route of indexableRoutes) {
+  for (const route of prerenderRoutes) {
     const { html, schemas } = render(route.path);
     let pageHtml = baseTemplate;
 
@@ -56,6 +56,12 @@ async function prerender() {
       /<link[^>]*rel=["']canonical["'][^>]*\/?>/i,
       () => `<link rel="canonical" href="${canonicalUrl}" />`
     );
+
+    // Update <meta name="robots">
+    const robotsTag = route.indexable === false
+      ? '<meta name="robots" content="noindex, follow" />'
+      : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />';
+    pageHtml = pageHtml.replace(/<meta[^>]*name=["']robots["'][^>]*\/?>/i, () => robotsTag);
 
     // Update Open Graph tags
     pageHtml = pageHtml
@@ -116,6 +122,14 @@ async function prerender() {
 
     fs.writeFileSync(targetPath, pageHtml, "utf-8");
     console.log(`[SSG] Pre-rendered ${route.path} → ${path.relative(rootDir, targetPath)} (${html.length} chars rendered)`);
+
+    if (route.path === "/404") {
+      const dist404Html = path.resolve(distDir, "404.html");
+      const public404Html = path.resolve(rootDir, "public/404.html");
+      fs.writeFileSync(dist404Html, pageHtml, "utf-8");
+      fs.writeFileSync(public404Html, pageHtml, "utf-8");
+      console.log(`[SSG] Static 404 handler written → ${path.relative(rootDir, dist404Html)} and ${path.relative(rootDir, public404Html)}`);
+    }
   }
 
   // Clean up temporary dist-ssr directory

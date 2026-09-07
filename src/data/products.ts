@@ -390,7 +390,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     ctaText: "Choose 6 Months",
     metaTitle: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     metaDescription:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and 99.9% uptime on all devices.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and anti-freeze reliability on all devices.",
   },
 
   "12-months": {
@@ -528,7 +528,7 @@ export const subscriptionHubData = {
     },
     {
       title: "Ultra-Fast Anti-Freeze Infrastructure",
-      desc: "Stream with 99.9% guaranteed server uptime backed by worldwide low-latency CDNs and intelligent packet routing.",
+      desc: "Stream with high-availability infrastructure backed by worldwide low-latency CDNs and intelligent packet routing.",
     },
     {
       title: "No Long-Term Contracts",

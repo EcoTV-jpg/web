@@ -8,21 +8,18 @@ const rootDir = path.resolve(__dirname, "..");
 
 async function generateSitemap() {
   const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
-  const { indexableRoutes } = await import("../src/routes.ts");
+  const { sitemapRoutes } = await import("../src/routes.ts");
 
-  const today = new Date().toISOString().split("T")[0];
+  const defaultLastmod = "2026-09-06";
 
-  const xmlUrls = indexableRoutes
+  const xmlUrls = sitemapRoutes
     .map((route) => {
       const loc = getCanonicalUrl(route.path);
-      const changefreq = route.changefreq || "weekly";
-      const priority = (route.priority !== undefined ? route.priority : 0.8).toFixed(1);
+      const lastmod = route.lastmod || defaultLastmod;
 
       return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
+    <lastmod>${lastmod}</lastmod>
   </url>`;
     })
     .join("\n");
@@ -43,7 +40,7 @@ ${xmlUrls}
     fs.writeFileSync(path.resolve(distDir, "sitemap.xml"), sitemapContent, "utf-8");
   }
 
-  console.log(`[Sitemap] Generated valid sitemap.xml with ${indexableRoutes.length} indexable route(s).`);
+  console.log(`[Sitemap] Generated valid sitemap.xml with ${sitemapRoutes.length} approved route(s).`);
 }
 
 generateSitemap().catch((err) => {

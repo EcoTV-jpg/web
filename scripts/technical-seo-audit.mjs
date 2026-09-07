@@ -150,6 +150,7 @@ async function runTechnicalSeoAudit() {
   const distHelpCenter = path.resolve(distDir, "help-center/index.html");
   const distAccount = path.resolve(distDir, "my-account/index.html");
   const distDmca = path.resolve(distDir, "dmca/index.html");
+  const distFreeTrial = path.resolve(distDir, "iptv-free-trial/index.html");
   const distRobots = path.resolve(distDir, "robots.txt");
   const distSitemap = path.resolve(distDir, "sitemap.xml");
 
@@ -158,6 +159,7 @@ async function runTechnicalSeoAudit() {
   assert("SSG", "dist/devices/index.html exists", fs.existsSync(distDevices));
   assert("SSG", "dist/faq/index.html exists", fs.existsSync(distFaq));
   assert("SSG", "dist/iptv-subscription/index.html exists", fs.existsSync(distSubscription));
+  assert("SSG", "dist/iptv-free-trial/index.html exists", fs.existsSync(distFreeTrial));
   assert("SSG", "dist/iptv-subscription/1-month/index.html exists", fs.existsSync(dist1Month));
   assert("SSG", "dist/iptv-subscription/3-months/index.html exists", fs.existsSync(dist3Months));
   assert("SSG", "dist/iptv-subscription/6-months/index.html exists", fs.existsSync(dist6Months));
@@ -196,22 +198,23 @@ async function runTechnicalSeoAudit() {
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
     { path: "/", file: distIndex, expectedTitle: "Teleview", expectedH1: "IPTV Service", expectedCanonical: "https://www.teleview.me/" },
-    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup" },
+    { path: "/setup", file: distSetup, expectedTitle: "IPTV Setup & Installation Guide", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", inSitemap: false },
     { path: "/devices", file: distDevices, expectedTitle: "Supported IPTV Devices & Apps", expectedH1: "Supported IPTV", expectedCanonical: "https://www.teleview.me/devices" },
-    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq" },
+    { path: "/faq", file: distFaq, expectedTitle: "IPTV Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", inSitemap: false },
     { path: "/iptv-subscription", file: distSubscription, expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription" },
+    { path: "/iptv-free-trial", file: distFreeTrial, expectedTitle: "IPTV Free Trial", expectedH1: "IPTV Free Trial", expectedCanonical: "https://www.teleview.me/iptv-free-trial" },
     { path: "/iptv-subscription/1-month", file: dist1Month, expectedTitle: "1 Month IPTV Subscription", expectedH1: "1 Month IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/1-month" },
     { path: "/iptv-subscription/3-months", file: dist3Months, expectedTitle: "3 Months IPTV Subscription", expectedH1: "3 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months" },
     { path: "/iptv-subscription/6-months", file: dist6Months, expectedTitle: "6 Months IPTV Subscription", expectedH1: "6 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months" },
     { path: "/iptv-subscription/12-months", file: dist12Months, expectedTitle: "12 Months IPTV Subscription", expectedH1: "12 Months IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months" },
-    { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact" },
-    { path: "/terms-conditions", file: distTerms, expectedTitle: "Terms & Conditions", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions" },
-    { path: "/privacy-policy", file: distPrivacy, expectedTitle: "Privacy Policy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy" },
-    { path: "/refund-policy", file: distRefund, expectedTitle: "Refund Policy", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy" },
-    { path: "/disclaimer", file: distDisclaimer, expectedTitle: "Legal Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer" },
+    { path: "/contact", file: distContact, expectedTitle: "Contact Teleview Support", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact", inSitemap: false },
+    { path: "/terms-conditions", file: distTerms, expectedTitle: "Terms & Conditions", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions", inSitemap: false },
+    { path: "/privacy-policy", file: distPrivacy, expectedTitle: "Privacy Policy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy", inSitemap: false },
+    { path: "/refund-policy", file: distRefund, expectedTitle: "Refund Policy", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy", inSitemap: false },
+    { path: "/disclaimer", file: distDisclaimer, expectedTitle: "Legal Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer", inSitemap: false },
     { path: "/help-center", file: distHelpCenter, expectedTitle: "Help Center", expectedH1: "Help Center", expectedCanonical: "https://www.teleview.me/help-center" },
-    { path: "/my-account", file: distAccount, expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account" },
-    { path: "/dmca", file: distDmca, expectedTitle: "DMCA Notice", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca" },
+    { path: "/my-account", file: distAccount, expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account", indexable: false },
+    { path: "/dmca", file: distDmca, expectedTitle: "DMCA Notice", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", inSitemap: false },
   ];
 
   for (const page of pagesToTest) {
@@ -244,9 +247,13 @@ async function runTechnicalSeoAudit() {
 
     assert("LEGACY_REFERENCES", `No legacy Helix references in ${page.path}`, !rawHtml.toLowerCase().includes("helix"));
 
-    // No noindex tags check
+    // No noindex tags check (except for non-indexable routes like /my-account)
     const noindexMatch = rawHtml.match(/<meta[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex[^"']*["']/i);
-    assert("INDEXABILITY", `Page is indexable in ${page.path}`, !noindexMatch);
+    if (page.indexable === false) {
+      assert("INDEXABILITY", `Page has noindex directive in ${page.path}`, Boolean(noindexMatch));
+    } else {
+      assert("INDEXABILITY", `Page is indexable in ${page.path}`, !noindexMatch);
+    }
 
     // Google Search Console verification meta tag check
     assert("VERIFICATION", `Google site verification meta tag in ${page.path}`, rawHtml.includes('name="google-site-verification" content="1rid_WjenjLtgknH6diVVgeyIOB5xT1zamR7YT1eEdc"'));
@@ -312,8 +319,13 @@ async function runTechnicalSeoAudit() {
         } else if (page.path === "/devices") {
           assert("BREADCRUMBS", "BreadcrumbList schema present in /devices", types.includes("BreadcrumbList"));
         } else if (page.path === "/") {
-          assert("ENTITY_GRAPH", "Product schema present in /", types.includes("Product"));
-        } else if (page.path.startsWith("/iptv-subscription")) {
+          assert("ENTITY_GRAPH", "Service schema present in /", types.includes("Service"));
+          assert("ENTITY_GRAPH", "No Product schema in /", !types.includes("Product"));
+        } else if (page.path === "/iptv-subscription") {
+          assert("ENTITY_GRAPH", "Service schema present in /iptv-subscription", types.includes("Service"));
+          assert("ENTITY_GRAPH", "No Product schema in /iptv-subscription", !types.includes("Product"));
+          assert("BREADCRUMBS", "BreadcrumbList schema present in /iptv-subscription", types.includes("BreadcrumbList"));
+        } else if (page.path.startsWith("/iptv-subscription/")) {
           assert("ENTITY_GRAPH", `Product schema present in ${page.path}`, types.includes("Product"));
           assert("BREADCRUMBS", `BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
         }
@@ -327,7 +339,11 @@ async function runTechnicalSeoAudit() {
   console.log("\n--- 5. SITEMAP & ROBOTS INTEGRITY ---");
   const sitemapContent = fs.readFileSync(distSitemap, "utf-8");
   for (const page of pagesToTest) {
-    assert("SITEMAP", `Sitemap contains ${page.expectedCanonical}`, sitemapContent.includes(page.expectedCanonical));
+    if (page.indexable === false || page.inSitemap === false) {
+      assert("SITEMAP", `Sitemap excludes non-sitemap page ${page.expectedCanonical}`, !sitemapContent.includes(page.expectedCanonical));
+    } else {
+      assert("SITEMAP", `Sitemap contains ${page.expectedCanonical}`, sitemapContent.includes(page.expectedCanonical));
+    }
   }
 
   const robotsContent = fs.readFileSync(distRobots, "utf-8");

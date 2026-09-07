@@ -1,0 +1,154 @@
+[
+  {
+    "from": "/best-iptv/tivimate",
+    "to": "/iptv-players/tivimate",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/iptv-smarters-pro",
+    "to": "/iptv-players/iptv-smarters-pro",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/ibo-player",
+    "to": "/iptv-players/ibo-player",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/smartone",
+    "to": "/iptv-players/smartone",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/gse-smart-iptv",
+    "to": "/iptv-players/gse-smart-iptv",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/vlc",
+    "to": "/iptv-players/vlc",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/best-iptv/ott-navigator",
+    "to": "/iptv-players/ott-navigator",
+    "status": 301,
+    "reason": "Player content migrated from comparison cluster to dedicated /iptv-players/ taxonomy",
+    "confidence": "HIGH",
+    "risk": "MEDIUM"
+  },
+  {
+    "from": "/pricing",
+    "to": "/iptv-subscription",
+    "status": 301,
+    "reason": "Legacy commercial pricing alias redirected to primary subscription hub",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/tutorial",
+    "to": "/setup",
+    "status": 301,
+    "reason": "Legacy tutorial alias redirected to primary setup guide",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/installation-guide",
+    "to": "/setup",
+    "status": 301,
+    "reason": "Legacy installation guide alias redirected to primary setup guide",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/contact-us",
+    "to": "/contact",
+    "status": 301,
+    "reason": "Legacy contact URL redirected to primary contact route",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/help",
+    "to": "/help-center",
+    "status": 301,
+    "reason": "Legacy help URL redirected to primary help center",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/my-subscription",
+    "to": "/my-account",
+    "status": 301,
+    "reason": "Legacy account URL redirected to my-account utility",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/dmca-report",
+    "to": "/dmca",
+    "status": 301,
+    "reason": "Legacy DMCA alias redirected to primary DMCA policy",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/dmca-notice",
+    "to": "/dmca",
+    "status": 301,
+    "reason": "Legacy DMCA notice alias redirected to primary DMCA policy",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/terms",
+    "to": "/terms-conditions",
+    "status": 301,
+    "reason": "Legacy terms alias redirected to primary terms & conditions",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/legal",
+    "to": "/terms-conditions",
+    "status": 301,
+    "reason": "Legacy legal alias redirected to primary terms & conditions",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/privacy",
+    "to": "/privacy-policy",
+    "status": 301,
+    "reason": "Legacy privacy alias redirected to primary privacy policy",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  },
+  {
+    "from": "/refund",
+    "to": "/refund-policy",
+    "status": 301,
+    "reason": "Legacy refund alias redirected to primary refund policy",
+    "confidence": "HIGH",
+    "risk": "LOW"
+  }
+]

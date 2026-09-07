@@ -10,10 +10,13 @@ export default function Hero() {
         {/* Eyebrow Trust Badge */}
         <Reveal>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green">
+            <a
+              href="/iptv-free-trial"
+              className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green transition-colors duration-200 hover:border-phosphor-green hover:bg-phosphor-green/20"
+            >
               <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
-              15+ Years of Excellence
-            </span>
+              24h Free Trial Available
+            </a>
             <a
               href="#pricing"
               className="inline-flex items-center gap-2 rounded-full border border-charcoal bg-ash px-4 py-1 text-xs font-normal text-silver-mist transition-colors duration-200 hover:border-graphite hover:text-snow"
@@ -24,6 +27,7 @@ export default function Hero() {
             </a>
           </div>
         </Reveal>
+
 
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
@@ -68,46 +72,7 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        {/* Supported Device Icons */}
-        <Reveal delay={0.28}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3">
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Fire TV">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#firetv"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android TV">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#androidtv"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple TV (tvOS)">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#tvos"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Apple iOS">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#ios"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Android">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#android"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="Windows">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#windows"></use>
-              </svg>
-            </span>
-            <span className="inline-flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl border border-white/10 bg-ink-800/60 text-white/80 transition-transform duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:text-white" title="macOS">
-              <svg role="img" className="size-5 sm:size-6" fill="currentColor" aria-hidden="true">
-                <use href="/device-icons.svg#macos"></use>
-              </svg>
-            </span>
-          </div>
-        </Reveal>
+
 
         {/* Hero Media */}
         <Reveal delay={0.34} className="mx-auto mt-14 max-w-[880px] sm:mt-16">
@@ -118,9 +83,9 @@ export default function Hero() {
                 <img
                   src="/images/teleview-fans.jpg"
                   alt="Sports fans celebrating with snacks while watching Teleview"
-                  className="media-mono w-full"
-                  width={900}
-                  height={600}
+                  className="media-mono w-full aspect-[1586/992]"
+                  width={1586}
+                  height={992}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
@@ -147,7 +112,7 @@ export default function Hero() {
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
               <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">1,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Verified Reviews</p>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Subscribers</p>
             </div>
           </div>
         </Reveal>

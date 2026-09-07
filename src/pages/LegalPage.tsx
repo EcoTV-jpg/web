@@ -225,7 +225,7 @@ function TermsContent() {
           Streaming Quality &amp; Network Conditions
         </h2>
         <p>
-          Teleview employs enterprise-grade worldwide Content Delivery Networks (CDNs) to deliver fast, 99.9% uptime streams in 4K Ultra HD, FHD, and HD. However, end-user playback performance depends on multiple external variables outside our direct control, including:
+          Teleview employs enterprise-grade worldwide Content Delivery Networks (CDNs) to deliver fast, high-availability streams in 4K Ultra HD, FHD, and HD. However, end-user playback performance depends on multiple external variables outside our direct control, including:
         </p>
         <ul className="space-y-1.5 pl-4 list-disc marker:text-phosphor-green">
           <li>Your internet service provider (ISP) speed, routing, and bandwidth limits.</li>

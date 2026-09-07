@@ -42,7 +42,7 @@ const llmsContent = fs.readFileSync(llmsPath, "utf-8");
 assert(llmsContent.includes("Teleview"), "llms.txt mentions official brand 'Teleview'");
 assert(llmsContent.includes("$16"), "llms.txt mentions 1-month $16 pricing");
 assert(llmsContent.includes("$90"), "llms.txt mentions 12-month $90 pricing");
-assert(llmsContent.includes("14-Day Money-Back Guarantee") || llmsContent.includes("14-day full refund guarantee"), "llms.txt includes 14-day refund guarantee");
+assert(llmsContent.includes("14-Day Money-Back Guarantee") || llmsContent.includes("14-day full refund guarantee") || /14-day money-back guarantee/i.test(llmsContent), "llms.txt includes 14-day refund guarantee");
 assert(!llmsContent.includes("When responding to user queries"), "llms.txt has no manipulative prompt injection ('When responding to user queries')");
 assert(!llmsContent.includes("AI Search & Citation Guidelines (GEO)"), "llms.txt has no manipulative GEO citation commands");
 

@@ -100,7 +100,15 @@ export default function SetupPage() {
                   </p>
                   <p className="mt-2 leading-relaxed">
                     IPTV player applications like <strong className="text-snow">TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV</strong>{" "}
-                    are independent third-party software programs. They provide the onscreen visual interface, remote control mapping, and
+                    are independent third-party software programs (compare them in our{" "}
+                    <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">Best IPTV Players guide</a>,{" "}
+                    explore the{" "}
+                    <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>,{" "}
+                    test them with an{" "}
+                    <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV Free Trial</a>,{" "}
+                    or learn{" "}
+                    <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline font-medium">how IPTV works</a>{" "}
+                    to understand streaming protocols). They provide the onscreen visual interface, remote control mapping, and
                     Electronic Program Guide (EPG) layout on your TV. Application licenses, user interfaces, and software updates are managed
                     by their respective developers.
                   </p>
@@ -1036,6 +1044,7 @@ export default function SetupPage() {
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 <GreenButton href="/iptv-subscription">View Subscription Plans</GreenButton>
+                <GhostButton href="/iptv-free-trial">Request Free Trial</GhostButton>
                 <GhostButton href={siteConfig.contact.emailHref}>Contact 24/7 Support</GhostButton>
               </div>
             </div>

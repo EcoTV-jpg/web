@@ -3,6 +3,13 @@ import { faqs } from "../data/site";
 import { routes } from "../routes";
 import { subscriptionPlans, subscriptionHubData } from "../data/products";
 import { bestIptvAppsList, hubFaqs } from "../data/bestIptvApps";
+import { deviceGuidesList } from "../data/deviceGuides";
+import { troubleshootingGuidesList } from "../data/troubleshootingGuides";
+import { whatIsIptvFaqs } from "../data/whatIsIptv";
+import { freeTrialData } from "../data/freeTrial";
+import { pricingFaqs } from "../data/pricingGuide";
+import { informationalGuidesList } from "../data/informationalGuides";
+import { featureGuidesList } from "../data/featureGuides";
 
 export interface SEOProps {
   title?: string;
@@ -28,10 +35,7 @@ export interface SEOProps {
  */
 export function generateStructuredData(path: string = "/") {
   const cleanPath = path === "/" ? "/" : path.replace(/\/$/, "");
-  const route = routes.find((r) => r.path === cleanPath) || routes[0];
-  const pageUrl = getCanonicalUrl(cleanPath);
-  const pageTitle = route.title || siteConfig.defaultTitle;
-  const pageDesc = route.description || siteConfig.defaultDescription;
+  const route = routes.find((r) => r.path === cleanPath);
 
   // 1. Organization (Stable entity across the entire website)
   const orgSchema = {
@@ -76,6 +80,18 @@ export function generateStructuredData(path: string = "/") {
     inLanguage: siteConfig.language,
   };
 
+  // For unknown routes or 404, return ONLY foundational site schemas (no entity schemas, no false breadcrumbs)
+  if (!route || cleanPath === "/404") {
+    return {
+      "@context": "https://schema.org",
+      "@graph": [orgSchema, websiteSchema],
+    };
+  }
+
+  const pageUrl = getCanonicalUrl(cleanPath);
+  const pageTitle = route.title || siteConfig.defaultTitle;
+  const pageDesc = route.description || siteConfig.defaultDescription;
+
   // 3. BreadcrumbList (Matches visible DOM breadcrumbs exactly for non-root routes)
   let breadcrumbSchema: any = null;
   if (cleanPath !== "/") {
@@ -106,8 +122,8 @@ export function generateStructuredData(path: string = "/") {
           },
         ],
       };
-    } else if (cleanPath.startsWith("/best-iptv/")) {
-      const slug = cleanPath.replace("/best-iptv/", "");
+    } else if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
+      const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
       const app = bestIptvAppsList.find((a) => a.slug === slug);
       const appName = app ? app.shortName : (route.breadcrumbName || "Player");
       breadcrumbSchema = {
@@ -123,13 +139,135 @@ export function generateStructuredData(path: string = "/") {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Best IPTV Players",
-            item: `${siteConfig.url}/best-iptv`,
+            name: "IPTV Players",
+            item: `${siteConfig.url}/iptv-players`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: appName,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (cleanPath.startsWith("/devices/")) {
+      const slug = cleanPath.replace("/devices/", "");
+      const device = deviceGuidesList.find((d) => d.slug === slug);
+      const deviceName = device ? device.name : (route.breadcrumbName || "Device");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Supported Devices",
+            item: `${siteConfig.url}/devices`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: deviceName,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (cleanPath.startsWith("/help-center/")) {
+      const slug = cleanPath.replace("/help-center/", "");
+      const guide = troubleshootingGuidesList.find((g) => g.slug === slug);
+      const guideName = guide ? guide.name : (route.breadcrumbName || "Troubleshooting");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Help Center",
+            item: `${siteConfig.url}/help-center`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: guideName,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (
+      cleanPath === "/how-does-iptv-work" ||
+      cleanPath === "/is-iptv-legal" ||
+      cleanPath === "/is-iptv-safe" ||
+      cleanPath === "/iptv-cost" ||
+      cleanPath === "/iptv-vs-cable"
+    ) {
+      const slug = cleanPath.slice(1);
+      const infoGuide = informationalGuidesList.find((g) => g.slug === slug);
+      const guideTitle = infoGuide?.breadcrumbName || (route.breadcrumbName || "Guide");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Knowledge Base",
+            item: `${siteConfig.url}/what-is-iptv`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: guideTitle,
+            item: pageUrl,
+          },
+        ],
+      };
+    } else if (
+      cleanPath === "/iptv-channels" ||
+      cleanPath === "/iptv-sports" ||
+      cleanPath === "/iptv-movies"
+    ) {
+      const slug = cleanPath.slice(1);
+      const featureGuide = featureGuidesList.find((f) => f.slug === slug);
+      const featureTitle = featureGuide ? featureGuide.h1.split(":")[0].trim() : (route.breadcrumbName || "Feature");
+      breadcrumbSchema = {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${siteConfig.url}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Features",
+            item: `${siteConfig.url}/best-iptv`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: featureTitle,
             item: pageUrl,
           },
         ],
@@ -347,9 +485,9 @@ export function generateStructuredData(path: string = "/") {
     const hubArticleSchema = {
       "@type": "TechArticle",
       "@id": `${siteConfig.url}/best-iptv#article`,
-      headline: "Best IPTV Players & Apps in 2026: Comprehensive Comparison",
+      headline: "Best IPTV Services in 2026: Comparison & Buying Guide",
       description:
-        "Detailed technical comparison of the top IPTV player applications across Firestick, Android TV, Smart TVs, Apple iOS, and desktop computers.",
+        "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
       url: `${siteConfig.url}/best-iptv`,
       inLanguage: siteConfig.language,
       author: {
@@ -359,9 +497,10 @@ export function generateStructuredData(path: string = "/") {
         "@id": siteConfig.entityIds.organization,
       },
       datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-04T18:00:00+00:00",
+      dateModified: "2026-09-06T18:15:00+00:00",
       proficiencyLevel: "Beginner",
       about: [
+        { "@type": "Thing", name: "IPTV Service" },
         { "@type": "Thing", name: "IPTV Player" },
         { "@type": "Thing", name: "Media Streaming Applications" },
       ],
@@ -383,9 +522,74 @@ export function generateStructuredData(path: string = "/") {
     graphEntities.push(hubArticleSchema, bestIptvFaqSchema);
   }
 
-  // Route: /best-iptv/:slug (Individual App Guide Pages)
-  if (cleanPath.startsWith("/best-iptv/")) {
-    const slug = cleanPath.replace("/best-iptv/", "");
+  // Route: /what-is-iptv (Pillar Page)
+  if (cleanPath === "/what-is-iptv") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/what-is-iptv#article` };
+    const whatIsArticleSchema = {
+      "@type": "Article",
+      "@id": `${siteConfig.url}/what-is-iptv#article`,
+      headline: route.h1 || "What Is IPTV? The Complete 2026 Technology Guide",
+      description: route.description,
+      url: pageUrl,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-05T00:00:00+00:00",
+      about: [
+        { "@type": "Thing", name: "IPTV" },
+        { "@type": "Thing", name: "Internet Protocol Television" },
+        { "@type": "Thing", name: "Streaming Technology" },
+      ],
+    };
+
+    const whatIsFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/what-is-iptv#faq`,
+      mainEntity: whatIsIptvFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(whatIsArticleSchema, whatIsFaqSchema);
+  }
+
+  // Route: /iptv-players (Directory Hub)
+  if (cleanPath === "/iptv-players") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-players#collection` };
+    const collectionSchema = {
+      "@type": "CollectionPage",
+      "@id": `${siteConfig.url}/iptv-players#collection`,
+      name: route.h1 || "IPTV Players & Streaming Apps Directory",
+      description: route.description,
+      url: pageUrl,
+      inLanguage: siteConfig.language,
+      mainEntity: {
+        "@type": "ItemList",
+        name: "IPTV Player Applications",
+        itemListElement: bestIptvAppsList.map((app, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: app.name,
+          url: `${siteConfig.url}/iptv-players/${app.slug}`,
+        })),
+      },
+    };
+    graphEntities.push(collectionSchema);
+  }
+
+  // Route: /iptv-players/:slug (Individual App Guide Pages)
+  if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
+    const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
     const app = bestIptvAppsList.find((a) => a.slug === slug);
 
     if (app) {
@@ -405,7 +609,7 @@ export function generateStructuredData(path: string = "/") {
           "@id": siteConfig.entityIds.organization,
         },
         datePublished: "2026-01-01T00:00:00+00:00",
-        dateModified: "2026-09-04T18:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
         proficiencyLevel: "Beginner",
         about: [
           { "@type": "Thing", name: app.name },
@@ -431,41 +635,122 @@ export function generateStructuredData(path: string = "/") {
     }
   }
 
+  // Route: /devices/:slug (Individual Device Setup Guides)
+  if (cleanPath.startsWith("/devices/")) {
+    const slug = cleanPath.replace("/devices/", "");
+    const device = deviceGuidesList.find((d) => d.slug === slug);
+
+    if (device) {
+      webpageSchema.about = { "@id": `${pageUrl}#article` };
+
+      const deviceArticleSchema = {
+        "@type": "TechArticle",
+        "@id": `${pageUrl}#article`,
+        headline: route.h1 || `How to Set Up IPTV on ${device.name}`,
+        description: route.description || device.tagline,
+        url: pageUrl,
+        inLanguage: siteConfig.language,
+        author: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        publisher: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        datePublished: "2026-01-01T00:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
+        proficiencyLevel: "Beginner",
+        about: [
+          { "@type": "Thing", name: device.name },
+          { "@type": "Thing", name: "IPTV Device Setup" },
+          { "@type": "Thing", name: device.category },
+        ],
+      };
+
+      const deviceFaqSchema = {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: device.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      graphEntities.push(deviceArticleSchema, deviceFaqSchema);
+    }
+  }
+
+  // Route: /help-center/:slug (Individual Troubleshooting Guides)
+  if (cleanPath.startsWith("/help-center/")) {
+    const slug = cleanPath.replace("/help-center/", "");
+    const guide = troubleshootingGuidesList.find((g) => g.slug === slug);
+
+    if (guide) {
+      webpageSchema.about = { "@id": `${pageUrl}#article` };
+
+      const guideArticleSchema = {
+        "@type": "TechArticle",
+        "@id": `${pageUrl}#article`,
+        headline: route.h1 || guide.name,
+        description: route.description || guide.tagline,
+        url: pageUrl,
+        inLanguage: siteConfig.language,
+        author: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        publisher: {
+          "@id": siteConfig.entityIds.organization,
+        },
+        datePublished: "2026-01-01T00:00:00+00:00",
+        dateModified: "2026-09-05T00:00:00+00:00",
+        proficiencyLevel: "Intermediate",
+        about: [
+          { "@type": "Thing", name: guide.name },
+          { "@type": "Thing", name: "IPTV Troubleshooting" },
+          { "@type": "Thing", name: guide.category },
+        ],
+      };
+
+      const guideFaqSchema = {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: guide.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      };
+
+      graphEntities.push(guideArticleSchema, guideFaqSchema);
+    }
+  }
+
   // Route: /iptv-subscription (Hub Page)
   if (cleanPath === "/iptv-subscription") {
-    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-subscription#product` };
-
-    const hubProductSchema = {
-      "@type": "Product",
-      "@id": `${siteConfig.url}/iptv-subscription#product`,
-      name: `${siteConfig.name} IPTV Subscription Plans`,
-      description:
-        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 120,000+ movies, 4K sports, and 24/7 customer support.",
-      brand: {
-        "@type": "Brand",
-        "@id": siteConfig.entityIds.brand,
-        name: siteConfig.name,
-      },
-      image: `${siteConfig.url}${siteConfig.socialImage}`,
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: "16.00",
-        highPrice: "90.00",
-        offerCount: canonicalOffers.length,
-        offers: canonicalOffers,
-      },
-    };
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-subscription#service` };
 
     const hubServiceSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/iptv-subscription#service`,
       name: `${siteConfig.name} IPTV Subscription Service`,
       serviceType: "IPTV & Video Streaming Service",
+      description:
+        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 120,000+ movies, 4K sports, and 24/7 customer support.",
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
       areaServed: "Worldwide",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "IPTV Subscription Plans",
+        itemListElement: canonicalOffers,
+      },
     };
 
     const hubFaqSchema = {
@@ -481,7 +766,7 @@ export function generateStructuredData(path: string = "/") {
       })),
     };
 
-    graphEntities.push(hubProductSchema, hubServiceSchema, hubFaqSchema);
+    graphEntities.push(hubServiceSchema, hubFaqSchema);
   }
 
   // Route: /iptv-subscription/:slug (Individual Product Pages)
@@ -501,6 +786,9 @@ export function generateStructuredData(path: string = "/") {
           "@type": "Brand",
           "@id": siteConfig.entityIds.brand,
           name: siteConfig.name,
+        },
+        manufacturer: {
+          "@id": siteConfig.entityIds.organization,
         },
         image: `${siteConfig.url}${siteConfig.socialImage}`,
         offers: {
@@ -536,40 +824,61 @@ export function generateStructuredData(path: string = "/") {
     }
   }
 
-  // Route: / (Homepage)
-  if (cleanPath === "/") {
-    webpageSchema.about = { "@id": `${siteConfig.url}/#product` };
+  // Route: /iptv-free-trial
+  if (cleanPath === "/iptv-free-trial") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-free-trial#service` };
 
-    const homepageProductSchema = {
-      "@type": "Product",
-      "@id": `${siteConfig.url}/#product`,
-      name: `${siteConfig.name} IPTV Subscription`,
+    const freeTrialServiceSchema = {
+      "@type": "Service",
+      "@id": `${siteConfig.url}/iptv-free-trial#service`,
+      name: "Teleview IPTV Free Trial",
+      serviceType: "IPTV Streaming Test Service",
       description:
-        "Premium IPTV subscription offering thousands of live channels, extensive on-demand library, 4K UHD streaming, and 24/7 customer support.",
-      brand: {
-        "@type": "Brand",
-        "@id": siteConfig.entityIds.brand,
-        name: siteConfig.name,
-      },
-      manufacturer: {
+        "24-hour IPTV free trial providing risk-free access to live channels, 4K sports, VOD library, and EPG for streaming quality evaluation.",
+      provider: {
         "@id": siteConfig.entityIds.organization,
       },
-      image: `${siteConfig.url}${siteConfig.socialImage}`,
+      areaServed: "Worldwide",
       offers: {
-        "@type": "AggregateOffer",
+        "@type": "Offer",
+        "@id": `${siteConfig.url}/iptv-free-trial#offer`,
+        name: "Teleview 24-Hour IPTV Free Trial",
+        price: "0.00",
         priceCurrency: "USD",
-        lowPrice: "16.00",
-        highPrice: "90.00",
-        offerCount: canonicalOffers.length,
-        offers: canonicalOffers,
+        availability: "https://schema.org/InStock",
+        url: `${siteConfig.url}/iptv-free-trial`,
+        seller: {
+          "@id": siteConfig.entityIds.organization,
+        },
       },
     };
+
+    const trialFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/iptv-free-trial#faq`,
+      mainEntity: freeTrialData.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(freeTrialServiceSchema, trialFaqSchema);
+  }
+
+  // Route: / (Homepage)
+  if (cleanPath === "/") {
+    webpageSchema.about = { "@id": `${siteConfig.url}/#service` };
 
     const homepageServiceSchema = {
       "@type": "Service",
       "@id": `${siteConfig.url}/#service`,
       name: `${siteConfig.name} IPTV Streaming Subscription`,
       serviceType: "IPTV & Video Streaming Service",
+      description: siteConfig.defaultDescription,
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
@@ -581,7 +890,139 @@ export function generateStructuredData(path: string = "/") {
       },
     };
 
-    graphEntities.push(homepageProductSchema, homepageServiceSchema);
+    graphEntities.push(homepageServiceSchema);
+  }
+
+  // Route: /iptv-pricing
+  if (cleanPath === "/iptv-pricing") {
+    webpageSchema["@type"] = ["WebPage", "CollectionPage"];
+    webpageSchema.about = { "@id": `${siteConfig.url}/iptv-pricing#article` };
+
+    const pricingArticleSchema = {
+      "@type": "TechArticle",
+      "@id": `${siteConfig.url}/iptv-pricing#article`,
+      headline: "IPTV Pricing & Subscription Plans Guide (2026)",
+      description:
+        "Comprehensive IPTV pricing and cost comparison guide. Review effective monthly rates, volume discount tiers, and transparent billing models.",
+      url: `${siteConfig.url}/iptv-pricing`,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-07T12:00:00+00:00",
+      proficiencyLevel: "Beginner",
+      about: [
+        { "@type": "Thing", name: "IPTV Pricing" },
+        { "@type": "Thing", name: "Subscription Plans" },
+        { "@type": "Thing", name: "Streaming Costs" },
+      ],
+    };
+
+    const pricingFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/iptv-pricing#faq`,
+      mainEntity: pricingFaqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(pricingArticleSchema, pricingFaqSchema);
+  }
+
+  // Routes: Informational Guides (/how-does-iptv-work, /is-iptv-legal, /is-iptv-safe, /iptv-cost, /iptv-vs-cable)
+  const infoGuide = informationalGuidesList.find((g) => `/${g.slug}` === cleanPath);
+  if (infoGuide) {
+    webpageSchema.about = { "@id": `${siteConfig.url}/${infoGuide.slug}#article` };
+
+    const infoArticleSchema = {
+      "@type": "TechArticle",
+      "@id": `${siteConfig.url}/${infoGuide.slug}#article`,
+      headline: infoGuide.h1,
+      description: infoGuide.tagline,
+      url: `${siteConfig.url}/${infoGuide.slug}`,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-07T12:00:00+00:00",
+      proficiencyLevel: "Beginner",
+      about: [
+        { "@type": "Thing", name: infoGuide.category },
+        { "@type": "Thing", name: "Internet Protocol television" },
+      ],
+    };
+
+    const infoFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/${infoGuide.slug}#faq`,
+      mainEntity: infoGuide.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(infoArticleSchema, infoFaqSchema);
+  }
+
+  // Routes: Feature Guides (/iptv-channels, /iptv-sports, /iptv-movies)
+  const featureGuide = featureGuidesList.find((f) => `/${f.slug}` === cleanPath);
+  if (featureGuide) {
+    webpageSchema["@type"] = ["WebPage", "CollectionPage"];
+    webpageSchema.about = { "@id": `${siteConfig.url}/${featureGuide.slug}#article` };
+
+    const featureArticleSchema = {
+      "@type": "TechArticle",
+      "@id": `${siteConfig.url}/${featureGuide.slug}#article`,
+      headline: featureGuide.h1,
+      description: featureGuide.tagline,
+      url: `${siteConfig.url}/${featureGuide.slug}`,
+      inLanguage: siteConfig.language,
+      author: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      publisher: {
+        "@id": siteConfig.entityIds.organization,
+      },
+      datePublished: "2026-01-01T00:00:00+00:00",
+      dateModified: "2026-09-07T12:00:00+00:00",
+      proficiencyLevel: "Beginner",
+      about: [
+        { "@type": "Thing", name: featureGuide.category },
+        { "@type": "Thing", name: "Live TV Streaming" },
+      ],
+    };
+
+    const featureFaqSchema = {
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}/${featureGuide.slug}#faq`,
+      mainEntity: featureGuide.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    graphEntities.push(featureArticleSchema, featureFaqSchema);
   }
 
   // Return unified Schema.org @graph root structure
@@ -608,13 +1049,20 @@ export default function SEO({
   const structuredData = generateStructuredData(canonicalUrl);
   const effectiveOgTitle = ogTitle || title;
   const effectiveOgDesc = ogDescription || description;
+  const isNoIndex = canonicalUrl.endsWith("/my-account");
+  const effectiveRobots =
+    robots !== "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ? robots
+      : isNoIndex
+      ? "noindex, follow"
+      : robots;
 
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
-      <meta name="robots" content={robots} />
+      <meta name="robots" content={effectiveRobots} />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
 
       {/* Open Graph */}

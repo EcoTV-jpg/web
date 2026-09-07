@@ -138,7 +138,7 @@ export default function ContactPage() {
                   Wrong Login Details?
                 </h3>
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Copy and paste your username, password, and Xtream URL exactly as delivered. Accidental spaces before or after characters are the #1 cause of login errors.
+                  Copy and paste your username, password, and Xtream URL exactly as delivered. Accidental spaces before or after characters are the primary cause of login errors.
                 </p>
               </div>
             </div>
