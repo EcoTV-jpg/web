@@ -71,7 +71,7 @@ export const pricingTierComparisons: PricingTierComparison[] = [
     highlights: [
       "Zero contract lock-in or automated recurring charges",
       "Full access to 25,000+ live TV channels & VOD catalog",
-      "4K Ultra HD & 60 FPS live sports feeds",
+      "4K Ultra HD & 60 FPS live sports (on supported feeds & compatible hardware)",
       "Standard 1-device active connection profile",
     ],
   },
@@ -119,7 +119,7 @@ export const pricingTierComparisons: PricingTierComparison[] = [
     highlights: [
       `Lowest effective price at just $${(p12.price / p12.months).toFixed(2)} per month (53% discount)`,
       `Saves $${p1.price * 12 - p12.price} annually compared to individual monthly renewals`,
-      "Unrestricted 4K UHD sports, premium PPV events & full VOD library",
+      "Full access to 4K UHD sports, premium PPV events & VOD library (on supported channels)",
       "14-day money-back guarantee protection included",
     ],
   },
@@ -162,7 +162,7 @@ export const featureInclusions: FeatureInclusionItem[] = [
   {
     feature: "25,000+ Global Live TV Channels (HD, FHD, 4K)",
     included: true,
-    notes: "Included across all 1, 3, 6, and 12-month subscription tiers.",
+    notes: "Included across all 1, 3, 6, and 12-month subscription tiers (4K on supported feeds).",
   },
   {
     feature: "100,000+ On-Demand Movies & TV Series",
@@ -209,33 +209,33 @@ export const featureInclusions: FeatureInclusionItem[] = [
 export const cableVsIptvComparison: CostComparisonRow[] = [
   {
     category: "Average Monthly Service Cost",
-    cableSatellite: "$110.00 – $180.00 / month",
+    cableSatellite: "Estimated $85.00 – $150.00 / mo (varies widely by market & bundle)",
     televiewIptv: `$${(p12.price / p12.months).toFixed(2)} – $${p1.price.toFixed(2)} / month`,
-    annualSavings: "Save $1,200 – $2,000+ / year",
+    annualSavings: "Substantial annual overhead reduction",
   },
   {
     category: "Hardware & Set-Top Box Rental",
-    cableSatellite: "$10.00 – $25.00 / month per TV",
-    televiewIptv: "$0 (Use your existing devices)",
-    annualSavings: "Save $120 – $300 / year",
+    cableSatellite: "Often $10.00 – $25.00 / mo per box (provider-dependent)",
+    televiewIptv: "$0 (Use existing smart devices & apps)",
+    annualSavings: "Zero hardware rental fees",
   },
   {
     category: "Broadcast & Regional Sports Surcharges",
-    cableSatellite: "$15.00 – $35.00 / month extra",
-    televiewIptv: "$0 (Included in base price)",
-    annualSavings: "Save $180 – $420 / year",
+    cableSatellite: "Often $15.00 – $35.00 / mo extra on standard tiers",
+    televiewIptv: "$0 (All sports channels included in base rate)",
+    annualSavings: "No regional sports surcharges",
   },
   {
     category: "Contract Length & Cancellation Penalties",
-    cableSatellite: "12–24 month lock-in ($150–$300 fee)",
+    cableSatellite: "12–24 month contracts common (early termination fees)",
     televiewIptv: "Zero contract; zero cancellation fees",
-    annualSavings: "Zero exit risk",
+    annualSavings: "No contract lock-in or early exit penalties",
   },
   {
-    category: "Total 1-Year Streaming Investment",
-    cableSatellite: "$1,500 – $2,500+ annually",
+    category: "Estimated Total 1-Year TV Investment",
+    cableSatellite: "Estimated $1,200 – $2,200+ annually depending on provider",
     televiewIptv: `$${p12.price.toFixed(2)} flat for 12 months`,
-    annualSavings: "Over 90% total savings",
+    annualSavings: "Substantial annual savings vs legacy pay-TV",
   },
 ];
 
@@ -345,7 +345,7 @@ export const pricingFaqs: PricingFaq[] = [
   },
   {
     question: "Is IPTV cheaper than traditional TV?",
-    answer: "Yes, significantly. Traditional cable and satellite subscriptions typically range from $110 to $180 per month when hardware rental fees, regional sports surcharges, and taxes are added ($1,320 to $2,160+ annually). An annual Teleview subscription costs $90 flat, delivering over 90% in household savings with zero hardware fees.",
+    answer: "Yes, for most households. While legacy cable and satellite packages often range between $85 and $150+ per month once mandatory equipment rentals, regional sports fees, and franchise surcharges are factored in, an annual Teleview IPTV subscription costs $90 flat ($7.50/month effective). Depending on your existing provider and setup, this represents a substantial annual cost reduction with zero equipment rental fees.",
   },
   {
     question: "What should I compare before buying an IPTV subscription?",

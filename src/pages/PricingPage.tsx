@@ -413,7 +413,7 @@ export default function PricingPage() {
                   <span>When to Choose a 12-Month Plan ($90.00)</span>
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
-                  The definitive cord-cutting solution for households replacing high-cost cable or satellite TV. Cuts your effective monthly cost to just $7.50/month (a 53% savings), locking in 365 days of continuous 4K streaming for less than a single month of traditional cable.
+                  The definitive cord-cutting solution for households replacing high-cost cable or satellite TV. Cuts your effective monthly cost to just $7.50/month (a 53% savings), locking in 365 days of streaming access (including supported 4K channels) for less than typical monthly cable bills.
                 </p>
               </div>
             </div>
