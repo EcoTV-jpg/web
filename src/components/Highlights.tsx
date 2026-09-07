@@ -10,11 +10,17 @@ export default function Highlights() {
         <Reveal>
           <div className="max-w-[460px]">
             <h2 id="highlights-heading" className="t-h2 text-balance">
-              Everything You Want to Watch, in <Accent>One IPTV Service</Accent>
+              <Accent>25,000+ Live TV Channels</Accent> and On-Demand Entertainment
             </h2>
             <p className="t-body-sm mt-5 text-silver-mist leading-relaxed">{highlightsSection.copy}</p>
-            <div className="mt-7">
-              <GreenButton href="#pricing">{highlightsSection.cta}</GreenButton>
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <GreenButton href="/iptv-channels">Explore Channel Catalog</GreenButton>
+              <a
+                href="/iptv-sports"
+                className="inline-flex items-center justify-center rounded-full border border-charcoal bg-ash/40 px-5 py-2.5 text-xs font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
+              >
+                4K Live Sports Feeds
+              </a>
             </div>
           </div>
         </Reveal>

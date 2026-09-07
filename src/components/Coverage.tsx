@@ -13,7 +13,7 @@ export default function Coverage() {
             <div className="flex items-start gap-4">
               <HelpCircle className="size-6 text-phosphor-green shrink-0 mt-1" aria-hidden="true" />
               <div>
-                <h2 className="t-h2 text-xl sm:text-2xl text-snow">{whatIsIptv.heading}</h2>
+                <h3 className="t-h2 text-xl sm:text-2xl text-snow">{whatIsIptv.heading}</h3>
                 <p className="t-body-sm mt-3 text-silver-mist leading-relaxed">{whatIsIptv.copy}</p>
               </div>
             </div>
@@ -23,9 +23,9 @@ export default function Coverage() {
         {/* 2. Why Choose Teleview? */}
         <div>
           <Reveal className="text-center">
-            <h2 className="t-h2 text-balance">
+            <h3 className="t-h2 text-balance">
               Why Choose <Accent>Teleview</Accent>?
-            </h2>
+            </h3>
             <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
               {whyChoose.subhead}
             </p>
@@ -38,7 +38,7 @@ export default function Coverage() {
                 <Reveal key={item.title} delay={i * 0.05} className="h-full">
                   <article className="card card-hover h-full p-6 sm:p-7 flex flex-col">
                     <Icon className="size-6 text-phosphor-green" strokeWidth={1.5} aria-hidden="true" />
-                    <h3 className="t-card-title mt-4 text-base text-snow">{item.title}</h3>
+                    <h4 className="t-card-title mt-4 text-base text-snow">{item.title}</h4>
                     <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm leading-relaxed flex-1">{item.copy}</p>
                   </article>
                 </Reveal>
@@ -72,9 +72,9 @@ export default function Coverage() {
           {/* Coverage Text */}
           <Reveal className="order-1 lg:order-2" delay={0.08}>
             <div>
-              <h2 id="coverage-heading" className="t-h2 text-balance">
+              <h3 id="coverage-heading" className="t-h2 text-balance">
                 Entertainment From <Accent>Around the World</Accent>
-              </h2>
+              </h3>
               <p className="t-body-sm mt-4 text-silver-mist leading-relaxed">{coverage.copy}</p>
               <div className="mt-4 rounded-lg border border-charcoal bg-ash/50 p-4 text-xs font-medium text-snow leading-relaxed">
                 {coverage.regions}
@@ -89,7 +89,7 @@ export default function Coverage() {
           <div className="card p-8 sm:p-10">
             <div className="flex items-center gap-3">
               <Tv className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
-              <h2 className="t-h2 text-xl sm:text-2xl text-snow">{devicesSection.heading}</h2>
+              <h3 className="t-h2 text-xl sm:text-2xl text-snow">{devicesSection.heading}</h3>
             </div>
             <p className="t-body-sm mt-3 text-silver-mist">{devicesSection.subhead}</p>
 
@@ -113,7 +113,7 @@ export default function Coverage() {
         {/* 5. What's Included With Your Teleview Subscription? */}
         <Reveal>
           <div className="card p-8 sm:p-10 bg-ash/30 border-charcoal">
-            <h2 className="t-h2 text-xl sm:text-2xl text-snow">{includedFeatures.heading}</h2>
+            <h3 className="t-h2 text-xl sm:text-2xl text-snow">{includedFeatures.heading}</h3>
             <p className="t-body-sm mt-2 text-silver-mist">{includedFeatures.subhead}</p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">

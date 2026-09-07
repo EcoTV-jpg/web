@@ -162,6 +162,21 @@
       "source": "/refund",
       "destination": "/refund-policy",
       "permanent": true
+    },
+    {
+      "source": "/guides/what-is-iptv",
+      "destination": "/what-is-iptv",
+      "permanent": true
+    },
+    {
+      "source": "/guides/best-iptv-service",
+      "destination": "/best-iptv",
+      "permanent": true
+    },
+    {
+      "source": "/devices/smart-tv",
+      "destination": "/devices/samsung-smart-tv",
+      "permanent": true
     }
   ]
 }

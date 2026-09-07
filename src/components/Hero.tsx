@@ -31,17 +31,17 @@ export default function Hero() {
 
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
-          <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[880px] text-balance">
-            Best <Accent>IPTV Service</Accent> in 2026
+          <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[900px] text-balance">
+            Best <Accent>IPTV Service Worldwide</Accent> in 2026 — Teleview
           </h1>
         </Reveal>
 
         {/* Subhead & Description */}
         <Reveal delay={0.12}>
-          <p className="t-body mx-auto mt-6 max-w-[640px] text-silver-mist font-medium">
+          <p className="t-body mx-auto mt-6 max-w-[680px] text-silver-mist font-medium leading-relaxed">
             {hero.subhead}
           </p>
-          <p className="t-body-sm mx-auto mt-3 max-w-[600px] text-smoke">
+          <p className="t-body-sm mx-auto mt-3 max-w-[620px] text-smoke leading-relaxed">
             {hero.copy}
           </p>
         </Reveal>
@@ -49,8 +49,8 @@ export default function Hero() {
         {/* CTA Buttons */}
         <Reveal delay={0.18}>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <GreenButton href="#pricing">{hero.ctaPrimary}</GreenButton>
-            <GhostButton href="#pricing">{hero.ctaSecondary}</GhostButton>
+            <GreenButton href="/iptv-subscription">IPTV Subscription Plans</GreenButton>
+            <GhostButton href="/iptv-free-trial">Start IPTV Free Trial</GhostButton>
           </div>
         </Reveal>
 

@@ -8,9 +8,9 @@ export default function ReadyBanner() {
     <section className="section-y border-t border-charcoal bg-ash/20" aria-labelledby="ready-heading">
       <div className="container-x text-center max-w-[760px]">
         <Reveal>
-          <h2 id="ready-heading" className="t-h2 text-balance">
+          <h3 id="ready-heading" className="t-h2 text-balance">
             Ready to <Accent>Start Streaming</Accent>?
-          </h2>
+          </h3>
           <p className="t-body mx-auto mt-4 text-silver-mist">
             {readyBanner.subhead}
           </p>

@@ -23,26 +23,26 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <Pricing />
-        <SportsBanner />
-        <DeviceGrid />
-        <Steps />
         <WhyChooseUs />
-        <Comparison />
+        <Pricing />
         <div className="cv-auto">
-          <TechnologyExplainer />
+          <DealPromo />
         </div>
         <div className="cv-auto">
           <Highlights />
         </div>
-        <div className="cv-auto">
-          <Coverage />
-        </div>
+        <SportsBanner />
+        <DeviceGrid />
+        <Steps />
         <div className="cv-auto">
           <CoastToCoast />
         </div>
         <div className="cv-auto">
-          <DealPromo />
+          <Coverage />
+        </div>
+        <Comparison />
+        <div className="cv-auto">
+          <TechnologyExplainer />
         </div>
         <div className="cv-auto">
           <Guarantee />

@@ -11,9 +11,9 @@ export default function TechnologyExplainer() {
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
             Technology
           </p>
-          <h2 id="tech-heading" className="t-h2 mt-4 text-balance">
+          <h3 id="tech-heading" className="t-h2 mt-4 text-balance">
             IPTV Service <Accent>Explained</Accent>
-          </h2>
+          </h3>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
             Understanding how our advanced IPTV delivers premium entertainment to households worldwide.
           </p>

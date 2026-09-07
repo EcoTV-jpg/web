@@ -11,33 +11,33 @@ export default function DealPromo() {
           <div className="max-w-[500px]">
             <p className="label-mono flex items-center gap-2 text-smoke">
               <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
-              {deal.kicker}
+              24-Hour Evaluation Pass
             </p>
             <h2 id="deal-heading" className="t-h2 mt-4 text-balance">
-              2 Years + <Accent>3 Months Free</Accent>
+              Start Your <Accent>IPTV Free Trial</Accent>
             </h2>
-            <p className="t-body-sm mt-5 font-medium text-snow leading-relaxed">{deal.copy}</p>
+            <p className="t-body-sm mt-5 font-medium text-snow leading-relaxed">
+              Test Teleview with a risk-free 24-hour IPTV free trial before subscribing. Stream 25,000+ live channels, 4K live sports, and extensive on-demand movies on your Firestick, Smart TV, or Android device.
+            </p>
             
-            <p className="mt-4 flex items-baseline gap-4">
-              <span className="t-heading-sm font-medium text-snow">{deal.price}</span>
-              <span className="text-base font-normal text-smoke line-through">Regular price: {deal.oldPrice}</span>
+            <p className="mt-4 flex items-baseline gap-3">
+              <span className="t-heading-sm font-bold text-phosphor-green">Free Test Pass</span>
+              <span className="text-sm font-normal text-smoke">5–15 Min WhatsApp Dispatch</span>
             </p>
 
-            <p className="t-caption mt-3 text-xs text-smoke">{deal.note}</p>
+            <p className="t-caption mt-3 text-xs text-smoke">
+              No credit card required. Experience buffer-free streaming quality and app responsiveness before purchasing any plan.
+            </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <GreenButton
-                href={`https://wa.me/447848197761?text=${encodeURIComponent("Hello, I would like to order the 2 Years + 3 Months Free plan ($129)")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Order Deal on WhatsApp
+              <GreenButton href="/iptv-free-trial">
+                Start 24-Hour Free Trial
               </GreenButton>
               <a
-                href="#pricing"
+                href="/iptv-subscription"
                 className="inline-flex items-center justify-center rounded-full border border-charcoal bg-ash/40 px-5 py-2.5 text-xs font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
               >
-                View Standard Plans
+                Explore Subscription Plans
               </a>
             </div>
           </div>

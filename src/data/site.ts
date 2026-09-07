@@ -20,10 +20,10 @@ export const site = {
 /* Hero */
 export const hero = {
   kicker: "TELEVIEW IPTV",
-  heading: "Best IPTV Service in 2026",
+  heading: "Best IPTV Service Worldwide in 2026 — Teleview",
   subhead:
-    "Get instant access to over 25,000 live TV channels and a huge library of on-demand content. Watch in HD or 4K with fast, reliable Teleview IPTV subscription.",
-  copy: "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 support and no long-term contracts. Start with a 24-hour free trial — no commitment required.",
+    "Discover Teleview, a premium IPTV service for viewers worldwide. Stream 25,000+ live channels, movies and series in HD and 4K, with IPTV Subscription plans and a free trial.",
+  copy: "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium live TV streaming with 24/7 technical support and no long-term contracts. Start with a 24-hour IPTV Free Trial — no commitment required.",
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "View IPTV Plans",
   trustBadges: [
@@ -41,7 +41,7 @@ export interface Highlight {
 }
 
 export const highlightsSection = {
-  heading: "Everything You Want to Watch, in One IPTV Service",
+  heading: "25,000+ Live TV Channels and On-Demand Entertainment",
   copy: "Teleview brings live television and on-demand entertainment together in one IPTV service. Whether you follow live sports, enjoy movies and series, or want family-friendly entertainment, your subscription gives you access to a broad range of content through supported devices.",
   cta: "Get Started with Teleview",
 };
@@ -257,7 +257,7 @@ export interface Plan {
 
 export const pricingHeader = {
   kicker: "Teleview Pricing",
-  heading: "Teleview IPTV Subscription Plans",
+  heading: "IPTV Subscription Plans for Worldwide Streaming",
   subhead:
     "Choose your ideal Teleview plan with 25,000+ live channels, 4K streaming, and fast activation. All plans include 24/7 customer support, no contracts, and prices in USD (plus applicable taxes at checkout).",
 };
@@ -417,7 +417,7 @@ export const guarantee = {
 /* Why Choose Teleview */
 export const whyChooseUs = {
   kicker: "Why Choose Teleview",
-  heading: "Why Choose Teleview?",
+  heading: "Why Teleview Is One of the Best IPTV Services in 2026",
   subhead: "Delivering streaming excellence, verified reliability, and 24/7 support across all devices.",
   items: [
     {
@@ -465,7 +465,7 @@ export const sportsSection = {
 /* Worldwide Coverage */
 export const coastToCoast = {
   kicker: "Worldwide Streaming Network",
-  heading: "Teleview Global Streaming Coverage",
+  heading: "IPTV Streaming Available Worldwide",
   copy: "We serve viewers across the globe with high-speed CDN edge servers: United States, United Kingdom, Canada, Australia, Germany, France, Italy, Spain, Portugal, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Ireland, Brazil, Mexico, UAE, Saudi Arabia, Qatar, Japan, South Korea, India, and more. No matter where you live, enjoy premium 4K IPTV streaming with fast activation.",
   cities: [
     "United States", "United Kingdom", "Canada", "Australia", "Germany", "France",

@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
             {whyChooseUs.kicker}
           </p>
           <h2 id="why-choose-heading" className="t-h2 mt-4 text-balance">
-            Why Choose <Accent>Teleview</Accent>?
+            Why Teleview Is One of the <Accent>Best IPTV Services</Accent> in 2026
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
             {whyChooseUs.subhead}

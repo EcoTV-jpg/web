@@ -21,9 +21,9 @@ export default function SportsBanner() {
 
             <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
               <div>
-                <h2 id="sports-heading" className="t-h2 text-balance text-2xl sm:text-3xl lg:text-4xl text-snow font-extrabold">
+                <h3 id="sports-heading" className="t-h2 text-balance text-2xl sm:text-3xl lg:text-4xl text-snow font-extrabold">
                   Never Miss Your <Accent>Favorite Game</Accent> Again
-                </h2>
+                </h3>
                 <p className="t-body mt-4 text-silver-mist leading-relaxed text-sm sm:text-base">
                   {sportsSection.copy}
                 </p>

@@ -12,7 +12,7 @@ export default function Comparison() {
             Stream More. Pay Less
           </p>
           <h2 id="comparison-heading" className="t-h2 mt-4 text-balance">
-            What Makes Our IPTV Subscription <Accent>Stand Out</Accent>
+            How to Choose the <Accent>Best IPTV Service</Accent> in 2026
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
             Comparing cable and random IPTV sellers? Teleview is tuned for high-speed streaming and works on the devices you already use.

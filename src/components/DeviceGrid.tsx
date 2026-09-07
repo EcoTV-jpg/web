@@ -200,7 +200,7 @@ export default function DeviceGrid() {
             {devicesSection.kicker || "Stream anywhere anytime"}
           </p>
           <h2 id="devices-grid-heading" className="t-h2 mt-4 text-balance">
-            Watch Teleview on <Accent>All Devices</Accent>
+            Watch Teleview IPTV on Your <Accent>Favorite Devices</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[640px] text-silver-mist leading-relaxed">
             {devicesSection.subhead}
@@ -226,54 +226,46 @@ export default function DeviceGrid() {
                   height={dev.height}
                   loading="lazy"
                   decoding="async"
-                  className={dev.toWhite ? "to-white" : ""}
+                  className="dev-img object-contain"
                 />
-                <span>{dev.name}</span>
-              </div>
-            ))}
-
-            {/* Duplicate devices for continuous ticker on mobile */}
-            {devices.map((dev, idx) => (
-              <div key={`${dev.name}-dup-${idx}`} className="dev dup" aria-hidden="true">
-                <img
-                  src={dev.src}
-                  alt=""
-                  width={dev.width}
-                  height={dev.height}
-                  loading="lazy"
-                  decoding="async"
-                  className={dev.toWhite ? "to-white" : ""}
-                />
-                <span>{dev.name}</span>
+                <span className="dev-name">{dev.name}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <Reveal delay={0.2} className="mt-10 text-center space-y-3">
-          <p className="t-caption text-xs text-smoke max-w-[500px] mx-auto">
+        {/* Caption & Contextual Links */}
+        <Reveal className="mt-8 text-center">
+          <p className="t-caption text-xs text-smoke mb-4">
             {devicesSection.note}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
+            <a
+              href="/devices/firestick"
+              className="text-phosphor-green hover:underline"
+            >
+              IPTV on Firestick Setup &rarr;
+            </a>
+            <span className="text-smoke" aria-hidden="true">&bull;</span>
+            <a
+              href="/devices/samsung-smart-tv"
+              className="text-phosphor-green hover:underline"
+            >
+              IPTV on Smart TV Guide &rarr;
+            </a>
+            <span className="text-smoke" aria-hidden="true">&bull;</span>
+            <a
+              href="/devices/apple-tv"
+              className="text-phosphor-green hover:underline"
+            >
+              IPTV on Apple TV Manual &rarr;
+            </a>
+            <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices"
-              className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+              className="text-silver-mist hover:text-snow hover:underline"
             >
-              Supported Devices &amp; Hardware Specs Guide &rarr;
-            </a>
-            <span className="text-smoke" aria-hidden="true">&bull;</span>
-            <a
-              href="/iptv-players"
-              className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
-            >
-              Best IPTV Player Apps &rarr;
-            </a>
-            <span className="text-smoke" aria-hidden="true">&bull;</span>
-            <a
-              href="/setup"
-              className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
-            >
-              Step-by-Step IPTV Setup Instructions &rarr;
+              All Supported Devices &rarr;
             </a>
           </div>
         </Reveal>

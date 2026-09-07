@@ -25,9 +25,9 @@ export default function Guarantee() {
                 <GuaranteeBadge />
                 <div>
                   <p className="label-mono text-phosphor-green">Risk-Free Streaming</p>
-                  <h2 id="guarantee-heading" className="t-h2 mt-2 text-xl sm:text-2xl text-snow">
+                  <h3 id="guarantee-heading" className="t-h2 mt-2 text-xl sm:text-2xl text-snow">
                     {guarantee.heading}
-                  </h2>
+                  </h3>
                 </div>
               </div>
               <p className="t-body-sm mt-6 text-silver-mist leading-relaxed">{guarantee.copy}</p>

@@ -197,8 +197,10 @@ async function runSeoAudit() {
     assert("vercel.json redirect is permanent (308)", redirectRule?.permanent === true);
     assert("vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
     assert("vercel.json redirects /pricing to /iptv-pricing", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-pricing" && r.permanent));
-    assert("vercel.json redirects /best-iptv/tivimate to /iptv-players/tivimate", vercelConfig.redirects?.some(r => r.source === "/best-iptv/tivimate" && r.destination === "/iptv-players/tivimate" && r.permanent));
-    assert("vercel.json contains exactly 20 redirect rules", vercelConfig.redirects?.length === 20);
+    assert("vercel.json redirects /guides/what-is-iptv to /what-is-iptv", vercelConfig.redirects?.some(r => r.source === "/guides/what-is-iptv" && r.destination === "/what-is-iptv" && r.permanent));
+    assert("vercel.json redirects /guides/best-iptv-service to /best-iptv", vercelConfig.redirects?.some(r => r.source === "/guides/best-iptv-service" && r.destination === "/best-iptv" && r.permanent));
+    assert("vercel.json redirects /devices/smart-tv to /devices/samsung-smart-tv", vercelConfig.redirects?.some(r => r.source === "/devices/smart-tv" && r.destination === "/devices/samsung-smart-tv" && r.permanent));
+    assert("vercel.json contains exactly 23 redirect rules", vercelConfig.redirects?.length === 23);
   }
 
   // 2. Pre-rendered HTML validation per route

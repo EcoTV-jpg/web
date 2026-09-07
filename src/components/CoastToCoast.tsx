@@ -13,7 +13,7 @@ export default function CoastToCoast() {
             {coastToCoast.kicker}
           </p>
           <h2 id="coverage-cities-heading" className="t-h2 mt-4 text-balance">
-            Teleview <Accent>Global Streaming Coverage</Accent>
+            IPTV Streaming Available <Accent>Worldwide</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[680px] text-silver-mist leading-relaxed">
             {coastToCoast.copy}

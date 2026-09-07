@@ -76,7 +76,7 @@ export default function Pricing() {
             {pricingHeader.kicker || "Teleview Pricing"}
           </p>
           <h2 id="pricing-heading" className="t-h2 mt-4 text-balance">
-            Teleview IPTV <Accent>Subscription Plans</Accent>
+            <Accent>IPTV Subscription Plans</Accent> for Worldwide Streaming
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
             {pricingHeader.subhead}
