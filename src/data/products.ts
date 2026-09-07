@@ -517,8 +517,8 @@ export const allSubscriptionPlans = Object.values(subscriptionPlans);
 
 /* Hub Page Data */
 export const subscriptionHubData = {
-  kicker: "Commercial IPTV Plans & Pricing",
-  heading: "IPTV Subscription Plans",
+  kicker: "Verified 2026 Commercial IPTV Subscription Hub",
+  heading: "IPTV Subscription Plans: 25,000+ Live Channels & 4K Streaming",
   subhead:
     "Compare all Teleview subscription plans. Choose the duration that matches your viewing habits — from short-term 1-month flexibility to our lowest-cost 12-month annual package.",
   whyChoosePoints: [
@@ -531,39 +531,107 @@ export const subscriptionHubData = {
       desc: "Stream with high-availability infrastructure backed by worldwide low-latency CDNs and intelligent packet routing.",
     },
     {
-      title: "No Long-Term Contracts",
+      title: "100% Pre-Paid Freedom",
       desc: "Enjoy simple, transparent one-time pricing. No credit card lock-ins, automatic recurring billing, or hidden cancellation fees.",
     },
     {
-      title: "Multi-Device Compatibility",
-      desc: "Stream effortlessly on Amazon Firestick, Smart TVs, Android boxes, Apple TV, smartphones, tablets, and Windows/Mac PCs.",
+      title: "Multi-Device & Player Compatibility",
+      desc: "Stream effortlessly on Amazon Firestick, Smart TVs, Android boxes, Apple TV, MAG boxes, and Windows/Mac PCs.",
     },
   ],
   whatsIncluded: [
-    "4K Ultra HD & Full HD Resolution",
-    "25,000+ Live TV Channels Globally",
-    "120,000+ On-Demand Movies & TV Series",
-    "Comprehensive EPG & Catch-Up TV",
-    "All Major Sports Leagues & PPV Events",
-    "24/7 Technical Support via Live Chat & Email",
-    "Fast Activation Upon Confirmed Payment",
+    "4K Ultra HD & 60 FPS Sports (on supported feeds)",
+    "25,000+ Live TV Channels Worldwide",
+    "100,000+ Movies & TV Shows On-Demand",
+    "7-Day XMLTV Electronic Program Guide (EPG)",
+    "Xtream Codes API & M3U Playlist Formats",
+    "Anti-Freeze Edge CDN Server Cluster Routing",
+    "Fast 5–15 Min Activation Dispatch Upon Payment",
     "14-Day Money-Back Guarantee Included",
   ],
   activationSteps: [
     {
       step: "01",
-      title: "Select Your Plan",
-      desc: "Choose between 1, 3, 6, or 12 months based on your budget and preferred duration.",
+      title: "Select Your Duration & Checkout",
+      desc: "Choose between 1, 3, 6, or 12 months with a transparent, one-time payment. Zero automatic rebilling or contract lock-in.",
     },
     {
       step: "02",
-      title: "Receive Credentials",
-      desc: "Your M3U playlist URL and Xtream Codes API credentials arrive via email within minutes.",
+      title: "Receive Credentials via WhatsApp or Email",
+      desc: "Your M3U playlist URL and Xtream Codes API login credentials arrive within 5 to 15 minutes of payment confirmation.",
     },
     {
       step: "03",
-      title: "Start Streaming",
-      desc: "Enter your credentials into your favorite IPTV player app and enjoy instant access.",
+      title: "Configure Your Player & Stream",
+      desc: "Input your credentials into TiviMate, IPTV Smarters, or IBO Player on your streaming device and enjoy instant access.",
+    },
+  ],
+  hardwareCompatibility: [
+    {
+      category: "Amazon Fire TV",
+      devices: "Fire TV Stick Lite, 4K, 4K Max, Fire TV Cube, Fire TV Edition Smart TVs",
+      recommendedApps: "TiviMate, IPTV Smarters Pro, Downloader",
+      setupUrl: "/devices/firestick",
+    },
+    {
+      category: "Smart TVs",
+      devices: "Samsung Tizen (2018+), LG webOS (3.0+), Philips, Sony Bravia, Hisense Vidaa",
+      recommendedApps: "IBO Player, SmartOne IPTV, Nanomid",
+      setupUrl: "/devices/samsung-smart-tv",
+    },
+    {
+      category: "Android & Google TV",
+      devices: "Chromecast with Google TV, Nvidia Shield TV, Xiaomi Mi Box, MECOOL, Android TVs",
+      recommendedApps: "TiviMate, OTT Navigator, IPTV Smarters Pro",
+      setupUrl: "/devices/android-tv",
+    },
+    {
+      category: "Apple Devices",
+      devices: "Apple TV 4K (tvOS), iPhone, iPad, MacBook, iMac",
+      recommendedApps: "GSE Smart IPTV, Smarters Player Lite, VLC Media Player",
+      setupUrl: "/devices/apple-tv",
+    },
+    {
+      category: "Desktop & Laptops",
+      devices: "Windows 10/11, macOS, Linux distributions",
+      recommendedApps: "VLC Media Player, IPTV Smarters Pro Desktop, Web Player",
+      setupUrl: "/iptv-players/vlc",
+    },
+    {
+      category: "Dedicated STBs",
+      devices: "MAG 250/322/421/524, Formuler Z-Series, Dreamlink",
+      recommendedApps: "Stalker Middleware Portal, MyTVOnline 2/3",
+      setupUrl: "/devices/formuler",
+    },
+  ],
+  decisionFramework: [
+    {
+      plan: "1 Month ($16.00)",
+      headline: "Short-Term Testing & Single Tournament Passes",
+      description:
+        "Ideal for verifying home broadband speed, testing player app responsiveness on your hardware, or watching a single sporting tournament with zero commitment.",
+      slug: "1-month",
+    },
+    {
+      plan: "3 Months ($39.00 / $13.00/mo)",
+      headline: "Seasonal Sports Leagues & Quarterly Flexibility",
+      description:
+        "Saves 19% ($9 saved) compared to monthly renewals. Covers full football league stretches, tennis Grand Slams, or playoff series without mid-season drop-offs.",
+      slug: "3-months",
+    },
+    {
+      plan: "6 Months ($60.00 / $10.00/mo)",
+      headline: "Semi-Annual Cord-Cutting & Seasonal Living",
+      description:
+        "Saves 37.5% ($36 saved). A flat $10/mo rate designed for expats, snowbirds, and households replacing high-cost traditional cable contracts permanently.",
+      slug: "6-months",
+    },
+    {
+      plan: "12 Months ($90.00 / $7.50/mo)",
+      headline: "Maximum Value & VIP Server Cluster Priority",
+      description:
+        "Our lowest rate at just $7.50/month (53% discount, $102 saved). Includes prioritized VIP server routing, 365-day price lock, and complete peace of mind.",
+      slug: "12-months",
     },
   ],
   hubFaqs: [
@@ -575,12 +643,12 @@ export const subscriptionHubData = {
     {
       question: "Are all channels and features included in every plan?",
       answer:
-        "Yes, every Teleview subscription plan includes identical, unrestricted access to the complete 25,000+ live channel catalog, 120,000+ VOD movies and series, 4K UHD streaming, and 24/7 technical customer support.",
+        "Yes, every Teleview subscription plan includes identical, unrestricted access to the complete 25,000+ live channel catalog, 100,000+ VOD movies and series, 4K UHD streaming (on supported broadcasts), and 24/7 technical customer support.",
     },
     {
-      question: "Can I upgrade or extend my subscription later?",
+      question: "How many devices can stream simultaneously on one subscription?",
       answer:
-        "Yes, you can extend or upgrade your Teleview subscription at any time without losing your playlist configuration, favorites, or EPG settings.",
+        "Standard Teleview subscriptions include 1 active concurrent connection, allowing you to install credentials across multiple personal devices for non-simultaneous viewing. If you require simultaneous streaming across 2 or 3 screens, multi-screen upgrades can be added during WhatsApp checkout or via support.",
     },
     {
       question: "How does the 14-day money-back guarantee work?",

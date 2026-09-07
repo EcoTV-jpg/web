@@ -27,7 +27,8 @@ export default function PlanComparisonTable({
 
       {/* Desktop / Tablet Semantic Comparison Table */}
       <div className="hidden md:block overflow-x-auto rounded-2xl border border-charcoal bg-ash/40">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full text-left border-collapse" aria-label="IPTV Subscription Plan Comparison">
+          <caption className="sr-only">Comprehensive comparison of Teleview IPTV subscription plans, durations, pricing, and savings</caption>
           <thead>
             <tr className="border-b border-charcoal bg-ink-800/80 text-xs uppercase tracking-wider text-smoke">
               <th scope="col" className="p-4 sm:p-5 font-semibold">Plan Duration</th>
@@ -49,7 +50,7 @@ export default function PlanComparisonTable({
                       : "hover:bg-ash/60"
                   }`}
                 >
-                  <td className="p-4 sm:p-5">
+                  <th scope="row" className="p-4 sm:p-5 font-normal text-left">
                     <div className="flex items-center gap-2">
                       <span className="font-bold text-snow">{plan.duration}</span>
                       {isCurrent && (
@@ -58,8 +59,8 @@ export default function PlanComparisonTable({
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-xs text-smoke">{plan.tagline}</p>
-                  </td>
+                    <p className="mt-1 text-xs text-smoke font-normal">{plan.tagline}</p>
+                  </th>
                   <td className="p-4 sm:p-5 font-bold text-snow text-base">
                     {plan.priceFormatted}
                   </td>
