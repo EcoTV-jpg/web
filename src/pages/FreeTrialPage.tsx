@@ -16,6 +16,7 @@ import {
   Server,
   Clock,
   MessageCircle,
+  AlertCircle,
 } from "lucide-react";
 import { createWhatsAppTrialUrl } from "../config/site";
 import { freeTrialData } from "../data/freeTrial";
@@ -80,7 +81,11 @@ export default function FreeTrialPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="size-3.5 text-phosphor-green" aria-hidden="true" />
-                Instant WhatsApp delivery
+                1 active stream per trial
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="size-3.5 text-phosphor-green" aria-hidden="true" />
+                5–15 min WhatsApp dispatch
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="size-3.5 text-phosphor-green" aria-hidden="true" />
@@ -103,19 +108,31 @@ export default function FreeTrialPage() {
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {freeTrialData.testPoints.map((point) => (
-                <article key={point.title} className="card p-6 border-charcoal flex flex-col">
-                  <div className="size-10 rounded-xl bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center text-phosphor-green mb-4">
-                    {point.icon === "Tv" && <Tv className="size-5" aria-hidden="true" />}
-                    {point.icon === "Zap" && <Zap className="size-5" aria-hidden="true" />}
-                    {point.icon === "Calendar" && <Calendar className="size-5" aria-hidden="true" />}
-                    {point.icon === "Film" && <Film className="size-5" aria-hidden="true" />}
-                    {point.icon === "Smartphone" && <Smartphone className="size-5" aria-hidden="true" />}
-                    {point.icon === "Activity" && <Activity className="size-5" aria-hidden="true" />}
+                <article key={point.title} className="card p-6 border-charcoal flex flex-col justify-between">
+                  <div>
+                    <div className="size-10 rounded-xl bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center text-phosphor-green mb-4">
+                      {point.icon === "Tv" && <Tv className="size-5" aria-hidden="true" />}
+                      {point.icon === "Zap" && <Zap className="size-5" aria-hidden="true" />}
+                      {point.icon === "Calendar" && <Calendar className="size-5" aria-hidden="true" />}
+                      {point.icon === "Film" && <Film className="size-5" aria-hidden="true" />}
+                      {point.icon === "Smartphone" && <Smartphone className="size-5" aria-hidden="true" />}
+                      {point.icon === "Activity" && <Activity className="size-5" aria-hidden="true" />}
+                    </div>
+                    <h3 className="text-base font-semibold text-snow">{point.title}</h3>
+                    <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                      {point.desc}
+                    </p>
                   </div>
-                  <h3 className="text-base font-semibold text-snow">{point.title}</h3>
-                  <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed flex-1">
-                    {point.desc}
-                  </p>
+                  {point.linkUrl && (
+                    <div className="mt-4 pt-3 border-t border-charcoal/60">
+                      <a
+                        href={point.linkUrl}
+                        className="text-xs text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                      >
+                        {point.linkText} &rarr;
+                      </a>
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
@@ -129,7 +146,7 @@ export default function FreeTrialPage() {
                 How the 24-Hour IPTV Free Trial Works
               </h2>
               <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm">
-                Getting connected takes fewer than 5 minutes from request to first live broadcast.
+                Getting connected typically takes between 5 to 15 minutes from WhatsApp request to first live broadcast.
               </p>
             </div>
 
@@ -142,7 +159,17 @@ export default function FreeTrialPage() {
                     <p className="mt-2 text-xs text-silver-mist leading-relaxed">{step.desc}</p>
                   </div>
                   <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
-                    {step.detail}
+                    {step.number === "02" ? (
+                      <span>
+                        Major industry-standard players supporting Xtream Codes API or M3U playlists are compatible, depending on the app and device. Check our{" "}
+                        <a href="/setup" className="text-phosphor-green hover:underline font-medium">
+                          step-by-step setup guides
+                        </a>{" "}
+                        for quick 5-minute configuration walkthroughs.
+                      </span>
+                    ) : (
+                      step.detail
+                    )}
                   </div>
                 </li>
               ))}
@@ -236,6 +263,13 @@ export default function FreeTrialPage() {
                 </a>
               ))}
             </div>
+
+            <div className="mt-4 p-4 rounded-xl border border-charcoal bg-ash/20 text-xs text-silver-mist leading-relaxed flex items-start gap-2.5">
+              <AlertCircle className="size-4 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <span>
+                <strong>Player License Independence:</strong> Teleview provides your raw streaming credentials (Xtream Codes API server URL, username, password, and M3U playlist). Any premium player application upgrades (such as TiviMate Premium or IBO Player activations) are separate purchases made directly through their respective developers.
+              </span>
+            </div>
           </section>
 
           {/* Section: Actionable Testing Checklist */}
@@ -247,7 +281,10 @@ export default function FreeTrialPage() {
                   Actionable Testing Checklist During Your Trial
                 </h2>
               </div>
-              <p className="t-body-sm text-silver-mist text-xs sm:text-sm">
+              <p className="t-body-sm text-silver-mist text-xs sm:text-sm leading-relaxed">
+                To test an IPTV free trial effectively, evaluate live channel playback, channel switching response, EPG guide accuracy, and on-demand VOD streaming directly on your primary home devices. Make sure to test stream stability during peak evening hours (8:00 PM to 10:00 PM) to verify that your local network and internet provider maintain smooth playback without throttling.
+              </p>
+              <p className="t-body-sm text-silver-mist text-xs sm:text-sm mt-3">
                 Follow these five checks to ensure Teleview meets your standards before choosing a subscription duration:
               </p>
 
@@ -278,6 +315,33 @@ export default function FreeTrialPage() {
             </div>
           </section>
 
+          {/* Section: Transparent Trial Limitations & Fair Use */}
+          <section className="mt-20" aria-labelledby="trial-limitations-heading">
+            <div className="text-center max-w-[720px] mx-auto mb-10">
+              <span className="label-mono text-phosphor-green text-xs">Fair Use &amp; Guidelines</span>
+              <h2 id="trial-limitations-heading" className="t-heading-sm mt-1 text-xl sm:text-2xl font-bold text-snow">
+                Trial Scope, Limitations &amp; Requirements
+              </h2>
+              <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm">
+                To maintain reliable stream performance for all active subscribers and trial users, complimentary test passes operate under straightforward guidelines:
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {freeTrialData.limitations.map((item) => (
+                <div key={item.title} className="card p-5 border-charcoal flex flex-col justify-between">
+                  <div>
+                    <span className="rounded bg-phosphor-green/15 border border-phosphor-green/30 px-2 py-0.5 text-[10px] font-mono text-phosphor-green uppercase">
+                      {item.tag}
+                    </span>
+                    <h3 className="text-sm font-semibold text-snow mt-2.5">{item.title}</h3>
+                    <p className="mt-2 text-xs text-silver-mist leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Section: Why Teleview Factual Quality */}
           <section className="mt-20" aria-labelledby="why-teleview-trial-heading">
             <div className="text-center max-w-[720px] mx-auto mb-10">
@@ -291,28 +355,40 @@ export default function FreeTrialPage() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-3">
-              <div className="card p-5 border-charcoal text-center">
-                <Server className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
-                <h3 className="text-sm font-semibold text-snow">Anti-Freeze Edge Routing</h3>
-                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Distributed CDN architecture with intelligent traffic management designed to prevent stutter during peak live matches.
-                </p>
+              <div className="card p-5 border-charcoal text-center flex flex-col justify-between">
+                <div>
+                  <Server className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
+                  <h3 className="text-sm font-semibold text-snow">Anti-Freeze Edge Routing</h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    Distributed CDN architecture with intelligent traffic management designed to prevent stutter during peak live matches. Learn more about{" "}
+                    <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline">
+                      how IPTV streaming works
+                    </a>.
+                  </p>
+                </div>
               </div>
 
-              <div className="card p-5 border-charcoal text-center">
-                <Zap className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
-                <h3 className="text-sm font-semibold text-snow">Zero Contract Lock-Ins</h3>
-                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Flexible plans from 1 to 12 months with zero automatic rebilling, credit card lock-ins, or cancellation friction.
-                </p>
+              <div className="card p-5 border-charcoal text-center flex flex-col justify-between">
+                <div>
+                  <Zap className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
+                  <h3 className="text-sm font-semibold text-snow">Zero Contract Lock-Ins</h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    Flexible plans from 1 to 12 months with zero automatic rebilling, credit card lock-ins, or cancellation friction. Explore all{" "}
+                    <a href="/iptv-subscription" className="text-phosphor-green hover:underline">
+                      IPTV subscription packages
+                    </a>.
+                  </p>
+                </div>
               </div>
 
-              <div className="card p-5 border-charcoal text-center">
-                <Activity className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
-                <h3 className="text-sm font-semibold text-snow">24/7 WhatsApp Support</h3>
-                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Real technical support staff online around the clock to troubleshoot decoder settings, EPG syncing, and playlist URLs.
-                </p>
+              <div className="card p-5 border-charcoal text-center flex flex-col justify-between">
+                <div>
+                  <Activity className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
+                  <h3 className="text-sm font-semibold text-snow">24/7 WhatsApp Support</h3>
+                  <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                    Direct technical assistance online around the clock to troubleshoot decoder settings, EPG synchronization, and custom playlist URLs.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -350,7 +426,7 @@ export default function FreeTrialPage() {
               Ready to Start Your 24-Hour IPTV Free Trial?
             </h2>
             <p className="mt-3 text-sm text-silver-mist max-w-[600px] mx-auto leading-relaxed">
-              Connect with our support team on WhatsApp to receive your server URL, username, and password within minutes. No credit card required.
+              Connect with our support team on WhatsApp to receive your Xtream Codes API server URL, username, and password within minutes. No credit card required.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a

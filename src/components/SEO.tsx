@@ -846,6 +846,7 @@ export function generateStructuredData(path: string = "/") {
         price: "0.00",
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
+        priceValidUntil: "2026-12-31",
         url: `${siteConfig.url}/iptv-free-trial`,
         seller: {
           "@id": siteConfig.entityIds.organization,

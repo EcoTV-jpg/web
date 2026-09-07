@@ -248,7 +248,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.9,
-    lastmod: "2026-09-05",
+    lastmod: "2026-09-07",
     primaryIntent: "Commercial Evaluation — Test IPTV Service Before Purchasing",
     primaryKeyword: "IPTV free trial",
     secondaryTopics: [
@@ -258,13 +258,13 @@ export const routes: AppRoute[] = [
       "IPTV trial credentials",
       "risk free streaming trial",
     ],
-    h1: "IPTV Free Trial",
+    h1: "IPTV Free Trial: 24-Hour Streaming Test Pass",
     title: "IPTV Free Trial — Test Teleview IPTV Before You Subscribe",
     description:
-      "Try Teleview IPTV before subscribing. Test live TV, VOD, EPG, device compatibility and streaming performance with an IPTV free trial.",
+      "Try Teleview IPTV before subscribing. Test live TV, sports, VOD, EPG, and device compatibility with a complimentary 24-hour IPTV free trial.",
     ogTitle: "IPTV Free Trial — 24-Hour Streaming Test Pass | Teleview",
     ogDescription:
-      "Evaluate 25,000+ live channels, 4K sports, and VOD performance risk-free with a 24-hour Teleview IPTV free trial.",
+      "Evaluate live sports, 4K streams, and VOD performance risk-free with a complimentary 24-hour Teleview IPTV free trial. No credit card required.",
     breadcrumbName: "IPTV Free Trial",
   },
   {
