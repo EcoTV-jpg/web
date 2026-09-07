@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 const distDir = path.resolve(rootDir, "dist");
 
-// Expected 33 canonical approved sitemap paths
+// Expected 42 canonical approved sitemap paths
 const APPROVED_SITEMAP_PATHS = [
   "/",
   "/iptv-subscription",
@@ -15,9 +15,18 @@ const APPROVED_SITEMAP_PATHS = [
   "/iptv-subscription/3-months",
   "/iptv-subscription/6-months",
   "/iptv-subscription/12-months",
+  "/iptv-pricing",
   "/iptv-free-trial",
   "/best-iptv",
   "/what-is-iptv",
+  "/how-does-iptv-work",
+  "/is-iptv-legal",
+  "/is-iptv-safe",
+  "/iptv-cost",
+  "/iptv-vs-cable",
+  "/iptv-channels",
+  "/iptv-sports",
+  "/iptv-movies",
   "/iptv-players",
   "/iptv-players/tivimate",
   "/iptv-players/iptv-smarters-pro",
@@ -139,7 +148,7 @@ async function validateSitemap() {
   const urlsInSitemap = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
   console.log(`Total URLs parsed from sitemap: ${urlsInSitemap.length}`);
   check(
-    "Sitemap contains exactly 33 approved URLs",
+    "Sitemap contains exactly 42 approved URLs",
     urlsInSitemap.length === APPROVED_SITEMAP_PATHS.length,
     `${urlsInSitemap.length} found, ${APPROVED_SITEMAP_PATHS.length} expected`
   );

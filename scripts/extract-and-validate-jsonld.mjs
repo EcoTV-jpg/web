@@ -64,6 +64,15 @@ const indexableRoutes = [
   { path: "/iptv-players/gse-smart-iptv", breadcrumbName: "GSE Smart IPTV" },
   { path: "/iptv-players/vlc", breadcrumbName: "VLC" },
   { path: "/iptv-players/ott-navigator", breadcrumbName: "OTT Navigator" },
+  { path: "/iptv-pricing", breadcrumbName: "IPTV Pricing" },
+  { path: "/how-does-iptv-work", breadcrumbName: "How Does IPTV Work?", parent: "Knowledge Base" },
+  { path: "/is-iptv-legal", breadcrumbName: "Is IPTV Legal?", parent: "Knowledge Base" },
+  { path: "/is-iptv-safe", breadcrumbName: "Is IPTV Safe?", parent: "Knowledge Base" },
+  { path: "/iptv-cost", breadcrumbName: "IPTV Cost Guide", parent: "Knowledge Base" },
+  { path: "/iptv-vs-cable", breadcrumbName: "IPTV vs Cable", parent: "Knowledge Base" },
+  { path: "/iptv-channels", breadcrumbName: "IPTV Channels", parent: "Features" },
+  { path: "/iptv-sports", breadcrumbName: "IPTV Sports", parent: "Features" },
+  { path: "/iptv-movies", breadcrumbName: "IPTV Movies", parent: "Features" },
 ];
 
 function getCanonicalUrl(routePath) {
@@ -200,6 +209,14 @@ for (const route of indexableRoutes) {
         assert("BREADCRUMBS", `3 items in help-center child breadcrumb for ${route.path}`, items.length === 3);
         assert("BREADCRUMBS", `Second item is Help Center in ${route.path}`, items[1]?.name === "Help Center");
         assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
+      } else if (route.parent === "Knowledge Base") {
+        assert("BREADCRUMBS", `3 items in knowledge base child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is Knowledge Base in ${route.path}`, items[1]?.name === "Knowledge Base");
+        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
+      } else if (route.parent === "Features") {
+        assert("BREADCRUMBS", `3 items in features child breadcrumb for ${route.path}`, items.length === 3);
+        assert("BREADCRUMBS", `Second item is Features in ${route.path}`, items[1]?.name === "Features");
+        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
       } else {
         assert("BREADCRUMBS", `2 items in standard breadcrumb for ${route.path}`, items.length === 2);
         assert("BREADCRUMBS", `Second item name matches route breadcrumbName in ${route.path}`, items[1]?.name === route.breadcrumbName);
@@ -306,6 +323,26 @@ for (const route of indexableRoutes) {
     assert("TROUBLESHOOTING_SCHEMA", `TechArticle entity on ${route.path}`, Boolean(techArticle));
     assert("TROUBLESHOOTING_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
     assert("TROUBLESHOOTING_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+  } else if (route.path === "/iptv-pricing") {
+    const techArticle = graph.find((e) => e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("PRICING_SCHEMA", "TechArticle entity on /iptv-pricing", Boolean(techArticle));
+    assert("PRICING_SCHEMA", "FAQPage entity on /iptv-pricing", Boolean(faqPage));
+    assert("PRICING_SCHEMA", "No Product on /iptv-pricing", !entityTypes.includes("Product"));
+    assert("PRICING_SCHEMA", "CollectionPage entity on /iptv-pricing", entityTypes.includes("CollectionPage"));
+  } else if (route.parent === "Knowledge Base") {
+    const article = graph.find((e) => e["@type"] === "Article" || e["@type"] === "TechArticle");
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("INFO_ARTICLE_SCHEMA", `Article entity on ${route.path}`, Boolean(article));
+    assert("INFO_ARTICLE_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("INFO_ARTICLE_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+    assert("INFO_ARTICLE_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
+  } else if (route.parent === "Features") {
+    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
+    assert("FEATURE_HUB_SCHEMA", `CollectionPage entity on ${route.path}`, entityTypes.includes("CollectionPage"));
+    assert("FEATURE_HUB_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
+    assert("FEATURE_HUB_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
+    assert("FEATURE_HUB_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
   } else {
     // Legal & Support routes: strictly core entities, no extraneous products or FAQs
     assert("LEGAL_SUPPORT", `No Product entity on ${route.path}`, !entityTypes.includes("Product"));

@@ -21,6 +21,7 @@ import {
   Smartphone,
   Laptop,
   LifeBuoy,
+  BookOpen,
 } from "lucide-react";
 import {
   iptvArchitectureLayers,
@@ -617,6 +618,156 @@ export default function WhatIsIptvPage() {
                 className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
               >
                 Visit the Complete Teleview Help Center &amp; Diagnostic Knowledge Base &rarr;
+              </a>
+            </div>
+          </section>
+
+          {/* Section: Technical & Informational Guides */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="guides-heading">
+            <div className="flex items-center gap-3 mb-4">
+              <BookOpen className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+              <h2 id="guides-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                In-Depth IPTV Guides &amp; Technical Analysis
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-6">
+              Continue exploring our comprehensive knowledge base to understand the networking architecture, legal boundaries, security standards, and economic trade-offs of modern IPTV:
+            </p>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs">
+              <a
+                href="/how-does-iptv-work"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    How Does IPTV Work?
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  In-depth breakdown of unicast/multicast delivery, HLS/MPEG-TS protocols, CDN caching, and decoders.
+                </p>
+              </a>
+
+              <a
+                href="/is-iptv-legal"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Is IPTV Legal?
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Global copyright framework, licensing compliance, and distinguishing legitimate providers from pirate services.
+                </p>
+              </a>
+
+              <a
+                href="/is-iptv-safe"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Is IPTV Safe?
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Cybersecurity analysis, APK inspection protocols, stream malware risks, and data encryption practices.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-vs-cable"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    IPTV vs Cable TV
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Side-by-side comparison of annual costs, hardware rental fees, contract lock-ins, and 4K flexibility.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-cost"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    How Much Does IPTV Cost?
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Real-world pricing benchmarks, streaming device setup fees, premium player licenses, and total cost of ownership.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-pricing"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    IPTV Pricing Guide
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Compare monthly vs annual subscription models, multi-device savings, and plan selection factors.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-channels"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    IPTV Channel Directory
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Bouquet organization across US, UK, Canada, and global territories with EPG channel mapping.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-sports"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Live Sports Streaming
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  60fps high-motion sports feeds, pay-per-view live coverage, and anti-buffering connection settings.
+                </p>
+              </a>
+
+              <a
+                href="/iptv-movies"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    Movies &amp; VOD Library
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  On-demand 4K movie streaming, multi-language subtitle tracks, and audio codec compatibility.
+                </p>
               </a>
             </div>
           </section>

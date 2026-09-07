@@ -156,6 +156,15 @@ async function runSeoAudit() {
     "/help-center/channels-not-loading",
     "/help-center/connection-problems",
     "/help-center/internet-speed",
+    "/iptv-pricing",
+    "/how-does-iptv-work",
+    "/is-iptv-legal",
+    "/is-iptv-safe",
+    "/iptv-cost",
+    "/iptv-vs-cable",
+    "/iptv-channels",
+    "/iptv-sports",
+    "/iptv-movies",
   ];
 
   for (const routePath of prerenderRoutesList) {
@@ -187,7 +196,7 @@ async function runSeoAudit() {
     assert("vercel.json has non-www host redirect rule", Boolean(redirectRule));
     assert("vercel.json redirect is permanent (308)", redirectRule?.permanent === true);
     assert("vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
-    assert("vercel.json redirects /pricing to /iptv-subscription", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-subscription" && r.permanent));
+    assert("vercel.json redirects /pricing to /iptv-pricing", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-pricing" && r.permanent));
     assert("vercel.json redirects /best-iptv/tivimate to /iptv-players/tivimate", vercelConfig.redirects?.some(r => r.source === "/best-iptv/tivimate" && r.destination === "/iptv-players/tivimate" && r.permanent));
     assert("vercel.json contains exactly 20 redirect rules", vercelConfig.redirects?.length === 20);
   }
@@ -237,6 +246,15 @@ async function runSeoAudit() {
     { path: "/iptv-players/gse-smart-iptv", expectedTitle: "GSE Smart IPTV", expectedH1: "GSE Smart IPTV", expectedCanonical: "https://www.teleview.me/iptv-players/gse-smart-iptv", indexable: true },
     { path: "/iptv-players/vlc", expectedTitle: "VLC", expectedH1: "VLC", expectedCanonical: "https://www.teleview.me/iptv-players/vlc", indexable: true },
     { path: "/iptv-players/ott-navigator", expectedTitle: "OTT Navigator", expectedH1: "OTT Navigator", expectedCanonical: "https://www.teleview.me/iptv-players/ott-navigator", indexable: true },
+    { path: "/iptv-pricing", expectedTitle: "IPTV Pricing", expectedH1: "IPTV Pricing", expectedCanonical: "https://www.teleview.me/iptv-pricing", indexable: true },
+    { path: "/how-does-iptv-work", expectedTitle: "How Does IPTV Work", expectedH1: "How Does IPTV Work", expectedCanonical: "https://www.teleview.me/how-does-iptv-work", indexable: true },
+    { path: "/is-iptv-legal", expectedTitle: "Is IPTV Legal", expectedH1: "Is IPTV Legal", expectedCanonical: "https://www.teleview.me/is-iptv-legal", indexable: true },
+    { path: "/is-iptv-safe", expectedTitle: "Is IPTV Safe", expectedH1: "Is IPTV Safe", expectedCanonical: "https://www.teleview.me/is-iptv-safe", indexable: true },
+    { path: "/iptv-cost", expectedTitle: "How Much Does IPTV Cost", expectedH1: "How Much Does IPTV Cost", expectedCanonical: "https://www.teleview.me/iptv-cost", indexable: true },
+    { path: "/iptv-vs-cable", expectedTitle: "IPTV vs Cable", expectedH1: "IPTV vs Cable", expectedCanonical: "https://www.teleview.me/iptv-vs-cable", indexable: true },
+    { path: "/iptv-channels", expectedTitle: "IPTV Channels", expectedH1: "IPTV Channels", expectedCanonical: "https://www.teleview.me/iptv-channels", indexable: true },
+    { path: "/iptv-sports", expectedTitle: "IPTV Sports", expectedH1: "IPTV Sports", expectedCanonical: "https://www.teleview.me/iptv-sports", indexable: true },
+    { path: "/iptv-movies", expectedTitle: "IPTV Movies", expectedH1: "IPTV Movies", expectedCanonical: "https://www.teleview.me/iptv-movies", indexable: true },
   ];
 
   for (const page of pagesToTest) {
@@ -526,7 +544,7 @@ async function runSeoAudit() {
 
     const pricingRes = await fetchEndpoint(testPort, "/pricing", { host: "www.teleview.me" });
     assert("HTTP GET /pricing returns 308 permanent redirect", pricingRes.status === 308);
-    assert("HTTP GET /pricing redirects to /iptv-subscription", pricingRes.location.includes("/iptv-subscription"));
+    assert("HTTP GET /pricing redirects to /iptv-pricing", pricingRes.location.includes("/iptv-pricing"));
 
     const oldTivimateRes = await fetchEndpoint(testPort, "/best-iptv/tivimate", { host: "www.teleview.me" });
     assert("HTTP GET /best-iptv/tivimate returns 308 permanent redirect", oldTivimateRes.status === 308);

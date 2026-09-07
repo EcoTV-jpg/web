@@ -17,6 +17,9 @@ import BestIptvAppPage from "./pages/BestIptvAppPage";
 import IptvPlayersHubPage from "./pages/IptvPlayersHubPage";
 import WhatIsIptvPage from "./pages/WhatIsIptvPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
+import PricingPage from "./pages/PricingPage";
+import InformationalArticlePage from "./pages/InformationalArticlePage";
+import FeatureHubPage from "./pages/FeatureHubPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
@@ -25,6 +28,8 @@ import { deviceGuidesList } from "./data/deviceGuides";
 import { troubleshootingGuidesList } from "./data/troubleshootingGuides";
 import { bestIptvAppsList } from "./data/bestIptvApps";
 import { getProductPlan } from "./data/products";
+import { informationalGuidesList } from "./data/informationalGuides";
+import { featureGuidesList } from "./data/featureGuides";
 
 export default function App({ url }: { url?: string }) {
   const rawPath = url || (typeof window !== "undefined" ? window.location.pathname : "/");
@@ -112,11 +117,32 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/dmca" || currentPath === "/dmca-report" || currentPath === "/dmca-notice") {
     return <DmcaPage />;
   }
-  if (currentPath === "/iptv-subscription" || currentPath === "/pricing") {
+  if (currentPath === "/iptv-subscription") {
     return <SubscriptionHubPage />;
+  }
+  if (currentPath === "/iptv-pricing" || currentPath === "/pricing") {
+    return <PricingPage />;
   }
   if (currentPath === "/iptv-free-trial" || currentPath === "/free-trial") {
     return <FreeTrialPage />;
+  }
+  if (
+    currentPath === "/how-does-iptv-work" ||
+    currentPath === "/is-iptv-legal" ||
+    currentPath === "/is-iptv-safe" ||
+    currentPath === "/iptv-cost" ||
+    currentPath === "/iptv-vs-cable"
+  ) {
+    const slug = currentPath.replace(/^\//, "");
+    return <InformationalArticlePage slug={slug} />;
+  }
+  if (
+    currentPath === "/iptv-channels" ||
+    currentPath === "/iptv-sports" ||
+    currentPath === "/iptv-movies"
+  ) {
+    const slug = currentPath.replace(/^\//, "");
+    return <FeatureHubPage slug={slug} />;
   }
   if (currentPath.startsWith("/iptv-subscription/")) {
     const slug = currentPath.replace("/iptv-subscription/", "").trim().toLowerCase();

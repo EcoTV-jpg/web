@@ -218,7 +218,7 @@ export const channelCategories = [
   {
     name: "News & Information",
     count: "300+ Channels",
-    description: "24/7 global news networks including CNN, BBC, Sky News, Fox News, CNBC, and regional news.",
+    description: "24/7 global news networks covering international headlines, financial markets, weather, and regional news.",
   },
   {
     name: "International",
@@ -233,7 +233,7 @@ export const channelCategories = [
   {
     name: "Documentaries",
     count: "150+ Channels",
-    description: "Nature, history, science, crime, and culture from Discovery, Nat Geo, History, and more.",
+    description: "Nature, history, science, investigative crime, wildlife, and cultural documentary programming.",
   },
 ];
 

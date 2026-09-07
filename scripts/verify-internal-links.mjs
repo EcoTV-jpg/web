@@ -49,6 +49,15 @@ const canonicalPages = [
   "/iptv-players/gse-smart-iptv",
   "/iptv-players/vlc",
   "/iptv-players/ott-navigator",
+  "/iptv-pricing",
+  "/how-does-iptv-work",
+  "/is-iptv-legal",
+  "/is-iptv-safe",
+  "/iptv-cost",
+  "/iptv-vs-cable",
+  "/iptv-channels",
+  "/iptv-sports",
+  "/iptv-movies",
 ];
 
 const knownRedirects = {
@@ -59,7 +68,7 @@ const knownRedirects = {
   "/best-iptv/gse-smart-iptv": "/iptv-players/gse-smart-iptv",
   "/best-iptv/vlc": "/iptv-players/vlc",
   "/best-iptv/ott-navigator": "/iptv-players/ott-navigator",
-  "/pricing": "/iptv-subscription",
+  "/pricing": "/iptv-pricing",
   "/plans": "/iptv-subscription",
   "/tutorial": "/setup",
   "/installation-guide": "/setup",

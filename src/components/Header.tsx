@@ -6,12 +6,24 @@ import { site } from "../data/site";
 /* ── Dropdown data ───────────────────────────────────────────────── */
 const navGroups = [
   {
+    label: "Features",
+    items: [
+      { label: "IPTV Channels", href: "/iptv-channels", desc: "Live channels & international bouquets" },
+      { label: "Live Sports", href: "/iptv-sports", desc: "60fps live sports & event feeds" },
+      { label: "Movies & VOD", href: "/iptv-movies", desc: "On-demand 4K movies & binge series" },
+      { label: "Best IPTV Services", href: "/best-iptv", desc: "Provider evaluation & buying guide" },
+    ],
+  },
+  {
     label: "Learn",
     items: [
       { label: "What Is IPTV?", href: "/what-is-iptv", desc: "How IPTV works" },
+      { label: "How IPTV Works", href: "/how-does-iptv-work", desc: "Streaming protocols & architecture" },
+      { label: "Is IPTV Legal?", href: "/is-iptv-legal", desc: "Regulatory & copyright breakdown" },
+      { label: "Is IPTV Safe?", href: "/is-iptv-safe", desc: "Cybersecurity & stream safety" },
+      { label: "IPTV vs Cable", href: "/iptv-vs-cable", desc: "Feature & cost comparison" },
+      { label: "IPTV Cost Guide", href: "/iptv-cost", desc: "Equipment & subscription economics" },
       { label: "Setup Guide", href: "/setup", desc: "Installation & configuration" },
-      { label: "Free Trial", href: "/iptv-free-trial", desc: "Test service before buying" },
-      { label: "FAQ", href: "/faq", desc: "Common questions answered" },
     ],
   },
   {
@@ -31,7 +43,6 @@ const navGroups = [
   {
     label: "Players",
     items: [
-      { label: "Best IPTV Services", href: "/best-iptv", desc: "Provider evaluation & buying guide" },
       { label: "IPTV Players Hub", href: "/iptv-players", desc: "Technical protocol & app directory" },
       { label: "TiviMate", href: "/iptv-players/tivimate", desc: "Android TV & Firestick" },
       { label: "IPTV Smarters Pro", href: "/iptv-players/iptv-smarters-pro", desc: "Multi-platform" },
@@ -192,12 +203,18 @@ export default function Header() {
         <Logo />
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 xl:gap-6 lg:flex" aria-label="Primary">
           <a
             href="/iptv-subscription"
             className="text-sm font-normal text-silver-mist transition-colors duration-200 hover:text-snow"
           >
             Plans
+          </a>
+          <a
+            href="/iptv-pricing"
+            className="text-sm font-normal text-silver-mist transition-colors duration-200 hover:text-snow"
+          >
+            Pricing
           </a>
           <a
             href="/iptv-free-trial"
@@ -243,6 +260,15 @@ export default function Header() {
                 className="block border-b border-charcoal/60 py-3.5 text-sm text-silver-mist transition-colors hover:text-snow"
               >
                 Plans
+              </a>
+            </li>
+            <li>
+              <a
+                href="/iptv-pricing"
+                onClick={() => setOpen(false)}
+                className="block border-b border-charcoal/60 py-3.5 text-sm text-silver-mist transition-colors hover:text-snow"
+              >
+                Pricing
               </a>
             </li>
             <li>

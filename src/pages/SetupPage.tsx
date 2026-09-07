@@ -106,8 +106,8 @@ export default function SetupPage() {
                     <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>,{" "}
                     test them with an{" "}
                     <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV Free Trial</a>,{" "}
-                    or read{" "}
-                    <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium">What Is IPTV?</a>{" "}
+                    or learn{" "}
+                    <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline font-medium">how IPTV works</a>{" "}
                     to understand streaming protocols). They provide the onscreen visual interface, remote control mapping, and
                     Electronic Program Guide (EPG) layout on your TV. Application licenses, user interfaces, and software updates are managed
                     by their respective developers.

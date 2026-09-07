@@ -248,7 +248,7 @@ export default function TroubleshootingGuidePage({ slug }: { slug: string }) {
             <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
               <div className="space-y-0.5 text-center sm:text-left">
                 <span className="text-snow font-semibold">Configuring a new television or checking bandwidth?</span>
-                <p className="text-silver-mist">Verify your bandwidth with our <a href="/help-center/internet-speed" className="text-phosphor-green hover:underline">IPTV internet speed benchmarks</a> or review device setup steps.</p>
+                <p className="text-silver-mist">Verify your bandwidth with our <a href="/help-center/internet-speed" className="text-phosphor-green hover:underline">IPTV internet speed benchmarks</a>, learn <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline">how IPTV works</a> to understand streaming buffers, or review device setup steps.</p>
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <a

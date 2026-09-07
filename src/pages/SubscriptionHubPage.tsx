@@ -60,7 +60,12 @@ export default function SubscriptionHubPage() {
                       and a risk-free 14-day money-back guarantee. Want to evaluate stream stability and device compatibility first? Request a 24-hour{" "}
                       <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
                         IPTV free trial
-                      </a>.
+                      </a>
+                      , or consult our detailed{" "}
+                      <a href="/iptv-pricing" className="text-phosphor-green font-semibold hover:underline">
+                        IPTV pricing guide
+                      </a>{" "}
+                      for connection economics and multi-month discount breakdowns.
                     </p>
                   </div>
                 </div>

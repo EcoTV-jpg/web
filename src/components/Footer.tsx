@@ -90,34 +90,43 @@ export default function Footer() {
         <div className="lg:justify-self-end">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
             <div>
-              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Explore</h3>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Features &amp; Plans</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
                 <li><a href="/iptv-subscription" className="hover:text-snow transition-colors">Subscription Plans</a></li>
-                <li><a href="/what-is-iptv" className="hover:text-snow transition-colors">What is IPTV?</a></li>
-                <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
-                <li><a href="/setup" className="hover:text-snow transition-colors">Installation Guide</a></li>
+                <li><a href="/iptv-pricing" className="hover:text-snow transition-colors">IPTV Pricing Guide</a></li>
+                <li><a href="/iptv-free-trial" className="hover:text-snow transition-colors">Free IPTV Trial</a></li>
+                <li><a href="/iptv-channels" className="hover:text-snow transition-colors">Channel Directory</a></li>
+                <li><a href="/iptv-sports" className="hover:text-snow transition-colors">Live Sports &amp; 60fps</a></li>
+                <li><a href="/iptv-movies" className="hover:text-snow transition-colors">Movies &amp; VOD Library</a></li>
                 <li><a href="/best-iptv" className="hover:text-snow transition-colors">Best IPTV Services</a></li>
-                <li><a href="/iptv-players" className="hover:text-snow transition-colors">IPTV Players Directory</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Support</h3>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Guides &amp; Tech</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
-                <li><a href="/help-center" className="hover:text-snow transition-colors">Help Center</a></li>
-                <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
-                <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>
-                <li><a href="/my-account" className="hover:text-snow transition-colors">My Account</a></li>
+                <li><a href="/what-is-iptv" className="hover:text-snow transition-colors">What is IPTV?</a></li>
+                <li><a href="/how-does-iptv-work" className="hover:text-snow transition-colors">How Does IPTV Work?</a></li>
+                <li><a href="/is-iptv-legal" className="hover:text-snow transition-colors">Is IPTV Legal?</a></li>
+                <li><a href="/is-iptv-safe" className="hover:text-snow transition-colors">Is IPTV Safe?</a></li>
+                <li><a href="/iptv-vs-cable" className="hover:text-snow transition-colors">IPTV vs Cable</a></li>
+                <li><a href="/iptv-cost" className="hover:text-snow transition-colors">IPTV Cost Breakdown</a></li>
+                <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
+                <li><a href="/iptv-players" className="hover:text-snow transition-colors">IPTV Players Directory</a></li>
               </ul>
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Trust &amp; Legal</h3>
+              <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Support &amp; Trust</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
+                <li><a href="/help-center" className="hover:text-snow transition-colors">Help Center</a></li>
+                <li><a href="/setup" className="hover:text-snow transition-colors">Setup &amp; Installation</a></li>
+                <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
+                <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>
+                <li><a href="/my-account" className="hover:text-snow transition-colors">My Account</a></li>
                 <li><a href="/terms-conditions" className="hover:text-snow transition-colors">Terms &amp; Conditions</a></li>
                 <li><a href="/privacy-policy" className="hover:text-snow transition-colors">Privacy Policy</a></li>
                 <li><a href="/refund-policy" className="hover:text-snow transition-colors">Refund Policy</a></li>
-                <li><a href="/disclaimer" className="hover:text-snow transition-colors">Disclaimer</a></li>
                 <li><a href="/dmca" className="hover:text-snow transition-colors">DMCA Notice</a></li>
               </ul>
             </div>
