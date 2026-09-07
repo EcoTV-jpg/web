@@ -153,28 +153,38 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-charcoal">
-        <div className="container-x t-caption flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between text-xs text-smoke">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <p>&copy; {new Date().getFullYear()} Teleview (operated by Teleview Media). All rights reserved.</p>
-            <div className="flex flex-wrap items-center gap-2">
-              <a href="/contact" className="hover:text-silver-mist transition-colors">Support</a>
-              <span>&bull;</span>
-              <a href="/help-center" className="hover:text-silver-mist transition-colors">Help Center</a>
-              <span>&bull;</span>
-              <a href="/terms-conditions" className="hover:text-silver-mist transition-colors">Terms</a>
-              <span>&bull;</span>
-              <a href="/privacy-policy" className="hover:text-silver-mist transition-colors">Privacy</a>
-              <span>&bull;</span>
-              <a href="/refund-policy" className="hover:text-silver-mist transition-colors">Refunds</a>
-              <span>&bull;</span>
-              <a href="/disclaimer" className="hover:text-silver-mist transition-colors">Disclaimer</a>
-              <span>&bull;</span>
-              <a href="/dmca" className="hover:text-silver-mist transition-colors">DMCA</a>
+        <div className="container-x t-caption flex flex-col gap-4 py-6 text-xs text-smoke">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <p>&copy; {new Date().getFullYear()} Teleview (operated by Teleview Media). All rights reserved.</p>
+              <div className="flex flex-wrap items-center gap-2">
+                <a href="/contact" className="hover:text-silver-mist transition-colors">Support</a>
+                <span>&bull;</span>
+                <a href="/help-center" className="hover:text-silver-mist transition-colors">Help Center</a>
+                <span>&bull;</span>
+                <a href="/terms-conditions" className="hover:text-silver-mist transition-colors">Terms</a>
+                <span>&bull;</span>
+                <a href="/privacy-policy" className="hover:text-silver-mist transition-colors">Privacy</a>
+                <span>&bull;</span>
+                <a href="/refund-policy" className="hover:text-silver-mist transition-colors">Refunds</a>
+                <span>&bull;</span>
+                <a href="/disclaimer" className="hover:text-silver-mist transition-colors">Disclaimer</a>
+                <span>&bull;</span>
+                <a href="/dmca" className="hover:text-silver-mist transition-colors">DMCA</a>
+              </div>
             </div>
           </div>
-          <p className="max-w-[560px] text-left sm:text-right">
-            <strong>Important:</strong> Teleview is intended for access to content you are authorized to view. Content and channel availability varies by region and may change over time.
-          </p>
+          <div className="border-t border-charcoal/50 pt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-smoke">
+            <p className="max-w-[760px] leading-relaxed text-silver-mist/80">
+              Teleview does not host or stream any copyrighted content. All content is provided by third-party providers. Users are responsible for ensuring they have the rights to view content in their jurisdiction.{" "}
+              <a href="/disclaimer" className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1">
+                Read Disclaimer &rarr;
+              </a>
+            </p>
+            <p className="shrink-0 text-xs text-smoke/90 font-mono">
+              &copy; Teleview 2026
+            </p>
+          </div>
         </div>
       </div>
     </footer>

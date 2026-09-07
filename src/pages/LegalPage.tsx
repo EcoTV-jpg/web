@@ -476,6 +476,12 @@ function RefundContent() {
 function DisclaimerContent() {
   return (
     <article className="prose prose-invert max-w-none space-y-8 text-silver-mist leading-relaxed text-sm sm:text-base">
+      <div className="card p-5 sm:p-6 border-phosphor-green/30 bg-ash/40 rounded-xl">
+        <p className="text-snow text-sm leading-relaxed font-medium">
+          <strong className="text-phosphor-green font-semibold">Important Legal Notice:</strong> Teleview does not host or stream any copyrighted content. All content is provided by third-party providers. Users are responsible for ensuring they have the rights to view content in their jurisdiction.
+        </p>
+      </div>
+
       <section className="card p-6 sm:p-8 space-y-4">
         <h2 className="t-h2 text-lg sm:text-xl text-snow flex items-center gap-2.5">
           <span className="text-phosphor-green font-mono text-sm">01.</span>
