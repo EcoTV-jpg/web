@@ -11,7 +11,7 @@ const navGroups = [
       { label: "IPTV Channels", href: "/iptv-channels", desc: "Live channels & international bouquets" },
       { label: "Live Sports", href: "/iptv-sports", desc: "60fps live sports & event feeds" },
       { label: "Movies & VOD", href: "/iptv-movies", desc: "On-demand 4K movies & binge series" },
-      { label: "Best IPTV Services", href: "/best-iptv", desc: "Provider evaluation & buying guide" },
+      { label: "IPTV Buying Guide", href: "/best-iptv", desc: "Provider comparison & buying guide" },
     ],
   },
   {

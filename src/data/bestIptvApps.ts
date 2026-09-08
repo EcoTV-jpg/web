@@ -832,6 +832,14 @@ export const hubFaqs = [
     answer: "Most IPTV players connect using Xtream Codes API credentials (a server URL, username, and password) or an M3U / M3U8 playlist URL provided by your subscription service. Xtream Codes API is generally preferred because it automatically organizes Live TV, Movies, and Series categories with associated EPG data.",
   },
   {
+    question: "What is the difference between connecting via Xtream Codes API vs M3U playlist URL?",
+    answer: "Xtream Codes API uses structured JSON queries to fetch channel categories, on-demand movies, and series separately on demand, keeping device RAM usage minimal. A raw M3U playlist URL downloads the complete channel and VOD catalog into memory as a single large file. On budget streaming sticks with 1 GB to 1.5 GB of RAM, parsing a massive M3U file can cause application lag or crashes, making Xtream Codes the more stable protocol.",
+  },
+  {
+    question: "How can I verify if an IPTV provider is oversubscribing its streaming servers during a trial?",
+    answer: "To evaluate server capacity, test streams during high-concurrency peak broadcast windows, such as weekend marquee football derbies or live pay-per-view events. If channel switching times increase significantly or streams buffer repeatedly while broadband speed tests confirm full bandwidth, the provider's upstream edge nodes are likely operating near capacity under heavy concurrent load.",
+  },
+  {
     question: "Can I test an IPTV service before subscribing?",
     answer: "Yes, many IPTV providers offer a test period—such as Teleview's 24-hour IPTV free trial—allowing prospective viewers to verify channel loading speeds, stream stability, and device compatibility before purchasing. Teleview's standard subscription plans are also backed by a published 14-day refund guarantee.",
   },

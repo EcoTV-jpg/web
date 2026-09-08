@@ -11,11 +11,11 @@ export default function TechnologyExplainer() {
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
             Technology
           </p>
-          <h3 id="tech-heading" className="t-h2 mt-4 text-balance">
+          <h2 id="tech-heading" className="t-h2 mt-4 text-balance">
             IPTV Service <Accent>Explained</Accent>
-          </h3>
+          </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
-            Understanding how our advanced IPTV delivers premium entertainment to households worldwide.
+            Understanding how our managed IPTV infrastructure delivers live television and on-demand media to households worldwide.
           </p>
         </Reveal>
 
@@ -28,7 +28,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">What is IPTV?</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                IPTV (Internet Protocol Television) represents the future of entertainment delivery. Unlike traditional cable or satellite TV, our advanced IPTV service transmits high-quality video content through secure internet protocols, providing superior streaming performance and flexibility.{" "}
+                IPTV (Internet Protocol Television) transmits digital television signals over standard IP broadband rather than legacy coaxial cable or satellite dish transponders. This provides dynamic channel switching, extensive on-demand catalogs, and broad cross-device flexibility.{" "}
                 <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1">
                   Read architecture guide &rarr;
                 </a>
@@ -42,9 +42,9 @@ export default function TechnologyExplainer() {
               <div className="size-10 rounded-xl bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center text-phosphor-green">
                 <Server className="size-5" aria-hidden="true" />
               </div>
-              <h3 className="t-card-title mt-5 text-lg font-bold text-snow">How Our IPTV Subscription Works</h3>
+              <h3 className="t-card-title mt-5 text-lg font-bold text-snow">How Video Delivery Works</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology converts television signals into digital data packets, delivered through optimized streaming servers worldwide. This ensures fast channel switching, high-definition and 4K quality, and smooth streaming—providing an entertainment experience that surpasses traditional broadcasting methods.
+                Broadcast feeds are ingested at regional headends, encoded into standardized H.264/HEVC video streams, and distributed across multi-edge CDN nodes. Adaptive bitrate caching ensures continuous playback during fluctuating home Wi-Fi conditions.
               </p>
             </div>
           </Reveal>
@@ -55,9 +55,9 @@ export default function TechnologyExplainer() {
               <div className="size-10 rounded-xl bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center text-phosphor-green">
                 <Cpu className="size-5" aria-hidden="true" />
               </div>
-              <h3 className="t-card-title mt-5 text-lg font-bold text-snow">Why Choose Our IPTV Package?</h3>
+              <h3 className="t-card-title mt-5 text-lg font-bold text-snow">Xtream Codes &amp; M3U Support</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology delivers high-availability streaming infrastructure, multi-CDN edge routing with adaptive bitrate buffering, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on dedicated servers for reliable playback.
+                Teleview supports standard IPTV connection formats. Connect effortlessly using Xtream Codes API credentials (Server URL, Port, Username, and Password) or custom M3U playlist URLs across popular player apps like TiviMate, IPTV Smarters Pro, and IBO Player.
               </p>
             </div>
           </Reveal>

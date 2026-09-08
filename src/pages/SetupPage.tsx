@@ -94,14 +94,14 @@ export default function SetupPage() {
                     Important Distinction: Teleview Subscription vs. Third-Party Player Applications
                   </h2>
                   <p className="mt-2 leading-relaxed">
-                    <strong className="text-snow">Teleview</strong> is an independent IPTV subscription and content delivery provider.
+                    <strong className="text-snow">Teleview</strong> is an independent <a href="/" className="text-phosphor-green hover:underline font-medium">IPTV service</a> and content delivery provider.
                     We provision your secure server access credentials (Server URL, Username, Password, and M3U playlist link),
                     and maintain the high-availability video infrastructure streaming over 25,000 live channels and 100,000+ VOD titles.
                   </p>
                   <p className="mt-2 leading-relaxed">
                     IPTV player applications like <strong className="text-snow">TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV</strong>{" "}
                     are independent third-party software programs (compare them in our{" "}
-                    <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">Best IPTV Players guide</a>,{" "}
+                    <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">IPTV buying guide</a>,{" "}
                     explore the{" "}
                     <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>,{" "}
                     test them with an{" "}
@@ -1025,6 +1025,25 @@ export default function SetupPage() {
                     Xtream Codes API uses structured JSON queries to fetch only the channel data you need. This dramatically reduces memory
                     consumption, updates the Electronic Program Guide automatically, supports catch-up TV, and prevents app crashes on lower-RAM streaming sticks.
                   </p>
+                </div>
+              </div>
+
+              {/* Technical Installation & Playback Diagnostics */}
+              <div className="mt-6 rounded-xl border border-charcoal/80 bg-ink-800/60 p-4 sm:p-5 text-xs">
+                <span className="text-snow font-semibold block mb-2">Common Installation &amp; Playback Troubleshooting:</span>
+                <div className="grid sm:grid-cols-2 gap-2 text-silver-mist">
+                  <div>
+                    &bull; Screen black or stream failing? See our <a href="/help-center/channels-not-loading" className="text-phosphor-green hover:underline">Channels Not Loading Guide</a>.
+                  </div>
+                  <div>
+                    &bull; Program guide blank? See our <a href="/help-center/epg-not-working" className="text-phosphor-green hover:underline">EPG Not Loading Fix</a>.
+                  </div>
+                  <div>
+                    &bull; Server timeout or login error? See our <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">Connection Problems Guide</a>.
+                  </div>
+                  <div>
+                    &bull; Stuttering on 4K feeds? Check our <a href="/help-center/internet-speed" className="text-phosphor-green hover:underline">Internet Speed Requirements</a>.
+                  </div>
                 </div>
               </div>
 

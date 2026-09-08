@@ -151,6 +151,35 @@ export default function FeatureHubPage({ slug }: FeatureHubPageProps) {
             </div>
           </section>
 
+          {/* Channel Troubleshooting Callout */}
+          {feature.slug === "iptv-channels" && (
+            <aside
+              aria-label="Channel Diagnostic Callout"
+              className="mt-12 rounded-xl border border-charcoal/80 bg-ash/25 p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs"
+            >
+              <div>
+                <p className="font-semibold text-snow">Experiencing stream playback or bouquet loading errors?</p>
+                <p className="text-silver-mist mt-1 leading-relaxed">
+                  Diagnose black screens, audio track mismatches, and XMLTV guide synchronization issues with our step-by-step guides.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 shrink-0">
+                <a
+                  href="/help-center/channels-not-loading"
+                  className="inline-flex items-center rounded-lg border border-phosphor-green/30 bg-phosphor-green/10 px-3.5 py-2 font-medium text-phosphor-green hover:bg-phosphor-green/20 transition-colors"
+                >
+                  Channels Not Loading Guide &rarr;
+                </a>
+                <a
+                  href="/help-center/epg-not-working"
+                  className="inline-flex items-center rounded-lg border border-charcoal bg-charcoal/40 px-3.5 py-2 font-medium text-silver-mist hover:text-snow transition-colors"
+                >
+                  EPG Sync Guide &rarr;
+                </a>
+              </div>
+            </aside>
+          )}
+
           {/* Sports Latency Optimization Subsection */}
           {feature.sportsLatencyOptimization && (
             <section className="mt-16" aria-labelledby="latency-heading">

@@ -190,15 +190,24 @@ export default function FaqPage() {
               </div>
 
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-silver-mist border-t border-charcoal/60 pt-4">
-                <span>Want to test your current home connection speed?</span>
-                <a
-                  href="https://fast.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
-                >
-                  Test your speed on Fast.com &rarr;
-                </a>
+                <span>Want to test your connection or understand 4K bandwidth requirements?</span>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="/help-center/internet-speed"
+                    className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                  >
+                    Internet Speed Requirements &rarr;
+                  </a>
+                  <span className="text-smoke">&bull;</span>
+                  <a
+                    href="https://fast.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+                  >
+                    Fast.com Speed Test &rarr;
+                  </a>
+                </div>
               </div>
             </section>
           </Reveal>

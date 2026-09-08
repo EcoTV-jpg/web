@@ -654,7 +654,7 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
               Ready to Stream on {app.shortName}?
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[580px] mx-auto leading-relaxed">
-              Teleview provides ultra-fast streaming servers, 25,000+ live television channels, and 4K sports broadcasts compatible with {app.shortName} and all major IPTV media engines.
+              The <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> provides ultra-fast streaming servers, 25,000+ live television channels, and 4K sports broadcasts compatible with {app.shortName} and all major IPTV media engines.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
@@ -687,6 +687,22 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
               ))}
             </div>
           </section>
+
+          {/* Diagnostic Troubleshooting Bridge */}
+          <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div className="space-y-0.5 text-center sm:text-left">
+              <span className="text-snow font-semibold">Troubleshooting {app.name} playback or configuration errors?</span>
+              <p className="text-silver-mist">
+                If {app.name} encounters stream playback or playlist sync errors, consult our guides on <a href="/help-center/epg-not-working" className="text-phosphor-green hover:underline">fixing EPG not loading</a>, <a href="/help-center/channels-not-loading" className="text-phosphor-green hover:underline">resolving channels not loading</a>, or <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">server connection problems</a>.
+              </p>
+            </div>
+            <a
+              href="/help-center"
+              className="rounded-lg border border-charcoal bg-ash/60 px-4 py-2 text-snow hover:border-phosphor-green/50 hover:text-phosphor-green transition-colors font-medium shrink-0"
+            >
+              Help Center &rarr;
+            </a>
+          </div>
         </div>
       </main>
 

@@ -249,7 +249,7 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
               </GhostButton>
             </div>
             <p className="mt-4 text-xs text-smoke">
-              Comparing streaming providers for your TV? Consult our <a href="/best-iptv" className="text-phosphor-green hover:underline">best IPTV services</a> evaluation guide.
+              Comparing streaming providers for your TV? Consult our <a href="/best-iptv" className="text-phosphor-green hover:underline">IPTV buying guide</a> or explore the <a href="/" className="text-phosphor-green hover:underline">Teleview IPTV service</a>.
             </p>
           </section>
 
@@ -321,8 +321,10 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
 
             <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
               <div className="space-y-0.5 text-center sm:text-left">
-                <span className="text-snow font-semibold">Encountering playback or buffering issues on your {device.name}?</span>
-                <p className="text-silver-mist">Read our diagnostic guides on <a href="/help-center/buffering" className="text-phosphor-green hover:underline">stopping IPTV buffering</a> or <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">resolving server connection timeouts</a>.</p>
+                <span className="text-snow font-semibold">Encountering playback, EPG, or buffering issues on your {device.name}?</span>
+                <p className="text-silver-mist">
+                  Read our diagnostic guides for {device.name} on <a href="/help-center/buffering" className="text-phosphor-green hover:underline">stopping IPTV buffering</a>, <a href="/help-center/channels-not-loading" className="text-phosphor-green hover:underline">channels not loading</a>, <a href="/help-center/epg-not-working" className="text-phosphor-green hover:underline">fixing EPG schedules</a>, or <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline">resolving server connection timeouts</a>.
+                </p>
               </div>
               <a
                 href="/help-center"

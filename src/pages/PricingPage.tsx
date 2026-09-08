@@ -528,7 +528,11 @@ export default function PricingPage() {
                 What Affects IPTV Subscription Pricing?
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                Operating a reliable 4K 60 FPS television network requires ongoing capital investment. Here is where subscription revenue is invested:
+                Operating a reliable 4K 60 FPS television network requires ongoing capital investment in multi-CDN bandwidth and high-throughput encoding clusters. To verify whether your home connection meets bandwidth benchmarks for uninterrupted 4K streaming, review our{" "}
+                <a href="/help-center/internet-speed" className="text-phosphor-green font-semibold hover:underline">
+                  IPTV internet speed guide
+                </a>
+                . Here is where subscription revenue is invested:
               </p>
             </div>
 
@@ -694,7 +698,7 @@ export default function PricingPage() {
               Ready to Start Streaming with Zero Hidden Fees?
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[560px] mx-auto leading-relaxed">
-              Test streaming performance on your home television or smartphone with a complimentary 24-hour free trial, or choose a transparent pre-paid plan.
+              Test streaming performance on your home television or smartphone with a complimentary 24-hour free trial, or choose a transparent pre-paid plan from <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview&apos;s IPTV service</a>.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">

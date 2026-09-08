@@ -272,7 +272,7 @@ export default function TroubleshootingGuidePage({ slug }: { slug: string }) {
                 <div className="space-y-1">
                   <span className="text-snow font-semibold">Is the issue your home network or your IPTV provider?</span>
                   <p className="leading-relaxed">
-                    If local network troubleshooting does not stabilize your stream, your current provider&apos;s broadcast servers may be congested. Test your setup independently with an <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV free trial</a>, consult our <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">IPTV buying guide</a> on how to choose an IPTV service with multi-CDN failover routing, or explore verified <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-medium">IPTV subscription</a> plans.
+                    If local network troubleshooting does not stabilize your stream, your current provider&apos;s broadcast servers may be congested. Test your setup independently with an <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV free trial</a>, consult our <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">IPTV buying guide</a> on how to choose an IPTV service with multi-CDN failover routing, or explore verified <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-medium">IPTV subscription</a> plans and the <a href="/" className="text-phosphor-green hover:underline font-medium">Teleview IPTV service</a>.
                   </p>
                 </div>
               </div>

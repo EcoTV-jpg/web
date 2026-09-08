@@ -49,23 +49,23 @@ export const highlightsSection = {
 export const highlights: Highlight[] = [
   {
     icon: Tv,
-    title: "Live TV",
-    copy: "Watch live television across a wide range of categories and regions.",
+    title: "Live TV Channels",
+    copy: "Access 25,000+ national and international television networks with complete 7-day XMLTV program schedule data.",
   },
   {
     icon: Film,
-    title: "Movies & Series",
-    copy: "Explore an extensive on-demand library with movies and TV series.",
+    title: "Movies & Series (VOD)",
+    copy: "Explore 100,000+ on-demand movies and full television series in HD and 4K with multi-language audio and subtitles.",
   },
   {
     icon: Trophy,
-    title: "Sports",
-    copy: "Follow live sporting events and sports programming available through the service.",
+    title: "60 FPS Live Sports",
+    copy: "Stream major domestic and international football, basketball, motorsports, and combat sports in fluid 50/60 FPS feeds.",
   },
   {
     icon: Users,
     title: "Family Entertainment",
-    copy: "Find entertainment suitable for different members of your household.",
+    copy: "Enjoy commercial-free family animation, science documentaries, kids networks, and lifestyle programming for all ages.",
   },
 ];
 
@@ -375,18 +375,18 @@ export const stepsSection = {
 export const steps: Step[] = [
   {
     label: "01",
-    title: "Choose Your Plan",
-    copy: "Select from our 1, 3, 6, or 12-month plans with 25,000+ live channels in crystal-clear 4K streaming. Watch anywhere, anytime!",
+    title: "Choose Your Plan or Test Line",
+    copy: "Select from our 1, 3, 6, or 12-month prepaid plans, or request a complimentary 24-hour test line to evaluate streaming performance on your broadband.",
   },
   {
     label: "02",
-    title: "Complete Your Order",
-    copy: "Secure your subscription with a quick payment. Go for our popular 12-month package and save $20 - our subscribers' top choice!",
+    title: "Receive Login Credentials",
+    copy: "Your credentials are dispatched in 5–15 minutes via WhatsApp or email, containing your Xtream Codes API details (URL, port, username, password) and M3U playlist link.",
   },
   {
     label: "03",
-    title: "Start Watching!",
-    copy: "Check your email for login details, grab your favorite snacks, and dive into endless entertainment on all your devices!",
+    title: "Connect Your Player & Stream",
+    copy: "Input your credentials into your preferred player app (like TiviMate, IPTV Smarters Pro, or IBO Player) on your Firestick, Smart TV, or phone and start watching immediately.",
   },
 ];
 
@@ -418,23 +418,23 @@ export const guarantee = {
 export const whyChooseUs = {
   kicker: "Why Choose Teleview",
   heading: "Why Teleview Is One of the Best IPTV Services in 2026",
-  subhead: "Delivering streaming excellence, verified reliability, and 24/7 support across all devices.",
+  subhead: "Engineered for stream stability, transparent prepaid billing, and 24/7 technical support across all devices.",
   items: [
     {
-      title: "Premium IPTV Experience",
-      copy: "At Teleview, we focus on delivering premium streaming excellence. Our IPTV service combines high-bitrate video delivery with multi-edge CDN server routing, high-availability streaming infrastructure, and responsive playback across all devices.",
+      title: "Multi-CDN Streaming Continuity",
+      copy: "Teleview routes video streams across globally distributed multi-CDN edge nodes. Dynamic load balancing and automated failover servers keep channel playback responsive during high-traffic evening hours and major live events.",
     },
     {
-      title: "Reliable & Secure Service",
-      copy: "What sets our IPTV service apart is our commitment to service standards and customer satisfaction. We operate with strict adherence to reliable broadcasting standards, ensuring your subscription is completely legitimate and secure. Our advanced streaming infrastructure delivers crystal-clear 4K content without interruptions, backed by our technical support team available 24/7.",
+      title: "High-Framerate 60 FPS Sports Feeds",
+      copy: "Broadcast feeds are encoded in Full HD 1080p at 50/60 FPS, with marquee sporting events available in native 4K Ultra HD. Hardware-accelerated H.264 and HEVC codecs maintain smooth motion without artificial frame drops.",
     },
     {
-      title: "Advanced Streaming Features",
-      copy: "Our IPTV subscription includes industry-leading features: instant channel switching, comprehensive electronic program guide (EPG), catch-up TV functionality, and multi-device streaming capabilities. Whether you’re watching on Smart TV, Android box, or mobile device, you’ll experience the same premium quality that thousands of families trust daily.",
+      title: "Transparent Prepaid Billing & Guarantee",
+      copy: "Teleview operates on a 100% prepaid model with zero automatic credit card rebilling, zero hidden hardware rental charges, and zero cancellation penalties. Every plan is backed by an official 14-day technical money-back guarantee.",
     },
     {
-      title: "Fast & Flexible Activation",
-      copy: "We offer fast activation with credentials delivered immediately upon confirmed payment, no long-term contracts, and transparent pricing. Join the growing community of satisfied customers who’ve discovered why Teleview remains the top-rated IPTV provider for reliability, quality, and customer service excellence.",
+      title: "Fast Credential Dispatch & 24/7 Support",
+      copy: "Receive Xtream Codes API login credentials and custom M3U playlist URLs within 5–15 minutes of payment confirmation. Our dedicated technical support team is available 24/7 via WhatsApp and email to assist with app setup.",
     },
   ],
 };

@@ -523,7 +523,7 @@ export function generateStructuredData(path: string = "/") {
     const hubArticleSchema = {
       "@type": "TechArticle",
       "@id": `${siteConfig.url}/best-iptv#article`,
-      headline: "Best IPTV Services in 2026: Comparison & Buying Guide",
+      headline: "Best IPTV Services 2026: Comparison & Buying Guide",
       description:
         "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
       url: `${siteConfig.url}/best-iptv`,

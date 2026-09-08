@@ -89,6 +89,10 @@ export default function SubscriptionHubPage() {
                       <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">
                         IPTV free trial
                       </a>
+                      , explore the complete{" "}
+                      <a href="/" className="text-phosphor-green font-semibold hover:underline">
+                        Teleview IPTV service
+                      </a>
                       , or consult our detailed{" "}
                       <a href="/iptv-pricing" className="text-phosphor-green font-semibold hover:underline">
                         IPTV pricing guide
@@ -372,7 +376,7 @@ export default function SubscriptionHubPage() {
               </a>
               <span className="text-smoke">&bull;</span>
               <a href="/best-iptv" className="text-phosphor-green hover:underline">
-                Compare Best IPTV Services &rarr;
+                Best IPTV Services Comparison &rarr;
               </a>
             </div>
           </section>

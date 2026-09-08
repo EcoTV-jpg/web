@@ -12,10 +12,10 @@ export default function Comparison() {
             Stream More. Pay Less
           </p>
           <h2 id="comparison-heading" className="t-h2 mt-4 text-balance">
-            How to Choose the <Accent>Best IPTV Service</Accent> in 2026
+            Comparing Teleview to <Accent>Cable TV &amp; Resellers</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
-            Comparing cable and random IPTV sellers? Teleview is tuned for high-speed streaming and works on the devices you already use.
+            See how Teleview’s managed multi-CDN streaming nodes compare against legacy cable contracts and unmanaged third-party reseller lines.
           </p>
         </Reveal>
 
@@ -76,7 +76,7 @@ export default function Comparison() {
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Customizable Packages:</strong> Flexible 1–4 device plans</span>
+                  <span><strong className="text-phosphor-green">Multi-Screen Options:</strong> 1 to 4 connection plans available</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
@@ -104,7 +104,7 @@ export default function Comparison() {
               <ul className="mt-6 space-y-4 text-xs sm:text-[13px] flex-1">
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-snow">No Real Support:</strong> Ghosted after taking payment</span>
+                  <span><strong className="text-snow">Unresponsive Support:</strong> Lack of post-purchase technical assistance</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-smoke">
                   <X className="size-4 text-rose-400 shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />

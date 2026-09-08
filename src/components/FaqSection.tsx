@@ -12,9 +12,9 @@ export default function FaqSection() {
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
             Frequently Asked Questions
           </p>
-          <h3 id="faq-section-heading" className="t-h2 mt-4 text-balance">
+          <h2 id="faq-section-heading" className="t-h2 mt-4 text-balance">
             Discover Premium <Accent>Teleview IPTV Service</Accent>
-          </h3>
+          </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[560px] text-silver-mist leading-relaxed">
             Find fast, accurate answers to common questions about Teleview IPTV subscriptions, activation, compatible devices, and our 14-day money-back guarantee.
           </p>

@@ -50,7 +50,7 @@ export default function BestIptvHubPage() {
               <span>2026 Buying Guide &amp; Technical Comparison</span>
             </div>
             <h1 className="t-display tracking-tight text-snow max-w-[880px] mx-auto">
-              Best <Accent>IPTV Services</Accent> in 2026
+              Best IPTV Services 2026: <Accent>Comparison &amp; Buying Guide</Accent>
             </h1>
             <p className="t-body mt-4 max-w-[760px] mx-auto text-silver-mist">
               An editorial buying guide for comparing IPTV service providers and compatible media players. Because no single IPTV service is best for every viewer, services should be evaluated using practical criteria such as stream stability, device support, trial terms, and pricing transparency. Teleview&apos;s published service specifications are evaluated separately from the general buying methodology.
@@ -66,7 +66,7 @@ export default function BestIptvHubPage() {
           {/* Editorial Transparency Notice */}
           <div className="rounded-xl border border-charcoal/70 bg-ash/20 px-4 py-3 text-xs text-smoke flex flex-wrap items-center justify-between gap-2 mb-6">
             <span>
-              <strong>Editorial Transparency:</strong> General buyer criteria are derived from objective streaming requirements. Teleview&apos;s published service specifications are presented separately in their own section.
+              <strong>Publisher &amp; Editorial Disclosure:</strong> This comparison and buying guide is published by Teleview. Buyer criteria and technical benchmarks are based on objective streaming architecture, protocol standards, and hardware requirements. Teleview&apos;s commercial service specifications are presented transparently in Section 6 so readers can evaluate them alongside broader market options.
             </span>
             <a
               href="/iptv-players"
@@ -85,7 +85,7 @@ export default function BestIptvHubPage() {
                   What Is the Best IPTV Service in 2026?
                 </h2>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  There is no single IPTV service that is best for every viewer. The right choice depends on the channels you need, your country, device compatibility, stream stability, EPG support, pricing, trial terms, refund policy, and customer support. Before buying a long-term plan, compare the provider&apos;s published terms and test the service on the device and internet connection you actually use. Teleview is one service covered on this page; its provider-published specifications are presented separately from the general buying criteria. Viewers can evaluate streaming performance on their equipment with a 24-hour <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">IPTV free trial</a> or compare standard <a href="/iptv-subscription" className="text-phosphor-green font-semibold hover:underline">IPTV subscription plans</a>.
+                  There is no single IPTV service that is best for every viewer. The right choice depends on the channels you need, your country, device compatibility, stream stability, EPG support, pricing, trial terms, refund policy, and customer support. Before buying a long-term plan, compare the provider&apos;s published terms and test the service on the device and internet connection you actually use. Teleview is one service covered on this page; its provider-published specifications are presented separately from the general buying criteria. Viewers can evaluate the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> on their equipment with a 24-hour <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">IPTV free trial</a> or compare standard <a href="/iptv-subscription" className="text-phosphor-green font-semibold hover:underline">IPTV subscription plans</a>.
                 </p>
               </div>
             </div>
@@ -358,10 +358,10 @@ export default function BestIptvHubPage() {
                   <span>Provider Information</span>
                 </span>
                 <h2 id="teleview-eval-heading" className="text-xl sm:text-2xl font-bold text-snow">
-                  Teleview&apos;s Published Service Specifications
+                  Teleview IPTV Service
                 </h2>
                 <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  This section summarizes information currently published by Teleview. These provider-specific specifications are presented separately from the general buyer criteria above and should be confirmed against the current service terms before purchase.
+                  This section summarizes information currently published by Teleview. Viewers interested in the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> can review the provider-specific specifications below, which are presented separately from the general buyer criteria above and should be confirmed against current service terms before purchase.
                 </p>
               </div>
 
@@ -440,9 +440,12 @@ export default function BestIptvHubPage() {
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-4 text-center">
-                <GreenButton href="/iptv-subscription" className="text-xs px-6 py-2.5">
-                  View Teleview Subscription Plans &rarr;
+                <GreenButton href="/" className="text-xs px-6 py-2.5">
+                  Explore Teleview IPTV Service &rarr;
                 </GreenButton>
+                <GhostButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
+                  View Subscription Plans &rarr;
+                </GhostButton>
                 <a
                   href="/iptv-free-trial"
                   className="text-xs font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
@@ -1082,7 +1085,7 @@ export default function BestIptvHubPage() {
                 Teleview IPTV Subscription Plans
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[620px] mx-auto">
-                One-time prepaid packages with published specifications. Automated credentials, zero recurring contracts, and a 14-day refund policy.
+                One-time prepaid packages with published specifications. Automated credentials, zero recurring contracts, and a 14-day refund policy. Review complete features on the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> overview or select a subscription duration below.
               </p>
             </div>
 
@@ -1299,7 +1302,7 @@ export default function BestIptvHubPage() {
               Editorial Disclosure &amp; Legal Compliance
             </h2>
             <p className="leading-relaxed mb-2">
-              How this guide works: We separate general buyer criteria from Teleview&apos;s published service specifications. Provider-specific claims describe information published by the provider and should be confirmed against current service terms before purchase.
+              Publisher and Evaluation Methodology: This guide is published by Teleview. To ensure editorial utility, we separate general buyer criteria and technical player benchmarks from Teleview&apos;s commercial service specifications. Provider-specific claims describe information published by the provider and should be verified against current service terms prior to subscribing.
             </p>
             <p className="leading-relaxed">
               Users should access television streams only where they have the legal right to do so and should follow applicable copyright and broadcast-distribution laws. For detailed policies, please review our{" "}

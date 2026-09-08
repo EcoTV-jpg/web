@@ -867,7 +867,7 @@ export default function WhatIsIptvPage() {
               Experience Next-Generation 4K IPTV with Teleview
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[580px] mx-auto leading-relaxed">
-              25,000+ live television channels, multi-CDN edge server routing, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
+              Explore the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> featuring 25,000+ live television channels, multi-CDN edge server routing, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">

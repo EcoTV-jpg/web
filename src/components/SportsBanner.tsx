@@ -21,9 +21,9 @@ export default function SportsBanner() {
 
             <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
               <div>
-                <h3 id="sports-heading" className="t-h2 text-balance text-2xl sm:text-3xl lg:text-4xl text-snow font-extrabold">
+                <h2 id="sports-heading" className="t-h2 text-balance text-2xl sm:text-3xl lg:text-4xl text-snow font-extrabold">
                   Never Miss Your <Accent>Favorite Game</Accent> Again
-                </h3>
+                </h2>
                 <p className="t-body mt-4 text-silver-mist leading-relaxed text-sm sm:text-base">
                   {sportsSection.copy}
                 </p>
@@ -34,7 +34,7 @@ export default function SportsBanner() {
                       <Tv2 className="size-4" aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wide">Live HD Streams</span>
                     </div>
-                    <p className="text-xs text-silver-mist">Crystal clear 4K quality for every game</p>
+                    <p className="text-xs text-silver-mist">High-definition and 4K feeds on supported events</p>
                   </div>
 
                   <div className="rounded-xl border border-charcoal bg-ash/50 p-4">

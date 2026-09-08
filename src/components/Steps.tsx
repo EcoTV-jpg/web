@@ -11,9 +11,9 @@ export default function Steps() {
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
             {stepsSection.kicker || "how to get your IPTV?"}
           </p>
-          <h3 id="steps-heading" className="t-h2 text-balance max-w-[700px] mx-auto mt-4">
+          <h2 id="steps-heading" className="t-h2 text-balance max-w-[700px] mx-auto mt-4">
             3 Easy Steps to <Accent>Ultimate Entertainment!</Accent>
-          </h3>
+          </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[500px] text-silver-mist">
             {stepsSection.subhead}
           </p>
