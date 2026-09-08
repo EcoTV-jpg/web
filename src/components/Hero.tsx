@@ -100,19 +100,19 @@ export default function Hero() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 rounded-2xl border border-charcoal bg-ash/50 p-6 shadow-lg backdrop-blur-sm">
             <div className="text-center p-2">
               <div className="text-2xl sm:text-3xl font-extrabold text-snow">25,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">FHD Channels</p>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Live Channels</p>
             </div>
             <div className="text-center p-2 border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">5,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Active Users</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">60 FPS</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Live Sports</p>
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-snow">120,000+</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-snow">100,000+</div>
               <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Movies / Series</p>
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">1,000+</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Subscribers</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">7-Day</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">XMLTV EPG Guide</p>
             </div>
           </div>
         </Reveal>

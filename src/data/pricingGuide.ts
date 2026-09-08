@@ -102,7 +102,7 @@ export const pricingTierComparisons: PricingTierComparison[] = [
     bestFor: "Regular sporting seasons and multi-month household streaming reliability.",
     highlights: [
       `Low $${(p6.price / p6.months).toFixed(2)}/month effective rate (saves $${p1.price * 6 - p6.price} over monthly)`,
-      "High-bandwidth server tier with anti-freeze load balancing",
+      "High-bandwidth server tier with dynamic CDN load balancing",
       "All major international regional channel bouquets included",
       "Multi-device compatible (Firestick, Apple TV, Smart TVs, Android)",
     ],
@@ -115,12 +115,12 @@ export const pricingTierComparisons: PricingTierComparison[] = [
     effectiveMonthlyPrice: Number((p12.price / p12.months).toFixed(2)),
     savingsPercentage: Math.round(((p1.price * 12 - p12.price) / (p1.price * 12)) * 100),
     connectionCount: 1,
-    bestFor: "Maximum long-term value for cord-cutters replacing traditional cable contracts.",
+    bestFor: "Full household entertainment replacement with maximum long-term savings.",
     highlights: [
-      `Lowest effective price at just $${(p12.price / p12.months).toFixed(2)} per month (53% discount)`,
-      `Saves $${p1.price * 12 - p12.price} annually compared to individual monthly renewals`,
-      "Full access to 4K UHD sports, premium PPV events & VOD library (on supported channels)",
-      "14-day money-back guarantee protection included",
+      `Lowest rate of $${(p12.price / p12.months).toFixed(2)}/month ($${p1.price * 12 - p12.price} total annual savings)`,
+      "Top-tier high-capacity VIP server cluster allocation",
+      "Comprehensive 365-day live sports coverage guarantee",
+      "Zero price increase guarantee for current active subscribers",
     ],
   },
 ];
@@ -180,7 +180,7 @@ export const featureInclusions: FeatureInclusionItem[] = [
     notes: "Direct server URL, port, username, password, and custom M3U links.",
   },
   {
-    feature: "Anti-Freeze Edge CDN Routing Architecture",
+    feature: "Multi-Edge CDN Routing Architecture",
     included: true,
     notes: "Distributed edge network optimized to prevent prime-time stutter.",
   },

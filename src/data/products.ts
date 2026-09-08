@@ -129,7 +129,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     features: [
       "4K Ultra HD & FHD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows On-Demand",
+      "100,000+ Movies & TV Shows On-Demand",
       "Major Sports Networks & PPV Included",
       "Smart EPG & Catch-Up TV Features",
       "24/7 Customer Support & Rapid Setup",
@@ -166,7 +166,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     ctaText: "Choose 1 Month",
     metaTitle: "1 Month IPTV Subscription – $16 | Teleview",
     metaDescription:
-      "Get a 1 month IPTV subscription for $16. Enjoy 25,000+ live channels, 4K sports, and 120k+ movies with instant activation, 24/7 support, and no contracts.",
+      "Get a 1 month IPTV subscription for $16. Enjoy 25,000+ live channels, 4K sports, and 100,000+ movies & series with fast activation, 24/7 support, and no contracts.",
   },
 
   "3-months": {
@@ -224,7 +224,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       {
         title: "Zero Mid-Game Expiration Lockouts",
         description:
-          "With month-to-month billing, accounts frequently expire on a weekend afternoon just before a championship match. The 90-day horizon guarantees sustained uptime across dozens of premier sporting weekends.",
+          "With month-to-month billing, accounts frequently expire on a weekend afternoon just before a championship match. The 90-day horizon maintains uninterrupted stream access across dozens of premier sporting weekends without monthly renewal friction.",
       },
       {
         title: "Seamless Household Budgeting",
@@ -241,7 +241,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     features: [
       "4K Ultra HD & FHD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows On-Demand",
+      "100,000+ Movies & TV Shows On-Demand",
       "Major Sports Networks & PPV Included",
       "Smart EPG & Catch-Up TV Features",
       "24/7 Priority Customer Support",
@@ -326,7 +326,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       {
         title: "Replacing $600+ Cable Invoices",
         description:
-          "The average traditional cable or satellite subscriber pays between $90 and $150 per month ($540 to $900 over 6 months) once equipment rentals and broadcast fees are tallied. Teleview provides full access to 25,000+ channels and 120,000+ VOD titles for a single $60 payment.",
+          "The average traditional cable or satellite subscriber pays between $90 and $150 per month ($540 to $900 over 6 months) once equipment rentals and broadcast fees are tallied. Teleview provides full access to 25,000+ channels and 100,000+ VOD titles for a single $60 payment.",
       },
       {
         title: "Flat $10.00 Monthly Predictability",
@@ -341,7 +341,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       {
         title: "Priority Regional CDN Routing",
         description:
-          "Semi-annual accounts are prioritized across our primary North American, European, and international CDN edge nodes, guaranteeing rapid channel zapping and anti-buffering playback.",
+          "Semi-annual accounts are prioritized across our primary North American, European, and international CDN edge nodes, delivering rapid channel zapping and buffer-free playback.",
       },
     ],
     expirationInfo:
@@ -353,7 +353,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     features: [
       "4K Ultra HD & FHD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows On-Demand",
+      "100,000+ Movies & TV Shows On-Demand",
       "Major Sports Networks & PPV Included",
       "Smart EPG & Catch-Up TV Features",
       "24/7 Dedicated Server Priority Support",
@@ -390,7 +390,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     ctaText: "Choose 6 Months",
     metaTitle: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     metaDescription:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and anti-freeze reliability on all devices.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and multi-edge CDN reliability on all devices.",
   },
 
   "12-months": {
@@ -439,12 +439,12 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       {
         title: "Multi-App Streaming Consolidation",
         description:
-          "Subscribing separately to 4 or 5 streaming services (Netflix, Disney+, sports apps, and live TV packages) easily costs households $720 to $1,200 annually. Teleview unifies 25,000+ live channels and 120,000+ on-demand movies into one $90 annual payment—under $0.25 per day.",
+          "Subscribing separately to 4 or 5 streaming services (Netflix, Disney+, sports apps, and live TV packages) easily costs households $720 to $1,200 annually. Teleview unifies 25,000+ live channels and 100,000+ on-demand movies into one $90 annual payment—under $0.25 per day.",
       },
       {
         title: "Complete 365-Day Sporting Calendar",
         description:
-          "Never miss pre-season preparation, regular season matchdays, winter tournaments, spring playoffs, and summer international championships. An annual subscription guarantees seamless continuity across Premier League, NFL, NBA, UFC, Formula 1, and Champions League.",
+          "Never miss pre-season preparation, regular season matchdays, winter tournaments, spring playoffs, and summer international championships. An annual subscription provides seamless continuity across Premier League, NFL, NBA, UFC, Formula 1, and Champions League.",
       },
       {
         title: "VIP High-Capacity Server Cluster Priority",
@@ -466,7 +466,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     features: [
       "4K Ultra HD & FHD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows On-Demand",
+      "100,000+ Movies & TV Shows On-Demand",
       "Major Sports Networks & PPV Included",
       "Smart EPG & Catch-Up TV Features",
       "Dedicated VIP High-Performance Server Priority",
@@ -527,7 +527,7 @@ export const subscriptionHubData = {
       desc: "Access premier local and international broadcasts across sports, news, entertainment, and documentary networks in 4K and FHD.",
     },
     {
-      title: "Ultra-Fast Anti-Freeze Infrastructure",
+      title: "Distributed Edge CDN Infrastructure",
       desc: "Stream with high-availability infrastructure backed by worldwide low-latency CDNs and intelligent packet routing.",
     },
     {
@@ -545,7 +545,7 @@ export const subscriptionHubData = {
     "100,000+ Movies & TV Shows On-Demand",
     "7-Day XMLTV Electronic Program Guide (EPG)",
     "Xtream Codes API & M3U Playlist Formats",
-    "Anti-Freeze Edge CDN Server Cluster Routing",
+    "Distributed Edge CDN Server Cluster Routing",
     "Fast 5–15 Min Activation Dispatch Upon Payment",
     "14-Day Money-Back Guarantee Included",
   ],

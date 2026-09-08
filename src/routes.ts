@@ -169,7 +169,7 @@ export const routes: AppRoute[] = [
     h1: "1 Month IPTV Subscription",
     title: "1 Month IPTV Subscription – $16 | Teleview",
     description:
-      "Get a 1 month IPTV subscription for $16. Enjoy full access to 25,000+ live channels, 4K sports, and 120k+ movies with instant activation and zero contracts.",
+      "Get a 1 month IPTV subscription for $16. Enjoy full access to 25,000+ live channels, 4K sports, and 100,000+ movies & series with fast activation and zero contracts.",
     ogTitle: "1 Month IPTV Subscription for $16 – Instant Activation | Teleview",
     ogDescription:
       "Flexible monthly streaming without locked-in contracts. Full live sports and entertainment access with 24/7 technical support.",
@@ -217,7 +217,7 @@ export const routes: AppRoute[] = [
     h1: "6 Months IPTV Subscription",
     title: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     description:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and anti-freeze reliability on all your devices.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and multi-edge CDN reliability on all your devices.",
     ogTitle: "6 Months IPTV Subscription for $60 – $10/mo Semi-Annual Value | Teleview",
     ogDescription:
       "Half a year of uninterrupted 4K sports and worldwide channels at 37.5% off standard monthly rates.",
@@ -282,7 +282,7 @@ export const routes: AppRoute[] = [
     h1: "IPTV Subscription Plans & Pricing",
     title: "IPTV Subscription Plans & Pricing | Teleview",
     description:
-      "Compare Teleview IPTV subscription plans. Get 25,000+ live channels, 4K sports, and 120k+ movies from $7.50/mo. Fast activation and 14-day guarantee.",
+      "Compare Teleview IPTV subscription plans. Get 25,000+ live channels, 4K sports, and 100,000+ movies & series from $7.50/mo. Fast activation and 14-day guarantee.",
     ogTitle: "Teleview IPTV Pricing & Subscription Packages",
     ogDescription:
       "Compare all IPTV subscription tiers and pricing options from $7.50/mo.",
@@ -1240,7 +1240,7 @@ export const routes: AppRoute[] = [
       "live football IPTV",
       "Premier League live feeds",
       "NFL and NBA passes",
-      "anti-freeze sports servers",
+      "high-bandwidth sports servers",
     ],
     h1: "IPTV Sports: Live 4K & 60 FPS Sports Streaming Guide (2026)",
     title: "IPTV Sports: Live 4K & 60 FPS Streaming Guide (2026) | Teleview",
@@ -1248,7 +1248,7 @@ export const routes: AppRoute[] = [
       "Experience live sports in 4K at 60 FPS. Dedicated servers for European football, Premier League, NFL, NBA, Formula 1, and PPV fight cards.",
     ogTitle: "IPTV Sports: 4K 60 FPS Live Sports Streaming | Teleview",
     ogDescription:
-      "Stream global live sports without buffering: 60 FPS high-framerate feeds, uncompressed audio, and dedicated anti-freeze CDN clusters.",
+      "Stream global live sports without buffering: 60 FPS high-framerate feeds, clear Dolby Digital audio, and dedicated low-latency CDN clusters.",
     breadcrumbName: "IPTV Sports",
   },
   {
@@ -1267,12 +1267,12 @@ export const routes: AppRoute[] = [
       "HEVC cinema streaming",
     ],
     h1: "IPTV Movies: 4K Video-on-Demand (VOD) Library Guide (2026)",
-    title: "IPTV Movies & VOD: 100,000+ 4K Cinema Titles (2026) | Teleview",
+    title: "IPTV Movies & VOD: 100,000+ Cinema Titles & Series (2026) | Teleview",
     description:
       "Explore on-demand cinema streaming with 100,000+ movies and complete TV series. Mastered in 4K HDR with multi-language audio and subtitles.",
     ogTitle: "IPTV Movies & VOD: 100,000+ Cinema Catalog | Teleview",
     ogDescription:
-      "Browse over 100,000 4K UHD on-demand movies and television series with multi-language subtitle tracks and high-speed NVMe servers.",
+      "Browse over 100,000 on-demand movies and television series with 4K UHD cinema titles, multi-language subtitle tracks, and dedicated streaming servers.",
     breadcrumbName: "IPTV Movies",
   },
   {

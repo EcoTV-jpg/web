@@ -23,11 +23,11 @@ export const hero = {
   heading: "Best IPTV Service Worldwide in 2026 — Teleview",
   subhead:
     "Discover Teleview, a premium IPTV service for viewers worldwide. Stream 25,000+ live channels, movies and series in HD and 4K, with IPTV Subscription plans and a free trial.",
-  copy: "Get instant access to over 25,000 live TV channels and an extensive library of on-demand content. Watch in HD or 4K with fast, reliable streaming. Enjoy live sports, news, movies, and shows from around the world with 24/7 customer support, anti-freeze infrastructure, and no long-term contracts.",
+  copy: "Get instant access to over 25,000 live TV channels and an extensive library of on-demand content. Watch in HD or 4K with fast, reliable streaming. Enjoy live sports, news, movies, and shows from around the world with 24/7 customer support, multi-edge CDN server routing, and no long-term contracts.",
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "Start Free Trial",
   trustBadges: [
-    "Instant Activation",
+    "Fast Activation",
     "Premium Service",
     "Reliable Streaming",
   ],
@@ -122,9 +122,9 @@ export const whyChoose = {
 /* Devices & Coverage */
 export const devicesSection = {
   kicker: "Stream anywhere anytime",
-  heading: "Watch Teleview on All Devices",
+  heading: "Watch Teleview on All Compatible Devices",
   subhead:
-    "Don’t worry—your IPTV subscription works seamlessly on all smart devices, from Fire Stick and Smart TVs to Android, Apple, Magbox, and Roku. No matter what you use, you’ll enjoy smooth streaming.",
+    "Your IPTV subscription connects smoothly across major streaming platforms—from Amazon Fire Stick and Smart TVs (Samsung & LG) to Android, Apple TV, MAG boxes, and Roku (via screen casting). Enjoy reliable playback with step-by-step setup guides.",
   devices: [
     "Fire TV",
     "Android TV",
@@ -273,7 +273,7 @@ export const plans: Plan[] = [
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows",
+      "100,000+ Movies & TV Shows",
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
@@ -293,7 +293,7 @@ export const plans: Plan[] = [
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows",
+      "100,000+ Movies & TV Shows",
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
@@ -313,7 +313,7 @@ export const plans: Plan[] = [
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows",
+      "100,000+ Movies & TV Shows",
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
@@ -336,7 +336,7 @@ export const plans: Plan[] = [
     features: [
       "4K Ultra HD Streaming Quality",
       "25,000+ Live Channels Worldwide",
-      "120,000+ Movies & TV Shows",
+      "100,000+ Movies & TV Shows",
       "Premium PPV Events Included",
       "Instant VOD Access",
       "Smart EPG & Catch-Up TV",
@@ -422,7 +422,7 @@ export const whyChooseUs = {
   items: [
     {
       title: "Premium IPTV Experience",
-      copy: "At Teleview, we focus on delivering premium streaming excellence. Our IPTV service combines high-bitrate video delivery with an anti-freeze server network, high-availability streaming infrastructure, and responsive playback across all devices.",
+      copy: "At Teleview, we focus on delivering premium streaming excellence. Our IPTV service combines high-bitrate video delivery with multi-edge CDN server routing, high-availability streaming infrastructure, and responsive playback across all devices.",
     },
     {
       title: "Reliable & Secure Service",
@@ -487,7 +487,7 @@ export const faqs = [
   {
     question: "What is IPTV and how does Teleview work?",
     answer:
-      "IPTV (Internet Protocol Television) delivers live television channels and on-demand video over an internet connection instead of cable or satellite. Teleview provisions secure subscriber credentials (Xtream Codes API or M3U playlist) that you input into your preferred media player app to stream 25,000+ live channels and 120,000+ VOD titles.",
+      "IPTV (Internet Protocol Television) delivers live television channels and on-demand video over an internet connection instead of cable or satellite. Teleview provisions secure subscriber credentials (Xtream Codes API or M3U playlist) that you input into your preferred media player app to stream 25,000+ live channels and 100,000+ VOD titles.",
   },
   {
     question: "What customer support response time does Teleview offer?",
@@ -502,7 +502,7 @@ export const faqs = [
   {
     question: "Why choose Teleview as your IPTV provider?",
     answer:
-      "Teleview offers a stable global streaming service with 25,000+ live channels, 120,000+ VOD movies and series, high-definition live sports, anti-freeze edge routing, multi-device support, and a risk-free 14-day money-back guarantee.",
+      "Teleview offers a stable global streaming service with 25,000+ live channels, 100,000+ VOD movies and series, high-definition live sports, adaptive multi-edge CDN routing, multi-device support, and a risk-free 14-day money-back guarantee.",
   },
   {
     question: "Which devices and operating systems are supported by Teleview?",
@@ -537,7 +537,7 @@ export const faqs = [
   {
     question: "How much does Teleview IPTV cost compared to cable TV?",
     answer:
-      "Teleview IPTV starts at $16 per month (or down to $7.50 per month on the 12-month plan), compared to traditional cable packages that typically cost between $90 and $180 per month. Subscribers save over $1,000 annually while accessing 25,000+ live channels and 120,000+ on-demand titles.",
+      "Teleview IPTV starts at $16 per month (or down to $7.50 per month on the 12-month plan), compared to traditional cable packages that typically cost between $90 and $180 per month. Subscribers save over $1,000 annually while accessing 25,000+ live channels and 100,000+ on-demand titles.",
   },
   {
     question: "What live sports coverage is included with Teleview?",

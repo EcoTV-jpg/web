@@ -148,7 +148,7 @@ export const featureGuidesList: FeatureGuideDetail[] = [
     },
     introParagraphs: [
       "For sports fans, nothing is more frustrating than a stream that freezes during a decisive penalty kick or final-round championship knockout. Traditional cable services compress sports into low-framerate 720p or 1080i signals, while fragmented legal streaming apps charge upwards of $80–$100 monthly just to watch a single league.",
-      "Teleview's sports streaming infrastructure is purpose-engineered for high-motion sports action. Dedicated encoder clusters transcode raw feeds at 50 and 60 frames per second with uncompressed audio, distributed across global edge CDN servers designed to absorb massive surges in concurrent viewership.",
+      "Teleview's sports streaming infrastructure is purpose-engineered for high-motion sports action. Dedicated encoder clusters transcode raw feeds at 50 and 60 frames per second with clear Dolby Digital and AAC stereo audio, distributed across global edge CDN servers designed to absorb massive surges in concurrent viewership.",
     ],
     categories: [
       {

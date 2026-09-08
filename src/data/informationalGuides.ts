@@ -126,7 +126,7 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
       },
       {
         title: "View Subscription Options",
-        description: "Compare transparent pre-paid plans with anti-freeze server infrastructure.",
+        description: "Compare transparent pre-paid plans with high-bandwidth CDN edge routing.",
         linkUrl: "/iptv-subscription",
         linkText: "Explore Subscription Plans →",
       },
@@ -265,7 +265,7 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         callout: {
           type: "check",
           title: "Teleview Security Architecture",
-          text: "Teleview utilizes end-to-end SSL/TLS encryption for account management and stream handshakes, ensuring your subscriber session and credentials remain completely secure.",
+          text: "Teleview supports SSL/TLS encryption for account management and compatible secure player connections, protecting subscriber authentication sessions.",
         },
       },
     ],
@@ -428,7 +428,7 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         callout: {
           type: "check",
           title: "Annual Savings Calculation",
-          text: "An average household switching from a $140/month cable package to a $90/year IPTV subscription saves approximately $1,590 annually.",
+          text: "Based on documented US and UK traditional cable TV industry averages of $110 to $140 per month including hardware rentals and regional sports surcharges, an average household switching to a $90/year IPTV subscription saves approximately $1,590 annually.",
         },
       },
       {
@@ -437,7 +437,7 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         content: [
           "Historically, traditional cable was considered more reliable for live sports. However, modern fiber broadband and high-performance IPTV CDNs have closed this gap entirely.",
           "60 FPS Sports Streams: Teleview delivers live football, basketball, and racing in true 60 frames per second at 1080p and 4K UHD resolutions, matching or exceeding the compressed 720p/1080i feeds distributed by legacy cable operators.",
-          "Anti-Freeze Load Balancing: Advanced IPTV networks deploy multi-server edge clusters that dynamically reroute stream packets if a data center node experiences congestion.",
+          "Dynamic Edge Load Balancing: Advanced IPTV networks deploy multi-server edge clusters that dynamically reroute stream packets if a data center node experiences congestion.",
         ],
       },
       {
