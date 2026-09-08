@@ -30,6 +30,11 @@ export interface FeatureGuideDetail {
     question: string;
     answer: string;
   }[];
+  sportsLatencyOptimization?: {
+    heading: string;
+    description: string;
+    tips: { title: string; detail: string }[];
+  };
   nextSteps: {
     title: string;
     description: string;
@@ -51,7 +56,7 @@ export const featureGuidesList: FeatureGuideDetail[] = [
     },
     introParagraphs: [
       "Unlike legacy cable TV packages that limit viewing to 150–250 regional channels, modern IPTV delivers an extensive global broadcast directory over high-speed internet protocol. With over 25,000 live channels organized into intuitive regional and genre bouquets, subscribers enjoy comprehensive domestic and international television on any supported screen.",
-      "Every channel stream is ingested at broadcast headends, optimized for low latency, and distributed via global Content Delivery Networks with anti-freeze server redundancy.",
+      "Every channel stream is ingested at broadcast headends, optimized for low latency, and distributed via global Content Delivery Networks with automated failover server redundancy.",
     ],
     categories: [
       {
@@ -98,6 +103,10 @@ export const featureGuidesList: FeatureGuideDetail[] = [
         title: "Xtream Codes Fast Categorization",
         description: "Subscribers can load specific regional categories without having to download unneeded international channels, ensuring lightning-fast zapping speeds.",
       },
+      {
+        title: "Bouquet Filtering & Playlist Load Acceleration",
+        description: "Loading 25,000 channels simultaneously into budget streaming sticks can cause memory lag. Filtering out unneeded regional bouquets in player settings cuts RAM consumption by up to 75% and accelerates guide loading from 15s to under 2s.",
+      },
     ],
     faqs: [
       {
@@ -139,12 +148,12 @@ export const featureGuidesList: FeatureGuideDetail[] = [
   {
     slug: "iptv-sports",
     h1: "IPTV Sports: Live 4K & 60 FPS Sports Streaming Guide (2026)",
-    tagline: "High-framerate 60 FPS sports broadcasting, zero-buffering server architecture, multi-feed coverage, and marquee global leagues.",
+    tagline: "High-framerate 60 FPS sports broadcasting, buffer-optimized server architecture, multi-feed coverage, and marquee global leagues.",
     category: "Live Sports & Pay-Per-View Events",
     readTime: "7 min read",
     directAnswer: {
       question: "Why is IPTV the premier solution for live sports fans in 2026?",
-      answer: "IPTV eliminates expensive regional sports subscription fragmentation by consolidating global sports networks into a single high-bandwidth service. Subscribers receive high-framerate 60 FPS video feeds for football, basketball, racing, and combat sports at 1080p and 4K UHD resolutions, backed by dedicated CDN clusters with anti-freeze load balancing that prevents buffering during peak viewer traffic.",
+      answer: "IPTV eliminates expensive regional sports subscription fragmentation by consolidating global sports networks into a single high-bandwidth service. Subscribers receive high-framerate 60 FPS video feeds for football, basketball, racing, and combat sports at 1080p and 4K UHD resolutions, backed by dedicated multi-CDN clusters with automated edge load balancing that prevents buffering during peak viewer traffic.",
     },
     introParagraphs: [
       "For sports fans, nothing is more frustrating than a stream that freezes during a decisive penalty kick or final-round championship knockout. Traditional cable services compress sports into low-framerate 720p or 1080i signals, while fragmented legal streaming apps charge upwards of $80–$100 monthly just to watch a single league.",
@@ -178,14 +187,40 @@ export const featureGuidesList: FeatureGuideDetail[] = [
         description: "Standard video streams at 25 or 30 frames per second appear jerky during fast-moving football passes or motorsport turns. 60 FPS delivers fluid, broadcast-grade television realism.",
       },
       {
-        title: "Multi-Server Anti-Freeze Balancing",
-        description: "During marquee events (like the El Clásico or Super Bowl), traffic surges are dynamically distributed across redundant CDN clusters to prevent server overload.",
+        title: "Multi-CDN Edge Failover Balancing",
+        description: "During marquee events (such as championship finals), traffic surges are dynamically distributed across redundant edge clusters to prevent server congestion.",
       },
       {
         title: "Multi-Audio Language Feeds",
         description: "Major matches include primary English commentary alongside Spanish, French, German, and Arabic broadcast audio tracks.",
       },
     ],
+    sportsLatencyOptimization: {
+      heading: "How to Minimize Live Sports Stream Latency",
+      description: "Live sports broadcasts streamed over internet protocols inherently carry a slight transmission delay compared to OTA (over-the-air) antenna signals. Follow these four optimizations to bring your live sports feed within seconds of real-time:",
+      tips: [
+        {
+          title: "Tune Player Buffer Cache",
+          detail: "If your broadband connection is fast and stable (wired Ethernet or 5 GHz Wi-Fi), reduce your player buffer setting from 'Large' (5s) to 'Small' or 'None' (0.5–1.5s). This eliminates unnecessary artificial delay.",
+        },
+        {
+          title: "Select MPEG-TS Over HLS",
+          detail: "Where your player supports protocol selection, stream via raw MPEG-TS rather than HLS (HTTP Live Streaming). MPEG-TS delivers continuous packet chunks without waiting for 6-second segment playlists to compile.",
+        },
+        {
+          title: "Use Hardwired Cat6 Ethernet",
+          detail: "Wi-Fi packet retransmissions add unpredictable jitter. Connecting your streaming box directly via Ethernet guarantees steady delivery without latency spikes.",
+        },
+        {
+          title: "Synchronize System Clock",
+          detail: "Ensure your streaming device date and time are synchronized via network time protocol (NTP) to eliminate timeline drift during long matches.",
+        },
+        {
+          title: "Multi-Screen Configuration for Match Days",
+          detail: "Watching 2 or 4 simultaneous live matches in TiviMate Multi-View requires an active multi-connection subscription line and at least 30–50 Mbps of stable broadband to prevent account concurrency locks and player buffer starvation.",
+        },
+      ],
+    },
     faqs: [
       {
         question: "What internet download speed is required for 4K 60 FPS sports?",
@@ -261,6 +296,10 @@ export const featureGuidesList: FeatureGuideDetail[] = [
       {
         title: "Multi-Language Subtitles & Audio",
         description: "VOD titles feature selectable SRT subtitle tracks (English, Spanish, French, German, Arabic) and multi-channel audio tracks.",
+      },
+      {
+        title: "Audio Passthrough & Subtitle Synchronization",
+        description: "If an on-demand movie's audio lags behind video or subtitles drift, access your player's On-Screen Display (OSD) settings during playback to adjust Audio Delay in +/- 50ms increments or toggle between embedded SRT tracks and online lookups.",
       },
       {
         title: "Automated TMDB / IMDb Metadata",

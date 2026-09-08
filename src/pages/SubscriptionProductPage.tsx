@@ -99,11 +99,11 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
-                    <span>120,000+ Movies &amp; Series VOD</span>
+                    <span>100,000+ Movies &amp; Series VOD</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
-                    <span>Anti-Freeze Multi-CDN Infrastructure</span>
+                    <span>Multi-CDN Failover Infrastructure</span>
                   </div>
                 </div>
               </div>

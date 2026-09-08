@@ -69,9 +69,9 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
       },
       {
         step: 3,
-        title: "Increase Media Player Buffer Size",
-        action: "In TiviMate (Settings > Playback > Buffer size) or your player settings, increase buffer size from 'None' to 'Medium' or 'Large' (2–3 seconds).",
-        technicalRationale: "A 2–3 second buffer cache absorbs momentary internet micro-drops without interrupting live playback.",
+        title: "Increase Media Player Buffer Size (3,000–5,000ms)",
+        action: "In TiviMate (Settings > Playback > Buffer size) or your player settings, increase buffer size to 'Large' or set custom pre-buffer caching between 3,000ms and 5,000ms (3–5 seconds).",
+        technicalRationale: "A 3,000–5,000ms buffer cache creates an active safety cushion of downloaded video chunks, absorbing momentary local network jitter or transit routing stalls without interrupting playback.",
       },
       {
         step: 4,
@@ -82,6 +82,14 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
     ],
     advancedFixes: [
       {
+        title: "Run Bufferbloat & Latency Diagnostics",
+        instruction: "Test whether your home router degrades under load by running the Waveform Bufferbloat test at waveform.com/tools/bufferbloat. If you receive a low grade (C, D, or F), your router is queuing packets during uploads/downloads, causing live video stutter. Enable Smart Queue Management (SQM) or CAKE in router settings.",
+      },
+      {
+        title: "Understand the Local Speed Test Fallacy vs Overseas Transit Routing",
+        instruction: "Running Speedtest.net against a server hosted by your local ISP tests only last-mile cable throughput, not international media transit. If your ISP encounters peering congestion on backbone transit links, your stream will buffer despite showing 300 Mbps on local tests. Test using fast.com or test with a VPN enabled to route packets through an uncongested transit backbone.",
+      },
+      {
         title: "Switch Hardware Video Decoders",
         instruction: "In your player app settings, switch the video decoder engine between 'Hardware' and 'Software'. Hardware uses your device GPU; Software uses CPU cores.",
       },
@@ -91,6 +99,10 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
       },
     ],
     faqs: [
+      {
+        question: "Why does my IPTV buffer when Speedtest shows 200+ Mbps?",
+        answer: "Speedtest.net automatically connects to an optimal server hosted by your own internet provider just miles from your house. Live IPTV streams traverse multi-hop international backbone networks to reach content delivery nodes. If your ISP throttles UDP video ports or suffers peering congestion on upstream routes, you will experience buffering even with high local speed. Connecting through a VPN or testing speed to overseas servers reveals the true streaming throughput.",
+      },
       {
         question: "Why does my IPTV only buffer during big live football games?",
         answer: "This is often a sign of ISP traffic throttling. ISPs face high bandwidth demands during popular live sports events and may deprioritize streaming traffic. Connecting through a reputable VPN can help bypass ISP bandwidth management.",
@@ -153,6 +165,10 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
       },
     ],
     advancedFixes: [
+      {
+        title: "HTTP Error Code Quick-Reference Matrix",
+        instruction: "Inspect the return codes reported by your player logs: HTTP 401 (Unauthorized: invalid or expired username/password), HTTP 403 (Forbidden: active connection limit exceeded or IP address restriction), HTTP 404 (Not Found: outdated channel ID or obsolete stream path), and HTTP 500/502 (Server Error / Bad Gateway: upstream server node restart or brief CDN rebalancing).",
+      },
       {
         title: "Test Stream URL in VLC on PC",
         instruction: "Open VLC Media Player on a desktop computer, go to Media > Open Network Stream, paste your M3U link, and check Tools > Messages (Verbosity 2) to see exact server response codes.",
@@ -410,6 +426,10 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
     ],
     advancedFixes: [
       {
+        title: "Hourly Data Consumption & Bandwidth Benchmarks",
+        instruction: "Monitor data caps with verified consumption rates: Standard Definition (SD ~2.5 Mbps) uses ~0.9 GB/hour; High Definition (1080p 60 FPS ~6–8 Mbps) uses ~2.5 GB/hour; and 4K Ultra HD (HEVC/60 FPS ~18–25 Mbps) consumes ~7 to 10 GB/hour. Cord-cutters streaming 4 hours daily should verify an unlimited broadband data plan.",
+      },
+      {
         title: "Use a Cat6 / Cat7 Ethernet Cable",
         instruction: "For complete immunity to Wi-Fi interference and zero-jitter performance, wire your TV box directly to your router using Cat6 Ethernet.",
       },
@@ -421,7 +441,7 @@ export const troubleshootingGuidesList: TroubleshootingGuideDetail[] = [
       },
       {
         question: "How much data does 1 hour of 4K IPTV streaming consume?",
-        answer: "A high-bitrate 4K 60 FPS live broadcast consumes approximately 7 GB to 10 GB per hour. A standard 1080p stream consumes approximately 2.5 GB to 3.5 GB per hour.",
+        answer: "A high-bitrate 4K 60 FPS live broadcast consumes approximately 7 GB to 10 GB per hour. A standard 1080p stream consumes approximately 2.5 GB per hour, while an SD stream consumes roughly 0.9 GB per hour.",
       },
     ],
   },

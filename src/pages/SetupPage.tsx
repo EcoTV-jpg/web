@@ -96,7 +96,7 @@ export default function SetupPage() {
                   <p className="mt-2 leading-relaxed">
                     <strong className="text-snow">Teleview</strong> is an independent IPTV subscription and content delivery provider.
                     We provision your secure server access credentials (Server URL, Username, Password, and M3U playlist link),
-                    and maintain the high-availability video infrastructure streaming over 25,000 live channels and 120,000+ VOD titles.
+                    and maintain the high-availability video infrastructure streaming over 25,000 live channels and 100,000+ VOD titles.
                   </p>
                   <p className="mt-2 leading-relaxed">
                     IPTV player applications like <strong className="text-snow">TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV</strong>{" "}
@@ -313,6 +313,14 @@ export default function SetupPage() {
                         <span className="text-smoke">Password: </span>
                         <code className="text-phosphor-green">YOUR_PASSWORD</code>
                       </div>
+                    </div>
+                    <div className="mt-3 rounded border border-charcoal/60 bg-ink-800/80 p-2.5 text-[11px] text-silver-mist space-y-1">
+                      <p className="font-semibold text-snow">Formatting Rules to Avoid Login Errors:</p>
+                      <ul className="list-disc list-inside space-y-0.5 text-smoke">
+                        <li><strong className="text-snow">No Trailing Slash:</strong> Enter <code className="text-phosphor-green">http://domain.com:port</code> (do not append a trailing /).</li>
+                        <li><strong className="text-snow">Exact Case:</strong> Username and password fields are strictly case-sensitive.</li>
+                        <li><strong className="text-snow">Protocol Prefix:</strong> Always include the explicit <code className="text-phosphor-green">http://</code> prefix.</li>
+                      </ul>
                     </div>
                   </div>
                   <p className="mt-3 text-[11px] text-smoke italic border-t border-charcoal/60 pt-2">

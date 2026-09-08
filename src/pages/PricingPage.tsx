@@ -52,7 +52,7 @@ export default function PricingPage() {
             </div>
 
             <h1 className="t-h1 text-snow font-extrabold tracking-tight">
-              IPTV Pricing 2026: <Accent>Subscription Costs &amp; Plans</Accent>
+              IPTV Pricing Guide 2026: <Accent>Subscription Costs &amp; Plans</Accent>
             </h1>
 
             <p className="t-body mt-4 text-silver-mist leading-relaxed text-sm sm:text-base">
@@ -62,6 +62,20 @@ export default function PricingPage() {
             <div className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-smoke bg-charcoal/40 border border-charcoal/70 px-3 py-1 rounded-md">
               <Clock className="size-3.5 text-phosphor-green" aria-hidden="true" />
               <span>Last reviewed: September 2026 &bull; Verified by Teleview Operations</span>
+            </div>
+
+            {/* Direct Conversion Hand-off Banner to Subscription Hub */}
+            <div className="mt-6 rounded-xl border border-phosphor-green/30 bg-phosphor-green/10 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+              <div>
+                <p className="text-sm font-bold text-snow">Looking for instant subscription activation?</p>
+                <p className="text-xs text-silver-mist mt-0.5">Skip the pricing analysis guide and select your preferred duration directly on our official checkout hub.</p>
+              </div>
+              <a
+                href="/iptv-subscription"
+                className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-phosphor-green px-5 py-2.5 text-xs font-bold text-obsidian uppercase tracking-wider transition-transform hover:scale-[1.02] shadow-sm"
+              >
+                View Subscription Plans &rarr;
+              </a>
             </div>
           </header>
 
@@ -461,6 +475,34 @@ export default function PricingPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* True Year 1 Total Cost Breakdown */}
+            <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-5 sm:p-6 text-xs text-silver-mist">
+              <h3 className="text-sm sm:text-base font-bold text-snow mb-2 flex items-center gap-2">
+                <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                <span>True Year 1 Cost of Ownership (Hardware Included)</span>
+              </h3>
+              <p className="leading-relaxed mb-4">
+                When budgeting for cord-cutting, smart consumers factor in one-time streaming hardware alongside subscription fees:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-3 text-xs">
+                <div className="rounded-lg border border-charcoal bg-ink-800/60 p-3.5 space-y-1">
+                  <span className="text-smoke text-[11px] font-mono uppercase">Traditional Cable</span>
+                  <div className="text-base font-bold text-snow">$1,860 / year</div>
+                  <p className="text-[11px] text-silver-mist">Based on $120/mo programming + $23/mo regional sports fee + two $11.50/mo box rentals.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ink-800/60 p-3.5 space-y-1">
+                  <span className="text-smoke text-[11px] font-mono uppercase">App Stacking (OTT)</span>
+                  <div className="text-base font-bold text-snow">$1,320 / year</div>
+                  <p className="text-[11px] text-silver-mist">Live TV app ($79.99/mo) + regional sports streaming passes + fragmented on-demand apps.</p>
+                </div>
+                <div className="rounded-lg border border-phosphor-green/40 bg-phosphor-green/5 p-3.5 space-y-1">
+                  <span className="text-phosphor-green text-[11px] font-mono uppercase font-semibold">Teleview + Firestick 4K</span>
+                  <div className="text-base font-bold text-phosphor-green">$139.99 Total Year 1</div>
+                  <p className="text-[11px] text-snow">12-Month Teleview ($90.00) + one-time Firestick 4K ($49.99). Year 2 renews at just $90 flat.</p>
+                </div>
+              </div>
             </div>
 
             <div className="mt-4 text-center">

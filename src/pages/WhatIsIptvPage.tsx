@@ -22,6 +22,7 @@ import {
   Laptop,
   LifeBuoy,
   BookOpen,
+  Clock,
 } from "lucide-react";
 import {
   iptvArchitectureLayers,
@@ -106,6 +107,36 @@ export default function WhatIsIptvPage() {
                   </div>
                 </article>
               ))}
+            </div>
+
+            {/* Visual Signal Flow Architecture Box */}
+            <div className="mt-6 rounded-xl border border-charcoal/80 bg-ink-800/60 p-4 sm:p-5">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-mono">
+                <div className="flex flex-wrap items-center justify-center gap-2 text-center">
+                  <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
+                    Satellite Downlink Ingest
+                  </span>
+                  <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
+                  <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
+                    Hardware Transcoder (H.264/HEVC)
+                  </span>
+                  <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
+                  <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
+                    Multi-CDN Edge Cluster
+                  </span>
+                  <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
+                  <span className="rounded-lg bg-ash px-3 py-1.5 text-phosphor-green border border-phosphor-green/30 font-semibold">
+                    Subscriber Player Buffer
+                  </span>
+                </div>
+                <a
+                  href="/how-does-iptv-work"
+                  className="inline-flex items-center gap-1.5 text-xs text-phosphor-green hover:underline shrink-0 font-sans mt-2 md:mt-0 font-medium"
+                >
+                  <span>Read deep-dive signal guide</span>
+                  <ArrowRight className="size-3" aria-hidden="true" />
+                </a>
+              </div>
             </div>
           </section>
 
@@ -243,6 +274,64 @@ export default function WhatIsIptvPage() {
                   <ArrowRight className="size-3" aria-hidden="true" />
                 </a>
               </div>
+            </div>
+          </section>
+
+          {/* Section 4.5: Broadcast Delay & Latency Benchmarks */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="latency-benchmarks-heading">
+            <div className="flex items-center gap-3 mb-3">
+              <Clock className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+              <h2 id="latency-benchmarks-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                Broadcast Latency: How IPTV Transmission Speeds Compare
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-6">
+              A common technical question among live sports viewers is broadcast delay (the time elapsed between a live stadium play and its appearance on screen). Here is how major transmission technologies compare:
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80">
+              <table className="w-full text-left text-xs border-collapse min-w-[620px]">
+                <thead>
+                  <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
+                    <th scope="col" className="p-3.5 font-semibold">Broadcast Technology</th>
+                    <th scope="col" className="p-3.5 font-semibold">Typical Latency</th>
+                    <th scope="col" className="p-3.5 font-semibold">Transmission Conduit</th>
+                    <th scope="col" className="p-3.5 font-semibold">Technical Bottleneck</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-3.5 font-medium text-snow">Over-The-Air (OTA) Antenna</th>
+                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">3 &ndash; 5 seconds</td>
+                    <td className="p-3.5">Terrestrial radio frequency (ATSC/DVB-T)</td>
+                    <td className="p-3.5">Speed-of-light RF propagation (Lowest delay)</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-3.5 font-medium text-snow">Traditional Digital Cable</th>
+                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">5 &ndash; 8 seconds</td>
+                    <td className="p-3.5">Dedicated coaxial cable (QAM modulation)</td>
+                    <td className="p-3.5">Hardware set-top box decoding delay</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-3.5 font-medium text-snow">Satellite Television</th>
+                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">5 &ndash; 7 seconds</td>
+                    <td className="p-3.5">Geostationary satellite uplink/downlink (DVB-S2)</td>
+                    <td className="p-3.5">70,000 km orbital round-trip propagation</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors bg-phosphor-green/5">
+                    <th scope="row" className="p-3.5 font-medium text-snow">Raw MPEG-TS IPTV (Teleview)</th>
+                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">10 &ndash; 20 seconds</td>
+                    <td className="p-3.5">Edge CDN unicast over public internet</td>
+                    <td className="p-3.5">Encoder segmenting + player RAM cache</td>
+                  </tr>
+                  <tr className="hover:bg-ash/40 transition-colors">
+                    <th scope="row" className="p-3.5 font-medium text-snow">Commercial OTT Apps (YouTube TV, Hulu)</th>
+                    <td className="p-3.5 font-mono text-smoke">45 &ndash; 60+ seconds</td>
+                    <td className="p-3.5">Multi-bitrate HLS / DASH packaging</td>
+                    <td className="p-3.5">Large 6s chunk playlists + DRM license verification</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -455,7 +544,7 @@ export default function WhatIsIptvPage() {
               <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
                 <h3 className="text-sm font-bold text-snow mb-2 flex items-center gap-2">
                   <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
-                  Server Architecture &amp; Anti-Freeze Routing
+                  Server Architecture &amp; Multi-CDN Failover Routing
                 </h3>
                 <p className="text-silver-mist leading-relaxed">
                   Look for providers that utilize globally distributed Content Delivery Networks (CDNs) with automatic load balancing. Single-server resellers frequently suffer from severe buffering during marquee sporting events when viewer concurrency surges.
@@ -778,7 +867,7 @@ export default function WhatIsIptvPage() {
               Experience Next-Generation 4K IPTV with Teleview
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[580px] mx-auto leading-relaxed">
-              25,000+ live television channels, anti-freeze CDN server routing, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
+              25,000+ live television channels, multi-CDN edge server routing, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">

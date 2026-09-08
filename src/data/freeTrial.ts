@@ -40,7 +40,7 @@ export const freeTrialData = {
       "Experience Teleview streaming performance risk-free. Test live TV channels, on-demand movies, EPG accuracy, and device compatibility directly on your television or mobile screen.",
     primaryCtaText: "Start Your IPTV Free Trial",
     secondaryCtaText: "View Subscription Plans",
-    durationBadge: "24-Hour Free Access",
+    durationBadge: "24-Hour Free Pass • Automated Setup (< 15 mins)",
   },
 
   testPoints: [
@@ -138,7 +138,7 @@ export const freeTrialData = {
     {
       category: "Network Verification",
       title: "Peak-Hour Bandwidth & ISP Routing",
-      desc: "Stream between 8:00 PM and 10:00 PM when residential internet traffic peaks to verify anti-freeze performance.",
+      desc: "Stream between 8:00 PM and 10:00 PM when residential internet traffic peaks to verify multi-CDN streaming stability.",
       guidance: "We recommend 15 Mbps for Full HD streams and 35+ Mbps for uninterrupted 4K Ultra HD viewing.",
       helpLink: { text: "Internet Speed Benchmarks", href: "/help-center/internet-speed" },
     },
@@ -171,6 +171,11 @@ export const freeTrialData = {
       title: "Zero Automatic Billing",
       desc: "Your test line automatically terminates after 24 hours. There are no recurring charges, no stored payment data, and no automatic rollover into a paid plan.",
       tag: "Expires in 24h",
+    },
+    {
+      title: "Live Event Bandwidth Fair-Use",
+      desc: "During select global live sporting finals and pay-per-view events, trial requests may be temporarily queued to guarantee prioritized bandwidth for active paying subscribers.",
+      tag: "Live Event Policy",
     },
   ] as FreeTrialLimitation[],
 

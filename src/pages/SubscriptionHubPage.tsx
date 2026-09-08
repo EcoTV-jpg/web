@@ -179,6 +179,47 @@ export default function SubscriptionHubPage() {
                 </Reveal>
               ))}
             </div>
+
+            {/* Payment Methods & Instant Dispatch Trust Banner */}
+            <div className="mt-8 rounded-xl border border-charcoal/70 bg-ash/30 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 text-xs text-silver-mist">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                <span><strong className="text-snow">Accepted Payment Methods:</strong> Visa, Mastercard, American Express, PayPal, and Major Cryptocurrencies (BTC, USDT).</span>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[11px] text-smoke bg-ink-800/80 px-3 py-1.5 rounded-lg border border-charcoal">
+                <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
+                <span>Automated Setup &bull; Instant Email Dispatch (&lt; 15 mins)</span>
+              </div>
+            </div>
+
+            {/* Viewer Profile Decision Framework */}
+            <div className="mt-10 mb-6">
+              <h3 className="text-sm sm:text-base font-bold text-snow mb-3">
+                Viewer Decision Guide: Which Duration Fits Your Streaming Habits?
+              </h3>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-xs">
+                <div className="rounded-xl border border-charcoal bg-ash/20 p-4 space-y-1.5">
+                  <span className="font-semibold text-phosphor-green">1 Month ($16.00)</span>
+                  <p className="font-medium text-snow">Best for Road Testing</p>
+                  <p className="text-smoke leading-relaxed">Ideal for testing peak evening stream stability on your local ISP before upgrading.</p>
+                </div>
+                <div className="rounded-xl border border-charcoal bg-ash/20 p-4 space-y-1.5">
+                  <span className="font-semibold text-phosphor-green">3 Months ($39.00)</span>
+                  <p className="font-medium text-snow">Best for Sports Seasons</p>
+                  <p className="text-smoke leading-relaxed">Optimal for single tournament seasons like Champions League knockouts or NFL playoffs.</p>
+                </div>
+                <div className="rounded-xl border border-charcoal bg-ash/20 p-4 space-y-1.5">
+                  <span className="font-semibold text-phosphor-green">6 Months ($60.00)</span>
+                  <p className="font-medium text-snow">Biannual Regulars</p>
+                  <p className="text-smoke leading-relaxed">Balanced mid-term savings ($10/mo effective) covering entire winter sports schedules.</p>
+                </div>
+                <div className="rounded-xl border border-phosphor-green/40 bg-ash/40 p-4 space-y-1.5">
+                  <span className="font-semibold text-phosphor-green">12 Months ($90.00)</span>
+                  <p className="font-medium text-snow">Maximum Annual Value</p>
+                  <p className="text-smoke leading-relaxed">Top choice: $7.50/mo effective with high-capacity VIP routing reserves and grandfathered renewal rates.</p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 4. Plan Comparison Section */}
@@ -253,9 +294,9 @@ export default function SubscriptionHubPage() {
                 <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
                   <Server className="size-4 text-phosphor-green" aria-hidden="true" />
                 </div>
-                <h3 className="text-sm font-bold text-snow">Anti-Freeze Edge Routing</h3>
+                <h3 className="text-sm font-bold text-snow">Multi-CDN Edge Routing</h3>
                 <p className="text-xs text-silver-mist leading-relaxed">
-                  High-capacity distributed edge CDN infrastructure engineered with anti-buffering protocols to prevent stutter during peak viewing hours.
+                  High-capacity distributed edge CDN infrastructure engineered with automated failover and adaptive buffering to prevent stutter during peak viewing hours.
                 </p>
               </div>
 

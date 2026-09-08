@@ -57,7 +57,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">Why Choose Our IPTV Package?</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Our IPTV technology delivers high-availability streaming infrastructure, anti-freeze edge routing, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on dedicated servers for reliable playback.
+                Our IPTV technology delivers high-availability streaming infrastructure, multi-CDN edge routing with adaptive bitrate buffering, and 4K Ultra HD quality. It offers instant channel switching, multi-device support, and runs on dedicated servers for reliable playback.
               </p>
             </div>
           </Reveal>

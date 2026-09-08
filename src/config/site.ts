@@ -7,9 +7,9 @@ export const siteConfig = {
   name: "Teleview",
   legalName: "Teleview Media",
   tagline: "High-Speed IPTV Subscription & Streaming Service",
-  defaultTitle: "Teleview | 2026 Best IPTV Service With 24h Free Trial",
+  defaultTitle: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
   defaultDescription:
-    "Enjoy live sports, news, movies, and shows from around the world. Teleview offers premium streaming with 24/7 customer support and no long-term contracts.",
+    "Looking for the best IPTV service in 2026? Discover Teleview for live TV, sports, movies, news and on-demand entertainment in HD and 4K worldwide.",
   logoUrl: "https://www.teleview.me/favicon.svg",
   socialImage: "/images/teleview-og.jpg",
   language: "en",

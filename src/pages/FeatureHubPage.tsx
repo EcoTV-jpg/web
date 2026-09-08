@@ -151,6 +151,36 @@ export default function FeatureHubPage({ slug }: FeatureHubPageProps) {
             </div>
           </section>
 
+          {/* Sports Latency Optimization Subsection */}
+          {feature.sportsLatencyOptimization && (
+            <section className="mt-16" aria-labelledby="latency-heading">
+              <div className="rounded-2xl border border-charcoal bg-ink-800/60 p-6 sm:p-8">
+                <div className="text-center mb-6 max-w-[660px] mx-auto">
+                  <h2 id="latency-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                    {feature.sportsLatencyOptimization.heading}
+                  </h2>
+                  <p className="mt-2 text-xs sm:text-sm text-silver-mist">
+                    {feature.sportsLatencyOptimization.description}
+                  </p>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {feature.sportsLatencyOptimization.tips.map((tip, idx) => (
+                    <div key={idx} className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-2 text-xs">
+                      <h3 className="text-sm font-semibold text-snow flex items-center gap-2">
+                        <span className="size-5 rounded-full bg-phosphor-green/20 border border-phosphor-green/40 text-phosphor-green font-mono text-[11px] font-bold flex items-center justify-center shrink-0">
+                          {idx + 1}
+                        </span>
+                        <span>{tip.title}</span>
+                      </h3>
+                      <p className="text-silver-mist leading-relaxed pl-7">{tip.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Section 3: FAQs */}
           <section className="mt-16" aria-labelledby="faqs-heading">
             <div className="text-center mb-8">

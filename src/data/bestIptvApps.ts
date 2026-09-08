@@ -122,12 +122,22 @@ export const bestIptvAppsList: IptvAppDetail[] = [
         title: "Configure EPG & Buffer",
         instruction: "Wait for the playlist to download, then visit Settings > Playback to set your buffer size to 'Medium' or 'Large' for optimal stability.",
       },
+      {
+        step: 4,
+        title: "Backup & Multi-Device Deployment",
+        instruction: "Once your favorites and EPG are configured, navigate to Settings > General > Backup data. Export your configuration as a .tmb backup file to local storage or shared LAN drive to restore your exact setup across other household Firesticks or Android TV boxes in seconds.",
+      },
     ],
     troubleshooting: [
       {
         title: "TiviMate Error 401 Unauthorized",
-        problem: "Playlist fails to load with error code 401.",
-        solution: "Double-check your username and password for typos or extra trailing spaces. Verify that your Teleview subscription is active.",
+        problem: "Playlist fails to load with error code 401 Unauthorized.",
+        solution: "Verify your username and password for exact character casing without accidental leading or trailing whitespace. Confirm that your subscription term has not expired and your provider server URL uses the exact http:// or https:// protocol specified in your activation email.",
+      },
+      {
+        title: "TiviMate DataSourceException",
+        problem: "Stream fails to initialize with 'An error occurred: DataSourceException'.",
+        solution: "This error occurs when the player cannot establish a socket connection with the video segment. Go to Settings > Playback, toggle 'Use alternative stream format' (switch between HLS and MPEG-TS), or change your User-Agent string in Settings > Playlists to 'VLC' to resolve edge routing blocks.",
       },
       {
         title: "EPG Program Guide Missing or Blank",
@@ -170,7 +180,7 @@ export const bestIptvAppsList: IptvAppDetail[] = [
     bestFor: "Subscribers who want one familiar interface across multiple devices including Android, iOS, Fire TV, Windows, and Mac.",
     developer: "WHMCSSmarters",
     licenseModel: "Free with optional Premium in-app purchase for multi-screen and advanced player controls",
-    ratingDisclaimer: "App store availability and feature sets vary across operating systems and TV manufacturer app markets.",
+    ratingDisclaimer: "IPTV Smarters Pro is developed independently by WHMCSSmarters and is not affiliated with Teleview or any content distributor. It is a standalone media player shell that contains no pre-loaded channels.",
     verification: {
       verified: true,
       source: "Official WHMCSSmarters developer portal and iOS/Android store listings",
@@ -214,6 +224,11 @@ export const bestIptvAppsList: IptvAppDetail[] = [
       },
     ],
     troubleshooting: [
+      {
+        title: "Audio Desynchronization / Lip-Sync Lag",
+        problem: "Audio is noticeably out of sync with the video feed on live broadcast channels.",
+        solution: "Open Settings > Player Selection. Switch the default decoder for Live Streams from 'Built-in Player' to 'Hardware Decoder' or 'VLC Player Engine'. If using Android, toggling OpenSL ES or AudioTrack in audio settings immediately corrects lip-sync discrepancies.",
+      },
       {
         title: "Playback Failed / Invalid Stream Format",
         problem: "Certain channels show a black screen or trigger 'Playback Error'.",

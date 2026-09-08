@@ -16,6 +16,7 @@ import {
   FileText,
   CheckCircle2,
   Globe,
+  Gauge,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -162,6 +163,68 @@ export default function BestIptvHubPage() {
             <p className="text-[11px] text-smoke text-center">
               Use these nine benchmarks to systematically evaluate any provider before committing to a multi-month subscription.
             </p>
+
+            {/* Buyer Profile Decision Matrix */}
+            <div className="mt-10">
+              <h3 className="text-base sm:text-lg font-bold text-snow text-center mb-2">
+                Buyer Decision Matrix: Which Setup Fits Your Profile?
+              </h3>
+              <p className="text-xs text-silver-mist text-center max-w-[620px] mx-auto mb-6">
+                Different viewers have different hardware, bandwidth constraints, and priority channels. Here is how four common user profiles compare:
+              </p>
+
+              <div className="overflow-x-auto rounded-xl border border-charcoal bg-ash/30">
+                <table className="w-full text-left text-xs border-collapse min-w-[700px]">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
+                      <th scope="col" className="p-4 font-semibold">User Profile</th>
+                      <th scope="col" className="p-4 font-semibold">Recommended Hardware</th>
+                      <th scope="col" className="p-4 font-semibold">Optimal Player App</th>
+                      <th scope="col" className="p-4 font-semibold">Key Priority</th>
+                      <th scope="col" className="p-4 font-semibold">Trade-Offs &amp; Considerations</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    <tr className="hover:bg-ash/50 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">
+                        Live Sports Fan
+                      </th>
+                      <td className="p-4">Fire TV Stick 4K Max or Apple TV 4K</td>
+                      <td className="p-4 text-snow">TiviMate or GSE Smart IPTV</td>
+                      <td className="p-4">60 FPS refresh rate, low latency, multi-CDN stability</td>
+                      <td className="p-4">Requires high continuous bandwidth (25+ Mbps) and wired ethernet or 5 GHz Wi-Fi to eliminate micro-jitter.</td>
+                    </tr>
+                    <tr className="hover:bg-ash/50 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">
+                        Budget Cord-Cutter
+                      </th>
+                      <td className="p-4">Existing Smart TV (Samsung Tizen / LG webOS)</td>
+                      <td className="p-4 text-snow">IBO Player or IPTV Smarters Pro</td>
+                      <td className="p-4">Zero hardware cost, straightforward monthly savings</td>
+                      <td className="p-4">Closed TV operating systems cannot run Android APKs; guide loading speeds depend entirely on TV processor.</td>
+                    </tr>
+                    <tr className="hover:bg-ash/50 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">
+                        Android Power-User
+                      </th>
+                      <td className="p-4">Nvidia Shield TV Pro or Google TV Streamer</td>
+                      <td className="p-4 text-snow">TiviMate Premium or OTT Navigator</td>
+                      <td className="p-4">Multi-screen 4-way view, scheduled cloud/SMB recording, AI upscaling</td>
+                      <td className="p-4">Higher upfront equipment investment; requires basic familiarity with sideloading and file management.</td>
+                    </tr>
+                    <tr className="hover:bg-ash/50 transition-colors">
+                      <th scope="row" className="p-4 font-semibold text-snow">
+                        Family Multi-Screen
+                      </th>
+                      <td className="p-4">Mixed (Living room TV, bedroom Firestick, tablet)</td>
+                      <td className="p-4 text-snow">IPTV Smarters Pro or XCIPTV</td>
+                      <td className="p-4">Consistent cross-platform UI, parental control PINs</td>
+                      <td className="p-4">Standard single-line accounts permit 1 active screen; simultaneous multi-room streaming requires multi-connection subscriptions.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </section>
 
           {/* 5. Methodology: How We Evaluate IPTV Services */}
@@ -254,6 +317,34 @@ export default function BestIptvHubPage() {
                 <p className="text-silver-mist leading-relaxed">
                   <strong className="text-snow">What to check:</strong> Look for step-by-step setup walkthroughs, diagnostic resources, and accessible human customer support channels.
                 </p>
+              </div>
+            </div>
+
+            {/* Technical Benchmark Rubric */}
+            <div className="mt-8 rounded-xl border border-charcoal bg-ash/40 p-5 sm:p-6 text-xs text-silver-mist">
+              <h3 className="text-sm sm:text-base font-bold text-snow mb-2 flex items-center gap-2">
+                <Gauge className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                <span>Quantifiable Technical Benchmarks for Evaluating IPTV Player Performance</span>
+              </h3>
+              <p className="leading-relaxed mb-4">
+                To move beyond subjective impressions, we evaluate IPTV player applications using three reproducible performance benchmarks:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-3 text-xs">
+                <div className="rounded-lg border border-charcoal bg-ink-800/60 p-3.5 space-y-1">
+                  <span className="text-phosphor-green font-semibold">1. EPG Parse Efficiency</span>
+                  <p className="text-snow font-medium">50 MB XMLTV Guide Test</p>
+                  <p className="text-smoke leading-relaxed">High-performance players (TiviMate, OTT Navigator) index 25,000 channels and 7-day schedules in under 3.5 seconds; unoptimized players exceed 12 seconds or crash on 1.5 GB RAM devices.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ink-800/60 p-3.5 space-y-1">
+                  <span className="text-phosphor-green font-semibold">2. Decoder Failover Behavior</span>
+                  <p className="text-snow font-medium">ExoPlayer to Software Fallback</p>
+                  <p className="text-smoke leading-relaxed">Top players automatically fallback from hardware GPU decoding to software (VLC/FFmpeg) if a stream packet has corrupted headers, preventing blank black screens.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ink-800/60 p-3.5 space-y-1">
+                  <span className="text-phosphor-green font-semibold">3. Multi-View Memory Overhead</span>
+                  <p className="text-snow font-medium">Quad-Screen Rendering Load</p>
+                  <p className="text-smoke leading-relaxed">Running 4 simultaneous live streams requires players that limit RAM allocation to under 650 MB to avoid triggering Android OS out-of-memory (OOM) background task kills.</p>
+                </div>
               </div>
             </div>
           </section>

@@ -43,9 +43,11 @@ export function generateStructuredData(path: string = "/") {
     "@id": siteConfig.entityIds.organization,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
+    alternateName: "Teleview IPTV",
     url: `${siteConfig.url}/`,
     logo: {
       "@type": "ImageObject",
+      inLanguage: siteConfig.language,
       "@id": `${siteConfig.url}/#logo`,
       url: siteConfig.logoUrl,
       contentUrl: siteConfig.logoUrl,
@@ -77,6 +79,21 @@ export function generateStructuredData(path: string = "/") {
     publisher: {
       "@id": siteConfig.entityIds.organization,
     },
+    alternateName: "Teleview IPTV",
+    potentialAction: [
+      {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${siteConfig.url}/?s={search_term_string}`,
+        },
+        "query-input": {
+          "@type": "PropertyValueSpecification",
+          valueRequired: true,
+          valueName: "search_term_string",
+        },
+      },
+    ],
     inLanguage: siteConfig.language,
   };
 
@@ -305,15 +322,36 @@ export function generateStructuredData(path: string = "/") {
     isPartOf: {
       "@id": siteConfig.entityIds.website,
     },
+    about: {
+      "@id": siteConfig.entityIds.organization,
+    },
+    primaryImageOfPage: {
+      "@id": `${pageUrl}#primaryimage`,
+    },
+    image: {
+      "@id": `${pageUrl}#primaryimage`,
+    },
+    thumbnailUrl: `${siteConfig.url}/images/teleview-og.jpg`,
     inLanguage: siteConfig.language,
     datePublished: "2026-01-01T00:00:00+00:00",
-    dateModified: "2026-09-04T18:00:00+00:00",
+    dateModified: "2026-09-08T16:00:00+00:00",
     potentialAction: [
       {
         "@type": "ReadAction",
         target: [pageUrl],
       },
     ],
+  };
+
+  const primaryImageSchema = {
+    "@type": "ImageObject",
+    "@id": `${pageUrl}#primaryimage`,
+    inLanguage: siteConfig.language,
+    url: `${siteConfig.url}/images/teleview-og.jpg`,
+    contentUrl: `${siteConfig.url}/images/teleview-og.jpg`,
+    width: 1200,
+    height: 630,
+    caption: pageTitle,
   };
 
   if (breadcrumbSchema) {
@@ -364,7 +402,7 @@ export function generateStructuredData(path: string = "/") {
   }));
 
   // Build route-specific graph entities
-  const graphEntities: any[] = [orgSchema, websiteSchema, webpageSchema];
+  const graphEntities: any[] = [orgSchema, websiteSchema, webpageSchema, primaryImageSchema];
 
   if (breadcrumbSchema) {
     graphEntities.push(breadcrumbSchema);

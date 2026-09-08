@@ -123,7 +123,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     expirationInfo:
       "Your service remains fully active for 30 consecutive days from activation. Because Teleview operates strictly with transparent one-time payments, your subscription simply concludes at the end of the term unless you choose to renew or extend.",
     upgradeInfo:
-      "Upgrading is seamless. At any time before or after your 30-day term ends, you can switch to a 3-month, 6-month, or 12-month package to lower your effective monthly cost to as little as $7.50/month while preserving your existing configuration.",
+      "Seamless Upgrade Guarantee: At any time during or within 14 days after your 30-day term ends, you can transition directly to a 3-month, 6-month, or 12-month plan. Your existing M3U link, Xtream API credentials, custom favorites, and player EPG mapping carry over with zero reconfiguration required.",
     comparisonWithOthers:
       "At $16 for 30 days, the 1-month plan offers the lowest upfront cost. However, if you plan to stream continuously, the 3-month plan reduces your rate to $13.00/mo ($39 total), the 6-month plan to $10.00/mo ($60 total), and the 12-month plan to $7.50/mo ($90 total).",
     features: [
@@ -462,7 +462,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     upgradeInfo:
       "As our top standard duration, the 12-month plan already provides our absolute lowest cost-per-month. You can extend your subscription at the same preferential rate upon expiration or add multi-device streams.",
     comparisonWithOthers:
-      "The 12-month plan offers our deepest savings: $7.50/month versus $10.00/month (6-month plan), $13.00/month (3-month plan), and $16.00/month (1-month plan). Over 12 months, you save $102 compared to month-to-month purchases.",
+      "Annual Cable Replacement ROI: The average traditional cable television bundle in 2026 costs $110 to $140 per month ($1,320–$1,680/year) before hardware rentals. At $90 for an entire year of Teleview, your net household savings exceed $1,230 to $1,590 annually while delivering 25,000+ live channels and 100,000+ VOD titles. Compared to month-to-month streaming ($16 × 12 = $192), you also save $102 upfront.",
     features: [
       "4K Ultra HD & FHD Streaming Quality",
       "25,000+ Live Channels Worldwide",
@@ -482,7 +482,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       {
         question: "What dedicated server routing priority do annual subscribers receive?",
         answer:
-          "Annual subscribers are routed through our high-capacity VIP server clusters. These clusters feature dedicated upstream bandwidth reserves, ensuring optimal throughput and zero latency during peak global sporting events.",
+          "Annual subscribers are routed through our high-capacity VIP server clusters. These clusters feature dedicated upstream bandwidth reserves, ensuring optimal throughput and minimal latency during peak global sporting events.",
       },
       {
         question: "What happens if I switch internet providers or relocate during the 12 months?",

@@ -242,6 +242,90 @@ export default function HelpCenterPage() {
             </div>
           </Reveal>
 
+          {/* 3-Step Symptom Triage Flowchart */}
+          <section className="mb-10 rounded-2xl border border-charcoal bg-ink-800/60 p-5 sm:p-6" aria-labelledby="triage-flowchart-heading">
+            <div className="flex items-center gap-2 mb-2">
+              <LifeBuoy className="size-4 text-phosphor-green" aria-hidden="true" />
+              <h2 id="triage-flowchart-heading" className="text-sm sm:text-base font-semibold text-snow">
+                3-Step Rapid Diagnostic Flowchart
+              </h2>
+            </div>
+            <p className="text-xs text-silver-mist mb-5">
+              Follow this quick triage workflow to pinpoint whether a streaming issue is local, network-related, or account-specific:
+            </p>
+
+            <div className="grid gap-4 md:grid-cols-3 relative">
+              {/* Step 1 */}
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-4 relative flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="size-6 rounded-full bg-phosphor-green/20 border border-phosphor-green/40 text-phosphor-green font-mono text-xs font-bold flex items-center justify-center shrink-0">
+                      1
+                    </span>
+                    <h3 className="text-xs sm:text-sm font-semibold text-snow">Identify Symptom</h3>
+                  </div>
+                  <ul className="text-xs text-silver-mist space-y-1.5 list-disc list-inside">
+                    <li>
+                      <strong className="text-snow">401 / 403 Error:</strong> Invalid credentials &rarr;{" "}
+                      <a href="/help-center/connection-problems" className="text-phosphor-green hover:underline font-medium">Connection Guide</a>
+                    </li>
+                    <li>
+                      <strong className="text-snow">Spinning Wheel:</strong> Buffer depleted / throttling &rarr;{" "}
+                      <a href="/help-center/buffering" className="text-phosphor-green hover:underline font-medium">Buffering Guide</a>
+                    </li>
+                    <li>
+                      <strong className="text-snow">Blank EPG:</strong> Guide sync offset &rarr;{" "}
+                      <a href="/help-center/epg-not-working" className="text-phosphor-green hover:underline font-medium">EPG Guide</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-3 pt-2 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Isolates failure domain
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-4 relative flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="size-6 rounded-full bg-phosphor-green/20 border border-phosphor-green/40 text-phosphor-green font-mono text-xs font-bold flex items-center justify-center shrink-0">
+                      2
+                    </span>
+                    <h3 className="text-xs sm:text-sm font-semibold text-snow">Isolate Network</h3>
+                  </div>
+                  <ul className="text-xs text-silver-mist space-y-1.5 list-disc list-inside">
+                    <li>Switch from 2.4 GHz to <strong className="text-snow">5 GHz Wi-Fi or Ethernet</strong>.</li>
+                    <li>Test stream over a <strong className="text-snow">mobile 5G hotspot</strong> to rule out ISP blocks.</li>
+                    <li>Verify loaded ping &lt; 50ms at <strong className="text-snow">fast.com</strong>.</li>
+                  </ul>
+                </div>
+                <div className="mt-3 pt-2 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Rules out ISP filtering &amp; Wi-Fi drops
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-4 relative flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="size-6 rounded-full bg-phosphor-green/20 border border-phosphor-green/40 text-phosphor-green font-mono text-xs font-bold flex items-center justify-center shrink-0">
+                      3
+                    </span>
+                    <h3 className="text-xs sm:text-sm font-semibold text-snow">Resolve or Escalate</h3>
+                  </div>
+                  <ul className="text-xs text-silver-mist space-y-1.5 list-disc list-inside">
+                    <li>Increase player buffer to <strong className="text-snow">3,000–5,000ms</strong> in settings.</li>
+                    <li>Switch player decoder between <strong className="text-snow">Hardware and VLC/Software</strong>.</li>
+                    <li>Contact <a href={site.whatsappHref} className="text-phosphor-green hover:underline">WhatsApp Support</a> for line reset.</li>
+                  </ul>
+                </div>
+                <div className="mt-3 pt-2 border-t border-charcoal/50 text-[11px] text-smoke">
+                  Permanent fix or priority human dispatch
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Quick Diagnostic Troubleshooting Cards (P0 Priority) */}
           <section className="mb-10" aria-labelledby="diagnostic-cards-heading">
             <div className="flex items-center gap-2 mb-2">

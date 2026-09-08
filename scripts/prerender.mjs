@@ -51,6 +51,24 @@ async function prerender() {
       () => `<meta name="description" content="${pageDesc}" />`
     );
 
+    // Update <meta name="keywords">
+    const routeKeywords = [route.primaryKeyword, ...(route.secondaryTopics || [])].filter(Boolean).join(", ");
+    if (routeKeywords) {
+      if (/<meta[^>]*name=["']keywords["'][^>]*\/?>/i.test(pageHtml)) {
+        pageHtml = pageHtml.replace(
+          /<meta[^>]*name=["']keywords["'][^>]*\/?>/i,
+          () => `<meta name="keywords" content="${routeKeywords}" />`
+        );
+      } else {
+        pageHtml = pageHtml.replace(
+          /(<meta[^>]*name=["']description["'][^>]*\/?>)/i,
+          `$1\n    <meta name="keywords" content="${routeKeywords}" />`
+        );
+      }
+    } else {
+      pageHtml = pageHtml.replace(/<meta[^>]*name=["']keywords["'][^>]*\/?>\s*/i, "");
+    }
+
     // Update <link rel="canonical">
     pageHtml = pageHtml.replace(
       /<link[^>]*rel=["']canonical["'][^>]*\/?>/i,
@@ -87,7 +105,7 @@ async function prerender() {
     }
 
     // Inject JSON-LD structured data into <head>
-    const schemaScript = `\n    <!-- Schema.org JSON-LD Structured Data -->\n    <script type="application/ld+json">${JSON.stringify(schemas)}</script>\n  `;
+    const schemaScript = `\n    <script type="application/ld+json" class="yoast-schema-graph">${JSON.stringify(schemas)}</script>\n  `;
     const jsonLdTagRegex = /<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i;
     if (jsonLdTagRegex.test(pageHtml)) {
       pageHtml = pageHtml.replace(jsonLdTagRegex, schemaScript.trim());

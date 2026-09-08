@@ -208,6 +208,19 @@ export default function DevicesPage() {
             </div>
           </Reveal>
 
+          {/* Buyer Warning: Uncertified Generic Android Boxes */}
+          <Reveal delay={0.065} className="mt-8">
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 text-xs text-silver-mist leading-relaxed">
+              <div className="flex items-center gap-2 font-semibold text-sm mb-1.5 text-amber-400">
+                <AlertTriangle className="size-4 shrink-0 text-amber-400" aria-hidden="true" />
+                <span>Buyer Beware: Why You Should Avoid Cheap Generic Android TV Boxes</span>
+              </div>
+              <p>
+                Unbranded $25&ndash;$35 Android TV boxes powered by low-cost Allwinner or Rockchip chipsets often run modified tablet Android firmware rather than official Android TV OS. They lack Google Play Protect certification, frequently contain pre-installed background telemetry, and lack Widevine L1 DRM licensing. Furthermore, poor thermal heat-sinking leads to severe thermal throttling and buffer stutter during sustained 4K HEVC video decoding. We strongly recommend investing in certified hardware such as the Amazon Fire TV Stick 4K Max, Chromecast with Google TV, Formuler Z-Series, or Apple TV 4K.
+              </p>
+            </div>
+          </Reveal>
+
           {/* Section 2: Device Compatibility Overview (Comparison Table) */}
           <Reveal delay={0.07} className="mt-12">
             <div className="card p-6 sm:p-8">

@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
           <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[900px] text-balance">
-            Best <Accent>IPTV Service Worldwide</Accent> in 2026 — Teleview
+            Best <Accent>IPTV Service</Accent> in 2026
           </h1>
         </Reveal>
 

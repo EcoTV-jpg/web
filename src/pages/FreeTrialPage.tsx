@@ -285,7 +285,7 @@ export default function FreeTrialPage() {
                 To test an IPTV free trial effectively, evaluate live channel playback, channel switching response, EPG guide accuracy, and on-demand VOD streaming directly on your primary home devices. Make sure to test stream stability during peak evening hours (8:00 PM to 10:00 PM) to verify that your local network and internet provider maintain smooth playback without throttling.
               </p>
               <p className="t-body-sm text-silver-mist text-xs sm:text-sm mt-3">
-                Follow these five checks to ensure Teleview meets your standards before choosing a subscription duration:
+                Follow these core checks to evaluate Teleview before choosing a subscription duration: <strong className="text-snow">1)</strong> Benchmark peak-hour 60 FPS sports (8 PM &ndash; 11 PM); <strong className="text-snow">2)</strong> Verify channel zapping response (&lt;2 seconds); <strong className="text-snow">3)</strong> Check EPG guide timeline accuracy; <strong className="text-snow">4)</strong> Test 4K VOD playback with subtitle sync.
               </p>
 
               <div className="mt-6 space-y-4">
@@ -358,7 +358,7 @@ export default function FreeTrialPage() {
               <div className="card p-5 border-charcoal text-center flex flex-col justify-between">
                 <div>
                   <Server className="size-6 text-phosphor-green mx-auto mb-3" aria-hidden="true" />
-                  <h3 className="text-sm font-semibold text-snow">Anti-Freeze Edge Routing</h3>
+                  <h3 className="text-sm font-semibold text-snow">Multi-CDN Edge Routing</h3>
                   <p className="mt-2 text-xs text-silver-mist leading-relaxed">
                     Distributed CDN architecture with intelligent traffic management designed to prevent stutter during peak live matches. Learn more about{" "}
                     <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline">

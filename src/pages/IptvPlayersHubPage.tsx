@@ -77,7 +77,7 @@ export default function IptvPlayersHubPage() {
                   Directory Notice: Independent Media Player Shells
                 </h2>
                 <p className="mt-1 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  All media players indexed below are standalone software applications that <strong className="text-snow">do not include video content or television channels</strong>. To stream live TV, sports, and VOD through any of these players, you need an active subscription account from a verified IPTV provider such as Teleview. You can evaluate stream stability and player compatibility with a 24-hour{" "}
+                  All media players indexed below are standalone third-party software applications that <strong className="text-snow">do not include video content or television channels</strong>. Teleview does not develop, license, or sell player software. To stream live TV, sports, and VOD, you need an active subscription account from a verified provider like Teleview to generate your Xtream Codes API or M3U credentials. Any premium app upgrades (such as TiviMate Premium) are purchased directly from their respective developers. You can evaluate stream stability and player compatibility with a 24-hour{" "}
                   <a href="/iptv-free-trial" className="text-phosphor-green font-medium hover:underline">
                     IPTV Free Trial
                   </a>{" "}
@@ -185,6 +185,127 @@ export default function IptvPlayersHubPage() {
                   </div>
                 </article>
               ))}
+            </div>
+          </section>
+
+          {/* 7-Player Comprehensive Comparison Matrix */}
+          <section className="mt-16" aria-labelledby="player-matrix-heading">
+            <div className="text-center mb-8">
+              <h2 id="player-matrix-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                IPTV Players Comparison Matrix
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[660px] mx-auto">
+                Compare the top 7 media players across platforms, licensing structures, electronic program guide capabilities, multi-screen modes, and live stream recording:
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-charcoal bg-ash/30">
+              <table className="w-full text-left text-xs border-collapse min-w-[760px]">
+                <thead>
+                  <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
+                    <th scope="col" className="p-4 font-semibold">Application</th>
+                    <th scope="col" className="p-4 font-semibold">Supported Platforms</th>
+                    <th scope="col" className="p-4 font-semibold">License Model</th>
+                    <th scope="col" className="p-4 font-semibold">EPG Guide Support</th>
+                    <th scope="col" className="p-4 font-semibold">Multi-Screen</th>
+                    <th scope="col" className="p-4 font-semibold">Recording Support</th>
+                    <th scope="col" className="p-4 font-semibold text-right">Details</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/tivimate" className="hover:text-phosphor-green transition-colors">TiviMate</a>
+                    </th>
+                    <td className="p-4">Android TV, Google TV, Firestick</td>
+                    <td className="p-4 text-snow">Freemium (Paid Premium unlock)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Interactive Grid (Past/Future)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Quad Multi-View)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (USB / SMB / LAN)</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/tivimate" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/iptv-smarters-pro" className="hover:text-phosphor-green transition-colors">IPTV Smarters Pro</a>
+                    </th>
+                    <td className="p-4">Firestick, Android, iOS, Windows, Mac</td>
+                    <td className="p-4 text-snow">Freemium (Free core features)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Category-based XMLTV</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Up to 4 screens)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Local storage)</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/iptv-smarters-pro" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/ibo-player" className="hover:text-phosphor-green transition-colors">IBO Player</a>
+                    </th>
+                    <td className="p-4">Samsung Tizen, LG webOS, Android TV</td>
+                    <td className="p-4 text-snow">7-Day Free Trial then one-time fee</td>
+                    <td className="p-4 text-phosphor-green font-medium">Standard EPG</td>
+                    <td className="p-4 text-smoke">No (Single screen)</td>
+                    <td className="p-4 text-smoke">No</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/ibo-player" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/smartone" className="hover:text-phosphor-green transition-colors">SmartOne IPTV</a>
+                    </th>
+                    <td className="p-4">Samsung Tizen, LG webOS</td>
+                    <td className="p-4 text-snow">14-Day Free Trial then one-time fee</td>
+                    <td className="p-4 text-phosphor-green font-medium">Basic XMLTV</td>
+                    <td className="p-4 text-smoke">No (Single screen)</td>
+                    <td className="p-4 text-smoke">No</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/smartone" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/gse-smart-iptv" className="hover:text-phosphor-green transition-colors">GSE Smart IPTV</a>
+                    </th>
+                    <td className="p-4">Apple TV (tvOS), iOS, Android</td>
+                    <td className="p-4 text-snow">Freemium (In-app Pro purchase)</td>
+                    <td className="p-4 text-phosphor-green font-medium">XMLTV / GZ Parser</td>
+                    <td className="p-4 text-phosphor-green font-medium">Dual-screen (iOS)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Live stream recording)</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/gse-smart-iptv" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/vlc" className="hover:text-phosphor-green transition-colors">VLC Media Player</a>
+                    </th>
+                    <td className="p-4">Windows, Mac, Linux, Android, iOS, tvOS</td>
+                    <td className="p-4 text-snow">100% Free Open-Source</td>
+                    <td className="p-4 text-smoke">Minimal / Raw link parser</td>
+                    <td className="p-4 text-smoke">No</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Raw stream capture)</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/vlc" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-ash/50 transition-colors">
+                    <th scope="row" className="p-4 font-semibold text-snow">
+                      <a href="/iptv-players/ott-navigator" className="hover:text-phosphor-green transition-colors">OTT Navigator</a>
+                    </th>
+                    <td className="p-4">Android TV, Fire TV, Android</td>
+                    <td className="p-4 text-snow">Freemium (Premium license key)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Multi-source XMLTV &amp; Archive</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (PiP &amp; Studio Mode)</td>
+                    <td className="p-4 text-phosphor-green font-medium">Yes (Timeshift / Recording)</td>
+                    <td className="p-4 text-right">
+                      <a href="/iptv-players/ott-navigator" className="text-phosphor-green font-semibold hover:underline">Guide &rarr;</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 

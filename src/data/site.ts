@@ -20,10 +20,10 @@ export const site = {
 /* Hero */
 export const hero = {
   kicker: "TELEVIEW IPTV",
-  heading: "Best IPTV Service Worldwide in 2026 — Teleview",
+  heading: "Best IPTV Service in 2026",
   subhead:
-    "Discover Teleview, a premium IPTV service for viewers worldwide. Stream 25,000+ live channels, movies and series in HD and 4K, with IPTV Subscription plans and a free trial.",
-  copy: "Get instant access to over 25,000 live TV channels and an extensive library of on-demand content. Watch in HD or 4K with fast, reliable streaming. Enjoy live sports, news, movies, and shows from around the world with 24/7 customer support, multi-edge CDN server routing, and no long-term contracts.",
+    "Looking for the best IPTV service in 2026? Discover Teleview for live TV, sports, movies, news and on-demand entertainment in HD and 4K worldwide.",
+  copy: "Teleview provisions enterprise video delivery credentials for third-party players on Firestick, Android TV, Apple TV, and Smart TVs. Standard plans include 1 dedicated high-speed connection with automated activation within 5–15 minutes, 25,000+ live channels, 100,000+ VOD titles, and a risk-free 14-day refund guarantee.",
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "Start Free Trial",
   trustBadges: [

@@ -67,7 +67,7 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
       {
         step: 2,
         title: "Enable Developer Options & Unknown Apps",
-        instruction: "Go to Fire TV Settings > My Fire TV > About. Highlight your device name and click the Select remote button 7 times until you see 'No need, you are already a developer'. Press back, open Developer Options, select 'Install unknown apps', and toggle Downloader to ON.",
+        instruction: "Go to Fire TV Settings > My Fire TV > About. Highlight your device name (e.g., 'Fire TV Stick 4K') and press the center Select button on your remote 7 consecutive times until a bottom popup declares 'No need, you are already a developer'. Press the Back button once to return to My Fire TV, open the newly unlocked 'Developer Options' menu, select 'Install unknown apps' (or 'Apps from Unknown Sources'), and toggle Downloader to 'ON'.",
       },
       {
         step: 3,
@@ -92,6 +92,11 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
       "Fire OS home screen features sponsored content and video trailers",
     ],
     troubleshooting: [
+      {
+        issue: "Developer Options missing in Settings > My Fire TV on newer Fire OS",
+        cause: "Amazon hides the Developer Options menu by default on newer Fire OS updates (Fire OS 7.2.8.5+ and Fire OS 8).",
+        solution: "Go to Settings > My Fire TV > About. Highlight the first item ('Fire TV Stick') and click the center Select button on your remote 7 times rapidly until you see 'No need, you are already a developer.' Press the Back button once, and 'Developer Options' will now be permanently visible.",
+      },
       {
         issue: "Fire TV displays 'Insufficient USB power' warning or restarts unexpectedly",
         cause: "Connecting the Fire TV Stick directly to a television USB port often supplies insufficient electrical current for continuous video decoding.",
@@ -149,7 +154,7 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
       {
         step: 3,
         title: "Upload Teleview Credentials via Web Management Portal",
-        instruction: "On your smartphone or computer browser, visit the player's web management portal (iboplayer.com/manage or smartone-iptv.com/plugin/smart_one/main_generate), log in with your TV MAC and Key, and add your Teleview M3U link or Xtream API credentials.",
+        instruction: "Keep your Samsung TV displaying the app screen with your TV MAC Address and Device Key. On a second device (smartphone, tablet, or PC browser), visit the player's web management portal (e.g., iboplayer.com/manage or smartone-iptv.com/plugin/smart_one/main_generate). Enter the TV's MAC and Key to log in, select 'Add Playlist' or 'Xtream Codes API', paste your Teleview credentials from your welcome email, and click Save/Submit to push the channel configuration directly to your television.",
       },
       {
         step: 4,
@@ -434,7 +439,7 @@ export const deviceGuidesList: DeviceGuideDetail[] = [
       {
         step: 1,
         title: "Enable Screen Mirroring / AirPlay on Roku",
-        instruction: "On your Roku, go to Settings > Apple AirPlay and HomeKit (enable AirPlay) or Settings > System > Screen Mirroring (set to 'Always allow' or 'Prompt').",
+        instruction: "On your Roku, navigate through: Home > Settings > System > Screen Mirroring > Screen Mirroring Mode > select 'Always allow'. If you are using an Apple device, navigate to Home > Settings > Apple AirPlay and HomeKit and verify AirPlay is toggled 'On'.",
       },
       {
         step: 2,
