@@ -112,18 +112,16 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
               <div className="rounded-2xl border border-charcoal/80 bg-ink-800/90 p-6 sm:p-8 text-center flex flex-col justify-between shadow-lg">
                 {plan.image && (
                   <div className="mb-6 overflow-hidden rounded-xl border border-charcoal/80 bg-black/60 shadow-inner group">
-                    <picture>
-                      <source srcSet={plan.image.avif} type="image/avif" />
-                      <img
-                        src={plan.image.fallback}
-                        alt={plan.image.alt}
-                        width={plan.image.width}
-                        height={plan.image.height}
-                        className="w-full h-auto aspect-[1475/720] object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
-                        loading="eager"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src={plan.image.src || plan.image.fallback}
+                      alt={plan.image.alt}
+                      width={plan.image.width}
+                      height={plan.image.height}
+                      className="w-full h-auto aspect-[1475/720] object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                    />
                   </div>
                 )}
                 <div>

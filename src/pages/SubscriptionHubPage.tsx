@@ -136,18 +136,15 @@ export default function SubscriptionHubPage() {
                       <h3 className="mt-2 text-lg font-bold text-snow">{plan.duration}</h3>
                       {plan.image && (
                         <div className="mt-3 mb-2 overflow-hidden rounded-lg border border-charcoal/60 bg-black/50">
-                          <picture>
-                            <source srcSet={plan.image.avif} type="image/avif" />
-                            <img
-                              src={plan.image.fallback}
-                              alt={plan.image.alt}
-                              width={plan.image.width}
-                              height={plan.image.height}
-                              className="w-full h-auto aspect-[1475/720] object-cover"
-                              loading="lazy"
-                              decoding="async"
-                            />
-                          </picture>
+                          <img
+                            src={plan.image.src || plan.image.fallback}
+                            alt={plan.image.alt}
+                            width={plan.image.width}
+                            height={plan.image.height}
+                            className="w-full h-auto aspect-[1475/720] object-cover"
+                            loading="lazy"
+                            decoding="async"
+                          />
                         </div>
                       )}
                       <div className="mt-3 flex items-baseline gap-2">
