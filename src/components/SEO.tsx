@@ -828,7 +828,7 @@ export function generateStructuredData(path: string = "/") {
         manufacturer: {
           "@id": siteConfig.entityIds.organization,
         },
-        image: `${siteConfig.url}${siteConfig.socialImage}`,
+        image: plan.image ? `${siteConfig.url}${plan.image.fallback}` : `${siteConfig.url}${siteConfig.socialImage}`,
         offers: {
           "@type": "Offer",
           "@id": `${pageUrl}#offer`,

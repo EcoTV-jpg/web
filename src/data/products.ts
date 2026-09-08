@@ -20,6 +20,14 @@ export interface DeepDivePillar {
   description: string;
 }
 
+export interface PlanImage {
+  avif: string;
+  fallback: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface SubscriptionPlan {
   slug: "1-month" | "3-months" | "6-months" | "12-months";
   name: string;
@@ -36,6 +44,7 @@ export interface SubscriptionPlan {
   saveText?: string;
   badge?: string;
   intentBadge: string;
+  image: PlanImage;
   tagline: string;
   positioning: string;
   primaryIntentStatement: string;
@@ -72,6 +81,13 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     billingText: "/ 1 month",
     badge: "Zero-Risk Evaluation",
     intentBadge: "Broadband Benchmark & Tournament Pass",
+    image: {
+      avif: "/images/plans/iptv-subscription-1-month.avif",
+      fallback: "/images/plans/iptv-subscription-1-month.jpg",
+      alt: "Teleview 1 Month IPTV Subscription Package Banner",
+      width: 1475,
+      height: 720,
+    },
     tagline: "Short-term streaming flexibility with zero contract, instant access, and full channel catalog.",
     positioning:
       "Designed for viewers who want to test service stability, channel lineup, and device speed on their home network before making a longer commitment.",
@@ -184,6 +200,13 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     saveText: "Save 19% vs Monthly ($9 Saved)",
     badge: "Quarterly Entertainment Value",
     intentBadge: "Seasonal Sports & Tournament Alignment",
+    image: {
+      avif: "/images/plans/iptv-subscription-3-months.avif",
+      fallback: "/images/plans/iptv-subscription-3-months.jpg",
+      alt: "Teleview 3 Months IPTV Subscription Package Banner - $39",
+      width: 1475,
+      height: 720,
+    },
     tagline: "Balanced quarterly entertainment saving you 19% compared to monthly billing.",
     positioning:
       "The ideal middle ground for regular viewers who want meaningful monthly savings without locking into a long-term commitment.",
@@ -296,6 +319,13 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     saveText: "Save 37.5% vs Monthly ($36 Saved)",
     badge: "Semi-Annual Cord-Cutter",
     intentBadge: "Permanent Cable Replacement & Expat Living",
+    image: {
+      avif: "/images/plans/iptv-subscription-6-months.avif",
+      fallback: "/images/plans/iptv-subscription-6-months.png",
+      alt: "Teleview 6 Months IPTV Subscription Package Banner - $60",
+      width: 1475,
+      height: 720,
+    },
     tagline: "Substantial semi-annual savings dropping your monthly cost to just $10.00.",
     positioning:
       "Designed for committed cord-cutters seeking substantial savings and half a year of uninterrupted family entertainment.",
@@ -409,6 +439,13 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
     saveText: "Save $102 — Lowest Monthly Rate ($7.50/mo)",
     badge: "Best Price-Per-Month Option",
     intentBadge: "Maximum Annual ROI & VIP Cluster Routing",
+    image: {
+      avif: "/images/plans/iptv-subscription-12-months.avif",
+      fallback: "/images/plans/iptv-subscription-12-months.png",
+      alt: "Teleview 12 Months IPTV Subscription Package Banner - $90",
+      width: 1475,
+      height: 720,
+    },
     tagline: "Our lowest price-per-month package delivering a full year of 4K streaming for $7.50/mo.",
     positioning:
       "The definitive package for dedicated streamers seeking the lowest possible monthly cost and complete peace of mind with 365 days of uninterrupted service.",

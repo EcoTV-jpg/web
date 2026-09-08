@@ -18,6 +18,7 @@ export interface AppRoute {
   description: string;
   ogTitle: string;
   ogDescription: string;
+  image?: string;
   breadcrumbName?: string;
 }
 
@@ -171,6 +172,7 @@ export const routes: AppRoute[] = [
     ogTitle: "1 Month IPTV Subscription for $16 – Instant Activation | Teleview",
     ogDescription:
       "Flexible monthly streaming without locked-in contracts. Full live sports and entertainment access with 24/7 technical support.",
+    image: "/images/plans/iptv-subscription-1-month.jpg",
     breadcrumbName: "1 Month",
   },
   {
@@ -195,6 +197,7 @@ export const routes: AppRoute[] = [
     ogTitle: "3 Months IPTV Subscription – Save 19% at $13/mo | Teleview",
     ogDescription:
       "Quarterly flexibility at $13.00/month. Stream international tournaments and series without monthly renewal friction.",
+    image: "/images/plans/iptv-subscription-3-months.jpg",
     breadcrumbName: "3 Months",
   },
   {
@@ -219,6 +222,7 @@ export const routes: AppRoute[] = [
     ogTitle: "6 Months IPTV Subscription for $60 – $10/mo Semi-Annual Value | Teleview",
     ogDescription:
       "Half a year of uninterrupted 4K sports and worldwide channels at 37.5% off standard monthly rates.",
+    image: "/images/plans/iptv-subscription-6-months.png",
     breadcrumbName: "6 Months",
   },
   {
@@ -243,6 +247,7 @@ export const routes: AppRoute[] = [
     ogTitle: "12 Months IPTV Subscription – Best Value at $7.50/Month | Teleview",
     ogDescription:
       "Maximize your savings with a full year of premium television for $90. Includes dedicated server priority and 24/7 customer support.",
+    image: "/images/plans/iptv-subscription-12-months.png",
     breadcrumbName: "12 Months",
   },
   {

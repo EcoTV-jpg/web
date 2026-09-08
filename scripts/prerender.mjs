@@ -92,6 +92,14 @@ async function prerender() {
       .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, () => `<meta name="twitter:title" content="${ogTitle}" />`)
       .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, () => `<meta name="twitter:description" content="${ogDesc}" />`);
 
+    // Update og:image and twitter:image if route.image exists
+    if (route.image) {
+      const fullImageUrl = `${siteConfig.url}${route.image}`;
+      pageHtml = pageHtml
+        .replace(/<meta[^>]*property=["']og:image["'][^>]*\/?>/i, () => `<meta property="og:image" content="${fullImageUrl}" />`)
+        .replace(/<meta[^>]*name=["']twitter:image["'][^>]*\/?>/i, () => `<meta name="twitter:image" content="${fullImageUrl}" />`);
+    }
+
     // For non-homepage routes, remove the homepage hero preload
     if (route.path !== "/") {
       pageHtml = pageHtml.replace(/<link[^>]*href=["'][^"']*teleview-fans[^"']*["'][^>]*\/?>\s*/i, "");
