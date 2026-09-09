@@ -996,8 +996,8 @@ export function generateStructuredData(path: string = "/") {
         "@id": siteConfig.entityIds.organization,
       },
       datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-07T12:00:00+00:00",
-      proficiencyLevel: "Beginner",
+      dateModified: route?.lastmod ? `${route.lastmod}T00:00:00+00:00` : "2026-09-07T12:00:00+00:00",
+      proficiencyLevel: cleanPath === "/how-does-iptv-work" ? "Intermediate" : "Beginner",
       about: [
         { "@type": "Thing", name: infoGuide.category },
         { "@type": "Thing", name: "Internet Protocol television" },

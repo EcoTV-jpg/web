@@ -20,6 +20,42 @@ interface InformationalArticlePageProps {
   slug: string;
 }
 
+function FormattedText({ text }: { text: string }) {
+  const parts: (string | React.ReactNode)[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    if (match[1] && match[2]) {
+      parts.push(
+        <a
+          key={match.index}
+          href={match[2]}
+          className="text-phosphor-green hover:underline font-medium"
+        >
+          {match[1]}
+        </a>
+      );
+    } else if (match[3]) {
+      parts.push(
+        <strong key={match.index} className="text-snow font-semibold">
+          {match[3]}
+        </strong>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return <>{parts.length > 0 ? parts : text}</>;
+}
+
 export default function InformationalArticlePage({ slug }: InformationalArticlePageProps) {
   const article = informationalGuidesList.find((g) => g.slug === slug);
 
@@ -76,7 +112,7 @@ export default function InformationalArticlePage({ slug }: InformationalArticleP
                   {article.directAnswer.question}
                 </h2>
                 <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  {article.directAnswer.answer}
+                  <FormattedText text={article.directAnswer.answer} />
                 </p>
               </div>
             </div>
@@ -99,9 +135,51 @@ export default function InformationalArticlePage({ slug }: InformationalArticleP
 
                 <div className="space-y-3 text-xs sm:text-sm text-silver-mist leading-relaxed">
                   {sec.content.map((p, pIdx) => (
-                    <p key={pIdx}>{p}</p>
+                    <p key={pIdx}>
+                      <FormattedText text={p} />
+                    </p>
                   ))}
                 </div>
+
+                {sec.table && (
+                  <div className="overflow-x-auto rounded-xl border border-charcoal bg-ash/30 my-4">
+                    <table className="w-full text-left text-xs border-collapse min-w-[640px]">
+                      {sec.table.caption && (
+                        <caption className="sr-only">{sec.table.caption}</caption>
+                      )}
+                      <thead>
+                        <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
+                          {sec.table.headers.map((h, hIdx) => (
+                            <th key={hIdx} scope="col" className="p-3.5 font-semibold">
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                        {sec.table.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className="hover:bg-ash/50 transition-colors">
+                            {row.map((cell, cIdx) =>
+                              cIdx === 0 ? (
+                                <th
+                                  key={cIdx}
+                                  scope="row"
+                                  className="p-3.5 font-semibold text-snow"
+                                >
+                                  <FormattedText text={cell} />
+                                </th>
+                              ) : (
+                                <td key={cIdx} className="p-3.5">
+                                  <FormattedText text={cell} />
+                                </td>
+                              )
+                            )}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
 
                 {sec.callout && (
                   <div
@@ -129,7 +207,9 @@ export default function InformationalArticlePage({ slug }: InformationalArticleP
                     )}
                     <div>
                       <h3 className="font-semibold text-snow mb-1">{sec.callout.title}</h3>
-                      <p className="leading-relaxed">{sec.callout.text}</p>
+                      <p className="leading-relaxed">
+                        <FormattedText text={sec.callout.text} />
+                      </p>
                     </div>
                   </div>
                 )}
