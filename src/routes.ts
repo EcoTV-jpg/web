@@ -516,6 +516,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.85,
+    lastmod: "2026-09-09",
     primaryIntent: "Informational & Technical Pillar Guide",
     primaryKeyword: "what is IPTV",
     secondaryTopics: [

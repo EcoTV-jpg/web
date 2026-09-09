@@ -20,10 +20,53 @@ export interface IptvProtocol {
   standardUse: string;
 }
 
+export interface IptvCoreType {
+  title: string;
+  subtitle: string;
+  description: string;
+  examples: string[];
+}
+
 export interface WhatIsIptvFaq {
   question: string;
   answer: string;
 }
+
+export const iptvCoreTypes: IptvCoreType[] = [
+  {
+    title: "Live Television (Linear IPTV)",
+    subtitle: "Real-time broadcast networks",
+    description:
+      "Direct streaming of scheduled television programming over IP broadband networks. Similar to legacy cable or satellite broadcasting, channels stream continuously in real time with synchronized audio and video.",
+    examples: [
+      "Live domestic and international sports",
+      "24/7 breaking news channels",
+      "Live network entertainment broadcasts",
+    ],
+  },
+  {
+    title: "Time-Shifted Media (Catch-Up TV)",
+    subtitle: "Replaying previously aired shows",
+    description:
+      "Allows subscribers to watch television programs hours or days after their original broadcast. Includes start-over TV (replaying an in-progress show from the beginning) and network PVR cloud recording.",
+    examples: [
+      "7-day XMLTV catch-up schedules",
+      "Start-over live show playback",
+      "Cloud recording without local DVR drives",
+    ],
+  },
+  {
+    title: "Video on Demand (VOD)",
+    subtitle: "On-demand movie and series libraries",
+    description:
+      "A comprehensive digital catalog of pre-recorded feature films, documentaries, and full television seasons that subscribers can browse, start, pause, rewind, and resume at any time.",
+    examples: [
+      "Cinema releases in HD and 4K",
+      "Full episodic television box sets",
+      "Multi-language audio and subtitle tracks",
+    ],
+  },
+];
 
 export const iptvArchitectureLayers = [
   {
@@ -159,7 +202,7 @@ export const whatIsIptvFaqs: WhatIsIptvFaq[] = [
   {
     question: "What minimum internet download speed do I need for IPTV?",
     answer:
-      "For standard definition (SD) streams, 8 Mbps is sufficient. For 1080p High Definition (HD) channels, a minimum stable connection of 15 Mbps is recommended. For 4K Ultra HD and 60 FPS live sports feeds, 30+ Mbps of dedicated broadband bandwidth ensures seamless playback without buffering.",
+      "For standard definition (SD) streams, 8 Mbps is sufficient. For 1080p High Definition (HD) channels, a minimum stable connection of 15 Mbps is recommended. For 4K Ultra HD and 60 FPS live sports feeds, 30+ Mbps of dedicated broadband bandwidth ensures stable, uninterrupted playback.",
   },
   {
     question: "What is the difference between an IPTV provider and an IPTV player app?",

@@ -577,7 +577,7 @@ export function generateStructuredData(path: string = "/") {
         "@id": siteConfig.entityIds.organization,
       },
       datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-05T00:00:00+00:00",
+      dateModified: "2026-09-09T00:00:00+00:00",
       about: [
         { "@type": "Thing", name: "IPTV" },
         { "@type": "Thing", name: "Internet Protocol Television" },

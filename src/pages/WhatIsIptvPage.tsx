@@ -29,6 +29,7 @@ import {
   iptvVsTraditionalComparison,
   iptvProtocolsList,
   whatIsIptvFaqs,
+  iptvCoreTypes,
 } from "../data/whatIsIptv";
 
 export default function WhatIsIptvPage() {
@@ -77,6 +78,48 @@ export default function WhatIsIptvPage() {
                   Unlike traditional broadcast television where every channel is sent simultaneously over a physical wire, IPTV operates on a <strong className="text-snow">two-way client-server request model</strong>: when you change the channel on your television or mobile app, your player sends a direct unicast request to an edge server, which streams only that specific media file or live video chunk to your screen.
                 </p>
               </div>
+            </div>
+          </section>
+
+          {/* Section: The 3 Core Types of IPTV Services */}
+          <section className="mt-14" aria-labelledby="types-heading">
+            <div className="text-center mb-8">
+              <h2 id="types-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                The 3 Core Types of IPTV Services
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[640px] mx-auto">
+                Under ITU-T standards, Internet Protocol Television is structured into three primary media delivery formats:
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {iptvCoreTypes.map((type, idx) => (
+                <article key={idx} className="rounded-xl border border-charcoal bg-ash/30 p-6 flex flex-col justify-between">
+                  <div>
+                    <div className="mb-3">
+                      <span className="text-[11px] font-mono text-phosphor-green uppercase tracking-wider font-semibold">
+                        Type 0{idx + 1}
+                      </span>
+                      <h3 className="text-base font-semibold text-snow mt-1">{type.title}</h3>
+                      <p className="text-xs text-smoke font-medium mt-0.5">{type.subtitle}</p>
+                    </div>
+                    <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-4">
+                      {type.description}
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-charcoal/60">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-smoke font-medium block mb-2">Key Examples</span>
+                    <ul className="space-y-1.5 text-xs text-silver-mist">
+                      {type.examples.map((ex, exIdx) => (
+                        <li key={exIdx} className="flex items-center gap-2">
+                          <CheckCircle2 className="size-3.5 text-phosphor-green shrink-0" aria-hidden="true" />
+                          <span>{ex}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
             </div>
           </section>
 
@@ -156,7 +199,7 @@ export default function WhatIsIptvPage() {
                 <thead>
                   <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
                     <th scope="col" className="p-4 font-semibold">Aspect</th>
-                    <th scope="col" className="p-4 font-semibold text-phosphor-green">IPTV (Teleview)</th>
+                    <th scope="col" className="p-4 font-semibold text-phosphor-green">IPTV Services</th>
                     <th scope="col" className="p-4 font-semibold">Traditional Cable</th>
                     <th scope="col" className="p-4 font-semibold">Satellite TV</th>
                     <th scope="col" className="p-4 font-semibold">OTT (Netflix/Prime)</th>
@@ -319,7 +362,7 @@ export default function WhatIsIptvPage() {
                     <td className="p-3.5">70,000 km orbital round-trip propagation</td>
                   </tr>
                   <tr className="hover:bg-ash/40 transition-colors bg-phosphor-green/5">
-                    <th scope="row" className="p-3.5 font-medium text-snow">Raw MPEG-TS IPTV (Teleview)</th>
+                    <th scope="row" className="p-3.5 font-medium text-snow">MPEG-TS / HLS IPTV Streams</th>
                     <td className="p-3.5 font-mono text-phosphor-green font-semibold">10 &ndash; 20 seconds</td>
                     <td className="p-3.5">Edge CDN unicast over public internet</td>
                     <td className="p-3.5">Encoder segmenting + player RAM cache</td>
@@ -867,7 +910,7 @@ export default function WhatIsIptvPage() {
               Experience Next-Generation 4K IPTV with Teleview
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[580px] mx-auto leading-relaxed">
-              Explore the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> featuring 25,000+ live television channels, multi-CDN edge server routing, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
+              Explore the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> featuring 25,000+ live television channels, high-capacity streaming servers, full 7-day EPG guides, and dedicated subscriber support across all your favorite streaming devices.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
