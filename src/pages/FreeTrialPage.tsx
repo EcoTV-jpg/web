@@ -17,6 +17,9 @@ import {
   Clock,
   MessageCircle,
   AlertCircle,
+  Key,
+  Layers,
+  Lock,
 } from "lucide-react";
 import { createWhatsAppTrialUrl } from "../config/site";
 import { freeTrialData } from "../data/freeTrial";
@@ -94,8 +97,71 @@ export default function FreeTrialPage() {
             </div>
           </header>
 
+          {/* Transparent Trust Banner: Zero Credit Card Commitment */}
+          <section className="mt-6 rounded-2xl border border-phosphor-green/30 bg-ink-800/80 p-5 sm:p-6 text-sm text-silver-mist">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start gap-3">
+                <Lock className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+                <div>
+                  <h2 className="text-sm sm:text-base font-bold text-snow">
+                    Transparent, Risk-Free Evaluation — Zero Payment Information Collected
+                  </h2>
+                  <p className="mt-1 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                    Teleview will never ask for your credit card number, bank details, or automated billing authorizations for a trial. Your 24-hour test line is dispatched directly through WhatsApp and concludes automatically after 24 hours with zero rollover charges.
+                  </p>
+                </div>
+              </div>
+              <a
+                href={trialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-green text-xs px-4 py-2 shrink-0 inline-flex items-center gap-1.5"
+              >
+                Request Free Pass &rarr;
+              </a>
+            </div>
+          </section>
+
+          {/* Section: Credential Architecture Breakdown */}
+          <section className="mt-16" aria-labelledby="credential-format-heading">
+            <div className="text-center max-w-[720px] mx-auto mb-8">
+              <span className="label-mono text-phosphor-green text-xs">Credential Transparency</span>
+              <h2 id="credential-format-heading" className="t-heading-sm mt-1 text-xl sm:text-2xl font-bold text-snow">
+                What Credentials Do You Receive for Your Trial?
+              </h2>
+              <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm">
+                Upon contacting our support desk, you receive standard industry credentials compatible with any modern IPTV player:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {freeTrialData.credentialFields.map((field) => (
+                <div key={field.label} className="card p-5 border-charcoal flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-mono font-semibold text-phosphor-green uppercase">{field.label}</span>
+                      <Key className="size-4 text-smoke" aria-hidden="true" />
+                    </div>
+                    <code className="text-xs font-mono text-snow bg-black/40 px-2 py-1 rounded border border-charcoal/80 block break-all mb-2">
+                      {field.field}
+                    </code>
+                    <p className="text-xs text-silver-mist leading-relaxed">
+                      {field.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 p-3.5 rounded-xl border border-charcoal/80 bg-ink-800/60 text-xs text-silver-mist flex items-start gap-2">
+              <AlertCircle className="size-4 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <span>
+                <strong>MAC / MAG Stalker Portal Support:</strong> If you stream on a Formuler box (MYTVOnline) or MAG device, provide your device MAC address to our WhatsApp support agent for portal activation instead of username/password.
+              </span>
+            </div>
+          </section>
+
           {/* Section: Test Before You Subscribe */}
-          <section className="mt-12" aria-labelledby="why-test-heading">
+          <section className="mt-20" aria-labelledby="why-test-heading">
             <div className="text-center max-w-[720px] mx-auto mb-8">
               <span className="label-mono text-phosphor-green text-xs">Stream Verification</span>
               <h2 id="why-test-heading" className="t-heading-sm mt-1 text-xl sm:text-2xl font-bold text-snow">
@@ -138,6 +204,43 @@ export default function FreeTrialPage() {
             </div>
           </section>
 
+          {/* Section: 24-Hour Benchmark Schedule */}
+          <section className="mt-20" aria-labelledby="benchmark-schedule-heading">
+            <div className="text-center max-w-[720px] mx-auto mb-10">
+              <span className="label-mono text-phosphor-green text-xs">Evaluation Protocol</span>
+              <h2 id="benchmark-schedule-heading" className="t-heading-sm mt-1 text-xl sm:text-2xl font-bold text-snow">
+                The 24-Hour IPTV Free Trial Testing Schedule
+              </h2>
+              <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm">
+                Get maximum value from your 24-hour test pass by following this systematic, 4-phase evaluation timeline:
+              </p>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {freeTrialData.benchmarkSchedule.map((item) => (
+                <div key={item.phase} className="card p-6 border-charcoal flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded bg-phosphor-green/15 text-phosphor-green border border-phosphor-green/30 font-semibold">
+                        {item.phase} • {item.hours}
+                      </span>
+                      <span className="text-xs text-smoke font-mono">{item.focus}</span>
+                    </div>
+                    <h3 className="text-base font-bold text-snow mt-2">{item.title}</h3>
+                    <ul className="mt-4 space-y-2.5">
+                      {item.actionItems.map((action, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                          <CheckCircle2 className="size-4 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+                          <span>{action}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Section: How the Trial Works */}
           <section className="mt-20" aria-labelledby="how-trial-works-heading">
             <div className="text-center max-w-[720px] mx-auto mb-10">
@@ -174,6 +277,48 @@ export default function FreeTrialPage() {
                 </li>
               ))}
             </ol>
+          </section>
+
+          {/* Section: Fast Compatibility Matrix */}
+          <section className="mt-20" aria-labelledby="compatibility-matrix-heading">
+            <div className="text-center max-w-[720px] mx-auto mb-8">
+              <span className="label-mono text-phosphor-green text-xs">Setup Quick Reference</span>
+              <h2 id="compatibility-matrix-heading" className="t-heading-sm mt-1 text-xl sm:text-2xl font-bold text-snow">
+                Device &amp; App Compatibility Matrix
+              </h2>
+              <p className="t-body-sm mt-2 text-silver-mist text-xs sm:text-sm">
+                Find the recommended IPTV player application and login method for your specific streaming hardware:
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-xl border border-charcoal bg-ash/30">
+              <table className="w-full text-left text-xs sm:text-sm">
+                <thead className="border-b border-charcoal bg-black/40 text-smoke uppercase font-mono text-[11px]">
+                  <tr>
+                    <th className="p-3.5">Device Platform</th>
+                    <th className="p-3.5">Recommended Player App</th>
+                    <th className="p-3.5">Connection Method</th>
+                    <th className="p-3.5">Setup Time</th>
+                    <th className="p-3.5">Step-by-Step Guide</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60">
+                  {freeTrialData.deviceCompatibilityRows.map((row) => (
+                    <tr key={row.device} className="hover:bg-ash/50 transition-colors">
+                      <td className="p-3.5 font-medium text-snow">{row.device}</td>
+                      <td className="p-3.5 text-silver-mist">{row.recommendedApp}</td>
+                      <td className="p-3.5 text-smoke font-mono text-xs">{row.connectionMethod}</td>
+                      <td className="p-3.5 text-phosphor-green font-medium">{row.setupTime}</td>
+                      <td className="p-3.5">
+                        <a href={row.guideUrl} className="text-phosphor-green hover:underline font-semibold inline-flex items-center gap-1">
+                          View Tutorial &rarr;
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </section>
 
           {/* Section: Supported Devices */}
@@ -282,7 +427,7 @@ export default function FreeTrialPage() {
                 </h2>
               </div>
               <p className="t-body-sm text-silver-mist text-xs sm:text-sm leading-relaxed">
-                To test an IPTV free trial effectively, evaluate live channel playback, channel switching response, EPG guide accuracy, and on-demand VOD streaming directly on your primary home devices. Make sure to test stream stability during peak evening hours (8:00 PM to 10:00 PM) to verify that your local network and internet provider maintain smooth playback without throttling.
+                To test an IPTV free trial effectively, evaluate live channel playback, channel switching response, EPG guide accuracy, and on-demand VOD streaming directly on your primary home devices. Make sure to test stream stability during peak evening hours (8:00 PM to 11:00 PM) to verify that your local network and internet provider maintain smooth playback without throttling.
               </p>
               <p className="t-body-sm text-silver-mist text-xs sm:text-sm mt-3">
                 Follow these core checks to evaluate Teleview before choosing a subscription duration: <strong className="text-snow">1)</strong> Benchmark peak-hour 60 FPS sports (8 PM &ndash; 11 PM); <strong className="text-snow">2)</strong> Verify channel zapping response (&lt;2 seconds); <strong className="text-snow">3)</strong> Check EPG guide timeline accuracy; <strong className="text-snow">4)</strong> Test 4K VOD playback with subtitle sync.
@@ -340,6 +485,29 @@ export default function FreeTrialPage() {
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Seamless Upgrade Continuity Callout */}
+          <section className="mt-16 card p-6 sm:p-8 border-charcoal bg-ash/30 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="max-w-[660px]">
+              <div className="flex items-center gap-2 text-xs font-mono text-phosphor-green uppercase mb-2">
+                <Layers className="size-4" aria-hidden="true" />
+                <span>Seamless Transition to Full Subscription</span>
+              </div>
+              <h2 className="text-lg sm:text-xl font-bold text-snow">
+                Keep Your Exact Line &amp; Playlist Settings When Upgrading
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                When your 24-hour test pass concludes, you do not need to re-install apps, re-download M3U files, or reorganize your favorite channels. Choosing any paid subscription tier (1, 3, 6, or 12 months) preserves your existing credentials with instant server activation.
+              </p>
+            </div>
+            <a
+              href="/iptv-subscription"
+              className="btn-green text-xs px-5 py-3 shrink-0 inline-flex items-center gap-2"
+            >
+              <span>View Subscription Plans</span>
+              <ArrowRight className="size-3.5" aria-hidden="true" />
+            </a>
           </section>
 
           {/* Section: Why Teleview Factual Quality */}

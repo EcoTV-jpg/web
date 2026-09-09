@@ -32,6 +32,29 @@ export interface FreeTrialTestPoint {
   linkText?: string;
 }
 
+export interface BenchmarkScheduleItem {
+  phase: string;
+  hours: string;
+  title: string;
+  focus: string;
+  actionItems: string[];
+}
+
+export interface DeviceCompatibilityRow {
+  device: string;
+  recommendedApp: string;
+  connectionMethod: string;
+  setupTime: string;
+  guideUrl: string;
+}
+
+export interface CredentialField {
+  label: string;
+  field: string;
+  description: string;
+  example: string;
+}
+
 export const freeTrialData = {
   hero: {
     kicker: "Test Drive Before You Subscribe",
@@ -42,6 +65,135 @@ export const freeTrialData = {
     secondaryCtaText: "View Subscription Plans",
     durationBadge: "24-Hour Free Pass • Automated Setup (< 15 mins)",
   },
+
+  credentialFields: [
+    {
+      label: "Server URL",
+      field: "http://line.teleview.me (or secure IP)",
+      description: "The host domain or server address entered into your IPTV player's Xtream Codes server portal field.",
+      example: "http://tv.example.com:8080",
+    },
+    {
+      label: "Port",
+      field: "80 / 8080 / 2095",
+      description: "Standard HTTP or HTTPS streaming port automatically parsed by modern player applications.",
+      example: "8080",
+    },
+    {
+      label: "Username",
+      field: "Unique 8-character string",
+      description: "Your individual trial authentication identifier generated upon WhatsApp request.",
+      example: "trial_849204",
+    },
+    {
+      label: "Password",
+      field: "Alphanumeric secure token",
+      description: "Temporary authorization token active for exactly 24 hours from generation.",
+      example: "k8F3m9X2",
+    },
+    {
+      label: "M3U Playlist URL",
+      field: "Direct .m3u_plus download link",
+      description: "Complete playlist link for players (like VLC, Kodi, or SS IPTV) that connect via raw URL instead of API login.",
+      example: "http://tv.example.com:8080/get.php?username=...&type=m3u_plus",
+    },
+  ] as CredentialField[],
+
+  benchmarkSchedule: [
+    {
+      phase: "Phase 1",
+      hours: "Hours 0 – 2",
+      title: "Onboarding & Initial Guide Sync",
+      focus: "Credential Handshake & Catalog Download",
+      actionItems: [
+        "Download your hardware's recommended player app (TiviMate, Smarters Pro, or IBO Player).",
+        "Input Xtream Codes API credentials sent by support via WhatsApp.",
+        "Verify that channel categories (Sports, Cinema, News, Documentaries) populate fully.",
+        "Confirm that the Electronic Program Guide (EPG) downloads timelines and program descriptions.",
+      ],
+    },
+    {
+      phase: "Phase 2",
+      hours: "Hours 2 – 6",
+      title: "Daytime Baseline & Surfing Speed",
+      focus: "Channel Zapping & Standard Bitrate Verification",
+      actionItems: [
+        "Surf through 15–20 consecutive channels across different regional bouquets to measure zapping latency (< 2 seconds).",
+        "Sample 1080p and 4K resolution streams to verify your display's hardware decoding.",
+        "Explore on-demand movies (VOD) to test audio-track selection and subtitle synchronization.",
+        "Organize 5–10 favorite channels into custom categories for faster access.",
+      ],
+    },
+    {
+      phase: "Phase 3",
+      hours: "Hours 8 – 11",
+      title: "Prime-Time Live Sports Stress Test",
+      focus: "Peak ISP Peering & 60 FPS Fluidity",
+      actionItems: [
+        "Stream live sporting events between 8:00 PM and 11:00 PM when residential network traffic is heaviest.",
+        "Verify that high-bitrate 60 FPS sports feeds run continuously without micro-stutter.",
+        "If you encounter occasional buffering on Wi-Fi, test an Ethernet cable or adjust player buffer size to 2–3 seconds.",
+        "Optionally activate a VPN to compare ISP routing against direct CDN connection.",
+      ],
+    },
+    {
+      phase: "Phase 4",
+      hours: "Hours 12 – 24",
+      title: "Hardware Versatility & Upgrade Decision",
+      focus: "Multi-Device Verification & Seamless Activation",
+      actionItems: [
+        "Test secondary screens (such as a bedroom TV, tablet, or smartphone) one device at a time.",
+        "Evaluate catch-up TV archives on major channels if you missed earlier broadcasts.",
+        "Review long-term package tiers (1, 3, 6, or 12 months) based on your streaming needs.",
+        "Message support to convert your trial line into a permanent account with zero re-installation.",
+      ],
+    },
+  ] as BenchmarkScheduleItem[],
+
+  deviceCompatibilityRows: [
+    {
+      device: "Amazon Firestick (4K / Max / Lite)",
+      recommendedApp: "TiviMate / IPTV Smarters Pro",
+      connectionMethod: "Xtream Codes API",
+      setupTime: "3 – 5 minutes",
+      guideUrl: "/devices/firestick",
+    },
+    {
+      device: "Samsung Smart TV (Tizen OS)",
+      recommendedApp: "IBO Player / SmartOne IPTV",
+      connectionMethod: "MAC Address / M3U Playlist",
+      setupTime: "4 – 6 minutes",
+      guideUrl: "/devices/samsung-smart-tv",
+    },
+    {
+      device: "LG Smart TV (webOS)",
+      recommendedApp: "IBO Player / SmartOne IPTV",
+      connectionMethod: "MAC Address / M3U Playlist",
+      setupTime: "4 – 6 minutes",
+      guideUrl: "/devices/lg-smart-tv",
+    },
+    {
+      device: "Android TV & Google TV Box",
+      recommendedApp: "TiviMate / OTT Navigator",
+      connectionMethod: "Xtream Codes API",
+      setupTime: "3 – 5 minutes",
+      guideUrl: "/devices/android-tv",
+    },
+    {
+      device: "Apple TV 4K (tvOS)",
+      recommendedApp: "IPTV Smarters Lite / GSE Smart",
+      connectionMethod: "Xtream Codes API",
+      setupTime: "3 – 5 minutes",
+      guideUrl: "/devices/apple-tv",
+    },
+    {
+      device: "Windows PC & Mac Computer",
+      recommendedApp: "VLC Media Player / IPTV Smarters Pro",
+      connectionMethod: "M3U Playlist / Xtream Codes",
+      setupTime: "2 – 4 minutes",
+      guideUrl: "/setup",
+    },
+  ] as DeviceCompatibilityRow[],
 
   testPoints: [
     {
@@ -138,7 +290,7 @@ export const freeTrialData = {
     {
       category: "Network Verification",
       title: "Peak-Hour Bandwidth & ISP Routing",
-      desc: "Stream between 8:00 PM and 10:00 PM when residential internet traffic peaks to verify multi-CDN streaming stability.",
+      desc: "Stream between 8:00 PM and 11:00 PM when residential internet traffic peaks to verify multi-CDN streaming stability.",
       guidance: "We recommend 15 Mbps for Full HD streams and 35+ Mbps for uninterrupted 4K Ultra HD viewing.",
       helpLink: { text: "Internet Speed Benchmarks", href: "/help-center/internet-speed" },
     },
@@ -199,6 +351,16 @@ export const freeTrialData = {
       question: "How long does the free trial last?",
       answer:
         "Teleview provides a comprehensive 24-hour trial period from the moment your credentials are generated. This allows you sufficient time to test morning, afternoon, and peak evening streaming performance across sports and entertainment channels.",
+    },
+    {
+      question: "What exact credential format will I receive for my trial?",
+      answer:
+        "You receive standard Xtream Codes API credentials (Server URL, Port, Username, and Password) plus a complete M3U Plus playlist URL. These credentials integrate directly with all major IPTV player applications without proprietary hardware.",
+    },
+    {
+      question: "Do my customized channel favorites and EPG settings carry over if I subscribe?",
+      answer:
+        "Yes. When you choose a 1, 3, 6, or 12-month paid plan, our support team converts your trial line directly into an active paid subscription. Your username, password, playlist structure, and app configurations remain completely unchanged.",
     },
     {
       question: "Can I use a VPN during my IPTV free trial?",
