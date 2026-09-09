@@ -10,6 +10,12 @@ export interface FreeTrialFaq {
   answer: string;
 }
 
+export interface WhatToTestRow {
+  aspect: string;
+  whatToCheck: string;
+  evaluationTip: string;
+}
+
 export interface TestingChecklistItem {
   category: string;
   title: string;
@@ -22,22 +28,6 @@ export interface FreeTrialLimitation {
   title: string;
   desc: string;
   tag: string;
-}
-
-export interface FreeTrialTestPoint {
-  title: string;
-  desc: string;
-  icon: string;
-  linkUrl?: string;
-  linkText?: string;
-}
-
-export interface BenchmarkScheduleItem {
-  phase: string;
-  hours: string;
-  title: string;
-  focus: string;
-  actionItems: string[];
 }
 
 export interface DeviceCompatibilityRow {
@@ -55,100 +45,292 @@ export interface CredentialField {
   example: string;
 }
 
+export interface TestingScheduleStep {
+  number: string;
+  title: string;
+  focus: string;
+  instructions: string;
+  checklist: string[];
+}
+
+export interface PreRequestCheckItem {
+  title: string;
+  desc: string;
+}
+
+export interface TroubleshootingQuickLink {
+  issue: string;
+  symptom: string;
+  linkText: string;
+  href: string;
+}
+
 export const freeTrialData = {
   hero: {
-    kicker: "Test Drive Before You Subscribe",
-    title: "IPTV Free Trial: 24-Hour Streaming Test Pass",
+    kicker: "Risk-Free Service Evaluation",
+    title: "IPTV Free Trial: Test Before You Subscribe",
     subtitle:
-      "Experience Teleview streaming performance risk-free. Test live TV channels, on-demand movies, EPG accuracy, and device compatibility directly on your television or mobile screen.",
+      "Test Teleview streaming performance on your own television, phone, or streaming stick before purchasing. Evaluate live sports, channel switching response, EPG accuracy, and on-demand movies with a 24-hour test pass.",
     primaryCtaText: "Start Your IPTV Free Trial",
     secondaryCtaText: "View Subscription Plans",
-    durationBadge: "24-Hour Free Pass • Automated Setup (< 15 mins)",
+    durationBadge: "24-Hour Free Pass • No Credit Card Required",
   },
+
+  trialAtAGlance: {
+    duration: "24 hours from credential generation",
+    paymentRequired: "Zero — no credit card, bank details, or payment info collected",
+    autoRenewal: "None — trial line terminates automatically after 24 hours",
+    activeStreams: "1 concurrent stream connection",
+    credentialsDelivered: "Xtream Codes API (Server, Port, User, Pass) + M3U Playlist link (MAC portal on request)",
+    deliveryMethod: "Direct WhatsApp support desk dispatch (typically 5–15 minutes)",
+    compatibleHardware: "Firestick, Android TV, Google TV, Samsung Smart TV, LG Smart TV, Apple TV, PC/Mac, Formuler, Roku (via casting)",
+    contentIncluded: "Live TV channels, available live sports feeds, on-demand movies & series, EPG guide",
+  },
+
+  preRequestChecklist: [
+    {
+      title: "Confirm Your Hardware",
+      desc: "Decide which television, streaming stick, or mobile device you intend to use primarily after subscribing.",
+    },
+    {
+      title: "Install a Player in Advance",
+      desc: "Download a compatible IPTV player application (such as TiviMate, IPTV Smarters Pro, or IBO Player) on your device before requesting credentials.",
+    },
+    {
+      title: "Check Your Internet Connection",
+      desc: "A stable download speed of 15+ Mbps for HD and 35+ Mbps for 4K is recommended. Use 5 GHz Wi-Fi or wired Ethernet where available.",
+    },
+    {
+      title: "Plan Your Testing Time",
+      desc: "Request your trial during an evening or weekend when you have time to actively watch live channels and live sporting events.",
+    },
+  ] as PreRequestCheckItem[],
+
+  whatToTestTable: [
+    {
+      aspect: "Live TV Channels",
+      whatToCheck: "Channel loading response, stream stability, and audio/video synchronization across general broadcast channels.",
+      evaluationTip: "Switch between standard definition and high-definition channels to evaluate playback continuity.",
+    },
+    {
+      aspect: "Channel Switching",
+      whatToCheck: "How quickly your player application tunes into new streams when zapping through channels.",
+      evaluationTip: "Xtream Codes API generally provides faster channel switching than large raw M3U files.",
+    },
+    {
+      aspect: "Live Sports",
+      whatToCheck: "Stream stability during sustained live sports broadcasts with fast on-screen motion.",
+      evaluationTip: "Test during an active live match when server load and ISP traffic are highest.",
+    },
+    {
+      aspect: "Electronic Program Guide (EPG)",
+      whatToCheck: "Whether channel timelines, show titles, and schedule descriptions populate accurately.",
+      evaluationTip: "Verify your player's timezone offset matches your local time if guide hours are shifted.",
+    },
+    {
+      aspect: "Video on Demand (VOD)",
+      whatToCheck: "Movie and series playback, seeking forward/backward, and subtitle/audio track availability.",
+      evaluationTip: "Ensure your player decoder supports the required audio codecs (such as AAC or AC3).",
+    },
+    {
+      aspect: "4K / Ultra HD Feeds",
+      whatToCheck: "Whether your display hardware, player app, and home broadband can smoothly decode 4K streams.",
+      evaluationTip: "4K streams require higher bandwidth headroom and hardware HEVC decoding capability.",
+    },
+    {
+      aspect: "Catch-Up TV",
+      whatToCheck: "Archive playback availability on supported channels where past broadcasts are indexed.",
+      evaluationTip: "Look for the clock or calendar icon next to eligible channels in your player guide.",
+    },
+    {
+      aspect: "Network / Device Conditions",
+      whatToCheck: "Compare performance between 5 GHz Wi-Fi and wired Ethernet to isolate any local network bottlenecks.",
+      evaluationTip: "If Wi-Fi buffers occasionally, testing wired Ethernet or adjusting buffer size often stabilizes playback.",
+    },
+  ] as WhatToTestRow[],
+
+  testingScheduleSteps: [
+    {
+      number: "01",
+      title: "Initial Setup & Catalog Synchronization",
+      focus: "Credential Handshake & Category Verification",
+      instructions:
+        "Input your Xtream Codes API credentials into your installed player app. Allow the full live TV channel directory, VOD library, and EPG guide to download.",
+      checklist: [
+        "Verify server URL, username, and password connect without authentication errors.",
+        "Confirm all primary channel categories (Sports, Movies, News, Entertainment) load.",
+        "Check that EPG timelines display program listings for current broadcasts.",
+        "Add 5 to 10 essential channels to your favorites list for easy access.",
+      ],
+    },
+    {
+      number: "02",
+      title: "Live TV Playback & Surfing Responsiveness",
+      focus: "Channel Surfing & Stream Synchronization",
+      instructions:
+        "Spend time surfing through diverse channel bouquets to test server response times, audio sync, and display fluidity.",
+      checklist: [
+        "Zap through 10–15 consecutive channels to measure switching response.",
+        "Check audio and video synchronization across international and regional feeds.",
+        "Verify that streams hold steady without intermittent audio dropouts.",
+        "Test both 720p/1080p channels and available 4K streams.",
+      ],
+    },
+    {
+      number: "03",
+      title: "Peak-Hour Live Sports Stress Test",
+      focus: "ISP Peering & Sustained Live Performance",
+      instructions:
+        "Stream a live sporting event during prime-time evening hours (8:00 PM to 11:00 PM) when residential internet usage peaks.",
+      checklist: [
+        "Observe whether playback remains stable throughout live match action.",
+        "Test high-motion camera pans for smooth frame rendering.",
+        "If you encounter occasional micro-buffering, increase buffer size to 2–3 seconds in your player settings.",
+        "If your ISP throttles streaming traffic during major games, test with a VPN enabled.",
+      ],
+    },
+    {
+      number: "04",
+      title: "On-Demand Movies & Series Exploration",
+      focus: "VOD Seeking & Subtitle Alignment",
+      instructions:
+        "Sample titles from the on-demand library to test server seeking performance, audio formats, and subtitle support.",
+      checklist: [
+        "Play a movie or series episode and jump forward/backward by 5 minutes.",
+        "Check available subtitle tracks and multi-language audio streams.",
+        "Verify that resume playback works when returning to a previously watched title.",
+        "Confirm video aspect ratios display correctly on your television.",
+      ],
+    },
+    {
+      number: "05",
+      title: "EPG Schedule & Timezone Accuracy",
+      focus: "Guide Synchronization & Catch-Up Features",
+      instructions:
+        "Examine the Electronic Program Guide to verify that upcoming program schedules align with your actual clock.",
+      checklist: [
+        "Compare EPG program start times with your current local time.",
+        "If schedules appear shifted by 1 or 2 hours, adjust your player's EPG time offset.",
+        "Test catch-up TV on supported channels to review broadcasts aired earlier in the day.",
+        "Confirm guide refresh frequency is set to daily in player preferences.",
+      ],
+    },
+    {
+      number: "06",
+      title: "Hardware Versatility & Subscription Decision",
+      focus: "Secondary Screen Check & Transition",
+      instructions:
+        "Test your trial credentials on a secondary device (one active stream at a time) and decide which subscription tier fits your household.",
+      checklist: [
+        "Test playback on a mobile phone or secondary bedroom TV.",
+        "Confirm your household's preferred channels and leagues stream reliably.",
+        "Review standard subscription packages (1, 3, 6, or 12 months) based on your budget.",
+        "Contact support to transition your trial line to a paid plan with zero reconfiguration.",
+      ],
+    },
+  ] as TestingScheduleStep[],
 
   credentialFields: [
     {
       label: "Server URL",
-      field: "http://line.teleview.me (or secure IP)",
-      description: "The host domain or server address entered into your IPTV player's Xtream Codes server portal field.",
+      field: "http://line.teleview.me (or assigned host IP)",
+      description:
+        "The host server address entered into your IPTV player's Xtream Codes server portal field. This directs your player to our edge streaming CDN.",
       example: "http://tv.example.com:8080",
     },
     {
       label: "Port",
       field: "80 / 8080 / 2095",
-      description: "Standard HTTP or HTTPS streaming port automatically parsed by modern player applications.",
+      description:
+        "The communication port specified alongside the server URL. Most modern players parse the port automatically if included in the server address.",
       example: "8080",
     },
     {
       label: "Username",
       field: "Unique 8-character string",
-      description: "Your individual trial authentication identifier generated upon WhatsApp request.",
+      description:
+        "Your unique trial authentication username generated by our automated provisioning system upon your WhatsApp request.",
       example: "trial_849204",
     },
     {
       label: "Password",
-      field: "Alphanumeric secure token",
-      description: "Temporary authorization token active for exactly 24 hours from generation.",
+      field: "Alphanumeric security token",
+      description:
+        "Your temporary access password. Valid for exactly 24 hours from line creation and deactivates automatically when expired.",
       example: "k8F3m9X2",
     },
     {
       label: "M3U Playlist URL",
       field: "Direct .m3u_plus download link",
-      description: "Complete playlist link for players (like VLC, Kodi, or SS IPTV) that connect via raw URL instead of API login.",
+      description:
+        "Complete playlist link for applications (such as VLC, Kodi, or SS IPTV) that accept a raw URL instead of Xtream Codes API login.",
       example: "http://tv.example.com:8080/get.php?username=...&type=m3u_plus",
+    },
+    {
+      label: "MAG / Stalker Portal",
+      field: "Custom portal URL for MAC activation",
+      description:
+        "Dedicated Stalker portal address for Formuler MYTVOnline or MAG set-top boxes connecting via device MAC address.",
+      example: "http://mag.teleview.me/c/",
     },
   ] as CredentialField[],
 
-  benchmarkSchedule: [
+  howItWorksFiveSteps: [
     {
-      phase: "Phase 1",
-      hours: "Hours 0 – 2",
-      title: "Onboarding & Initial Guide Sync",
-      focus: "Credential Handshake & Catalog Download",
-      actionItems: [
-        "Download your hardware's recommended player app (TiviMate, Smarters Pro, or IBO Player).",
-        "Input Xtream Codes API credentials sent by support via WhatsApp.",
-        "Verify that channel categories (Sports, Cinema, News, Documentaries) populate fully.",
-        "Confirm that the Electronic Program Guide (EPG) downloads timelines and program descriptions.",
-      ],
+      number: "01",
+      title: "Request Your Free Trial",
+      desc: "Message our 24/7 support team on WhatsApp to request your complimentary 24-hour test pass. No credit card or payment details are collected.",
+      detail: "Requests are processed by our support desk within 5 to 15 minutes during active support hours.",
     },
     {
-      phase: "Phase 2",
-      hours: "Hours 2 – 6",
-      title: "Daytime Baseline & Surfing Speed",
-      focus: "Channel Zapping & Standard Bitrate Verification",
-      actionItems: [
-        "Surf through 15–20 consecutive channels across different regional bouquets to measure zapping latency (< 2 seconds).",
-        "Sample 1080p and 4K resolution streams to verify your display's hardware decoding.",
-        "Explore on-demand movies (VOD) to test audio-track selection and subtitle synchronization.",
-        "Organize 5–10 favorite channels into custom categories for faster access.",
-      ],
+      number: "02",
+      title: "Receive Your Access Details",
+      desc: "You will receive your unique Xtream Codes API server URL, port, username, password, and direct M3U playlist link directly in chat.",
+      detail: "If you stream on a Formuler or MAG device, provide your MAC address for dedicated Stalker portal activation.",
     },
     {
-      phase: "Phase 3",
-      hours: "Hours 8 – 11",
-      title: "Prime-Time Live Sports Stress Test",
-      focus: "Peak ISP Peering & 60 FPS Fluidity",
-      actionItems: [
-        "Stream live sporting events between 8:00 PM and 11:00 PM when residential network traffic is heaviest.",
-        "Verify that high-bitrate 60 FPS sports feeds run continuously without micro-stutter.",
-        "If you encounter occasional buffering on Wi-Fi, test an Ethernet cable or adjust player buffer size to 2–3 seconds.",
-        "Optionally activate a VPN to compare ISP routing against direct CDN connection.",
-      ],
+      number: "03",
+      title: "Add Service to a Compatible Player",
+      desc: "Install a recommended player app suited to your hardware and enter your credentials. Remember: the IPTV service and IPTV player app are independent.",
+      detail: "Teleview provides the streaming credentials; player apps like TiviMate or IBO Player are separate software applications.",
     },
     {
-      phase: "Phase 4",
-      hours: "Hours 12 – 24",
-      title: "Hardware Versatility & Upgrade Decision",
-      focus: "Multi-Device Verification & Seamless Activation",
-      actionItems: [
-        "Test secondary screens (such as a bedroom TV, tablet, or smartphone) one device at a time.",
-        "Evaluate catch-up TV archives on major channels if you missed earlier broadcasts.",
-        "Review long-term package tiers (1, 3, 6, or 12 months) based on your streaming needs.",
-        "Message support to convert your trial line into a permanent account with zero re-installation.",
-      ],
+      number: "04",
+      title: "Test the Service Systematically",
+      desc: "Follow our testing checklist to evaluate channel switching, peak-hour sports stability, EPG accuracy, and VOD on your primary home devices.",
+      detail: "Test during peak evening hours (8 PM – 11 PM) to evaluate real-world streaming performance under network load.",
     },
-  ] as BenchmarkScheduleItem[],
+    {
+      number: "05",
+      title: "Decide Whether to Subscribe",
+      desc: "When your 24 hours conclude, your test pass terminates automatically. If satisfied, choose a subscription tier and our team activates your line permanently.",
+      detail: "Your account credentials remain identical upon subscribing—zero re-installation or playlist reconfiguration required.",
+    },
+  ] as FreeTrialStep[],
+
+  m3uVsXtreamComparison: {
+    xtreamCodes: {
+      title: "Xtream Codes API (Recommended)",
+      summary: "Connects via Server URL, Username, and Password.",
+      pros: [
+        "Loads channel categories separately without downloading a massive monolithic file.",
+        "Enables faster channel switching and rapid catalog navigation.",
+        "Downloads EPG guide data automatically through dedicated API endpoints.",
+        "Organizes VOD movies and TV series into clean poster-view categories.",
+      ],
+      bestFor: "TiviMate, IPTV Smarters Pro, IBO Player, OTT Navigator, and SmartOne.",
+    },
+    m3uPlaylist: {
+      title: "M3U Playlist URL",
+      summary: "Connects via a single web URL containing complete playlist references.",
+      pros: [
+        "Universally supported by basic media players and older software.",
+        "Can be downloaded as a text file and imported into offline software.",
+        "Requires only pasting a single URL into player settings.",
+      ],
+      bestFor: "VLC Media Player, Kodi, GSE Smart IPTV, or players lacking Xtream API fields.",
+    },
+  },
 
   deviceCompatibilityRows: [
     {
@@ -187,121 +369,66 @@ export const freeTrialData = {
       guideUrl: "/devices/apple-tv",
     },
     {
+      device: "Formuler Box (Z11 / Z10)",
+      recommendedApp: "MYTVOnline 2 / 3",
+      connectionMethod: "MAC / Stalker Portal or Xtream",
+      setupTime: "2 – 4 minutes",
+      guideUrl: "/devices/formuler",
+    },
+    {
+      device: "Roku Device",
+      recommendedApp: "Screen Mirroring / Web Video Caster",
+      connectionMethod: "Casting from Phone or PC",
+      setupTime: "5 – 8 minutes",
+      guideUrl: "/devices/roku",
+    },
+    {
       device: "Windows PC & Mac Computer",
-      recommendedApp: "VLC Media Player / IPTV Smarters Pro",
+      recommendedApp: "VLC Media Player / Smarters Desktop",
       connectionMethod: "M3U Playlist / Xtream Codes",
       setupTime: "2 – 4 minutes",
       guideUrl: "/setup",
     },
   ] as DeviceCompatibilityRow[],
 
-  testPoints: [
+  troubleshootingLinks: [
     {
-      title: "Live Sports & Broadcast Quality",
-      desc: "Test available live sports channels including football, basketball, and motorsport in HD and 4K where supported by your stream and device.",
-      icon: "Tv",
-      linkUrl: "/iptv-sports",
-      linkText: "Explore sports coverage",
+      issue: "Buffering or Freezing During Live TV",
+      symptom: "Stream pauses, stutters, or loops during high-traffic sporting events.",
+      linkText: "How to Stop IPTV Buffering Guide",
+      href: "/help-center/buffering",
     },
     {
-      title: "Channel Zapping & Switching Speed",
-      desc: "Measure connection response when switching between channels. Connection times can vary depending on your device, network, and stream source.",
-      icon: "Zap",
+      issue: "Service Not Connecting or Handshake Error",
+      symptom: "Player displays 'Server connection failed', 'Authorization failed', or timeout.",
+      linkText: "IPTV Not Working Troubleshooting",
+      href: "/help-center/not-working",
     },
     {
-      title: "Electronic Program Guide (EPG)",
-      desc: "Verify that TV guide timelines, upcoming show schedules, and channel metadata populate smoothly in your IPTV player.",
-      icon: "Calendar",
-      linkUrl: "/help-center/epg-not-working",
-      linkText: "EPG setup guide",
+      issue: "EPG TV Guide Not Loading or Time Shifted",
+      symptom: "Channel listings show 'No Information' or program schedule is off by hours.",
+      linkText: "Fix IPTV EPG Issues Guide",
+      href: "/help-center/epg-not-working",
     },
     {
-      title: "VOD Movies & Series Catalog",
-      desc: "Browse and sample the on-demand library with multi-language audio tracks, crisp subtitles, and fast seeking.",
-      icon: "Film",
-      linkUrl: "/iptv-movies",
-      linkText: "Browse movies & series",
+      issue: "Channels Missing or Not Loading",
+      symptom: "Specific channel groups fail to populate or display black screen.",
+      linkText: "Channels Not Loading Fixes",
+      href: "/help-center/channels-not-loading",
     },
     {
-      title: "Device & Hardware Compatibility",
-      desc: "Confirm flawless playback on your Amazon Firestick, Smart TV, Android box, Apple TV, phone, or computer before paying.",
-      icon: "Smartphone",
-      linkUrl: "/devices",
-      linkText: "Supported hardware",
+      issue: "Connection Problems & HTTP Error Codes",
+      symptom: "Error 401 Unauthorized, Error 403 Forbidden, or DNS lookup failure.",
+      linkText: "Connection Problems & Errors Explained",
+      href: "/help-center/connection-problems",
     },
     {
-      title: "ISP & Network Stability",
-      desc: "Test stream continuity during peak evening hours to ensure your Internet Service Provider does not throttle IPTV traffic.",
-      icon: "Activity",
-      linkUrl: "/help-center/internet-speed",
-      linkText: "Speed benchmarks",
+      issue: "Internet Speed & Bandwidth Requirements",
+      symptom: "Determining whether your local connection speed meets HD and 4K thresholds.",
+      linkText: "Internet Speed for IPTV Requirements",
+      href: "/help-center/internet-speed",
     },
-  ] as FreeTrialTestPoint[],
-
-  howItWorks: [
-    {
-      number: "01",
-      title: "Request Your Free Trial Credentials",
-      desc: "Connect with our 24/7 support team via WhatsApp to receive your complimentary 24-hour test line. No credit card required.",
-      detail: "You receive your unique Xtream Codes API server URL, port, username, password, and complete M3U link. MAG MAC activation is also available upon request.",
-    },
-    {
-      number: "02",
-      title: "Install Your Preferred IPTV Player",
-      desc: "Download an IPTV application suited to your hardware: TiviMate for Android/Fire TV, IBO Player for Samsung/LG, or Smarters for Apple.",
-      detail: "Major industry-standard players supporting Xtream Codes API or M3U playlists are compatible, depending on the app and device. Check our step-by-step setup guides for quick 5-minute configuration walkthroughs.",
-    },
-    {
-      number: "03",
-      title: "Input Credentials & Sync Catalog",
-      desc: "Select Xtream Codes API inside your player, enter your server URL and login, then allow the channel guide and VOD catalog to synchronize.",
-      detail: "Full channel lists and initial EPG data typically download within 30 to 60 seconds over broadband.",
-    },
-    {
-      number: "04",
-      title: "Evaluate Playback & Choose a Plan",
-      desc: "Test channel stability across peak hours. When your trial concludes, upgrade smoothly to any 1, 3, 6, or 12-month subscription without reconfiguring.",
-      detail: "Your account credentials remain identical upon activating a paid plan—zero reset or re-installation needed.",
-    },
-  ] as FreeTrialStep[],
-
-  testingChecklist: [
-    {
-      category: "Live Television",
-      title: "High-Bitrate 4K Sports Streaming",
-      desc: "Tune into available live sports channels to evaluate playback smoothness across supported HD and 4K streams.",
-      guidance: "If you experience minor stutter, switch buffer size to Large (2-3 seconds) in player settings.",
-      helpLink: { text: "Fix Buffering Guide", href: "/help-center/buffering" },
-    },
-    {
-      category: "Channel Switching",
-      title: "Rapid Channel Surfing & Response",
-      desc: "Test switching between 10-15 consecutive channels to measure server response times and decoder initialization.",
-      guidance: "Xtream Codes API provides faster zapping response than large monolithic raw M3U files.",
-      helpLink: { text: "Channels Loading Guide", href: "/help-center/channels-not-loading" },
-    },
-    {
-      category: "Program Schedule",
-      title: "EPG Timeline & Catch-Up Navigation",
-      desc: "Confirm channel listings, program names, and time zones align accurately with your local broadcast schedule.",
-      guidance: "Ensure your player timezone offset matches your local UTC offset if guide times are misaligned.",
-      helpLink: { text: "Fix EPG Not Loading", href: "/help-center/epg-not-working" },
-    },
-    {
-      category: "Network Verification",
-      title: "Peak-Hour Bandwidth & ISP Routing",
-      desc: "Stream between 8:00 PM and 11:00 PM when residential internet traffic peaks to verify multi-CDN streaming stability.",
-      guidance: "We recommend 15 Mbps for Full HD streams and 35+ Mbps for uninterrupted 4K Ultra HD viewing.",
-      helpLink: { text: "Internet Speed Benchmarks", href: "/help-center/internet-speed" },
-    },
-    {
-      category: "Error Resolution",
-      title: "Connection Handshake & DNS Verification",
-      desc: "Confirm your home router connects cleanly to our edge CDN nodes without requiring complex firewall adjustments.",
-      guidance: "If your player reports a connection timeout, changing router DNS to Cloudflare (1.1.1.1) may help resolve DNS-related connection issues in some networks.",
-      helpLink: { text: "Connection Problems Guide", href: "/help-center/connection-problems" },
-    },
-  ] as TestingChecklistItem[],
+  ] as TroubleshootingQuickLink[],
 
   limitations: [
     {
@@ -335,72 +462,77 @@ export const freeTrialData = {
     {
       question: "What is an IPTV free trial?",
       answer:
-        "An IPTV free trial is a temporary test pass (typically 24 hours) providing full access to Teleview streaming servers. It enables you to evaluate live channel lineups, video streaming quality, EPG accuracy, and app compatibility on your home devices before purchasing a subscription.",
+        "An IPTV free trial is a temporary test pass (typically 24 hours) providing access to live television channels, sports broadcasts, on-demand movies, and EPG data. It allows you to test streaming stability, channel switching response, and device compatibility on your home internet connection before choosing a paid subscription.",
     },
     {
-      question: "Is an IPTV free trial worth trying?",
+      question: "How long does the Teleview IPTV trial last?",
       answer:
-        "Yes. An IPTV free trial allows you to verify device compatibility, local network and ISP behavior, live stream playback stability, EPG schedule synchronization, and on-demand performance under real-world conditions. Testing during your household's peak evening hours provides practical evidence of whether the service meets your standards before you consider a paid subscription.",
+        "The trial provides 24 consecutive hours of streaming access from the moment your credentials are generated by our support team. This gives you ample opportunity to evaluate morning, daytime, and peak evening live streaming.",
     },
     {
-      question: "Do I need to enter credit card details for the IPTV trial?",
+      question: "Do I need a credit card to request the trial?",
       answer:
-        "No. Teleview IPTV free trials are 100% complimentary and require zero payment details or credit card authorization. Simply message our 24/7 support desk to receive test line credentials.",
+        "No. Teleview IPTV free trials are 100% complimentary and require zero payment details, credit card numbers, or automated billing authorizations. Simply message our WhatsApp support desk to receive test credentials.",
     },
     {
-      question: "How long does the free trial last?",
+      question: "How do I receive the trial credentials?",
       answer:
-        "Teleview provides a comprehensive 24-hour trial period from the moment your credentials are generated. This allows you sufficient time to test morning, afternoon, and peak evening streaming performance across sports and entertainment channels.",
+        "Trial credentials are dispatched directly through WhatsApp by our 24/7 support team. You will receive your Xtream Codes API server URL, port, username, password, and M3U playlist link within 5 to 15 minutes during active support hours.",
     },
     {
-      question: "What exact credential format will I receive for my trial?",
+      question: "Can I use Xtream Codes API for the trial?",
       answer:
-        "You receive standard Xtream Codes API credentials (Server URL, Port, Username, and Password) plus a complete M3U Plus playlist URL. These credentials integrate directly with all major IPTV player applications without proprietary hardware.",
+        "Yes. We recommend Xtream Codes API for most modern IPTV players (such as TiviMate, IPTV Smarters Pro, and IBO Player). It allows you to log in easily with your server URL, username, and password rather than entering a long playlist address.",
     },
     {
-      question: "Do my customized channel favorites and EPG settings carry over if I subscribe?",
+      question: "Can I use an M3U playlist URL?",
       answer:
-        "Yes. When you choose a 1, 3, 6, or 12-month paid plan, our support team converts your trial line directly into an active paid subscription. Your username, password, playlist structure, and app configurations remain completely unchanged.",
+        "Yes. Teleview provides a complete M3U Plus playlist URL with every trial. This is ideal if you use VLC Media Player, Kodi, or an older player application that accepts playlist URLs rather than API logins.",
+    },
+    {
+      question: "Can I test the IPTV trial on an Amazon Firestick?",
+      answer:
+        "Yes. Amazon Firestick is one of the most popular devices for IPTV streaming. We recommend installing TiviMate or IPTV Smarters Pro on your Firestick and logging in using the Xtream Codes credentials provided.",
+    },
+    {
+      question: "Can I test the trial on a Samsung or LG Smart TV?",
+      answer:
+        "Yes. On Samsung Smart TVs (Tizen OS) and LG Smart TVs (webOS), you can install native player apps such as IBO Player or SmartOne IPTV directly from the television app store and activate your trial using the app MAC address or M3U playlist.",
+    },
+    {
+      question: "Can I test live sports during the free trial?",
+      answer:
+        "Yes. The free trial includes access to live sports channels in standard definition, HD, and supported 4K feeds. We recommend testing during live matches to evaluate stream stability during peak broadcast moments.",
+    },
+    {
+      question: "Can I test on-demand movies and series (VOD)?",
+      answer:
+        "Yes. The trial includes access to our on-demand movie and series catalog. You can test video playback, forward and rewind seeking, and available subtitle tracks directly in your player.",
+    },
+    {
+      question: "What should I test during my 24-hour trial?",
+      answer:
+        "We recommend testing six core areas: 1) Channel loading and switching response; 2) Live sports stream stability during peak evening hours (8 PM – 11 PM); 3) EPG schedule accuracy; 4) VOD playback and subtitle sync; 5) Performance across your primary and secondary devices; 6) Wi-Fi versus wired Ethernet stability.",
     },
     {
       question: "Can I use a VPN during my IPTV free trial?",
       answer:
-        "Yes. Teleview trial lines are fully compatible with Virtual Private Networks (VPNs). If your ISP restricts or throttles streaming bandwidth during live sporting events, using a reputable VPN service (such as NordVPN, ExpressVPN, or Surfshark) can restore consistent stream performance.",
+        "Yes. Teleview trial connections are compatible with reputable VPN services. If your internet service provider restricts or throttles video streaming traffic during peak sporting events, enabling a VPN can help maintain steady playback.",
     },
     {
       question: "How many devices can stream simultaneously during the trial?",
       answer:
-        "Each complimentary 24-hour trial pass includes 1 active concurrent connection. You can enter your credentials on multiple devices (such as a living room Firestick and an Android smartphone), but only one device can stream at any given moment. Multi-device concurrent streaming packages are available when subscribing to our paid plans.",
+        "Each complimentary trial includes 1 active stream connection. You can enter your credentials on multiple household devices (such as a living room TV and a smartphone), but only one device can stream at any given time. Multi-connection options are available on paid subscription plans.",
     },
     {
-      question: "How quickly are trial credentials delivered?",
+      question: "What happens when my 24-hour trial expires?",
       answer:
-        "Trial requests submitted through WhatsApp are typically processed within 5 to 15 minutes during active support hours. You will receive your Xtream Codes API server URL, port, username, password, and M3U playlist link directly in chat.",
+        "When your 24 hours conclude, the trial line deactivates automatically. There is no automatic charge, no recurring subscription, and no cancellation procedure required. If satisfied, you can choose a 1, 3, 6, or 12-month paid plan on our Subscription page.",
     },
     {
-      question: "Which devices can I use during my IPTV free trial?",
+      question: "Do my customized channel favorites carry over if I subscribe?",
       answer:
-        "You can test Teleview on any supported device, including Amazon Firestick, Samsung Smart TV (Tizen), LG Smart TV (webOS), Android TV boxes (Nvidia Shield, Mi Box), Apple TV 4K, iPhone, iPad, Google TV, Roku (via screen casting), and Windows/Mac computers.",
-    },
-    {
-      question: "Which IPTV player app should I install for the trial?",
-      answer:
-        "For Android TV and Firestick, we recommend TiviMate or IPTV Smarters Pro. For Samsung and LG Smart TVs, IBO Player or SmartOne IPTV are native app store options. For Apple TV and iOS, IPTV Smarters Lite or GSE Smart IPTV perform excellently. On PC/Mac, VLC Media Player or Smarters Desktop work seamlessly.",
-    },
-    {
-      question: "Can I test 4K sports and VOD on the free trial?",
-      answer:
-        "Yes. Teleview free trials allow you to test our channel catalog: live sports channels available in the trial, supported HD/4K streams where available, local and international television, and our on-demand movie and series catalog.",
-    },
-    {
-      question: "What internet speed is required to stream the free trial smoothly?",
-      answer:
-        "We recommend a minimum stable download speed of 15 Mbps for Full HD 1080p channels, and 35+ Mbps for high-bitrate 4K Ultra HD sports broadcasts. A wired Ethernet connection or 5 GHz Wi-Fi band delivers optimal stream stability.",
-    },
-    {
-      question: "What happens after my 24-hour trial period expires?",
-      answer:
-        "When your test period concludes, the trial line automatically turns off. There is no automatic renewal, recurring billing, or obligation. If satisfied with performance, select a 1, 3, 6, or 12-month plan on our Subscription page and our team will activate your line permanently.",
+        "Yes. If you choose to upgrade to a paid subscription, our team activates your existing line permanently. Your username, password, custom favorite channel groups, and player settings remain completely intact.",
     },
   ] as FreeTrialFaq[],
 };

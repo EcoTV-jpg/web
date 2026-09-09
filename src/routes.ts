@@ -266,13 +266,13 @@ export const routes: AppRoute[] = [
       "IPTV trial credentials",
       "risk free streaming trial",
     ],
-    h1: "IPTV Free Trial: 24-Hour Streaming Test Pass",
-    title: "IPTV Free Trial — Test Teleview IPTV Before You Subscribe",
+    h1: "IPTV Free Trial: Test Before You Subscribe",
+    title: "IPTV Free Trial — Test Live TV, Sports & VOD Before You Subscribe | Teleview",
     description:
-      "Try Teleview IPTV before subscribing. Test live TV, sports, VOD, EPG, and device compatibility with a complimentary 24-hour IPTV free trial.",
-    ogTitle: "IPTV Free Trial — 24-Hour Streaming Test Pass | Teleview",
+      "Test Teleview IPTV with a 24-hour free trial. Evaluate live sports, 4K streaming, EPG, and VOD on Firestick, Smart TVs, and mobile with zero credit card required.",
+    ogTitle: "IPTV Free Trial — Test Live TV, Sports & VOD Before You Subscribe | Teleview",
     ogDescription:
-      "Evaluate live sports, 4K streams, and VOD performance risk-free with a complimentary 24-hour Teleview IPTV free trial. No credit card required.",
+      "Evaluate live sports, 4K streams, and VOD risk-free with a complimentary 24-hour Teleview IPTV free trial. Zero credit card required.",
     breadcrumbName: "IPTV Free Trial",
   },
   {
