@@ -334,7 +334,7 @@ export function generateStructuredData(path: string = "/") {
     thumbnailUrl: `${siteConfig.url}/images/teleview-og.jpg`,
     inLanguage: siteConfig.language,
     datePublished: "2026-01-01T00:00:00+00:00",
-    dateModified: "2026-09-08T16:00:00+00:00",
+    dateModified: route?.lastmod ? `${route.lastmod}T00:00:00+00:00` : "2026-09-08T16:00:00+00:00",
     potentialAction: [
       {
         "@type": "ReadAction",

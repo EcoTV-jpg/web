@@ -233,7 +233,7 @@ export default function SubscriptionHubPage() {
                 <div className="rounded-xl border border-phosphor-green/40 bg-ash/40 p-4 space-y-1.5">
                   <span className="font-semibold text-phosphor-green">12 Months ($90.00)</span>
                   <p className="font-medium text-snow">Maximum Annual Value</p>
-                  <p className="text-smoke leading-relaxed">Top choice: $7.50/mo effective with high-capacity VIP routing reserves and grandfathered renewal rates.</p>
+                  <p className="text-smoke leading-relaxed">Top choice: $7.50/mo effective with annual price protection and high-capacity streaming server continuity.</p>
                 </div>
               </div>
             </div>
@@ -311,9 +311,9 @@ export default function SubscriptionHubPage() {
                 <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
                   <Server className="size-4 text-phosphor-green" aria-hidden="true" />
                 </div>
-                <h3 className="text-sm font-bold text-snow">Multi-CDN Edge Routing</h3>
+                <h3 className="text-sm font-bold text-snow">High-Capacity Streaming Servers</h3>
                 <p className="text-xs text-silver-mist leading-relaxed">
-                  High-capacity distributed edge CDN infrastructure engineered with automated failover and adaptive buffering to prevent stutter during peak viewing hours.
+                  High-capacity streaming server infrastructure engineered for stream stability, bandwidth headroom, and responsiveness during peak viewing hours.
                 </p>
               </div>
 
@@ -465,7 +465,7 @@ export default function SubscriptionHubPage() {
                   Broadband Prerequisites &amp; Transparent Service Policies
                 </h2>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  To ensure a reliable, buffer-free viewing experience, please review our recommended technical prerequisites and operational policies before completing your purchase:
+                  To ensure a stable, reliable viewing experience, please review our recommended technical prerequisites and operational policies before completing your purchase:
                 </p>
 
                 <div className="grid sm:grid-cols-3 gap-4 pt-2 text-xs">

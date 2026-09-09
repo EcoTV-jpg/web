@@ -582,7 +582,7 @@ export const subscriptionHubData = {
     "100,000+ Movies & TV Shows On-Demand",
     "7-Day XMLTV Electronic Program Guide (EPG)",
     "Xtream Codes API & M3U Playlist Formats",
-    "Distributed Edge CDN Server Cluster Routing",
+    "High-Capacity Streaming Server Infrastructure",
     "Fast 5–15 Min Activation Dispatch Upon Payment",
     "14-Day Money-Back Guarantee Included",
   ],
@@ -665,9 +665,9 @@ export const subscriptionHubData = {
     },
     {
       plan: "12 Months ($90.00 / $7.50/mo)",
-      headline: "Maximum Value & VIP Server Cluster Priority",
+      headline: "Maximum Value & Long-Term Savings",
       description:
-        "Our lowest rate at just $7.50/month (53% discount, $102 saved). Includes prioritized VIP server routing, 365-day price lock, and complete peace of mind.",
+        "Our lowest rate at just $7.50/month (53% discount, $102 saved). Includes 365-day price lock, high-capacity server infrastructure, and complete peace of mind.",
       slug: "12-months",
     },
   ],
@@ -675,7 +675,7 @@ export const subscriptionHubData = {
     {
       question: "Which IPTV subscription plan is right for me?",
       answer:
-        "Teleview offers four core durations to match your viewing needs: the 1-month plan ($16) provides complete flexibility for short-term testing, the 3-month ($39) and 6-month ($60) plans suit seasonal sports leagues, and the 12-month plan ($90 / $7.50/mo) delivers the maximum 53% discount with VIP server priority.",
+        "Teleview offers four core durations to match your viewing needs: the 1-month plan ($16) provides complete flexibility for short-term testing, the 3-month ($39) and 6-month ($60) plans suit seasonal sports leagues, and the 12-month plan ($90 / $7.50/mo) delivers the maximum 53% discount with annual price protection.",
     },
     {
       question: "Are all channels and features included in every plan?",

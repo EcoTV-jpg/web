@@ -130,7 +130,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.9,
-    lastmod: "2026-09-07",
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial Comparison & Duration Selection",
     primaryKeyword: "IPTV subscription",
     secondaryTopics: [
