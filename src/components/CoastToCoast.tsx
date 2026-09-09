@@ -25,11 +25,11 @@ export default function CoastToCoast() {
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-charcoal text-xs text-smoke">
               <span className="flex items-center gap-2 text-snow font-semibold">
                 <MapPin className="size-4 text-phosphor-green" aria-hidden="true" />
-                Globally Distributed CDN Edge Server Hubs
+                Worldwide Streaming Coverage
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-phosphor-green/10 border border-phosphor-green/30 px-3 py-1 text-phosphor-green font-medium">
                 <Activity className="size-3.5 animate-pulse" aria-hidden="true" />
-                Multi-CDN Edge Network Routing
+                Global Server Access
               </span>
             </div>
 

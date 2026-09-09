@@ -44,7 +44,7 @@ export default function TechnologyExplainer() {
               </div>
               <h3 className="t-card-title mt-5 text-lg font-bold text-snow">How Video Delivery Works</h3>
               <p className="t-body-sm mt-3 text-silver-mist leading-relaxed text-xs sm:text-sm flex-1">
-                Broadcast feeds are ingested at regional headends, encoded into standardized H.264/HEVC video streams, and distributed across multi-edge CDN nodes. Adaptive bitrate caching ensures continuous playback during fluctuating home Wi-Fi conditions.
+                Broadcast feeds are encoded into standardized H.264 and HEVC video streams and delivered over IP broadband. Compatible media player applications utilize local stream buffers to maintain steady playback during home network fluctuations.
               </p>
             </div>
           </Reveal>

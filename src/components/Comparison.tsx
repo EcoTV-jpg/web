@@ -15,7 +15,7 @@ export default function Comparison() {
             Comparing Teleview to <Accent>Cable TV &amp; Resellers</Accent>
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[620px] text-silver-mist leading-relaxed">
-            See how Teleview’s managed multi-CDN streaming nodes compare against legacy cable contracts and unmanaged third-party reseller lines.
+            See how Teleview compares against legacy cable contracts and unmanaged reseller lines.
           </p>
         </Reveal>
 
@@ -62,17 +62,17 @@ export default function Comparison() {
               <div className="pb-4 border-b border-phosphor-green/30 pt-2">
                 <span className="text-xs uppercase tracking-wider text-phosphor-green font-semibold">High-Performance IPTV</span>
                 <h3 className="text-xl font-extrabold text-snow mt-1">Teleview</h3>
-                <p className="text-xs text-silver-mist mt-1">Modern 4K streaming optimized worldwide</p>
+                <p className="text-xs text-silver-mist mt-1">HD &amp; 4K streaming on supported devices</p>
               </div>
 
               <ul className="mt-6 space-y-4 text-xs sm:text-[13px] flex-1">
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">24/7 Support:</strong> Instant live assistance &amp; guides</span>
+                  <span><strong className="text-phosphor-green">Support:</strong> 24/7 assistance via WhatsApp &amp; email</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
-                  <span><strong className="text-phosphor-green">Seamless Streaming:</strong> Multi-CDN failover and adaptive bitrate streams</span>
+                  <span><strong className="text-phosphor-green">Stream Quality:</strong> High-bandwidth servers and adaptive bitrate streaming</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-snow">
                   <Check className="size-4 text-phosphor-green shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />

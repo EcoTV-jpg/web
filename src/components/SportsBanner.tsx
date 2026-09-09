@@ -60,7 +60,7 @@ export default function SportsBanner() {
                 <div className="mt-2 text-3xl sm:text-4xl font-extrabold text-snow">
                   {sportsSection.priceText}
                 </div>
-                <p className="mt-1 text-xs text-silver-mist">Instant activation · Zero contract</p>
+                <p className="mt-1 text-xs text-silver-mist">Fast credential delivery · No contract</p>
                 <div className="mt-6 w-full">
                   <GreenButton href="#pricing" className="w-full text-center">
                     {sportsSection.ctaText}

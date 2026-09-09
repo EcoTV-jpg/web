@@ -43,10 +43,10 @@ export const routes: AppRoute[] = [
     h1: "Best IPTV Service in 2026",
     title: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     description:
-      "Stream 25,000+ live channels, 50/60 FPS sports, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial available.",
+      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial.",
     ogTitle: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     ogDescription:
-      "Stream 25,000+ live channels, 50/60 FPS sports, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial available.",
+      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial.",
     breadcrumbName: "Home",
   },
   {

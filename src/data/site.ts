@@ -22,14 +22,14 @@ export const hero = {
   kicker: "TELEVIEW IPTV",
   heading: "Best IPTV Service in 2026",
   subhead:
-    "Teleview delivers 25,000+ live international channels, 50/60 FPS live sports feeds, and 100,000+ on-demand movies and series with low-latency multi-CDN routing and fast activation worldwide.",
-  copy: "Provisioned with Xtream Codes API and custom M3U playlist credentials for third-party players on Firestick, Smart TVs, Android TV, and Apple TV. Standard subscriptions include 1 to 4 connections, automated activation within 5–15 minutes, and an official 14-day money-back guarantee.",
+    "Teleview provides access to 25,000+ live international channels, 50/60 FPS sports feeds where available, and 100,000+ on-demand titles with fast credential delivery and worldwide device compatibility.",
+  copy: "Provisioned with standard Xtream Codes API and M3U playlist credentials for third-party players on Firestick, Smart TVs, Android TV, and Apple TV. Subscriptions include 1 to 4 connections, prompt credential delivery typically within 5–15 minutes, and a 14-day money-back guarantee.",
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "Start Free Trial",
   trustBadges: [
     "Fast Activation",
-    "Premium Service",
-    "Reliable Streaming",
+    "Xtream & M3U Support",
+    "14-Day Guarantee",
   ],
 };
 
@@ -59,8 +59,8 @@ export const highlights: Highlight[] = [
   },
   {
     icon: Trophy,
-    title: "60 FPS Live Sports",
-    copy: "Stream major domestic and international football, basketball, motorsports, and combat sports in fluid 50/60 FPS feeds.",
+    title: "50/60 FPS Sports Feeds",
+    copy: "Stream domestic and international football, basketball, motorsports, and combat sports in 50/60 FPS on supported feeds.",
   },
   {
     icon: Users,
@@ -178,7 +178,7 @@ export const deviceCategories = [
   {
     icon: Tv,
     title: "Streaming Devices",
-    description: "Amazon Fire TV Stick, Chromecast with Google TV, Roku (select apps), Apple TV, and Android TV boxes.",
+    description: "Amazon Fire TV Stick, Chromecast with Google TV, Roku (via screen casting), Apple TV, and Android TV boxes.",
   },
   {
     icon: Monitor,
@@ -369,7 +369,7 @@ export interface Step {
 export const stepsSection = {
   kicker: "how to get your IPTV?",
   heading: "3 Simple Steps to Start Streaming",
-  subhead: "Getting started takes less than 2 minutes with instant activation.",
+  subhead: "Getting started takes just a few minutes with rapid credential delivery.",
 };
 
 export const steps: Step[] = [
@@ -421,20 +421,20 @@ export const whyChooseUs = {
   subhead: "Engineered for stream stability, transparent prepaid billing, and 24/7 technical support across all devices.",
   items: [
     {
-      title: "Multi-CDN Streaming Continuity",
-      copy: "Teleview routes video streams across globally distributed multi-CDN edge nodes. Dynamic load balancing and automated failover servers keep channel playback responsive during high-traffic evening hours and major live events.",
+      title: "High-Capacity Server Infrastructure",
+      copy: "Teleview connects subscribers to high-capacity streaming servers engineered to maintain playback responsiveness during peak evening hours and major live events.",
     },
     {
-      title: "High-Framerate 60 FPS Sports Feeds",
-      copy: "Broadcast feeds are encoded in Full HD 1080p at 50/60 FPS, with marquee sporting events available in native 4K Ultra HD. Hardware-accelerated H.264 and HEVC codecs maintain smooth motion without artificial frame drops.",
+      title: "High-Framerate 50/60 FPS Sports Feeds",
+      copy: "Supported broadcast feeds are encoded in Full HD 1080p at 50/60 FPS, with marquee sporting events available in native 4K Ultra HD where available. H.264 and HEVC codecs deliver smooth motion on compatible devices.",
     },
     {
       title: "Transparent Prepaid Billing & Guarantee",
       copy: "Teleview operates on a 100% prepaid model with zero automatic credit card rebilling, zero hidden hardware rental charges, and zero cancellation penalties. Every plan is backed by an official 14-day technical money-back guarantee.",
     },
     {
-      title: "Fast Credential Dispatch & 24/7 Support",
-      copy: "Receive Xtream Codes API login credentials and custom M3U playlist URLs within 5–15 minutes of payment confirmation. Our dedicated technical support team is available 24/7 via WhatsApp and email to assist with app setup.",
+      title: "Fast Credential Delivery & 24/7 Support",
+      copy: "Receive Xtream Codes API login credentials and custom M3U playlist URLs typically within 5–15 minutes of payment confirmation. Our dedicated technical support team is available via WhatsApp and email to assist with app setup.",
     },
   ],
 };
@@ -466,7 +466,7 @@ export const sportsSection = {
 export const coastToCoast = {
   kicker: "Worldwide Streaming Network",
   heading: "IPTV Streaming Available Worldwide",
-  copy: "We serve viewers across the globe with high-speed CDN edge servers: United States, United Kingdom, Canada, Australia, Germany, France, Italy, Spain, Portugal, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Ireland, Brazil, Mexico, UAE, Saudi Arabia, Qatar, Japan, South Korea, India, and more. No matter where you live, enjoy premium 4K IPTV streaming with fast activation.",
+  copy: "We serve viewers across the globe: United States, United Kingdom, Canada, Australia, Germany, France, Italy, Spain, Portugal, Netherlands, Belgium, Switzerland, Sweden, Norway, Denmark, Ireland, Brazil, Mexico, UAE, Saudi Arabia, Qatar, Japan, South Korea, India, and more. Enjoy international channel access and on-demand streaming with fast credential delivery.",
   cities: [
     "United States", "United Kingdom", "Canada", "Australia", "Germany", "France",
     "Italy", "Spain", "Portugal", "Netherlands", "Belgium", "Switzerland",
@@ -497,12 +497,12 @@ export const faqs = [
   {
     question: "How does Teleview IPTV streaming infrastructure work?",
     answer:
-      "Teleview operates a globally distributed Content Delivery Network (CDN) with automated load balancing and high-availability server continuity. Live broadcast signals are ingested, transcoded with dedicated hardware encoders, and delivered via low-latency HTTP streams directly to your device.",
+      "Teleview connects subscribers to high-bandwidth streaming servers. Live broadcast signals are transcoded with modern H.264 and HEVC codecs and delivered via standard HTTP live streaming protocols directly to your compatible player application.",
   },
   {
     question: "Why choose Teleview as your IPTV provider?",
     answer:
-      "Teleview offers a stable global streaming service with 25,000+ live channels, 100,000+ VOD movies and series, high-definition live sports, adaptive multi-edge CDN routing, multi-device support, and a risk-free 14-day money-back guarantee.",
+      "Teleview offers a comprehensive streaming service with 25,000+ live channels, 100,000+ VOD movies and series, high-definition live sports on supported feeds, multi-device support, and a risk-free 14-day money-back guarantee.",
   },
   {
     question: "Which devices and operating systems are supported by Teleview?",

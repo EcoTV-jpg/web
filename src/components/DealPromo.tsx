@@ -17,7 +17,7 @@ export default function DealPromo() {
               Start Your <Accent>IPTV Free Trial</Accent>
             </h2>
             <p className="t-body-sm mt-5 font-medium text-snow leading-relaxed">
-              Test Teleview with a risk-free 24-hour IPTV free trial before subscribing. Stream 25,000+ live channels, 4K live sports, and extensive on-demand movies on your Firestick, Smart TV, or Android device.
+              Test Teleview with a risk-free 24-hour IPTV free trial before subscribing. Stream 25,000+ live channels, 4K live sports where available, and extensive on-demand movies on your Firestick, Smart TV, or Android device.
             </p>
             
             <p className="mt-4 flex items-baseline gap-3">

@@ -59,15 +59,15 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
-              Instant Activation
+              Fast Activation
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
-              Premium Service
+              Xtream &amp; M3U Support
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Headphones className="size-4 text-phosphor-green" aria-hidden="true" />
-              Reliable Streaming
+              14-Day Guarantee
             </span>
           </div>
         </Reveal>
@@ -103,8 +103,8 @@ export default function Hero() {
               <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Live Channels</p>
             </div>
             <div className="text-center p-2 border-l border-charcoal/50">
-              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">60 FPS</div>
-              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Live Sports</p>
+              <div className="text-2xl sm:text-3xl font-extrabold text-phosphor-green">50/60 FPS</div>
+              <p className="mt-1 text-xs font-medium text-silver-mist uppercase tracking-wider">Sports (Select Feeds)</p>
             </div>
             <div className="text-center p-2 border-t sm:border-t-0 sm:border-l border-charcoal/50">
               <div className="text-2xl sm:text-3xl font-extrabold text-snow">100,000+</div>
