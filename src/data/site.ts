@@ -22,8 +22,8 @@ export const hero = {
   kicker: "TELEVIEW IPTV",
   heading: "Best IPTV Service in 2026",
   subhead:
-    "Looking for the best IPTV service in 2026? Discover Teleview for live TV, sports, movies, news and on-demand entertainment in HD and 4K worldwide.",
-  copy: "Teleview provisions enterprise video delivery credentials for third-party players on Firestick, Android TV, Apple TV, and Smart TVs. Standard plans include 1 dedicated high-speed connection with automated activation within 5–15 minutes, 25,000+ live channels, 100,000+ VOD titles, and a risk-free 14-day refund guarantee.",
+    "Teleview delivers 25,000+ live international channels, 50/60 FPS live sports feeds, and 100,000+ on-demand movies and series with low-latency multi-CDN routing and fast activation worldwide.",
+  copy: "Provisioned with Xtream Codes API and custom M3U playlist credentials for third-party players on Firestick, Smart TVs, Android TV, and Apple TV. Standard subscriptions include 1 to 4 connections, automated activation within 5–15 minutes, and an official 14-day money-back guarantee.",
   ctaPrimary: "CHOOSE A PLAN",
   ctaSecondary: "Start Free Trial",
   trustBadges: [
@@ -368,7 +368,7 @@ export interface Step {
 
 export const stepsSection = {
   kicker: "how to get your IPTV?",
-  heading: "3 Easy Steps to Ultimate Entertainment!",
+  heading: "3 Simple Steps to Start Streaming",
   subhead: "Getting started takes less than 2 minutes with instant activation.",
 };
 

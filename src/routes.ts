@@ -29,7 +29,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 1.0,
-    lastmod: "2026-09-08",
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial & Primary Global IPTV Pillar",
     primaryKeyword: "best IPTV",
     secondaryTopics: [
@@ -43,10 +43,10 @@ export const routes: AppRoute[] = [
     h1: "Best IPTV Service in 2026",
     title: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     description:
-      "Looking for the best IPTV service in 2026? Discover Teleview for live TV, sports, movies, news and on-demand entertainment in HD and 4K worldwide.",
+      "Stream 25,000+ live channels, 50/60 FPS sports, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial available.",
     ogTitle: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     ogDescription:
-      "Looking for the best IPTV service in 2026? Discover Teleview for live TV, sports, movies, news and on-demand entertainment in HD and 4K worldwide.",
+      "Stream 25,000+ live channels, 50/60 FPS sports, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial available.",
     breadcrumbName: "Home",
   },
   {

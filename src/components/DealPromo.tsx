@@ -26,7 +26,7 @@ export default function DealPromo() {
             </p>
 
             <p className="t-caption mt-3 text-xs text-smoke">
-              No credit card required. Experience buffer-free streaming quality and app responsiveness before purchasing any plan.
+              No credit card required. Experience consistent streaming stability, fluid channel switching, and app responsiveness before purchasing any plan.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
