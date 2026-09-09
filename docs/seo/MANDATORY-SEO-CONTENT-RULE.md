@@ -66,3 +66,16 @@ Before any content is considered complete, report:
 * Missing evidence
 
 This rule applies to ALL future SEO content work in this repository.
+
+---
+
+## ARCHITECTURE & CANNIBALIZATION PRE-CHECK RULE
+
+NEVER create a new SEO URL before checking:
+1. Existing site architecture (`src/routes.ts`, `src/App.tsx`)
+2. Current indexable routes and sitemap (`public/sitemap.xml`)
+3. Canonical tag definitions (`src/components/SEO.tsx`)
+4. Existing redirects (`_redirects`, `netlify.toml`, `vercel.json`)
+5. Existing pages targeting the same or overlapping search intent
+
+If an existing page already covers the target intent or keyword cluster, IMPROVE or CONSOLIDATE that page rather than creating a competing URL that introduces keyword cannibalization or orphan content risks.
