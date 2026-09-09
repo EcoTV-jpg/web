@@ -6,13 +6,15 @@ For every SEO content task in this repository, you MUST first read:
 
 This file is the authoritative SEO content operating system for the project.
 
-You MUST follow its three-phase workflow:
+You MUST follow its four-stage workflow:
 
-1. RESEARCH & SEO BRIEF
-2. COPYWRITING
-3. SEO QUALITY ENGINE
+0. STAGE 0: CONTENT ARCHITECTURE GATE (`docs/seo/STAGE-0-CONTENT-ARCHITECTURE-GATE.md`)
+1. PHASE 1: RESEARCH & SEO BRIEF
+2. PHASE 2: COPYWRITING
+3. PHASE 3: SEO QUALITY ENGINE
 
-Never skip Phase 1, Phase 2, or Phase 3.
+Never skip Stage 0, Phase 1, Phase 2, or Phase 3.
+No SEO content may proceed to Phase 1 until Stage 0 has passed.
 
 Never publish SEO content without passing Phase 3.
 
