@@ -92,6 +92,13 @@ async function prerender() {
       .replace(/<meta[^>]*name=["']twitter:title["'][^>]*\/?>/i, () => `<meta name="twitter:title" content="${ogTitle}" />`)
       .replace(/<meta[^>]*name=["']twitter:description["'][^>]*\/?>/i, () => `<meta name="twitter:description" content="${ogDesc}" />`);
 
+    // Update <meta property="article:modified_time"> from route.lastmod
+    const routeLastmod = route.lastmod || siteConfig.defaultLastmod;
+    pageHtml = pageHtml.replace(
+      /<meta[^>]*property=["']article:modified_time["'][^>]*\/?>/i,
+      () => `<meta property="article:modified_time" content="${routeLastmod}T00:00:00+00:00" />`
+    );
+
     // Update og:image and twitter:image if route.image exists
     if (route.image) {
       const fullImageUrl = `${siteConfig.url}${route.image}`;

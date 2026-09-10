@@ -17,7 +17,7 @@ const serverRedirects: Record<string, string> = {
   "/best-iptv/gse-smart-iptv": "/iptv-players/gse-smart-iptv",
   "/best-iptv/vlc": "/iptv-players/vlc",
   "/best-iptv/ott-navigator": "/iptv-players/ott-navigator",
-  "/pricing": "/iptv-subscription",
+  "/pricing": "/iptv-pricing",
   "/plans": "/iptv-subscription",
   "/tutorial": "/setup",
   "/installation-guide": "/setup",
@@ -30,6 +30,9 @@ const serverRedirects: Record<string, string> = {
   "/legal": "/terms-conditions",
   "/privacy": "/privacy-policy",
   "/refund": "/refund-policy",
+  "/guides/what-is-iptv": "/what-is-iptv",
+  "/guides/best-iptv-service": "/best-iptv",
+  "/devices/smart-tv": "/devices/samsung-smart-tv",
 };
 
 function seoRoutingPlugin(): Plugin {
@@ -83,6 +86,16 @@ function seoRoutingPlugin(): Plugin {
           "/iptv-subscription/3-months",
           "/iptv-subscription/6-months",
           "/iptv-subscription/12-months",
+          "/iptv-pricing",
+          "/iptv-free-trial",
+          "/how-does-iptv-work",
+          "/is-iptv-legal",
+          "/is-iptv-safe",
+          "/iptv-cost",
+          "/iptv-vs-cable",
+          "/iptv-channels",
+          "/iptv-sports",
+          "/iptv-movies",
           "/best-iptv",
           "/iptv-players",
           "/iptv-players/tivimate",
@@ -204,5 +217,14 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
+  },
+  server: {
+    host: "0.0.0.0",
+    port: 5173,
+    allowedHosts: true,
+  },
+  preview: {
+    host: "0.0.0.0",
+    allowedHosts: true,
   },
 });
