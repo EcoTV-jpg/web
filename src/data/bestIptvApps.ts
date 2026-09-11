@@ -611,6 +611,7 @@ export const bestIptvAppsList: IptvAppDetail[] = [
     alternatives: [
       { name: "IPTV Smarters Pro", slug: "iptv-smarters-pro", reason: "Dedicated desktop IPTV client with categorization for Windows and Mac." },
       { name: "TiviMate IPTV Player", slug: "tivimate", reason: "The ideal alternative if you switch to viewing on a television screen." },
+      { name: "GSE Smart IPTV", slug: "gse-smart-iptv", reason: "Apple-first client with stronger M3U playlist and EPG handling on iOS and tvOS." },
     ],
     faqs: [
       {

@@ -158,7 +158,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                           <ShieldCheck className="size-3.5 text-phosphor-green" aria-hidden="true" />
                           <span>One-Time Payment &bull; No Auto-Renewal</span>
                         </p>
-                        <p>Instant Activation &bull; 14-Day Money-Back Guarantee</p>
+                        <p>5–15 Min Activation &bull; 14-Day Money-Back Guarantee</p>
                       </div>
                     </div>
                   );
@@ -476,7 +476,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
               Ready to Start With the {plan.duration} Plan?
             </h2>
             <p className="mt-3 text-xs sm:text-sm text-silver-mist max-w-[500px] mx-auto">
-              Instant activation &bull; Full access to 25,000+ live channels &bull; 14-day money-back guarantee
+              Activation in 5–15 minutes &bull; Full access to 25,000+ live channels &bull; 14-day money-back guarantee
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <GreenButton
@@ -489,6 +489,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                 <span>Order on WhatsApp — {plan.priceFormatted}</span>
               </GreenButton>
               <GhostButton href="/iptv-subscription">Compare All Plans</GhostButton>
+              <GhostButton href="/iptv-pricing">Compare Plan Economics</GhostButton>
             </div>
           </section>
         </div>

@@ -40,7 +40,7 @@ const articles: Article[] = [
     content: [
       "Your subscription details (Username, Password, Server URL, and M3U playlist link) are generated and sent to your email immediately upon confirmed checkout.",
       "Delivery typically takes between 5 to 15 minutes.",
-      "If you do not see our email, please check your Spam, Junk, and Promotions folders. You can also message our WhatsApp support with your order number for instant delivery."
+      "If you do not see our email, please check your Spam, Junk, and Promotions folders. You can also message our WhatsApp support with your order number for fast redelivery, typically within 5–15 minutes."
     ],
   },
   {
@@ -131,7 +131,7 @@ const articles: Article[] = [
     content: [
       "What the error means: An HTTP 401 Unauthorized status commonly indicates that your IPTV player is submitting invalid or incorrect credentials to the streaming server, or an authentication handshake has failed.",
       "What to check: (1) Verify Username and Password against your Teleview welcome email or WhatsApp delivery (credentials are strictly case-sensitive); (2) Verify the Server URL protocol (http:// vs https://) and port number without an extra trailing slash; (3) Re-enter credentials manually without extra spaces (copying and pasting on mobile or Firestick remotes frequently appends hidden whitespace); (4) If setting up for the first time, follow our step-by-step Setup Guide (/setup) to confirm app configuration.",
-      "If credentials are confirmed correct and the error persists, contact Teleview 24/7 support via WhatsApp (+44 7848 197761) with your order ID for an instant authentication status check."
+      "If credentials are confirmed correct and the error persists, contact Teleview 24/7 support via WhatsApp (+44 7848 197761) with your order ID for a fast authentication status check."
     ],
   },
   {

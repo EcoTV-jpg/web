@@ -538,6 +538,13 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
                 >
                   All Supported Devices
                 </a>
+                <span className="text-smoke">&bull;</span>
+                <a
+                  href="/setup"
+                  className="text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+                >
+                  Full Setup Guide
+                </a>
               </div>
             </div>
           </section>

@@ -48,11 +48,14 @@ async function fetchEndpoint(port, urlPath, headers = {}) {
     };
   }
 
+  // Fallback when the local preview server is unreachable: mirror LOCAL vite
+  // preview behavior (301 via serverRedirects in vite.config.ts), NOT
+  // production Vercel behavior (308 via permanent:true in vercel.json).
   if (urlPath === "/pricing") {
     return {
-      status: 308,
+      status: 301,
       contentType: "text/html; charset=utf-8",
-      location: "https://www.teleview.me/iptv-subscription",
+      location: "/iptv-pricing",
       body: "",
     };
   }
@@ -191,7 +194,8 @@ async function runTechnicalSeoAudit() {
     assert("REDIRECTS", "vercel.json has non-www host redirect rule", Boolean(redirectRule));
     assert("REDIRECTS", "vercel.json redirect is permanent (308)", redirectRule?.permanent === true);
     assert("REDIRECTS", "vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
-    assert("REDIRECTS", "vercel.json redirects /pricing to /iptv-subscription", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-subscription" && r.permanent));
+    assert("REDIRECTS", "vercel.json redirects /pricing to /iptv-pricing", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-pricing" && r.permanent));
+    assert("REDIRECTS", "vercel.json /pricing rule is permanent (production serves 308)", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.permanent === true));
   }
 
   // 2. Pre-rendered HTML validation per route
@@ -271,13 +275,74 @@ async function runTechnicalSeoAudit() {
 
   // 3. OpenGraph & Image Asset Verification
   console.log("\n--- 3. OPEN GRAPH & IMAGE ASSET AUDIT ---");
+  // Strict OG validation: plan/product pages intentionally use plan-specific
+  // OG images (/images/plans/*-og.jpg, exactly 1200x630); all other pages use
+  // the default teleview-og.jpg (1200x630). Every page must declare an
+  // og:image that exists as a real file under public/ with actual dimensions
+  // matching its og:image:width/height tags.
+  const getMetaContent = (html, attr, key) => {
+    const m1 = html.match(new RegExp(`<meta[^>]*${attr}=["']${key}["'][^>]*content=["']([^"']+)["']`, "i"));
+    if (m1) return m1[1];
+    const m2 = html.match(new RegExp(`<meta[^>]*content=["']([^"']+)["'][^>]*${attr}=["']${key}["']`, "i"));
+    return m2 ? m2[1] : null;
+  };
+  // Pure-Node JPEG/PNG dimension parser (no dependencies).
+  const getImageDimensions = (absPath) => {
+    try {
+      const buf = fs.readFileSync(absPath);
+      if (buf.length > 24 && buf[0] === 0x89 && buf.toString("ascii", 1, 4) === "PNG") {
+        return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+      }
+      if (buf.length > 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+        let i = 2;
+        while (i + 9 < buf.length) {
+          if (buf[i] !== 0xff) { i++; continue; }
+          const marker = buf[i + 1];
+          if (marker >= 0xc0 && marker <= 0xc3) {
+            return { width: buf.readUInt16BE(i + 7), height: buf.readUInt16BE(i + 5) };
+          }
+          if (marker === 0xd8 || (marker >= 0xd0 && marker <= 0xd7) || marker === 0x01) { i += 2; continue; }
+          const len = buf.readUInt16BE(i + 2);
+          if (len < 2) break;
+          i += 2 + len;
+        }
+      }
+    } catch {}
+    return null;
+  };
   for (const page of pagesToTest) {
     const rawHtml = fs.readFileSync(page.file, "utf-8");
-    const ogUrl = rawHtml.match(/<meta[^>]*property=["']og:url["'][^>]*content=["']([^"']+)["']/i);
-    assert("OPEN_GRAPH", `og:url present in ${page.path}`, Boolean(ogUrl && ogUrl[1] === page.expectedCanonical));
+    const ogTitle = getMetaContent(rawHtml, "property", "og:title");
+    const ogDesc = getMetaContent(rawHtml, "property", "og:description");
+    const ogUrl = getMetaContent(rawHtml, "property", "og:url");
+    const ogType = getMetaContent(rawHtml, "property", "og:type");
+    const ogImage = getMetaContent(rawHtml, "property", "og:image");
+    const ogW = getMetaContent(rawHtml, "property", "og:image:width");
+    const ogH = getMetaContent(rawHtml, "property", "og:image:height");
 
-    const ogImage = rawHtml.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["']/i);
-    assert("OPEN_GRAPH", `og:image present in ${page.path}`, Boolean(ogImage && ogImage[1].includes("teleview-og.jpg")));
+    assert("OPEN_GRAPH", `og:title present and non-empty in ${page.path}`, Boolean(ogTitle && ogTitle.trim().length > 0));
+    assert("OPEN_GRAPH", `og:description present and non-empty in ${page.path}`, Boolean(ogDesc && ogDesc.trim().length > 0));
+    assert("OPEN_GRAPH", `og:url matches canonical in ${page.path}`, ogUrl === page.expectedCanonical);
+    assert("OPEN_GRAPH", `og:type is website in ${page.path}`, ogType === "website");
+    assert("OPEN_GRAPH", `og:image is absolute canonical URL in ${page.path}`, Boolean(ogImage && ogImage.startsWith("https://www.teleview.me/")));
+
+    // og:image must resolve to a real file under public/ whose actual
+    // dimensions match the declared og:image:width/height tags.
+    let ogFileOk = false;
+    let ogDimsOk = false;
+    if (ogImage && ogImage.startsWith("https://www.teleview.me/")) {
+      const ogPath = ogImage.replace("https://www.teleview.me", "");
+      const absPath = path.resolve(rootDir, "public", ogPath.replace(/^\//, ""));
+      const dims = getImageDimensions(absPath);
+      ogFileOk = dims !== null;
+      ogDimsOk = Boolean(dims && String(dims.width) === String(ogW) && String(dims.height) === String(ogH));
+      if (ogPath.includes("/images/plans/")) {
+        // Plan-specific OG images must be exactly 1200x630.
+        assert("OPEN_GRAPH", `plan og:image is exactly 1200x630 in ${page.path}`, Boolean(dims && dims.width === 1200 && dims.height === 630), dims ? `${dims.width}x${dims.height}` : "unreadable");
+      }
+    }
+    assert("OPEN_GRAPH", `og:image file exists and is decodable in ${page.path}`, ogFileOk, ogImage || "missing");
+    assert("OPEN_GRAPH", `og:image dimensions match width/height tags in ${page.path}`, ogDimsOk, `tags=${ogW}x${ogH}`);
   }
 
   const imageFiles = ["teleview-couple.jpg", "teleview-fans.jpg", "teleview-map.jpg", "teleview-og.jpg"];
@@ -418,9 +483,21 @@ async function runTechnicalSeoAudit() {
     assert("HTTP_STATUS", "HTTP GET /llms-full.txt returns 200 OK", llmsFullRes.status === 200);
     assert("GEO", "HTTP GET /llms-full.txt contains knowledge base content", llmsFullRes.body.includes("Firestick") && llmsFullRes.body.includes("12 Months"));
 
+    // The local vite preview server naturally returns 301 for serverRedirects
+    // entries (see vite.config.ts). Production Vercel returns 308 because the
+    // vercel.json rule is permanent:true (asserted separately above) — the two
+    // environments are intentionally asserted with different status codes.
     const pricingRes = await fetchEndpoint(testPort, "/pricing", { host: "www.teleview.me" });
-    assert("REDIRECTS", "HTTP GET /pricing returns 308 permanent redirect", pricingRes.status === 308);
-    assert("REDIRECTS", "HTTP GET /pricing redirects to /iptv-subscription", pricingRes.location.includes("/iptv-subscription"));
+    assert("REDIRECTS", "LOCAL preview GET /pricing returns 301 redirect", pricingRes.status === 301);
+    assert("REDIRECTS", "LOCAL preview GET /pricing redirects to /iptv-pricing", (pricingRes.location || "").includes("/iptv-pricing"));
+
+    const guidesRes = await fetchEndpoint(testPort, "/guides/what-is-iptv", { host: "www.teleview.me" });
+    assert("REDIRECTS", "LOCAL preview GET /guides/what-is-iptv returns 301 redirect", guidesRes.status === 301);
+    assert("REDIRECTS", "LOCAL preview GET /guides/what-is-iptv redirects to /what-is-iptv", (guidesRes.location || "").includes("/what-is-iptv"));
+
+    const smartTvRes = await fetchEndpoint(testPort, "/devices/smart-tv", { host: "www.teleview.me" });
+    assert("REDIRECTS", "LOCAL preview GET /devices/smart-tv returns 301 redirect", smartTvRes.status === 301);
+    assert("REDIRECTS", "LOCAL preview GET /devices/smart-tv redirects to /devices/samsung-smart-tv", (smartTvRes.location || "").includes("/devices/samsung-smart-tv"));
 
     const notFoundRes = await fetchEndpoint(testPort, "/definitely-nonexistent-seo-test", { host: "www.teleview.me" });
     assert("HTTP_404", "HTTP GET /nonexistent returns genuine 404", notFoundRes.status === 404);

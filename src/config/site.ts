@@ -14,6 +14,10 @@ export const siteConfig = {
   socialImage: "/images/teleview-og.jpg",
   language: "en",
   sitemapUrl: "https://www.teleview.me/sitemap.xml",
+  // Shared fallback modification date for routes without an explicit lastmod.
+  // Single source of truth used by the sitemap generator, JSON-LD dateModified,
+  // and article:modified_time so all three always agree.
+  defaultLastmod: "2026-09-06",
   contact: {
     email: "Help@Teleview.me",
     emailHref: "mailto:Help@Teleview.me",

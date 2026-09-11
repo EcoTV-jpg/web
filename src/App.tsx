@@ -120,7 +120,16 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/iptv-subscription") {
     return <SubscriptionHubPage />;
   }
-  if (currentPath === "/iptv-pricing" || currentPath === "/pricing") {
+  if (currentPath === "/iptv-pricing") {
+    return <PricingPage />;
+  }
+  if (currentPath === "/pricing") {
+    // Legacy alias: server 301 (dev/preview) and Vercel 308 (production)
+    // redirect to /iptv-pricing; this client-side redirect is a fallback
+    // for environments without server redirect rules (mirrors /best-iptv/).
+    if (typeof window !== "undefined") {
+      window.location.replace("/iptv-pricing");
+    }
     return <PricingPage />;
   }
   if (currentPath === "/iptv-free-trial" || currentPath === "/free-trial") {

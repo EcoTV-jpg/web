@@ -88,7 +88,7 @@ export const subscriptionPlans: Record<string, SubscriptionPlan> = {
       width: 1475,
       height: 720,
     },
-    tagline: "Short-term streaming flexibility with zero contract, instant access, and full channel catalog.",
+    tagline: "Short-term streaming flexibility with zero contract, fast 5–15 minute activation, and full channel catalog.",
     positioning:
       "Designed for viewers who want to test service stability, channel lineup, and device speed on their home network before making a longer commitment.",
     primaryIntentStatement:
@@ -600,7 +600,7 @@ export const subscriptionHubData = {
     {
       step: "03",
       title: "Configure Your Player & Stream",
-      desc: "Input your credentials into TiviMate, IPTV Smarters, or IBO Player on your streaming device and enjoy instant access.",
+      desc: "Input your credentials into TiviMate, IPTV Smarters, or IBO Player on your streaming device and enjoy full access to every channel and VOD title.",
     },
   ],
   hardwareCompatibility: [

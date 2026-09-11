@@ -67,7 +67,7 @@ export default function PricingPage() {
             {/* Direct Conversion Hand-off Banner to Subscription Hub */}
             <div className="mt-6 rounded-xl border border-phosphor-green/30 bg-phosphor-green/10 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <div>
-                <p className="text-sm font-bold text-snow">Looking for instant subscription activation?</p>
+                <p className="text-sm font-bold text-snow">Looking for fast subscription activation, typically within 5–15 minutes?</p>
                 <p className="text-xs text-silver-mist mt-0.5">Skip the pricing analysis guide and select your preferred duration directly on our official checkout hub.</p>
               </div>
               <a
@@ -156,74 +156,48 @@ export default function PricingPage() {
             </div>
           </section>
 
-          {/* Section: Teleview IPTV Subscription Plans */}
-          <section className="mt-16" aria-labelledby="plans-comparison-heading">
+          {/* Section: Official Packages at a Glance (summary — plan selection lives on the Subscription Hub) */}
+          <section className="mt-16" aria-labelledby="plans-glance-heading">
             <div className="text-center mb-8">
               <span className="label-mono text-phosphor-green text-xs">Official Packages</span>
-              <h2 id="plans-comparison-heading" className="text-xl sm:text-2xl font-bold text-snow mt-1">
-                Teleview IPTV Subscription Plans &amp; Effective Monthly Rates
+              <h2 id="plans-glance-heading" className="text-xl sm:text-2xl font-bold text-snow mt-1">
+                Teleview Packages at a Glance
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[640px] mx-auto">
-                Every subscription tier delivers unrestricted access to 25,000+ live channels, 100,000+ VOD movies, and 60 FPS sports feeds. Choose the duration that suits your viewing schedule:
+                Every tier includes the same 25,000+ live channels, 100,000+ VOD titles, and 60 FPS sports feeds — durations differ only in total price and effective monthly rate. Full plan selection happens on the subscription hub:
               </p>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {pricingTierComparisons.map((plan) => (
-                <div
+                <a
                   key={plan.slug}
-                  className={`rounded-2xl border p-6 flex flex-col justify-between transition-colors ${
-                    plan.slug === "12-months"
-                      ? "border-phosphor-green/50 bg-ash/50 shadow-lg shadow-phosphor-green/5 ring-1 ring-phosphor-green/30"
-                      : "border-charcoal bg-ash/20 hover:border-charcoal/80"
-                  }`}
+                  href={`/iptv-subscription/${plan.slug}`}
+                  className="rounded-xl border border-charcoal bg-ash/30 p-4 hover:border-phosphor-green/40 transition-colors group block"
                 >
-                  <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-sm font-bold text-snow group-hover:text-phosphor-green transition-colors">
+                      {plan.planName.replace(" IPTV Subscription", "")}
+                    </span>
                     {plan.savingsPercentage > 0 ? (
-                      <span className="inline-block text-[11px] font-mono font-bold text-phosphor-green bg-phosphor-green/10 border border-phosphor-green/30 px-2.5 py-0.5 rounded-full mb-3">
+                      <span className="text-[10px] font-mono font-bold text-phosphor-green">
                         SAVE {plan.savingsPercentage}%
                       </span>
                     ) : (
-                      <span className="inline-block text-[11px] font-mono text-smoke bg-charcoal/50 px-2.5 py-0.5 rounded-full mb-3">
-                        ENTRY PASS
-                      </span>
+                      <span className="text-[10px] font-mono text-smoke">BASELINE</span>
                     )}
-
-                    <h3 className="text-base font-bold text-snow">{plan.planName}</h3>
-                    <p className="text-xs text-silver-mist mt-1 min-h-[36px]">{plan.bestFor}</p>
-
-                    <div className="mt-4 pt-4 border-t border-charcoal/60">
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-3xl font-extrabold text-snow">${plan.totalPrice}</span>
-                        <span className="text-xs text-smoke font-mono">/ {plan.durationMonths === 1 ? "month" : `${plan.durationMonths} mos`}</span>
-                      </div>
-                      <p className="text-[11px] text-phosphor-green font-mono mt-1 font-semibold">
-                        Effective: ${plan.effectiveMonthlyPrice.toFixed(2)} / month
-                      </p>
-                    </div>
-
-                    <ul className="mt-5 space-y-2 text-xs text-silver-mist">
-                      {plan.highlights.map((h, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="size-3.5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-charcoal/40 space-y-2">
-                    <GreenButton href={`/iptv-subscription/${plan.slug}`} className="w-full text-xs py-2.5 justify-center">
-                      Select {plan.planName.replace(" IPTV Subscription", "")}
-                    </GreenButton>
-                    <a
-                      href={`/iptv-subscription/${plan.slug}`}
-                      className="block text-center text-[11px] text-smoke hover:text-phosphor-green transition-colors"
-                    >
-                      View Detailed Specifications &rarr;
-                    </a>
-                  </div>
-                </div>
+                  <p className="text-xs text-silver-mist">
+                    <span className="text-lg font-extrabold text-snow">${plan.totalPrice}</span>
+                    <span className="text-smoke font-mono">
+                      {" "}
+                      / {plan.durationMonths === 1 ? "month" : `${plan.durationMonths} mos`}
+                    </span>
+                  </p>
+                  <p className="text-[11px] text-phosphor-green font-mono mt-0.5">
+                    Effective: ${plan.effectiveMonthlyPrice.toFixed(2)} / month
+                  </p>
+                </a>
               ))}
             </div>
 

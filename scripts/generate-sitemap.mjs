@@ -10,7 +10,7 @@ async function generateSitemap() {
   const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
   const { sitemapRoutes } = await import("../src/routes.ts");
 
-  const defaultLastmod = "2026-09-06";
+  const defaultLastmod = siteConfig.defaultLastmod;
 
   const xmlUrls = sitemapRoutes
     .map((route) => {

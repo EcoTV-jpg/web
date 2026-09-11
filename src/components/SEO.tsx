@@ -80,20 +80,6 @@ export function generateStructuredData(path: string = "/") {
       "@id": siteConfig.entityIds.organization,
     },
     alternateName: "Teleview IPTV",
-    potentialAction: [
-      {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteConfig.url}/?s={search_term_string}`,
-        },
-        "query-input": {
-          "@type": "PropertyValueSpecification",
-          valueRequired: true,
-          valueName: "search_term_string",
-        },
-      },
-    ],
     inLanguage: siteConfig.language,
   };
 
@@ -334,7 +320,7 @@ export function generateStructuredData(path: string = "/") {
     thumbnailUrl: `${siteConfig.url}/images/teleview-og.jpg`,
     inLanguage: siteConfig.language,
     datePublished: "2026-01-01T00:00:00+00:00",
-    dateModified: route?.lastmod ? `${route.lastmod}T00:00:00+00:00` : "2026-09-08T16:00:00+00:00",
+    dateModified: `${route?.lastmod || siteConfig.defaultLastmod}T00:00:00+00:00`,
     potentialAction: [
       {
         "@type": "ReadAction",
@@ -779,7 +765,7 @@ export function generateStructuredData(path: string = "/") {
       name: `${siteConfig.name} IPTV Subscription Service`,
       serviceType: "IPTV & Video Streaming Service",
       description:
-        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 100,000+ movies, 4K sports, and 24/7 customer support.",
+        "Compare Teleview IPTV subscription plans. Activation typically within 5–15 minutes, with 25,000+ live TV channels, 100,000+ movies, 4K sports, and 24/7 customer support.",
       provider: {
         "@id": siteConfig.entityIds.organization,
       },
@@ -1085,6 +1071,17 @@ export default function SEO({
   ogDescription,
 }: SEOProps) {
   const canonicalUrl = getCanonicalUrl(canonical);
+  const canonicalPath = (() => {
+    try {
+      return new URL(canonicalUrl).pathname;
+    } catch {
+      return "/";
+    }
+  })();
+  const canonicalRoute = routes.find(
+    (r) => r.path === (canonicalPath === "/" ? "/" : canonicalPath.replace(/\/$/, ""))
+  );
+  const modifiedTime = `${canonicalRoute?.lastmod || siteConfig.defaultLastmod}T00:00:00+00:00`;
   const structuredData = generateStructuredData(canonicalUrl);
   const effectiveOgTitle = ogTitle || title;
   const effectiveOgDesc = ogDescription || description;
@@ -1115,7 +1112,7 @@ export default function SEO({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:type" content="image/jpeg" />
-      <meta property="article:modified_time" content="2026-09-04T18:00:00+00:00" />
+      <meta property="article:modified_time" content={modifiedTime} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

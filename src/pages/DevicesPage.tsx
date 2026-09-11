@@ -1132,7 +1132,7 @@ export default function DevicesPage() {
             <div className="card p-8 bg-ash/30 border-charcoal">
               <h2 className="t-heading-sm">Ready to Experience 4K IPTV Streaming?</h2>
               <p className="t-body-sm mt-2 max-w-[540px] mx-auto text-silver-mist">
-                Activate the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> today with instant automated credential delivery, 25,000+ live channels,
+                Activate the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> today with fast credential delivery, typically within 5–15 minutes, plus 25,000+ live channels,
                 and a 14-day money-back satisfaction guarantee.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">

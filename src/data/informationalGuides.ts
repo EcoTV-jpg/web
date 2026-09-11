@@ -473,6 +473,12 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         linkUrl: "/iptv-free-trial",
         linkText: "Start 24h Free Trial →",
       },
+      {
+        title: "How Much Does IPTV Cost?",
+        description: "See what legitimate IPTV service costs and how to spot unrealistic pricing.",
+        linkUrl: "/iptv-cost",
+        linkText: "IPTV Cost Guide →",
+      },
     ],
   },
   {
@@ -667,6 +673,12 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         linkUrl: "/iptv-free-trial",
         linkText: "Test 24h Free Trial →",
       },
+      {
+        title: "Is IPTV Safe to Use?",
+        description: "Learn how to evaluate provider trustworthiness and protect your data.",
+        linkUrl: "/is-iptv-safe",
+        linkText: "IPTV Safety Guide →",
+      },
     ],
   },
   {
@@ -758,6 +770,12 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         description: "Experience 4K streaming quality firsthand with a 24-hour free trial.",
         linkUrl: "/iptv-free-trial",
         linkText: "Start 24h Free Trial →",
+      },
+      {
+        title: "True Cost of IPTV Ownership",
+        description: "Add hardware, bandwidth, and fees to the subscription price for the full picture.",
+        linkUrl: "/iptv-cost",
+        linkText: "IPTV Cost Breakdown →",
       },
     ],
   },

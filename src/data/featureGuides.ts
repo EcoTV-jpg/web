@@ -250,6 +250,12 @@ export const featureGuidesList: FeatureGuideDetail[] = [
         linkUrl: "/iptv-free-trial",
         linkText: "Start 24h Free Trial →",
       },
+      {
+        title: "IPTV Movies & Series",
+        description: "Explore the on-demand movie and series catalog beyond live sports.",
+        linkUrl: "/iptv-movies",
+        linkText: "IPTV Movies Guide →",
+      },
     ],
   },
   {
@@ -334,6 +340,12 @@ export const featureGuidesList: FeatureGuideDetail[] = [
         description: "Browse and test our on-demand movie catalog with a 24-hour free trial.",
         linkUrl: "/iptv-free-trial",
         linkText: "Start 24h Free Trial →",
+      },
+      {
+        title: "IPTV Sports Coverage",
+        description: "See how live sports, PPV events, and 50/60 FPS feeds work on IPTV.",
+        linkUrl: "/iptv-sports",
+        linkText: "IPTV Sports Guide →",
       },
     ],
   },
