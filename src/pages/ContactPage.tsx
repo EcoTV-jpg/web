@@ -110,7 +110,7 @@ export default function ContactPage() {
                   Didn't Receive Credentials?
                 </h3>
                 <p className="mt-2 text-xs text-silver-mist leading-relaxed">
-                  Credentials are automatically issued after payment. You can instantly look up or resend your dispatch via{" "}
+                  Credentials are typically dispatched within 5–15 minutes of payment. You can look up or resend your dispatch via{" "}
                   <a href="/my-account" className="text-phosphor-green hover:underline font-medium">
                     My Account
                   </a>
@@ -211,7 +211,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center justify-between border-b border-charcoal/50 pb-2">
                   <span className="text-smoke">Activation Guarantee:</span>
-                  <span className="font-medium text-phosphor-green">Instant (&lt; 15 mins)</span>
+                  <span className="font-medium text-phosphor-green">Fast (5–15 mins)</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-smoke">Money-Back Period:</span>

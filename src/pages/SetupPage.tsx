@@ -241,7 +241,7 @@ export default function SetupPage() {
                     </p>
                   </div>
                   <div className="mt-4 pt-3 border-t border-charcoal/60 text-[11px] text-smoke">
-                    Estimated Time: Instant upon order confirmation
+                    Estimated Time: Typically 5–15 minutes after order confirmation
                   </div>
                 </li>
 

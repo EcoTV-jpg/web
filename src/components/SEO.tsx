@@ -765,7 +765,7 @@ export function generateStructuredData(path: string = "/") {
       name: `${siteConfig.name} IPTV Subscription Service`,
       serviceType: "IPTV & Video Streaming Service",
       description:
-        "Compare Teleview IPTV subscription plans. Instant access to 25,000+ live TV channels, 100,000+ movies, 4K sports, and 24/7 customer support.",
+        "Compare Teleview IPTV subscription plans. Activation typically within 5–15 minutes, with 25,000+ live TV channels, 100,000+ movies, 4K sports, and 24/7 customer support.",
       provider: {
         "@id": siteConfig.entityIds.organization,
       },

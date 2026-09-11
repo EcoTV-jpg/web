@@ -67,7 +67,7 @@ export default function PricingPage() {
             {/* Direct Conversion Hand-off Banner to Subscription Hub */}
             <div className="mt-6 rounded-xl border border-phosphor-green/30 bg-phosphor-green/10 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
               <div>
-                <p className="text-sm font-bold text-snow">Looking for instant subscription activation?</p>
+                <p className="text-sm font-bold text-snow">Looking for fast subscription activation, typically within 5–15 minutes?</p>
                 <p className="text-xs text-silver-mist mt-0.5">Skip the pricing analysis guide and select your preferred duration directly on our official checkout hub.</p>
               </div>
               <a

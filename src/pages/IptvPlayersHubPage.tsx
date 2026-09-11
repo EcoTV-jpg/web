@@ -371,7 +371,7 @@ export default function IptvPlayersHubPage() {
               Ready to Connect Your Player App?
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[580px] mx-auto leading-relaxed">
-              The <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> provides ultra-fast streaming lines with instant Xtream Codes API credentials compatible with all 7 indexed players.
+              The <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> provides ultra-fast streaming lines with Xtream Codes API credentials, typically dispatched within 5–15 minutes and compatible with all 7 indexed players.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">

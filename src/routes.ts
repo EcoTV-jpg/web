@@ -147,7 +147,7 @@ export const routes: AppRoute[] = [
       "Choose your Teleview IPTV subscription: 1, 3, 6, or 12 months with 25,000+ live channels, 4K sports, fast activation, and a 14-day refund guarantee.",
     ogTitle: "IPTV Subscription: Premium Plans, 25,000+ Channels & 4K Streaming",
     ogDescription:
-      "Choose from flexible 1, 3, 6, and 12-month IPTV subscription plans. Instant credential dispatch, 4K live sports, 25,000+ global channels, and 24/7 technical support.",
+      "Choose from flexible 1, 3, 6, and 12-month IPTV subscription plans. Fast 5–15 min credential dispatch, 4K live sports, 25,000+ global channels, and 24/7 technical support.",
     breadcrumbName: "IPTV Subscription",
   },
   {
@@ -161,7 +161,7 @@ export const routes: AppRoute[] = [
     secondaryTopics: [
       "$16 monthly plan",
       "no commitment streaming",
-      "instant activation",
+      "fast activation",
       "sports event pass",
       "full channel lineup",
     ],
@@ -169,7 +169,7 @@ export const routes: AppRoute[] = [
     title: "1 Month IPTV Subscription – $16 | Teleview",
     description:
       "Get a 1 month IPTV subscription for $16. Enjoy full access to 25,000+ live channels, 4K sports, and 100,000+ movies & series with fast activation and zero contracts.",
-    ogTitle: "1 Month IPTV Subscription for $16 – Instant Activation | Teleview",
+    ogTitle: "1 Month IPTV Subscription for $16 – Fast 5–15 Min Activation | Teleview",
     ogDescription:
       "Flexible monthly streaming without locked-in contracts. Full live sports and entertainment access with 24/7 technical support.",
     image: "/images/plans/iptv-subscription-1-month-og.jpg",
@@ -313,7 +313,7 @@ export const routes: AppRoute[] = [
       "Contact Teleview customer support via WhatsApp or email. 24/7 technical assistance for activation, device setup, and subscription inquiries.",
     ogTitle: "Contact Teleview 24/7 Technical Support Desk",
     ogDescription:
-      "Direct access to Teleview support agents for instant credential assistance, player setup help, and account renewals.",
+      "Direct access to Teleview support agents for fast credential assistance, player setup help, and account renewals.",
     breadcrumbName: "Contact Us",
   },
   {

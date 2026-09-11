@@ -197,7 +197,7 @@ export default function SubscriptionHubPage() {
               ))}
             </div>
 
-            {/* Payment Methods & Instant Dispatch Trust Banner */}
+            {/* Payment Methods & Fast Dispatch Trust Banner */}
             <div className="mt-8 rounded-xl border border-charcoal/70 bg-ash/30 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4 text-xs text-silver-mist">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
@@ -205,7 +205,7 @@ export default function SubscriptionHubPage() {
               </div>
               <div className="flex items-center gap-2 font-mono text-[11px] text-smoke bg-ink-800/80 px-3 py-1.5 rounded-lg border border-charcoal">
                 <span className="size-1.5 rounded-full bg-phosphor-green animate-pulse" aria-hidden="true" />
-                <span>Automated Setup &bull; Instant Email Dispatch (&lt; 15 mins)</span>
+                <span>Guided Setup &bull; Fast Email Dispatch (5–15 mins)</span>
               </div>
             </div>
 
@@ -540,7 +540,7 @@ export default function SubscriptionHubPage() {
               . If you experience technical incompatibilities that our support team cannot resolve, request a complete refund.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-smoke">
-              <span>Instant 5–15 Min Activation</span>
+              <span>Fast 5–15 Min Activation</span>
               <span>&bull;</span>
               <span>100% Pre-Paid (No Re-billing)</span>
               <span>&bull;</span>

@@ -162,7 +162,7 @@ export default function AccountPage() {
               Quick Renew &amp; Extend Options
             </h2>
             <p className="text-xs sm:text-sm text-silver-mist">
-              Need to extend your subscription? Choose a duration below for instant activation on your existing account credentials:
+              Need to extend your subscription? Choose a duration below for activation, typically within 5–15 minutes, on your existing account credentials:
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
