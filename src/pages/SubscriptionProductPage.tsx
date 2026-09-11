@@ -489,6 +489,7 @@ export default function SubscriptionProductPage({ slug }: SubscriptionProductPag
                 <span>Order on WhatsApp — {plan.priceFormatted}</span>
               </GreenButton>
               <GhostButton href="/iptv-subscription">Compare All Plans</GhostButton>
+              <GhostButton href="/iptv-pricing">Compare Plan Economics</GhostButton>
             </div>
           </section>
         </div>

@@ -295,7 +295,7 @@ export default function BestIptvHubPage() {
                   <span>6. Transparent Pricing</span>
                 </div>
                 <p className="text-silver-mist leading-relaxed">
-                  <strong className="text-snow">What to check:</strong> Check for clear one-time prepaid billing intervals without hidden activation fees or surprise automatic renewals.
+                  <strong className="text-snow">What to check:</strong> Check for clear one-time prepaid billing intervals without hidden activation fees or surprise automatic renewals. See how durations compare in our <a href="/iptv-pricing" className="text-phosphor-green font-semibold hover:underline">IPTV pricing economics breakdown</a>.
                 </p>
               </div>
 
@@ -529,7 +529,7 @@ export default function BestIptvHubPage() {
                   Regional Channel Availability &amp; Content Licensing
                 </h2>
                 <p className="mt-3 text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  Channel availability varies across countries, regions, and languages based on broadcast licensing agreements and regional distribution rights. Rather than judging an IPTV service solely by total channel numbers, buyers should verify that the specific regional channels, domestic sports networks, and language feeds they watch regularly are actively supported.
+                  Channel availability varies across countries, regions, and languages based on broadcast licensing agreements and regional distribution rights. Rather than judging an IPTV service solely by total channel numbers, buyers should verify that the specific regional channels, domestic sports networks, and language feeds they watch regularly are actively supported. For the regulatory side, see our <a href="/is-iptv-legal" className="text-phosphor-green font-semibold hover:underline">IPTV legal compliance guide</a>.
                 </p>
                 <div className="mt-6 grid sm:grid-cols-3 gap-3 text-xs text-left">
                   <div className="p-4 rounded-xl border border-charcoal bg-ink-800/70">
