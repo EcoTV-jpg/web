@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import HomePage from "./pages/HomePage";
 import SetupPage from "./pages/SetupPage";
 import DevicesPage from "./pages/DevicesPage";
@@ -20,6 +21,7 @@ import FreeTrialPage from "./pages/FreeTrialPage";
 import PricingPage from "./pages/PricingPage";
 import InformationalArticlePage from "./pages/InformationalArticlePage";
 import FeatureHubPage from "./pages/FeatureHubPage";
+import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
@@ -28,8 +30,6 @@ import { deviceGuidesList } from "./data/deviceGuides";
 import { troubleshootingGuidesList } from "./data/troubleshootingGuides";
 import { bestIptvAppsList } from "./data/bestIptvApps";
 import { getProductPlan } from "./data/products";
-import { informationalGuidesList } from "./data/informationalGuides";
-import { featureGuidesList } from "./data/featureGuides";
 
 export default function App({ url }: { url?: string }) {
   const rawPath = url || (typeof window !== "undefined" ? window.location.pathname : "/");
@@ -59,7 +59,6 @@ export default function App({ url }: { url?: string }) {
           jsonLdEl.textContent = JSON.stringify(generateStructuredData(currentPath));
         }
       } else {
-        // Unknown dynamic slug or non-existent path
         document.title = "404 Not Found | Teleview";
         const canonicalEl = document.querySelector('link[rel="canonical"]');
         if (canonicalEl) {
@@ -77,134 +76,141 @@ export default function App({ url }: { url?: string }) {
     }
   }, [currentPath]);
 
-  if (currentPath === "/setup" || currentPath === "/tutorial" || currentPath === "/installation-guide") {
-    return <SetupPage />;
-  }
-  if (currentPath === "/what-is-iptv") {
-    return <WhatIsIptvPage />;
-  }
-  if (currentPath === "/devices") {
-    return <DevicesPage />;
-  }
-  if (currentPath.startsWith("/devices/")) {
-    const slug = currentPath.replace("/devices/", "").trim().toLowerCase();
-    const exists = deviceGuidesList.some((d) => d.slug.toLowerCase() === slug);
-    if (!exists) {
+  function getPage() {
+    if (currentPath === "/setup" || currentPath === "/tutorial" || currentPath === "/installation-guide") {
+      return <SetupPage />;
+    }
+    if (currentPath === "/what-is-iptv") {
+      return <WhatIsIptvPage />;
+    }
+    if (currentPath === "/devices") {
+      return <DevicesPage />;
+    }
+    if (currentPath.startsWith("/devices/")) {
+      const slug = currentPath.replace("/devices/", "").trim().toLowerCase();
+      const exists = deviceGuidesList.some((d) => d.slug.toLowerCase() === slug);
+      if (!exists) {
+        return <NotFoundPage />;
+      }
+      return <DeviceGuidePage slug={slug} />;
+    }
+    if (currentPath === "/faq") {
+      return <FaqPage />;
+    }
+    if (currentPath === "/contact" || currentPath === "/contact-us") {
+      return <ContactPage />;
+    }
+    if (currentPath === "/help-center" || currentPath === "/help") {
+      return <HelpCenterPage />;
+    }
+    if (currentPath.startsWith("/help-center/")) {
+      const slug = currentPath.replace("/help-center/", "").trim().toLowerCase();
+      const exists = troubleshootingGuidesList.some((g) => g.slug.toLowerCase() === slug);
+      if (!exists) {
+        return <NotFoundPage />;
+      }
+      return <TroubleshootingGuidePage slug={slug} />;
+    }
+    if (currentPath === "/my-account" || currentPath === "/my-subscription") {
+      return <AccountPage />;
+    }
+    if (currentPath === "/dmca" || currentPath === "/dmca-report" || currentPath === "/dmca-notice") {
+      return <DmcaPage />;
+    }
+    if (currentPath === "/iptv-subscription") {
+      return <SubscriptionHubPage />;
+    }
+    if (currentPath === "/iptv-pricing") {
+      return <PricingPage />;
+    }
+    if (currentPath === "/pricing") {
+      if (typeof window !== "undefined") {
+        window.location.replace("/iptv-pricing");
+      }
+      return <PricingPage />;
+    }
+    if (currentPath === "/iptv-free-trial" || currentPath === "/free-trial") {
+      return <FreeTrialPage />;
+    }
+    if (
+      currentPath === "/how-does-iptv-work" ||
+      currentPath === "/is-iptv-legal" ||
+      currentPath === "/is-iptv-safe" ||
+      currentPath === "/iptv-cost" ||
+      currentPath === "/iptv-vs-cable"
+    ) {
+      const slug = currentPath.replace(/^\//, "");
+      return <InformationalArticlePage slug={slug} />;
+    }
+    if (
+      currentPath === "/iptv-channels" ||
+      currentPath === "/iptv-sports" ||
+      currentPath === "/iptv-movies"
+    ) {
+      const slug = currentPath.replace(/^\//, "");
+      return <FeatureHubPage slug={slug} />;
+    }
+    if (currentPath.startsWith("/iptv-subscription/")) {
+      const slug = currentPath.replace("/iptv-subscription/", "").trim().toLowerCase();
+      const plan = getProductPlan(slug);
+      if (!plan) {
+        return <NotFoundPage />;
+      }
+      return <SubscriptionProductPage slug={slug} />;
+    }
+    if (currentPath === "/best-iptv") {
+      return <BestIptvHubPage />;
+    }
+    if (currentPath === "/iptv-players") {
+      return <IptvPlayersHubPage />;
+    }
+    if (currentPath.startsWith("/iptv-players/")) {
+      const slug = currentPath.replace("/iptv-players/", "").trim().toLowerCase();
+      const exists = bestIptvAppsList.some((a) => a.slug.toLowerCase() === slug);
+      if (!exists) {
+        return <NotFoundPage />;
+      }
+      return <BestIptvAppPage slug={slug} />;
+    }
+    if (currentPath.startsWith("/best-iptv/")) {
+      const slug = currentPath.replace("/best-iptv/", "").trim().toLowerCase();
+      const exists = bestIptvAppsList.some((a) => a.slug.toLowerCase() === slug);
+      if (!exists) {
+        return <NotFoundPage />;
+      }
+      if (typeof window !== "undefined") {
+        window.location.replace(`/iptv-players/${slug}`);
+      }
+      return <BestIptvAppPage slug={slug} />;
+    }
+    if (currentPath === "/terms-conditions" || currentPath === "/terms" || currentPath === "/legal") {
+      return <LegalPage type="terms" />;
+    }
+    if (currentPath === "/privacy-policy" || currentPath === "/privacy") {
+      return <LegalPage type="privacy" />;
+    }
+    if (currentPath === "/refund-policy" || currentPath === "/refund") {
+      return <LegalPage type="refund" />;
+    }
+    if (currentPath === "/disclaimer") {
+      return <LegalPage type="disclaimer" />;
+    }
+    if (currentPath === "/about") {
+      return <AboutPage />;
+    }
+    if (currentPath === "/404") {
       return <NotFoundPage />;
     }
-    return <DeviceGuidePage slug={slug} />;
-  }
-  if (currentPath === "/faq") {
-    return <FaqPage />;
-  }
-  if (currentPath === "/contact" || currentPath === "/contact-us") {
-    return <ContactPage />;
-  }
-  if (currentPath === "/help-center" || currentPath === "/help") {
-    return <HelpCenterPage />;
-  }
-  if (currentPath.startsWith("/help-center/")) {
-    const slug = currentPath.replace("/help-center/", "").trim().toLowerCase();
-    const exists = troubleshootingGuidesList.some((g) => g.slug.toLowerCase() === slug);
-    if (!exists) {
-      return <NotFoundPage />;
+    if (currentPath === "/" || currentPath === "") {
+      return <HomePage />;
     }
-    return <TroubleshootingGuidePage slug={slug} />;
-  }
-  if (currentPath === "/my-account" || currentPath === "/my-subscription") {
-    return <AccountPage />;
-  }
-  if (currentPath === "/dmca" || currentPath === "/dmca-report" || currentPath === "/dmca-notice") {
-    return <DmcaPage />;
-  }
-  if (currentPath === "/iptv-subscription") {
-    return <SubscriptionHubPage />;
-  }
-  if (currentPath === "/iptv-pricing") {
-    return <PricingPage />;
-  }
-  if (currentPath === "/pricing") {
-    // Legacy alias: server 301 (dev/preview) and Vercel 308 (production)
-    // redirect to /iptv-pricing; this client-side redirect is a fallback
-    // for environments without server redirect rules (mirrors /best-iptv/).
-    if (typeof window !== "undefined") {
-      window.location.replace("/iptv-pricing");
-    }
-    return <PricingPage />;
-  }
-  if (currentPath === "/iptv-free-trial" || currentPath === "/free-trial") {
-    return <FreeTrialPage />;
-  }
-  if (
-    currentPath === "/how-does-iptv-work" ||
-    currentPath === "/is-iptv-legal" ||
-    currentPath === "/is-iptv-safe" ||
-    currentPath === "/iptv-cost" ||
-    currentPath === "/iptv-vs-cable"
-  ) {
-    const slug = currentPath.replace(/^\//, "");
-    return <InformationalArticlePage slug={slug} />;
-  }
-  if (
-    currentPath === "/iptv-channels" ||
-    currentPath === "/iptv-sports" ||
-    currentPath === "/iptv-movies"
-  ) {
-    const slug = currentPath.replace(/^\//, "");
-    return <FeatureHubPage slug={slug} />;
-  }
-  if (currentPath.startsWith("/iptv-subscription/")) {
-    const slug = currentPath.replace("/iptv-subscription/", "").trim().toLowerCase();
-    const plan = getProductPlan(slug);
-    if (!plan) {
-      return <NotFoundPage />;
-    }
-    return <SubscriptionProductPage slug={slug} />;
-  }
-  if (currentPath === "/best-iptv") {
-    return <BestIptvHubPage />;
-  }
-  if (currentPath === "/iptv-players") {
-    return <IptvPlayersHubPage />;
-  }
-  if (currentPath.startsWith("/iptv-players/")) {
-    const slug = currentPath.replace("/iptv-players/", "").trim().toLowerCase();
-    const exists = bestIptvAppsList.some((a) => a.slug.toLowerCase() === slug);
-    if (!exists) {
-      return <NotFoundPage />;
-    }
-    return <BestIptvAppPage slug={slug} />;
-  }
-  if (currentPath.startsWith("/best-iptv/")) {
-    const slug = currentPath.replace("/best-iptv/", "").trim().toLowerCase();
-    const exists = bestIptvAppsList.some((a) => a.slug.toLowerCase() === slug);
-    if (!exists) {
-      return <NotFoundPage />;
-    }
-    if (typeof window !== "undefined") {
-      window.location.replace(`/iptv-players/${slug}`);
-    }
-    return <BestIptvAppPage slug={slug} />;
-  }
-  if (currentPath === "/terms-conditions" || currentPath === "/terms" || currentPath === "/legal") {
-    return <LegalPage type="terms" />;
-  }
-  if (currentPath === "/privacy-policy" || currentPath === "/privacy") {
-    return <LegalPage type="privacy" />;
-  }
-  if (currentPath === "/refund-policy" || currentPath === "/refund") {
-    return <LegalPage type="refund" />;
-  }
-  if (currentPath === "/disclaimer") {
-    return <LegalPage type="disclaimer" />;
-  }
-  if (currentPath === "/404") {
     return <NotFoundPage />;
   }
 
-  if (currentPath === "/" || currentPath === "") {
-    return <HomePage />;
-  }
-
-  return <NotFoundPage />;
+  return (
+    <>
+      {getPage()}
+      <SpeedInsights />
+    </>
+  );
 }
