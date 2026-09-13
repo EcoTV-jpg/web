@@ -20,6 +20,7 @@ import FreeTrialPage from "./pages/FreeTrialPage";
 import PricingPage from "./pages/PricingPage";
 import InformationalArticlePage from "./pages/InformationalArticlePage";
 import FeatureHubPage from "./pages/FeatureHubPage";
+import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { routes } from "./routes";
 import { siteConfig, getCanonicalUrl } from "./config/site";
@@ -197,6 +198,9 @@ export default function App({ url }: { url?: string }) {
   }
   if (currentPath === "/disclaimer") {
     return <LegalPage type="disclaimer" />;
+  }
+  if (currentPath === "/about") {
+    return <AboutPage />;
   }
   if (currentPath === "/404") {
     return <NotFoundPage />;
