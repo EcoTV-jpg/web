@@ -1,14 +1,26 @@
-# ==============================================================================
+# ===============================================================================
 # Teleview Robots & Crawler Directives
 # Canonical Host: https://www.teleview.me
 # Indexing and access directives for web crawlers and AI user agents
-# ==============================================================================
+# 
+# NOTE: Production previously showed conflicting Cloudflare Managed block:
+#   "# BEGIN Cloudflare Managed content" with Disallow for Amazonbot,
+#   Applebot-Extended, Bytespider, CCBot, ClaudeBot, Google-Extended,
+#   GPTBot, meta-externalagent
+# Source: Cloudflare Dashboard > Security > Bots > AI Crawl Control
+#         + Cloudflare Managed robots.txt feature
+# Fix: In Cloudflare Dashboard, set AI Crawl Control to Allow or Disable
+#      "Block AI bots" and disable "Enable Cloudflare Managed robots.txt"
+#      so that only this repository's robots.txt is served.
+# This file is the single source of truth — no conflicting Disallow.
+# ===============================================================================
 
-# 1. Global Crawler Policy (Search Engines & Web Crawlers)
+# Global Crawler Policy — allow all, with Content-Signal for EU copyright reservation
 User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
 Allow: /
 
-# 2. OpenAI / SearchGPT / ChatGPT Live Search & Citations
+# OpenAI / SearchGPT / ChatGPT Live Search & Citations — intentionally allowed
 User-agent: GPTBot
 Allow: /
 
@@ -18,7 +30,7 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# 3. Anthropic / Claude Web Search & Citations
+# Anthropic / Claude Web Search & Citations — intentionally allowed
 User-agent: ClaudeBot
 Allow: /
 
@@ -31,36 +43,36 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# 4. Perplexity AI Engine & Search Citations
+# Perplexity AI Engine & Search Citations — intentionally allowed
 User-agent: PerplexityBot
 Allow: /
 
-# 5. Google Gemini & AI Overviews
+# Google Gemini & AI Overviews + Googlebot — intentionally allowed
 User-agent: Google-Extended
 Allow: /
 
 User-agent: Googlebot
 Allow: /
 
-# 6. Apple Intelligence & Siri Search
+# Apple Intelligence & Siri Search — intentionally allowed
 User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-# 7. Meta AI & Llama Search Agents
+# Meta AI & Llama Search Agents — intentionally allowed
 User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: FacebookBot
 Allow: /
 
-# 8. Microsoft Bing & Copilot
+# Microsoft Bing & Copilot — intentionally allowed
 User-agent: Bingbot
 Allow: /
 
-# 9. Additional AI Research & Knowledge Graph Crawlers
+# Additional AI Research & Knowledge Graph Crawlers — intentionally allowed
 User-agent: cohere-ai
 Allow: /
 
@@ -79,9 +91,9 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# ==============================================================================
+# ===============================================================================
 # Sitemaps & Machine-Readable Knowledge Bases
-# ==============================================================================
+# ===============================================================================
 Sitemap: https://www.teleview.me/sitemap.xml
 
 # LLM & AI Context Resources (llms.txt standard):
