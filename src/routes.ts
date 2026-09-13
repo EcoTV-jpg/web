@@ -40,22 +40,22 @@ export const routes: AppRoute[] = [
       "IPTV 2026",
       "worldwide IPTV",
     ],
-    h1: "Best IPTV Service in 2026",
+    h1: "Teleview: Best IPTV Service in 2026",
     title: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     description:
-      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial.",
+      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick and Smart TVs.",
     ogTitle: "Best IPTV Service 2026 | Premium Worldwide IPTV | Teleview",
     ogDescription:
-      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick, Smart TVs, and Android. 24h free trial.",
+      "Stream 25,000+ live channels, 50/60 FPS sports where available, and 100,000+ movies in HD and 4K with Teleview IPTV. Compatible with Firestick and Smart TVs.",
     breadcrumbName: "Home",
   },
   {
     path: "/setup",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Informational How-To & Technical Installation",
     primaryKeyword: "IPTV setup guide",
     secondaryTopics: [
@@ -80,6 +80,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Commercial Investigation & Hardware Compatibility",
     primaryKeyword: "supported IPTV devices and apps",
     secondaryTopics: [
@@ -102,10 +103,10 @@ export const routes: AppRoute[] = [
   {
     path: "/faq",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Informational & Pre-Purchase Inquiry",
     primaryKeyword: "IPTV frequently asked questions",
     secondaryTopics: [
@@ -156,6 +157,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial & Short-Term Flexibility",
     primaryKeyword: "1 month IPTV subscription",
     secondaryTopics: [
@@ -181,6 +183,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial & Quarterly Value",
     primaryKeyword: "3 months IPTV subscription",
     secondaryTopics: [
@@ -206,6 +209,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial & Semi-Annual Value",
     primaryKeyword: "6 months IPTV subscription",
     secondaryTopics: [
@@ -218,7 +222,7 @@ export const routes: AppRoute[] = [
     h1: "6 Months IPTV Subscription",
     title: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     description:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, VOD library, and multi-edge CDN reliability on all your devices.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, and VOD library on supported devices. Performance can vary depending on network and device.",
     ogTitle: "6 Months IPTV Subscription for $60 – $10/mo Semi-Annual Value | Teleview",
     ogDescription:
       "Half a year of uninterrupted 4K sports and worldwide channels at 37.5% off standard monthly rates.",
@@ -231,22 +235,23 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
+    lastmod: "2026-09-09",
     primaryIntent: "Commercial & Maximum Annual Savings",
     primaryKeyword: "12 months IPTV subscription",
     secondaryTopics: [
       "$90 annual plan",
       "$7.50 per month rate",
       "save $102",
-      "dedicated server priority",
+      "streaming access",
       "annual entertainment pass",
     ],
     h1: "12 Months IPTV Subscription",
     title: "12 Months IPTV Subscription – $90 ($7.50/mo) | Teleview",
     description:
-      "Get a 12 month IPTV subscription for $90 ($7.50/mo). Save $102 with 25,000+ live channels, 4K sports, VOD library, dedicated server priority, and no contracts.",
+      "Get a 12 month IPTV subscription for $90 ($7.50/mo). Save $102 with 25,000+ live channels, 4K sports, VOD library, and no contracts.",
     ogTitle: "12 Months IPTV Subscription – Best Value at $7.50/Month | Teleview",
     ogDescription:
-      "Maximize your savings with a full year of premium television for $90. Includes dedicated server priority and 24/7 customer support.",
+      "Maximize your savings with a full year of premium television for $90. Includes streaming access and 24/7 customer support.",
     image: "/images/plans/iptv-subscription-12-months-og.jpg",
     breadcrumbName: "12 Months",
   },
@@ -295,10 +300,10 @@ export const routes: AppRoute[] = [
   {
     path: "/contact",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Support & Customer Service Inquiries",
     primaryKeyword: "contact Teleview support",
     secondaryTopics: [
@@ -319,10 +324,10 @@ export const routes: AppRoute[] = [
   {
     path: "/terms-conditions",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
+    lastmod: "2026-09-06",
     primaryIntent: "Legal Agreement & Terms of Service",
     primaryKeyword: "Teleview terms and conditions",
     secondaryTopics: [
@@ -343,10 +348,10 @@ export const routes: AppRoute[] = [
   {
     path: "/privacy-policy",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
+    lastmod: "2026-09-06",
     primaryIntent: "Legal Compliance & Privacy Disclosure",
     primaryKeyword: "Teleview privacy policy",
     secondaryTopics: [
@@ -368,10 +373,10 @@ export const routes: AppRoute[] = [
   {
     path: "/refund-policy",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
+    lastmod: "2026-09-06",
     primaryIntent: "Legal Terms & Consumer Protection",
     primaryKeyword: "Teleview refund policy 14 day guarantee",
     secondaryTopics: [
@@ -392,10 +397,10 @@ export const routes: AppRoute[] = [
   {
     path: "/disclaimer",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
+    lastmod: "2026-09-06",
     primaryIntent: "Legal Operational Notice & Technology Clarification",
     primaryKeyword: "Teleview legal disclaimer and technology notice",
     secondaryTopics: [
@@ -419,6 +424,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Informational Troubleshooting & Diagnostic Knowledge Base",
     primaryKeyword: "IPTV troubleshooting and knowledge base",
     secondaryTopics: [
@@ -464,10 +470,10 @@ export const routes: AppRoute[] = [
   {
     path: "/dmca",
     indexable: true,
-    inSitemap: false,
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.6,
+    lastmod: "2026-09-06",
     primaryIntent: "Legal Compliance & Copyright Notice",
     primaryKeyword: "Teleview DMCA notice and copyright policy",
     secondaryTopics: [
@@ -492,6 +498,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.9,
+    lastmod: "2026-09-06",
     primaryIntent: "Comparative / Investigative Buying Guide",
     primaryKeyword: "best IPTV services comparison",
     secondaryTopics: [
@@ -541,6 +548,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.85,
+    lastmod: "2026-09-04",
     primaryIntent: "Technical Directory — IPTV Player Protocol & Platform Index",
     primaryKeyword: "IPTV player apps directory",
     secondaryTopics: [
@@ -565,6 +573,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "TiviMate IPTV Player",
     secondaryTopics: [
@@ -589,6 +598,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "IPTV Smarters Pro",
     secondaryTopics: [
@@ -613,6 +623,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "IBO Player",
     secondaryTopics: [
@@ -637,6 +648,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "SmartOne IPTV",
     secondaryTopics: [
@@ -661,6 +673,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "GSE Smart IPTV",
     secondaryTopics: [
@@ -685,6 +698,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "VLC IPTV",
     secondaryTopics: [
@@ -709,6 +723,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational & Technical App Guide",
     primaryKeyword: "OTT Navigator IPTV",
     secondaryTopics: [
@@ -733,6 +748,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Firestick",
     secondaryTopics: [
@@ -757,6 +773,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Samsung Smart TV",
     secondaryTopics: [
@@ -781,6 +798,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on LG Smart TV",
     secondaryTopics: [
@@ -805,6 +823,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Android TV Box",
     secondaryTopics: [
@@ -829,6 +848,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Apple TV",
     secondaryTopics: [
@@ -853,6 +873,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Roku",
     secondaryTopics: [
@@ -877,6 +898,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Google TV",
     secondaryTopics: [
@@ -901,6 +923,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-04",
     primaryIntent: "Informational How-To & Device Installation",
     primaryKeyword: "IPTV on Formuler",
     secondaryTopics: [
@@ -925,6 +948,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Troubleshooting How-To & Performance Optimization",
     primaryKeyword: "how to stop IPTV buffering",
     secondaryTopics: [
@@ -940,7 +964,7 @@ export const routes: AppRoute[] = [
       "Stop IPTV buffering and stream loops immediately. Learn 4 proven fixes: 5 GHz Wi-Fi / Ethernet switching, VPN throttling bypass, and player buffer cache adjustments.",
     ogTitle: "How to Stop IPTV Buffering: Proven Solutions | Teleview",
     ogDescription:
-      "Eliminate stream buffering during live sports matches with our technical diagnostic guide covering buffer caches, VPNs, and router settings.",
+      "Tips to help reduce stream buffering during live sports matches with technical guidance covering buffer caches, VPNs, and router settings. Results vary.",
     breadcrumbName: "Fix Buffering",
   },
   {
@@ -949,6 +973,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Troubleshooting How-To & Service Restoration",
     primaryKeyword: "IPTV not working",
     secondaryTopics: [
@@ -973,6 +998,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Troubleshooting How-To & EPG Synchronization",
     primaryKeyword: "IPTV EPG not working",
     secondaryTopics: [
@@ -997,6 +1023,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Troubleshooting How-To & Playlist Resolution",
     primaryKeyword: "IPTV channels not loading",
     secondaryTopics: [
@@ -1021,6 +1048,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Troubleshooting How-To & Network Diagnostics",
     primaryKeyword: "IPTV connection problems",
     secondaryTopics: [
@@ -1045,6 +1073,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-06",
     primaryIntent: "Informational How-To & Bandwidth Optimization",
     primaryKeyword: "internet speed for IPTV",
     secondaryTopics: [
@@ -1057,7 +1086,7 @@ export const routes: AppRoute[] = [
     h1: "Internet Speed Requirements for 4K IPTV Streaming",
     title: "Internet Speed Requirements for 4K IPTV Streaming (2026) | Teleview",
     description:
-      "Learn recommended internet bandwidth, latency, and packet jitter for buffer-free 4K live sports and HD entertainment. Optimize Wi-Fi and test connection quality.",
+      "Learn recommended internet bandwidth, latency, and packet jitter for 4K live sports and HD entertainment. Optimize Wi-Fi and test connection quality. Performance can vary depending on network and device.",
     ogTitle: "Internet Speed Requirements for 4K IPTV | Teleview Guide",
     ogDescription:
       "Detailed bandwidth standards for SD, HD, and 4K 60 FPS streaming: understanding ping, packet jitter, and router QoS prioritization.",
@@ -1070,22 +1099,23 @@ export const routes: AppRoute[] = [
     changefreq: "weekly",
     priority: 0.9,
     lastmod: "2026-09-07",
-    primaryIntent: "Commercial Investigation & Comparative Pricing Guide",
+    primaryIntent: "Commercial Investigation & Pricing Economics Guide — Effective Monthly Costs, Savings & Billing",
     primaryKeyword: "IPTV pricing",
     secondaryTopics: [
-      "IPTV subscription pricing",
-      "monthly IPTV cost",
-      "IPTV pricing plans",
-      "IPTV discounts",
-      "hidden streaming fees",
+      "effective monthly IPTV cost",
+      "IPTV volume discounts",
+      "IPTV billing models",
+      "IPTV savings calculations",
+      "transparent IPTV pricing",
+      "prepaid vs recurring billing",
     ],
-    h1: "IPTV Pricing Guide 2026: Subscription Costs, Plan Economics & Value Analysis",
-    title: "IPTV Pricing Guide 2026: Subscription Costs & Plans | Teleview",
+    h1: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing Explained",
+    title: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing | Teleview",
     description:
-      "Compare IPTV pricing, subscription plans, and effective monthly costs in 2026. Review 1, 3, 6, and 12-month plans with transparent billing and zero hidden fees.",
-    ogTitle: "IPTV Pricing Guide 2026: Subscription Costs & Plans | Teleview",
+      "Teleview IPTV pricing economics: effective monthly costs from $7.50 to $16.00, volume savings up to 53%, and transparent prepaid billing with no auto-renewals. Compare billing models and what affects pricing.",
+    ogTitle: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing | Teleview",
     ogDescription:
-      "Compare IPTV subscription plans, effective monthly rates ($7.50–$16/mo), and volume discounts. Transparent pre-paid streaming with zero hidden fees.",
+      "Teleview IPTV pricing breakdown: $7.50–$16/mo effective rates, 19–53% volume savings, prepaid billing, no hidden fees. Billing models and pricing factors explained.",
     breadcrumbName: "IPTV Pricing",
   },
   {
@@ -1119,6 +1149,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-08",
     primaryIntent: "Informational Regulatory & Compliance Guide",
     primaryKeyword: "is IPTV legal",
     secondaryTopics: [
@@ -1143,6 +1174,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-08",
     primaryIntent: "Informational Cybersecurity & Stream Safety Guide",
     primaryKeyword: "is IPTV safe",
     secondaryTopics: [
@@ -1167,22 +1199,25 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
-    primaryIntent: "Informational Cost Economics & Market Rates",
+    lastmod: "2026-09-07",
+    primaryIntent: "Informational Total Cost of Ownership & Budgeting Guide",
     primaryKeyword: "IPTV cost",
     secondaryTopics: [
-      "average IPTV cost",
-      "hardware streaming costs",
-      "IPTV vs streaming apps",
-      "total cost of ownership",
-      "avoiding cheap stream traps",
+      "total cost of ownership IPTV",
+      "IPTV hardware costs $30-$50",
+      "IPTV internet costs",
+      "ISP data caps IPTV",
+      "IPTV budgeting guide",
+      "cheap IPTV traps",
+      "broadband requirements",
     ],
-    h1: "How Much Does IPTV Cost? Comprehensive Pricing Guide (2026)",
-    title: "How Much Does IPTV Cost? Average Rates & Hidden Fees (2026)",
+    h1: "How Much Does IPTV Really Cost? Total Cost of Ownership Guide",
+    title: "How Much Does IPTV Really Cost? Total Cost Breakdown: Device, Internet & Subscription (2026)",
     description:
-      "Discover how much a reliable IPTV subscription costs per month in 2026. Review hardware expenses, bandwidth requirements, and total cost of ownership.",
-    ogTitle: "How Much Does IPTV Cost? 2026 Pricing Economics | Teleview",
+      "Total cost of ownership for IPTV in 2026: subscription ($7.50–$16/mo range), streaming device $30–$50, internet & ISP data caps, and how to budget while avoiding ultra-cheap service traps.",
+    ogTitle: "How Much Does IPTV Really Cost? Total Cost Breakdown: Device, Internet & Subscription (2026)",
     ogDescription:
-      "Complete economic breakdown of IPTV streaming: monthly subscription rates, hardware players, and bandwidth requirements.",
+      "TCO guide for IPTV: hardware $30–$50, broadband & ISP caps, subscription economics, and budgeting tips to avoid cheap-service pitfalls.",
     breadcrumbName: "IPTV Cost",
   },
   {
@@ -1191,6 +1226,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "monthly",
     priority: 0.8,
+    lastmod: "2026-09-07",
     primaryIntent: "Informational Market Comparison & Cord-Cutting",
     primaryKeyword: "IPTV vs cable",
     secondaryTopics: [
@@ -1215,6 +1251,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.8,
+    lastmod: "2026-09-09",
     primaryIntent: "Feature & Channel Directory Guide",
     primaryKeyword: "IPTV channels",
     secondaryTopics: [
@@ -1239,6 +1276,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.8,
+    lastmod: "2026-09-09",
     primaryIntent: "Feature & Live Sports Guide",
     primaryKeyword: "IPTV sports",
     secondaryTopics: [
@@ -1263,6 +1301,7 @@ export const routes: AppRoute[] = [
     rendering: "SSG",
     changefreq: "weekly",
     priority: 0.8,
+    lastmod: "2026-09-08",
     primaryIntent: "Feature & Video-on-Demand (VOD) Guide",
     primaryKeyword: "IPTV movies",
     secondaryTopics: [
@@ -1280,6 +1319,31 @@ export const routes: AppRoute[] = [
     ogDescription:
       "Browse over 100,000 on-demand movies and television series with 4K UHD cinema titles, multi-language subtitle tracks, and dedicated streaming servers.",
     breadcrumbName: "IPTV Movies",
+  },
+  {
+    path: "/about",
+    indexable: true,
+    rendering: "SSG",
+    changefreq: "monthly",
+    priority: 0.7,
+    lastmod: "2026-09-09",
+    primaryIntent: "Informational & Trust — Company / Service Transparency",
+    primaryKeyword: "about Teleview",
+    secondaryTopics: [
+      "Teleview company",
+      "what is Teleview",
+      "Teleview IPTV service",
+      "Teleview support information",
+      "Teleview Media",
+    ],
+    h1: "About Teleview",
+    title: "About Teleview | IPTV Service, Approach & Transparency",
+    description:
+      "Learn about Teleview — an IPTV subscription service operated by Teleview Media. Discover what we provide, our approach to support and compatibility, and where to verify pricing, refund, and legal information.",
+    ogTitle: "About Teleview | Service, Approach & Transparency",
+    ogDescription:
+      "Who Teleview is, what our IPTV service provides, how we approach customer experience and support, and where to find transparent pricing, refund, and legal information.",
+    breadcrumbName: "About Teleview",
   },
   {
     path: "/404",

@@ -1047,6 +1047,16 @@ export default function SetupPage() {
                 </div>
               </div>
 
+              <div className="mt-6 rounded-lg border border-charcoal bg-ash/30 p-4 text-xs">
+                <span className="text-snow font-semibold block mb-2">Explore content after setup:</span>
+                <div className="flex flex-wrap gap-3 text-silver-mist">
+                  <a href="/iptv-channels" className="text-phosphor-green hover:underline font-medium">IPTV Channels overview →</a>
+                  <a href="/iptv-sports" className="text-phosphor-green hover:underline font-medium">IPTV Sports guide →</a>
+                  <a href="/iptv-movies" className="text-phosphor-green hover:underline font-medium">IPTV Movies VOD guide →</a>
+                  <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium">What Is IPTV? →</a>
+                </div>
+              </div>
+
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-charcoal/60 pt-5 text-xs text-silver-mist">
                 <span>Looking for more detailed service questions?</span>
                 <div className="flex gap-4">
@@ -1067,7 +1077,7 @@ export default function SetupPage() {
               <h2 className="t-heading-sm">Need Help Setting Up Your Device?</h2>
               <p className="t-body-sm mt-2 max-w-[540px] mx-auto text-silver-mist">
                 Our technical support desk is available 24/7 to guide you through installation, verify your account credentials,
-                or assist with player configuration.
+                or assist with player configuration. Once setup is complete, explore what you can watch — <a href="/iptv-channels" class="text-phosphor-green hover:underline font-medium">IPTV channels</a>, <a href="/iptv-sports" class="text-phosphor-green hover:underline font-medium">live sports</a>, and <a href="/iptv-movies" class="text-phosphor-green hover:underline font-medium">VOD movies</a>.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-4">
                 <GreenButton href="/iptv-subscription">View Subscription Plans</GreenButton>

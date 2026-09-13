@@ -75,7 +75,7 @@ export default function WhatIsIptvPage() {
                   <strong className="text-snow">IPTV (Internet Protocol Television)</strong> is the transmission of continuous television programming and video content over internet protocol (IP) networks using packet-switched architecture, rather than traditional terrestrial radio waves, satellite transponders, or analog cable television signals.
                 </p>
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                  Unlike traditional broadcast television where every channel is sent simultaneously over a physical wire, IPTV operates on a <strong className="text-snow">two-way client-server request model</strong>: when you change the channel on your television or mobile app, your player sends a direct unicast request to an edge server, which streams only that specific media file or live video chunk to your screen.
+                  Unlike traditional broadcast television where every channel is sent simultaneously over a physical wire, IPTV operates on a <strong className="text-snow">two-way client-server request model</strong>: when you change the channel on your television or mobile app, your player sends a direct unicast request to an edge server, which streams only that specific media file or live video chunk to your screen. Learn more about who operates Teleview and our transparency standards on our <a href="/about" className="text-phosphor-green font-semibold hover:underline">About Teleview page</a>.
                 </p>
               </div>
             </div>
@@ -899,6 +899,21 @@ export default function WhatIsIptvPage() {
                 </div>
                 <p className="text-silver-mist">
                   On-demand 4K movie streaming, multi-language subtitle tracks, and audio codec compatibility.
+                </p>
+              </a>
+
+              <a
+                href="/about"
+                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
+                    About Teleview — Transparency
+                  </span>
+                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
+                </div>
+                <p className="text-silver-mist">
+                  Who Teleview is, what we provide, and how we research technical documentation with source hierarchy.
                 </p>
               </a>
             </div>

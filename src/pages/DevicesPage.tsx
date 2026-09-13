@@ -43,7 +43,7 @@ export default function DevicesPage() {
             <p className="t-body-sm mt-4 max-w-[760px] text-silver-mist">
               Teleview delivers universal streaming compatibility across television screens, streaming sticks,
               desktop workstations, and mobile devices. Review technical hardware specifications, recommended video player
-              applications, and verified network parameters for continuous 4K Ultra HD and 60 FPS live sports streaming.
+              applications, and recommended network parameters for continuous 4K Ultra HD and 60 FPS live sports streaming.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2.5 text-xs text-silver-mist">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/30 bg-phosphor-green/10 px-3 py-1 font-medium text-phosphor-green">
@@ -52,7 +52,7 @@ export default function DevicesPage() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal bg-ash/60 px-3 py-1 text-smoke">
                 <ShieldCheck className="size-3.5 text-phosphor-green" aria-hidden="true" />
-                Verified Technical Specifications for 2026 Hardware Standards
+                Technical Specifications Based on Manufacturer Documentation
               </span>
             </div>
 
@@ -69,11 +69,12 @@ export default function DevicesPage() {
                   </h2>
                   <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
                     The <strong className="text-snow">Amazon Fire TV Stick 4K Max</strong> and{" "}
-                    <strong className="text-snow">Apple TV 4K</strong> are the top-rated devices for Teleview IPTV streaming.
-                    Both devices feature dedicated silicon hardware video decoders (HEVC/H.265 and AV1), support 60 FPS
-                    broadcasts with zero frame drops, and run premium media players like{" "}
-                    <strong className="text-snow">TiviMate</strong> and <strong className="text-snow">IPTV Smarters Pro</strong>{" "}
-                    with instantaneous Electronic Program Guide (EPG) schedule loading.
+                    <strong className="text-snow">Apple TV 4K</strong> are widely used devices for IPTV streaming in general.
+                    Both devices include hardware video decoders (HEVC/H.265 and AV1 where supported) and can support 60 FPS
+                    broadcasts where available. Playback performance varies by source, player, device and network. They run
+                    media players like <strong className="text-snow">TiviMate</strong> and{" "}
+                    <strong className="text-snow">IPTV Smarters Pro</strong> with EPG schedule loading that depends on the
+                    player, source and network conditions.
                   </p>
                 </div>
               </div>
@@ -403,11 +404,163 @@ export default function DevicesPage() {
             </div>
           </Reveal>
 
+          {/* P1.7 — Device Compatibility Matrix Methodology */}
+          <Reveal delay={0.075} className="mt-12">
+            <div className="card p-6 sm:p-8 border-charcoal bg-ash/20">
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
+                <h2 className="t-heading-sm">Device Compatibility Methodology & Provenance</h2>
+              </div>
+              <p className="t-body-sm mt-2 text-silver-mist">
+                This compatibility matrix is compiled from manufacturer documentation and official app store listings.
+                It does not claim first-hand device testing. Every data point has provenance — unknown remains unknown.
+              </p>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 text-xs leading-relaxed">
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">What this dataset measures</h3>
+                  <p className="mt-1.5 text-silver-mist">Which streaming devices work with Teleview IPTV, their operating systems, official app availability, supported player options, setup methods, playlist protocol support (M3U, Xtream Codes, EPG), and known limitations.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">What it does NOT measure</h3>
+                  <p className="mt-1.5 text-silver-mist">It does NOT measure first-hand device testing, performance benchmarks, thermal measurements, or uptime. No claim of perfect compatibility or zero buffering. Performance can vary depending on network, device, provider infrastructure.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">Where information comes from</h3>
+                  <p className="mt-1.5 text-silver-mist">Manufacturer docs (Fire OS, Tizen, webOS, Android TV, tvOS, Roku OS, Formuler MYTVOnline), official store listings (Amazon Appstore, Samsung Apps, LG Content Store, Google Play, Apple App Store, Roku Channel Store), developer docs for players. Player verification OFFICIAL_EXTERNAL official-source-verified 2026-09-04.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">Last verified & review cycle</h3>
+                  <p className="mt-1.5 text-silver-mist">Devices last verified <span className="font-mono text-snow">2026-09</span> (month-only), players last verified <span className="font-mono text-snow">2026-09-04</span>. Review interval: quarterly for devices (on new hardware release), monthly for players (on app updates). Date changes only when underlying information is actually reviewed.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">Unknown values</h3>
+                  <p className="mt-1.5 text-silver-mist">Unknown remains unknown — represented as null or explicit “Not verified” or “Via casting workaround — not native” for Roku. Do NOT convert unknown into Yes/No/Compatible/Supported/Tested.</p>
+                </div>
+                <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                  <h3 className="text-sm font-semibold text-snow">Evidence types</h3>
+                  <p className="mt-1.5 text-silver-mist"><strong className="text-snow">DOCUMENTED</strong>: manufacturer docs, official store listings, developer docs — verified via official sources. <strong className="text-snow">GENERAL</strong>: business-owned recommendation or general technical guidance where results vary. <strong className="text-snow">UNKNOWN</strong>: not verified, remains unknown, not guessed — e.g., Via casting workaround — not native for Roku.</p>
+                </div>
+              </div>
+              <div className="mt-5 rounded-lg border border-charcoal bg-ash/30 p-4 text-xs text-silver-mist">
+                <strong className="text-snow">Corrections:</strong> Factual errors may be corrected, outdated technical info may be updated, review/update date reflection, reporting via existing support channels (WhatsApp +44 7848 197761, Email Help@Teleview.me). Organization-based accountability — Organization is author, no fake Person.
+              </div>
+
+              {/* Enhanced Device Compatibility Matrix with Provenance */}
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold text-snow">Device Compatibility Matrix with Provenance (P1.7 Original Evidence Dataset)</h3>
+                <p className="mt-1 text-xs text-silver-mist">8 devices, each field with evidenceType, sourceType, sourceDescription, lastVerified. Unknown remains unknown.</p>
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full text-left text-xs border-collapse" aria-label="Device compatibility matrix with provenance">
+                    <caption className="sr-only">Device compatibility matrix showing operating system, official app availability, M3U support, Xtream Codes support, EPG support, setup method, and known limitations with provenance</caption>
+                    <thead>
+                      <tr className="border-b border-charcoal bg-ash/60 text-snow">
+                        <th scope="col" className="p-3 font-semibold">Device</th>
+                        <th scope="col" className="p-3 font-semibold">OS (DOCUMENTED)</th>
+                        <th scope="col" className="p-3 font-semibold">Official App Availability</th>
+                        <th scope="col" className="p-3 font-semibold">M3U / Xtream / EPG</th>
+                        <th scope="col" className="p-3 font-semibold">Setup Method</th>
+                        <th scope="col" className="p-3 font-semibold">Limitations</th>
+                        <th scope="col" className="p-3 font-semibold">Last Verified</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Fire TV Stick</th>
+                        <td className="p-3">Fire OS (Android) — Manufacturer docs</td>
+                        <td className="p-3">Via Downloader (Amazon Appstore) — IPTV players sideloading — Official store listing</td>
+                        <td className="p-3">M3U: Yes (DOCUMENTED via player docs 2026-09-04) / Xtream: Yes / EPG: Via player</td>
+                        <td className="p-3">Sideloading via Downloader — Official store listing</td>
+                        <td className="p-3">Requires dev options toggle, 8GB storage limit, sponsored home</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Samsung Tizen</th>
+                        <td className="p-3">Tizen OS (2018–2026) — Manufacturer docs</td>
+                        <td className="p-3">Native Samsung Smart Hub — IBO Player, SmartOne — Official store listing 2026-09-04</td>
+                        <td className="p-3">M3U: Yes via web portal / Xtream: Yes via web portal / EPG: Via player</td>
+                        <td className="p-3">Native + Web Portal MAC/Key — Official store + developer portal</td>
+                        <td className="p-3">Tizen no APKs, player activation fee after trial, EPG depends on CPU</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">LG webOS</th>
+                        <td className="p-3">webOS 3.0–24/25 — Manufacturer docs</td>
+                        <td className="p-3">Native LG Content Store — IBO, SmartOne, Smarters Pro — Official listing 2026-09-04</td>
+                        <td className="p-3">M3U: Yes / Xtream: Yes / EPG: Via player</td>
+                        <td className="p-3">Native + Web Portal MAC/Key</td>
+                        <td className="p-3">webOS no APKs, license activation after trial, older webOS limited RAM</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Android TV</th>
+                        <td className="p-3">Android TV OS 9–14 — Manufacturer docs</td>
+                        <td className="p-3">Native Google Play — TiviMate, Smarters Pro, OTT Navigator — Official listing 2026-09-04</td>
+                        <td className="p-3">M3U: Yes / Xtream: Yes / EPG: Full grid (TiviMate) Advanced (OTT Nav)</td>
+                        <td className="p-3">Google Play or Downloader sideloading</td>
+                        <td className="p-3">Generic non-certified boxes run phone Android, premium Shield higher cost</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Apple TV 4K</th>
+                        <td className="p-3">tvOS 15–18+ — Manufacturer docs</td>
+                        <td className="p-3">Native Apple App Store — GSE, Smarters Lite, VLC — Official listing 2026-09-04</td>
+                        <td className="p-3">M3U: Yes (VLC, GSE) / Xtream: Yes (GSE, Smarters Lite) / EPG: Multi-source XMLTV (GSE)</td>
+                        <td className="p-3">Direct App Store download</td>
+                        <td className="p-3">No TiviMate tvOS version, no APK sideloading, higher price</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Roku</th>
+                        <td className="p-3">Roku OS proprietary closed — Manufacturer docs</td>
+                        <td className="p-3">No native IPTV player — Workaround via AirPlay / Screen Mirroring / Web Video Caster — Official store search 2026-09</td>
+                        <td className="p-3">M3U: Via casting workaround — not native / Xtream: Via casting workaround — not native / EPG: Via casting — limited</td>
+                        <td className="p-3">Screen Mirroring / AirPlay / Web Video Caster</td>
+                        <td className="p-3">No native TiviMate, no APK sideloading, requires phone connected while casting</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Google TV</th>
+                        <td className="p-3">Google TV Android 10,12,14 — Manufacturer docs</td>
+                        <td className="p-3">Native Google Play — TiviMate, Smarters Pro, OTT Navigator + sideloading — Official listing 2026-09-04</td>
+                        <td className="p-3">M3U: Yes / Xtream: Yes / EPG: Full grid (TiviMate)</td>
+                        <td className="p-3">Google Play or Downloader</td>
+                        <td className="p-3">Chromecast 4.4GB usable storage, requires USB-C hub for external storage</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                      <tr className="hover:bg-ash/30 transition-colors">
+                        <th scope="row" className="p-3 font-medium text-snow">Formuler Z</th>
+                        <td className="p-3">Android + MYTVOnline MOL2/MOL3 — Manufacturer docs</td>
+                        <td className="p-3">Pre-installed MYTVOnline + Google Play for TiviMate — Manufacturer docs</td>
+                        <td className="p-3">M3U: Yes / Xtream: Yes / EPG: Full EPG via MYTVOnline</td>
+                        <td className="p-3">Pre-installed MYTVOnline</td>
+                        <td className="p-3">Higher hardware cost, MYTVOnline proprietary cannot install on other brands</td>
+                        <td className="p-3 font-mono text-snow">2026-09</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-[11px] text-smoke">Dataset: src/data/datasets/deviceCompatibilityMatrix.ts — 8 records, each field with evidenceType, sourceType, sourceDescription, lastVerified. No fabricated data. Unknown remains unknown. Methodology: Information compiled from manufacturer documentation and official store listings, not first-hand device testing.</p>
+                <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
+                  <a href="/devices/firestick" className="text-phosphor-green hover:underline">Firestick guide →</a>
+                  <a href="/devices/samsung-smart-tv" className="text-phosphor-green hover:underline">Samsung guide →</a>
+                  <a href="/devices/lg-smart-tv" className="text-phosphor-green hover:underline">LG guide →</a>
+                  <a href="/devices/android-tv" className="text-phosphor-green hover:underline">Android TV guide →</a>
+                  <a href="/iptv-players" className="text-phosphor-green hover:underline">Player directory →</a>
+                  <a href="/setup" className="text-phosphor-green hover:underline">Setup guide →</a>
+                  <a href="/help-center/buffering" className="text-phosphor-green hover:underline">Buffering help →</a>
+                  <a href="/is-iptv-safe" className="text-phosphor-green hover:underline">Is IPTV Safe guide →</a>
+                  <a href="/iptv-movies" className="text-phosphor-green hover:underline">IPTV Movies VOD →</a>
+                  <a href="/about" className="text-phosphor-green hover:underline">About Teleview →</a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
           {/* Section 3: Recommended Hardware Requirements */}
           <Reveal delay={0.08} className="mt-12">
             <div className="flex items-center gap-3">
               <HardDrive className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
-              <h2 className="t-heading-sm">3. Recommended Hardware Specifications for Buffer-Free Playback</h2>
+              <h2 className="t-heading-sm">3. Recommended Hardware Specifications for Smooth Playback</h2>
             </div>
             <p className="t-body-sm mt-2 text-silver-mist">
               Stable live IPTV streaming requires sufficient local system resources. Because live streams deliver continuous
@@ -518,10 +671,10 @@ export default function DevicesPage() {
               <div className="mt-4 rounded-xl border border-charcoal bg-ash/50 p-4 sm:p-5 text-xs sm:text-sm text-silver-mist leading-relaxed">
                 <p className="font-medium text-snow flex items-center gap-2">
                   <Zap className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
-                  <span>Quick Answer: What internet speed is required for buffer-free IPTV streaming?</span>
+                  <span>Quick Answer: What internet speed is recommended for IPTV streaming?</span>
                 </p>
                 <p className="mt-2 text-xs sm:text-sm text-silver-mist">
-                  Teleview requires a minimum download speed of <strong className="text-snow">10 Mbps</strong> for High Definition (1080p) streams, and <strong className="text-snow">25 Mbps per active screen</strong> for 4K Ultra HD at 60 FPS. For multi-room households streaming on multiple concurrent screens, a stable connection of <strong className="text-snow">50 Mbps to 100 Mbps</strong> with ping latency under 50ms ensures smooth, buffer-free playback.
+                  Teleview recommends a minimum download speed of <strong className="text-snow">10 Mbps</strong> for High Definition (1080p) streams, and <strong className="text-snow">25 Mbps per active screen</strong> for 4K Ultra HD at 60 FPS where available. For multi-room households streaming on multiple concurrent screens, a stable connection of <strong className="text-snow">50 Mbps to 100 Mbps</strong> with ping latency under 50ms helps support smooth playback. Actual performance can vary depending on network, device, and provider infrastructure.
                 </p>
               </div>
 
@@ -570,7 +723,7 @@ export default function DevicesPage() {
                   <h3 className="text-xs font-semibold text-snow">5GHz Wi-Fi vs. 2.4GHz Wi-Fi</h3>
                   <p className="mt-1 text-[11px] text-silver-mist leading-relaxed">
                     2.4 GHz Wi-Fi channels suffer severe interference from walls and appliances. Connecting via 5 GHz Wi-Fi
-                    or a direct Cat6 Ethernet cable eliminates packet loss and micro-stuttering.
+                    or a direct Cat6 Ethernet cable may help reduce packet loss and micro-stuttering. Results vary by network and device.
                   </p>
                 </div>
                 <div>
@@ -671,13 +824,16 @@ export default function DevicesPage() {
             </div>
             <p className="t-body-sm mt-2 text-silver-mist">
               Teleview provides secure streaming server access and high-bitrate stream URLs. To watch content on your screen,
-              you use an IPTV media player application. Below are the verified, developer-maintained player applications:
+              you use an IPTV media player application. Below are the developer-maintained player applications:
             </p>
 
             <aside className="mt-4 rounded-lg border border-charcoal bg-ash/30 p-4 text-xs text-silver-mist">
               <strong className="text-snow">Developer Disclosure:</strong> Teleview is an independent IPTV subscription provider.
               Player apps (TiviMate, IPTV Smarters, IBO Player) are independent third-party software products available via official app stores.
             </aside>
+            <p className="mt-4 text-xs text-silver-mist leading-relaxed">
+              For safe installation practices — verifying official store listings and avoiding cracked APKs — review our <a href="/is-iptv-safe" className="text-phosphor-green hover:underline font-medium">Is IPTV Safe? cybersecurity guide</a>. If you stream on-demand movies, see data usage and library considerations in <a href="/iptv-movies" className="text-phosphor-green hover:underline font-medium">IPTV Movies VOD guide</a>.
+            </p>
 
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               <article className="card p-5 border-charcoal">
@@ -804,7 +960,7 @@ export default function DevicesPage() {
             </div>
             <p className="t-body-sm mt-2 text-silver-mist">
               Most streaming interruptions originate from local device settings, codec decoders, or Wi-Fi interference.
-              Follow these verified troubleshooting steps:
+              Follow these practical troubleshooting steps:
             </p>
 
             <div className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -996,7 +1152,7 @@ export default function DevicesPage() {
                 <h2 className="t-heading-sm">9. Official Device Setup Guides &amp; Next Steps</h2>
               </div>
               <p className="t-body-sm mt-2 text-silver-mist">
-                Ready to configure your device? Explore our step-by-step hardware setup manuals featuring verified configuration
+                Ready to configure your device? Explore our step-by-step hardware setup manuals featuring step-by-step configuration
                 walkthroughs, recommended player apps, and troubleshooting instructions:
               </p>
 

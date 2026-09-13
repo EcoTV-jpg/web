@@ -120,6 +120,12 @@ export default function Footer() {
               <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Support &amp; Trust</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
                 <li><a href="/help-center" className="hover:text-snow transition-colors">Help Center</a></li>
+                <li><a href="/help-center/buffering" className="hover:text-snow transition-colors">Fix Buffering</a></li>
+                <li><a href="/help-center/not-working" className="hover:text-snow transition-colors">IPTV Not Working</a></li>
+                <li><a href="/help-center/epg-not-working" className="hover:text-snow transition-colors">Fix EPG Not Loading</a></li>
+                <li><a href="/help-center/channels-not-loading" className="hover:text-snow transition-colors">Channels Not Loading</a></li>
+                <li><a href="/help-center/connection-problems" className="hover:text-snow transition-colors">Connection Problems</a></li>
+                <li><a href="/help-center/internet-speed" className="hover:text-snow transition-colors">Internet Speed Requirements</a></li>
                 <li><a href="/setup" className="hover:text-snow transition-colors">Setup &amp; Installation</a></li>
                 <li><a href="/faq" className="hover:text-snow transition-colors">FAQ</a></li>
                 <li><a href="/contact" className="hover:text-snow transition-colors">Contact Us</a></li>

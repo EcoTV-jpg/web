@@ -81,7 +81,7 @@ export default function IptvPlayersHubPage() {
                   <a href="/iptv-free-trial" className="text-phosphor-green font-medium hover:underline">
                     IPTV Free Trial
                   </a>{" "}
-                  before subscribing.
+                  before subscribing. For safe installation — verifying official store listings and avoiding cracked APKs — review our <a href="/is-iptv-safe" className="text-phosphor-green font-medium hover:underline">Is IPTV Safe? guide</a>. If you use on-demand movies, see <a href="/iptv-movies" className="text-phosphor-green font-medium hover:underline">IPTV Movies VOD</a> for data usage and library considerations.
                 </p>
               </div>
             </div>
@@ -185,6 +185,68 @@ export default function IptvPlayersHubPage() {
                   </div>
                 </article>
               ))}
+            </div>
+          </section>
+
+          {/* P1.7 — Player Feature Matrix Methodology */}
+          <section className="mt-16 rounded-2xl border border-charcoal bg-ash/20 p-6 sm:p-8" aria-labelledby="player-methodology-heading">
+            <div className="flex items-center gap-2 mb-3">
+              <CheckCircle2 className="size-5 text-phosphor-green" aria-hidden="true" />
+              <h2 id="player-methodology-heading" className="text-base sm:text-lg font-bold text-snow">Player Feature Matrix Methodology & Provenance</h2>
+            </div>
+            <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">This player feature dataset is compiled from official store listings and developer documentation. Source verification reflects official docs review, not Teleview first-hand testing. Every field has provenance — unknown remains unknown.</p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 text-xs leading-relaxed">
+              <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                <h3 className="text-sm font-semibold text-snow">What it measures</h3>
+                <p className="mt-1 text-silver-mist">IPTV player applications, supported platforms, playlist protocol support (M3U, Xtream Codes, Stalker, MAC), EPG support, features (favorites, multi-screen, parental controls, recording, catch-up), installation methods, license models, limitations.</p>
+              </div>
+              <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                <h3 className="text-sm font-semibold text-snow">What it does NOT measure</h3>
+                <p className="mt-1 text-silver-mist">Does NOT measure first-hand testing, benchmarks, uptime, or claim Teleview tested players. Feature availability varies by app version and license tier. Not claim perfect compatibility.</p>
+              </div>
+              <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                <h3 className="text-sm font-semibold text-snow">Where it comes from</h3>
+                <p className="mt-1 text-silver-mist">Official listings: Google Play (TiviMate, OTT Navigator), Apple App Store (GSE, Smarters Lite, VLC), Samsung Apps / LG Content Store (IBO, SmartOne), portals iboplayer.com, smartone-iptv.com, videolan.org, WHMCSSmarters, Armobsoft FZE. Last verified 2026-09-04, monthly review.</p>
+              </div>
+              <div className="rounded-lg border border-charcoal bg-ash/40 p-4">
+                <h3 className="text-sm font-semibold text-snow">Evidence types & Unknown</h3>
+                <p className="mt-1 text-silver-mist"><strong className="text-snow">DOCUMENTED</strong>: official listing/dev docs. <strong className="text-snow">UNKNOWN</strong>: not documented remains null — e.g., parental controls not explicit → null, not guessed. Do NOT convert unknown to Yes/No.</p>
+              </div>
+            </div>
+            <div className="mt-5 overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse min-w-[760px]" aria-label="Player feature matrix with provenance">
+                <caption className="sr-only">Player feature matrix with provenance showing platforms, playlist support, EPG, multi-screen, recording, license, limitations, last verified</caption>
+                <thead>
+                  <tr className="border-b border-charcoal bg-ash/60 text-snow">
+                    <th scope="col" className="p-3 font-semibold">Player</th>
+                    <th scope="col" className="p-3 font-semibold">Primary Platforms (DOCUMENTED)</th>
+                    <th scope="col" className="p-3 font-semibold">M3U / Xtream / Stalker / MAC</th>
+                    <th scope="col" className="p-3 font-semibold">EPG / Multi-Screen / Recording</th>
+                    <th scope="col" className="p-3 font-semibold">License Model</th>
+                    <th scope="col" className="p-3 font-semibold">Last Verified</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">TiviMate</th><td className="p-3">Android TV, Google TV, Firestick, Shield — Play Store</td><td className="p-3">M3U Yes, Xtream Yes, Stalker Yes, MAC UNKNOWN null</td><td className="p-3">EPG Full grid, Multi Yes Quad, Rec Yes — parental UNKNOWN</td><td className="p-3">Freemium Premium unlock</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">Smarters Pro</th><td className="p-3">Android, iOS, Firestick, Win, Mac — Official listing</td><td className="p-3">M3U Yes, Xtream Yes, Stalker UNKNOWN null</td><td className="p-3">EPG Category-based, Multi Yes up to 4, Rec Yes, Parental Yes Premium</td><td className="p-3">Freemium Premium in-app</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">IBO Player</th><td className="p-3">Samsung Tizen, LG webOS, Android TV, Apple TV — iboplayer.com</td><td className="p-3">M3U Yes, Xtream Yes, MAC Yes web portal, Stalker UNKNOWN</td><td className="p-3">EPG Standard, Multi UNKNOWN null, Rec No — favorites UNKNOWN</td><td className="p-3">7-day trial then one-time fee dev</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">SmartOne</th><td className="p-3">LG webOS, Samsung Tizen, Android TV, Vidaa — smartone-iptv.com</td><td className="p-3">M3U Yes, Xtream Yes, MAC Yes, Stalker UNKNOWN null</td><td className="p-3">EPG Compact, features UNKNOWN null — remains unknown not guessed</td><td className="p-3">14-day trial then fee dev</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">GSE Smart</th><td className="p-3">iOS, tvOS, macOS — Apple App Store GSE Technology</td><td className="p-3">M3U Yes remote+FTP, Xtream Yes, Stalker UNKNOWN</td><td className="p-3">EPG Multi-source XMLTV, Multi UNKNOWN, Parental Yes PIN</td><td className="p-3">Free + in-app Pro</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">VLC</th><td className="p-3">Win 10/11, macOS, Linux — videolan.org</td><td className="p-3">M3U Yes, Xtream No (requires M3U), Stalker UNKNOWN</td><td className="p-3">EPG Limited no grid, Multi No, Rec UNKNOWN null, Favorites No, Catch-up No</td><td className="p-3">100% Free GPLv2</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                  <tr className="hover:bg-ash/30"><th scope="row" className="p-3 text-snow">OTT Navigator</th><td className="p-3">Android TV, Google TV, Android mobile, Fire TV sideload — Play Store Scillarium</td><td className="p-3">M3U Yes, Xtream Yes, Stalker Yes, MAC Yes</td><td className="p-3">EPG Advanced multi-source, Multi Yes PiP Studio, Catch-up Yes</td><td className="p-3">Freemium Premium license</td><td className="p-3 font-mono text-snow">2026-09-04</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-[11px] text-smoke">Dataset: src/data/datasets/playerFeatureMatrix.ts — 7 records, each feature with evidenceType, sourceType, sourceDescription, lastVerified. Unknown remains null. Methodology: official docs review, not first-hand testing. Internal links: device guides, setup, EPG, troubleshooting.</p>
+            <div className="mt-3 flex flex-wrap gap-2 text-[11px]">
+              <a href="/devices" className="text-phosphor-green hover:underline">Device hub →</a>
+              <a href="/devices/firestick" className="text-phosphor-green hover:underline">Firestick →</a>
+              <a href="/setup" className="text-phosphor-green hover:underline">Setup guide →</a>
+              <a href="/help-center/epg-not-working" className="text-phosphor-green hover:underline">EPG help →</a>
+              <a href="/help-center/buffering" className="text-phosphor-green hover:underline">Buffering help →</a>
+              <a href="/is-iptv-safe" className="text-phosphor-green hover:underline">Is IPTV Safe? →</a>
+              <a href="/iptv-movies" className="text-phosphor-green hover:underline">IPTV Movies VOD →</a>
+              <a href="/about" className="text-phosphor-green hover:underline">About Teleview →</a>
             </div>
           </section>
 

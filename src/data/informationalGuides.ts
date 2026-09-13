@@ -377,9 +377,27 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
       },
       {
         title: "Compatible Streaming Devices",
-        description: "Discover which streaming devices feature dedicated HEVC and AV1 hardware decoders.",
+        description: "Discover which streaming devices feature dedicated HEVC and AV1 hardware decoders and RAM recommendations.",
         linkUrl: "/devices",
         linkText: "Supported Devices Guide →",
+      },
+      {
+        title: "IPTV Players Directory",
+        description: "Compare player apps by platform, protocol support, EPG, and hardware decoding — TiviMate, Smarters, IBO, VLC.",
+        linkUrl: "/iptv-players",
+        linkText: "IPTV Players Directory →",
+      },
+      {
+        title: "Is IPTV Safe? Cybersecurity",
+        description: "Learn safe player downloads, avoiding cracked APKs, VPN privacy, and payment hygiene.",
+        linkUrl: "/is-iptv-safe",
+        linkText: "Is IPTV Safe Guide →",
+      },
+      {
+        title: "About Teleview — Transparency",
+        description: "Who Teleview is, what we provide, and how we research technical documentation with source hierarchy.",
+        linkUrl: "/about",
+        linkText: "About Teleview →",
       },
       {
         title: "Troubleshoot IPTV Buffering",
@@ -466,6 +484,12 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         description: "Evaluate provider selection criteria, stream stability benchmarks, and trial policies.",
         linkUrl: "/best-iptv",
         linkText: "IPTV Buying Guide →",
+      },
+      {
+        title: "About Teleview — Transparency",
+        description: "Who Teleview is, what we provide, and where to verify pricing, refund, and legal information.",
+        linkUrl: "/about",
+        linkText: "About Teleview →",
       },
       {
         title: "Test with Free Trial",
@@ -557,15 +581,27 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
       },
       {
         title: "Review Supported Devices",
-        description: "Discover the most secure streaming hardware for 4K video decoding.",
+        description: "Discover the most secure streaming hardware for 4K video decoding and safe APK practices.",
         linkUrl: "/devices",
         linkText: "Supported Devices Guide →",
+      },
+      {
+        title: "IPTV Players Directory",
+        description: "Compare verified players from official stores — avoid cracked APKs from file lockers.",
+        linkUrl: "/iptv-players",
+        linkText: "IPTV Players Directory →",
       },
       {
         title: "IPTV Legality & Regulations",
         description: "Understand the legal frameworks, copyright regulations, and licensing rules surrounding IPTV.",
         linkUrl: "/is-iptv-legal",
         linkText: "Is IPTV Legal Guide →",
+      },
+      {
+        title: "About Teleview — Transparency",
+        description: "Who Teleview is, what we provide, and how we research technical documentation with source hierarchy.",
+        linkUrl: "/about",
+        linkText: "About Teleview →",
       },
       {
         title: "Explore Subscriptions",
@@ -666,6 +702,18 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         description: "Examine Teleview's subscription tiers, savings breakdown, and features.",
         linkUrl: "/iptv-pricing",
         linkText: "IPTV Pricing Guide →",
+      },
+      {
+        title: "VOD Data Usage & Library Guide",
+        description: "Evaluate VOD library considerations — data usage 3-5 GB/hour Full HD, resume, subtitles.",
+        linkUrl: "/iptv-movies",
+        linkText: "IPTV Movies VOD Guide →",
+      },
+      {
+        title: "About Teleview — Transparency",
+        description: "Who Teleview is, what we provide, and where to verify pricing, refund, and legal information.",
+        linkUrl: "/about",
+        linkText: "About Teleview →",
       },
       {
         title: "Start a Free Trial",

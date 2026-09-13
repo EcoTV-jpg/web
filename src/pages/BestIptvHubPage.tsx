@@ -68,12 +68,18 @@ export default function BestIptvHubPage() {
             <span>
               <strong>Publisher &amp; Editorial Disclosure:</strong> This comparison and buying guide is published by Teleview. Buyer criteria and technical benchmarks are based on objective streaming architecture, protocol standards, and hardware requirements. Teleview&apos;s commercial service specifications are presented transparently in Section 6 so readers can evaluate them alongside broader market options.
             </span>
-            <a
-              href="/iptv-players"
-              className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1 shrink-0"
-            >
-              Browse the IPTV Apps Directory &rarr;
-            </a>
+            <div className="flex items-center gap-3 shrink-0">
+              <a
+                href="/iptv-players"
+                className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1"
+              >
+                Browse the IPTV Apps Directory &rarr;
+              </a>
+              <span className="text-smoke">•</span>
+              <a href="/about" className="text-phosphor-green hover:underline font-medium inline-flex items-center gap-1">
+                About Teleview — Transparency &rarr;
+              </a>
+            </div>
           </div>
 
           {/* 3. Direct Answer Block (AI Overview Optimized) */}
@@ -87,6 +93,92 @@ export default function BestIptvHubPage() {
                 <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
                   There is no single IPTV service that is best for every viewer. The right choice depends on the channels you need, your country, device compatibility, stream stability, EPG support, pricing, trial terms, refund policy, and customer support. Before buying a long-term plan, compare the provider&apos;s published terms and test the service on the device and internet connection you actually use. Teleview is one service covered on this page; its provider-published specifications are presented separately from the general buying criteria. Viewers can evaluate the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> on their equipment with a 24-hour <a href="/iptv-free-trial" className="text-phosphor-green font-semibold hover:underline">IPTV free trial</a> or compare standard <a href="/iptv-subscription" className="text-phosphor-green font-semibold hover:underline">IPTV subscription plans</a>.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* 3b. Enhanced Methodology — P1.8 */}
+          <section className="mt-10 rounded-2xl border border-charcoal bg-ink-800/50 p-6 sm:p-8" aria-labelledby="methodology-enhanced-heading">
+            <h2 id="methodology-enhanced-heading" className="text-lg sm:text-xl font-bold text-snow mb-2">
+              Editorial Methodology — How This Guide Works
+            </h2>
+            <p className="text-xs sm:text-sm text-silver-mist mb-6 max-w-[760px]">
+              This guide is published by Teleview and is not presented as an independent third-party review. It provides general buying criteria based on streaming architecture, protocol standards, and hardware requirements, and separates those criteria from Teleview's own published service specifications.
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 text-xs">
+              <div>
+                <h3 className="font-semibold text-snow mb-2">What This Guide Evaluates</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>General criteria for evaluating IPTV services: streaming stability considerations, device compatibility, EPG support, pricing transparency, trial and refund terms, connection limits, and support channels</li>
+                  <li>Player application characteristics based on official store listings and developer documentation — not personal lab testing</li>
+                  <li>Device compatibility based on manufacturer documentation and official store availability</li>
+                  <li>Technical protocol context: Xtream Codes API, M3U Plus, XMLTV EPG, H.264/HEVC codecs, hardware vs software decoding</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">What This Guide Does NOT Evaluate</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Personal hands-on testing of competitor services — no first-hand testing claimed per first-hand integrity 43 PASS</li>
+                  <li>Laboratory measurements of uptime, bitrate, or server load — no lab testing per FHI-01-A PASS</li>
+                  <li>Precise live channel counts of competitors — no invented market-share or customer counts per C11-C14 PASS</li>
+                  <li>Legal compliance of third-party content — legality depends on rights and jurisdiction per informationalGuides is-iptv-legal, ITU-T Y.1901</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">Sources Used</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Teleview claim registry 18 claims (BUSINESS_OWNED, OFFICIAL_EXTERNAL, TECHNICAL_STANDARD, GOVERNMENT_LEGAL) — single source of truth, enforced by claim-consistency audit 17/17 PASS</li>
+                  <li>Device Compatibility Matrix 8 records — manufacturer docs, official store listings, business-owned general guidance, lastVerified 2026-09, no OBSERVED without logs</li>
+                  <li>Player Feature Matrix 7 records — official store listings (Google Play, Apple App Store, Samsung Apps, LG Content Store, Roku Channel Store, iboplayer.com, smartone-iptv.com, videolan.org) + developer docs, official-source-verified 2026-09-04</li>
+                  <li>Troubleshooting Matrix 6 records — general technical knowledge (HTTP RFC 7231, Wi-Fi 802.11, DNS, NAT, TLS, CBR/VBR) + support aggregation, no measured success rates, results vary</li>
+                  <li>Technical standards: ITU-T Y.1901 IPTV definition, Xtream Codes API, M3U8, XMLTV, HEVC/H.265, AVC/H.264, AV1, VP9</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">Teleview Business Facts vs Editorial Criteria</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Editorial criteria (Section 5) are general buying considerations applicable to any provider — not Teleview-specific</li>
+                  <li>Teleview published specifications (Section 6) are BUSINESS_OWNED facts: $16/39/60/90 pricing, $7.50-$16/mo effective, $9/$36/$102 savings, 25,000+ channels, 100,000+ VOD, 7-day EPG, 5-15 min activation, 1 to 4 connections, Help@Teleview.me +44 7848 197761 — presented separately with source attribution</li>
+                  <li>Comparison table (Section 8) shows Teleview vs buyer evaluation benchmark — benchmark values are labeled as general industry ranges, not precise competitor data, with note to verify directly with any service</li>
+                  <li>No implication that competitors were evaluated via first-hand usage — evaluation is methodology-based, not lab-based</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">How Unknown Information is Handled</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Dataset fields use evidenceType DOCUMENTED/GENERAL/UNKNOWN — UNKNOWN remains null, not guessed, exemplary 30+ null player features and Roku workaround-only honest stance</li>
+                  <li>Where official store listing or manufacturer doc does not document a feature (e.g., favorites, multi-screen, parental controls, recording, catchUp), field is UNKNOWN with note Not documented — remains unknown, not guessed</li>
+                  <li>General guidance always includes results vary, may help, where available, where supported — per P1.7 remediation</li>
+                  <li>No conversion of GENERAL into DOCUMENTED or BUSINESS_OWNED into first-hand evidence per NON-NEGOTIABLE rules 19-21</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">How Compatibility Evidence is Sourced</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Device OS and specs from manufacturer docs (Fire OS, Tizen, webOS, Android TV, tvOS) — DOCUMENTED MANUFACTURER_DOCS</li>
+                  <li>App availability from official store listings — Amazon Appstore, Google Play, Apple App Store, Samsung Apps, LG Content Store, Roku Channel Store — DOCUMENTED OFFICIAL_STORE_LISTING</li>
+                  <li>Sideloaded apps (e.g., TiviMate on Firestick via Downloader) classified as DEVELOPER_DOCS/BUSINESS_OWNED GENERAL, not OFFICIAL_STORE_LISTING — per P1.7 remediation</li>
+                  <li>Player features from developer docs and official listings — M3U, Xtream Codes, EPG, installationMethod, licenseModel — DOCUMENTED DEVELOPER_DOCS/OFFICIAL_STORE_LISTING</li>
+                  <li>Troubleshooting causes from technical standards and support aggregation — no measured success rates, no OBSERVED without logs</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">How This Page is Maintained</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Last verified date for player data: 2026-09-04 preserved per date integrity P1-P2 PASS — 7 entries with lastReviewed 2026-09-04</li>
+                  <li>Route lastmod for best-iptv: 2026-09-06 from routes.ts, used for WebPage dateModified via route.lastmod || defaultLastmod per M1 PASS</li>
+                  <li>Datasets reviewed periodically: Device Compatibility lastVerified 2026-09, Player Feature lastVerified 2026-09-04, Troubleshooting lastReviewed 2026-09 — reviewInterval quarterly/monthly</li>
+                  <li>No fake update dates — dates correspond to actual review per freshness policy</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-snow mb-2">How Corrections are Handled</h3>
+                <ul className="space-y-1.5 text-silver-mist list-disc list-inside">
+                  <li>Factual errors may be corrected, outdated technical info may be updated, review/update date reflection, reporting via existing support channels (WhatsApp +44 7848 197761, Email Help@Teleview.me) — organization-based accountability, no fake Person per dataset howCorrectionsHandled</li>
+                  <li>Claim registry is single source of truth — updates to canonical values require updating registry AND audit script expectations together per auditorNote</li>
+                  <li>About page documents corrections policy and evidence architecture — see /about for editorial policy</li>
+                  <li>Machine-readable llms.txt and llms-full.txt synchronized to 43 sitemap URLs, 100,000+ VOD, no $129 promotional, dataset Section 7 — per P1.8 P0 gate PASS WITH CONDITIONS</li>
+                </ul>
               </div>
             </div>
           </section>
@@ -192,7 +284,7 @@ export default function BestIptvHubPage() {
                       <td className="p-4">Fire TV Stick 4K Max or Apple TV 4K</td>
                       <td className="p-4 text-snow">TiviMate or GSE Smart IPTV</td>
                       <td className="p-4">60 FPS refresh rate, low latency, multi-CDN stability</td>
-                      <td className="p-4">Requires high continuous bandwidth (25+ Mbps) and wired ethernet or 5 GHz Wi-Fi to eliminate micro-jitter.</td>
+                      <td className="p-4">Requires high continuous bandwidth (25+ Mbps) and wired ethernet or 5 GHz Wi-Fi to help reduce micro-jitter. Results vary by network and device.</td>
                     </tr>
                     <tr className="hover:bg-ash/50 transition-colors">
                       <th scope="row" className="p-4 font-semibold text-snow">
@@ -855,7 +947,7 @@ export default function BestIptvHubPage() {
 
                   <div className="mt-3 pt-2.5 border-t border-charcoal/60 flex items-center justify-between">
                     <span className="text-[11px] text-smoke font-mono">
-                      {app.verification.lastReviewed}
+                      {(app.sourceVerification || app.verification)?.lastReviewed}
                     </span>
                     <a
                       href={`/iptv-players/${app.slug}`}
@@ -1078,116 +1170,44 @@ export default function BestIptvHubPage() {
             </div>
           </section>
 
-          {/* 15. Teleview IPTV Subscription Plans (Section 18) */}
+          {/* 15. Teleview IPTV Subscription Plans — P1-1 differentiation: concise summary, not duplicated 4-card grid */}
           <section className="mt-16" id="pricing" aria-labelledby="pricing-summary-heading">
-            <div className="text-center mb-8">
+            <div className="text-center mb-6">
               <h2 id="pricing-summary-heading" className="text-xl sm:text-2xl font-bold text-snow">
-                Teleview IPTV Subscription Plans
+                Teleview IPTV Subscription Options
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[620px] mx-auto">
-                One-time prepaid packages with published specifications. Automated credentials, zero recurring contracts, and a 14-day refund policy. Review complete features on the <a href="/" className="text-phosphor-green font-semibold hover:underline">Teleview IPTV service</a> overview or select a subscription duration below.
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[680px] mx-auto leading-relaxed">
+                As a buying consideration, Teleview offers multiple prepaid subscription durations ranging from short-term flexibility to annual value. Effective monthly costs range from $16.00 for a 1-month plan down to $7.50 per month on a 12-month plan ($90 total), with intermediate options at $39 for 3 months and $60 for 6 months. All options are one-time prepaid with zero recurring contracts and a 14-day refund policy. This summary avoids duplicating the full plan card structure — review complete plan details and what is included on the dedicated subscription hub.
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-xs">
-              <article className="card p-5 border-charcoal flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-phosphor-green uppercase">1 Month Term</span>
-                  <h3 className="mt-1 text-base font-bold text-snow">1 Month Plan</h3>
-                  <div className="mt-2 flex items-baseline gap-1.5">
-                    <span className="text-2xl font-extrabold text-snow">$16.00</span>
-                    <span className="text-[11px] text-smoke">/ 1 month</span>
-                  </div>
-                  <p className="mt-2 text-silver-mist leading-relaxed">
-                    Prepaid monthly plan with 1 active connection, full stream access, and standard EPG updates.
-                  </p>
+            <div className="rounded-xl border border-charcoal bg-ash/30 p-5 sm:p-6 text-xs">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-phosphor-green font-semibold">Teleview Published Pricing</span>
+                  <p className="text-sm font-bold text-snow">1 Month $16 — 3 Months $39 ($13.00/mo) — 6 Months $60 ($10.00/mo) — 12 Months $90 ($7.50/mo)</p>
+                  <p className="text-silver-mist leading-relaxed">One-time prepaid packages with published specifications. Automated credentials, zero recurring contracts, and a 14-day refund policy. For full feature comparison and activation details, see the subscription directory.</p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-charcoal/60">
-                  <a
-                    href="/iptv-subscription/1-month"
-                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
-                  >
-                    View 1 Month Plan &rarr;
+                <div className="flex flex-wrap gap-2 shrink-0">
+                  <a href="/iptv-subscription" className="inline-flex items-center gap-1 rounded-lg bg-phosphor-green px-4 py-2 text-xs font-bold text-obsidian hover:brightness-110 transition-colors">
+                    View IPTV Subscription Plans →
+                  </a>
+                  <a href="/iptv-pricing" className="inline-flex items-center gap-1 rounded-lg border border-charcoal bg-ink-800 px-4 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/40 transition-colors">
+                    Compare Effective Monthly Costs →
                   </a>
                 </div>
-              </article>
-
-              <article className="card p-5 border-charcoal flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-phosphor-green uppercase">3 Months Term</span>
-                  <h3 className="mt-1 text-base font-bold text-snow">3 Months Plan</h3>
-                  <div className="mt-2 flex items-baseline gap-1.5">
-                    <span className="text-2xl font-extrabold text-snow">$39.00</span>
-                    <span className="text-[11px] text-smoke">($13.00/mo)</span>
-                  </div>
-                  <p className="mt-2 text-silver-mist leading-relaxed">
-                    Quarterly package saving 18.75% compared to paying monthly ($48 total value at $16/mo).
-                  </p>
-                </div>
-                <div className="mt-5 pt-3 border-t border-charcoal/60">
-                  <a
-                    href="/iptv-subscription/3-months"
-                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
-                  >
-                    View 3 Months Plan &rarr;
-                  </a>
-                </div>
-              </article>
-
-              <article className="card p-5 border-charcoal flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-phosphor-green uppercase">6 Months Term</span>
-                  <h3 className="mt-1 text-base font-bold text-snow">6 Months Plan</h3>
-                  <div className="mt-2 flex items-baseline gap-1.5">
-                    <span className="text-2xl font-extrabold text-snow">$60.00</span>
-                    <span className="text-[11px] text-smoke">($10.00/mo)</span>
-                  </div>
-                  <p className="mt-2 text-silver-mist leading-relaxed">
-                    Semi-annual package saving 37.5% compared to paying monthly ($96 total value at $16/mo).
-                  </p>
-                </div>
-                <div className="mt-5 pt-3 border-t border-charcoal/60">
-                  <a
-                    href="/iptv-subscription/6-months"
-                    className="inline-flex items-center justify-center w-full rounded-lg border border-charcoal bg-ink-800 py-2 text-xs font-semibold text-snow hover:border-phosphor-green/50 transition-colors"
-                  >
-                    View 6 Months Plan &rarr;
-                  </a>
-                </div>
-              </article>
-
-              <article className="card p-5 border-phosphor-green/50 bg-phosphor-green/5 flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-mono text-phosphor-green uppercase font-bold">12 Months Term</span>
-                  <h3 className="mt-1 text-base font-bold text-snow">12 Months Plan</h3>
-                  <div className="mt-2 flex items-baseline gap-1.5">
-                    <span className="text-2xl font-extrabold text-snow">$90.00</span>
-                    <span className="text-[11px] text-smoke">($7.50/mo)</span>
-                  </div>
-                  <p className="mt-2 text-silver-mist leading-relaxed">
-                    Annual package saving 53.125% compared to paying monthly ($192 total value at $16/mo).
-                  </p>
-                </div>
-                <div className="mt-5 pt-3 border-charcoal/60">
-                  <a
-                    href="/iptv-subscription/12-months"
-                    className="inline-flex items-center justify-center w-full rounded-lg bg-phosphor-green text-obsidian py-2 text-xs font-bold hover:brightness-110 transition-colors"
-                  >
-                    View 12 Months Plan &rarr;
-                  </a>
-                </div>
-              </article>
-            </div>
-
-            <div className="mt-6 text-center text-xs text-smoke">
-              Pricing verified: September 2026. Every plan includes our 14-day{" "}
-              <a href="/refund-policy" className="text-phosphor-green hover:underline">
-                refund policy
-              </a>
-              . Explore all options in the full{" "}
-              <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-semibold">
-                IPTV Subscription Directory
-              </a>.
+              </div>
+              <div className="mt-4 pt-4 border-t border-charcoal/60 text-[11px] text-smoke flex flex-wrap gap-x-3 gap-y-1">
+                <span>Pricing verified: September 2026</span>
+                <span>•</span>
+                <a href="/refund-policy" className="text-phosphor-green hover:underline">Refund Policy</a>
+                <span>•</span>
+                <a href="/iptv-free-trial" className="text-phosphor-green hover:underline">24h Free Trial</a>
+                <span>•</span>
+                <a href="/iptv-pricing" className="text-phosphor-green hover:underline">IPTV Pricing Economics Breakdown</a>
+                <span>•</span>
+                <a href="/" className="text-phosphor-green hover:underline">Teleview IPTV Service Overview</a>
+              </div>
             </div>
           </section>
 
@@ -1320,6 +1340,10 @@ export default function BestIptvHubPage() {
               , and{" "}
               <a href="/terms-conditions" className="text-phosphor-green hover:underline">
                 Terms and Conditions
+              </a>
+              , and{" "}
+              <a href="/about" className="text-phosphor-green hover:underline">
+                About Teleview
               </a>
               .
             </p>
