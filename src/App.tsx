@@ -59,19 +59,13 @@ export default function App({ url }: { url?: string }) {
           jsonLdEl.textContent = JSON.stringify(generateStructuredData(currentPath));
         }
       } else {
-        // Unknown dynamic slug or non-existent path
-        document.title = "404 Not Found | Teleview";
-        const canonicalEl = document.querySelector('link[rel="canonical"]');
-        if (canonicalEl) {
-          canonicalEl.setAttribute("href", getCanonicalUrl("/404"));
-        }
+        // Unknown path — show 404 UI.
+        // Update title and robots only. Do NOT set a canonical on an error path.
+        // The HTTP 404 status is the primary non-indexing signal.
+        document.title = "Page Not Found | Teleview";
         const robotsEl = document.querySelector('meta[name="robots"]');
         if (robotsEl) {
           robotsEl.setAttribute("content", "noindex, follow");
-        }
-        const jsonLdEl = document.querySelector('script[type="application/ld+json"]');
-        if (jsonLdEl) {
-          jsonLdEl.textContent = JSON.stringify(generateStructuredData("/404"));
         }
       }
     }

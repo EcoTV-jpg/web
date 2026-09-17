@@ -50,9 +50,9 @@ async function runUnknownSlugTests() {
   assert("dist/404.html exists in build output", fs.existsSync(dist404));
   if (fs.existsSync(dist404)) {
     const content404 = fs.readFileSync(dist404, "utf-8");
-    assert("dist/404.html has <title>404 Not Found | Teleview</title>", content404.includes("<title>404 Not Found | Teleview</title>"));
+    assert("dist/404.html has <title>Page Not Found | Teleview</title>", content404.includes("<title>Page Not Found | Teleview</title>"));
     assert("dist/404.html has meta robots noindex, follow", content404.includes('content="noindex, follow"'));
-    assert("dist/404.html has canonical to /404", content404.includes('href="https://www.teleview.me/404"'));
+    assert("dist/404.html has NO canonical tag", !/<link\s[^>]*rel=["']canonical["'][^>]*>/i.test(content404));
     assert("dist/404.html renders Page Not Found h1", content404.includes("Page Not Found"));
     assert("dist/404.html renders HTTP 404 badge", content404.includes("HTTP 404 — Not Found"));
   }

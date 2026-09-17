@@ -159,8 +159,18 @@ async function prerender() {
     if (route.path === "/404") {
       const dist404Html = path.resolve(distDir, "404.html");
       const public404Html = path.resolve(rootDir, "public/404.html");
-      fs.writeFileSync(dist404Html, pageHtml, "utf-8");
-      fs.writeFileSync(public404Html, pageHtml, "utf-8");
+
+      // Post-process the 404 error document:
+      // 1. Set correct title ("Page Not Found" not "404 Not Found")
+      // 2. Remove <link rel="canonical"> — error documents must not canonicalise to any URL.
+      //    The HTTP 404 status is the primary signal preventing indexing; noindex is the secondary.
+      //    A canonical on an error document is contradictory and confusing.
+      let errorDocHtml = pageHtml
+        .replace(/<title>[^<]*<\/title>/i, "<title>Page Not Found | Teleview</title>")
+        .replace(/<link\s[^>]*rel=["']canonical["'][^>]*\/?\>/gi, "");
+
+      fs.writeFileSync(dist404Html, errorDocHtml, "utf-8");
+      fs.writeFileSync(public404Html, errorDocHtml, "utf-8");
       console.log(`[SSG] Static 404 handler written → ${path.relative(rootDir, dist404Html)} and ${path.relative(rootDir, public404Html)}`);
     }
   }

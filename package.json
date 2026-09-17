@@ -28,7 +28,8 @@
     "google:index": "node scripts/google-indexing.ts",
     "google:index:delete": "node scripts/google-indexing.ts --action=delete",
     "google:index:status": "node scripts/google-indexing.ts --action=status",
-    "test:indexing": "node scripts/test-google-indexing.mjs"
+    "test:indexing": "node scripts/test-google-indexing.mjs",
+    "seo:404": "node scripts/seo-404-audit.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",
