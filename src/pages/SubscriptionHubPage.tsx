@@ -97,7 +97,7 @@ export default function SubscriptionHubPage() {
                       <a href="/iptv-pricing" className="text-phosphor-green font-semibold hover:underline">
                         IPTV pricing guide
                       </a>{" "}
-                      for connection economics and multi-month discount breakdowns. For total cost of ownership including hardware and internet, see our <a href="/iptv-cost" class="text-phosphor-green font-semibold hover:underline">IPTV Cost Guide</a> and learn <a href="/about" class="text-phosphor-green font-semibold hover:underline">about Teleview</a>.
+                      for connection economics, total cost of ownership including hardware and internet, and multi-month discount breakdowns. Learn <a href="/about" className="text-phosphor-green font-semibold hover:underline">about Teleview</a>.
                     </p>
                   </div>
                 </div>
@@ -518,8 +518,8 @@ export default function SubscriptionHubPage() {
                 Explore IPTV Players Directory &rarr;
               </a>
               <span className="text-smoke">&bull;</span>
-              <a href="/iptv-cost" className="text-phosphor-green hover:underline">
-                Total Cost of Ownership → IPTV Cost Guide &rarr;
+              <a href="/iptv-pricing" className="text-phosphor-green hover:underline">
+                IPTV Pricing Guide &amp; TCO Breakdown &rarr;
               </a>
               <span className="text-smoke">&bull;</span>
               <a href="/about" className="text-phosphor-green hover:underline">

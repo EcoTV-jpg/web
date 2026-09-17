@@ -248,7 +248,7 @@ export default function TroubleshootingGuidePage({ slug }: { slug: string }) {
             <div className="mt-8 rounded-xl border border-charcoal bg-ash/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
               <div className="space-y-0.5 text-center sm:text-left">
                 <span className="text-snow font-semibold">Configuring a new television or checking bandwidth?</span>
-                <p className="text-silver-mist">Verify your bandwidth with our <a href="/help-center/internet-speed" className="text-phosphor-green hover:underline">IPTV internet speed benchmarks</a>, learn <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline">how IPTV works</a> to understand streaming buffers, or review device setup steps.</p>
+                <p className="text-silver-mist">Verify your bandwidth with our <a href="/help-center/internet-speed" className="text-phosphor-green hover:underline">IPTV internet speed benchmarks</a>, learn <a href="/what-is-iptv" className="text-phosphor-green hover:underline">how IPTV works</a> to understand streaming buffers, or review device setup steps.</p>
               </div>
               <div className="flex items-center gap-2 shrink-0">
                 <a
@@ -272,7 +272,7 @@ export default function TroubleshootingGuidePage({ slug }: { slug: string }) {
                 <div className="space-y-1">
                   <span className="text-snow font-semibold">Is the issue your home network or your IPTV provider?</span>
                   <p className="leading-relaxed">
-                    If local network troubleshooting does not stabilize your stream, your current provider&apos;s broadcast servers may be congested. Test your setup independently with an <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV free trial</a>, review <a href="/how-does-iptv-work" className="text-phosphor-green hover:underline font-medium">how IPTV works</a> to understand streaming infrastructure and buffer management, or explore verified <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-medium">IPTV subscription</a> plans and the <a href="/" className="text-phosphor-green hover:underline font-medium">Teleview IPTV service</a>.
+                    If local network troubleshooting does not stabilize your stream, your current provider&apos;s broadcast servers may be congested. Test your setup independently with an <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV free trial</a>, review <a href="/what-is-iptv" className="text-phosphor-green hover:underline font-medium">how IPTV works</a> to understand streaming infrastructure and buffer management, or explore verified <a href="/iptv-subscription" className="text-phosphor-green hover:underline font-medium">IPTV subscription</a> plans and the <a href="/" className="text-phosphor-green hover:underline font-medium">Teleview IPTV service</a>.
                   </p>
                 </div>
               </div>

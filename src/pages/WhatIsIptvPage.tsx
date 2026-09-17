@@ -30,6 +30,12 @@ import {
   iptvProtocolsList,
   whatIsIptvFaqs,
   iptvCoreTypes,
+  iptvSignalFlowStages,
+  networkTopologiesComparison,
+  broadcastLatencyStages,
+  glassToGlassLatencyComparison,
+  hardwareDecodingProfiles,
+  bandwidthConsumptionMatrix,
 } from "../data/whatIsIptv";
 
 export default function WhatIsIptvPage() {
@@ -123,62 +129,79 @@ export default function WhatIsIptvPage() {
             </div>
           </section>
 
-          {/* Section 1: How IPTV Works (Technical Architecture) */}
-          <section className="mt-14" aria-labelledby="architecture-heading">
+          {/* Section 1: How IPTV Works: The 6-Stage End-to-End Signal Pipeline */}
+          <section className="mt-14" id="how-it-works" aria-labelledby="architecture-heading">
             <div className="text-center mb-8">
               <h2 id="architecture-heading" className="text-xl sm:text-2xl font-bold text-snow">
-                How IPTV Works: The 4-Stage Streaming Architecture
+                How IPTV Works: The 6-Stage End-to-End Signal Pipeline
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[620px] mx-auto">
-                From satellite dish ingestion to your living room television screen, here is the technical path of an IPTV stream:
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[680px] mx-auto">
+                From high-gain satellite dish ingestion to your living room television screen, here is the complete engineering journey of an IPTV stream:
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {iptvArchitectureLayers.map((layer) => (
-                <article key={layer.step} className="rounded-xl border border-charcoal bg-ash/30 p-6 flex flex-col justify-between">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {iptvSignalFlowStages.map((stage) => (
+                <article key={stage.stageNumber} className="rounded-xl border border-charcoal bg-ash/30 p-5 sm:p-6 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center justify-between mb-3">
                       <span className="size-7 rounded-full bg-phosphor-green/20 border border-phosphor-green/40 font-mono text-xs font-bold text-phosphor-green flex items-center justify-center shrink-0">
-                        {layer.step}
+                        0{stage.stageNumber}
                       </span>
-                      <h3 className="text-sm sm:text-base font-semibold text-snow">{layer.title}</h3>
+                      <span className="text-[10px] font-mono text-phosphor-green/80 uppercase tracking-wider bg-ash px-2 py-0.5 rounded border border-charcoal">
+                        Stage 0{stage.stageNumber}
+                      </span>
                     </div>
+                    <h3 className="text-sm sm:text-base font-semibold text-snow">{stage.title}</h3>
+                    <p className="text-xs text-smoke font-medium mt-0.5 mb-2">{stage.subheading}</p>
                     <p className="text-xs sm:text-sm text-silver-mist leading-relaxed">
-                      {layer.description}
+                      {stage.technicalDetails}
                     </p>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-charcoal/60">
+                    <span className="text-[11px] font-mono text-snow/90 block">
+                      {stage.keyMetric}
+                    </span>
                   </div>
                 </article>
               ))}
             </div>
 
-            {/* Visual Signal Flow Architecture Box */}
+            {/* Visual Signal Flow Architecture Pipeline */}
             <div className="mt-6 rounded-xl border border-charcoal/80 bg-ink-800/60 p-4 sm:p-5">
               <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-mono">
-                <div className="flex flex-wrap items-center justify-center gap-2 text-center">
+                <div className="flex flex-wrap items-center justify-center gap-2 text-center w-full">
                   <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
-                    Satellite Downlink Ingest
+                    1. Satellite Ingest (1.5+ Gbps)
                   </span>
                   <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
                   <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
-                    Hardware Transcoder (H.264/HEVC)
+                    2. ASIC Transcode (HEVC/AV1)
                   </span>
                   <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
                   <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
-                    Multi-CDN Edge Cluster
+                    3. Chunk Packaging (.m3u8)
+                  </span>
+                  <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
+                  <span className="rounded-lg bg-ash px-3 py-1.5 text-snow border border-charcoal">
+                    4. Edge CDN Cache
                   </span>
                   <ArrowRight className="size-4 text-phosphor-green shrink-0 hidden sm:inline" aria-hidden="true" />
                   <span className="rounded-lg bg-ash px-3 py-1.5 text-phosphor-green border border-phosphor-green/30 font-semibold">
-                    Subscriber Player Buffer
+                    5 &amp; 6. RAM Buffer &amp; GPU Decode
                   </span>
                 </div>
-                <a
-                  href="/how-does-iptv-work"
-                  className="inline-flex items-center gap-1.5 text-xs text-phosphor-green hover:underline shrink-0 font-sans mt-2 md:mt-0 font-medium"
-                >
-                  <span>Read deep-dive signal guide</span>
-                  <ArrowRight className="size-3" aria-hidden="true" />
-                </a>
+              </div>
+            </div>
+
+            {/* Callout: Why I-Frame Intervals Dictate Channel Zapping Speed */}
+            <div className="mt-4 rounded-xl border border-phosphor-green/30 bg-phosphor-green/5 p-4 sm:p-5 flex items-start gap-3.5">
+              <Zap className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="space-y-1 text-xs sm:text-sm">
+                <h3 className="font-semibold text-snow">Why I-Frame Intervals Dictate Channel Zapping Speed</h3>
+                <p className="text-silver-mist leading-relaxed">
+                  When you switch channels on an IPTV application, the player software cannot render frames from intermediate predictive frames (P or B-frames); it must wait for a complete Intra-coded keyframe (I-frame). Encoders configured with short 1-to-2 second Group of Pictures (GOP) intervals allow near-instantaneous channel switching, whereas services configured with long 6-second keyframe intervals cause noticeable 3-to-4 second channel tuning delays.
+                </p>
               </div>
             </div>
           </section>
@@ -220,6 +243,47 @@ export default function WhatIsIptvPage() {
             </div>
           </section>
 
+          {/* Section: Network Topologies: Unicast vs Multicast vs Broadcast */}
+          <section className="mt-16" aria-labelledby="topologies-heading">
+            <div className="text-center mb-8">
+              <h2 id="topologies-heading" className="text-xl sm:text-2xl font-bold text-snow">
+                Network Topologies: Unicast vs. Multicast vs. Broadcast
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[660px] mx-auto">
+                The underlying routing topology determines how packets travel across physical boundaries, whether two-way interactive features are possible, and why public internet IPTV functions universally across any ISP:
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-charcoal bg-ash/30">
+              <table className="w-full text-left text-xs border-collapse min-w-[760px]">
+                <thead>
+                  <tr className="border-b border-charcoal bg-ink-800/80 text-smoke uppercase tracking-wider text-[11px]">
+                    <th scope="col" className="p-3.5 font-semibold">Architecture</th>
+                    <th scope="col" className="p-3.5 font-semibold">Transport Protocol</th>
+                    <th scope="col" className="p-3.5 font-semibold">Routing Model</th>
+                    <th scope="col" className="p-3.5 font-semibold">Network Boundary</th>
+                    <th scope="col" className="p-3.5 font-semibold">Public Internet</th>
+                    <th scope="col" className="p-3.5 font-semibold">Interactivity</th>
+                    <th scope="col" className="p-3.5 font-semibold">Zapping Speed</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  {networkTopologiesComparison.map((row, idx) => (
+                    <tr key={idx} className={row.architecture.includes("Public Internet IPTV") ? "bg-phosphor-green/5 hover:bg-phosphor-green/10 transition-colors" : "hover:bg-ash/40 transition-colors"}>
+                      <th scope="row" className="p-3.5 font-medium text-snow whitespace-nowrap">{row.architecture}</th>
+                      <td className="p-3.5 font-mono text-[11px] text-phosphor-green">{row.transportProtocol}</td>
+                      <td className="p-3.5">{row.routingModel}</td>
+                      <td className="p-3.5">{row.networkBoundary}</td>
+                      <td className="p-3.5">{row.publicInternetSupport}</td>
+                      <td className="p-3.5">{row.interactivity}</td>
+                      <td className="p-3.5 font-mono text-[11px]">{row.zappingLatency}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
           {/* Section 3: Key Protocols & Streaming Standards */}
           <section className="mt-16" aria-labelledby="protocols-heading">
             <div className="text-center mb-8">
@@ -251,6 +315,36 @@ export default function WhatIsIptvPage() {
                   </p>
                 </article>
               ))}
+            </div>
+
+            {/* Container Format vs Transport Protocol Callout */}
+            <div className="mt-6 rounded-xl border border-charcoal/80 bg-ink-800/60 p-4 sm:p-5 flex items-start gap-3.5">
+              <CheckCircle2 className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="space-y-1 text-xs sm:text-sm">
+                <h3 className="font-semibold text-snow">Container Format vs. Transport Protocol</h3>
+                <p className="text-silver-mist leading-relaxed">
+                  A frequent technical misunderstanding is confusing media file containers with network transport protocols. MPEG-TS (<code className="text-phosphor-green font-mono">.ts</code>) and Fragmented MP4 (<code className="text-phosphor-green font-mono">.m4s</code>) are <strong>container formats</strong> that encapsulate multiplexed video and audio elementary streams. In contrast, HTTP, TCP, and UDP are the <strong>transport protocols</strong> that packetize and carry those containers across IP networks.
+                </p>
+              </div>
+            </div>
+
+            {/* Adaptive Bitrate (ABR) vs Constant Bitrate (CBR) */}
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 text-xs sm:text-sm">
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="font-bold text-snow mb-1 text-sm sm:text-base">Adaptive Bitrate Streaming (ABR)</h3>
+                <p className="text-xs text-smoke font-mono mb-2">HLS &bull; MPEG-DASH &bull; Encoding Ladders</p>
+                <p className="text-silver-mist leading-relaxed text-xs">
+                  In ABR streaming, headend encoders output multiple parallel video tracks at stepped resolutions (e.g., 1080p @ 8 Mbps, 720p @ 4 Mbps, 480p @ 1.5 Mbps). The player software continuously measures chunk download throughput and local buffer fullness. If home Wi-Fi congests, the player steps down to a lower-bitrate chunk seamlessly without stream stoppage.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5">
+                <h3 className="font-bold text-snow mb-1 text-sm sm:text-base">Constant Bitrate Pacing (CBR)</h3>
+                <p className="text-xs text-phosphor-green font-mono mb-2">Raw MPEG-TS &bull; 60 FPS Live Sports Feeds</p>
+                <p className="text-silver-mist leading-relaxed text-xs">
+                  While ABR is critical for mobile devices, premium live sports IPTV broadcasts frequently utilize Constant Bitrate (CBR) or high-floor Constrained VBR over raw MPEG-TS. Sports fans require consistent 50 or 60 frames-per-second fidelity without mid-game resolution dips, provided the broadband connection provides adequate overhead.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -298,6 +392,76 @@ export default function WhatIsIptvPage() {
               </div>
             </div>
 
+            {/* Hardware Video Decoding Silicon & Codec Profiles */}
+            <div className="mt-8 pt-6 border-t border-charcoal/60">
+              <h3 className="text-base sm:text-lg font-bold text-snow mb-2">
+                Client Hardware Video Decoding: Dedicated SoC VPUs vs. CPU Emulation
+              </h3>
+              <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-4">
+                At 60 frames per second, a streaming device must decompress a fresh video frame every 16.6 milliseconds. Modern streaming players offload bitstream processing to dedicated silicon blocks known as <strong className="text-snow">Video Processing Units (VPUs)</strong> within the System-on-Chip (SoC). Hardware decoding consumes less than 5% CPU power and produces negligible heat. In contrast, software CPU decoding forces general processor cores to compute matrix math, leading to thermal throttling, dropped frames, audio desync, and player crashes on underpowered TV sticks.
+              </p>
+
+              <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80 mb-6">
+                <table className="w-full text-left text-xs border-collapse min-w-[680px]">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
+                      <th scope="col" className="p-3.5 font-semibold">Codec Standard</th>
+                      <th scope="col" className="p-3.5 font-semibold">Compression Efficiency</th>
+                      <th scope="col" className="p-3.5 font-semibold">Silicon / Hardware Support</th>
+                      <th scope="col" className="p-3.5 font-semibold">Bandwidth Profile</th>
+                      <th scope="col" className="p-3.5 font-semibold">Primary Use Case</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    {hardwareDecodingProfiles.map((p, idx) => (
+                      <tr key={idx} className="hover:bg-ash/40 transition-colors">
+                        <th scope="row" className="p-3.5 font-mono text-phosphor-green font-semibold whitespace-nowrap">{p.codec}</th>
+                        <td className="p-3.5">{p.efficiency}</td>
+                        <td className="p-3.5">{p.hardwareRequirement}</td>
+                        <td className="p-3.5 font-mono text-[11px]">{p.bandwidthRequirement}</td>
+                        <td className="p-3.5">{p.typicalUse}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Bandwidth Consumption Matrix */}
+              <h3 className="text-base sm:text-lg font-bold text-snow mb-2">
+                Practical Broadband Bitrates &amp; Hourly Data Consumption
+              </h3>
+              <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-4">
+                Packetized streaming pulls data in brief bursts rather than an unbroken flat line. To absorb burst peaks and household Wi-Fi contention, your dedicated internet speed should offer a 50% to 100% buffer over the raw stream bitrate:
+              </p>
+
+              <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80">
+                <table className="w-full text-left text-xs border-collapse min-w-[680px]">
+                  <thead>
+                    <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
+                      <th scope="col" className="p-3.5 font-semibold">Resolution Profile</th>
+                      <th scope="col" className="p-3.5 font-semibold">Frame Rate</th>
+                      <th scope="col" className="p-3.5 font-semibold">Codec</th>
+                      <th scope="col" className="p-3.5 font-semibold">Stream Bitrate</th>
+                      <th scope="col" className="p-3.5 font-semibold">Minimum Broadband</th>
+                      <th scope="col" className="p-3.5 font-semibold">Data / Hour</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                    {bandwidthConsumptionMatrix.map((b, idx) => (
+                      <tr key={idx} className="hover:bg-ash/40 transition-colors">
+                        <th scope="row" className="p-3.5 font-medium text-snow">{b.resolutionProfile}</th>
+                        <td className="p-3.5 font-mono text-phosphor-green">{b.frameRate}</td>
+                        <td className="p-3.5">{b.recommendedCodec}</td>
+                        <td className="p-3.5 font-mono text-[11px]">{b.streamBitrate}</td>
+                        <td className="p-3.5 font-mono text-[11px] text-snow font-semibold">{b.minimumDedicatedBroadband}</td>
+                        <td className="p-3.5 font-mono text-[11px]">{b.hourlyDataUsage}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             <div className="mt-6 pt-4 border-t border-charcoal/60 flex flex-wrap items-center justify-between gap-3 text-xs">
               <span className="text-smoke">Explore hardware compatibility and client applications:</span>
               <div className="flex items-center gap-4">
@@ -320,61 +484,70 @@ export default function WhatIsIptvPage() {
             </div>
           </section>
 
-          {/* Section 4.5: Broadcast Delay & Latency Benchmarks */}
+          {/* Section 4.5: Broadcast Delay, Buffer Mechanics & Latency Benchmarks */}
           <section className="mt-16 rounded-2xl border border-charcoal bg-ash/30 p-6 sm:p-8" aria-labelledby="latency-benchmarks-heading">
             <div className="flex items-center gap-3 mb-3">
               <Clock className="size-6 text-phosphor-green shrink-0" aria-hidden="true" />
               <h2 id="latency-benchmarks-heading" className="text-xl sm:text-2xl font-bold text-snow">
-                Broadcast Latency: How IPTV Transmission Speeds Compare
+                Broadcast Latency: Why IPTV Lags Live Broadcast by 15–30 Seconds
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-silver-mist leading-relaxed mb-6">
-              A common technical question among live sports viewers is broadcast delay (the time elapsed between a live stadium play and its appearance on screen). Here is how major transmission technologies compare:
+              Viewers frequently observe that live sporting events on IPTV lag 15 to 30 seconds behind over-the-air antenna broadcasts. This delay is not a glitch; it is the engineered sum of digital encoding, chunk packaging, CDN edge caching, and client-side jitter buffers:
             </p>
 
+            {/* Delay Component Breakdown */}
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-6 text-xs">
+              {broadcastLatencyStages.map((stage, idx) => (
+                <div key={idx} className="rounded-xl border border-charcoal bg-ink-800/80 p-4 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="font-semibold text-snow">{stage.stage}</span>
+                      <span className="text-[11px] font-mono text-phosphor-green font-semibold bg-ash px-2 py-0.5 rounded border border-charcoal">
+                        {stage.delayRange}
+                      </span>
+                    </div>
+                    <p className="text-silver-mist leading-relaxed">
+                      {stage.engineeringExplanation}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Glass-to-Glass Comparison Table */}
             <div className="overflow-x-auto rounded-xl border border-charcoal bg-ink-800/80">
-              <table className="w-full text-left text-xs border-collapse min-w-[620px]">
+              <table className="w-full text-left text-xs border-collapse min-w-[660px]">
                 <thead>
                   <tr className="border-b border-charcoal bg-ink-900/90 text-smoke uppercase tracking-wider text-[11px]">
                     <th scope="col" className="p-3.5 font-semibold">Broadcast Technology</th>
-                    <th scope="col" className="p-3.5 font-semibold">Typical Latency</th>
                     <th scope="col" className="p-3.5 font-semibold">Transmission Conduit</th>
-                    <th scope="col" className="p-3.5 font-semibold">Technical Bottleneck</th>
+                    <th scope="col" className="p-3.5 font-semibold">Typical Latency</th>
+                    <th scope="col" className="p-3.5 font-semibold">Primary Source of Delay</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-charcoal/60 text-silver-mist">
-                  <tr className="hover:bg-ash/40 transition-colors">
-                    <th scope="row" className="p-3.5 font-medium text-snow">Over-The-Air (OTA) Antenna</th>
-                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">3 &ndash; 5 seconds</td>
-                    <td className="p-3.5">Terrestrial radio frequency (ATSC/DVB-T)</td>
-                    <td className="p-3.5">Speed-of-light RF propagation (Lowest delay)</td>
-                  </tr>
-                  <tr className="hover:bg-ash/40 transition-colors">
-                    <th scope="row" className="p-3.5 font-medium text-snow">Traditional Digital Cable</th>
-                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">5 &ndash; 8 seconds</td>
-                    <td className="p-3.5">Dedicated coaxial cable (QAM modulation)</td>
-                    <td className="p-3.5">Hardware set-top box decoding delay</td>
-                  </tr>
-                  <tr className="hover:bg-ash/40 transition-colors">
-                    <th scope="row" className="p-3.5 font-medium text-snow">Satellite Television</th>
-                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">5 &ndash; 7 seconds</td>
-                    <td className="p-3.5">Geostationary satellite uplink/downlink (DVB-S2)</td>
-                    <td className="p-3.5">70,000 km orbital round-trip propagation</td>
-                  </tr>
-                  <tr className="hover:bg-ash/40 transition-colors bg-phosphor-green/5">
-                    <th scope="row" className="p-3.5 font-medium text-snow">MPEG-TS / HLS IPTV Streams</th>
-                    <td className="p-3.5 font-mono text-phosphor-green font-semibold">10 &ndash; 20 seconds</td>
-                    <td className="p-3.5">Edge CDN unicast over public internet</td>
-                    <td className="p-3.5">Encoder segmenting + player RAM cache</td>
-                  </tr>
-                  <tr className="hover:bg-ash/40 transition-colors">
-                    <th scope="row" className="p-3.5 font-medium text-snow">Commercial OTT Apps (YouTube TV, Hulu)</th>
-                    <td className="p-3.5 font-mono text-smoke">45 &ndash; 60+ seconds</td>
-                    <td className="p-3.5">Multi-bitrate HLS / DASH packaging</td>
-                    <td className="p-3.5">Large 6s chunk playlists + DRM license verification</td>
-                  </tr>
+                  {glassToGlassLatencyComparison.map((row, idx) => (
+                    <tr key={idx} className={row.broadcastTechnology.includes("Standard IPTV") ? "bg-phosphor-green/5 hover:bg-phosphor-green/10 transition-colors" : "hover:bg-ash/40 transition-colors"}>
+                      <th scope="row" className="p-3.5 font-medium text-snow">{row.broadcastTechnology}</th>
+                      <td className="p-3.5">{row.transmissionMedium}</td>
+                      <td className="p-3.5 font-mono text-phosphor-green font-semibold">{row.typicalLatency}</td>
+                      <td className="p-3.5">{row.primarySourceOfDelay}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Callout: Buffer Size Trade-Offs in IPTV Player Apps */}
+            <div className="mt-4 rounded-xl border border-charcoal/80 bg-ink-800/60 p-4 sm:p-5 flex items-start gap-3.5">
+              <Sliders className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="space-y-1 text-xs sm:text-sm">
+                <h3 className="font-semibold text-snow">Buffer Size Trade-Offs in IPTV Player Settings</h3>
+                <p className="text-silver-mist leading-relaxed">
+                  Configuring a player application&apos;s buffer size to &quot;Very Large&quot; (5,000ms–10,000ms) offers maximum immunity against Wi-Fi packet jitter, but adds 5 to 10 seconds of broadcast latency and increases channel zapping wait times. Conversely, setting buffer to &quot;None&quot; (0ms) provides instantaneous channel tuning but causes recurring stutter at the slightest packet retransmission. A standard 2,000ms–3,000ms buffer balances instant tuning with network stability.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -768,17 +941,17 @@ export default function WhatIsIptvPage() {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-xs">
               <a
-                href="/how-does-iptv-work"
+                href="/setup"
                 className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
-                    How Does IPTV Work?
+                    Universal Setup Guide
                   </span>
                   <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
                 </div>
                 <p className="text-silver-mist">
-                  In-depth breakdown of unicast/multicast delivery, HLS/MPEG-TS protocols, CDN caching, and decoders.
+                  Master step-by-step installation instructions for Firestick, Smart TVs, Android TV, Apple TV, and PC.
                 </p>
               </a>
 
@@ -828,21 +1001,6 @@ export default function WhatIsIptvPage() {
               </a>
 
               <a
-                href="/iptv-cost"
-                className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-semibold text-snow group-hover:text-phosphor-green transition-colors">
-                    How Much Does IPTV Cost?
-                  </span>
-                  <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
-                </div>
-                <p className="text-silver-mist">
-                  Real-world pricing benchmarks, streaming device setup fees, premium player licenses, and total cost of ownership.
-                </p>
-              </a>
-
-              <a
                 href="/iptv-pricing"
                 className="rounded-xl border border-charcoal bg-ink-800/80 p-4 hover:border-phosphor-green/40 transition-colors group block"
               >
@@ -853,7 +1011,7 @@ export default function WhatIsIptvPage() {
                   <ArrowRight className="size-3 text-smoke group-hover:text-phosphor-green transition-colors" />
                 </div>
                 <p className="text-silver-mist">
-                  Compare monthly vs annual subscription models, multi-device savings, and plan selection factors.
+                  Compare monthly vs annual subscription models, total cost of ownership, and multi-month volume savings.
                 </p>
               </a>
 

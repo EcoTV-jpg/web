@@ -16,12 +16,11 @@ const navGroups = [
   {
     label: "Learn",
     items: [
-      { label: "What Is IPTV?", href: "/what-is-iptv", desc: "How IPTV works" },
-      { label: "How IPTV Works", href: "/how-does-iptv-work", desc: "Streaming protocols & architecture" },
+      { label: "What Is IPTV?", href: "/what-is-iptv", desc: "Streaming technology & architecture" },
+      { label: "IPTV Pricing Guide", href: "/iptv-pricing", desc: "Pricing economics & total costs" },
       { label: "Is IPTV Legal?", href: "/is-iptv-legal", desc: "Regulatory & copyright breakdown" },
       { label: "Is IPTV Safe?", href: "/is-iptv-safe", desc: "Cybersecurity & stream safety" },
       { label: "IPTV vs Cable", href: "/iptv-vs-cable", desc: "Feature & cost comparison" },
-      { label: "IPTV Cost Guide", href: "/iptv-cost", desc: "Equipment & subscription economics" },
       { label: "Setup Guide", href: "/setup", desc: "Installation & configuration" },
     ],
   },

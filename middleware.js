@@ -4,6 +4,10 @@ export const config = {
     "/best-iptv/",
     "/guides/best-iptv-service",
     "/guides/best-iptv-service/",
+    "/iptv-cost",
+    "/iptv-cost/",
+    "/how-does-iptv-work",
+    "/how-does-iptv-work/",
   ],
 };
 
@@ -39,4 +43,13 @@ export default function middleware(request) {
       },
     });
   }
+
+  if (pathname === "/iptv-cost") {
+    return Response.redirect(new URL("/iptv-pricing", request.url), 308);
+  }
+
+  if (pathname === "/how-does-iptv-work") {
+    return Response.redirect(new URL("/what-is-iptv", request.url), 308);
+  }
 }
+

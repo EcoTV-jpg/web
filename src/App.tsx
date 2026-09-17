@@ -83,6 +83,12 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/what-is-iptv") {
     return <WhatIsIptvPage />;
   }
+  if (currentPath === "/how-does-iptv-work") {
+    if (typeof window !== "undefined") {
+      window.location.replace("/what-is-iptv");
+    }
+    return <WhatIsIptvPage />;
+  }
   if (currentPath === "/devices") {
     return <DevicesPage />;
   }
@@ -123,10 +129,9 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/iptv-pricing") {
     return <PricingPage />;
   }
-  if (currentPath === "/pricing") {
-    // Legacy alias: server 301 (dev/preview) and Vercel 308 (production)
-    // redirect to /iptv-pricing; this client-side redirect is a fallback
-    // for environments without server redirect rules.
+  if (currentPath === "/pricing" || currentPath === "/iptv-cost") {
+    // Legacy / merged alias: server 301/308 redirect; this client-side
+    // redirect is a fallback for environments without server redirect rules.
     if (typeof window !== "undefined") {
       window.location.replace("/iptv-pricing");
     }
@@ -136,10 +141,8 @@ export default function App({ url }: { url?: string }) {
     return <FreeTrialPage />;
   }
   if (
-    currentPath === "/how-does-iptv-work" ||
     currentPath === "/is-iptv-legal" ||
     currentPath === "/is-iptv-safe" ||
-    currentPath === "/iptv-cost" ||
     currentPath === "/iptv-vs-cable"
   ) {
     const slug = currentPath.replace(/^\//, "");

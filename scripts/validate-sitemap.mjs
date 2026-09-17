@@ -50,10 +50,8 @@ const APPROVED_SITEMAP_PATHS = [
   "/help-center/connection-problems",
   "/help-center/internet-speed",
   "/iptv-pricing",
-  "/how-does-iptv-work",
   "/is-iptv-legal",
   "/is-iptv-safe",
-  "/iptv-cost",
   "/iptv-vs-cable",
   "/iptv-channels",
   "/iptv-sports",
@@ -66,6 +64,8 @@ const EXCLUDED_SLUGS = [
   "/404",
   "/pricing",
   "/best-iptv",
+  "/iptv-cost",
+  "/how-does-iptv-work",
 ];
 
 async function validateSitemap() {

@@ -33,7 +33,7 @@ async function runSemanticAudit() {
   const { siteConfig, getCanonicalUrl } = await import("../src/config/site.ts");
 
   console.log(`Auditing ${sitemapRoutes.length} approved canonical sitemap routes...\n`);
-  check("ROUTING", "Expected 50 canonical sitemap routes", sitemapRoutes.length === 50, `Found ${sitemapRoutes.length}`);
+  check("ROUTING", "Expected 48 canonical sitemap routes", sitemapRoutes.length === 48, `Found ${sitemapRoutes.length}`);
 
   const titlesMap = new Map();
   const descriptionsMap = new Map();

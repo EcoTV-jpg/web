@@ -105,11 +105,10 @@ export default function Footer() {
               <h3 className="text-xs font-semibold text-snow uppercase tracking-wider">Guides &amp; Tech</h3>
               <ul className="mt-3 space-y-2 text-xs text-silver-mist">
                 <li><a href="/what-is-iptv" className="hover:text-snow transition-colors">What is IPTV?</a></li>
-                <li><a href="/how-does-iptv-work" className="hover:text-snow transition-colors">How Does IPTV Work?</a></li>
+                <li><a href="/iptv-pricing" className="hover:text-snow transition-colors">IPTV Pricing Guide</a></li>
                 <li><a href="/is-iptv-legal" className="hover:text-snow transition-colors">Is IPTV Legal?</a></li>
                 <li><a href="/is-iptv-safe" className="hover:text-snow transition-colors">Is IPTV Safe?</a></li>
                 <li><a href="/iptv-vs-cable" className="hover:text-snow transition-colors">IPTV vs Cable</a></li>
-                <li><a href="/iptv-cost" className="hover:text-snow transition-colors">IPTV Cost Breakdown</a></li>
                 <li><a href="/devices" className="hover:text-snow transition-colors">Supported Devices</a></li>
                 <li><a href="/iptv-players" className="hover:text-snow transition-colors">IPTV Players Directory</a></li>
               </ul>

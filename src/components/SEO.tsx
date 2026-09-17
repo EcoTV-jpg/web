@@ -210,10 +210,8 @@ export function generateStructuredData(path: string = "/") {
         ],
       };
     } else if (
-      cleanPath === "/how-does-iptv-work" ||
       cleanPath === "/is-iptv-legal" ||
       cleanPath === "/is-iptv-safe" ||
-      cleanPath === "/iptv-cost" ||
       cleanPath === "/iptv-vs-cable"
     ) {
       const slug = cleanPath.slice(1);
@@ -912,7 +910,7 @@ export function generateStructuredData(path: string = "/") {
     graphEntities.push(pricingArticleSchema, pricingFaqSchema);
   }
 
-  // Routes: Informational Guides (/how-does-iptv-work, /is-iptv-legal, /is-iptv-safe, /iptv-cost, /iptv-vs-cable)
+  // Routes: Informational Guides (/is-iptv-legal, /is-iptv-safe, /iptv-vs-cable)
   const infoGuide = informationalGuidesList.find((g) => `/${g.slug}` === cleanPath);
   if (infoGuide) {
     webpageSchema.about = { "@id": `${siteConfig.url}/${infoGuide.slug}#article` };
@@ -932,7 +930,7 @@ export function generateStructuredData(path: string = "/") {
       },
       datePublished: "2026-01-01T00:00:00+00:00",
       dateModified: route?.lastmod ? `${route.lastmod}T00:00:00+00:00` : "2026-09-07T12:00:00+00:00",
-      proficiencyLevel: cleanPath === "/how-does-iptv-work" ? "Intermediate" : "Beginner",
+      proficiencyLevel: "Beginner",
       about: [
         { "@type": "Thing", name: infoGuide.category },
         { "@type": "Thing", name: "Internet Protocol television" },

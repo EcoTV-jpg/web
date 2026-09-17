@@ -144,7 +144,7 @@ check("C3b", "price.effectiveMonthly in {7.50,10,13,16}", () => {
   for (const h of hits) {
     const before = windowBefore(h.file, h.index, 120);
     const after = windowAfter(h.file, h.index, h.match.length, 60);
-    if (/\$\d[\d.]*\s*-\s*$/.test(before)) continue; // '$90 - $180/mo' style market ranges
+    if (/\$\d[\d.]*\s*[-–—]\s*$/.test(before)) continue; // '$90 - $180/mo' style market ranges
     if (/typically|usually|averages?|market|industry|cable|satellite|competitor|reseller|provider|charges|expensive|bills|legacy|ranges? between/i.test(before)) continue; // market/cable context
     if (/programming|fee|rental|regional|streaming pass|equipment|reseller|markup|competitor|market/i.test(after)) continue; // cable-fee footnotes, reseller-markup prose
     checked += 1;

@@ -17,6 +17,9 @@ import {
   Calculator,
   Flame,
   BadgePercent,
+  HardDrive,
+  Wifi,
+  AlertTriangle,
 } from "lucide-react";
 import {
   pricingTierComparisons,
@@ -27,6 +30,9 @@ import {
   pricingEvaluationFactors,
   pricingMethodologyPoints,
   pricingFaqs,
+  hardwareAndSetupExpenses,
+  bandwidthConsumptionTiers,
+  budgetTrapComparisons,
 } from "../data/pricingGuide";
 
 export default function PricingPage() {
@@ -485,12 +491,120 @@ export default function PricingPage() {
                 <a href="/iptv-vs-cable" className="text-phosphor-green font-semibold hover:underline">
                   IPTV vs Cable TV: Cost, Channels &amp; Features Compared
                 </a>{" "}
-                or review our total cost analysis on{" "}
-                <a href="/iptv-cost" className="text-phosphor-green font-semibold hover:underline">
-                  IPTV Cost Economics
-                </a>
-                .
+                or explore our comprehensive equipment and setup cost breakdown below.
               </p>
+            </div>
+          </section>
+
+          {/* Section: Total Cost of Ownership (Migrated from /iptv-cost) */}
+          <section className="mt-16" aria-labelledby="tco-heading">
+            <div className="text-center mb-8 max-w-[760px] mx-auto">
+              <span className="label-mono text-phosphor-green text-xs">Total Cost of Ownership</span>
+              <h2 id="tco-heading" className="text-xl sm:text-2xl font-bold text-snow mt-1">
+                The True Cost Breakdown of an IPTV Setup
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                Unlike legacy cable contracts that require mandatory equipment leases and surprise broadcast fees, switching to IPTV involves transparent, one-time hardware investments paired with pre-paid service access:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {hardwareAndSetupExpenses.map((exp, idx) => (
+                <div key={idx} className="rounded-xl border border-charcoal bg-ash/20 p-5 space-y-2 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-xs font-bold text-snow">{exp.category}</span>
+                      <span className="text-xs font-mono font-bold text-phosphor-green bg-phosphor-green/10 border border-phosphor-green/30 px-2.5 py-0.5 rounded-full">
+                        {exp.oneTimeCost}
+                      </span>
+                    </div>
+                    <p className="text-xs text-silver-mist leading-relaxed mt-2.5">{exp.notes}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-xl border border-charcoal bg-ash/30 p-5 flex items-start gap-3.5">
+              <HardDrive className="size-5 text-phosphor-green shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="text-xs text-silver-mist leading-relaxed">
+                <strong className="text-snow">Average Household First-Year TCO:</strong> A household purchasing a brand-new Fire TV Stick 4K ($49.99) and an annual Teleview subscription ($90.00) invests exactly <strong className="text-phosphor-green">$139.99 total for the entire first year</strong>. In Year 2, hardware costs drop to $0, and the entire television budget is just $90 flat.
+              </div>
+            </div>
+          </section>
+
+          {/* Section: Broadband Bandwidth & ISP Data Cap Economics (Migrated from /iptv-cost) */}
+          <section className="mt-16" aria-labelledby="bandwidth-heading">
+            <div className="text-center mb-8 max-w-[760px] mx-auto">
+              <span className="label-mono text-phosphor-green text-xs">Broadband &amp; Data Consumption</span>
+              <h2 id="bandwidth-heading" className="text-xl sm:text-2xl font-bold text-snow mt-1">
+                Broadband Bandwidth &amp; ISP Data Cap Economics
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                Streaming continuous live television over home broadband consumes monthly bandwidth. Review how different resolutions impact standard ISP data caps:
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-xl border border-charcoal bg-ash/20">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-charcoal bg-ash/40 text-snow font-mono text-[11px] uppercase tracking-wider">
+                    <th className="p-3.5">Video Resolution</th>
+                    <th className="p-3.5">Hourly Data Usage</th>
+                    <th className="p-3.5">Monthly Usage (4 Hrs/Day)</th>
+                    <th className="p-3.5">Standard 1.2 TB ISP Cap Impact</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal/60 text-silver-mist">
+                  {bandwidthConsumptionTiers.map((tier, idx) => (
+                    <tr key={idx} className="hover:bg-ash/30 transition-colors">
+                      <td className="p-3.5 font-semibold text-snow">{tier.resolution}</td>
+                      <td className="p-3.5 font-mono text-phosphor-green">{tier.hourlyConsumption}</td>
+                      <td className="p-3.5 font-mono text-snow">{tier.monthly4HoursDaily}</td>
+                      <td className="p-3.5">{tier.ispCapImpact}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-4 flex items-center gap-2 text-xs text-smoke">
+              <Wifi className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+              <span>
+                Tip: Setting player default stream resolution to 1080p Full HD saves over 60% data consumption compared to 4K UHD with virtually imperceptible visual difference on screens under 65 inches.
+              </span>
+            </div>
+          </section>
+
+          {/* Section: Beware the 'Too Cheap to Be True' Traps (Migrated from /iptv-cost) */}
+          <section className="mt-16" aria-labelledby="traps-heading">
+            <div className="text-center mb-8 max-w-[760px] mx-auto">
+              <span className="label-mono text-phosphor-green text-xs">Consumer Protection</span>
+              <h2 id="traps-heading" className="text-xl sm:text-2xl font-bold text-snow mt-1">
+                Beware the &apos;Too Cheap to Be True&apos; Traps
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed">
+                When an unverified provider charges $2 to $4 per month or advertises a &ldquo;$30 lifetime subscription&rdquo;, they cut corners on server infrastructure and stream transcoding:
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {budgetTrapComparisons.map((trap, idx) => (
+                <div key={idx} className="rounded-xl border border-charcoal bg-ash/20 p-5 space-y-3 flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-1.5 text-amber-400 text-xs font-bold">
+                      <AlertTriangle className="size-3.5 shrink-0" aria-hidden="true" />
+                      <span>{trap.trapTitle}</span>
+                    </div>
+                    <div className="mt-2 text-xs font-mono text-smoke">
+                      Advertised: <span className="text-snow line-through">{trap.advertisedLure}</span>
+                    </div>
+                    <p className="mt-2 text-xs text-silver-mist leading-relaxed">{trap.underlyingRisk}</p>
+                  </div>
+                  <div className="pt-3 border-t border-charcoal/60 text-[11px] text-phosphor-green font-medium">
+                    Teleview: {trap.televiewStandard}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 

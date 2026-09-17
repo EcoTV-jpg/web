@@ -303,6 +303,91 @@ export const pricingEvaluationFactors = [
   },
 ];
 
+export interface HardwareExpenseItem {
+  category: string;
+  oneTimeCost: string;
+  notes: string;
+}
+
+export const hardwareAndSetupExpenses: HardwareExpenseItem[] = [
+  {
+    category: "Streaming Media Player (Hardware)",
+    oneTimeCost: "$0 – $150 (One-Time)",
+    notes: "Amazon Fire TV Stick 4K ($35–$50), Google TV Streamer ($50), or Apple TV 4K ($130). Owners of Samsung (Tizen) or LG (webOS) Smart TVs can install native apps with $0 hardware expenditure.",
+  },
+  {
+    category: "IPTV Player Application (Software)",
+    oneTimeCost: "Free – $35 (One-Time)",
+    notes: "Quality players like VLC and IPTV Smarters Pro offer free tiers. Advanced power-user applications like TiviMate Premium charge a one-time lifetime license (~$35 for up to 5 devices).",
+  },
+  {
+    category: "IPTV Service Subscription (Teleview)",
+    oneTimeCost: "$7.50 – $16.00 / month",
+    notes: "Pre-paid access covering 25,000+ live channels, 100k VOD, and 50/60 FPS sports. Zero recurring credit card auto-debits, contracts, or cancellation fees.",
+  },
+  {
+    category: "Cable Surcharges IPTV Completely Eliminates",
+    oneTimeCost: "Saves $45 – $60 / month",
+    notes: "IPTV eliminates mandatory cable add-ons: Broadcast TV Surcharges (avg $21.20/mo), Regional Sports Fees (avg $15.35/mo), and proprietary set-top box rentals ($11.50/box/mo per TV).",
+  },
+];
+
+export interface BandwidthUsageTier {
+  resolution: string;
+  hourlyConsumption: string;
+  monthly4HoursDaily: string;
+  ispCapImpact: string;
+}
+
+export const bandwidthConsumptionTiers: BandwidthUsageTier[] = [
+  {
+    resolution: "Standard Definition (SD / 576p)",
+    hourlyConsumption: "0.8 – 1.2 GB / hour",
+    monthly4HoursDaily: "~120 GB / month",
+    ispCapImpact: "Minimal (<10% of standard 1.2 TB data caps)",
+  },
+  {
+    resolution: "Full High Definition (1080p / 60 FPS)",
+    hourlyConsumption: "2.5 – 3.5 GB / hour",
+    monthly4HoursDaily: "~360 GB / month",
+    ispCapImpact: "Moderate (~30% of standard 1.2 TB data caps)",
+  },
+  {
+    resolution: "4K Ultra HD (2160p HDR)",
+    hourlyConsumption: "7.0 – 10.0 GB / hour",
+    monthly4HoursDaily: "~840 GB / month",
+    ispCapImpact: "Significant (~70% of standard 1.2 TB data caps)",
+  },
+];
+
+export interface BudgetTrapItem {
+  trapTitle: string;
+  advertisedLure: string;
+  underlyingRisk: string;
+  televiewStandard: string;
+}
+
+export const budgetTrapComparisons: BudgetTrapItem[] = [
+  {
+    trapTitle: "Under-Powered Shared VPS Hosting",
+    advertisedLure: "$2 - $4 per month",
+    underlyingRisk: "Providers host thousands of subscribers on cheap, shared VPS instances that immediately buckle into endless buffering loops during high-profile sports events.",
+    televiewStandard: "Multi-CDN reverse-proxy architecture with dedicated edge node caching and bandwidth throttling failovers.",
+  },
+  {
+    trapTitle: "Choppy 25/30 FPS Transcoding",
+    advertisedLure: "'Cheap Full HD' claims",
+    underlyingRisk: "Sports feeds look blurry and juddery because providers use cheap software CPU encoders rather than dedicated hardware ASICs supporting true 50/60 FPS.",
+    televiewStandard: "High-frame-rate 50/60 FPS broadcast ingest with hardware-accelerated HEVC/H.265 transcoding on live sports feeds.",
+  },
+  {
+    trapTitle: "The 'Lifetime Access' Disappearing Scam",
+    advertisedLure: "$30 – $50 'Lifetime' pass",
+    underlyingRisk: "Economically unsustainable business model. The service operates for 2 to 4 months before disappearing, leaving subscribers with zero recourse or refunds.",
+    televiewStandard: "Sustainable term-based subscriptions (1, 3, 6, 12 months) protected by a legally binding 14-day refund guarantee.",
+  },
+];
+
 export const pricingMethodologyPoints = [
   {
     title: "Transparent Advertised Pricing",
@@ -336,6 +421,18 @@ export const pricingFaqs: PricingFaq[] = [
     answer: "Teleview IPTV subscription plans start at $7.50 per month on the 12-month tier ($90 total). Shorter plans include 6 months at $60 ($10.00/mo), 3 months at $39 ($13.00/mo), and a 1-month commitment at $16 ($16.00/mo). All plans include the complete channel and VOD catalog with zero hidden fees.",
   },
   {
+    question: "How does IPTV pricing compare to YouTube TV, Hulu + Live TV, or Fubo?",
+    answer: "Virtual MVPD streaming services like YouTube TV ($73+/mo), Hulu + Live TV ($77+/mo), and Fubo ($80+/mo) provide 85 to 100 channels with heavy regional blackouts. By comparison, an annual Teleview IPTV subscription costs $7.50/month ($90/year) and provides access to over 25,000 international and domestic channels, live sports feeds with 60 FPS, and a 100k+ on-demand movie library.",
+  },
+  {
+    question: "What is the total cost of ownership (TCO) including equipment and internet?",
+    answer: "If you already own an Amazon Firestick, Google TV, or Smart TV, your upfront hardware cost is $0. If you need a streaming stick, a Fire TV Stick 4K costs roughly $35 to $50 once. Combined with Teleview's annual subscription ($90/year), your total first-year TV entertainment expense is approximately $125 to $140 total—compared to over $1,200 to $1,800 annually for traditional cable.",
+  },
+  {
+    question: "Will IPTV streaming cause me to exceed my broadband provider's monthly data cap?",
+    answer: "For households with standard 1.2 TB ISP monthly data caps (such as Comcast/Xfinity), 4 hours of daily 1080p Full HD streaming consumes approximately 360 GB per month, leaving over 800 GB for web browsing, gaming, and remote work. If you stream exclusively in 4K UHD, data usage averages ~840 GB/month. Setting default streams to 1080p easily conserves data for multi-TV households.",
+  },
+  {
     question: "What is the cheapest Teleview IPTV plan?",
     answer: "The 1-month subscription at $16.00 is the lowest upfront payment, making it ideal for testing stream stability or watching a single sports tournament. However, the 12-month plan at $90.00 provides the lowest effective monthly price at $7.50 per month.",
   },
@@ -350,6 +447,10 @@ export const pricingFaqs: PricingFaq[] = [
   {
     question: "What should I compare before buying an IPTV subscription?",
     answer: "Before purchasing, evaluate four critical factors: server stability during live sports, EPG TV guide accuracy, customer support responsiveness, and whether billing is non-recurring pre-paid or recurring auto-debit. We strongly recommend testing our complimentary 24-hour IPTV free trial before committing to any paid plan.",
+  },
+  {
+    question: "Are there any contracts or cancellation fees?",
+    answer: "No. Teleview IPTV subscriptions are strictly pre-paid for the term selected. There are no contracts, no credit checks, and no cancellation penalties when your term concludes.",
   },
   {
     question: "Are there any hidden activation fees, equipment charges, or contract cancellation penalties?",

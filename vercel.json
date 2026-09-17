@@ -113,6 +113,16 @@
       "permanent": true
     },
     {
+      "source": "/iptv-cost",
+      "destination": "/iptv-pricing",
+      "permanent": true
+    },
+    {
+      "source": "/how-does-iptv-work",
+      "destination": "/what-is-iptv",
+      "permanent": true
+    },
+    {
       "source": "/tutorial",
       "destination": "/setup",
       "permanent": true
