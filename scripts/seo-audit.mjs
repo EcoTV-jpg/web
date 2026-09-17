@@ -172,6 +172,7 @@ async function runSeoAudit() {
     "/iptv-channels",
     "/iptv-sports",
     "/iptv-movies",
+    "/about",
   ];
 
   for (const routePath of prerenderRoutesList) {
@@ -210,6 +211,36 @@ async function runSeoAudit() {
     assert("vercel.json redirects /devices/smart-tv to /devices/samsung-smart-tv", vercelConfig.redirects?.some(r => r.source === "/devices/smart-tv" && r.destination === "/devices/samsung-smart-tv" && r.permanent));
     assert("vercel.json contains exactly 24 redirect rules", vercelConfig.redirects?.length === 24);
   }
+
+  // 1.2 Global Footprint Sweep (Zero Yoast / WordPress in all dist and source HTML files)
+  console.log("\n--- 1.2 GLOBAL FOOTPRINT SWEEP (YOAST / WORDPRESS ELIMINATION) ---");
+  const scanFilesForFootprint = (dir) => {
+    let files = [];
+    if (!fs.existsSync(dir)) return files;
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        files.push(...scanFilesForFootprint(full));
+      } else if (/\.(html|xml|txt|js|css|json)$/i.test(entry.name)) {
+        files.push(full);
+      }
+    }
+    return files;
+  };
+  const filesToAudit = [
+    path.resolve(rootDir, "index.html"),
+    path.resolve(rootDir, "public/404.html"),
+    ...scanFilesForFootprint(distDir),
+  ];
+  let yoastViolations = [];
+  for (const f of filesToAudit) {
+    if (!fs.existsSync(f)) continue;
+    const content = fs.readFileSync(f, "utf-8");
+    if (/yoast|yoast\.com|yoast-schema-graph|wp-(?:content|includes|json)/i.test(content)) {
+      yoastViolations.push(path.relative(rootDir, f));
+    }
+  }
+  assert("Zero Yoast or WordPress footprints in all source and dist files", yoastViolations.length === 0, yoastViolations.join(", "));
 
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
@@ -262,6 +293,7 @@ async function runSeoAudit() {
     { path: "/iptv-channels", expectedTitle: "IPTV Channels", expectedH1: "IPTV Channels", expectedCanonical: "https://www.teleview.me/iptv-channels", indexable: true },
     { path: "/iptv-sports", expectedTitle: "IPTV Sports", expectedH1: "IPTV Sports", expectedCanonical: "https://www.teleview.me/iptv-sports", indexable: true },
     { path: "/iptv-movies", expectedTitle: "IPTV Movies", expectedH1: "IPTV Movies", expectedCanonical: "https://www.teleview.me/iptv-movies", indexable: true },
+    { path: "/about", expectedTitle: "About Teleview", expectedH1: "About Teleview", expectedCanonical: "https://www.teleview.me/about", indexable: true },
   ];
 
   for (const page of pagesToTest) {
@@ -298,6 +330,10 @@ async function runSeoAudit() {
 
     // No legacy helix brand references
     assert(`No legacy Helix references in ${page.path}`, !rawHtml.toLowerCase().includes("helix"));
+
+    // Zero Yoast or WordPress footprints
+    assert(`No Yoast SEO footprints in ${page.path}`, !/yoast|yoast\.com|yoast-schema-graph/i.test(rawHtml));
+    assert(`No WordPress artifacts in ${page.path}`, !/wp-(?:content|includes|json)/i.test(rawHtml));
 
     // Google Search Console verification meta tag check
     assert(`Google site verification meta tag in ${page.path}`, rawHtml.includes('name="google-site-verification" content="1rid_WjenjLtgknH6diVVgeyIOB5xT1zamR7YT1eEdc"'));

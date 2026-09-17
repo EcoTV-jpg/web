@@ -120,7 +120,7 @@ async function prerender() {
     }
 
     // Inject JSON-LD structured data into <head>
-    const schemaScript = `\n    <script type="application/ld+json" class="yoast-schema-graph">${JSON.stringify(schemas)}</script>\n  `;
+    const schemaScript = `\n    <script type="application/ld+json">${JSON.stringify(schemas)}</script>\n  `;
     const jsonLdTagRegex = /<script[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i;
     if (jsonLdTagRegex.test(pageHtml)) {
       pageHtml = pageHtml.replace(jsonLdTagRegex, schemaScript.trim());

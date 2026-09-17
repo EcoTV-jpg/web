@@ -224,7 +224,7 @@ export const routes: AppRoute[] = [
     h1: "6 Months IPTV Subscription",
     title: "6 Months IPTV Subscription – $60 ($10/mo) | Teleview",
     description:
-      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Get 25,000+ channels, 4K sports, and VOD library on supported devices. Performance can vary depending on network and device.",
+      "Save 37.5% with a 6 month IPTV subscription for $60 ($10.00/mo). Stream 25,000+ channels, 4K sports, and VOD on Firestick, Smart TVs, and Android.",
     ogTitle: "6 Months IPTV Subscription for $60 – $10/mo Semi-Annual Value | Teleview",
     ogDescription:
       "Half a year of uninterrupted 4K sports and worldwide channels at 37.5% off standard monthly rates.",
@@ -274,7 +274,7 @@ export const routes: AppRoute[] = [
       "risk free streaming trial",
     ],
     h1: "IPTV Free Trial: Test Before You Subscribe",
-    title: "IPTV Free Trial — Test Live TV, Sports & VOD Before You Subscribe | Teleview",
+    title: "IPTV Free Trial: Stream Live TV & Sports | Teleview",
     description:
       "Test Teleview IPTV with a 24-hour free trial. Evaluate live sports, 4K streaming, EPG, and VOD on Firestick, Smart TVs, and mobile with zero credit card required.",
     ogTitle: "IPTV Free Trial — Test Live TV, Sports & VOD Before You Subscribe | Teleview",
@@ -593,7 +593,7 @@ export const routes: AppRoute[] = [
     h1: "IPTV Smarters Pro: Features, Setup & Supported Devices",
     title: "IPTV Smarters Pro: Setup, Features & Supported Devices | Teleview",
     description:
-      "Complete guide to IPTV Smarters Pro across Android, iOS, Firestick, PC, and Mac. Learn how to log in with Xtream Codes API, configure subtitles, and resolve playback errors.",
+      "Guide to IPTV Smarters Pro across Android, iOS, Firestick, PC, and Mac. Log in with Xtream Codes API, configure subtitles, and resolve common playback errors.",
     ogTitle: "IPTV Smarters Pro: Cross-Platform Setup & Configuration Guide",
     ogDescription:
       "Step-by-step instructions to configure IPTV Smarters Pro on mobile, TV, and PC with Xtream Codes API, VOD subtitles, and multi-screen mode.",
@@ -618,7 +618,7 @@ export const routes: AppRoute[] = [
     h1: "IBO Player: Smart TV Setup, Features & Device Activation",
     title: "IBO Player: IPTV Setup & Compatible Smart TVs | Teleview",
     description:
-      "Guide to installing and activating IBO Player on Samsung Tizen and LG webOS Smart TVs. Learn device MAC activation, web portal playlist upload, and streaming troubleshooting.",
+      "Install and activate IBO Player on Samsung Tizen and LG webOS Smart TVs. Learn device MAC activation, web playlist uploads, and streaming troubleshooting.",
     ogTitle: "IBO Player Smart TV Guide: Installation & Activation | Teleview",
     ogDescription:
       "Install IBO Player directly from Samsung or LG app stores. Connect M3U or Xtream Codes playlists via the web management portal with zero sideloading.",
@@ -643,7 +643,7 @@ export const routes: AppRoute[] = [
     h1: "SmartOne IPTV: Features, Setup & Smart TV Compatibility",
     title: "SmartOne IPTV: Setup, Features & Smart TV Installation | Teleview",
     description:
-      "Explore SmartOne IPTV for LG webOS, Samsung Tizen, and Vidaa Smart TVs. Understand MAC address portal configuration, dual-playlist support, and remote number dialing.",
+      "Explore SmartOne IPTV for LG webOS, Samsung Tizen, and Vidaa TVs. Configure MAC address portals, dual playlists, and remote number dialing.",
     ogTitle: "SmartOne IPTV Player: Setup & Features for Smart TVs | Teleview",
     ogDescription:
       "Step-by-step setup guide for SmartOne IPTV on LG, Samsung, and Vidaa TVs. Configure dual playlists and EPG time-shifts via web portal.",
@@ -668,7 +668,7 @@ export const routes: AppRoute[] = [
     h1: "GSE Smart IPTV: Features, Apple TV Setup & iOS Compatibility",
     title: "GSE Smart IPTV: Apple iOS, Apple TV Setup & Features | Teleview",
     description:
-      "Technical guide to GSE Smart IPTV on iPhone, iPad, and Apple TV (tvOS). Learn how to import M3U playlists, configure XMLTV EPG sources, and use AirPlay screen casting.",
+      "Technical guide to GSE Smart IPTV on iPhone, iPad, and Apple TV. Learn how to import M3U playlists, configure XMLTV EPG sources, and stream via AirPlay.",
     ogTitle: "GSE Smart IPTV Guide: iOS & Apple TV Configuration | Teleview",
     ogDescription:
       "Master GSE Smart IPTV on Apple devices. Configure remote playlists, local web server M3U uploads, and XMLTV program guide sources.",
@@ -718,7 +718,7 @@ export const routes: AppRoute[] = [
     h1: "OTT Navigator IPTV: Power-User Features, Decoders & Setup",
     title: "OTT Navigator IPTV: Features, Advanced Setup & Decoders | Teleview",
     description:
-      "Deep-dive into OTT Navigator IPTV for Android TV and Google TV. Explore custom ExoPlayer/VLC decoders, Studio mode, PiP, multi-provider aggregation, and EPG offsets.",
+      "Guide to OTT Navigator IPTV on Android & Google TV. Explore custom ExoPlayer/VLC decoders, Studio mode, PiP, multi-provider aggregation, and EPG offsets.",
     ogTitle: "OTT Navigator IPTV: Power-User Setup & Features Guide",
     ogDescription:
       "Configure OTT Navigator IPTV on Android TV: select hardware decoders, enable Studio Picture-in-Picture, and combine multiple provider playlists.",
@@ -743,7 +743,7 @@ export const routes: AppRoute[] = [
     h1: "How to Set Up & Stream IPTV on Amazon Fire TV Stick",
     title: "How to Set Up & Stream IPTV on Amazon Firestick (2026) | Teleview",
     description:
-      "Step-by-step guide to installing and streaming IPTV on Amazon Fire TV Stick Lite, 4K, and Max. Configure Downloader, install TiviMate, and optimize buffer settings.",
+      "Step-by-step guide to streaming IPTV on Amazon Fire TV Stick Lite, 4K, and Max. Configure Downloader, install TiviMate, and optimize player buffer settings.",
     ogTitle: "How to Set Up IPTV on Amazon Firestick | Complete 2026 Manual",
     ogDescription:
       "Complete Firestick setup walkthrough: install Downloader, sideload TiviMate or IPTV Smarters Pro, and configure 4K 60 FPS sports streaming.",
@@ -943,7 +943,7 @@ export const routes: AppRoute[] = [
     h1: "How to Stop IPTV Buffering & Freezing: 2026 Diagnostic Guide",
     title: "How to Stop IPTV Buffering & Freezing (2026 Guide) | Teleview",
     description:
-      "Stop IPTV buffering and stream loops immediately. Learn 4 proven fixes: 5 GHz Wi-Fi / Ethernet switching, VPN throttling bypass, and player buffer cache adjustments.",
+      "Stop IPTV buffering and stream loops immediately. Learn 4 proven fixes: 5 GHz Wi-Fi switching, VPN throttling bypass, and player buffer cache tuning.",
     ogTitle: "How to Stop IPTV Buffering: Proven Solutions | Teleview",
     ogDescription:
       "Tips to help reduce stream buffering during live sports matches with technical guidance covering buffer caches, VPNs, and router settings. Results vary.",
@@ -1068,7 +1068,7 @@ export const routes: AppRoute[] = [
     h1: "Internet Speed Requirements for 4K IPTV Streaming",
     title: "Internet Speed Requirements for 4K IPTV Streaming (2026) | Teleview",
     description:
-      "Learn recommended internet bandwidth, latency, and packet jitter for 4K live sports and HD entertainment. Optimize Wi-Fi and test connection quality. Performance can vary depending on network and device.",
+      "Learn recommended internet bandwidth, latency, and jitter for 4K live sports and HD streaming. Optimize Wi-Fi and test connection quality for IPTV.",
     ogTitle: "Internet Speed Requirements for 4K IPTV | Teleview Guide",
     ogDescription:
       "Detailed bandwidth standards for SD, HD, and 4K 60 FPS streaming: understanding ping, packet jitter, and router QoS prioritization.",
@@ -1096,9 +1096,9 @@ export const routes: AppRoute[] = [
       "prepaid vs recurring billing",
     ],
     h1: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing Explained",
-    title: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing | Teleview",
+    title: "IPTV Pricing Guide 2026: Plans, Costs & Savings | Teleview",
     description:
-      "Teleview IPTV pricing economics: effective monthly costs from $7.50 to $16.00, volume savings up to 53%, and transparent prepaid billing with no auto-renewals. Compare billing models and what affects pricing.",
+      "Compare Teleview IPTV pricing: plans from $7.50 to $16.00/mo, savings up to 53%, and transparent prepaid billing with no hidden fees or auto-renewals.",
     ogTitle: "IPTV Pricing Guide 2026: Effective Monthly Costs, Savings & Billing | Teleview",
     ogDescription:
       "Teleview IPTV pricing breakdown: $7.50–$16/mo effective rates, 19–53% volume savings, prepaid billing, no hidden fees. Billing models and pricing factors explained.",
@@ -1121,7 +1121,7 @@ export const routes: AppRoute[] = [
       "consumer streaming liability",
     ],
     h1: "Is IPTV Legal? Regulatory Frameworks & Compliance Guide",
-    title: "Is IPTV Legal? 2026 Copyright Laws & Regulations Explained",
+    title: "Is IPTV Legal? 2026 Laws & Copyright Guide | Teleview",
     description:
       "Understand the legal definitions, copyright regulations, broadcast licensing rules, and consumer responsibilities surrounding IPTV technology in 2026.",
     ogTitle: "Is IPTV Legal? 2026 Legal & Compliance Guide | Teleview",
@@ -1146,7 +1146,7 @@ export const routes: AppRoute[] = [
       "payment safety",
     ],
     h1: "Is IPTV Safe? Cybersecurity, Malware & Privacy Guide",
-    title: "Is IPTV Safe? Cybersecurity & Privacy Best Practices (2026)",
+    title: "Is IPTV Safe? Streaming Privacy & Security | Teleview",
     description:
       "How to stream IPTV safely: avoid malicious player APKs, protect payment details, prevent ISP bandwidth throttling, and maintain home network security.",
     ogTitle: "Is IPTV Safe? Cybersecurity & Privacy Guide | Teleview",
@@ -1171,7 +1171,7 @@ export const routes: AppRoute[] = [
       "portable television streaming",
     ],
     h1: "IPTV vs Cable TV: The Complete 2026 Comparison",
-    title: "IPTV vs Cable TV: Cost, Channels & Features Compared (2026)",
+    title: "IPTV vs Cable TV: Cost & Features Compared | Teleview",
     description:
       "Compare IPTV vs traditional cable TV: monthly subscription fees, equipment rentals, contract flexibility, channel variety, and 4K picture quality.",
     ogTitle: "IPTV vs Cable TV: Complete 2026 Comparison | Teleview",
@@ -1273,7 +1273,7 @@ export const routes: AppRoute[] = [
     h1: "About Teleview",
     title: "About Teleview | IPTV Service, Approach & Transparency",
     description:
-      "Learn about Teleview — an IPTV subscription service operated by Teleview Media. Discover what we provide, our approach to support and compatibility, and where to verify pricing, refund, and legal information.",
+      "Learn about Teleview — a premium IPTV service operated by Teleview Media. Discover our features, customer support standards, and verified legal policies.",
     ogTitle: "About Teleview | Service, Approach & Transparency",
     ogDescription:
       "Who Teleview is, what our IPTV service provides, how we approach customer experience and support, and where to find transparent pricing, refund, and legal information.",

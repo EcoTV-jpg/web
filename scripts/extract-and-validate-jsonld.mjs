@@ -70,6 +70,7 @@ const indexableRoutes = [
   { path: "/iptv-channels", breadcrumbName: "IPTV Channels" },
   { path: "/iptv-sports", breadcrumbName: "IPTV Sports" },
   { path: "/iptv-movies", breadcrumbName: "IPTV Movies" },
+  { path: "/about", breadcrumbName: "About Teleview" },
 ];
 
 function getCanonicalUrl(routePath) {

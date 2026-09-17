@@ -251,6 +251,9 @@ async function runTechnicalSeoAudit() {
 
     assert("LEGACY_REFERENCES", `No legacy Helix references in ${page.path}`, !rawHtml.toLowerCase().includes("helix"));
 
+    assert("CLEAN_MARKUP", `No Yoast SEO footprints in ${page.path}`, !/yoast|yoast\.com|yoast-schema-graph/i.test(rawHtml));
+    assert("CLEAN_MARKUP", `No WordPress artifacts in ${page.path}`, !/wp-(?:content|includes|json)/i.test(rawHtml));
+
     // No noindex tags check (except for non-indexable routes like /my-account)
     const noindexMatch = rawHtml.match(/<meta[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex[^"']*["']/i);
     if (page.indexable === false) {

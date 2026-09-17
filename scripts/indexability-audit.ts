@@ -207,6 +207,14 @@ async function runIndexabilityAudit() {
       issues.push(`Blocked by source robots.txt disallow rule`);
     }
 
+    // Yoast / WordPress footprint check
+    if (fileExists) {
+      const hasYoast = /yoast|yoast\.com|yoast-schema-graph|wp-(?:content|includes|json)/i.test(htmlContent);
+      if (hasYoast) {
+        issues.push('Yoast / WordPress footprint detected in prerendered HTML');
+      }
+    }
+
     // Google Indexing API eligibility check
     const indexingApiGate = isEligibleForGoogleIndexingApi(expectedCanonical, htmlContent);
     if (!indexingApiGate.eligible) {
