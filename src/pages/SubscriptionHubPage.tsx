@@ -244,6 +244,136 @@ export default function SubscriptionHubPage() {
             <PlanComparisonTable />
           </div>
 
+          {/* 4b. Evidence-First Evaluation Framework: How to Test Any IPTV Service */}
+          <section className="mt-20" aria-labelledby="evaluation-framework-heading">
+            <div className="text-center mb-10">
+              <span className="label-mono text-phosphor-green text-xs">Objective Technical Criteria</span>
+              <h2 id="evaluation-framework-heading" className="text-2xl sm:text-3xl font-extrabold text-snow mt-1">
+                How to Evaluate the <Accent>Best IPTV</Accent> Service: 5 Technical Stress-Tests
+              </h2>
+              <p className="mt-2 text-xs sm:text-sm text-silver-mist max-w-[680px] mx-auto leading-relaxed">
+                Finding a dependable IPTV service is not about who claims the highest channel count. Before committing to a multi-month plan with any provider, use these five empirical benchmarks to verify stream stability during real broadcast conditions:
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
+                    <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-sm font-bold text-snow">1. Matchday Peak-Load Test</h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    Low-tier providers perform well on quiet weekday mornings but collapse when 50,000 viewers tune into the same Premier League, Champions League, UFC, or NFL event.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    <strong className="text-phosphor-green">The Protocol:</strong> Request a{" "}
+                    <a href="/iptv-free-trial" className="text-snow hover:underline font-medium">
+                      24-hour trial
+                    </a>{" "}
+                    and test specifically during live game kickoffs to verify that edge load-balancers prevent buffering loops.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
+                    <Layers className="size-4 text-phosphor-green" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-sm font-bold text-snow">2. Open Player API (Xtream Codes)</h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    Avoid services that force you into locked, ad-supported proprietary apps. Decoupling the content stream from your media player guarantees superior video decoding.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    <strong className="text-phosphor-green">The Standard:</strong> Insist on Xtream Codes API credentials and M3U links compatible with{" "}
+                    <a href="/iptv-players/tivimate" className="text-snow hover:underline font-medium">
+                      TiviMate
+                    </a>
+                    ,{" "}
+                    <a href="/iptv-players/iptv-smarters-pro" className="text-snow hover:underline font-medium">
+                      IPTV Smarters Pro
+                    </a>
+                    , and{" "}
+                    <a href="/iptv-players/ibo-player" className="text-snow hover:underline font-medium">
+                      IBO Player
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
+                    <Tv className="size-4 text-phosphor-green" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-sm font-bold text-snow">3. Native 50 &amp; 60 FPS Sports</h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    Sports feeds broadcast at 25 or 30 frames per second exhibit motion blur, tracking ghosting, and micro-stutter on fast-moving footballs, pucks, and race cars.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    <strong className="text-phosphor-green">The Standard:</strong> Verify high-frame-rate feeds (50fps for European football, 60fps for North American sports) across 1080p and 4K channels.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
+                    <Calendar className="size-4 text-phosphor-green" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-sm font-bold text-snow">4. Synchronized 7-Day EPG</h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    A 25,000-channel directory is unnavigable without an automated electronic program guide. Manual XMLTV imports frequently fail or lose schedule alignment.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    <strong className="text-phosphor-green">The Standard:</strong> An automated 7-day XMLTV EPG integrated directly into your player with accurate time-zone offsets and program overviews.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-charcoal bg-ash/30 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="size-8 rounded-lg bg-phosphor-green/10 border border-phosphor-green/30 flex items-center justify-center">
+                    <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-sm font-bold text-snow">5. Human Support &amp; Refund SLA</h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    Anonymous sellers communicate via autoresponders and disappear when maintenance is required. Beware of fake "instant" activation promises that fail to deliver.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    <strong className="text-phosphor-green">The Standard:</strong> Active human desk support via WhatsApp, realistic credential delivery (typically within 5–15 minutes), and a binding{" "}
+                    <a href="/refund-policy" className="text-snow hover:underline font-medium">
+                      14-day refund policy
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-phosphor-green/40 bg-gradient-to-br from-ash/60 to-ink-800/80 p-5 space-y-3 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <span className="font-mono text-[11px] font-bold text-phosphor-green uppercase tracking-wider">Diagnostic Tip</span>
+                  <h3 className="text-sm font-bold text-snow flex items-center gap-1.5">
+                    <AlertCircle className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
+                    <span>ISP Packet Shaping Alert</span>
+                  </h3>
+                  <p className="text-xs text-silver-mist leading-relaxed">
+                    If your broadband speed test shows 100+ Mbps but live matches stutter, your ISP may be performing Deep Packet Inspection (DPI) to throttle video streams.
+                  </p>
+                  <p className="text-xs text-smoke leading-relaxed border-t border-charcoal/50 pt-2">
+                    Consult our{" "}
+                    <a href="/help-center/buffering" className="text-phosphor-green font-semibold hover:underline">
+                      buffering troubleshooting guide
+                    </a>{" "}
+                    to configure alternate DNS (1.1.1.1 / 8.8.8.8) or encrypted VPN tunnels.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* 5. What Is Included With Every Subscription Plan (Detailed Specifications) */}
           <section className="mt-20" aria-labelledby="whats-included-heading">
             <div className="text-center mb-10">
