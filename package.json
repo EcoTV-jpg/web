@@ -22,11 +22,18 @@
     "seo:sitemap-audit": "node scripts/validate-sitemap.mjs",
     "test:semantic": "node scripts/semantic-seo-audit.mjs",
     "seo:semantic-audit": "node scripts/semantic-seo-audit.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "seo:indexability": "node scripts/indexability-audit.ts",
+    "seo:indexability:live": "node scripts/live-indexability-audit.ts",
+    "indexnow": "node scripts/indexnow.mjs",
+    "google:index": "node scripts/google-indexing.ts",
+    "google:index:delete": "node scripts/google-indexing.ts --action=delete",
+    "google:index:status": "node scripts/google-indexing.ts --action=status",
+    "test:indexing": "node scripts/test-google-indexing.mjs"
   },
   "dependencies": {
     "clsx": "2.1.1",
     "framer-motion": "^13.1.1",
+    "google-auth-library": "^11.1.0",
     "lucide-react": "^1.38.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",

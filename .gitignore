@@ -13,9 +13,17 @@ node_modules/
 dist/
 dist-ssr/
 
+# Google Service Account Credentials & Private Keys
+service-account*.json
+google-service-account*.json
+*.pem
+*.key
+*.p12
+
 # Environment files
 .env
 .env.local
+.env.production.local
 .env.*.local
 
 # Logs
