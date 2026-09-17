@@ -72,7 +72,7 @@ check("Zero outdated years (2020-2024) in Page Titles and H1 tags", staleYearCou
 
 // 3. Current year (2026) presence on key pillar pages
 console.log("\n--- 2. 2026 PILLAR FRESHNESS SIGNALS ---");
-const pillarRoutes = ["/", "/best-iptv", "/what-is-iptv", "/iptv-players", "/iptv-subscription", "/devices", "/setup"];
+const pillarRoutes = ["/", "/what-is-iptv", "/iptv-players", "/iptv-subscription", "/devices", "/setup"];
 for (const p of pillarRoutes) {
   const filePath = p === "/" ? path.join(distDir, "index.html") : path.join(distDir, p.replace(/^\//, ""), "index.html");
   if (fs.existsSync(filePath)) {

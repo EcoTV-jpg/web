@@ -25,6 +25,16 @@
   force = true
 
 [[redirects]]
+  from = "/best-iptv"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/guides/best-iptv-service"
+  status = 410
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 404

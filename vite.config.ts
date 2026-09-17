@@ -31,7 +31,6 @@ const serverRedirects: Record<string, string> = {
   "/privacy": "/privacy-policy",
   "/refund": "/refund-policy",
   "/guides/what-is-iptv": "/what-is-iptv",
-  "/guides/best-iptv-service": "/best-iptv",
   "/devices/smart-tv": "/devices/samsung-smart-tv",
 };
 
@@ -54,6 +53,28 @@ function seoRoutingPlugin(): Plugin {
           pathname.startsWith("/@id/")
         ) {
           return next();
+        }
+
+        // Permanently removed URLs -> return genuine 410 Gone
+        if (normalizedPath === "/best-iptv" || normalizedPath === "/guides/best-iptv-service") {
+          res.statusCode = 410;
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>410 Gone | Teleview</title>
+  </head>
+  <body style="font-family: system-ui, -apple-system, sans-serif; background-color: #070b18; color: #f5f5f5; display: grid; min-height: 100vh; place-items: center; margin: 0;">
+    <div style="text-align: center; padding: 2rem;">
+      <h1 style="font-size: 2rem; font-weight: 600; margin: 0 0 0.5rem 0;">410 Gone</h1>
+      <p style="color: #8b949e; margin: 0 0 1.5rem 0;">This page has been permanently removed from this website.</p>
+      <a href="/" style="color: #3ecf8e; text-decoration: none; font-weight: 500;">Return to Home</a>
+    </div>
+  </body>
+</html>`);
+          return;
         }
 
         // Check simulated 301 redirects
@@ -96,7 +117,6 @@ function seoRoutingPlugin(): Plugin {
           "/iptv-channels",
           "/iptv-sports",
           "/iptv-movies",
-          "/best-iptv",
           "/iptv-players",
           "/iptv-players/tivimate",
           "/iptv-players/iptv-smarters-pro",
@@ -164,6 +184,28 @@ function seoRoutingPlugin(): Plugin {
 
         const pathname = decodeURIComponent(rawUrl.split("?")[0]);
         const normalizedPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+
+        // Permanently removed URLs -> return genuine 410 Gone
+        if (normalizedPath === "/best-iptv" || normalizedPath === "/guides/best-iptv-service") {
+          res.statusCode = 410;
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(`<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>410 Gone | Teleview</title>
+  </head>
+  <body style="font-family: system-ui, -apple-system, sans-serif; background-color: #070b18; color: #f5f5f5; display: grid; min-height: 100vh; place-items: center; margin: 0;">
+    <div style="text-align: center; padding: 2rem;">
+      <h1 style="font-size: 2rem; font-weight: 600; margin: 0 0 0.5rem 0;">410 Gone</h1>
+      <p style="color: #8b949e; margin: 0 0 1.5rem 0;">This page has been permanently removed from this website.</p>
+      <a href="/" style="color: #3ecf8e; text-decoration: none; font-weight: 500;">Return to Home</a>
+    </div>
+  </body>
+</html>`);
+          return;
+        }
 
         // Check simulated 301 redirects in preview server
         if (serverRedirects[normalizedPath]) {

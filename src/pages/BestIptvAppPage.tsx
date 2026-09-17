@@ -32,9 +32,7 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
     return <NotFoundPage />;
   }
 
-  const route =
-    routes.find((r) => r.path === `/iptv-players/${app.slug}`) ||
-    routes.find((r) => r.path === `/best-iptv/${app.slug}`);
+  const route = routes.find((r) => r.path === `/iptv-players/${app.slug}`);
 
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
@@ -667,8 +665,8 @@ export default function BestIptvAppPage({ slug }: { slug: string }) {
               <GreenButton href="/iptv-subscription" className="text-xs px-5 py-2.5">
                 View Subscription Plans
               </GreenButton>
-              <GhostButton href="/best-iptv" className="text-xs px-5 py-2.5">
-                Compare All Players
+              <GhostButton href="/iptv-players" className="text-xs px-5 py-2.5">
+                Browse All Players
               </GhostButton>
             </div>
           </section>

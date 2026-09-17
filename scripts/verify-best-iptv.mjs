@@ -18,7 +18,6 @@ const appRoutes = [
 ];
 
 const clusterRoutes = [
-  "/best-iptv",
   "/iptv-players",
   ...appRoutes,
 ];
@@ -141,9 +140,7 @@ for (const r of clusterRoutes) {
   const navMatch = html.match(/<nav[^>]*aria-label=["']Breadcrumb["'][\s\S]*?<\/nav>/i);
   check(`Page ${r} renders visible Breadcrumb nav`, Boolean(navMatch));
 
-  if (r === "/best-iptv") {
-    check("Hub breadcrumb contains Home and Best IPTV Services", html.includes("Home") && html.includes("Best IPTV Services"));
-  } else if (r === "/iptv-players") {
+  if (r === "/iptv-players") {
     check("IPTV Players hub breadcrumb contains Home and IPTV Players", html.includes("Home") && html.includes("IPTV Players"));
   } else {
     check(`App page ${r} breadcrumb links back to /iptv-players`, html.includes('href="/iptv-players"') || html.includes('href="https://www.teleview.me/iptv-players"'));
@@ -195,21 +192,18 @@ for (const r of clusterRoutes) {
 
 // 10 & 11 & 12. INTERNAL LINKING, ORPHAN CHECK & BROKEN LINKS
 console.log("\n--- 5. INTERNAL LINK GRAPH & INTEGRITY ---");
-const hubHtml = getHtml("/best-iptv");
+check("dist/best-iptv directory does NOT exist", !fs.existsSync(path.resolve(distDir, "best-iptv")));
 const playersHubHtml = getHtml("/iptv-players");
 for (const appRoute of appRoutes) {
-  // Hub /best-iptv must link to every app
-  check(`Hub /best-iptv links to ${appRoute}`, Boolean(hubHtml && (hubHtml.includes(`href="${appRoute}"`) || hubHtml.includes(`href="${appRoute}/"`))));
-
   // Hub /iptv-players must link to every app
   check(`Hub /iptv-players links to ${appRoute}`, Boolean(playersHubHtml && (playersHubHtml.includes(`href="${appRoute}"`) || playersHubHtml.includes(`href="${appRoute}/"`))));
 
-  // Every app must link back to /best-iptv
-  const appHtml = getHtml(appRoute);
-  check(`App ${appRoute} links back to Hub /best-iptv`, Boolean(appHtml && (appHtml.includes('href="/best-iptv"') || appHtml.includes('href="/best-iptv/"'))));
-
   // Every app must link back to /iptv-players
+  const appHtml = getHtml(appRoute);
   check(`App ${appRoute} links back to Hub /iptv-players`, Boolean(appHtml && (appHtml.includes('href="/iptv-players"') || appHtml.includes('href="/iptv-players/"'))));
+
+  // Every app must have ZERO links to deleted /best-iptv
+  check(`App ${appRoute} has ZERO links to /best-iptv`, !appHtml.includes('href="/best-iptv"') && !appHtml.includes('href="/best-iptv/"'));
 
   // Contextual link to setup or devices or subscription
   check(`App ${appRoute} links to /setup`, Boolean(appHtml && appHtml.includes('href="/setup')));
@@ -258,6 +252,7 @@ const sitemapPath = path.resolve(distDir, "sitemap.xml");
 check("dist/sitemap.xml exists", fs.existsSync(sitemapPath));
 if (fs.existsSync(sitemapPath)) {
   const sitemapXml = fs.readFileSync(sitemapPath, "utf-8");
+  check("Sitemap EXCLUDES /best-iptv", !sitemapXml.includes("/best-iptv"));
   for (const r of clusterRoutes) {
     const loc = `https://www.teleview.me${r}`;
     check(`Sitemap includes canonical URL for ${r}`, sitemapXml.includes(`<loc>${loc}</loc>`), loc);

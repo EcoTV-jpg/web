@@ -684,9 +684,6 @@ export default function PricingPage() {
               <GhostButton href="/iptv-vs-cable" className="text-xs px-5 py-2.5">
                 IPTV vs Cable Comparison
               </GhostButton>
-              <GhostButton href="/best-iptv" className="text-xs px-5 py-2.5">
-                IPTV Buying Guide
-              </GhostButton>
               <GhostButton href="/about" className="text-xs px-5 py-2.5">
                 About Teleview
               </GhostButton>

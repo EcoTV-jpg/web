@@ -26,7 +26,6 @@ const APPROVED_SITEMAP_PATHS = [
   "/disclaimer",
   "/help-center",
   "/dmca",
-  "/best-iptv",
   "/what-is-iptv",
   "/iptv-players",
   "/iptv-players/tivimate",
@@ -66,6 +65,7 @@ const EXCLUDED_SLUGS = [
   "/my-account",
   "/404",
   "/pricing",
+  "/best-iptv",
 ];
 
 async function validateSitemap() {

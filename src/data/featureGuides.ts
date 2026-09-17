@@ -132,10 +132,10 @@ export const featureGuidesList: FeatureGuideDetail[] = [
         linkText: "IPTV Movies Guide →",
       },
       {
-        title: "Compare Buying Criteria",
-        description: "Evaluate provider selection benchmarks, server uptime, and trial terms.",
-        linkUrl: "/best-iptv",
-        linkText: "IPTV Buying Guide →",
+        title: "Compare Pricing & Plans",
+        description: "Review subscription durations, monthly savings, and transparent billing.",
+        linkUrl: "/iptv-pricing",
+        linkText: "IPTV Pricing Guide →",
       },
       {
         title: "Test with 24-Hour Free Trial",

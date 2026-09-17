@@ -480,10 +480,10 @@ export const informationalGuidesList: InformationalGuideDetail[] = [
         linkText: "Is IPTV Safe Guide →",
       },
       {
-        title: "Review IPTV Buying Guide",
-        description: "Evaluate provider selection criteria, stream stability benchmarks, and trial policies.",
-        linkUrl: "/best-iptv",
-        linkText: "IPTV Buying Guide →",
+        title: "Review IPTV Pricing & Plans",
+        description: "Evaluate subscription durations, effective monthly rates, and money-back guarantees.",
+        linkUrl: "/iptv-pricing",
+        linkText: "IPTV Pricing Guide →",
       },
       {
         title: "About Teleview — Transparency",

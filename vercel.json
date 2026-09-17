@@ -173,14 +173,27 @@
       "permanent": true
     },
     {
-      "source": "/guides/best-iptv-service",
-      "destination": "/best-iptv",
-      "permanent": true
-    },
-    {
       "source": "/devices/smart-tv",
       "destination": "/devices/samsung-smart-tv",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/best-iptv",
+      "destination": "/api/best-iptv"
+    },
+    {
+      "source": "/best-iptv/",
+      "destination": "/api/best-iptv"
+    },
+    {
+      "source": "/guides/best-iptv-service",
+      "destination": "/api/best-iptv"
+    },
+    {
+      "source": "/guides/best-iptv-service/",
+      "destination": "/api/best-iptv"
     }
   ]
 }

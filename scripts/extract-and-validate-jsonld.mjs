@@ -55,7 +55,6 @@ const indexableRoutes = [
   { path: "/help-center/connection-problems", breadcrumbName: "How to Fix IPTV Connection Errors & Server Timeouts" },
   { path: "/help-center/internet-speed", breadcrumbName: "Internet Speed Requirements for 4K IPTV Streaming" },
   { path: "/dmca", breadcrumbName: "DMCA Notice" },
-  { path: "/best-iptv", breadcrumbName: "Best IPTV Services" },
   { path: "/iptv-players", breadcrumbName: "IPTV Players" },
   { path: "/iptv-players/tivimate", breadcrumbName: "TiviMate" },
   { path: "/iptv-players/iptv-smarters-pro", breadcrumbName: "IPTV Smarters" },
@@ -70,9 +69,9 @@ const indexableRoutes = [
   { path: "/is-iptv-safe", breadcrumbName: "Is IPTV Safe?", parent: "Knowledge Base" },
   { path: "/iptv-cost", breadcrumbName: "IPTV Cost Guide", parent: "Knowledge Base" },
   { path: "/iptv-vs-cable", breadcrumbName: "IPTV vs Cable", parent: "Knowledge Base" },
-  { path: "/iptv-channels", breadcrumbName: "IPTV Channels", parent: "Features" },
-  { path: "/iptv-sports", breadcrumbName: "IPTV Sports", parent: "Features" },
-  { path: "/iptv-movies", breadcrumbName: "IPTV Movies", parent: "Features" },
+  { path: "/iptv-channels", breadcrumbName: "IPTV Channels" },
+  { path: "/iptv-sports", breadcrumbName: "IPTV Sports" },
+  { path: "/iptv-movies", breadcrumbName: "IPTV Movies" },
 ];
 
 function getCanonicalUrl(routePath) {
@@ -213,10 +212,6 @@ for (const route of indexableRoutes) {
         assert("BREADCRUMBS", `3 items in knowledge base child breadcrumb for ${route.path}`, items.length === 3);
         assert("BREADCRUMBS", `Second item is Knowledge Base in ${route.path}`, items[1]?.name === "Knowledge Base");
         assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
-      } else if (route.parent === "Features") {
-        assert("BREADCRUMBS", `3 items in features child breadcrumb for ${route.path}`, items.length === 3);
-        assert("BREADCRUMBS", `Second item is Features in ${route.path}`, items[1]?.name === "Features");
-        assert("BREADCRUMBS", `Third item is ${route.breadcrumbName} in ${route.path}`, items[2]?.name === route.breadcrumbName);
       } else {
         assert("BREADCRUMBS", `2 items in standard breadcrumb for ${route.path}`, items.length === 2);
         assert("BREADCRUMBS", `Second item name matches route breadcrumbName in ${route.path}`, items[1]?.name === route.breadcrumbName);
@@ -289,12 +284,6 @@ for (const route of indexableRoutes) {
     assert("PRODUCT_SCHEMA", `Offer currency is USD on ${route.path}`, product?.offers?.priceCurrency === "USD");
     assert("PRODUCT_SCHEMA", `Offer availability is InStock on ${route.path}`, product?.offers?.availability === "https://schema.org/InStock");
     assert("PRODUCT_SCHEMA", `FAQPage questions count is 5 on ${route.path}`, faqPage?.mainEntity?.length === 5);
-  } else if (route.path === "/best-iptv") {
-    const faqPage = graph.find((e) => e["@type"] === "FAQPage");
-    assert("BEST_IPTV_HUB_SCHEMA", "CollectionPage entity on /best-iptv", entityTypes.includes("CollectionPage"));
-    assert("BEST_IPTV_HUB_SCHEMA", "FAQPage entity on /best-iptv", Boolean(faqPage));
-    assert("BEST_IPTV_HUB_SCHEMA", "No Product on /best-iptv", !entityTypes.includes("Product"));
-    assert("BEST_IPTV_HUB_SCHEMA", "No AggregateRating on /best-iptv", !entityTypes.includes("AggregateRating"));
   } else if (route.path === "/iptv-players") {
     assert("IPTV_PLAYERS_HUB_SCHEMA", "CollectionPage entity on /iptv-players", entityTypes.includes("CollectionPage"));
     assert("IPTV_PLAYERS_HUB_SCHEMA", "No Product on /iptv-players", !entityTypes.includes("Product"));
@@ -337,7 +326,7 @@ for (const route of indexableRoutes) {
     assert("INFO_ARTICLE_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));
     assert("INFO_ARTICLE_SCHEMA", `No Product on ${route.path}`, !entityTypes.includes("Product"));
     assert("INFO_ARTICLE_SCHEMA", `No AggregateRating on ${route.path}`, !entityTypes.includes("AggregateRating"));
-  } else if (route.parent === "Features") {
+  } else if (["/iptv-channels", "/iptv-sports", "/iptv-movies"].includes(route.path)) {
     const faqPage = graph.find((e) => e["@type"] === "FAQPage");
     assert("FEATURE_HUB_SCHEMA", `CollectionPage entity on ${route.path}`, entityTypes.includes("CollectionPage"));
     assert("FEATURE_HUB_SCHEMA", `FAQPage entity on ${route.path}`, Boolean(faqPage));

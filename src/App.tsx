@@ -12,7 +12,6 @@ import DmcaPage from "./pages/DmcaPage";
 import SubscriptionHubPage from "./pages/SubscriptionHubPage";
 import SubscriptionProductPage from "./pages/SubscriptionProductPage";
 import LegalPage from "./pages/LegalPage";
-import BestIptvHubPage from "./pages/BestIptvHubPage";
 import BestIptvAppPage from "./pages/BestIptvAppPage";
 import IptvPlayersHubPage from "./pages/IptvPlayersHubPage";
 import WhatIsIptvPage from "./pages/WhatIsIptvPage";
@@ -127,7 +126,7 @@ export default function App({ url }: { url?: string }) {
   if (currentPath === "/pricing") {
     // Legacy alias: server 301 (dev/preview) and Vercel 308 (production)
     // redirect to /iptv-pricing; this client-side redirect is a fallback
-    // for environments without server redirect rules (mirrors /best-iptv/).
+    // for environments without server redirect rules.
     if (typeof window !== "undefined") {
       window.location.replace("/iptv-pricing");
     }
@@ -161,9 +160,6 @@ export default function App({ url }: { url?: string }) {
       return <NotFoundPage />;
     }
     return <SubscriptionProductPage slug={slug} />;
-  }
-  if (currentPath === "/best-iptv") {
-    return <BestIptvHubPage />;
   }
   if (currentPath === "/iptv-players") {
     return <IptvPlayersHubPage />;

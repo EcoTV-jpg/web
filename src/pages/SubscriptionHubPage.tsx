@@ -392,10 +392,6 @@ export default function SubscriptionHubPage() {
                 Total Cost of Ownership → IPTV Cost Guide &rarr;
               </a>
               <span className="text-smoke">&bull;</span>
-              <a href="/best-iptv" className="text-phosphor-green hover:underline">
-                Best IPTV Services Comparison &rarr;
-              </a>
-              <span className="text-smoke">&bull;</span>
               <a href="/about" className="text-phosphor-green hover:underline">
                 About Teleview → Transparency &rarr;
               </a>

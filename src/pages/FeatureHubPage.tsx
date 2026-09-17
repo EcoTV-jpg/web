@@ -30,7 +30,6 @@ export default function FeatureHubPage({ slug }: FeatureHubPageProps) {
 
   const breadcrumbItems: BreadcrumbItem[] = [
     { name: "Home", url: "/" },
-    { name: "Features", url: "/best-iptv" },
     { name: feature.h1.split(":")[0].trim(), url: `/${feature.slug}` },
   ];
 
@@ -275,9 +274,6 @@ export default function FeatureHubPage({ slug }: FeatureHubPageProps) {
               </GreenButton>
               <GhostButton href="/iptv-free-trial" className="text-xs px-5 py-2.5">
                 Start 24h Free Trial
-              </GhostButton>
-              <GhostButton href="/best-iptv" className="text-xs px-5 py-2.5">
-                IPTV Buying Guide
               </GhostButton>
             </div>
           </section>

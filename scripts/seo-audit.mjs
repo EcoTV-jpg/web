@@ -63,10 +63,20 @@ async function fetchEndpoint(port, urlPath, headers = {}) {
     } catch {}
   }
 
-  if (!socketRes.error && socketRes.status === 200) return socketRes;
-
   const cleanPath = urlPath.split("?")[0];
   const normalizedPath = cleanPath === "/" ? "/" : cleanPath.replace(/\/$/, "");
+
+  // Permanently removed URLs -> return genuine 410 Gone
+  if (normalizedPath === "/best-iptv" || normalizedPath === "/guides/best-iptv-service") {
+    return {
+      status: 410,
+      contentType: "text/html; charset=utf-8",
+      body: "410 Gone",
+    };
+  }
+
+  if (!socketRes.error && socketRes.status === 200) return socketRes;
+
   const targetFile = cleanPath === "/" ? path.resolve(distDir, "index.html") : path.resolve(distDir, normalizedPath.replace(/^\//, ""), "index.html");
 
   if (fs.existsSync(targetFile)) {
@@ -132,7 +142,6 @@ async function runSeoAudit() {
     "/help-center",
     "/my-account",
     "/dmca",
-    "/best-iptv",
     "/what-is-iptv",
     "/iptv-players",
     "/iptv-players/tivimate",
@@ -198,16 +207,15 @@ async function runSeoAudit() {
     assert("vercel.json redirect destination is https://www.teleview.me/:path*", redirectRule?.destination === "https://www.teleview.me/:path*");
     assert("vercel.json redirects /pricing to /iptv-pricing", vercelConfig.redirects?.some(r => r.source === "/pricing" && r.destination === "/iptv-pricing" && r.permanent));
     assert("vercel.json redirects /guides/what-is-iptv to /what-is-iptv", vercelConfig.redirects?.some(r => r.source === "/guides/what-is-iptv" && r.destination === "/what-is-iptv" && r.permanent));
-    assert("vercel.json redirects /guides/best-iptv-service to /best-iptv", vercelConfig.redirects?.some(r => r.source === "/guides/best-iptv-service" && r.destination === "/best-iptv" && r.permanent));
     assert("vercel.json redirects /devices/smart-tv to /devices/samsung-smart-tv", vercelConfig.redirects?.some(r => r.source === "/devices/smart-tv" && r.destination === "/devices/samsung-smart-tv" && r.permanent));
-    assert("vercel.json contains exactly 23 redirect rules", vercelConfig.redirects?.length === 23);
+    assert("vercel.json contains exactly 22 redirect rules", vercelConfig.redirects?.length === 22);
   }
 
   // 2. Pre-rendered HTML validation per route
   console.log("\n--- 2. PRE-RENDERED HTML VALIDATION PER ROUTE ---");
   const pagesToTest = [
     { path: "/", expectedTitle: "Teleview", expectedH1: "IPTV Service", expectedCanonical: "https://www.teleview.me/", indexable: true },
-    { path: "/setup", expectedTitle: "IPTV Setup", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", indexable: true, inSitemap: false },
+    { path: "/setup", expectedTitle: "IPTV Setup", expectedH1: "IPTV Setup", expectedCanonical: "https://www.teleview.me/setup", indexable: true },
     { path: "/what-is-iptv", expectedTitle: "What Is IPTV", expectedH1: "What Is IPTV", expectedCanonical: "https://www.teleview.me/what-is-iptv", indexable: true },
     { path: "/devices", expectedTitle: "Supported IPTV Devices", expectedH1: "Supported IPTV", expectedCanonical: "https://www.teleview.me/devices", indexable: true },
     { path: "/devices/firestick", expectedTitle: "Firestick", expectedH1: "Fire TV Stick", expectedCanonical: "https://www.teleview.me/devices/firestick", indexable: true },
@@ -218,18 +226,18 @@ async function runSeoAudit() {
     { path: "/devices/roku", expectedTitle: "Roku", expectedH1: "Roku", expectedCanonical: "https://www.teleview.me/devices/roku", indexable: true },
     { path: "/devices/google-tv", expectedTitle: "Google TV", expectedH1: "Google TV", expectedCanonical: "https://www.teleview.me/devices/google-tv", indexable: true },
     { path: "/devices/formuler", expectedTitle: "Formuler", expectedH1: "Formuler", expectedCanonical: "https://www.teleview.me/devices/formuler", indexable: true },
-    { path: "/faq", expectedTitle: "Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", indexable: true, inSitemap: false },
+    { path: "/faq", expectedTitle: "Frequently Asked Questions", expectedH1: "Frequently Asked", expectedCanonical: "https://www.teleview.me/faq", indexable: true },
     { path: "/iptv-subscription", expectedTitle: "IPTV Subscription", expectedH1: "IPTV Subscription", expectedCanonical: "https://www.teleview.me/iptv-subscription", indexable: true },
     { path: "/iptv-free-trial", expectedTitle: "IPTV Free Trial", expectedH1: "IPTV Free Trial", expectedCanonical: "https://www.teleview.me/iptv-free-trial", indexable: true },
     { path: "/iptv-subscription/1-month", expectedTitle: "1 Month", expectedH1: "1 Month", expectedCanonical: "https://www.teleview.me/iptv-subscription/1-month", indexable: true },
     { path: "/iptv-subscription/3-months", expectedTitle: "3 Months", expectedH1: "3 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/3-months", indexable: true },
     { path: "/iptv-subscription/6-months", expectedTitle: "6 Months", expectedH1: "6 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/6-months", indexable: true },
     { path: "/iptv-subscription/12-months", expectedTitle: "12 Months", expectedH1: "12 Months", expectedCanonical: "https://www.teleview.me/iptv-subscription/12-months", indexable: true },
-    { path: "/contact", expectedTitle: "Contact", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact", indexable: true, inSitemap: false },
-    { path: "/terms-conditions", expectedTitle: "Terms", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions", indexable: true, inSitemap: false },
-    { path: "/privacy-policy", expectedTitle: "Privacy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy", indexable: true, inSitemap: false },
-    { path: "/refund-policy", expectedTitle: "Refund", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy", indexable: true, inSitemap: false },
-    { path: "/disclaimer", expectedTitle: "Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer", indexable: true, inSitemap: false },
+    { path: "/contact", expectedTitle: "Contact", expectedH1: "Contact", expectedCanonical: "https://www.teleview.me/contact", indexable: true },
+    { path: "/terms-conditions", expectedTitle: "Terms", expectedH1: "Terms", expectedCanonical: "https://www.teleview.me/terms-conditions", indexable: true },
+    { path: "/privacy-policy", expectedTitle: "Privacy", expectedH1: "Privacy", expectedCanonical: "https://www.teleview.me/privacy-policy", indexable: true },
+    { path: "/refund-policy", expectedTitle: "Refund", expectedH1: "Refund", expectedCanonical: "https://www.teleview.me/refund-policy", indexable: true },
+    { path: "/disclaimer", expectedTitle: "Disclaimer", expectedH1: "Disclaimer", expectedCanonical: "https://www.teleview.me/disclaimer", indexable: true },
     { path: "/help-center", expectedTitle: "Help Center", expectedH1: "Help Center", expectedCanonical: "https://www.teleview.me/help-center", indexable: true },
     { path: "/help-center/buffering", expectedTitle: "Buffering", expectedH1: "Buffering", expectedCanonical: "https://www.teleview.me/help-center/buffering", indexable: true },
     { path: "/help-center/not-working", expectedTitle: "Not Working", expectedH1: "Not Working", expectedCanonical: "https://www.teleview.me/help-center/not-working", indexable: true },
@@ -238,8 +246,7 @@ async function runSeoAudit() {
     { path: "/help-center/connection-problems", expectedTitle: "Connection", expectedH1: "Connection", expectedCanonical: "https://www.teleview.me/help-center/connection-problems", indexable: true },
     { path: "/help-center/internet-speed", expectedTitle: "Internet Speed", expectedH1: "Internet Speed", expectedCanonical: "https://www.teleview.me/help-center/internet-speed", indexable: true },
     { path: "/my-account", expectedTitle: "My Account", expectedH1: "My Account", expectedCanonical: "https://www.teleview.me/my-account", indexable: false },
-    { path: "/dmca", expectedTitle: "DMCA", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", indexable: true, inSitemap: false },
-    { path: "/best-iptv", expectedTitle: "Best IPTV Services 2026", expectedH1: "Best IPTV Services 2026", expectedCanonical: "https://www.teleview.me/best-iptv", indexable: true },
+    { path: "/dmca", expectedTitle: "DMCA", expectedH1: "DMCA", expectedCanonical: "https://www.teleview.me/dmca", indexable: true },
     { path: "/iptv-players", expectedTitle: "IPTV Players", expectedH1: "IPTV Players", expectedCanonical: "https://www.teleview.me/iptv-players", indexable: true },
     { path: "/iptv-players/tivimate", expectedTitle: "TiviMate", expectedH1: "TiviMate", expectedCanonical: "https://www.teleview.me/iptv-players/tivimate", indexable: true },
     { path: "/iptv-players/iptv-smarters-pro", expectedTitle: "IPTV Smarters", expectedH1: "IPTV Smarters", expectedCanonical: "https://www.teleview.me/iptv-players/iptv-smarters-pro", indexable: true },
@@ -252,7 +259,7 @@ async function runSeoAudit() {
     { path: "/how-does-iptv-work", expectedTitle: "How Does IPTV Work", expectedH1: "How Does IPTV Work", expectedCanonical: "https://www.teleview.me/how-does-iptv-work", indexable: true },
     { path: "/is-iptv-legal", expectedTitle: "Is IPTV Legal", expectedH1: "Is IPTV Legal", expectedCanonical: "https://www.teleview.me/is-iptv-legal", indexable: true },
     { path: "/is-iptv-safe", expectedTitle: "Is IPTV Safe", expectedH1: "Is IPTV Safe", expectedCanonical: "https://www.teleview.me/is-iptv-safe", indexable: true },
-    { path: "/iptv-cost", expectedTitle: "How Much Does IPTV Cost", expectedH1: "How Much Does IPTV Cost", expectedCanonical: "https://www.teleview.me/iptv-cost", indexable: true },
+    { path: "/iptv-cost", expectedTitle: "How Much Does IPTV Really Cost", expectedH1: "How Much Does IPTV Cost", expectedCanonical: "https://www.teleview.me/iptv-cost", indexable: true },
     { path: "/iptv-vs-cable", expectedTitle: "IPTV vs Cable", expectedH1: "IPTV vs Cable", expectedCanonical: "https://www.teleview.me/iptv-vs-cable", indexable: true },
     { path: "/iptv-channels", expectedTitle: "IPTV Channels", expectedH1: "IPTV Channels", expectedCanonical: "https://www.teleview.me/iptv-channels", indexable: true },
     { path: "/iptv-sports", expectedTitle: "IPTV Sports", expectedH1: "IPTV Sports", expectedCanonical: "https://www.teleview.me/iptv-sports", indexable: true },
@@ -427,11 +434,6 @@ async function runSeoAudit() {
         } else if (page.path.startsWith("/iptv-subscription/")) {
           assert(`Product schema present in ${page.path}`, types.includes("Product"));
           assert(`BreadcrumbList schema present in ${page.path}`, types.includes("BreadcrumbList"));
-        } else if (page.path === "/best-iptv") {
-          assert("CollectionPage schema present in /best-iptv", types.includes("CollectionPage"));
-          assert("BreadcrumbList schema present in /best-iptv", types.includes("BreadcrumbList"));
-          assert("FAQPage schema present in /best-iptv", types.includes("FAQPage"));
-          assert("No Product schema in /best-iptv", !types.includes("Product"));
         } else if (page.path === "/iptv-players") {
           assert("CollectionPage schema present in /iptv-players", types.includes("CollectionPage"));
           assert("BreadcrumbList schema present in /iptv-players", types.includes("BreadcrumbList"));
@@ -551,6 +553,12 @@ async function runSeoAudit() {
     const oldTivimateRes = await fetchEndpoint(testPort, "/best-iptv/tivimate", { host: "www.teleview.me" });
     assert("HTTP GET /best-iptv/tivimate returns 308 permanent redirect", oldTivimateRes.status === 308);
     assert("HTTP GET /best-iptv/tivimate redirects to /iptv-players/tivimate", oldTivimateRes.location === "/iptv-players/tivimate");
+
+    const deletedHubRes = await fetchEndpoint(testPort, "/best-iptv", { host: "www.teleview.me" });
+    assert("HTTP GET /best-iptv returns 410 Gone", deletedHubRes.status === 410);
+
+    const deletedGuideRes = await fetchEndpoint(testPort, "/guides/best-iptv-service", { host: "www.teleview.me" });
+    assert("HTTP GET /guides/best-iptv-service returns 410 Gone", deletedGuideRes.status === 410);
 
     const extractBody = (raw) => {
       const rootMatch = raw.match(/<div id="root">([\s\S]*?)<\/div>/i);

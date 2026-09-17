@@ -98,7 +98,6 @@ export default function Footer() {
                 <li><a href="/iptv-channels" className="hover:text-snow transition-colors">Channel Directory</a></li>
                 <li><a href="/iptv-sports" className="hover:text-snow transition-colors">Live Sports &amp; 60fps</a></li>
                 <li><a href="/iptv-movies" className="hover:text-snow transition-colors">Movies &amp; VOD Library</a></li>
-                <li><a href="/best-iptv" className="hover:text-snow transition-colors">IPTV Buying Guide</a></li>
               </ul>
             </div>
 

@@ -2,7 +2,7 @@ import { siteConfig, getCanonicalUrl } from "../config/site";
 import { faqs } from "../data/site";
 import { routes } from "../routes";
 import { subscriptionPlans, subscriptionHubData } from "../data/products";
-import { bestIptvAppsList, hubFaqs } from "../data/bestIptvApps";
+import { bestIptvAppsList } from "../data/bestIptvApps";
 import { deviceGuidesList } from "../data/deviceGuides";
 import { troubleshootingGuidesList } from "../data/troubleshootingGuides";
 import { whatIsIptvFaqs } from "../data/whatIsIptv";
@@ -125,8 +125,8 @@ export function generateStructuredData(path: string = "/") {
           },
         ],
       };
-    } else if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
-      const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
+    } else if (cleanPath.startsWith("/iptv-players/")) {
+      const slug = cleanPath.replace("/iptv-players/", "");
       const app = bestIptvAppsList.find((a) => a.slug === slug);
       const appName = app ? app.shortName : (route.breadcrumbName || "Player");
       breadcrumbSchema = {
@@ -264,12 +264,6 @@ export function generateStructuredData(path: string = "/") {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Features",
-            item: `${siteConfig.url}/best-iptv`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
             name: featureTitle,
             item: pageUrl,
           },
@@ -501,51 +495,6 @@ export function generateStructuredData(path: string = "/") {
     graphEntities.push(faqSchema);
   }
 
-  // Route: /best-iptv (Hub Page)
-  if (cleanPath === "/best-iptv") {
-    webpageSchema["@type"] = ["WebPage", "CollectionPage"];
-    webpageSchema.about = { "@id": `${siteConfig.url}/best-iptv#article` };
-
-    const hubArticleSchema = {
-      "@type": "TechArticle",
-      "@id": `${siteConfig.url}/best-iptv#article`,
-      headline: "Best IPTV Services 2026: Comparison & Buying Guide",
-      description:
-        "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
-      url: `${siteConfig.url}/best-iptv`,
-      inLanguage: siteConfig.language,
-      author: {
-        "@id": siteConfig.entityIds.organization,
-      },
-      publisher: {
-        "@id": siteConfig.entityIds.organization,
-      },
-      datePublished: "2026-01-01T00:00:00+00:00",
-      dateModified: "2026-09-06T18:15:00+00:00",
-      proficiencyLevel: "Beginner",
-      about: [
-        { "@type": "Thing", name: "IPTV Service" },
-        { "@type": "Thing", name: "IPTV Player" },
-        { "@type": "Thing", name: "Media Streaming Applications" },
-      ],
-    };
-
-    const bestIptvFaqSchema = {
-      "@type": "FAQPage",
-      "@id": `${siteConfig.url}/best-iptv#faq`,
-      mainEntity: hubFaqs.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: f.answer,
-        },
-      })),
-    };
-
-    graphEntities.push(hubArticleSchema, bestIptvFaqSchema);
-  }
-
   // Route: /what-is-iptv (Pillar Page)
   if (cleanPath === "/what-is-iptv") {
     webpageSchema.about = { "@id": `${siteConfig.url}/what-is-iptv#article` };
@@ -612,8 +561,8 @@ export function generateStructuredData(path: string = "/") {
   }
 
   // Route: /iptv-players/:slug (Individual App Guide Pages)
-  if (cleanPath.startsWith("/iptv-players/") || cleanPath.startsWith("/best-iptv/")) {
-    const slug = cleanPath.replace("/iptv-players/", "").replace("/best-iptv/", "");
+  if (cleanPath.startsWith("/iptv-players/")) {
+    const slug = cleanPath.replace("/iptv-players/", "");
     const app = bestIptvAppsList.find((a) => a.slug === slug);
 
     if (app) {

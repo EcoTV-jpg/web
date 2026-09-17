@@ -493,31 +493,6 @@ export const routes: AppRoute[] = [
     breadcrumbName: "DMCA Notice",
   },
   {
-    path: "/best-iptv",
-    indexable: true,
-    rendering: "SSG",
-    changefreq: "weekly",
-    priority: 0.9,
-    lastmod: "2026-09-06",
-    primaryIntent: "Comparative / Investigative Buying Guide",
-    primaryKeyword: "best IPTV services comparison",
-    secondaryTopics: [
-      "IPTV buying guide",
-      "compare IPTV services",
-      "IPTV provider comparison",
-      "best IPTV players",
-      "streaming stability criteria",
-    ],
-    h1: "Best IPTV Services 2026: Comparison & Buying Guide",
-    title: "Best IPTV Services 2026: Comparison & Buying Guide | Teleview",
-    description:
-      "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
-    ogTitle: "Best IPTV Services 2026: Comparison & Buying Guide",
-    ogDescription:
-      "Compare IPTV services in 2026 using practical criteria for streaming stability, device compatibility, EPG, pricing, trials, refunds and support.",
-    breadcrumbName: "Best IPTV Services",
-  },
-  {
     path: "/what-is-iptv",
     indexable: true,
     rendering: "SSG",

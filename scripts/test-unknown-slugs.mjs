@@ -69,6 +69,7 @@ async function runUnknownSlugTests() {
     { path: "/help-center/random-issue-xyz", type: "troubleshooting", forbiddenPhrase: "Buffering & Stream Freezing" },
     { path: "/iptv-players/does-not-exist", type: "player", forbiddenPhrase: "TiviMate IPTV Player" },
     { path: "/iptv-players/abc123", type: "player", forbiddenPhrase: "TiviMate IPTV Player" },
+    { path: "/best-iptv", type: "removed_page", forbiddenPhrase: "Best IPTV Services" },
     { path: "/best-iptv/does-not-exist", type: "player", forbiddenPhrase: "TiviMate IPTV Player" },
     { path: "/iptv-subscription/does-not-exist", type: "subscription", forbiddenPhrase: "1 Month IPTV Subscription" },
     { path: "/iptv-subscription/5-years", type: "subscription", forbiddenPhrase: "1 Month IPTV Subscription" },

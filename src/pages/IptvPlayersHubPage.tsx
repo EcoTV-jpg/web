@@ -121,12 +121,6 @@ export default function IptvPlayersHubPage() {
               <h2 id="catalog-heading" className="text-lg sm:text-xl font-bold text-snow">
                 Indexed Applications ({filteredApps.length})
               </h2>
-              <a
-                href="/best-iptv"
-                className="text-xs font-medium text-phosphor-green hover:underline inline-flex items-center gap-1"
-              >
-                View Side-by-Side Comparison Guide &rarr;
-              </a>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

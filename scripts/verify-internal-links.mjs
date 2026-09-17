@@ -40,7 +40,7 @@ const canonicalPages = [
   "/help-center/internet-speed",
   "/my-account",
   "/dmca",
-  "/best-iptv",
+  "/about",
   "/iptv-players",
   "/iptv-players/tivimate",
   "/iptv-players/iptv-smarters-pro",
@@ -173,7 +173,6 @@ const clusters = {
   ],
   "Core & Understanding": ["/what-is-iptv", "/setup", "/devices", "/help-center"],
   "Apps & Players": [
-    "/best-iptv",
     "/iptv-players",
     "/iptv-players/tivimate",
     "/iptv-players/iptv-smarters-pro",
@@ -214,6 +213,14 @@ for (const [clusterName, routes] of Object.entries(clusters)) {
     const status = contextualCount > 0 ? "OK" : "ORPHAN";
     console.log(`  ${r.padEnd(30)}: ${contextualCount} contextual sources (${status})`);
   }
+}
+
+console.log("\n--- DELETED ROUTE LINK AUDIT ---");
+if (inLinksTotal["/best-iptv"] && inLinksTotal["/best-iptv"].size > 0) {
+  console.error(`❌ REGRESSION: ${inLinksTotal["/best-iptv"].size} internal links still point to /best-iptv:`, Array.from(inLinksTotal["/best-iptv"]));
+  errorsCount++;
+} else {
+  console.log("✅ PASS: Exactly ZERO internal links point to deleted URL /best-iptv");
 }
 
 if (errorsCount === 0) {

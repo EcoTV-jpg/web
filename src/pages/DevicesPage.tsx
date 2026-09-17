@@ -897,9 +897,7 @@ export default function DevicesPage() {
                 Feature Comparison: TiviMate vs. IPTV Smarters Pro vs. IBO Player
               </h3>
               <p className="mt-1 text-xs text-silver-mist">
-                Direct capability comparison across the three most widely used IPTV player applications. Feature availability, licensing tiers, and codec support vary by app version and operating system. For detailed editorial rankings, read our{" "}
-                <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">IPTV buying guide</a>{" "}
-                or explore technical specifications in the{" "}
+                Direct capability comparison across the three most widely used IPTV player applications. Feature availability, licensing tiers, and codec support vary by app version and operating system. For individual application guides and technical specifications, explore the{" "}
                 <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>.
               </p>
               <div className="mt-4 overflow-x-auto">

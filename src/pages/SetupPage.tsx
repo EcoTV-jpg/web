@@ -100,9 +100,7 @@ export default function SetupPage() {
                   </p>
                   <p className="mt-2 leading-relaxed">
                     IPTV player applications like <strong className="text-snow">TiviMate, IPTV Smarters Pro, IBO Player, and GSE Smart IPTV</strong>{" "}
-                    are independent third-party software programs (compare them in our{" "}
-                    <a href="/best-iptv" className="text-phosphor-green hover:underline font-medium">IPTV buying guide</a>,{" "}
-                    explore the{" "}
+                    are independent third-party software programs (explore the{" "}
                     <a href="/iptv-players" className="text-phosphor-green hover:underline font-medium">IPTV Players Directory</a>,{" "}
                     test them with an{" "}
                     <a href="/iptv-free-trial" className="text-phosphor-green hover:underline font-medium">IPTV Free Trial</a>,{" "}

@@ -123,17 +123,17 @@ export default function Comparison() {
           </Reveal>
         </div>
 
-        {/* Contextual Bridge to Best IPTV Services Buying Guide */}
+        {/* Contextual Bridge to Cable Comparison */}
         <Reveal delay={0.24} className="mt-10 text-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-charcoal bg-ash/40 px-6 py-3.5 text-xs sm:text-sm">
             <span className="text-silver-mist">
-              Evaluating streaming providers across the market?
+              Comparing IPTV features and economics against traditional cable?
             </span>
             <a
-              href="/best-iptv"
+              href="/iptv-vs-cable"
               className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
             >
-              Read Our Best IPTV Services Buying Guide &rarr;
+              Read Our IPTV vs Cable Comparison &rarr;
             </a>
           </div>
         </Reveal>

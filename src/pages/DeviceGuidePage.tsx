@@ -249,7 +249,7 @@ export default function DeviceGuidePage({ slug }: { slug: string }) {
               </GhostButton>
             </div>
             <p className="mt-4 text-xs text-smoke">
-              Comparing streaming providers for your TV? Consult our <a href="/best-iptv" className="text-phosphor-green hover:underline">IPTV buying guide</a> or explore the <a href="/" className="text-phosphor-green hover:underline">Teleview IPTV service</a>.
+              Comparing streaming providers for your TV? Consult our <a href="/iptv-pricing" className="text-phosphor-green hover:underline">IPTV pricing guide</a> or explore the <a href="/" className="text-phosphor-green hover:underline">Teleview IPTV service</a>.
             </p>
           </section>
 
