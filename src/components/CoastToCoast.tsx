@@ -47,6 +47,10 @@ export default function CoastToCoast() {
                 + Worldwide
               </span>
             </div>
+
+            <p className="mt-6 text-center text-[11px] text-smoke max-w-[700px] mx-auto leading-relaxed">
+              Teleview is an internet-delivered service accessible across standard broadband networks globally. Channel lineups and source feed resolutions are subject to source availability, regional network routing, and device decoders.
+            </p>
           </div>
         </Reveal>
       </div>
