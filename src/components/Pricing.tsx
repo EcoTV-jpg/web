@@ -209,18 +209,28 @@ export default function Pricing() {
           })}
         </div>
 
-        {/* Contextual Bridge to Subscription Pillar Hub */}
-        <Reveal delay={0.12} className="mt-8 text-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-2xl border border-charcoal bg-ash/40 px-6 py-3.5 text-xs sm:text-sm">
-            <span className="text-silver-mist">
-              Need a side-by-side comparison of all 4 packages, duration discounts, and specifications?
-            </span>
-            <a
-              href="/iptv-subscription"
-              className="font-semibold text-phosphor-green hover:underline inline-flex items-center gap-1"
-            >
-              Compare All IPTV Subscription Plans &rarr;
-            </a>
+        {/* Plan Selection Guidance & Detailed Comparison Links */}
+        <Reveal delay={0.12} className="mt-10 max-w-[840px] mx-auto">
+          <div className="rounded-2xl border border-charcoal bg-ash/30 p-6 text-center">
+            <h3 className="text-sm sm:text-base font-bold text-snow">Which Plan Should You Choose?</h3>
+            <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed max-w-[680px] mx-auto">
+              If you are new to Teleview, start with the <strong className="text-snow">1-Month plan ($16)</strong> for flexible testing on your home setup. When you are ready for maximum savings, the <strong className="text-snow">12-Month plan ($90)</strong> reduces your effective rate to <strong className="text-phosphor-green font-mono">$7.50/mo</strong>. Every plan includes the identical full catalog, 50/60 FPS sports, and 14-day technical guarantee.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
+              <a
+                href="/iptv-subscription"
+                className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Compare All Plan Features &rarr;
+              </a>
+              <span className="text-smoke" aria-hidden="true">&bull;</span>
+              <a
+                href="/iptv-pricing"
+                className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+              >
+                Complete IPTV Pricing &amp; Economics Guide &rarr;
+              </a>
+            </div>
           </div>
         </Reveal>
 

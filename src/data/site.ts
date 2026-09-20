@@ -668,14 +668,6 @@ export const whatIsIncluded = {
       title: "Xtream & M3U Formats",
       copy: "Standard Xtream Codes API (URL, port, username, password) and M3U playlist links for broad player support.",
     },
-    {
-      title: "1 to 4 Connections",
-      copy: "Select 1 to 4 simultaneous streams. Configure your credentials on any number of personal devices.",
-    },
-    {
-      title: "14-Day Guarantee",
-      copy: "All subscriptions are backed by an official 14-day technical money-back guarantee per our refund policy.",
-    },
   ],
 };
 
@@ -776,28 +768,23 @@ export const postPurchaseProcess = {
   steps: [
     {
       step: "01",
-      title: "Select Plan & Connections",
-      desc: "Choose your preferred subscription duration and number of simultaneous screens.",
+      title: "Select Plan & Screens",
+      desc: "Choose your preferred prepaid subscription duration and number of simultaneous screens.",
     },
     {
       step: "02",
-      title: "Confirm Your Order",
-      desc: "Available payment options and order instructions are confirmed during checkout.",
+      title: "Receive Credentials (5–15 Min)",
+      desc: "Your Xtream Codes API login and M3U playlist link arrive typically within 5–15 minutes of payment confirmation.",
     },
     {
       step: "03",
-      title: "Receive Credentials (5–15 Min)",
-      desc: "Your Xtream Codes API details and M3U playlist link are dispatched typically within 5–15 minutes.",
+      title: "Configure Player App",
+      desc: "Input your server address, username, and password into TiviMate, Smarters Pro, or your chosen player.",
     },
     {
       step: "04",
-      title: "Configure Player Application",
-      desc: "Input your server URL, username, and password into your chosen player using our setup tutorials.",
-    },
-    {
-      step: "05",
       title: "Start Streaming",
-      desc: "Immediate access to 25,000+ live channels, EPG schedule data, and 100,000+ on-demand titles.",
+      desc: "Immediate playback across your live channel lineup, 7-day program schedule, and on-demand cinema catalog.",
     },
   ],
 };
@@ -806,47 +793,27 @@ export const buyerChecklist = {
   kicker: "BUYER'S GUIDE",
   heading: "What to Check Before Choosing an IPTV Service",
   subhead:
-    "Whether you evaluate Teleview or another provider, check these 8 essential technical and commercial criteria:",
+    "Whether you evaluate Teleview or another provider, compare these 4 critical technical and operational standards:",
   criteria: [
     {
-      criterion: "Trial Availability",
-      industry: "Many providers require immediate upfront payment with no trial option.",
-      teleview: "Complimentary 24-hour evaluation pass available upon request.",
-    },
-    {
       criterion: "Connection Formats",
-      industry: "Often locked to proprietary apps or single M3U URLs.",
-      teleview: "Dual provisioning: standard Xtream Codes API and custom M3U links.",
+      industry: "Often locked to proprietary apps or restrictive single-device M3U URLs.",
+      teleview: "Dual provisioning: standard Xtream Codes API credentials and custom M3U playlist links.",
     },
     {
-      criterion: "Billing Structure",
-      industry: "Recurring monthly charges with automatic credit card rebilling.",
-      teleview: "100% prepaid plans with zero automatic renewal or hidden fees.",
-    },
-    {
-      criterion: "Concurrent Streams",
-      industry: "Strict single-screen limits with expensive add-ons.",
-      teleview: "Flexible multi-connection options: 1 to 4 simultaneous screens.",
+      criterion: "Server Infrastructure",
+      industry: "Single oversold servers prone to buffering, peak-hour throttling, and sudden outages.",
+      teleview: "Load-balanced edge server clusters with automated stream failover and daily link validation.",
     },
     {
       criterion: "Refund Terms",
-      industry: "No refunds once credentials have been generated.",
-      teleview: "Official 14-day technical money-back guarantee per our refund policy.",
+      industry: "Strict 'no refunds' policies once account credentials have been generated.",
+      teleview: "Documented 14-day technical money-back guarantee per our published refund policy.",
     },
     {
       criterion: "Customer Support",
-      industry: "Unresponsive email contact forms or automated bots.",
-      teleview: "Dedicated technical support desk via WhatsApp and email.",
-    },
-    {
-      criterion: "Setup Documentation",
-      industry: "Little to no guidance on configuring player apps.",
-      teleview: "Step-by-step setup guides for Firestick, Smart TVs, Android, and Apple TV.",
-    },
-    {
-      criterion: "Factual Claims",
-      industry: "Unrealistic claims like '100,000 4K channels' and 'zero buffering'.",
-      teleview: "Factual specifications with honest internet bandwidth requirements.",
+      industry: "Unresponsive email contact forms, unmonitored tickets, or automated bot scripts.",
+      teleview: "Dedicated technical support desk providing real-time assistance via WhatsApp and email.",
     },
   ],
 };
@@ -885,9 +852,13 @@ export const trustAndTransparency = {
 
 export const homepageFaqs = [
   {
-    question: "What is included with a Teleview IPTV subscription?",
+    question: "What internet speed do I need for smooth streaming?",
     answer:
-      "Every Teleview subscription includes access to 25,000+ live international channels, 100,000+ on-demand movies and TV series, 50/60 FPS sports streams on supported feeds, and 7-day XMLTV electronic program guide data. Subscriptions include Xtream Codes API and M3U playlist credentials compatible with major media players.",
+      "We recommend a stable broadband connection of at least 15–25 Mbps for smooth HD and 4K playback. Using a 5 GHz Wi-Fi band or a direct Ethernet connection minimizes packet loss and buffering during live events.",
+    link: {
+      url: "/help-center/internet-speed",
+      text: "Read our Internet Speed & Network Guide →",
+    },
   },
   {
     question: "Can I test Teleview before purchasing a subscription?",
@@ -934,7 +905,7 @@ export const homepageFaqs = [
   {
     question: "What is your refund policy?",
     answer:
-      "Teleview provides an official 14-day technical money-back guarantee. If you experience persistent technical incompatibilities that our support team cannot resolve within 14 days of purchase, you can request a full refund according to our refund policy.",
+      "Teleview provides an official 14-day technical money-back guarantee. If you experience persistent technical incompatibilities that our support desk cannot resolve within 14 days of purchase, you are eligible for a full refund per our refund policy.",
     link: {
       url: "/refund-policy",
       text: "Read our official 14-Day Refund Policy →",

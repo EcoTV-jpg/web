@@ -29,24 +29,9 @@ export default function ReadyBanner() {
               {readyBanner.ctaSecondary} &rarr;
             </a>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-smoke">
-            <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="size-3.5 text-phosphor-green" aria-hidden="true" />
-              24-Hour Evaluation Pass
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Zap className="size-3.5 text-phosphor-green" aria-hidden="true" />
-              Prepaid — No Auto-Renewal
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Zap className="size-3.5 text-phosphor-green" aria-hidden="true" />
-              5–15 Min Delivery
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="size-3.5 text-phosphor-green" aria-hidden="true" />
-              14-Day Guarantee on Plans
-            </span>
-          </div>
+          <p className="mt-8 text-xs text-smoke">
+            Prepaid plans with zero auto-renewal &bull; Backed by our 14-day technical money-back guarantee
+          </p>
         </Reveal>
       </div>
     </section>

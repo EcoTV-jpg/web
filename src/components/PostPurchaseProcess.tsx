@@ -20,7 +20,7 @@ export default function PostPurchaseProcess() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {postPurchaseProcess.steps.map((step, i) => (
             <Reveal key={step.step} delay={i * 0.07} className="h-full">
               <article className="card card-hover h-full p-6 flex flex-col border-charcoal bg-ash/40">

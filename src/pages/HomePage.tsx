@@ -7,7 +7,6 @@ import DeviceGrid from "../components/DeviceGrid";
 import SportsBanner from "../components/SportsBanner";
 import EntertainmentSection from "../components/EntertainmentSection";
 import Pricing from "../components/Pricing";
-import PlanDecisionSupport from "../components/PlanDecisionSupport";
 import PostPurchaseProcess from "../components/PostPurchaseProcess";
 import BuyerChecklist from "../components/BuyerChecklist";
 import FaqSection from "../components/FaqSection";
@@ -36,9 +35,6 @@ export default function HomePage() {
           <EntertainmentSection />
         </div>
         <Pricing />
-        <div className="cv-auto">
-          <PlanDecisionSupport />
-        </div>
         <div className="cv-auto">
           <PostPurchaseProcess />
         </div>
