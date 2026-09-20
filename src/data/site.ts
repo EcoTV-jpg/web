@@ -533,7 +533,7 @@ export const faqs = [
   {
     question: "Can I get a free trial of Teleview IPTV?",
     answer:
-      "Yes, Teleview offers 24-hour test access upon request via WhatsApp, as well as a 1-Month plan fully backed by a 14-day money-back guarantee so you can test our channel library and streaming stability risk-free.",
+      "Yes, Teleview offers 24-hour test access upon request via our support desk (email or WhatsApp), as well as a 1-Month plan fully backed by a 14-day money-back guarantee so you can test our channel library and streaming stability risk-free.",
   },
   {
     question: "What is the best IPTV player application for Teleview?",
@@ -604,12 +604,12 @@ export const userProblemsAndSolution = {
       copy: "Vague instructions, broken playlist links, and missing program schedule data requiring hours of trial and error.",
     },
     {
-      title: "Proprietary App Lock-In",
-      copy: "Providers forcing clunky, ad-filled custom applications rather than supporting proven third-party media players.",
+      title: "Proprietary App Restrictions",
+      copy: "Services restricted to closed, single-platform applications rather than supporting established third-party media players.",
     },
     {
-      title: "Paying Blindly Upfront",
-      copy: "Being pressured into annual commitments before verifying whether streams play smoothly on your home broadband.",
+      title: "Upfront Annual Commitments",
+      copy: "Facing long-term commitments before verifying whether streams play smoothly on your home broadband.",
     },
   ],
   solutionHeading: "A Simpler Way to Evaluate IPTV",
@@ -797,23 +797,23 @@ export const buyerChecklist = {
   criteria: [
     {
       criterion: "Connection Formats",
-      industry: "Often locked to proprietary apps or restrictive single-device M3U URLs.",
-      teleview: "Dual provisioning: standard Xtream Codes API credentials and custom M3U playlist links.",
+      industry: "Single-format provisioning or restricted to proprietary applications.",
+      teleview: "Dual provisioning with standard Xtream Codes API credentials and M3U playlist URLs.",
     },
     {
       criterion: "Server Infrastructure",
-      industry: "Single oversold servers prone to buffering, peak-hour throttling, and sudden outages.",
-      teleview: "Load-balanced edge server clusters with automated stream failover and daily link validation.",
+      industry: "Single-server hosting setups vulnerable to peak-period traffic congestion.",
+      teleview: "Distributed streaming servers configured for standard HLS and MPEG-TS broadcast delivery.",
     },
     {
       criterion: "Refund Terms",
-      industry: "Strict 'no refunds' policies once account credentials have been generated.",
+      industry: "Digital sales final upon credential delivery without verification periods.",
       teleview: "Documented 14-day technical money-back guarantee per our published refund policy.",
     },
     {
       criterion: "Customer Support",
-      industry: "Unresponsive email contact forms, unmonitored tickets, or automated bot scripts.",
-      teleview: "Dedicated technical support desk providing real-time assistance via WhatsApp and email.",
+      industry: "Ticket-based support queues with asynchronous multi-day email turnaround.",
+      teleview: "Direct customer support desk reachable via email and WhatsApp for setup assistance.",
     },
   ],
 };

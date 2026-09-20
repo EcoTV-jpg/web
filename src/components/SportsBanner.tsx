@@ -72,7 +72,7 @@ export default function SportsBanner() {
                   </div>
                   <div className="flex justify-between pb-1">
                     <span className="text-smoke">Network Delivery</span>
-                    <span className="font-semibold text-snow">Multi-CDN Edge Routing</span>
+                    <span className="font-semibold text-snow">HLS &amp; MPEG-TS Protocols</span>
                   </div>
                 </div>
 
