@@ -7,7 +7,7 @@ const icons = [Tv, Film, Monitor, Trophy, Calendar, Key, Monitor, ShieldCheck];
 
 export default function WhatIsIncluded() {
   return (
-    <section id="included" className="section-y scroll-mt-16" aria-labelledby="included-heading">
+    <section id="included" className="section-y scroll-mt-20" aria-labelledby="included-heading">
       <div className="container-x">
         <Reveal className="text-center max-w-[720px] mx-auto">
           <p className="label-mono flex items-center justify-center gap-2">
@@ -22,7 +22,7 @@ export default function WhatIsIncluded() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whatIsIncluded.items.map((item, i) => {
             const Icon = icons[i % icons.length];
             return (
@@ -41,17 +41,17 @@ export default function WhatIsIncluded() {
           })}
         </div>
 
-        <Reveal delay={0.2} className="mt-10 text-center">
+        <Reveal delay={0.2} className="mt-8 sm:mt-10 text-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
-            <a href="/iptv-channels" className="text-phosphor-green hover:underline inline-flex items-center gap-1">
+            <a href="/iptv-channels" className="text-phosphor-green hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0">
               Browse Channel Catalog <ArrowRight className="size-3" aria-hidden="true" />
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
-            <a href="/iptv-sports" className="text-phosphor-green hover:underline inline-flex items-center gap-1">
+            <a href="/iptv-sports" className="text-phosphor-green hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0">
               50/60 FPS Sports Information <ArrowRight className="size-3" aria-hidden="true" />
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
-            <a href="/iptv-movies" className="text-phosphor-green hover:underline inline-flex items-center gap-1">
+            <a href="/iptv-movies" className="text-phosphor-green hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0">
               VOD Library Guide <ArrowRight className="size-3" aria-hidden="true" />
             </a>
           </div>

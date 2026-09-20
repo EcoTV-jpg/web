@@ -155,12 +155,18 @@ button {
 
 /* single vertical rhythm for every content section */
 .section-y {
-  padding-block: 64px;
+  padding-block: 48px;
 }
 
 @media (min-width: 640px) {
   .section-y {
-    padding-block: 96px;
+    padding-block: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 72px;
   }
 }
 
@@ -400,6 +406,6 @@ button {
 ------------------------------------------------------------------- */
 .cv-auto {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 700px;
+  contain-intrinsic-size: 1px 550px;
 }
 

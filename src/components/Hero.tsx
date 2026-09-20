@@ -5,11 +5,11 @@ import { hero } from "../data/site";
 
 export default function Hero() {
   return (
-    <section className="pb-20 pt-16 sm:pb-24 sm:pt-20" aria-labelledby="hero-heading">
+    <section className="pt-12 sm:pt-16 pb-14 sm:pb-16" aria-labelledby="hero-heading">
       <div className="container-x text-center">
         {/* Eyebrow Trust Badge */}
         <Reveal>
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             <a
               href="/iptv-free-trial"
               className="inline-flex items-center gap-1.5 rounded-full border border-phosphor-green/40 bg-phosphor-green/10 px-3 py-1 text-xs font-semibold text-phosphor-green transition-colors duration-200 hover:border-phosphor-green hover:bg-phosphor-green/20"
@@ -31,32 +31,32 @@ export default function Hero() {
 
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
-          <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[900px] text-balance">
+          <h1 id="hero-heading" className="t-display mx-auto mt-6 sm:mt-7 max-w-[900px] text-balance">
             IPTV Service Built for <Accent>Reliable Everyday Streaming</Accent>
           </h1>
         </Reveal>
 
         {/* Subhead & Description */}
         <Reveal delay={0.12}>
-          <p className="t-body mx-auto mt-6 max-w-[680px] text-silver-mist font-medium leading-relaxed">
+          <p className="t-body mx-auto mt-5 sm:mt-6 max-w-[680px] text-silver-mist font-medium leading-relaxed">
             {hero.subhead}
           </p>
-          <p className="t-body-sm mx-auto mt-3 max-w-[620px] text-smoke leading-relaxed">
+          <p className="t-body-sm mx-auto mt-2.5 sm:mt-3 max-w-[620px] text-smoke text-xs sm:text-[13px] leading-relaxed">
             {hero.copy}
           </p>
         </Reveal>
 
         {/* CTA Buttons */}
         <Reveal delay={0.18}>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <GreenButton href="/iptv-free-trial">Start 24-Hour Free Trial</GreenButton>
-            <GhostButton href="#pricing">View Subscription Plans</GhostButton>
+          <div className="mt-7 sm:mt-8 flex flex-wrap items-center justify-center gap-3">
+            <GreenButton href="/iptv-free-trial" className="px-6 py-3 text-sm font-semibold shadow-lg shadow-phosphor-green/10">Start 24-Hour Free Trial</GreenButton>
+            <GhostButton href="#pricing" className="px-5 py-3 text-sm">View Subscription Plans</GhostButton>
           </div>
         </Reveal>
 
         {/* Core Verified Proof Badges */}
         <Reveal delay={0.24}>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
               24-Hour Free Trial
@@ -83,7 +83,7 @@ export default function Hero() {
 
 
         {/* Hero Media */}
-        <Reveal delay={0.34} className="mx-auto mt-14 max-w-[880px] sm:mt-16">
+        <Reveal delay={0.34} className="mx-auto mt-10 max-w-[880px] sm:mt-12">
           <div className="card overflow-hidden p-2">
             <div className="overflow-hidden rounded-lg">
               <picture>
@@ -104,7 +104,7 @@ export default function Hero() {
         </Reveal>
 
         {/* Stats Counter Bar */}
-        <Reveal delay={0.4} className="mx-auto mt-12 max-w-[880px]">
+        <Reveal delay={0.4} className="mx-auto mt-8 max-w-[880px] sm:mt-10">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 rounded-2xl border border-charcoal bg-ash/50 p-6 shadow-lg backdrop-blur-sm">
             <div className="text-center p-2">
               <div className="text-2xl sm:text-3xl font-extrabold text-snow">25,000+</div>

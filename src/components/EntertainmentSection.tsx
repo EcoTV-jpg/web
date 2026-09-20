@@ -5,9 +5,9 @@ import { channelCategories, channelPreview } from "../data/site";
 
 export default function EntertainmentSection() {
   return (
-    <section id="entertainment" className="section-y scroll-mt-16 bg-ash/10 border-b border-charcoal/40" aria-labelledby="entertainment-heading">
+    <section id="entertainment" className="section-y scroll-mt-20 bg-ash/10 border-b border-charcoal/40" aria-labelledby="entertainment-heading">
       <div className="container-x">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
           {/* Left: World Map Graphic */}
           <Reveal className="order-2 lg:order-1">
             <div className="card overflow-hidden p-2">
@@ -62,7 +62,7 @@ export default function EntertainmentSection() {
                 </GreenButton>
                 <a
                   href="/what-is-iptv"
-                  className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+                  className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0"
                 >
                   How IPTV Technology Works <ArrowRight className="size-3" aria-hidden="true" />
                 </a>

@@ -18,18 +18,18 @@ export default function ReadyBanner() {
           <p className="t-body mx-auto mt-4 text-silver-mist">
             {readyBanner.subhead}
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6 sm:mt-7 flex flex-wrap items-center justify-center gap-3">
             <GreenButton href="/iptv-free-trial">
               {readyBanner.ctaPrimary}
             </GreenButton>
             <a
               href="/iptv-subscription"
-              className="inline-flex items-center justify-center rounded-full border border-charcoal bg-ash/40 px-6 py-3 text-xs sm:text-sm font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
+              className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-charcoal bg-ash/40 px-6 py-2.5 text-xs sm:text-sm font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
             >
               {readyBanner.ctaSecondary} &rarr;
             </a>
           </div>
-          <p className="mt-8 text-xs text-smoke">
+          <p className="mt-6 text-xs text-smoke">
             Prepaid plans with zero auto-renewal &bull; Backed by our 14-day technical money-back guarantee
           </p>
         </Reveal>

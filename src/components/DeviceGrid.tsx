@@ -192,7 +192,7 @@ export default function DeviceGrid() {
   }, []);
 
   return (
-    <section id="devices" className="section-y scroll-mt-16 bg-ash/20 border-y border-charcoal/40" aria-labelledby="devices-grid-heading">
+    <section id="devices" className="section-y scroll-mt-20 bg-ash/20 border-y border-charcoal/40" aria-labelledby="devices-grid-heading">
       <div className="container-x">
         <Reveal className="text-center">
           <p className="label-mono flex items-center justify-center gap-2">
@@ -208,7 +208,7 @@ export default function DeviceGrid() {
         </Reveal>
 
         {/* Device Grid with brand logos */}
-        <div className="hmdev mt-12">
+        <div className="hmdev mt-10">
           <div
             ref={gridRef}
             className="dev-grid"
@@ -235,7 +235,7 @@ export default function DeviceGrid() {
         </div>
 
         {/* Player Compatibility Sub-Grid */}
-        <Reveal delay={0.1} className="mt-14 max-w-[1000px] mx-auto">
+        <Reveal delay={0.1} className="mt-10 sm:mt-12 max-w-[1000px] mx-auto">
           <div className="text-center mb-6">
             <h3 className="text-base sm:text-lg font-bold text-snow">
               Compatible with Leading Third-Party IPTV Players
@@ -329,35 +329,35 @@ export default function DeviceGrid() {
         </Reveal>
 
         {/* Caption & Contextual Links */}
-        <Reveal className="mt-10 text-center">
+        <Reveal className="mt-8 sm:mt-10 text-center">
           <p className="t-caption text-xs text-smoke mb-4">
             Note: Roku devices do not support native IPTV apps and require screen casting or AirPlay.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
             <a
               href="/devices/firestick"
-              className="text-phosphor-green hover:underline"
+              className="text-phosphor-green hover:underline min-h-[44px] sm:min-h-0 py-2 sm:py-0 inline-flex items-center"
             >
               Firestick Setup Guide &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices/samsung-smart-tv"
-              className="text-phosphor-green hover:underline"
+              className="text-phosphor-green hover:underline min-h-[44px] sm:min-h-0 py-2 sm:py-0 inline-flex items-center"
             >
               Smart TV Setup &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices/apple-tv"
-              className="text-phosphor-green hover:underline"
+              className="text-phosphor-green hover:underline min-h-[44px] sm:min-h-0 py-2 sm:py-0 inline-flex items-center"
             >
               Apple TV Guide &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices"
-              className="text-silver-mist hover:text-snow hover:underline"
+              className="text-silver-mist hover:text-snow hover:underline min-h-[44px] sm:min-h-0 py-2 sm:py-0 inline-flex items-center"
             >
               All Supported Devices &rarr;
             </a>

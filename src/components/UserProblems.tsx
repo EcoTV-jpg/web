@@ -5,7 +5,7 @@ import { userProblemsAndSolution } from "../data/site";
 
 export default function UserProblems() {
   return (
-    <section id="why-teleview" className="section-y scroll-mt-16 bg-ash/10 border-y border-charcoal/40" aria-labelledby="problems-heading">
+    <section id="why-teleview" className="section-y scroll-mt-20 bg-ash/10 border-y border-charcoal/40" aria-labelledby="problems-heading">
       <div className="container-x">
         {/* Part 1: Problems & Agitate */}
         <Reveal className="text-center max-w-[760px] mx-auto">
@@ -21,7 +21,7 @@ export default function UserProblems() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {userProblemsAndSolution.problemItems.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06} className="h-full">
               <article className="card h-full p-6 flex flex-col border-charcoal bg-ash/40">
@@ -38,7 +38,7 @@ export default function UserProblems() {
         </div>
 
         {/* Part 2: The Solution Bridge */}
-        <div className="mt-16 rounded-3xl border border-phosphor-green/30 bg-gradient-to-br from-ash/80 via-ash/50 to-obsidian p-8 sm:p-12 shadow-[0_0_40px_-15px_rgba(62,207,142,0.12)]">
+        <div className="mt-12 sm:mt-14 rounded-3xl border border-phosphor-green/30 bg-gradient-to-br from-ash/80 via-ash/50 to-obsidian p-6 sm:p-10 shadow-[0_0_40px_-15px_rgba(62,207,142,0.12)]">
           <Reveal className="text-center max-w-[680px] mx-auto">
             <h3 className="text-xl sm:text-2xl font-bold text-snow">
               {userProblemsAndSolution.solutionHeading}
@@ -48,7 +48,7 @@ export default function UserProblems() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 sm:mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {userProblemsAndSolution.solutionSteps.map((step, idx) => (
               <div key={step.step} className="flex flex-col">
                 <span className="text-xs font-mono font-bold text-phosphor-green">
@@ -64,7 +64,7 @@ export default function UserProblems() {
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-charcoal/60 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-8 pt-6 border-t border-charcoal/60 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-xs text-silver-mist">
               <CheckCircle2 className="size-4 text-phosphor-green shrink-0" aria-hidden="true" />
               <span>Evaluate live performance with zero upfront payment commitment.</span>
@@ -75,7 +75,7 @@ export default function UserProblems() {
               </GreenButton>
               <a
                 href="/setup"
-                className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1"
+                className="text-xs font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0"
               >
                 Installation Overview <ArrowRight className="size-3" aria-hidden="true" />
               </a>

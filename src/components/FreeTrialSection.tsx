@@ -5,8 +5,8 @@ import { freeTrialSection } from "../data/site";
 
 export default function FreeTrialSection() {
   return (
-    <section id="trial" className="section-y border-y border-charcoal/40 bg-ash/20 scroll-mt-16" aria-labelledby="trial-heading">
-      <div className="container-x grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <section id="trial" className="section-y border-y border-charcoal/40 bg-ash/20 scroll-mt-20" aria-labelledby="trial-heading">
+      <div className="container-x grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         {/* Copy & Checklist */}
         <Reveal>
           <div>
@@ -41,13 +41,13 @@ export default function FreeTrialSection() {
               </span>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3">
               <GreenButton href="/iptv-free-trial">
                 {freeTrialSection.ctaPrimary}
               </GreenButton>
               <a
                 href="/iptv-subscription"
-                className="inline-flex items-center justify-center rounded-full border border-charcoal bg-ash/40 px-5 py-2.5 text-xs font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-charcoal bg-ash/40 px-5 py-2.5 text-xs font-semibold text-silver-mist hover:text-snow hover:border-graphite transition-all"
               >
                 {freeTrialSection.ctaSecondary} <ArrowRight className="size-3 ml-1" aria-hidden="true" />
               </a>

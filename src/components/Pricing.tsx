@@ -57,7 +57,7 @@ export default function Pricing() {
   const [selectedDevices, setSelectedDevices] = useState(1);
 
   return (
-    <section id="pricing" className="section-y relative scroll-mt-16" aria-labelledby="pricing-heading">
+    <section id="pricing" className="section-y relative scroll-mt-20" aria-labelledby="pricing-heading">
       <div className="container-x">
         <Reveal className="text-center">
           <p className="label-mono flex items-center justify-center gap-2">
@@ -97,7 +97,7 @@ export default function Pricing() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 sm:mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {plans.map((plan, i) => {
             const activeData = devicePricing[selectedDevices]?.[plan.name] || {
               price: plan.price,
@@ -210,8 +210,8 @@ export default function Pricing() {
         </div>
 
         {/* Plan Selection Guidance & Detailed Comparison Links */}
-        <Reveal delay={0.12} className="mt-10 max-w-[840px] mx-auto">
-          <div className="rounded-2xl border border-charcoal bg-ash/30 p-6 text-center">
+        <Reveal delay={0.12} className="mt-8 sm:mt-10 max-w-[840px] mx-auto">
+          <div className="rounded-2xl border border-charcoal bg-ash/30 p-5 sm:p-6 text-center">
             <h3 className="text-sm sm:text-base font-bold text-snow">Which Plan Should You Choose?</h3>
             <p className="mt-2 text-xs sm:text-sm text-silver-mist leading-relaxed max-w-[680px] mx-auto">
               If you are new to Teleview, start with the <strong className="text-snow">1-Month plan ($16)</strong> for flexible testing on your home setup. When you are ready for maximum savings, the <strong className="text-snow">12-Month plan ($90)</strong> reduces your effective rate to <strong className="text-phosphor-green font-mono">$7.50/mo</strong>. Every plan includes the identical full catalog, 50/60 FPS sports, and 14-day technical guarantee.
@@ -219,14 +219,14 @@ export default function Pricing() {
             <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold">
               <a
                 href="/iptv-subscription"
-                className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+                className="text-phosphor-green hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0"
               >
                 Compare All Plan Features &rarr;
               </a>
               <span className="text-smoke" aria-hidden="true">&bull;</span>
               <a
                 href="/iptv-pricing"
-                className="text-phosphor-green hover:underline inline-flex items-center gap-1"
+                className="text-phosphor-green hover:underline inline-flex items-center gap-1 min-h-[44px] sm:min-h-0 py-2 sm:py-0"
               >
                 Complete IPTV Pricing &amp; Economics Guide &rarr;
               </a>
