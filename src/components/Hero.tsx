@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Main H1 Title */}
         <Reveal delay={0.06}>
           <h1 id="hero-heading" className="t-display mx-auto mt-8 max-w-[900px] text-balance">
-            Best <Accent>IPTV Service</Accent> in 2026
+            IPTV Service Built for <Accent>Reliable Everyday Streaming</Accent>
           </h1>
         </Reveal>
 
@@ -49,21 +49,29 @@ export default function Hero() {
         {/* CTA Buttons */}
         <Reveal delay={0.18}>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <GreenButton href="#pricing">CHOOSE A PLAN</GreenButton>
-            <GhostButton href="/iptv-free-trial">Start Free Trial</GhostButton>
+            <GreenButton href="/iptv-free-trial">Start 24-Hour Free Trial</GreenButton>
+            <GhostButton href="#pricing">View Subscription Plans</GhostButton>
           </div>
         </Reveal>
 
-        {/* 3 Core Trust Badges */}
+        {/* Core Verified Proof Badges */}
         <Reveal delay={0.24}>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-silver-mist">
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
-              Fast Activation
+              24-Hour Free Trial
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
-              Xtream &amp; M3U Support
+              Xtream &amp; M3U Formats
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-phosphor-green" aria-hidden="true" />
+              Prepaid — No Auto-Renewal
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Zap className="size-4 text-phosphor-green" aria-hidden="true" />
+              5–15 Min Delivery
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Headphones className="size-4 text-phosphor-green" aria-hidden="true" />

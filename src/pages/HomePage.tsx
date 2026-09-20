@@ -1,17 +1,15 @@
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Pricing from "../components/Pricing";
-import SportsBanner from "../components/SportsBanner";
+import UserProblems from "../components/UserProblems";
+import WhatIsIncluded from "../components/WhatIsIncluded";
+import FreeTrialSection from "../components/FreeTrialSection";
 import DeviceGrid from "../components/DeviceGrid";
-import Steps from "../components/Steps";
-import WhyChooseUs from "../components/WhyChooseUs";
-import Comparison from "../components/Comparison";
-import TechnologyExplainer from "../components/TechnologyExplainer";
-import Highlights from "../components/Highlights";
-import Coverage from "../components/Coverage";
-import CoastToCoast from "../components/CoastToCoast";
-import DealPromo from "../components/DealPromo";
-import Guarantee from "../components/Guarantee";
+import SportsBanner from "../components/SportsBanner";
+import EntertainmentSection from "../components/EntertainmentSection";
+import Pricing from "../components/Pricing";
+import PlanDecisionSupport from "../components/PlanDecisionSupport";
+import PostPurchaseProcess from "../components/PostPurchaseProcess";
+import BuyerChecklist from "../components/BuyerChecklist";
 import FaqSection from "../components/FaqSection";
 import ReadyBanner from "../components/ReadyBanner";
 import Footer from "../components/Footer";
@@ -23,29 +21,29 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <WhyChooseUs />
+        <UserProblems />
+        <WhatIsIncluded />
+        <div className="cv-auto">
+          <FreeTrialSection />
+        </div>
+        <div className="cv-auto">
+          <DeviceGrid />
+        </div>
+        <div className="cv-auto">
+          <SportsBanner />
+        </div>
+        <div className="cv-auto">
+          <EntertainmentSection />
+        </div>
         <Pricing />
         <div className="cv-auto">
-          <DealPromo />
+          <PlanDecisionSupport />
         </div>
         <div className="cv-auto">
-          <Highlights />
-        </div>
-        <SportsBanner />
-        <DeviceGrid />
-        <Steps />
-        <div className="cv-auto">
-          <CoastToCoast />
+          <PostPurchaseProcess />
         </div>
         <div className="cv-auto">
-          <Coverage />
-        </div>
-        <Comparison />
-        <div className="cv-auto">
-          <TechnologyExplainer />
-        </div>
-        <div className="cv-auto">
-          <Guarantee />
+          <BuyerChecklist />
         </div>
         <div className="cv-auto">
           <FaqSection />
@@ -59,3 +57,4 @@ export default function HomePage() {
     </div>
   );
 }
+

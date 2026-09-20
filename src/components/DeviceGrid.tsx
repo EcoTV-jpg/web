@@ -197,17 +197,17 @@ export default function DeviceGrid() {
         <Reveal className="text-center">
           <p className="label-mono flex items-center justify-center gap-2">
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
-            {devicesSection.kicker || "Stream anywhere anytime"}
+            Hardware &amp; Player Compatibility
           </p>
           <h2 id="devices-grid-heading" className="t-h2 mt-4 text-balance">
-            Watch Teleview IPTV on Your <Accent>Favorite Devices</Accent>
+            Will Teleview Work on Your <Accent>Device &amp; Player</Accent>?
           </h2>
           <p className="t-body-sm mx-auto mt-4 max-w-[640px] text-silver-mist leading-relaxed">
-            {devicesSection.subhead}
+            Teleview connects smoothly across major streaming platforms and third-party IPTV media players using standard Xtream Codes API and M3U playlist formats.
           </p>
         </Reveal>
 
-        {/* Device Grid with iptvv.ca brand logos */}
+        {/* Device Grid with brand logos */}
         <div className="hmdev mt-12">
           <div
             ref={gridRef}
@@ -234,31 +234,125 @@ export default function DeviceGrid() {
           </div>
         </div>
 
+        {/* Player Compatibility Sub-Grid */}
+        <Reveal delay={0.1} className="mt-14 max-w-[1000px] mx-auto">
+          <div className="text-center mb-6">
+            <h3 className="text-base sm:text-lg font-bold text-snow">
+              Compatible with Leading Third-Party IPTV Players
+            </h3>
+            <p className="text-xs text-silver-mist mt-1 max-w-[580px] mx-auto">
+              We do not lock you into proprietary software. Connect using standard Xtream Codes API credentials or M3U links.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-bold text-snow">TiviMate</h4>
+                <span className="text-[10px] font-mono text-phosphor-green uppercase">Fire TV &amp; Android</span>
+              </div>
+              <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                Advanced EPG layout, catch-up scheduling, and multi-screen viewing for Android-based devices.
+              </p>
+              <a href="/iptv-players/tivimate" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                TiviMate Setup Guide &rarr;
+              </a>
+            </article>
+
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-bold text-snow">IPTV Smarters Pro</h4>
+                <span className="text-[10px] font-mono text-phosphor-green uppercase">Multi-Platform</span>
+              </div>
+              <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                Intuitive navigation for live TV, movies, series, and multi-user login across mobile and TV screens.
+              </p>
+              <a href="/iptv-players/iptv-smarters-pro" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                Smarters Pro Guide &rarr;
+              </a>
+            </article>
+
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-bold text-snow">IBO Player</h4>
+                <span className="text-[10px] font-mono text-phosphor-green uppercase">Smart TVs</span>
+              </div>
+              <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                Fast loading and responsive video decoding tailored for Samsung Tizen OS and LG webOS.
+              </p>
+              <a href="/iptv-players/ibo-player" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                IBO Player Guide &rarr;
+              </a>
+            </article>
+
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-bold text-snow">OTT Navigator</h4>
+                <span className="text-[10px] font-mono text-phosphor-green uppercase">Android TV</span>
+              </div>
+              <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                Highly configurable buffer size controls, channel filtering, and customized stream codecs.
+              </p>
+              <a href="/iptv-players/ott-navigator" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                OTT Navigator Guide &rarr;
+              </a>
+            </article>
+
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40">
+              <div className="flex items-center justify-between">
+                <h4 className="text-sm font-bold text-snow">VLC Media Player</h4>
+                <span className="text-[10px] font-mono text-phosphor-green uppercase">Desktop / Mobile</span>
+              </div>
+              <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                Universal open-source network stream playback for Windows, macOS, Linux, and mobile platforms.
+              </p>
+              <a href="/iptv-players/vlc" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                VLC Setup Guide &rarr;
+              </a>
+            </article>
+
+            <article className="card p-4 sm:p-5 border-charcoal bg-ash/40 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-bold text-snow">More Player Guides</h4>
+                  <span className="text-[10px] font-mono text-smoke uppercase">All Apps</span>
+                </div>
+                <p className="mt-2 text-xs text-silver-mist leading-relaxed">
+                  Compare features, download links, and configuration steps for all supported media players.
+                </p>
+              </div>
+              <a href="/iptv-players" className="mt-3 inline-block text-[11px] font-semibold text-phosphor-green hover:underline">
+                View All Supported Players &rarr;
+              </a>
+            </article>
+          </div>
+        </Reveal>
+
         {/* Caption & Contextual Links */}
-        <Reveal className="mt-8 text-center">
+        <Reveal className="mt-10 text-center">
           <p className="t-caption text-xs text-smoke mb-4">
-            {devicesSection.note}
+            Note: Roku devices do not support native IPTV apps and require screen casting or AirPlay.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
             <a
               href="/devices/firestick"
               className="text-phosphor-green hover:underline"
             >
-              IPTV on Firestick Setup &rarr;
+              Firestick Setup Guide &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices/samsung-smart-tv"
               className="text-phosphor-green hover:underline"
             >
-              IPTV on Smart TV Guide &rarr;
+              Smart TV Setup &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a
               href="/devices/apple-tv"
               className="text-phosphor-green hover:underline"
             >
-              IPTV on Apple TV Manual &rarr;
+              Apple TV Guide &rarr;
             </a>
             <span className="text-smoke" aria-hidden="true">&bull;</span>
             <a

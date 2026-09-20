@@ -5,61 +5,50 @@ import { Accent, GhostButton, GreenButton, WhatsAppIcon } from "./ui";
 import { plans, pricingHeader } from "../data/site";
 
 const deviceOptions = [
-  { count: 1, label: "1 Device" },
-  { count: 2, label: "2 Devices" },
-  { count: 3, label: "3 Devices" },
-  { count: 4, label: "4 Devices" },
+  { count: 1, label: "1 Connection (1 Screen)" },
+  { count: 2, label: "2 Connections (2 Screens)" },
+  { count: 3, label: "3 Connections (3 Screens)" },
+  { count: 4, label: "4 Connections (4 Screens)" },
 ];
 
-/* Pricing multipliers for device connections */
-const devicePricing: Record<number, Record<string, { price: string; billing: string; save?: string }>> = {
+/* Multipliers for simultaneous device connections */
+const devicePricing: Record<number, Record<string, { price: string; billing: string; effective?: string; save?: string }>> = {
   1: {
-    "1 Month": { price: "$16", billing: "/ 1 month" },
-    "3 Months": { price: "$39", billing: "/ 3 months" },
-    "6 Months": { price: "$60", billing: "/ 6 months" },
-    "12 Months": { price: "$90", billing: "/ 12 months", save: "Best Value — Save $102" },
+    "1 Month": { price: "$16", billing: "/ 1 month", effective: "$16.00/mo" },
+    "3 Months": { price: "$39", billing: "/ 3 months", effective: "$13.00/mo", save: "Save 19%" },
+    "6 Months": { price: "$60", billing: "/ 6 months", effective: "$10.00/mo", save: "Save 38%" },
+    "12 Months": { price: "$90", billing: "/ 12 months", effective: "$7.50/mo", save: "Best Value — Save $102" },
   },
   2: {
     "1 Month": { price: "$26", billing: "/ 1 month" },
     "3 Months": { price: "$59", billing: "/ 3 months" },
     "6 Months": { price: "$89", billing: "/ 6 months" },
-    "12 Months": { price: "$139", billing: "/ 12 months", save: "Best Value — Save $173" },
+    "12 Months": { price: "$139", billing: "/ 12 months", save: "Save $173" },
   },
   3: {
     "1 Month": { price: "$36", billing: "/ 1 month" },
     "3 Months": { price: "$79", billing: "/ 3 months" },
     "6 Months": { price: "$119", billing: "/ 6 months" },
-    "12 Months": { price: "$189", billing: "/ 12 months", save: "Best Value — Save $243" },
+    "12 Months": { price: "$189", billing: "/ 12 months", save: "Save $243" },
   },
   4: {
     "1 Month": { price: "$46", billing: "/ 1 month" },
     "3 Months": { price: "$99", billing: "/ 3 months" },
     "6 Months": { price: "$149", billing: "/ 6 months" },
-    "12 Months": { price: "$239", billing: "/ 12 months", save: "Best Value — Save $313" },
+    "12 Months": { price: "$239", billing: "/ 12 months", save: "Save $313" },
   },
 };
 
-/* Monochrome payment marks */
-function PaymentMarks() {
+/* Neutral payment notice complying with directive 1 */
+function PaymentNotice() {
   return (
-    <div
-      className="mt-12 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-smoke"
-      aria-label="Accepted payment methods"
-    >
-      <span className="text-[14px] font-medium italic tracking-wide">VISA</span>
-      <svg viewBox="0 0 40 22" className="h-[18px] w-auto" aria-hidden="true">
-        <circle cx="15" cy="11" r="9" fill="var(--color-graphite)" />
-        <circle cx="25" cy="11" r="9" fill="var(--color-smoke)" fillOpacity="0.75" />
-      </svg>
-      <span className="rounded-[4px] border border-charcoal px-2 py-1 text-[10px] font-medium tracking-wider">AMEX</span>
-      <span className="text-[13px] font-medium italic">PayPal</span>
-      <span className="flex items-center gap-1.5 text-[12px] font-medium lowercase tracking-tight">
-        <svg viewBox="0 0 20 20" className="h-4 w-4" aria-hidden="true">
-          <circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" strokeWidth={2} />
-          <path d="M10 5.2c2.7 0 4.8 2.1 4.8 4.8h-2.4a2.4 2.4 0 1 0 0 0zM14.8 10c0 2.7-2.1 4.8-4.8 4.8z" fill="currentColor" />
-        </svg>
-        Crypto
-      </span>
+    <div className="mt-8 text-center text-xs text-smoke max-w-[620px] mx-auto space-y-1.5">
+      <p className="font-semibold text-silver-mist">
+        Available payment options are confirmed during ordering.
+      </p>
+      <p className="text-[11px] text-smoke">
+        Prepaid plans. No automatic renewal. Subscriptions are one-time payments with zero recurring charges.
+      </p>
     </div>
   );
 }
@@ -103,6 +92,9 @@ export default function Pricing() {
               );
             })}
           </div>
+          <p className="mt-3 text-[11px] text-smoke max-w-[520px] mx-auto">
+            Install credentials on any number of personal devices; the connection count determines how many screens can stream simultaneously.
+          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -110,6 +102,7 @@ export default function Pricing() {
             const activeData = devicePricing[selectedDevices]?.[plan.name] || {
               price: plan.price,
               billing: plan.billingText,
+              effective: undefined,
               save: plan.save,
             };
 
@@ -130,18 +123,18 @@ export default function Pricing() {
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold uppercase tracking-[0.06em] text-snow">{plan.name}</h3>
                     <span className="text-[11px] font-medium text-smoke">
-                      {selectedDevices} {selectedDevices === 1 ? "Device" : "Devices"}
+                      {selectedDevices} {selectedDevices === 1 ? "Active Screen" : "Active Screens"}
                     </span>
                   </div>
 
                   {/* Price Display */}
                   <div className="mt-3 flex items-baseline gap-2.5">
                     <span className="t-heading-sm leading-none text-snow">{activeData.price}</span>
-                    {plan.originalPrice && selectedDevices === 1 && (
-                      <span className="text-base font-normal text-smoke line-through">{plan.originalPrice}</span>
+                    {activeData.effective && (
+                      <span className="text-xs font-semibold text-phosphor-green font-mono">{activeData.effective}</span>
                     )}
                     {activeData.save && (
-                      <span className="text-xs font-semibold text-phosphor-green">{activeData.save}</span>
+                      <span className="text-xs font-semibold text-silver-mist">{activeData.save}</span>
                     )}
                   </div>
 
@@ -232,7 +225,7 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <PaymentMarks />
+          <PaymentNotice />
         </Reveal>
       </div>
     </section>

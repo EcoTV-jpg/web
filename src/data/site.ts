@@ -20,16 +20,18 @@ export const site = {
 /* Hero */
 export const hero = {
   kicker: "TELEVIEW IPTV",
-  heading: "Best IPTV Service in 2026",
+  heading: "IPTV Service Built for Reliable Everyday Streaming",
   subhead:
-    "Teleview provides access to 25,000+ live international channels, 50/60 FPS sports feeds where available, and 100,000+ on-demand titles with fast credential delivery and worldwide device compatibility.",
-  copy: "Provisioned with standard Xtream Codes API and M3U playlist credentials for third-party players on Firestick, Smart TVs, Android TV, and Apple TV. Subscriptions include 1 to 4 connections, prompt credential delivery typically within 5–15 minutes, and a 14-day money-back guarantee.",
-  ctaPrimary: "CHOOSE A PLAN",
-  ctaSecondary: "Start Free Trial",
+    "Watch live TV, sports, movies, and series across compatible devices. Test Teleview on your own broadband connection before committing to a longer plan.",
+  copy: "Provisioned with standard Xtream Codes API and M3U playlist credentials for third-party player apps on Firestick, Smart TVs, Android, and Apple TV. Subscriptions include 1 to 4 connections, prompt credential delivery typically within 5–15 minutes, and an official 14-day money-back guarantee.",
+  ctaPrimary: "Start 24-Hour Trial",
+  ctaSecondary: "View Plans",
   trustBadges: [
-    "Fast Activation",
-    "Xtream & M3U Support",
-    "14-Day Guarantee",
+    "24-Hour Trial",
+    "Xtream & M3U",
+    "Prepaid — No Auto-Renewal",
+    "Setup Guides",
+    "5–15 Min Delivery",
   ],
 };
 
@@ -517,7 +519,11 @@ export const faqs = [
   {
     question: "Is using Teleview IPTV legal?",
     answer:
-      "Yes, streaming IPTV services is legal. Teleview complies with international streaming protocols and provides access to public broadcasts and global channels over standard IP networks.",
+      "IPTV is a streaming technology. Legality depends on content licensing, distribution rights, provider practices, and applicable laws in your jurisdiction. Teleview provisions access to streams over standard IP networks using standard protocols.",
+    link: {
+      url: "/is-iptv-legal",
+      text: "Read our comprehensive IPTV legality guide →",
+    },
   },
   {
     question: "How do I choose the best Teleview subscription plan?",
@@ -567,8 +573,381 @@ export const faqs = [
 
 /* Ready to Start Streaming Banner */
 export const readyBanner = {
-  heading: "Ready to Start Streaming?",
-  subhead: "Choose the IPTV subscription that fits your needs and get started with Teleview.",
-  cta: "View IPTV Plans",
-  subtext: "14-Day Money-Back Guarantee · Fast Activation · Customer Support",
+  heading: "See How Teleview Works on Your Setup",
+  subhead: "Evaluate channel switching, picture clarity, and sports stability on your actual television and broadband connection.",
+  ctaPrimary: "Start 24-Hour Free Trial",
+  ctaSecondary: "Compare Subscription Plans",
+  badges: [
+    "24-Hour Evaluation Pass",
+    "Prepaid — No Auto-Renewal",
+    "Fast 5–15 Min Delivery",
+    "14-Day Guarantee on Plans",
+  ],
 };
+
+/* ------------------------------------------------------------------
+   Structured Homepage Content Data (Consolidated Decision Journey)
+------------------------------------------------------------------- */
+
+export const userProblemsAndSolution = {
+  kicker: "A BETTER STREAMING EXPERIENCE",
+  problemsHeading: "IPTV Shouldn't Mean Constant Troubleshooting",
+  problemsSubhead:
+    "Streaming television over the internet should be as simple as turning on a TV. We address common streaming friction points directly:",
+  problemItems: [
+    {
+      title: "Peak-Hour Buffering",
+      copy: "Streaming servers that stall or freeze right as marquee sports matches or primetime evening broadcasts begin.",
+    },
+    {
+      title: "Complicated Manual Setup",
+      copy: "Vague instructions, broken playlist links, and missing program schedule data requiring hours of trial and error.",
+    },
+    {
+      title: "Proprietary App Lock-In",
+      copy: "Providers forcing clunky, ad-filled custom applications rather than supporting proven third-party media players.",
+    },
+    {
+      title: "Paying Blindly Upfront",
+      copy: "Being pressured into annual commitments before verifying whether streams play smoothly on your home broadband.",
+    },
+  ],
+  solutionHeading: "A Simpler Way to Evaluate IPTV",
+  solutionSubhead: "Evaluate our service on your own hardware before committing to any paid plan:",
+  solutionSteps: [
+    {
+      step: "01",
+      title: "Request Test Access",
+      copy: "Ask for a 24-hour evaluation pass to test live channels, picture quality, and switching responsiveness.",
+    },
+    {
+      step: "02",
+      title: "Receive Credentials",
+      copy: "Receive standard Xtream Codes API login details and M3U playlist links typically within 5–15 minutes.",
+    },
+    {
+      step: "03",
+      title: "Test on Your Setup",
+      copy: "Load credentials into your preferred player app on your TV, Firestick, phone, or computer.",
+    },
+    {
+      step: "04",
+      title: "Decide with Confidence",
+      copy: "Choose a prepaid subscription only after you verify reliable playback on your personal home network.",
+    },
+  ],
+};
+
+export const whatIsIncluded = {
+  kicker: "SERVICE SPECIFICATIONS",
+  heading: "What's Included with Teleview?",
+  subhead:
+    "Every plan includes identical, unrestricted access to our full live channel library, on-demand catalog, and core streaming features.",
+  items: [
+    {
+      title: "25,000+ Live Channels",
+      copy: "National and international broadcast networks categorized by country and genre with full schedule listings.",
+    },
+    {
+      title: "100,000+ Movies & Series",
+      copy: "Extensive on-demand video library updated regularly with multi-language audio tracks and subtitles.",
+    },
+    {
+      title: "High-Definition & 4K Feeds",
+      copy: "Broadcast streams available up to 4K Ultra HD where the source broadcast, device decoder, and connection bandwidth support it.",
+    },
+    {
+      title: "50/60 FPS Sports Streams",
+      copy: "Select live sporting events encoded at 50/60 frames per second for fluid broadcast motion.",
+    },
+    {
+      title: "7-Day XMLTV EPG",
+      copy: "Electronic Program Guide data for channel schedules, program descriptions, and catch-up navigation.",
+    },
+    {
+      title: "Xtream & M3U Formats",
+      copy: "Standard Xtream Codes API (URL, port, username, password) and M3U playlist links for broad player support.",
+    },
+    {
+      title: "1 to 4 Connections",
+      copy: "Select 1 to 4 simultaneous streams. Configure your credentials on any number of personal devices.",
+    },
+    {
+      title: "14-Day Guarantee",
+      copy: "All subscriptions are backed by an official 14-day technical money-back guarantee per our refund policy.",
+    },
+  ],
+};
+
+export const freeTrialSection = {
+  kicker: "EVALUATE BEFORE YOU BUY",
+  heading: "Don't Take Our Word for It. Test It Yourself.",
+  subhead:
+    "Real-world IPTV performance depends on factors unique to your household: your internet service provider, Wi-Fi routing, streaming hardware, and player software.",
+  checklist: [
+    "Check your favorite live national and international channels",
+    "Test channel zapping and switching responsiveness",
+    "Evaluate high-framerate 50/60 FPS sports playback",
+    "Verify full 7-day EPG synchronization on your player",
+    "Browse the 100,000+ on-demand movie and series catalog",
+    "Test compatibility across multiple household devices",
+  ],
+  ctaPrimary: "Start 24-Hour Free Trial",
+  ctaSecondary: "Compare All Plans",
+  note: "No credit card required for trial access. Delivery typically takes between 5 to 15 minutes.",
+};
+
+export const devicesAndPlayers = {
+  kicker: "HARDWARE & SOFTWARE COMPATIBILITY",
+  heading: "Will Teleview Work on Your Device & Player?",
+  subhead:
+    "Teleview connects across major streaming platforms and third-party media players using standard Xtream Codes API and M3U playlist protocols.",
+  rokuNote: "Roku devices do not support native IPTV apps and require screen casting or AirPlay.",
+  players: [
+    {
+      name: "TiviMate",
+      platform: "Fire TV & Android",
+      desc: "Advanced EPG, recording, and customizable multi-screen layouts.",
+      href: "/iptv-players/tivimate",
+    },
+    {
+      name: "IPTV Smarters Pro",
+      platform: "Android, iOS, Smart TV",
+      desc: "Intuitive interface for live TV, movies, series, and multi-user login.",
+      href: "/iptv-players/iptv-smarters-pro",
+    },
+    {
+      name: "IBO Player",
+      platform: "Samsung & LG TVs",
+      desc: "Fast startup and hardware-accelerated playback on Tizen and webOS.",
+      href: "/iptv-players/ibo-player",
+    },
+    {
+      name: "OTT Navigator",
+      platform: "Android TV & Mobile",
+      desc: "Highly configurable buffer controls and automated playlist filtering.",
+      href: "/iptv-players/ott-navigator",
+    },
+    {
+      name: "VLC Media Player",
+      platform: "Windows, Mac, Linux",
+      desc: "Reliable, open-source network stream playback on desktop operating systems.",
+      href: "/iptv-players/vlc",
+    },
+  ],
+};
+
+export const planDecisionSupport = {
+  kicker: "PLAN COMPARISON",
+  heading: "Not Sure Which Plan to Choose?",
+  subhead: "Select the subscription duration that best matches your viewing habits and budget:",
+  options: [
+    {
+      name: "1 Month",
+      price: "$16",
+      effective: "$16.00/mo",
+      desc: "Best for short-term evaluation, holiday travel, or watching specific tournament matches without long-term commitment.",
+    },
+    {
+      name: "3 Months",
+      price: "$39",
+      effective: "$13.00/mo",
+      desc: "Popular for following an active sports season, saving 19% compared to monthly renewal.",
+    },
+    {
+      name: "6 Months",
+      price: "$60",
+      effective: "$10.00/mo",
+      desc: "A balanced choice for regular household streaming at a predictable low rate of $10.00 per month.",
+    },
+    {
+      name: "12 Months",
+      price: "$90",
+      effective: "$7.50/mo",
+      desc: "Our lowest effective monthly rate, ideal for viewers seeking year-round streaming stability at maximum savings.",
+    },
+  ],
+};
+
+export const postPurchaseProcess = {
+  kicker: "ORDER FULFILLMENT",
+  heading: "What Happens After You Order?",
+  subhead: "Getting started takes just a few minutes with our structured fulfillment process:",
+  steps: [
+    {
+      step: "01",
+      title: "Select Plan & Connections",
+      desc: "Choose your preferred subscription duration and number of simultaneous screens.",
+    },
+    {
+      step: "02",
+      title: "Confirm Your Order",
+      desc: "Available payment options and order instructions are confirmed during checkout.",
+    },
+    {
+      step: "03",
+      title: "Receive Credentials (5–15 Min)",
+      desc: "Your Xtream Codes API details and M3U playlist link are dispatched typically within 5–15 minutes.",
+    },
+    {
+      step: "04",
+      title: "Configure Player Application",
+      desc: "Input your server URL, username, and password into your chosen player using our setup tutorials.",
+    },
+    {
+      step: "05",
+      title: "Start Streaming",
+      desc: "Immediate access to 25,000+ live channels, EPG schedule data, and 100,000+ on-demand titles.",
+    },
+  ],
+};
+
+export const buyerChecklist = {
+  kicker: "BUYER'S GUIDE",
+  heading: "What to Check Before Choosing an IPTV Service",
+  subhead:
+    "Whether you evaluate Teleview or another provider, check these 8 essential technical and commercial criteria:",
+  criteria: [
+    {
+      criterion: "Trial Availability",
+      industry: "Many providers require immediate upfront payment with no trial option.",
+      teleview: "Complimentary 24-hour evaluation pass available upon request.",
+    },
+    {
+      criterion: "Connection Formats",
+      industry: "Often locked to proprietary apps or single M3U URLs.",
+      teleview: "Dual provisioning: standard Xtream Codes API and custom M3U links.",
+    },
+    {
+      criterion: "Billing Structure",
+      industry: "Recurring monthly charges with automatic credit card rebilling.",
+      teleview: "100% prepaid plans with zero automatic renewal or hidden fees.",
+    },
+    {
+      criterion: "Concurrent Streams",
+      industry: "Strict single-screen limits with expensive add-ons.",
+      teleview: "Flexible multi-connection options: 1 to 4 simultaneous screens.",
+    },
+    {
+      criterion: "Refund Terms",
+      industry: "No refunds once credentials have been generated.",
+      teleview: "Official 14-day technical money-back guarantee per our refund policy.",
+    },
+    {
+      criterion: "Customer Support",
+      industry: "Unresponsive email contact forms or automated bots.",
+      teleview: "Dedicated technical support desk via WhatsApp and email.",
+    },
+    {
+      criterion: "Setup Documentation",
+      industry: "Little to no guidance on configuring player apps.",
+      teleview: "Step-by-step setup guides for Firestick, Smart TVs, Android, and Apple TV.",
+    },
+    {
+      criterion: "Factual Claims",
+      industry: "Unrealistic claims like '100,000 4K channels' and 'zero buffering'.",
+      teleview: "Factual specifications with honest internet bandwidth requirements.",
+    },
+  ],
+};
+
+export const trustAndTransparency = {
+  kicker: "TRANSPARENT POLICIES",
+  heading: "Know What You're Buying Before You Pay",
+  subhead: "We operate with clear policies, documented terms, and accessible technical guidance:",
+  cards: [
+    {
+      title: "14-Day Money-Back Guarantee",
+      desc: "Eligible purchases are backed by our refund policy if technical incompatibilities cannot be resolved.",
+      linkText: "Read Refund Policy",
+      href: "/refund-policy",
+    },
+    {
+      title: "Terms of Service & Usage",
+      desc: "Transparent terms covering service provisioning, acceptable use, and account responsibilities.",
+      linkText: "View Terms of Service",
+      href: "/terms-conditions",
+    },
+    {
+      title: "Privacy & Data Protection",
+      desc: "We prioritize user privacy with strict data minimization and encryption standards.",
+      linkText: "Read Privacy Policy",
+      href: "/privacy-policy",
+    },
+    {
+      title: "Technical Help Center",
+      desc: "Self-help troubleshooting guides for common buffering, player, and network issues.",
+      linkText: "Visit Help Center",
+      href: "/help-center",
+    },
+  ],
+};
+
+export const homepageFaqs = [
+  {
+    question: "What is included with a Teleview IPTV subscription?",
+    answer:
+      "Every Teleview subscription includes access to 25,000+ live international channels, 100,000+ on-demand movies and TV series, 50/60 FPS sports streams on supported feeds, and 7-day XMLTV electronic program guide data. Subscriptions include Xtream Codes API and M3U playlist credentials compatible with major media players.",
+  },
+  {
+    question: "Can I test Teleview before purchasing a subscription?",
+    answer:
+      "Yes. Teleview offers a complimentary 24-hour evaluation pass so you can test channel selection, switching speed, and stream stability on your broadband connection before buying.",
+    link: {
+      url: "/iptv-free-trial",
+      text: "Learn more about the 24-hour free trial →",
+    },
+  },
+  {
+    question: "Which devices and operating systems are compatible?",
+    answer:
+      "Teleview works across Amazon Fire TV Stick, Android TV boxes, Google TV, Samsung Smart TVs (Tizen OS), LG Smart TVs (webOS), Apple TV (tvOS), iOS devices, Android smartphones and tablets, and Windows/Mac PCs. Roku devices require screen casting or AirPlay as Roku OS does not support native IPTV player applications.",
+    link: {
+      url: "/devices",
+      text: "View all supported devices & setup guides →",
+    },
+  },
+  {
+    question: "Which IPTV player applications do you recommend?",
+    answer:
+      "We recommend TiviMate and IPTV Smarters Pro for Firestick and Android TV, IBO Player for Samsung and LG Smart TVs, and IPTV Smarters Lite or GSE Smart IPTV for Apple devices. Any player supporting Xtream Codes API or M3U playlists will work.",
+    link: {
+      url: "/iptv-players",
+      text: "Explore supported IPTV players →",
+    },
+  },
+  {
+    question: "How many devices can stream simultaneously on one account?",
+    answer:
+      "Standard Teleview subscriptions include 1 active concurrent connection, allowing you to configure your playlist credentials on multiple personal devices for non-simultaneous viewing. If your household requires streaming on 2, 3, or 4 screens at the same time, multi-connection tiers are available.",
+  },
+  {
+    question: "How long does activation and credential delivery take?",
+    answer:
+      "Credentials are dispatched typically within 5–15 minutes of order confirmation. You will receive your Xtream Codes API details (Server URL, Port, Username, and Password) along with your M3U playlist link.",
+  },
+  {
+    question: "Does the subscription renew automatically?",
+    answer:
+      "No. All Teleview plans are 100% prepaid. We do not store payment details or charge recurring subscription fees. We send a courtesy renewal notice before your term expires, leaving you in full control.",
+  },
+  {
+    question: "What is your refund policy?",
+    answer:
+      "Teleview provides an official 14-day technical money-back guarantee. If you experience persistent technical incompatibilities that our support team cannot resolve within 14 days of purchase, you can request a full refund according to our refund policy.",
+    link: {
+      url: "/refund-policy",
+      text: "Read our official 14-Day Refund Policy →",
+    },
+  },
+  {
+    question: "Is using Teleview IPTV legal?",
+    answer:
+      "IPTV is a streaming technology. Legality depends on content licensing, distribution rights, provider practices, and applicable laws in your jurisdiction. Teleview provisions access to streams over standard IP networks using standard protocols.",
+    link: {
+      url: "/is-iptv-legal",
+      text: "Read our comprehensive IPTV legality guide →",
+    },
+  },
+];
+

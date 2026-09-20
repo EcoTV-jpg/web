@@ -1,7 +1,7 @@
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { Accent } from "./ui";
-import { faqs } from "../data/site";
+import { homepageFaqs } from "../data/site";
 
 export default function FaqSection() {
   return (
@@ -10,18 +10,18 @@ export default function FaqSection() {
         <Reveal className="text-center">
           <p className="label-mono flex items-center justify-center gap-2">
             <span className="size-1.5 rounded-full bg-phosphor-green" aria-hidden="true" />
-            Frequently Asked Questions
+            Common Inquiries
           </p>
           <h2 id="faq-section-heading" className="t-h2 mt-4 text-balance">
-            Discover Premium <Accent>Teleview IPTV Service</Accent>
+            Frequently Asked <Accent>Questions</Accent>
           </h2>
-          <p className="t-body-sm mx-auto mt-4 max-w-[560px] text-silver-mist leading-relaxed">
-            Find fast, accurate answers to common questions about Teleview IPTV subscriptions, activation, compatible devices, and our 14-day money-back guarantee.
+          <p className="t-body-sm mx-auto mt-4 max-w-[580px] text-silver-mist leading-relaxed">
+            Find fast, accurate answers to common questions about Teleview IPTV subscriptions, activation timing, compatible devices, and our 14-day money-back guarantee.
           </p>
         </Reveal>
 
         <div className="mt-12 space-y-4">
-          {faqs.map((faq, i) => (
+          {homepageFaqs.map((faq, i) => (
             <Reveal key={faq.question} delay={i * 0.04}>
               <article className="card card-hover p-6 sm:p-7">
                 <div className="flex items-start gap-3.5">
@@ -32,8 +32,6 @@ export default function FaqSection() {
                     {"link" in faq && faq.link && (
                       <a
                         href={(faq.link as { url: string; text: string }).url}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-phosphor-green hover:underline"
                       >
                         {(faq.link as { url: string; text: string }).text}
@@ -45,6 +43,15 @@ export default function FaqSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.2} className="mt-10 text-center">
+          <a
+            href="/faq"
+            className="text-xs sm:text-sm font-semibold text-silver-mist hover:text-snow hover:underline inline-flex items-center gap-1.5"
+          >
+            Have a question not listed here? Visit our complete FAQ Knowledge Base <ArrowRight className="size-3.5" aria-hidden="true" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );

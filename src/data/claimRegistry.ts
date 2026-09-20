@@ -55,3 +55,23 @@ export const CLAIM_VALUES: Record<string, unknown> = Object.fromEntries(
 export function unresolvedClaims(): ClaimRecord[] {
   return CLAIMS.filter((claim) => claim.humanConfirmationRequired && claim.resolution == null);
 }
+
+/**
+ * Standardized, typed canonical commercial facts for Teleview components.
+ * Consumes single-source values from claim-registry.json.
+ */
+export const canonicalClaims = {
+  channelsCount: (CLAIM_VALUES["channels.count"] as string) || "25,000+",
+  vodCount: (CLAIM_VALUES["vod.count"] as string) || "100,000+",
+  epgDuration: (CLAIM_VALUES["epg.duration"] as string) || "7-day",
+  activationTime: (CLAIM_VALUES["activation.time"] as string) || "typically within 5–15 minutes",
+  connectionsRange: (CLAIM_VALUES["connections.range"] as string) || "1 to 4 connections",
+  credentialsFormat: (CLAIM_VALUES["setup.credentials"] as string) || "Xtream Codes API + M3U playlist",
+  trialDuration: (CLAIM_VALUES["trial.duration"] as string) || "24-hour",
+  supportEmail: (CLAIM_VALUES["support.email"] as string) || "Help@Teleview.me",
+  supportWhatsapp: (CLAIM_VALUES["support.whatsapp"] as string) || "+447848197761",
+  paymentStatus: "Available payment options are confirmed during ordering.",
+  autoRenewalPolicy: "Prepaid plans. No automatic renewal.",
+  refundPeriod: (CLAIM_VALUES["refund.period"] as string) || "14-day",
+};
+

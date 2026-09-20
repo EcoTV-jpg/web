@@ -10,7 +10,7 @@
       "sourceFile": "src/data/claim-registry.json",
       "verificationStatus": "consistent",
       "lastVerified": "2026-09-11",
-      "consumers": ["src/components/DealPromo.tsx", "src/components/Hero.tsx", "src/components/Highlights.tsx", "src/components/SEO.tsx", "src/data/bestIptvApps.ts", "src/data/featureGuides.ts", "src/data/informationalGuides.ts", "src/data/pricingGuide.ts", "src/data/products.ts", "src/data/site.ts", "src/data/troubleshootingGuides.ts", "src/pages/* (13 pages)", "src/routes.ts"],
+      "consumers": ["src/components/Hero.tsx", "src/components/SEO.tsx", "src/data/bestIptvApps.ts", "src/data/featureGuides.ts", "src/data/informationalGuides.ts", "src/data/pricingGuide.ts", "src/data/products.ts", "src/data/site.ts", "src/data/troubleshootingGuides.ts", "src/pages/* (13 pages)", "src/routes.ts"],
       "notes": "77 occurrences, all 25,000(+). Minor style variants ('25,000 live', bare '25,000') normalized by audit; no competing number found.",
       "humanConfirmationRequired": false,
       "resolution": null
@@ -58,7 +58,7 @@
       "sourceFile": "src/data/claim-registry.json",
       "verificationStatus": "consistent",
       "lastVerified": "2026-09-11",
-      "consumers": ["src/data/freeTrial.ts", "src/config/site.ts (WhatsApp trial URL text)", "src/pages/FreeTrialPage.tsx", "src/components/DealPromo.tsx", "src/components/SEO.tsx", "src/routes.ts", "14 further files"],
+      "consumers": ["src/data/freeTrial.ts", "src/config/site.ts (WhatsApp trial URL text)", "src/pages/FreeTrialPage.tsx", "src/components/SEO.tsx", "src/routes.ts", "14 further files"],
       "notes": "46 occurrences, '24-hour'/'24-Hour' case variants only. No competing trial length found.",
       "humanConfirmationRequired": false,
       "resolution": null
@@ -70,7 +70,7 @@
       "sourceFile": "src/data/claim-registry.json",
       "verificationStatus": "consistent",
       "lastVerified": "2026-09-11",
-      "consumers": ["src/components/Guarantee.tsx", "src/components/FaqSection.tsx", "src/components/Footer.tsx", "src/components/Hero.tsx", "src/components/Pricing.tsx", "src/components/ReadyBanner.tsx", "src/data/products.ts", "src/data/site.ts", "src/pages/* (9 pages)", "src/routes.ts"],
+      "consumers": ["src/components/FaqSection.tsx", "src/components/Footer.tsx", "src/components/Hero.tsx", "src/components/Pricing.tsx", "src/components/ReadyBanner.tsx", "src/data/products.ts", "src/data/site.ts", "src/pages/* (9 pages)", "src/routes.ts"],
       "notes": "79 occurrences incl. '14-Day'/'14 day' variants. Distinct '14 days' account-data retention (products.ts) is NOT the refund claim and is excluded from this check. '365-day' term length is allowlisted separately.",
       "humanConfirmationRequired": false,
       "resolution": null
@@ -94,7 +94,7 @@
       "sourceFile": "src/data/claim-registry.json",
       "verificationStatus": "consistent",
       "lastVerified": "2026-09-11",
-      "consumers": ["src/components/DealPromo.tsx", "src/components/SEO.tsx", "src/data/freeTrial.ts", "src/data/products.ts", "src/data/site.ts", "src/pages/FreeTrialPage.tsx", "src/pages/SubscriptionHubPage.tsx"],
+      "consumers": ["src/components/SEO.tsx", "src/data/freeTrial.ts", "src/data/products.ts", "src/data/site.ts", "src/pages/FreeTrialPage.tsx", "src/pages/SubscriptionHubPage.tsx"],
       "notes": "RESOLVED 2026-09-11 by human decision: canonical claim is 'typically within 5–15 minutes'. All 20 rendered 'instant…' fulfillment wordings + 1 code comment replaced across 12 files; wording-A occurrences retained and extended. Historical evidence preserved in activationEvidence below (pre-resolution locations). Related and KEPT: 'reactivate instantly' (products.ts:174), 'instant EPG/zapping/VOD/buffer' (playback contexts), 'Instant VOD Access' labels, diagnostic 'instantly' uses.",
       "humanConfirmationRequired": true,
       "resolution": { "decision": "5-15-min", "decidedBy": "human", "decidedDate": "2026-09-11", "canonicalValue": "typically within 5–15 minutes" },
@@ -135,7 +135,7 @@
       "sourceFile": "src/data/claim-registry.json",
       "verificationStatus": "consistent",
       "lastVerified": "2026-09-11",
-      "consumers": ["src/data/site.ts", "src/data/products.ts", "src/data/freeTrial.ts", "src/components/Comparison.tsx", "src/components/PlanComparisonTable.tsx", "src/components/Pricing.tsx", "27 further files (concurrent/multi-connection prose)"],
+      "consumers": ["src/data/site.ts", "src/data/products.ts", "src/data/freeTrial.ts", "src/components/PlanComparisonTable.tsx", "src/components/Pricing.tsx", "27 further files (concurrent/multi-connection prose)"],
       "notes": "Canonical range '1 to 4 connections'; per-plan 'N Connection(s)' features and concurrent/multi-connection prose are compatible, not competing.",
       "humanConfirmationRequired": false,
       "resolution": null
