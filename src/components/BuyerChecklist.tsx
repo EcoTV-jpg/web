@@ -35,11 +35,11 @@ export default function BuyerChecklist() {
 
                 <div className="mt-3 space-y-2 flex-1 text-xs">
                   <div>
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-smoke block">Industry Standard</span>
-                    <p className="text-silver-mist mt-0.5 leading-relaxed">{item.industry}</p>
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-smoke block">Key Question</span>
+                    <p className="text-silver-mist mt-0.5 leading-relaxed">{item.question}</p>
                   </div>
                   <div className="pt-2 border-t border-charcoal/40">
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-phosphor-green block font-semibold">Teleview Policy</span>
+                    <span className="text-[10px] uppercase font-mono tracking-wider text-phosphor-green block font-semibold">Teleview Specification</span>
                     <p className="text-snow mt-0.5 font-medium leading-relaxed">{item.teleview}</p>
                   </div>
                 </div>

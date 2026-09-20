@@ -793,26 +793,26 @@ export const buyerChecklist = {
   kicker: "BUYER'S GUIDE",
   heading: "What to Check Before Choosing an IPTV Service",
   subhead:
-    "Whether you evaluate Teleview or another provider, compare these 4 critical technical and operational standards:",
+    "Key technical and operational criteria to evaluate before subscribing to any IPTV service:",
   criteria: [
     {
       criterion: "Connection Formats",
-      industry: "Single-format provisioning or restricted to proprietary applications.",
+      question: "Are standard Xtream Codes API credentials and M3U playlist URLs provided for third-party player apps?",
       teleview: "Dual provisioning with standard Xtream Codes API credentials and M3U playlist URLs.",
     },
     {
-      criterion: "Server Infrastructure",
-      industry: "Single-server hosting setups vulnerable to peak-period traffic congestion.",
-      teleview: "Distributed streaming servers configured for standard HLS and MPEG-TS broadcast delivery.",
+      criterion: "Stream Delivery",
+      question: "Are streams delivered using standard protocols compatible with your media player hardware?",
+      teleview: "Standard HLS and MPEG-TS protocol delivery compatible with third-party player applications.",
     },
     {
       criterion: "Refund Terms",
-      industry: "Digital sales final upon credential delivery without verification periods.",
+      question: "Is there a documented refund window if you encounter unresolved technical issues on your setup?",
       teleview: "Documented 14-day technical money-back guarantee per our published refund policy.",
     },
     {
       criterion: "Customer Support",
-      industry: "Ticket-based support queues with asynchronous multi-day email turnaround.",
+      question: "Can you reach active technical assistance via direct messaging or email when configuring devices?",
       teleview: "Direct customer support desk reachable via email and WhatsApp for setup assistance.",
     },
   ],
